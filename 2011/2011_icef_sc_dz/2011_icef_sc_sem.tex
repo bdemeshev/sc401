@@ -1,0 +1,38 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/Dropbox/Public/tex_general/title_bor_utf8}
+
+
+%\input{/home/boris/Dropbox/Public/tex_general/prob_and_sol_utf8}
+
+%\title{Задачи по элементарной теории вероятностей и матстатистике}
+%\author{Составитель: Борис Демешев, boris.demeshev@gmail.com}
+%\date{\today}
+
+\begin{document}
+
+\begin{enumerate}
+\item Распределение случайных величин $X$ и $Y$ задано вероятностями $\P(X=i,Y=j)=0{,}1$ при $1\leq i \leq j \leq 4$. Найдите $\E(Y\mid X)$. 
+\item Величина $X$ равномерна на отрезке $[0;1]$, величина $Y$ равновероятно принимает значения $0$ и $1$. Величины $X$ и $Y$ независимы, $Z=X^Y$. Найдите $\E(Z\mid Y)$, $Var(Z\mid Y)$, $\E(Z\mid X)$, $Var(Z\mid X)$.
+\item Величины $X_1$, ..., $X_n$ независимы и равномерна на отрезке $[0;1]$. Найдите $\E(X_1\mid \min\{X_1,...,X_n\})$ и $\E(X_1\mid \max\{X_1,...,X_n\})$.
+\item Величины $X_1$, ..., $X_n$ независимы и одинаково распределены, $S_n=X_1+...+X_n$. Найдите $\E(S_k \mid S_n )$ в двух случаях: $k\leq n$ и $k>n$.
+\item Величина $X$ равномерна на отрезке $[0;1]$. В шляпе лежат две свернутые бумажки. На одной бумажке написано $X$, на другой $X^{2}$. Вы тяните одну бумажку наугад. Пусть $Z$ --- число, написанное на вытянутой Вами бумажке, а $W$ - число на другой бумажке. Увидев число Вы решаете, оставить себе эту бумажку, или отказаться от этой и забрать оставшуюся. Ваш выигрыш - число на оставшейся у Вас бумажке. 
+\begin{enumerate}
+\item Найдите $\E(W|Z)$ 
+\item Максимально подробно (кубическое уравнение там будет суровое, не решайте его) опишите стратегию максимизирующую Ваш выигрыш 
+\end{enumerate}
+
+\end{enumerate}
+
+%\pagestyle{myheadings} \markboth{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }
+%\maketitle
+%\tableofcontents{}
+
+%\parindent=0 pt % отступ равен 0
+
+
+
+\bibliography{/home/boris/Dropbox/Public/tex_general/opit}
+\printindex % печать предметного указателя здесь
+
+\end{document}

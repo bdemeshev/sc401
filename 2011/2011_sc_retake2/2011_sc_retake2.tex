@@ -1,0 +1,44 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/science/tex_general/title_bor_utf8}
+
+\emergencystretch=2em \voffset=-2cm \hoffset=-2cm
+\unitlength=0.6mm \textwidth=18cm \textheight=26cm
+
+
+\begin{document}
+\parindent=0 pt % отступ равен 0
+
+Stochastic calculus and dynamic optimization retake.
+
+In all problems $W_t$ denotes the standard Wiener process.
+
+\begin{enumerate}
+\item 15 points. The random variables $X_1$, $X_2$, \ldots are independent uniformly distributed on $[0;1]$. I~am summing them until the first $X_i$ greater than $0.5$ is added. After this term I stop. Let's denote by $S$ the total sum and by $N$ --- the number of terms added. Find $\E(S|N)$, $Var(S|N)$.
+
+Hint: to speed up the computations you may use the fact that $Var(X_i)=1/12$ without proof.
+\item 15 points. Consider the process $X_t=\int_0^t s^2W_s\,dW_s$. Find $\E(X_t)$, $Var(X_t)$, $Cov(X_t,W_t)$
+
+\item 20 points. For $0<s<t$ calculate the probability $\P(W_t>0 \mid W_s>0)$. 
+\item 25 points. Consider the following stochastic differential equation
+\begin{equation}
+dX_t=(\sqrt{1-X_t^2}-0.5X_t)dt+\sqrt{1-X_t^2}dW_t, \quad X_0=0
+\end{equation}
+\begin{enumerate}
+\item Consider a substitution $X_t=\sin Y_t$, where $Y_t$ is some Ito process $dY_t=A_tdt+B_tdW_t$. Using Ito's lemma find $dX_t$.
+\item State conditions on $A_t$ and $B_t$ such that the two $dX_t$ coincides
+\item Find $Y_t$ and $X_t$
+\end{enumerate}
+\item 25 points. Consider the profit-maximizing problem for a representative competitive firm 
+\begin{equation}
+\int_0^{\infty}(p-c(x(t)))q(t)e^{-rt}\,dt\rightarrow \max
+\end{equation}
+ where the state variable $x(t)<1$ represents a nonrenewable stock resource (oil) that depletes according to the equation $\dot{x}=1-x-q$ and $q(t)$ is the extraction rate. Here $c(x)$ is a cost function of the extraction that is defined by $c(x)=e^{-x}$. The price of oil is assumed to be constant and equal $p$ where $e^{-1}<p<1$. The optimization problem is to choose $q(t)$ to maximize the discounted profits, $0<r<1$.
+\begin{enumerate}
+\item Derive necessary conditions.
+\item Prove that the steady-state exists and is unique.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

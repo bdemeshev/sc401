@@ -1,0 +1,40 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/Dropbox/Public/tex_general/title_bor_utf8}
+
+%usepackage{showkeys} % показывать метки
+
+%\input{/home/boris/Dropbox/Public/tex_general/prob_and_sol_utf8}
+
+%\title{Задачи по элементарной теории вероятностей и матстатистике}
+%\author{Составитель: Борис Демешев, boris.demeshev@gmail.com}
+%\date{\today}
+
+\begin{document}
+
+%\pagestyle{myheadings} \markboth{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }
+%\maketitle
+%\tableofcontents{}
+
+%\parindent=0 pt % отступ равен 0
+
+
+Test 1.
+
+Problem 1. Compare the powers of the set $ \mathbb{Q} $ (the set of all rational numbers) and the set $ \mathbb{Q}^{2} $ (the set of all pairs of rational numbers).
+
+Problem 2. Let $ S_{n} $ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+...+X_{n} $ where $ X_{n} $ are independent and identically distributed with $ P(X_{n}=1)=P(X_{n}=-1)=0.5 $. Let $T$ be the time of the second local maximum plus one. For example: if the sequence of $ X_{n} $ is given by $ +1,+1,-1,-1,-1,+1,-1,-1,+1,... $ then $ T= 7$. We define the following sigma-algebras: $ \mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$ and $ \mathcal{F}_{T} $ - all events which may be distninguished by a rational agent who knows all $ X_{i} $ up to time $ T $. 
+\begin{itemize}
+\item[a.] Give an example of event $A$ such that $ A\notin \mathcal{F}_{T} $ but $ A\in \mathcal{F}_{2010} $
+\item[b.] Give an example of event $B$ such that $ B\in \mathcal{F}_{T} $ but $ B\notin \mathcal{F}_{2010} $
+\item[c.] Prove that $ \mathcal{F}_{T} $ is different from each $ \mathcal{F}_{n} $
+\end{itemize}
+
+Problem 3. Let $ X $ be uniform on $[0;1]$. We define $ A:=\{X>0.1\} $ and $ Y:=X^{2} $. Find $ E(Y|\sigma(1_{A})) $, $E(1_{A}|\sigma(Y))$ and $E(1_{A}+Y|Y-1_{A})$.
+
+
+
+\bibliography{/home/boris/Dropbox/Public/tex_general/opit}
+\printindex % печать предметного указателя здесь
+
+\end{document}

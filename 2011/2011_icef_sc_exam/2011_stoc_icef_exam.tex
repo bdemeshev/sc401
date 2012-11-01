@@ -1,0 +1,74 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/Dropbox/Public/tex_general/title_bor_utf8}
+
+\emergencystretch=2em \voffset=-2cm \hoffset=-2cm
+\unitlength=0.6mm \textwidth=18cm \textheight=26cm
+
+
+\begin{document}
+\parindent=0 pt % отступ равен 0
+Exam 12.01.2011 on stochastic calculus. \\
+
+
+Notation: $W_t$ is the standard Wiener process. \\
+
+
+Part A (10 points each problem). Time allowed: 120 minutes.  \\
+
+\begin{enumerate}
+\item The joint probability density function of $X$ and $Y$ is given by
+\begin{equation}
+f(x,y)=\begin{cases}
+x+y, \quad x\in[0;1],\, y\in [0;1] \\
+0, \quad \mbox{otherwise}
+\end{cases} \nonumber
+\end{equation}
+Find $\E(Y|X)$ in terms of $X$, find the probability density function of  $\E(Y|X)$
+\item Consider the process $X_t=\int_0^t sW_s\,dW_s$. Find $\E(X_t)$, $Var(X_t)$, $Cov(X_t,W_t)$
+\item The process $Y_t$ is given by $Y_t=2W_t+5t$. The stopping time $\tau$ is given by $\tau=\min\{t|Y_t^2=100\}$. Find the distribution of the random variable $Y_\tau$ and the expected value $\E(\tau)$.
+
+
+Hint: you may find the martingales $a^{Y_t}$ and $Y_t-f(t)$ useful
+\item Find $\P(W_2-W_1>2)$
+\item In the framework of Black and Scholes model find the price of an asset which gives you the payoff of $1$ rubble only if the final price $S_t$ is at least two times bigger than the initial price $S_0$ of the asset. 
+\item Consider the free end problem, where $T>0$ is not given
+\begin{equation}
+\int_0^T (\dot{x}^2-x+1)dt \to extr \nonumber
+\end{equation}
+At the left end $x(0)=0$
+Find the optimal $T$ value and the extremal. Check that you solved the optimality problem or show the opposite.
+\end{enumerate}
+
+\newpage
+
+Part B (20 points each prolem). Time allowed: 60 minutes.  \\
+
+\begin{enumerate}
+\item Consider the stochastic differential equation 
+\begin{equation}
+dX_t=(\sqrt{1+X_t^2}+0.5X_t)dt+\sqrt{1+X_t^2}dW_t,\quad X_0=0 \nonumber
+\end{equation}
+\begin{enumerate}
+\item Suppose that $Y_t$ is another process that depens only on $X_t$, i.e. $Y_t=f(X_t)$. Find $dY$ using the Ito's lemma.
+\item Find such function $f$ that the term before $dW$ in $dY$ is constant.
+\item Find $X_t$
+\item Sketch $\P(X_t>0)$ as the function of $t$.
+\end{enumerate}
+
+\item Consider the neoclassical optimal growth model
+\begin{equation}
+\int_0^{\infty}e^{-rt}\left( \bar{U}-\frac{1}{c(t)}\right)\,dt \to \max \nonumber
+\end{equation}
+subject to $\dot{k}=A\ln(1+k)-c-\delta k$, where $A>r>\delta>0$, $k(0)=k_0$, $\bar{U}>0$.
+\begin{enumerate}
+\item Derive necessary conditions, using the current value Hamiltonian
+\item Sketch the phase diagram for this problem with the capital intensity and consumption labeled on the horizontal and vertival axes, respectively
+\item Check that the steady state solution exists. Provide explanation.
+\item Explore the stability of the steady state, using the Jacobian
+\item Why are you sure the found growth path maximizes the discounted stream of utility?
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

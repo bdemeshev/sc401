@@ -1,0 +1,45 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/Dropbox/Public/tex_general/title_bor_utf8}
+
+%usepackage{showkeys} % показывать метки
+
+%\input{/home/boris/Dropbox/Public/tex_general/prob_and_sol_utf8}
+
+%\title{Задачи по элементарной теории вероятностей и матстатистике}
+%\author{Составитель: Борис Демешев, boris.demeshev@gmail.com}
+%\date{\today}
+
+\begin{document}
+
+%\pagestyle{myheadings} \markboth{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }
+%\maketitle
+%\tableofcontents{}
+
+%\parindent=0 pt % отступ равен 0
+
+
+Test 2.
+
+Problem 1. Время между появлением автобусов имеет экспоненциальное распределение с $ \lambda=1 $ (функция плотности $ p(t)=exp(-t) $ при $ t>0 $). Вася приходит на остановку и ждет до первого автобуса. Допустим он ждал $ T $ минут. На следующий день он ждет автобуса в течение времени $ T $. Какова вероятность того, что за это время придет автобус?
+
+% Let $ X_{0}=1 $. Let $ X_{n} $ be uniformly distributed on the set $ [0;X_{n-1}] $. Find $ E(X_{2}|X_{1}) $, $ E(X_{3}|X_{1}) $, $ E(X_{1}|X_{3}) $
+
+
+Problem 2. Let $X_{n}=X\cdot 1_{X\leq n}$. In what sense (as., in $L^{2}$, in probability, in law) does the sequence $ \{X_{n}\} $ converge? What is the limit? Consider two cases:
+\begin{itemize}
+\item[a.] $ X\sim N(0;1) $ (standard normal distribution).
+\item[b.] $ X =2^{T}$ where $T$ is the time of the first head in the infinite sequence of coin tosses.
+\end{itemize}
+
+Problem 3. У Маши --- неправильная монетка (орел выпадет с вероятностью 0.6), у Светы --- правильная. Маша и Света одновременно подкидывают свои монетки до тех пор, пока у кого-то из них орлов не накопится на два больше, чем у подружки. Побеждает в этой игре набравшая больше орлов. Какова вероятность того, что Маша выиграет?
+
+Hints: Пусть $B_{t}=M_{t}-S_{t}$ --- баланс числа орлов, т.е. преимущество Маши над Светой в момент времени $t$. Какие значения и с какими вероятностями принимает $ \Delta B_{t} $? При каком $ a $ случайный процесс $ a^{B_{t}} $ будет мартингалом?
+
+
+
+
+\bibliography{/home/boris/Dropbox/Public/tex_general/opit}
+\printindex % печать предметного указателя здесь
+
+\end{document}

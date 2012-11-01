@@ -1,0 +1,169 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/Dropbox/Public/tex_general/title_bor_utf8}
+
+%\usepackage{showkeys} % показывать метки
+
+\input{/home/boris/Dropbox/Public/tex_general/prob_and_sol_utf8}
+
+%\title{Задачи по элементарной теории вероятностей и матстатистике}
+%\author{Составитель: Борис Демешев, boris.demeshev@gmail.com}
+%\date{\today}
+
+\begin{document}
+
+%\pagestyle{myheadings} \markboth{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }
+%\maketitle
+%\tableofcontents{}
+
+%\parindent=0 pt % отступ равен 0
+
+
+Problem 1.
+
+$ Y\sim U[0;1] $, $ X=Y^{3} $, $ A=\{Y>0.8\} $, $ Z=1_{A}-Y $. Find $ E(Z|X) $, $ E(X|Z) $, $ E(X|1_{A}) $
+
+Solution:
+
+We note that $ X=Y^{3} $ and $ Z=1_{A}-Y $ are deterministic functions of $ Y $, so:
+
+\[ E(X|Z)=X \]
+
+(+3 points)
+
+and
+
+\[ E(Z|X)=Z \]
+
+(+3 points)
+
+
+The most difficult:
+
+\[E(X|1_{A})=E(Y^{3}|A)1_{A}+E(Y^{3}|A^{c})1_{A^{c}}\]
+
+(+4 points)
+
+
+\newpage
+Problem 2.
+
+$ Y_{t}=W_{t}^{3}+f(t)W_{t} $. Find $ f(t) $ if it is known that $ Y_{t} $ is a martingale.
+
+Solution:
+
+Using the Ito's lemma we find $ dY_{t}=3W_{t}^{2}dW_{t}+f'(t)W_{t}dt+ 3W_{t}dt$.
+
+(+5 points for the use of the Ito's lemma)
+
+$ Y_{t} $ is a martingale, so $ f'=-3 $
+
+We find $ f'(t)=-3 $ and $ f(t)=-3t+c $ where $ c\in \mathbb{R} $
+
+(+5 points for the rest. The most common error: missing $c$ gives -2 points penalty)
+
+
+Alternative way:
+
+Using the definition of a martingale:
+
+\[E(Y_{t}|\mathcal{F}_{s})=Y_{s}\]
+
+Thus we have an equation $ f(t)-f(s)=-3(t-s) $ for all $s$ and $t$
+
+(+5 points)
+
+Plugging $s=0$ we have $ f(t)=-3t+f(0)$.
+
+(+5 points)
+
+
+\newpage
+
+Problem 3. 
+
+\[ Y_{n}=\frac{nX_{1}+X_{2}+...+X_{n+1}}{2n} \]. In what sense does the $ Y_{n} $ converge? What is the limit? Find the expected value and the variance of the limit.
+
+Solution:
+
+A little bit of algebra and we have:
+
+\[ Y_{n}=\frac{X_{1}}{2}+0.5\frac{X_{2}+...+X_{n+1}}{n} \]
+
+The Strong Law of Large Numbers (as):
+
+\[ \frac{X_{2}+...+X_{n+1}}{n} \to E(X_{i})=2010 \]
+
+So (as):
+
+\[ Y_{n} \to \frac{X_{1}}{2}+1005 \]
+
+(+4 points for the correct limit)
+
+And $ E(\lim Y_{n} )=2010$, $ Var(\lim Y_{n} )=2011/4$
+
+(+1 point for the expected value, +2 points for the variance)
+
+Almost surely convergence implies convergence in probability and in distribution.
+
+(+1 point for all convergence types except $ L^{2} $)
+
+We check $ L^{2} $ convergence:
+
+\[E((Y_{n}-\frac{X_{1}+2010}{2})^{2})=\frac{1}{4}E((\bar{X}-2010)^{2})=\frac{1}{4}Var(\bar{X})=\frac{2011}{4n}\]
+
+This tends to zero and we have established $ L^{2} $ convergence.
+
+$ L^{2} $ convergence implies $ L^{1} $ convergence.
+
+(+2 points for the $ L^{2} $ convergence)
+
+
+\newpage
+
+Problem B1.
+
+\[ dY=\frac{W}{Y}dW-\frac{W^{2}}{2Y^{3}}dt \]
+
+a) Verify whether $ Z_{t}=Y_{t}^{2} $ is a martingale
+
+b) Solve this equation if $ Y_{0}=1 $
+
+Solution:
+
+a) Apply the Ito's lemma for $ Z_{t}=Y_{t}^{2} $:
+
+\[ dZ=2YdY+\frac{1}{2}2(dY)^{2} \]
+
+Where $ (dY)^{2}=\frac{W^{2}}{Y^{2}}dt $
+
+(+5 points)
+
+This simplifies to 
+
+\[ dZ=WdW \]
+
+There is no $ dt $ term and we conclude that $Z_{t}$ is a martingale.
+
+(+5 points)
+
+b) Calculation of the stochastic integral $ \int_{0}^{t}W_{s}dW_{s}=W_{t}^{2}-t $
+
+(+5 points)
+
+So we obtain  $ Z_{t}=Z_{0}+W_{t}^{2}-t $. And using initial conditions:
+
+$ Y_{t}=\sqrt{1+W_{t}^{2}-t} $
+
+(+5 points)
+
+
+
+
+
+
+
+\bibliography{/home/boris/Dropbox/Public/tex_general/opit}
+\printindex % печать предметного указателя здесь
+
+\end{document}
