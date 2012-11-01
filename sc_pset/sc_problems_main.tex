@@ -1,0 +1,52 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/science/tex_general/title_bor_utf8}
+ 
+
+\input{/home/boris/science/tex_general/prob_and_sol_utf8}
+
+
+\embedfile[desc={Problems...}]{sc_pr_all.tex} % Включение кода в выходной файл
+
+
+% если задача решается несколькими методами - дать ее (ссылку на нее) в нескольких разделах
+
+
+\makeindex % команда для создания предметного указателя
+
+
+\newtheorem*{theorem}{Theorem}
+
+
+
+
+\begin{document}
+\parindent=0 pt % отступ равен 0
+
+\textbf{Цель} \\
+Есть много сборников задач. Зачем этот: 
+\begin{enumerate}
+\item Открытость. \url{http://demeshev.wordpress.com/materials/}
+\item Задачи под курс стохастического анализа.
+\end{enumerate}
+
+
+\problemonly
+\input{sc_pr_all}
+
+\restoresection
+\section{Решения}
+\solutiononly
+\input{sc_pr_all}
+\restoresection
+
+
+
+\bibliography{/home/boris/Dropbox/Public/tex_general/opit}
+
+
+\printindex % печать предметного указателя здесь
+
+
+
+\end{document}

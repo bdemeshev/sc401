@@ -1,0 +1,126 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/Dropbox/Public/tex_general/title_bor_utf8}
+
+%\usepackage{showkeys} % показывать метки
+
+\input{/home/boris/Dropbox/Public/tex_general/prob_and_sol_utf8}
+
+%\title{Задачи по элементарной теории вероятностей и матстатистике}
+%\author{Составитель: Борис Демешев, boris.demeshev@gmail.com}
+%\date{\today}
+
+\begin{document}
+
+%\pagestyle{myheadings} \markboth{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }{ТВИМС-задачник. Демешев Борис. roah@yandex.ru }
+%\maketitle
+%\tableofcontents{}
+
+%\parindent=0 pt % отступ равен 0
+
+
+
+
+Задачи для подготовки к контрольной. Сдавать ни одну задачу не нужно.
+
+
+\problemonly
+
+
+\problem{ Пусть $A$ --- множество всех подмножеств натуральных чисел, а $ B $ --- множество бесконечных последовательностей из 0 и 1. Для примера: $\{5,6,178\}\in A$, $01010101010101.....\in B$. Сравните мощность множеств $ A $ и $ B $.}
+\solution{}
+
+
+\problem{Монетка подкидывается бесконечное количество раз: $X_{n}$ равно 1, если при $ n $-ом подбрасывании выпадает орел и 0, если решка. Определим кучу $ \sigma $-алгебр: $\mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},...)$.
+
+Приведите по два нетривиальных (т.е. $ \Omega $ и $ \emptyset $ не называть) примера такого события $ A $, что:
+
+\begin{itemize}
+\item $ A\in \mathcal{F}_{2010} $
+\item $ A\notin \mathcal{F}_{2010} $
+\item $A$ лежит в каждой $\mathcal{H}_{n}$
+\end{itemize}
+
+В какие из упомянутых $ \sigma $-алгебр входят события:
+\begin{itemize}
+\item $ X_{37}>0$
+\item $ X_{37}>X_{2010}$
+\item $ X_{37}>X_{2010}>X_{12}$
+\end{itemize}
+
+Упростите выражения: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $}
+\solution{}
+
+
+\problem{Может ли в $ \sigma $-алгебре быть ровно 2010 элементов?}
+\solution{Нет. В конечной только $ 2^{n} $, где $ n $ - количество элементов в разбиении $ \Omega $}
+
+
+\problem{Пусть $X$ - равномерная на $ [0;1] $ случайная величина. Пусть $ \mathcal{H}_{1} $ --- минимальная $ \sigma $-алгебра, содержащая все события вида $ X=t $, а $ \mathcal{H}_{2} $ --- минимальная $ \sigma $-алгебра, содержащая все события вида $X<t$. Сравните $\sigma$-алгебры $ \mathcal{H}_{1} $ и $ \mathcal{H}_{2} $.}
+\solution{$ \mathcal{H}_{1} \subset \mathcal{H}_{2} $}
+
+
+\problem{Правильная монетка подбрасывается бесконечное количество раз. Вася наблюдает за результатами подбрасываний до тех пор, пока не выпадет 3 орла подряд. Пусть $ T $ - случайный момент времени, когда Вася прекратил наблюдения, и $ \mathcal{F}_{T} $ --- $ \sigma $-алгебра событий различимых Васей. Приведите пример двух нетривиальных (т.е. не $ \Omega $ и не $ \emptyset $) событий входящих в $ \mathcal{F}_{T} $.}
+\solution{}
+
+
+\problem{ Правильный кубик подбрасывается один раз. $X$ - число очков, выпавшее на кубике. $Y$ - индикатор того, выпала ли четная грань. $Z$ - индикатор того, выпало ли число больше 2-х. \\
+Найдите закон распределения (проще говоря, заполните табличку) для случайных величин $E(XY|XZ)$, $E(Z|X)$, $E(X|Z)$ \\
+Табличка для заполнения: \\
+$\begin{array}{|c|c|c|c|c|c|c|} 
+\hline
+\Omega & w_{1} & w_{2} & w_{3} & w_{4} & w_{5} & w_{6} \\
+\hline
+E(XY|XZ) & & & & & & \\
+\hline
+E(Z|X) & & & & & & \\
+\hline
+E(X|Z) & & & & & & \\
+\hline
+\end{array}$}
+\solution{}
+
+
+
+\problem{ Пусть совместное распределение $X$ и $Y$ задано таблицей: \\
+\begin{tabular}{|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+   & $X=-1$ & $X=1$ \\
+  \hline
+  $Y=-1$ & 1/8 & 4/8 \\
+  $Y=2$ & 2/8 & 1/8 \\
+  \hline
+\end{tabular} \\
+а) Найдите $E(X|Y)$, представьте ответ в виде $E(X|Y)=a+bY$. \\
+б) Убедитесь, что $E(E(X|Y))=E(X)$ \\
+в) Найдите $E(XY|Y)$ и представьте ответ в виде $f(Y)$ }
+\solution{}
+
+\problem{
+Find conditional expectation $E(X|Y)$ intuitively (without formal proof)  \\
+$Z\sim U[0;1]$, $A=\{Z>0.5\}$, $X=2Z^{2}$, $Y=2Z-1_{A}$.}
+\solution{}
+
+
+\problem{
+Маша собрала $n$ грибов в лесу наугад. Рыжики попадаются с вероятностью $r$, лисички - с вероятностью $l$, где $r+l<1$. Пусть $R$ - количество собранных рыжиков, $L$ - лисичек. Найдите:
+\begin{enumerate}
+\item $E(R|L)$
+%\item $Var(R|L)$
+\item $P(E(R|L)=0)$
+\end{enumerate}}
+\solution{$E(R|L)=(n-L)\frac{r}{1-l}$, $Var(R|L)=(n-L)\frac{r}{1-l}\frac{1-r-l}{1-l}$, $P(E(R|L)=0)=l^{n}$}
+
+
+\problem{
+Случайные величины $X$ и $Y$ независимы и одинаково распределены.
+Найдите $E(X|X+Y)$, $E(X-Y|X+Y)$, $E(X^{2}-Y^{2}|X+Y)$ }
+\solution{
+$E(X|X+Y)=0.5(X+Y)$, $E(X-Y|X+Y)=0$, $E(X^{2}-Y^{2}|X+Y)=0$ }
+
+
+%\bibliography{/home/boris/Dropbox/Public/tex_general/opit}
+%\printindex % печать предметного указателя здесь
+
+\end{document}

@@ -1,0 +1,3965 @@
+\section{1. Счетность множеств и пр.}
+
+\problem{ % in sc_skelet
+Какова мощность декартово произведение счетного количества счетных множеств? }
+\solution{Континуум, т.к. оно равномощно множеству последовательностей из натуральных чисел.}
+
+\problem{Пусть $A$ - некоторое множество. Пусть $F$ - множество функций принимающих только значения ноль или один с областью определения $A$. Пусть $M$ - множество всех подмножеств $A$. Равномощны ли $F$ и $M$?}
+\solution{да}
+
+\problem{ An enemy submarine is somewhere on the number line (consider only integers for this problem). It is moving at some rate (again, integral units per minute). You know neither its position nor its velocity.\\
+You can launch a torpedo each minute at any integer on the number line. If the the submarine is there, you hit it and it sinks. You have all the time and torpedoes you want. You must sink this enemy sub - devise a strategy that is guaranteed to eventually hit the enemy sub.}
+\solution{ Idea of solution: \\
+Счетное количество счетных множеств, считаем змейкой }
+
+\problem{Пусть $A$ --- множество всех подмножеств натуральных чисел, а $ B $ --- множество бесконечных последовательностей из 0 и 1. Для примера: $\{5,6,178\}\in A$, $01010101010101.....\in B$. Сравните мощность множеств $ A $ и $ B $.}
+\solution{Одинаковая, биекция: $\{2,4,5\}\sim 01011000000...$, т.е. единички соответствуют включенным в подмножество числам}
+
+\problem{Сравните мощности множеств $ A $ и $ B $, если $ A=\mathbb{Q} $ --- рациональные числа, $ B=\mathbb{Q}^{2} $ --- пары рациональных чисел.}
+\solution{Одинаковая. $ \mathbb{Q}\sim \mathbb{N}\sim \mathbb{N}^{2}\sim \mathbb{Q}^{2} $}
+
+
+
+
+
+\section{ Сигма-алгебры и измеримость}
+
+
+\problem{% in sc_scelet
+Игральный кубик подбрасывается один раз. В первый момент времени
+наблюдатель узнает, выпала ли четная грань или нет. Во второй
+момент времени наблюдатель узнает, выпала ли грань большая двух
+или нет. В третий момент времени наблюдатель точно узнает, какая
+грань выпала. Укажите множество элементарных событий и
+соответствующие три алгебры событий. 
+}
+\solution{}
+
+\problem{ Почему алгебра? \\
+Значки некоторых операций над множествами ($\cap$, $\cup$,
+$\setminus$, $\triangle$, etc) были заменены на привычные значки
+операций над числами ($+$, $-$, $\cdot$) так, что все условия выполнены: \\
+1. $A\cdot(B+C)=A\cdot B+A\cdot C$ \\
+2. $A\cdot(B-C)=A\cdot B-A\cdot C$ \\
+3. Уравнение $A+X=B$ всегда имеет единственное решение $X=B-A$ \\
+4. Существуют такие $1$ и $0$, такие, что: \\
+4.1. $1\cdot A=A$ \\
+4.2. $0\cdot A=0$ \\
+4.3. $A+0=A$ \\
+4.4. $A-0=A$ \\
+а) Какие операции над множествами скрыты значками $+$, $-$,
+$\cdot$? \\
+b) Какие множества подразумеваются под $1$ и $0$? \\
+с) Упростите в этой алгебре выражение $(A+B)(A-B)+A$ \\
+Комментарий: к сожалению, деление в этой алгебре отсутствует,
+именно поэтому термин поле (field) некорректен. }
+\solution{}
+
+
+
+
+\problem{Приведите пример алгебры, которая не является $\sigma$-алгеброй.}
+\solution{Пример. $\Omega=[0;1]$, $\mathcal{A}$ состоит из конечных множеств и множеств с конечными дополнениями.}
+
+
+\problem{
+Сколько $\sigma$-алгебр можно создать на множестве из 4-х элементов? }
+\solution{столько же, сколько разбиений }
+
+\problem{
+Определим $\liminf_{n}
+A_{n}=\bigcup_{n=1}^{+\infty}\bigcap_{i=n}^{+\infty}A_{i}$ и
+$\limsup_{n}
+A_{n}=\bigcap_{n=1}^{+\infty}\bigcup_{i=n}^{+\infty}A_{i}$ \\
+Смысл: \\
+$\liminf_{n} A_{n}$ - произошли все $A_{n}$, кроме быть может
+конечного числа \\
+$\limsup_{n} A_{n}$ - произошло бесконечное количество $A_{n}$ \\
+Докажите, что $1_{\liminf_{n}A_{n}}=\liminf_{n}1_{A_{n}}$ и
+$1_{\limsup_{n}A_{n}}=\limsup_{n}1_{A_{n}}$ }
+\solution{}
+
+
+\problem{
+Пусть $A$ и $B$ - события. Определим $C_{n}=\left\{
+\begin{array}{ll}
+  A, & n=2k \\
+  B, & n=2k+1 \\
+\end{array} \right.$. \\
+Найдите $\limsup_{n}C_{n}$ и $\liminf_{n}C_{n}$.}
+\solution{$\limsup_{n}C_{n}=A\cup B$, $\liminf_{n}C_{n}=A\cap B$. }
+
+
+\problem{
+Пусть $A_{1} \subseteq A_{2} \subseteq A_{3} \subseteq ...$.
+Найдите $\liminf_{n}A_{n}$ и $\limsup_{n}A_{n}$. \\
+Пусть $B_{1} \supseteq B_{2} \supseteq B_{3} \supseteq ...$.
+Найдите $\liminf_{n}B_{n}$ и $\limsup_{n}B_{n}$. 
+}
+\solution{}
+
+\problem{
+Докажите, что $\limsup_{n}A_{n}=\limsup_{n}A_{n+k}$ и
+$\liminf_{n}A_{n}=\liminf_{n}A_{n+k}$ при любом $k\in\mathbb{N}$.
+Смысл этого утверждения следующий: при вычислении предела
+последовательности можно проигнорировать миллион-другой членов в
+ее начале. }
+\solution{}
+
+
+\problem{
+Пусть $A_{n} \subseteq B_{n}$ для всех $n\ge N$. Сравните множества: $\liminf_{n}A_{n}$ и $\liminf_{n}B_{n}$;
+$\limsup_{n}A_{n}$ и $\limsup_{n}B_{n}$. }
+\solution{$\liminf_{n}A_{n} \subseteq \liminf_{n}B_{n}$ и $\limsup_{n}A_{n}
+\subseteq \limsup_{n}B_{n}$.}
+
+
+\problem{
+Верно ли, что $\left(\limsup_{n}A_{n}\right)^{c}=\liminf_{n}A_{n}^{c}$? }
+\solution{да}
+
+
+\problem{
+Разложите на множители $1_{A\cap B}$ и $1_{A\backslash B}$ \\
+Найдите $1_{A}+1_{A^{c}}$ }
+\solution{ $1_{A\cap B}=1_{A}1_{B}$, $1_{A\backslash B}=1_{A}1_{B^{c}}$, $1_{A}+1_{A^{c}}=1$}
+
+
+\problem{
+Пусть $\mathcal{F}$ - $\sigma$-алгебра подмножеств $\Omega$, и
+$B\subseteq\Omega$. Верно ли что набор множеств
+$\mathcal{H}=\{A:A\subseteq B$ или $B^{c}\subseteq A\}$ является
+$\sigma$-алгеброй на $\Omega$? }
+\solution{да}
+
+\problem{
+Пусть $\mathcal{F}_{i}$, $i\in I$ - $\sigma$-алгебры подмножеств
+$\Omega$. \\
+а) Докажите, что $\cap_{i\in I}\mathcal{F}_{i}$ -
+$\sigma$-алгебра. \\
+б) Приведите пример, показывающий, что
+$\mathcal{F}_{1}\cup\mathcal{F}_{2}$ - не обязательно алгебра. }
+\solution{ б) $\Omega=\{a,b,c\}$, $\mathcal{F}_{1}=\{\emptyset,\Omega,a,bc\}$, $\mathcal{F}_{2}=\{\emptyset,\Omega,ab,c\}$}
+
+\problem{
+Решеткой будем обозначать количество элементов множества ('\#A').\\
+Пусть $A \subseteq \mathbb{N}$. Определим
+$\gamma(A)=\lim_{n\rightarrow \infty}\frac{\#(A\bigcap
+\{1,2,3,...,n\})}{n}$ в тех случаях, когда этот предел существует.
+Величина $\gamma(A)$ (Cesaro density) показывает, какую 'долю' от
+всех натуральных чисел составляет указанное подмножество. Пусть
+$\mathcal{H}=\{A\subseteq \mathbb{N}|\exists \gamma(A)\}$. Верно
+ли, что $\mathcal{H}$ -
+алгебра? }
+\solution{
+Решение: разобьем натуральный ряд на пары соседних чисел. Можно
+так подобрать множества $A$ и $B$, что в каждом из них из каждой
+пары взято только одно число. Поэтому
+$\gamma(A)=\gamma(B)=\frac{1}{2}$. Подобрав
+совпадение-несовпадение в паре, можно сделать так, что
+$\gamma(A\cap B)$ не существует. }
+
+\problem{Продолжение про тяжелую долю чисел. \\
+Верно ли, что у натуральных чисел, в записи которых присутствует
+хотя бы одна единица, есть доля? 
+Верно ли, что у натуральных чисел, в записи которых присутствует
+ровно одна единица, есть доля? }
+\solution{}
+
+
+
+
+\problem{
+Пусть $\mathcal{M}$ это $\pi$-система на $\Omega$. Для любого
+множества $A$ из $\lambda(\mathcal{M})$ определим набор
+$F(A)=\{L|L\cap A \in \lambda(\mathcal{M})\}$. Т.е. $F(A)$ - это
+набор <<хороших>> относительно $A$ множеств, их $A$ не отбрасывает
+за пределы $\lambda(\mathcal{M})$. \\
+Последовательно докажите, что: \\
+а) Если $A \in \mathcal{M}$, то $\mathcal{M}\subseteq F(A)$ \\
+б) Если $A\in\lambda(\mathcal{M})$, то $F(A)$ - $\lambda$-система \\
+в) Если $A \in \mathcal{M}$, то $\lambda(\mathcal{M})\subseteq
+F(A)$ \\
+г) Если $B\in \lambda(\mathcal{M})$, то $\mathcal{M}\subseteq
+F(B)$ \\
+д) Если $B\in \lambda(\mathcal{M})$, то
+$\lambda(\mathcal{M})\subseteq
+F(B)$ \\
+е) $\lambda(\mathcal{M})$ является $\pi$-системой }
+\solution{}
+
+\problem{
+Чтобы набор $\mathcal{M}$ являлся $\sigma$-алгеброй необходимо и
+достаточно, чтобы он одновременно являлся $\pi$-системой и
+$\lambda$-системой. }
+\solution{}
+
+\problem{
+Если $\mathcal{M}$ это $\pi$-система на $\Omega$, то
+$\lambda(\mathcal{M})=\sigma(\mathcal{M})$ }
+\solution{}
+
+\problem{
+(Александр ?) Рассмотрим набор подмножеств
+$\mathcal{H}=\{[0;\frac{1}{n}]|n\in \mathbb{N}\}$. Пусть
+$\mathcal{A}$ - минимальная алгебра, порождаемая этим набором, а
+$\mathcal{F}$ - минимальная
+порождаемая $\sigma$-алгебра. \\
+а) Опишите все множества, входящие в $\mathcal{A}$ \\
+б) Опишите все множества, входящие в $\mathcal{F}$ \\
+в) Верно ли, что $\mathcal{A}$ и $\mathcal{F}$ совпадают? }
+\solution{}
+
+
+\problem{
+Пусть $\Omega$ - произвольное множество,
+$\mathcal{F}=\{\emptyset,\Omega\}$ и $f:\Omega\rightarrow
+\mathbb{R}$. При
+каком условии функция $f$ будет измеримой? }
+\solution{$f$ - константа}
+
+
+\problem{
+Пусть $X$ - случайная величина. Верно ли, что
+$\sigma(X)=\{X^{-1}(B)|B \in \mathcal{B} \}$? }
+\solution{да}
+
+\problem{
+При каком соотношении на $n$ и $\lambda$ для любой случайной
+величины $X$ справедливо равенство $\{X\ge \lambda\}=\{X\wedge
+n\ge\lambda\}$? }
+\solution{}
+
+\problem{
+Пусть $X$ - случайная величина, а $f:\mathbb{R}\rightarrow
+\mathbb{R}$ - измеримая функция.
+Верно ли, что $f(X)$ - является $\sigma(X)$-измеримой? }
+\solution{}
+
+
+\problem{
+Верно ли, что непрерывная действительная функция является
+измеримой по Борелю? }
+\solution{}
+
+\problem{
+Обозначим $x \wedge y = min\{x,y\}$. Верно ли, что $1_{A} \wedge
+1_{B}=1_{A\cap B}$? \\
+Обозначим $x \vee y = max\{x,y\}$. Верно ли, что $1_{A} \vee
+1_{B}=1_{A\cup B}$? }
+\solution{
+Answer: yes, yes }
+
+\problem{
+Пусть $X_{i}$ - случайные величины и $N$ - случайная величина,
+принимающая натуральные значения. Верно ли, что
+$\sum_{i=1}^{N}X_{i}$ - случайная величина? }
+\solution{}
+
+
+
+\problem{ Правильный кубик подбрасывается один раз. $Y$ - индикатор того, выпала ли четная грань. $Z$ - индикатор того, выпало ли число больше 2-х. \\
+\begin{itemize}
+\item Сколько элементов $\sigma(Z)$? 
+\item Сколько элементов в $\sigma(Y\cdot Z)$? 
+\item Сколько элементов в $\sigma(Y,Z)$? 
+\item Как связаны между собой $ \sigma $-алгебры $\sigma(Y\cdot Z)$ и $\sigma(Y,Z)$?
+\end{itemize}
+}
+\solution{}
+
+
+\problem{
+Пусть $\Omega=[0;1]$. $\mathcal{F}=\{A\subseteq$ $\Omega|$ либо $A$ не
+более чем счетно, либо $A^{c}$ не более чем счетно $\}$. \\
+Верно ли, что $\mathcal{F}$ - $\sigma$-алгебра? \\
+Придумайте $B\subset\Omega$, такое что $B \notin\mathcal{F}$. }
+\solution{Например, $B$ - Канторово множество, или (гораздо проще)
+$B=[0;0,5]$. Оно само более чем счетно и дополнение к нему более
+чем счетно. \\
+$\mathcal{F}$ действительно $\sigma$-алгебра. \\
+$\emptyset$ лежит в $\mathcal{F}$ т.к. имеет ноль элементов (а ноль,
+очевидно, не более чем счетное число). \\
+Если $A$ не более чем счетно, то $A^{c}$ лежит в $\mathcal{F}$
+т.к. дополнение к $A^{c}$ содержит не более чем счетное
+число элементов. \\
+Если дополнение к $A$ не более чем счетно, то $A^{c}$ лежит
+в $\mathcal{F}$ т.к. содержит не более чем счетное число элементов. \\
+Проверяем счетное объединение $\bigcup_{i} A_{i}$. \\
+Если среди $A_{i}$ встречаются только не более чем счетные, то и
+их объединение - не более чем счетно. \\
+Если среди $A_{i}$ встретилось хотя бы одно множество с не более
+чем счетным дополнением, то $\bigcup_{i} A_{i}$ тоже будет
+обладать не более чем счетным дополнением, так как объединение не
+может быть меньше ни одного из объединяемых множеств. }
+
+\problem{
+Случайные величины $X$ и $Y$ заданы на $(\Omega,\mathcal{F})$. Верно ли, что $A=\{w|X(w)=Y(w)\}$ лежит в $\sigma$-алгебре $\mathcal{F}$?}
+\solution{
+Введем новую функцию $Z=X-Y$. Тогда интересующее нас множество -
+это прообраз нуля $A=Z^{-1}(0)$. Число ноль - борелевское
+множество. Докажем более сильное утверждение, что $Z$ - это
+случайная величина, т.е. прообраз любого борелевского множества
+измерим. 
+По доказанной в прошлый раз теореме, достаточно проверить, что
+прообраз любого множества вида $(-\infty;z)$ измерим. \\
+Пусть $r_{x}$ и $r_{y}$ - два рациональных числа. Множества
+$A_{r_{x}}=X^{-1}((-\infty;r_{x}))$ и
+$C_{r_{y}}=Y^{-1}((r_{y};+\infty))$ измеримы. \\
+Следовательно, $D_{r_{x},r_{y}}=A_{r_{x}} \bigcap C_{r_{y}}$ тоже
+измеримо. \\
+Немного помедитировав замечаем, что $Z^{-1}(-\infty;z)=\bigcup_{r_{x}-r_{y}<z} D_{r_{x},r_{y}}$ }
+
+\problem{
+We toss a fair coin infinitly many times. So the set of all oucomes $\Omega$ is the set of all infinite sequences of H and T. Let $A_{n}$ be the event that the coin shows head in the $n$-th toss. Let $\mathcal{F}=\sigma(A_{1},A_{2},A_{3},...)$ - be the minimal $\sigma$-algebra containing all the $A_{n}$. \\
+Let $X_{n}$ be the proportion of heads after the first $n$ tosses.\\
+a) Show that the event $X_{n}<t$ is contained in $\mathcal{F}$ for all $n$ and $t$. \\
+b) Express the event $lim_{n\to\infty}X_{n}\le 2/5$ using countable operations with the events of the form $X_{n}<t$.}
+\solution{}
+
+
+\problem{Пусть $f:\mathbb{R}\to\mathbb{R}$ - дифференциируемая функция. Верно ли, что $f'$ - измерима по Борелю?}
+\solution{Да. $ f' $ - непрерывна, а следовательно, измерима.}
+
+\problem{Пусть $\Omega=[0;1]$, $ \mathcal{F}=\mathcal{B}[0;1] $. Случайный процесс $X_{t}(w):=1_{t=w}$. Постройте фильтрацию, порождаемую этим процессом.}
+\solution{Заметим, что $\sigma(X_{t})=\{\emptyset,\Omega,\{t\},\Omega\backslash\{t\}\}$. Значит в $ \mathcal{F}_{t} $ является минимальной $\sigma  $-алгеброй порожденной набором одноточечных множеств $\{x|x\in [0;t]\}$. Т.е. $\mathcal{F}_{t}$ - это все счетные подмножества отрезка $[0;t]$ плюс все их дополнения.}
+
+
+
+\problem{В лесу есть три вида грибов: рыжики, лисички и мухоморы. Попадаются они равновероятно и независимо друг от друга. Маша нашла три гриба. Пусть $R$ --- количество рыжиков, $ L $ --- количество лисичек, а $ M $ --- количество мухоморов среди этих трех грибов.
+\begin{itemize}
+\item Сколько элементов $ \sigma(R)$? 
+\item Сколько элементов $ \sigma(R,M)$? 
+\item Измерима ли $ L $ относительно $ \sigma(R)$?
+\item Измерима ли $ L $ относительно $ \sigma(R,M)$?
+\end{itemize} }
+\solution{$ 2^{4} $, $2^{10}$, нет, да }
+
+
+\problem{Сначала подбрасываем кубик. Если выпала нечетная грань, то подбрасываем правильную монетку один раз. Если четная --- то два. Пусть $X$ - количество подбрасываний монетки, а $Y$ - количество выпавших орлов.
+
+\begin{itemize}
+
+\item Сколько элементов в $ \sigma(X)$? 
+\item Сколько элементов в $ \sigma(Y)$? 
+\item Сколько элементов в $ \sigma(X,Y)$? 
+\item Измерима ли $ X $ относительно $ \sigma(Y)$? 
+\item Измерима ли $ Y $ относительно $ \sigma(X)$? 
+
+\end{itemize} }
+
+\solution{ $ 2^{2} $, $ 2^{3} $, $ 2^{5} $, нет, нет}
+
+\problem{Пусть $X_{n}$ - независимые случайные величины равновероятно равные плюс или минус единице. $S_{n}=X_{1}+X_{2}+...+X_{n}$. Сравните $ \sigma $-алгебры $ \sigma(X_{1},X_{2},...X_{n}) $ и $ \sigma(S_{1},S_{2},...S_{n}) $.}
+\solution{Они совпадают}
+
+\problem{Монетка подкидывается бесконечное количество раз: $X_{n}$ равно 1, если при $ n $-ом подбрасывании выпадает орел и 0, если решка. Определим кучу $ \sigma $-алгебр: $\mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},...)$.
+
+Приведите по два нетривиальных (т.е. $ \Omega $ и $ \emptyset $ не называть) примера такого события $ A $, что:
+
+\begin{itemize}
+\item $ A\in \mathcal{F}_{2010} $
+\item $ A\notin \mathcal{F}_{2010} $
+\item $A$ лежит в каждой $\mathcal{H}_{n}$
+\end{itemize}
+
+В какие из упомянутых $ \sigma $-алгебр входят события:
+\begin{itemize}
+\item $ X_{37}>0$
+\item $ X_{37}>X_{2010}$
+\item $ X_{37}>X_{2010}>X_{12}$
+\end{itemize}
+
+Упростите выражения: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $}
+\solution{}
+
+
+\problem{Может ли в $ \sigma $-алгебре быть ровно 2010 элементов?}
+\solution{Нет. В конечной только $ 2^{n} $, где $ n $ - количество элементов в разбиении $ \Omega $}
+
+
+\problem{Пусть $X$ - равномерная на $ [0;1] $ случайная величина. Пусть $ \mathcal{H}_{1} $ --- минимальная $ \sigma $-алгебра, содержащая все события вида $ X=t $, а $ \mathcal{H}_{2} $ --- минимальная $ \sigma $-алгебра, содержащая все события вида $X<t$. Сравните $\sigma$-алгебры $ \mathcal{H}_{1} $ и $ \mathcal{H}_{2} $.}
+\solution{$ \mathcal{H}_{1} \subset \mathcal{H}_{2} $}
+
+
+\problem{Правильная монетка подбрасывается бесконечное количество раз. Вася наблюдает за результатами подбрасываний до тех пор, пока не выпадет 3 орла подряд. Пусть $ T $ - случайный момент времени, когда Вася прекратил наблюдения, и $ \mathcal{F}_{T} $ --- $ \sigma $-алгебра событий различимых Васей. Приведите пример двух нетривиальных (т.е. не $ \Omega $ и не $ \emptyset $) событий входящих в $ \mathcal{F}_{T} $.}
+\solution{}
+
+
+\problem{Let $ S_{n} $ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+...+X_{n} $ where $ X_{n} $ are independent and identically distributed with $ \P(X_{n}=1)=\P(X_{n}=-1)=0.5 $. Let $T$ be the time of the second local maximum plus one. For example: if the sequence of $ X_{n} $ is given by $ +1,+1,-1,-1,-1,+1,-1,-1,+1,... $ then $ T= 7$. We define the following sigma-algebras: $ \mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$ and $ \mathcal{F}_{T} $ - all events which may be distninguished by a rational agent who knows all $ X_{i} $ up to time $ T $. 
+\begin{itemize}
+\item[a.] Give an example of event $A$ such that $ A\notin \mathcal{F}_{T} $ but $ A\in \mathcal{F}_{2010} $
+\item[b.] Give an example of event $B$ such that $ B\in \mathcal{F}_{T} $ but $ B\notin \mathcal{F}_{2010} $
+\item[c.] Prove that $ \mathcal{F}_{T} $ is different from each $ \mathcal{F}_{n} $
+\end{itemize}
+}
+\solution{}
+
+\problem{Монетка подбрасывается бесконечное количество раз. $ X_{n} $ --- результат $ n $-го подбрасывания, 1, если решка и 0, если орел. Let $T$ be the first moment of time when the proportion of head is greater than 0.5. We define the following sigma-algebras: $ \mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$ and $ \mathcal{F}_{T} $ - all events which may be distninguished for sure by a rational agent who knows all $ X_{i} $ up to time $ T $. 
+\begin{itemize}
+\item[a.] Give an example of event $A$ such that $ A\notin \mathcal{F}_{T} $ but $ A\in \mathcal{F}_{2010} $
+\item[b.] Give an example of event $B$ such that $ B\in \mathcal{F}_{T} $ but $ B\notin \mathcal{F}_{2010} $
+\item[c.] Prove that $ \mathcal{F}_{T} $ is different from each $ \mathcal{F}_{n} $
+\end{itemize}
+}
+\solution{}
+
+\problem{Опишите $\sigma$-алгебру подмножеств отрезка $[0;1]$ порожденную отрезками $[0;0.1)$ и $(0.5,1]$.}
+\solution{Содержит 8 элементов, порождается разбиением.}
+
+\problem{Случайная величина $X$ равномерна на отрезке $[0;1]$. Величина $Y$ определяется по формуле $Y=1_{X<0.5}+1_{X>0.3}$. Опишите $\sigma$-алгебру $\sigma(Y)$.}
+\solution{Содержит 4 элемента, порождается разбиением.}
+
+
+\section{3. Модель в дискретном времени, дерево}
+
+\problem{ Consider a stock whose price today is \$50. Suppose that over the next
+  year, the stock price can either go up by 10\%, or down by 3\%, so the
+  stock price at the end of the year is either \$55 or \$48.50. The
+  interest rate on a \$1 bond is 6\%. If there also exists a call on the
+  stock with an exercise price of \$50, then what is the price of the
+  call option? Also, what is the replicating portfolio?}
+\solution{}
+
+\problem{ A stock price is currently \$50.  It is known that at the end of 6
+  months, it will either be \$60 or \$42.  The risk-free rate of
+  interest with continuous compounding on a \$1 bond is 12\% per annum.
+  Calculate the value of a 6-month European call option on the stock
+  with strike price \$48 and find the replicating portfolio.}
+\solution{}
+
+\problem{ (Dividend-paying stock) \\
+Consider the binomial asset pricing model
+with the modification described below. Let
+$$
+Y_{n+1}(\om_1\dots\om_n\om_{n+1})=
+\begin{cases}
+u,&\text{if $\om_{n+1}=H$,}\\
+d,&\text{if $\om_{n+1}=T$.}
+\end{cases}
+$$
+\ni $Y_{n+1}$ depends only on the $(n+1)$-th coin toss and $Y_{n+1}S_n$ equaled to the
+stock price at time $n+1$. For the \emph{dividend-paying model} consider another random
+variable $A_{n+1}(\om_1\dots\om_n\om_{n+1})$ taking values in $(0,1)$ and define
+the \emph{dividend paid} at time $n+1$ as the amount $A_{n+1}Y_{n+1}S_n.$ After the dividend
+is paid, the stock price at time $n+1$ is
+$$
+S_{n+1}=(1-A_{n+1})Y_{n+1}S_n.
+$$
+\ni An agent who begins with initial capital $X_0$ and at each time takes a position of
+$\Dt_n$ shares of stock, where $\Dt_n$ depends only on the first $n$ coin tosses, has
+a portfolio value governed by the wealth equation:
+\begin{align}
+X_{n+1}&=\Dt_n S_{n+1}+(1+r) (X_n-\Dt_n S_n) +\Dt_n A_{n+1} Y_{n+1} S_n \\
+&=\Dt_n Y_{n+1} S_n+(1+r)(X_n-\Dt_n S_n).
+\end{align}
+\begin{itemize}
+\item[(i)] Show that such a discounted wealth process is a martingale under the
+risk-neutral measure, which is defined as in the case of usual binomial asset pricing model
+(prove it as well!!!).
+
+\item[(ii)] Show that the risk-neutral pricing formulastill applies.
+
+\item[(iii)] Show that the discounted stock price is not a martingale under the
+risk-neutral measure. However, if $A_{n+1}$ is a constant $a\in(0,1)$, regardless of the value of
+$n$  and the outcome of the coin tossing $\om_1\dots\om_{n+1},$ then $\fr{S_n}{(1-a)^n(1+r)^n}$ is
+a martingale under the risk-neutral measure.
+\end{itemize}}
+\solution{}
+
+\problem{ Chooser option \\
+ Let $1\le m\le N-1$ and $K>0$ be given
+A \emph{chooser option} is a contract sold at time zero that confers on its owner
+the right to receive either a call or a put at time $m$. The owner of the option may
+wait until time $m$ before choosing. The call or put chosen expires at time $N$ with
+the strike price $K$. Show that the time-zero price of a chooser option is the sum of
+the time-zero price of a put, expiring at time N and having strike price $K$, and a call,
+expiring at time $m$ and having strike price $\fr{K}{(1+r)^{N-m}}.$}
+\solution{}
+
+\problem{Asian option. Consider an $N$-period binomial model.
+An \emph{Asian option} has a payoff based on the average stock price, i.e.,
+$$
+V_N=f\bl(\fr{1}{N+1}\sum\lims_{n=0}^{N} S_n \br),
+$$
+\ni where the function $f$ is determined by the contractual details of the option.
+\begin{itemize}
+\item[(i)] Let $Y_n=\sum\lims_{k=0}^{n} S_k$. Show that the two-dimensional process
+$(S_n,Y_n),\, n=0,1,\dots,N$ is Markov.
+
+\item[(ii)] Show that the price $V_n$ of the Asian option at time $n$
+is some function $v_n$ of $S_n$ and $Y_n$; i.e.
+$$
+V_n=v_n(S_n,Y_n),\, n=0,1,\dots,N.
+$$
+\ni Give a formula for $v_N(s,y)$ and provide an algorithm for backward computing
+$v_n(s,y)$ in terms of $V_{N+1}.$
+\end{itemize}
+}
+\solution{}
+
+\problem{ Asian option continued) Consider an $N$-period binomial model,
+and let $M$ be a fixed number between $0$ and $N-1$. Consider an Asian option with the payoff
+at time $N$ defined as
+$$
+V_N=f\bl(\fr{1}{N_M}\sum\lims_{n=M+1}^{N} S_n \br),
+$$
+\ni where again the function $f$ is determined by the contractual details of the option.
+
+Define
+$$
+Y_n=
+\begin{cases}
+0,&\text{if $0\le n\le M$}\\
+\sum\lims_{k=M+1}^{n} S_k,&\text{if $M+1\le n\le N$.}
+\end{cases}
+$$
+\ni Show that the two-dimensional process $(S_n,Y_n)$ is Markov
+(under the risk-neutral measure $\tilde{\P}$).
+
+As we already know the price $V_n$ of the Asian option at time $n$
+is some function $v_n$ of $S_n$ and $Y_n$; i.e.
+$$
+V_n=v_n(S_n,Y_n),\, n=0,1,\dots,N.
+$$
+\ni Of course, when $n\le M,$ $Y_n$ is not random and does not need to be included
+in this function. Thus, for such $n$ we should seek a function $v_n$ of only $S_n$.
+\ni Give a formula for $v_N(s,y)$ and provide an algorithm for backward computing
+$v_n(s,y)$ in terms of $V_{N+1}.$ Note that the algorithm is different for $n<M$
+and $n>M,$ and there is a separate transition formula for $v_M(s)$ in terms of
+$v_{M+1}(\cd,\cd).$}
+\solution{}
+
+
+
+\problem{ Докажите, что адаптированные случайные процессы $\bl\{ \fr{S_n}{(1+r)^n}\br\}$ и
+  $\bl\{ \fr{X_n}{(1+r)^n}\br\}$ являются мартингалами относительно риск-нейтральной 
+  меры $(\ti p, \ti q)$. Условие $0<d<1+r<u$ является естественным \emph{необходимым} условием 
+  отсутствия арбитража. Доказав что $\bl\{ \fr{X_n}{(1+r)^n}\br\}$ мартингал, вы покажете, 
+  что это условие также является и \emph{достаточным}.}
+\solution{}
+
+
+\problem{
+Рассмотрим 3-х периодную модель.\\
+Параметры: $S_{0}=8$, $u=1.5$, $d=0.5$, $r=0.1$ \\
+Найдите стоимость следущих опционов: \\
+а) американский колл с ценой страйк $K=10$ \\
+б) американский пут с ценой страйк $K=10$ \\
+в) реализуемый в любой момент времени $t=0,1,2,3$ и приносящий (в случае реализации) платеж $\bar{S}-10$, где $\bar{S}$ - средняя цена акций за время от $t=0$ до момента реализации }
+\solution{}
+
+
+\problem{ Consider a knockout call option with strike price $K=80$. The main difference with a standard call option is that the option vanishes as soon as the underlying stock goes below a knockout threshold $H=70$. In this event the option pays a \$2 consolation payoff. The parameters are given by $r=0.1$, $u=1.5$, $d=0.5$. The tree covers two periods or three dates, initial stock price is $S_{0}=120$. \\
+a) calculate standard European call price \\
+b) calculate knockout European call price }
+\solution{}
+
+
+
+\subsection{Арбитраж} 
+
+\problem{ Имеется три опциона колл с одинаковым сроком исполнения и разными страйк-ценами: $K_{1}<K_{2}<K_{3}$, причем $K_{2}-K_{1}=K_{3}-K_{2}$. Обозначим цены этих опционов как $C_{1}$, $C_{2}$ и $C_{3}$. Сравните $C_{2}$ и $\frac{C_{1}+C_{3}}{2}$  }
+\solution{}
+
+
+\problem{ Пусть $S_{T}$ - цена акции в момент $T$. Экзотический опцион выплачивает сумму $g(S_{T})=min\{max\{S_{T},100\},120\}$. Выразите цену этого опциона через цены двух подходящих опционов колл и процентную ставку. }
+\solution{}
+
+\problem{
+Докажите, что при отсутствии арбитража, должно выполняться неравенство: 
+$$S_{t}-D-K\le C_{t}-P_{t}\le S_{t}-Ke^{-r(T-t)}$$ 
+здесь:\\
+$S$ - цена акции \\
+$C$ - цена американского опциона колл (со страк ценой $K$ и датой исполнения $T$)\\
+$P$ - цена американского опциона пут (со страк ценой $K$ и датой исполнения $T$)\\
+$D$ - приведенная к моменту $t$ стоимость дивидендов }
+\solution{}
+
+
+
+\section{4. Мера}
+
+\problem{
+Пусть $X=Y$ (a.e.) и $Y=Z$ (a.e.) Верно ли, что $X=Z$ (a.e.)? }
+\solution{да}
+
+\problem{
+Случайные величины $X$ и $Y$ независимы, $f$ и $g$ - измеримые
+функции. Докажите, что $f(X)$ и $g(Y)$ - независимы. }
+\solution{}
+
+
+
+\problem{
+Докажите, что функция распределения имеет не более, чем счетное
+число разрывов. Исходя из этого факта установите, что для любой
+случайной величины $X$ можно выбрать бесконечное (более, чем
+счетное) количество таких чисел $x$, что $\P(X=x)=0$. }
+\solution{}
+
+\problem{
+Пусть $\Omega=\{q\in[0;1]|q\in\mathbb{Q}\}$, и $\mathcal{F}_{1}$ -
+класс подмножеств множества $\Omega$, имеющих вид $[a;b)$,
+$(a;b]$, $[a,b]$ или $(a,b)$, где $a$ и $b$ - рациональные числа.
+Обозначим через $\mathcal{F}_{2}$ класс всех конечных сумм попарно
+непересекающихся множеств из $\mathcal{F}_{1}$. Определим
+функцию $\P$ следующим образом: \\
+$\P(A)=b-a$, если $A\in \mathcal{F}_{1}$ \\
+$\P(B)=\sum_{i=1}^{n}\P(A_{i})$, если $B\in
+\mathcal{F}_{2}$ и $B=\cup_{i=1}^{n}A_{i}$, где $A_{i}$ попарно не
+пересекаются. \\
+а) Верно ли, что $\Omega$ - алгебра? $\sigma$-алгебра? \\
+б) Найдите $\P(\Omega)$ \\
+в) Верно ли, что $\P$ является аддитивной?
+$\sigma$-аддитивной? }
+\solution{}
+
+\problem{
+Пусть $\Omega=\{a,b,c,d\}$, и
+$\mathcal{A}=\{\{a,b\},\{c,d\},\{a,c\},\{b,d\}\}$. \\
+Пусть $\mathcal{F}$ - множество всех подмножеств $\Omega$. \\
+Определим вероятности $\P_{1}$ и $\P_{2}$ исходя
+из: \\
+$\P_{1}(\{a\})=\P_{1}(\{d\})=\frac{1}{6}$,
+$\P_{1}(\{b\})=\P_{1}(\{c\})=\frac{1}{3}$, \\
+$\P_{2}(\{a\})=\P_{2}(\{d\})=\frac{1}{3}$,
+$\P_{2}(\{b\})=\P_{2}(\{c\})=\frac{1}{6}$, \\
+a) Верно ли, что $\sigma(\mathcal{A})=\mathcal{F}$? \\
+б) Верно ли, что $\P_{1}$ и $\P_{2}$ совпадают на
+$\mathcal{A}$? \\
+в) Почему не применима теорема Каратеодори о единственности
+продолжения меры на порождаемую $\sigma$-алгебру? }
+\solution{}
+
+
+\problem{
+Пусть $(\Omega,\mathcal{F},P)$ - вероятностное пространство, $B$ -
+событие с $\P(B)>0$. Для $A\in \mathcal{F}$ определим
+$P_{B}(A)=\P(A|B)$. Докажите, что $(\Omega,\mathcal{F},P_{B})$ -
+вероятностное пространство. }
+\solution{}
+
+
+
+\problem{
+Докажите, что
+$\P(\cap_{n=1}^{+\infty}A_{n})=\lim_{T}\P(\cap_{n=1}^{T}A_{n})$ }
+\solution{}
+
+\problem{
+Пусть $f$ и $g$ обычные действительные функции. \\
+а) Приведите пример таких $f$ и $g$, что $f$ - непрерывна, $g$ -
+непрерывна почти наверное (относительно
+классической меры Лебега $\lambda$), $f=g$ почти наверное. \\
+б) Приведите примеры таких $f$ и $g$, что $f=g$ почти наверное,
+$f$ - непрерывна, $g$ не является непрерывной даже почти наверное. \\
+в) Приведите пример такой $f$, непрерывной почти наверное, что ни
+одна $g$ почти наверное равная $f$, не является непрерывной. }
+\solution{}
+
+\problem{
+Две $\sigma$-алгебры $\mathcal{F}_{1}$ и $\mathcal{F}_{2}$
+независимы. Пусть $\mathcal{F}_{1}^{'}\subseteq \mathcal{F}_{1}$ и
+$\mathcal{F}_{2}^{'}\subseteq \mathcal{F}_{2}$. Докажите, что
+$\sigma$-алгебры $\mathcal{F}_{1}^{'}$ и $\mathcal{F}_{2}^{'}$
+независимы. }
+\solution{}
+
+\problem{
+Про независимость в лимсуп/лиминф 1.8.16, 1.8.32 }
+\solution{}
+
+\problem{ (надо проверить, решабельно ли это до интеграла лебега) \\
+Докажите неравенства Фату для вероятности: \\
+$\P(\liminf_{n}A_{n})\le \liminf_{n}\P(A_{n})$ и
+$\limsup_{n}\P(A_{n})\le \P(\limsup_{n}A_{n})$ }
+\solution{}
+
+\problem{ А что такое метрика? \\
+Докажите, что на плоскости $(x,y)$ обе функции:
+1. $\rho((x_{1},x_{2}),(y_{1},y_{2}))=\sqrt{(x_{1}-y_{1})^{2}+(x_{2}-y_{2})^{2}}$ \\
+2. $\rho((x_{1},x_{2}),(y_{1},y_{2}))=|x_{1}-y_{1}|+|x_{2}-y_{2}|$ \\
+являются метриками }
+\solution{}
+
+\problem{
+Пусть $X$ и $Y$ одинаково распределены, и $f(t)$ - борелевская
+функция. \\
+Верно ли, что $f(X)$ и $f(Y)$ одинаково распределены? }
+\solution{}
+
+
+\problem{Известно, что $ \P(X>c \Delta Y>c)=0 $ для любой константы $ c $. Верно ли, что $X=Y$ почти наверное?}
+
+\solution{Да. Рассмотрим множество $ X-Y>c $. Его можно представить в виде $ \{X-Y>c\}=\cup_{q} \{ X>q \cap Y<q-c\} $. Далее замечаем, что $ \P(X>q \cap Y<q-c)=\P(Y>q \cap Y<q-c)=0 $ для $ c>0 $. Т.е. $ \P(X-Y>c)=0 $ для $ c>0 $. В силу непрерывности вероятности получаем $ \P(X-Y>0)=0 $. Далее используем симметрию и получаем $ \P(Y-X>0)=0 $. Значит $ \P(X=Y)=1 $}
+
+\problem{Имеется последовательность событий $A_1$, $A_2$, \ldots, такая что вероятность любого $A_i$ равна $\P(A_i)=1$. Найдите $\P(\cup A_i)$ и $\P(\cap A_i)$}
+\solution{Обе равны 1}
+
+\problem{Имеется последовательность событий $A_1$, $A_2$, \ldots, такая что $\lim \P(A_i)=1$. Найдите $\lim \P(B\cap A_i)$}
+\solution{$\P(B)$}
+
+\problem{Существует ли последовательность событий $A_1$, $A_2$, \ldots, такая что $\lim \P(A_i)=1$, но $\P(\cap_{i=k}^{\infty} A_i)=0$ для любого числа $k$?}
+\solution{Да}
+
+
+\section{5. Виды сходимостей}
+
+\problem{
+Известно, что $X_{n} \ge 0$. Верно ли, что 
+$\E(\sum_{n=1}^{+\infty}X_{n})=\sum_{n=1}^{+\infty}\E(X_{n})$?}
+\solution{}
+
+\problem{
+$[$Grimmett, ex. 7.11.1$]$ \\
+Пусть $X_{n}$ заданы на одном вероятностном пространстве, и их
+функции плотности имеют вид
+$p_{n}(t)=\frac{n}{\pi(1+n^{2}t^{2})}$ \\
+К чему сходится $X_{n}$ и в каком смысле (as, $L^{1}$, in
+probability, in distribution)? }
+\solution{
+in probability (ok), in distribution (ok) }
+
+\problem{
+Пусть $X_{n}$ и $Y_{n}$ заданы на одном вероятностном пространстве
+и $X_{n}\rightarrow X$ (in distribution), $Y_{n}\rightarrow Y$ (in
+distribution). Верно ли, что $X_{n}+Y_{n}\rightarrow X+Y$ (in
+distribution)? }
+\solution{no}
+
+
+\problem{
+Пусть $X_{n}$ - имеет распределение $Bin(n,0.5)$. И $Y_{n}$ - остаток от деления $X_{n}$ на 5 (можно и не на пять). К чему сходится $Y_{n}$ по распределению? \\
+решение (через характ. функции?) \\
+см. aops, t=174723 }
+\solution{}
+
+
+\problem{
+Converges AS\\
+Show that $X_{n}$ converges to $X$ a.s. iff for all $\varepsilon$, there exists $n$ s.t. for every random integer $N(w)>n$ (for all $w$), we have $\P(|X_N(w) (w) - X (w)| > \varepsilon) <\varepsilon$.\\
+решение - ?, aops, t=174817 }
+\solution{}
+
+
+
+
+\problem{
+Пусть $X$ - интегрируемая и $A_{n}$ попарно не пересекаются.
+Обозначим $A=\cup A_{n}$. Докажите, что
+$\sum_{n=1}^{+\infty}\E(X\cdot 1_{A_{n}})=\E(A\cdot 1_{A})$. }
+\solution{}
+
+\problem{
+Если $f$ - непрерывна и $X_{n}\rightarrow X$ a.e., то
+$f(X_{n})\rightarrow f(X)$ a.e.}
+\solution{}
+
+\problem{
+Докажите или опровергните утверждения: \\
+а) Если $Y_{n}\uparrow Y$, то $1_{Y_{n}>a}\uparrow 1_{Y>a}$ \\
+б) Если $Y_{n}\uparrow Y$, то $1_{Y_{n}\ge a}\uparrow 1_{Y\ge a}$ \\
+в) Если $1_{Y_{n}>a}\uparrow 1_{Y>a}$, то $\P(Y_{n}>a)\uparrow
+\P(Y>a)$ \\
+г) Если $Y_{n}\rightarrow Y$ (as), то
+$\lim_{n\to\infty}1_{Y_{n}>x}\ge 1_{Y>x}$ (as) \\
+д) Если $Y_{n}\rightarrow Y$ (as), то
+$\lim_{n\to\infty}1_{Y_{n}\ge x}\le 1_{Y\ge x}$ (as) }
+\solution{
+b) easy counterexample by Sasha Serova \\
+$Y_{n}=1-1/n$, $Y_{n}\uparrow 1$, take $a=1$, $1_{Y_{n}\ge 1}=0$,
+$1_{Y\ge 1}=1$ }
+
+
+\problem{
+Пусть $X\sim U(0;1)$ и $X_{n}=(\cos(\frac{2\pi}{X}))^{n}$. Верно
+ли, что
+$X_{n}\rightarrow 0$ (a.s)?}
+\solution{}
+
+\problem{
+Пусть $X\in L^{1}$, и последовательность событий $A_{n}$ такова,
+что $\P(A_{n})\rightarrow 0$. \\
+а) Докажите, что $|X| 1_{A_{n}} \rightarrow 0$ (in probability) \\
+b) Используя DCT и тот факт, что в последовательности сходящейся
+по вероятности можно выделить подпоследовательность, сходящуюся
+почти наверное, покажите, что $E\left(|X| 1_{A_{n}}\right)
+\rightarrow 0$
+\\
+c) Для $\varepsilon>0$ существует такое $\delta>0$,
+что из $\P(A)<\delta$ следует $\E(|X|1_{A})<\varepsilon$ \\
+d) Докажите, что $\lim_{T\to\infty}\P(|X|>T)=0$ }
+\solution{}
+
+
+\problem{
+Пусть $X_{n}\rightarrow X$ (in $L^{1}$). Докажите, что
+$\E(X_{n}1_{A})\rightarrow \E(X 1_{A})$. }
+\solution{
+$|\E(X_{n}1_{A})-\E(X 1_{A})|\le \E(|X_{n}1_{A}-X 1_{A}|)\le
+\E(|X_{n}-X|)\rightarrow 0$ }
+
+
+\problem{
+Пусть $X_{n}\le Y_{n}$ (as) и $X_{n}\rightarrow X$ (in $L^{1}$), а
+$Y_{n}\rightarrow Y$ (in $L^{1}$). Верно ли, что $X\le Y$ (as)? }
+\solution{
+Верно. Рассмотрим любое $\varepsilon>0$. \\
+$E|X-X_{n}|+E|Y_{n}-Y|\ge E|X-Y+Y_{n}-X_{n}|\ge E\left(
+|X-Y+Y_{n}-X_{n}| 1_{X-Y>\varepsilon}1_{Y_{n}\ge X_{n}}\right)\ge
+\varepsilon \P(X-Y>\varepsilon)$ \\
+Следовательно, для любого $\varepsilon$ вероятность
+$\P(X-Y>\varepsilon)=0$ (т.к. левая часть стремится к 0 при
+$n\rightarrow +\infty$) }
+
+\problem{
+$[$Williams, E4.7$]$ \\
+Ваш выигрыш в $n$-ой партии равен $X_{n}=\left\{
+\begin{array}{ll}
+  n^{2}-1, & p=n^{-2} \\
+  -1, & p=1-n^{-2} \\
+\end{array}\right.$ и $X_{n}$ - независимы. \\
+а) Найдите $\E(X_{n})$ \\
+b) Пусть $A_{t}=\{$не будет ни одного выигрыша начиная с времени
+$t\}$. Найдите $\P(A_{t})$ и $\P(\cup_{t} A_{t})$ \\
+c) В каком смысле существует $\lim_{n}\bar{X}_{n}$ и чему он
+равен? \\
+d) Можно ли назвать эту игру справедливой? }
+\solution{
+
+$\P(A_{t})=\frac{t-1}{t}$ и $\P(\cup_{t} A_{t})=1$ \\
+Т.е. с вероятностью 1 будет лишь конечное число выигрышей. Другими
+словами $\bar{X}_{n} \rightarrow -1$ (as) }
+
+
+\problem{
+Пусть $X\sim U[0;1]$ и $X_{n}=\sqrt{n}(1-X)^{n}$. \\
+Куда и в каком смысле сходится $X_{n}$? }
+\solution{}
+
+
+\problem{
+Пусть $U_{n}\sim U[0;1]$ - независимые случайные величины. Пусть
+$X_{n}=\min\{U_{1},...,U_{n}\}$ \\
+а) К чему и в каком смысле сходится $X_{n}$? \\
+б) При каких $\theta$ последовательность $Y_{n}=n^{\theta}X_{n}$
+будет сходится по распределению? К чему она при этом будет
+сходится? \\
+в) К чему и в каком смысле сходится $Z_{n}=(U_{1}\cdot...\cdot U_{n})^{1/n}$? }
+\solution{}
+
+
+\problem{
+Пусть $X_{0}\sim U[0;1]$ и $X_{n}=6+\sqrt{X_{n-1}}$. \\
+К чему и в каком смысле сходится $X_{n}$? }
+\solution{}
+
+
+\problem{
+Вероятностное пространство $(\Omega,\mathcal{F},P)$ называется
+дискретным, если $\Omega$ конечно или счетно (чаще всего при этом
+полагают, что $\mathcal{F}$ содержит все подмножества $\Omega$).
+Верно ли, что для дискретного вероятностного пространства
+сходимость почти наверное и сходимость по вероятности - это одно и
+то же? }
+\solution{}
+
+
+\problem{
+Пусть величины $X_{1}$, $X_{2}$,... имеют нулевое среднее, ограниченную общей константой дисперсию и некоррелированы. Пусть $S_{n}=X_{1}+...+X_{n}$ и $\alpha>1/2$.\\
+Сходится ли $\frac{S_{n}}{n^{\alpha}}$ в $L^{2}$? }
+\solution{}
+
+
+\problem{ breaking a stick \\
+A stick of length 1 is broken at a random point that is uniformly distributed. The right hand part is thrown away, and the left part is broken similarly (the breaking point being uniformly distributed). Let $X_{n}$ be the length of the remaining part after $n$ steps. We define $Y_{n}=X_{n}^{1/n}$. \\
+In what sense does the $Y_{n}$ converge? What is the limit? }
+\solution{
+limit is $1/e$ almost surely \\
+hint?: It's the law of large numbers. Show that the logarithm of a uniform 0-1 has expected value (-1). Its negative is an exponential distribution with parameter 1. }
+
+
+
+\problem{
+Рассмотрим вероятностное пространство
+$(\Omega,\mathcal{B}[0;1],P)$, где $P=\lambda$ - классическая
+мера Лебега.\\
+Пусть $A_{n}=[0;\frac{1}{n}]$. \\
+a) Найдите $\P(\limsup A_{n})$ \\
+б) Найдите $\sum_{n=1}^{\infty}\P(A_{n})$ \\
+в) Противоречит ли этот пример лемме Бореля-Кантелли? }
+\solution{}
+
+
+\problem{Приведите пример последовательности $X_{n}$ и предела $X$, таких что: $\lim E|X_{n}-X|=0$, но $\E(|X_{n}|)=\infty$ }
+\solution{ В качестве $X_{n}$ и $ X $ берем любую случайную величину с бесконечным мат. ожиданием}
+
+
+\problem{Let $X_{n}=X\cdot 1_{X\leq n}$. In what sense (as., in $L^{2}$, in probability, in law) does the sequence $ \{X_{n}\} $ converge? What is the limit? Consider two cases:
+\begin{itemize}
+\item[a.] $ X\sim N(0;1) $ (standard normal distribution).
+\item[b.] $ X =2^{T}$ where $T$ is the time of the first head in the infinite sequence of coin tosses.
+\end{itemize}
+}
+\solution{ $ X_{n}\to X $. a) as, P, law, $ L^{2} $; b) as, P, law }
+
+
+\problem{Случайная величина $X_1$ равномерна на отрезке $[0;1]$ и $X_n=X_1^n$. В каких смыслах и к чему сходится $X_n$?}
+\solution{К нулю, кроме как поточечно.}
+
+\problem{Последовательность случайных величин $X_n$ такова, что $\P(X_n\to 0)=1$. Возможно ли, что $\lim \E(X_n)\neq 0$?}
+\solution{}
+
+
+\problem{Известно, что $X_n \xrightarrow{\P} 0$. Верно ли, что $\Var(X_n)\to 0$? }
+\solution{Нет.}
+
+\problem{Известно, что $X_n \xrightarrow{\P} X$. Верно ли, что $Y\cdot X_n \xrightarrow{\P} YX$? }
+\solution{Да}
+
+
+\problem{Известно, что $X_n \xrightarrow{\P} X$ и $Y_n \xrightarrow{\P} Y$. Верно ли, что $X_nY_n \xrightarrow{\P} XY$? }
+\solution{Да}
+
+
+\problem{Известно, что $\varepsilon>0$. Сравните величины $\P(X\leq t)$ и $\P(Y\leq t+\varepsilon)+\P(|X-Y|>\varepsilon)$.}
+\solution{$\P(X\leq t)$ меньше}
+
+\problem{Какое условие является более сильным?
+\begin{enumerate}
+\item Последовательность $X_n$ сходится к $X$ по вероятности
+\item \[ 
+\E\left(\frac{|X_n-X|}{1+|X_n-X|}\right)\to 0
+\]
+\end{enumerate}}
+\solution{Условия равносильны}
+
+\problem{Последовательность случайных величин $X_n$ поточечно сходится к случайной величине $X$. Кроме того, $\lim \E(X_n)=0$. 
+\begin{enumerate}
+\item Верно ли, что $\E(X)$ обязательно существует? 
+\item Если дополнительно известно, что $\E(X)$ существует, то верно ли, что $\E(X)=0$?
+\end{enumerate}}
+\solution{}
+
+
+\problem{Последовательность случайных величин $X_n$ сходится к $a$ по вероятности. Функция $f$ --- борелевская и имеет производную в точке $x=a$. Представим $f(X_n)$ в виде
+\begin{equation}
+f(X_n)=f(a)+f'(a)(X_n-a)+Y_n(X_n-a)
+\end{equation}
+Сходится ли $Y_n$ по вероятности? Если да, то к чему?}
+\solution{Сходится по вероятности к нулю}
+
+\problem{Известно, что $X_n$ сходится по вероятности к нулю и $\lim_{t\to\infty} \sup_n \P(|Y_n|>t)=0$. Верно ли, что $X_n Y_n$ сходится по вероятности к нулю?}
+\solution{да,
+\begin{multline}
+\P(|X_nY_n|>\varepsilon)=\P(|X_nY_n|>\varepsilon, |Y_n|>t)+\P(|X_nY_n|>\varepsilon, |Y_n|\leq t)\leq \\
+\leq \underbrace{\P(|X_n|>\varepsilon/t)}_{\to 0}+\underbrace{\P(|Y_n|>t)}_{\to 0}
+\end{multline}}
+
+\problem{Хвостовая $\sigma$-алгебра. Случайные величины $X_1$, $X_2$, \ldots независимы, $Y_n=X_1\cdot X_2\cdot\ldots\cdot X_n$. Каждая $X_i$ равновероятно принимает значения $0.5$ и $1.5$. 
+\begin{enumerate}
+\item Найдите $\P(Y_n \to 0)$
+\item Как изменится ответ, если $X_i$ равновероятно принимает значения $n/(n+1)$ и $(n+2)/(n+1)$?
+\item Как изменится ответ, если $X_i$ равновероятно принимает значения $1-1/\sqrt{n+1}$ и $1+1/\sqrt{n+1}$?
+\end{enumerate}}
+\solution{Событие $Y_n\to 0$ лежит в хвостовой $\sigma$-алгебре, поэтому $\P(Y_n\to 0)$ может равняться только нулю или единице.}
+
+\section{6. Интеграл Лебега}
+
+\problem{
+Cлучайные величины $X$ и $Y$ являются интегрируемыми и независимы
+(т.е. независимы минимальные $\sigma$-алгебры, ими
+порождаемые). Докажите, что $\E(XY)=\E(X)\E(Y)$. \\
+Воспользуйтесь стандартной техникой: индикатор - простая -
+неотрицательная - произвольная}
+\solution{}
+
+
+\problem{
+Пусть $(\Omega,\mathcal{F},P)$ - вероятностное пространство, $X$ -
+случайная величина, причем $X\ge 0$ и $0<\E(X)< + \infty$. Для
+произвольного события $A\in\mathcal{F}$ определим
+$P_{X}(A)=\frac{\E(X\cdot 1_{A})}{\E(X)}$. \\
+а) Докажите, что $(\Omega,\mathcal{F},P_{X})$ - вероятностное пространство. \\
+б) Обозначим $E_{X}(Y)=\int Y \cdot dP_{X}$. Докажите, что
+если $Y\ge 0$, то $E_{X}(Y)=\frac{\E(XY)}{\E(X)}$. }
+\solution{}
+
+
+\problem{
+Пусть $X$ - дискретная случайная величина, со счетным множеством
+значений $\{a_{1},a_{2},...\}$, где $a_{i} \ge 0$. Докажите, что
+$\E(X)=\sum_{i=1}^{+\infty} a_{i}\cdot \P(X=a_{i})$. }
+\solution{}
+
+
+\problem{
+Рассмотрим вероятностное пространство
+$([0;1],\mathcal{B},\lambda)$. \\
+Пусть $q(x)= \left\{
+\begin{array}{cc}
+  1, & x\in \mathbb{Q} \\
+  0, & x\notin \mathbb{Q} \\
+\end{array}
+\right.$ - функция Дирихле. \\
+а) Является ли $q$ измеримой? \\
+б) Найдите $\int_{\Omega}q \cdot d\lambda$ (интеграл Лебега). \\
+в) Докажите, что $\int_{0}^{1} q \cdot dx$ (интеграл Римана) не
+существует. }
+\solution{}
+
+\problem{
+Докажите, что условия (1) и (2) равносильны: \\
+(1) $\E(X 1_{F})\le \E(Y 1_{F})$ для любого события $F$ \\
+(2) $X\le Y$ (as) }
+\solution{
+
+(2) $\rightarrow$ (1): $X\le Y$ (as) $\Rightarrow$ $X 1_{F}\le Y
+1_{F}$ (as) $\Rightarrow$ $\E(X 1_{F})\le \E(Y 1_{F})$ \\
+(1) $\rightarrow$ (2): для $F=\{X-Y>\varepsilon\}$ получаем
+$\E((X-Y) 1_{F})\le
+ 0$, но $\E((X-Y) 1_{F})\ge \E(\varepsilon 1_{F})=\varepsilon \P(F)$.
+Значит $\P(X-Y>\varepsilon)=0$ }
+
+
+\problem{
+Пусть $X\in L^{1}$, $Y\in L^{1}$. Верно ли, что $\max\{X,Y\}\in
+L^{1}$? }
+\solution{}
+
+
+\problem{
+\label{L beskonechnost} Обозначим
+$||X||_{p}=(\E(|X|^{p}))^{\frac{1}{p}}$ и
+$||X||_{\infty}=\inf\{t|\P(|X|\le t)=1\}$. \\
+а) Докажите, что $||X||_{p}\le ||X||_{\infty}$ при $1\le p\le
+\infty$. \\
+б) Докажите, что $\lim_{p\to\infty}||X||_{p}=||X||_{\infty}$ }
+\solution{
+а) Обнулим величину $X$ там, где она больше, чем $||X||_{\infty}$ \\
+б) Обозначим $a=||X||_{\infty}$. Тогда $\P(X>a-\varepsilon)>0$. И
+$X\ge (a-\varepsilon)1_{X>a-\varepsilon}$. Значит $||X||_{p}\ge
+(a-\varepsilon)||1_{X>a-\varepsilon}||_{p}$. }
+
+
+\problem{
+\label{X2Y2XY} Пусть $X\in L^{2}$, $Y\in L^{2}$. \\
+а) Верно ли, что $X^{2}\in L^{1}$? \\
+б) Верно ли, что $XY\in L^{1}$ }
+\solution{
+б) $\E(X^{2}+Y^{2}-2XY)\ge 0$ }
+
+\problem{
+Two random variables X and Y have the same distiribution and that X<=Y almost surely. 
+Under this condition I have to show that X=Y almost surely. }
+\solution{
+We know that X>Y with probability zero. Assume that X<Y with probability greater than zero. Then, the expectation of X would have to be less than the expectation of Y. And the distributions would be different - hence contradiction. So thereofre X=Y with probability 1 (almost surely) }
+
+\problem{Известно, что $\Var(X)=0$. Существует ли константа $a$ такая, что $0<\P(X=a)<1$?}
+\solution{Нет, $X$ --- почти наверное константа.}
+
+\problem{Известно, что $\P(0<X<1)=1$. Сравните $\Var(X)$ и $\E(X)$.}
+\solution{$\Var(X)<\E(X)$}
+
+\problem{Задана последовательность функций $f_n(x)=\frac{n^2 x e^{-n^2 x^2}}{1+x^2}$. Сходится ли числовая последовательность $a_n=\int_{[0;+\infty)}f_n d\lambda$, где $\lambda$ --- классическая мера Лебега?}
+\solution{}
+
+
+\problem{Функции $f_n$ заданы на отрезке $[0;1]$ и интегрируемы. Последовательность $f_n$ сходится равномерно к функции $f$ по классической мере Лебега $\lambda$. Верно ли, что $\int_{[0;1]} f\,d\lambda$ существует? Верно ли, что $\int_{[0;1]} f_n\,d\lambda\to \int_{[0;1]} f\,d\lambda$?}
+\solution{Да}
+
+
+\problem{Функции $f_n$ заданы на множестве $[0;\infty)$ формулой $f_n(x)=2nxe^{-nx^2}$. Существует ли  интегрируемая функция $f$, такая что $f\geq f_n$ для всех $n$?}
+\solution{}
+
+
+\section{7. Характеристическая функция}
+
+
+
+\problem{
+$[$Williams, 16.2$]$ \\
+Пусть $U\sim U[-1;1]$. \\
+a) Найдите характеристическую функцию $\phi_{U}(t)$ \\
+b) Докажите, что $U$ не представима в виде $X-Y$, где $X$ и $Y$
+iid }
+\solution{
+
+a) $\phi_{U}=(t)=\sin(t)/t$ \\
+b) $\phi(t)\phi(-t)=|\phi(t)|^{2}=\sin(t)/t$, но правая часть
+бывает отрицательной, противоречие. }
+
+\problem{
+Пусть величины $X$ и $Y$ имеют совместную функцию плотности: \\
+$\P(x,y)=\frac{1}{4}(1+xy(x^{2}-y^{2})$, при $|x|<1$, $|y|<1$. \\
+a) Верно ли, что $X$ и $Y$ независимы? \\
+б) Верно ли, что $\phi_{X+Y}(t)=\phi_{X}(t)\phi_{Y}(t)$? }
+\solution{}
+
+\problem{
+Пусть $X$ имеет функцию плотности Коши,
+$p(t)=\frac{1}{\pi(1+t^{2})}$. \\
+Верно ли, что $\phi_{2X}(t)=\phi_{X}^{2}(t)$? }
+\solution{}
+
+
+\problem{
+Пусть $X\sim N(0;1)$ и $W=X^{4}$ \\
+Докажите, что: \\
+а) существует $\varphi(t)=\E(e^{itW})$ \\
+б) не существует $f(t)=\E(e^{tW})$ }
+\solution{}
+
+\problem{
+Пусть $X\sim N(0;1)$. \\
+a) Чему равно $\E(X^{2n+1})$? \\
+б) Докажите, что $\E(X^{2n})=1\cdot 3\cdot 5\cdot...\cdot(2n-1)$ \\
+в) Пусть $Y\sim N(0;\sigma^{2})$. Найдите $\E(Y^{2n})$ }
+\solution{}
+
+
+
+\problem{
+Случайная величина $X$ задана табличкой: \\
+$\begin{array}{cccc}
+  x_{i} & 0 & 1 & 2 \\
+  \hline
+  \P(X=x_{i}) & 0.1 & 0.3 & 0.6 \\
+\end{array}$ \\
+а) Найдите функцию $g(t)=\E(t^{X})$ и постройте ее график. \\
+б) Чему равно $g(1)$? \\
+в) Верно ли, что $g(0)=\P(X=0)$? \\
+г) Верно ли, что $g(1)=\P(X=1)$? \\
+д) Найдите $g'(1)$ и $\E(X)$ \\
+е) Найдите $g''(1)$ и $\E(X(X-1))$ \\
+ж) Выразите $\Var(X)$ через $g'(1)$ и $g''(1)$ }
+\solution{}
+
+\problem{  Случайной величине $X$, чей закон распределения задан таблицей: \\
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  $x_{i}$ & 0 & 1 & 2 \\
+  \hline
+  $(X=x_{i})$ & 0.3 & 0.2 & 0.5 \\
+  \hline
+\end{tabular} \\
+сопоставим <<производящую>> функцию
+$f(t)=0.3t^{0}+0.2t^{1}+0.5t^{2}$ \\
+a) Какой вероятностный смысл имеет величины $f'(1)$,
+$f''(1)+f'(1)-(f'(1))^{2}$? \\
+б) Как связаны $\P(X=x_{i})$ и $f^{(i)}(0)$? \\
+Примечание: $f^{(i)}(0)$ - это $i$-ая производная. }
+\solution{}
+
+
+
+\problem{
+Случайная величина $Y$ задана табличкой: \\
+$\begin{array}{cccc}
+  y_{i} & 0 & 1 & -1 \\
+  \hline
+  \P(Y=y_{i}) & 0.3 & 0.2 & 0.5 \\
+\end{array}$ \\
+а) Найдите функцию $g(t)=\E(t^{X})$ и постройте ее график. \\
+б) Чему равно $g(1)$? \\
+в) Верно ли, что $g(0)=\P(X=0)$? \\
+г) Верно ли, что $g(1)=\P(X=1)$? \\
+д) Найдите $g'(1)$ и $\E(X)$ \\
+е) Найдите $g''(1)$ и $\E(X(X-1))$ \\
+ж) Выразите $\Var(X)$ через $g'(1)$ и $g''(1)$ }
+\solution{}
+
+
+\problem{
+Пусть $S_{n}$ - симметричное случайное блуждание. \\
+a) Найдите производящую функцию для $S_{n}$ \\
+б) Найдите $\E(S_{n}^{4})$ }
+\solution{}
+
+\problem{
+Пусть $X$ и $Y$ независимы и их сумма нормальна. \\
+Верно ли, что $X$ и $Y$ нормальны? }
+\solution{ берем любые две характеристические функции, чтобы получалось в итоге нормальное распределение. }
+
+\problem{
+Пусть $g(t)$ - производящая функция целочисленной неотрицательной случайной величины $X$. Известно, что $g(0)=0$ и $g(\frac{1}{3})=\frac{1}{3}$. Что можно сказать о законе распределения $X$? }
+\solution{
+Во-первых, $p_{0}=0$ \\
+Во-вторых, $g(\frac{1}{3})=p_{1}\frac{1}{3}+\sum_{k=2}^{\infty}p_{k}\left(\frac{1}{3}\right)^{k}\le p_{1}\frac{1}{3}+\sum_{k=2}^{\infty}(1-p_{1})\left(\frac{1}{3}\right)^{k}=p_{1}\frac{1}{3}+(1-p_{1})\frac{1}{6}=\frac{1+p_{1}}{6}$ \\
+Единственно возможный вариант это $p_{1}=1$. \\
+Т.е. $X$ - это константа единица. }
+
+
+\problem{Вася хватается за точку $t$ на отрезке $[0;1]$. Затем на отрезке делается $n$ равномерно выбираемых случайных разрезов.
+Васе достается тот кусок, за который он держится. Какова средняя длина куска, достающегося Васе?}
+\solution{
+Если не считать Васю, то $n$ случайных точек разрезают отрезок на куски со средней длиной $\frac{1}{n+1}$.
+Слева от Васи оказывается $L+1$ кусок, где $L$ - число разрезов, попавших слева от Васи. Значит, средняя длина от Васи до ближайшей точки налево равна
+$\E(\frac{t}{L+1})$, где $L$ - $Bin(n,t)$. Аналогично, от Васи до ближайшего разреза справа - $\E(\frac{t}{R+1})$, где $R$ - $Bin(n,1-t)$.
+
+Пусть $L$ - $Bin(n,t)$. Считаем $\E(\frac{1}{L+1})$. Для начала находим $\E(x^{L})=(tx+1-t)^{n}$.
+Затем замечаем, что $\frac{1}{L+1}=\int_{0}^{1}x^{L}$. Значит $\E(\frac{1}{L+1})=\int_{0}^{1}\E(x^{L})=...=\frac{1-(1-t)^{n+1}}{t(n+1)}$.
+Получаем ответ: $\E(\frac{t}{L+1})+\E(\frac{t}{R+1})=\frac{2-(1-t)^{n+1}-t^{n+1}}{n+1}$.
+Чтобы кусок получался длиннее лучше хвататься по центру!}
+
+
+
+
+\section{8. Условное ожидание}
+
+\problem{ Borel-Kolmogorov paradox \\
+По статье из Wikipedia \\
+Пусть совместная функция плотности $X$ и $Y$ имеет вид: \\
+$p_{X,Y}(x,y)=\left\{
+\begin{array}{ll}
+  1, & 0<y<1, -y<x<1-y \\
+  0, & otherwise \\
+\end{array}
+\right.$ \\
+Пусть $U=\frac{X}{Y}+1$. Найдите: \\
+а) $p_{Y|X}(y|x)$ \\
+б) $p_{U,Y}(u,v)$ и $p_{Y|U}(y,u)$ \\
+в) Верно ли, что $X=0 \Leftrightarrow U=1$? \\
+г) Верно ли, что $p_{Y|X}(t|0)=p_{Y|U}(t,1)$? \\
+д) Мораль? }
+\solution{}
+
+
+\problem{
+Пусть $X$ - равномерна на отрезке $[0;1]$. В шляпе лежат две свернутые бумажки. На одной бумажке написано $X$, на другой $X^{2}$. Вы тяните одну бумажку наугад. Пусть $Z$ - число, написанное на вытянутой Вами бумажке, а $W$ - число на другой бумажке. Увидев число Вы решаете, оставить себе эту бумажку, или отказаться от этой и забрать оставшуюся. Ваш выигрыш - число на оставшейся у Вас бумажке. \\
+а) Найдите $\E(W|Z)$ \\
+б) Максимально подробно (кубическое уравнение там будет суровое, не решайте его) опишите стратегию максимизирующую Ваш выигрыш 
+в) Как изменится результат, если на одной бумажке написано значение $ X $, а на второй --- значение случайной величины имеющей такое же распределение, как и $ X^{2} $, но независимой от $ X $?
+
+}
+\solution{
+$\E(W|Z)=\frac{2Z^{2}+1}{2+\frac{1}{\sqrt{Z}}}$ \\
+Будет пороговое $b\approx 0.32$ (кубическое уравнение с плохими корнями). Если $Z<b$, то брать текущую, если $Z>b$, то менять выбор. \\
+Source: aops, t=173650 }
+
+
+\problem{
+Пусть $X$ и $Y$ независимы и экспоненциально распределены с параметром $\lambda$. \\
+Найдите $\E(X|X+Y)$, $\E(X+Y|X-Y)$, $\E(X|X-Y)$, $\E(X||X-Y|)$. }
+\solution{
+ $\E(X+Y|X-Y)=|X-Y|+\frac{1}{\lambda}$ }
+
+\problem{
+Пусть $X\sim U[0;100]$, $Y\sim U[-1;1]$ и независимы. Найдите $\E(X|X+Y)$. }
+\solution{}
+
+
+\problem{
+Внутри круга радиуса 1 равномерно выбирается точка. Пусть $X$ и $Y$ - ее абсцисса и ордината. Найдите совместную функцию плотности $p(x,y)$, частную функцию плотности $p(x)$, условную функцию плотности $p(x|y)$, $\E(X|Y)$, $\E(X^{2}|Y)$, $Cov(X,Y)$. \\
+Являются ли $X$ и $Y$ независимыми? }
+\solution{}
+
+\problem{
+Suppose (X,Y) is a random vector with a distribution given by $\P(X=i \cap Y=j)=1/10$  for $1\le i\le j\le 4$. \\
+Find $\E(Y|X)$ }
+\solution{}
+
+
+\problem{
+Пусть $X\sim U[0;1]$, $Y$ равновероятно равно 0 и 1, $X$ и $Y$ независимы, $Z=X^{Y}$.
+Найдите $\E(Z|Y)$, $\Var(Z|Y)$, $\E(Z|X)$, $\Var(Z|X)$ }
+\solution{}
+
+
+\problem{ Правильный кубик подбрасывается один раз. $X$ - число очков, выпавшее на кубике. $Y$ - индикатор того, выпала ли четная грань. $Z$ - индикатор того, выпало ли число больше 2-х. \\
+Найдите закон распределения (проще говоря, заполните табличку) для случайных величин $\E(XY|XZ)$, $\E(Z|X)$, $\E(X|Z)$ \\
+Табличка для заполнения: \\
+$\begin{array}{|c|c|c|c|c|c|c|} 
+\hline
+\Omega & w_{1} & w_{2} & w_{3} & w_{4} & w_{5} & w_{6} \\
+\hline
+\E(XY|XZ) & & & & & & \\
+\hline
+\E(Z|X) & & & & & & \\
+\hline
+\E(X|Z) & & & & & & \\
+\hline
+\end{array}$}
+\solution{}
+
+
+
+\problem{
+Докажите, что $|EX|\le E|\E(X|\mathcal{H})|\le E|X|$ }
+\solution{}
+
+\problem{
+Пусть $A$ - событие, и $X\in L^{1}$. Как связаны $\E(X|A)$,
+$\E(X|A^{c})$ и $\E(X|1_{A})$? }
+\solution{}
+
+\problem{
+Пусть $X$ и $Y$ независимы и одинаково распределены, $Z=X+Y$. Найдите $p_{X|Z}(x|z)$, $\E(X|Z)$, $\Var(X|Z)$ для случаев: \\
+а) $X$ - эскпоненциально распределено с $\lambda$ \\
+б) $X$ - равномерно распределено на $[0;1]$}
+\solution{}
+
+\problem{
+Пусть $X$ имеет экспоненциальное распределение с параметром $\lambda$ \\
+Найдите $\E(X|X^{2})$ }
+\solution{}
+
+
+\problem{
+Два игрока одновременно выбирают действительные числа  $x_{1} $  и
+$x_{2} $, соответственно. Платежные функции имеют вид
+ $\left(\begin{array}{l} {u_{1} } \\
+ {u_{2} } \end{array}\right)=
+ \left(\begin{array}{l} {-x_{1}^{2} +2x_{2} x_{1} +\theta _{1} x_{1} } \\
+ {-x_{2}^{2} +4x_{1} x_{2} +2\theta _{2} x_{2} } \end{array}\right)$ ,
+ где  $\theta _{1} \sim U\left[0;2\right]$ ,  $\theta _{2} \sim U\left[1;2\right]$
+Значение  $\theta _{1} $  известно первому игроку, а значение
+$\theta _{2} $  - второму. Найдите равновесие по Нэшу в чистых
+стратегиях; }
+\solution{}
+
+\problem{ Пусть $X$ и $Y$ - интегрируемые случайные величины, такие что
+$\E(X|Y)=Y$ и $\E(Y|X)=X$. Верно ли, что $X=Y$ (as)? }
+\solution{Да, для $X$ и $Y$ из $L^2$ доказательство простое: $\E(X^2)=\E(Y^2)=\E(XY)$ и $\E((X-Y)^2)=0$. В общем случае нужно спускаться до событий и определения (?). 
+\url{http://math.stackexchange.com/questions/34101/}
+}
+
+\problem{
+Пусть $X$ и $Y$ - независимые случайные величины, равные 1 с
+вероятностью $p\in(0;1)$ или 0. Пусть $Z=1_{X+Y=0}$. Найдите
+$\E(X|Z)$. }
+\solution{}
+
+
+\problem{ $[$важно!$]$ \\
+ Пусть $X\in L^{1}$, $Y\in L^{1}$ и $\E(X)=\E(Y)$.
+Рассмотрим все множества $A$, для которых $\E(X 1_{A})=\E(Y 1_{A})$.
+Верно ли, что
+они образуют $\sigma$-алгебру? \\
+Почему для нахождения $\E(X|Y)$ достаточно проверять СЕ2
+множествами вида $A=1_{Y\le t}$? }
+\solution{}
+
+\problem{
+Пусть $f:\mathbb{R}\rightarrow [0;1]$ и $Y\sim
+U[0;1]$. Найдите $\P(Y\le f(X)|X)$ }
+\solution{}
+
+\problem{ Pythagoras is back! \\
+a) Назовем условной дисперсией величину
+$\Var(X|\mathcal{H})=\E(X^{2}|\mathcal{H})-\E(X|\mathcal{H})^{2}$ \\
+Докажите, что
+$\Var(X)=\E(\Var(X|\mathcal{H}))+\Var(\E(X|\mathcal{H}))$ \\
+b) Пусть $S$ - сумма случайного количества слагаемых, т.е.
+$S=\sum_{i=1}^{N}X_{i}$, где $N$ и $X_{i}$ независимы, $X_{i}$ - iid \\
+Докажите, что $\E(S)=\E(N)\E(X_{i})$ и
+$\Var(S)=\E(N)\Var(X_{i})+[\E(X_{i})]^{2}\Var(N)$ \\
+Комментарий: чтобы прочувствовать последнюю формулу, представьте
+во что она превращается, если $X_{i}$ или $N$ - константа. }
+\solution{}
+
+
+\problem{
+Пусть $\mathcal{H}=\{\emptyset,\Omega,A,A^{c}\}$ и $0<\P(A)<1$. Что
+представляет собой $\P(A|\mathcal{H})$ и $\P(B|\mathcal{H})$? }
+\solution{}
+
+\problem{
+Пусть $\Omega=\{a,b,c\}$. Приведите пример в котором
+$\E(\E(X|\mathcal{H}_{1})|\mathcal{H}_{2})\neq
+\E(\E(X|\mathcal{H}_{2})|\mathcal{H}_{1})$. }
+\solution{}
+
+\problem{
+Пусть $\mathcal{H}_{1} \subseteq \mathcal{H}_{2}$. Докажите, что
+условие $\E(X|\mathcal{H}_{1})=\E(X|\mathcal{H}_{2})$ равносильно
+условию $\E(X|\mathcal{H}_{2})\in \mathcal{H}_{1}$. }
+\solution{}
+
+\problem{
+Докажите условную :) формулу условной вероятности: \\
+Если $A\in \mathcal{H}$ и $\P(B)>0$, то
+$\P(A|B)=\frac{\E(1_{A}\P(B|\mathcal{H}))}{\E(\P(B|\mathcal{H}))}$. }
+\solution{}
+
+\problem{
+Пусть $Z=\E(X|Y)$. Верно ли, что $\E(X|Y^{2})=\E(Z|Y^{2})$? }
+\solution{}
+
+
+\problem{
+Пусть $A$ - событие (не обязательно из $\mathcal{H}$). Введем
+обозначение $\P(A|\mathcal{H})=\E(1_A|\mathcal{H})$ по аналогии
+c безусловным $\P(A)=\E(1_{A})$. \\
+a) Найдите $\P(A|\mathcal{H})$ для случая $A\in\mathcal{H}$ \\
+б) Пусть $A$ и $B$ независимы, $\P(A)=p$, $\P(B)=q$ и $Z=1_{A\cup B}$. Найдите $\P(A|Z)$. \\
+в) Пусть $X$ и $Y$ - результаты двух подбрасываний правильного
+кубика. Найдите $\P(X>Y|Y)$ }
+\solution{}
+
+\problem{
+Пусть $f_{X,Y}(x,y)=\left\{
+\begin{array}{cc}
+  x+y & x,y \in [0;1] \\
+  0 & otherwise \\
+\end{array}
+\right.$. \\
+a) Найдите $\E(X|Y)$ \\
+б) Найдите $\hat{X}=aY+b$ так, чтобы $E[(X-\hat{X})^{2}]$ была
+минимальной. }
+\solution{}
+
+
+\problem{
+С.в. $U\sim U[0;1]$, $X$ имеет Rayleigh density: \\
+$f_{X}(x)=\left\{
+\begin{array}{cc}
+  \frac{x}{\sigma^{2}}e^{-x^{2}/2\sigma^{2}} & x\ge 0 \\
+  0 & otherwise \\
+\end{array}
+\right.$. \\
+a) Найдите $\E(X|Y)$ \\
+б) Найдите $\hat{X}=aY+b$ так, чтобы $E[(X-\hat{X})^{2}]$ была
+минимальной. }
+\solution{}
+
+
+\problem{
+Пусть $X$ и $Y$ имеют совместное нормальное распределение.
+Известны математические ожидания и ковариационная матрица. \\
+а) Найдите $\hat{X}=aY+b$ так, чтобы $E[(X-\hat{X})^{2}]$ была
+минимальной. \\
+б) Докажите, что $\E(X|Y)=\hat{X}$ }
+\solution{
+
+b) $Cov(X-\hat{X},Y)=0 \Rightarrow $ независимость $X-\hat{X}$ и
+$Y$ \\
+$A\in\sigma{Y} \Rightarrow
+E[(X-\hat{X})1_{A}]=\E(X-\hat{X})\E(1_{A})=0$ }
+
+
+\problem{
+Пусть $X\in L^{2}$ и $Y\in L^{2}$, $X$ и $Y$ iid. \\
+Найдите $\E(X|X+Y)$, $\E(X-Y|X+Y)$, $\E(X^{2}-Y^{2}|X+Y)$ }
+\solution{
+$\E(X|X+Y)=0.5(X+Y)$, $\E(X-Y|X+Y)=0$, $\E(X^{2}-Y^{2}|X+Y)=0$ }
+
+\problem{
+Пусть $X_{i}$ - iid, $U[0;1]$. \\
+Найдите $\E(X_{1}|\min\{X_{1},...,X_{n}\})$ и
+$\E(X_{1}|\max\{X_{1},...,X_{n}\})$ }
+\solution{
+$p(x_{1}|\min)=\frac{n-1}{n(1-\min)}$ при $x_{1}>\min$ \\
+$\E(X_{1}|\min\{X_{1},...,X_{n}\})=\frac{(1+\min)(n-1)}{2n}$ }
+
+\problem{
+Пусть $X\sim N(0;1)$. Найдите $\E(X|X^{2})$ }
+\solution{0}
+
+\problem{
+Пусть $X$ и $Y$ имеют функцию плотости
+$p(x,y)=\frac{1}{2\pi}exp\left\{-\frac{1}{2}\left(x^{2}+y^{2}\right)\right\}$.\\
+Пусть $Z=\sqrt{X+Y}$. Найдите $\E(X|Z)$. }
+\solution{
+ consider $F$ such that $X=Zcos(F)$, $Y=Zsin(F)$ }
+
+
+\problem{
+Автобусы приходят на остановку через случайные промежутки времени (Пуассоновский поток с параметром $\lambda$). В первый день Вася приходит на остановку и замеряет время до первого автобуса. Пусть это время $X$. На следующий день Вася приходит на остановку и считает, сколько автобусов придет в течении времени $X$. Он получает количество автобусов $N$. \\
+Найдите $\E(N)$ и $\Var(N)$ }
+\solution{}
+
+
+\problem{
+Let X1...Xn be indepdently and identically distribuetd random variables, strictly positive. \\
+Show that $\E(S_{m}|S_{n})= m/n$ for $m\le n$ , where $S_{m} = X_{1} + X_{2} + ... + X_{m}$ }
+\solution{}
+
+
+
+\problem{
+Монетка выпадает орлом с вероятностью $p$. Эксперимент состоит из двух этапов. На первом этапе монетку подкидывают 100 раз и записывают число орлов. На втором этапе монетку подбрасывают до тех пор пока не выпадет столько орлов, сколько выпало на первом этапе. Обозначим число подбрасываний монетки на втором этапе буквой $X$. \\
+Найдите $\E(X)$, $\Var(X)$ }
+\solution{}
+
+\problem{
+Рассмотрим вероятностное пространство
+$(\Omega,\mathcal{B}[0;1],\lambda)$, где $\lambda$ - классическая
+мера Лебега.\\
+На этом пространстве введем величины: \\
+$X(\omega)=1_{\omega\in[0;0.5)}$,
+$Y(\omega)=1_{\omega\in[0;0.75)}$,
+$Z(\omega)=1_{\omega\in[0.25;0.75)}$. \\
+a) Верно ли, что $X$ и $Z$ независимы? \\
+б) Найдите $\E(X|Y)$ и $\E(X|Y,Z)$ }
+\solution{}
+
+\problem{
+Пусть $X$ и $Z$ независимы и стандартно нормально распределены;
+$Y=\frac{Z}{1+X^{2}}$. \\
+a) Верно ли, что $X$ и $Y$ независимы? \\
+б) Верно ли, что $\E(Y|X)=\E(Y)$? }
+\solution{}
+
+\problem{ Let $X$ be an exponential random variable, so that $\P[X > t] = e^{-\lambda t}$ 
+	for $t > 0$, with $\lambda > 0$. 	Let $T$ be a fixed value, and then compute 
+	$E[ X | \max(X,T) ]$ and $E[X | \min(X,T)]$.  }
+\solution{}
+
+\problem{ Пусть совместное распределение $X$ и $Y$ задано таблицей: \\
+\begin{tabular}{|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+   & $X=-1$ & $X=1$ \\
+  \hline
+  $Y=-1$ & 1/8 & 4/8 \\
+  $Y=2$ & 2/8 & 1/8 \\
+  \hline
+\end{tabular} \\
+а) Найдите $\E(X|Y)$, представьте ответ в виде $\E(X|Y)=a+bY$. \\
+б) Убедитесь, что $\E(\E(X|Y))=\E(X)$ \\
+в) Найдите $\E(XY|Y)$ и представьте ответ в виде $f(Y)$ }
+\solution{}
+
+\problem{
+а) Что больше $\Var(X)$ или $\Var(\E(X|\mathcal{H}))$? \\
+б) Всегда ли $\Var(X)$ больше $\Var(X|\mathcal{H})$? }
+\solution{
+ а) $\Var(X)$ больше (можно разложить $\Var(X)$)}
+
+\problem{
+Пусть $X$ равномерно на $[10;20]$, а $Y$ распределено экспоненциально с параметром $\lambda=X$. \\
+a) Найдите $\E(Y)$, $\Var(Y)$ \\
+б) Сравните с $\E(Y)$ и $\Var(Y)$ для экспоненциального распределения с $\lambda=15$ }
+\solution{}
+
+\problem{
+Пусть клиенты приходят пуассоновским потоком с интенсивностью $\lambda_{in}$. А время обслуживания одного клиента эскпоненциально с параметром $\lambda_{service}$. \\
+Пусть $X$ - число клиентов, пришедших за время обслуживания Васи Сидорова. \\
+Как распределено $X$? }
+\solution{
+$\P(X=k)=\E(1_{X=k})=\E(\E(1_{X=k}|T))=\int_{0}^{\infty}e^{-lambda_{in}t}\frac{(\lambda_{in}t)^{k}}{k!}\lambda_{service}e^{-\lambda_{service}t}dt=...$ \\
+Ответ: геометрически, $\alpha=\frac{\lambda_{service}}{\lambda_{in}}$, $\P(X=k)=\frac{\alpha}{(1+\alpha)^{k+1}}$ }
+
+
+\problem{
+Пусть $X$ распределено экспоненциально с параметром $\lambda$, $Y$ - распределено экспоненциально с параметром $X$. Найдите $\E(X)$, $\E(Y)$, $\E(Y|X)$, $\E(X|Y)$ }
+\solution{ $p(y)=\frac{\lambda}{(\lambda+y)^{2}}$, $\E(Y|X)=1/X$, $\E(X|Y)=\frac{2}{\lambda+Y}$ }
+
+\problem{
+Верно ли, что $Cov(X,\E(Y|X))=Cov(X,Y)$? }
+\solution{}
+
+\problem{
+Приведите пример: \\
+а) $X$ и $Y$ зависимы, но $\E(XY)=\E(X)\E(Y)$ \\
+б) $X$ и $Y$ зависимы, но $\E(Y|X)=\E(Y)$ (as) \\
+в) $\E(XY)=\E(X)\E(Y)$, но $\E(Y|X)\neq \E(Y)$ (as) }
+\solution{}
+
+\problem{
+Докажите, что если $\E(Y|X)=\E(Y)$ (as), то $\E(XY)=\E(X)\E(Y)$ }
+\solution{}
+
+
+\problem{
+Известно, что $\E(X|Y)=Y$, $\Var(X|Y)=1$, $\E(Y)=3$, $\Var(Y)=10$. \\
+Найдите: $\E(X)$, $\E(X^{2}|Y)$, $\Var(X)$, $Cov(X,Y)$ }
+\solution{}
+
+\problem{
+Find conditional expectation $\E(X|Y)$ intuitively (without formal proof)  \\
+$Z\sim U[0;1]$, $A=\{Z>0.5\}$, $X=2Z^{2}$, $Y=2Z-1_{A}$.}
+\solution{}
+
+
+\problem{
+We toss a fair coin 3 times. Let $X$ be the total number of heads and $Y$ - the total number of tails. $A$ - is the event that there is at least one head and at least one tail. \\
+a) Find explicitely $\sigma(A)$, $\sigma(X\cdot Y)$ \\
+b) How many elements there in $\sigma(X)$? \\
+с) Find explicitely $\E(X|\sigma(Y))$, $\E(X|\sigma(XY))$, $\E(X|\sigma(A))$ \\
+d) Find explicitely $\E(Y|\sigma(XY))$, $\E(1_{A}|\sigma(XY))$, $\E(1_{A}|\sigma(A))$ }
+\solution{}
+
+
+\problem{Верны ли следующие утверждения?
+\begin{enumerate}
+  \item Если с.в. $X$ и $Y$ независимы, то $\E(Y|X)=\E(Y)$.
+  \item Если $\E(Y|X)=\E(Y)$, то с.в. $X$ и $Y$ независимы.
+  \item Если с.в. $X$ и $Y$ некоррелированы, то $\E(Y|X)=\E(Y)$.
+  \item Если $\E(Y|X)=\E(Y)$, то с.в. $X$ и $Y$ некоррелированы.
+\end{enumerate}
+
+Источник: Алексей Суздальцев}
+\solution{ первое и четвертое верны, а второе и третье --- нет.}
+
+\problem{ Вася случайно выбирает между 0 и 1 число $X_1$, затем случайно выбирает между 0 и $X_1$ число $X_2$, затем $X_3$ между 0 и $X_{2}$, и так до бесконечности.
+\begin{enumerate}
+  \item Найдите $\E(X_n)$, $\Var(X_n)$;
+  \item Найдите функцию плотности распределения $X_n$;
+  \item Найдите $\E(X_2|X_1,X_3)$;
+\item К какой случайной величине стремится $X_n$ и в каких смыслах?
+\end{enumerate}
+
+Источник: Алексей Суздальцев}
+\solution{
+$\E(X_n)=\frac{1}{2^n}$; $V(X_n)=\frac{1}{3^n}-\frac{1}{4^n}$. $f_{X_n}(x)=\frac{(-\ln{x})^{n-1}}{(n-1)!}\cdot 1_{[0;1]}.$\\
+$\E(X_2|X_1,X_3)=\frac{X_1-X_3}{\ln{X_1}-\ln{X_3}}.$\\
+При любом $\omega$ последовательность $X_n(\omega)$ монотонно невозрастающая и ограниченная (нулем). Значит, она сходится. При этом
+ $$\P(\forall i \mbox{ } X_i>\epsilon)<\P(X_k>\epsilon)<\frac{\E(X_k)}{\epsilon}=\frac{1}{2^k\epsilon}$$ для любого $k$. Значит, $\P(\forall i \mbox{ }X_i>\epsilon)$ меньше любого положительного числа, то есть $\P(\forall i\mbox{ }X_i>\epsilon)=0$. Значит, с вероятностью 1 $X_n(\omega)$ сходится именно к нулю, то есть $X_n\to 0$ почти наверное. Отсюда следуют сходимости по вероятности и по распределению. Поскольку $\lim\limits_{n\to \infty}\E(X_n)=0$, а $0<\E(X_n^p)<\E(X_n)$ для $\forall p>1$, то имеет место также и сходимость в $L^p$. Итак, данная последовательность стремится к нулю во всех разумных смыслах.}
+
+\problem{
+Маша собрала $n$ грибов в лесу наугад. Рыжики попадаются с вероятностью $r$, лисички - с вероятностью $l$, где $r+l<1$. Пусть $R$ - количество собранных рыжиков, $L$ - лисичек. Найдите:
+\begin{enumerate}
+\item $\E(R|L)$
+\item $\Var(R|L)$
+\item $\P(\E(R|L)=0)$
+\end{enumerate}}
+\solution{$\E(R|L)=(n-L)\frac{r}{1-l}$, $\Var(R|L)=(n-L)\frac{r}{1-l}\frac{1-r-l}{1-l}$, $\P(\E(R|L)=0)=l^{n}$}
+
+
+\problem{ Пусть $X$ и $Y$ - независимые случайные величины, $X$ - $Bin(n_{1},p)$, $Y$ - $Bin(n_{2},p)$. Найдите $\E(X|X+Y)$.}
+\solution{$\E(X|X+Y)=\frac{n_{1}}{n_{1}+n_{2}}(X+Y)$}
+
+\problem{ Пусть $X$ и $Y$ - независимые пуассоновские случайные величины с параметрами $\lambda_{1}$ и $\lambda_{2}$. Найдите $\E(X|X+Y)$.}
+\solution{$\E(X|X+Y)=\frac{\lambda_{1}}{\lambda_{1}+\lambda_{2}}(X+Y)$}
+
+\problem{Вася, Петя и Коля играют в карточного <<дурака>> втроём. Вася проигрывает с вероятностью $p_1$, Петя --- с вероятностью $p_2$, Коля --- с вероятностью $p_3$. Естественно, $p_1+p_2+p_3=1$. Всего они сыграли $n$ партий. Обозначим количества проигранных ими партий $X_1$, $X_2$ и $X_3$, соответственно. Найдите $\E(X_1|X_1+X_2)$. Может получится и $\Var(X_1|X_1+X_2)$?}
+\solution{Раскладываем $X_1$ в сумму $n$ индикаторов, получаем $\E(X_1|X_1+X_2)=\ldots=\frac{p_1}{p_1+p_2}(X_1+X_2)$}
+
+
+\problem{Пусть $X_{1}\sim U[0;1]$, $X_{2}\sim U[-1;1]$, $X_{3}\sim U[-1;2]$. И $Y_{i}=X_{i}^{2}$. Найдите: а) $ \E(X_{1}|Y_{1}) $, $ \E(X_{2}|Y_{2}) $ и $ \E(X_{3}|Y_{3}) $.}
+\solution{ $Y_{1}$, $0$, $Y_{3}1_{Y_{3}>1}$ }
+
+\problem{
+Let $ X $ be uniform on $[0;1]$. We define $ A:=\{X>0.1\} $ and $ Y:=X^{2} $. Find $ \E(Y|\sigma(1_{A})) $, $\E(1_{A}|\sigma(Y))$ and $\E(1_{A}+Y|Y-1_{A})$.}
+\solution{}
+
+\problem{Время между появлением автобусов имеет экспоненциальное распределение с $ \lambda=1 $ (функция плотности $ p(t)=exp(-t) $ при $ t>0 $). Вася приходит на остановку и ждет до первого автобуса. Допустим он ждал $ T $ минут. На следующий день он ждет автобуса в течение времени $ T $. Какова вероятность того, что за это время придет автобус?}
+\solution{$ 1/2 $}
+
+
+\problem{Пусть $ X_{1} $, ..., $ X_{100} $ независимы и равномерны на $ [0;1] $. Пусть $ L=\max\{X_{1},X_{2},\ldots, X_{80}\} $ а $ R=\max\{X_{81},X_{82},\ldots,X_{100}\} $ и $ M=\max\{X_{1},\ldots,X_{100}\} $ Найдите $ \P(L>R|L)$ и $ \P(L>R|R) $ и $ \P(L>R|M)$, $\P(L>R|L,M) $}
+\solution{$ \P(L>R|L)=L^{20}$,  $ \P(L>R|R)=1-R^{80} $, $ \P(L>R|M)=\frac{80}{100}$, $\P(L>R|L,M)=1-1_{L>M} $  }
+
+\problem{Пусть $ X_{1} $, ..., $ X_{n} $ - независимы и равномерны на $ [0;1] $, и $ M=max\{X_{1},\ldots,X_{n}\} $. Найдите $\E(M^{k})$ в уме без вычислений. Подсказка: $ M=\P(M>X_{n+1}|M) $
+}
+\solution{Используя подсказку получаем: $ M^{k}=\P(M>X_{n+1} \cap M>X_{n+2} \cap \ldots \cap M>X_{n+k}|M) $. Значит $ \E(M^{k})=\P($максимум из $ (n+k) $ равномерных величин лежит среди $ n $ первых$)=\frac{n}{n+k} $}
+
+\problem{Известно, что $ Y $ и $ X=\E(Y|\mathcal{H}) $ одинаково распределены. Верно ли, что $ Y=X $ почти наверное? Hint: start by comparing sets $ Y>0 $ and $ X>0 $}
+\solution{Во-первых, интуитивно: наше условное мат. ожидание не сделало $ Y $ более <<грубым>>, значит не должно было совсем изменить, т.е. ответ <<верно>>. Во-вторых, формально. Т.к. $ X $ и $ Y $ одинаково распределены:
+
+\[ \E(1_{Y>0}Y)=\E(\max\{Y,0\})=\E(\max\{X,0\})=\E(1_{X>0}X) \]
+
+По определению условного мат. ожидания:
+
+\[ \E(1_{X>0}X)=\E(1_{X>0}Y)=\E(1_{X>0\cap Y>0} Y)+\E(1_{X>0\backslash Y>0} Y)\leq \E(1_{ Y>0} Y)+\E(1_{X>0\backslash Y>0} Y)\]
+
+Получаем, что $ \E(1_{Y>0}Y) \leq \E(1_{ Y>0} Y)+\E(1_{X>0\backslash Y>0} Y) $. Это возможно только если $ \E(1_{X>0\backslash Y>0} Y)\geq 0 $. Но $ 1_{X>0\backslash Y>0} Y \leq 0$. Значит $ \P(X>0 \backslash Y>0)=0 $.
+
+Рассмотрев дополнительно $ X<0 $ и $ Y<0 $ мы получаем, что $ \P(X>0 \Delta Y>0)=0 $.
+
+Сравнив аналогичным образом $ (X-c) $ и $ (Y-c) $ мы получаем, что $ \P(X>c \Delta Y>c)=0 $.
+
+}
+
+\problem{Верно ли, что $\E(X|Y^{2})=\E(X|\,|Y|)$?}
+\solution{Да, т.к. $\sigma(Y^{2})=\sigma(|Y|)$}
+
+\problem{Величины $X_1$, $X_2$, ... независимы и одинаково распределены. Мы складываем случайное количество $N$ слагаемых. Обозначим сумму буквой $S=\sum_{i=1}^{N}X_i$. Найдите $\E(S)$, $\Var(S)$ и $Cov(S,N)$}
+\solution{ $Cov(S,N)=\E(SN)-\E(S)\E(N)=\E(\E(SN|N))-\E(\E(S|N))\E(N)=...$ }
+
+
+\problem{Неправильный кубик выпадает с вероятностью $0{,}5$ шестеркой вверх. Остальные пять граней выпадают равновероятно. Случайная величина $X$ -- остаток от деления номера грани на два, $Y$ -- остаток от деления номера грани на три. Найдите
+\begin{enumerate}
+\item Закон распределения $\E(X\mid Y)$, $\E(Y\mid X)$
+\item Выразите $\E(Y\mid X)$ через $X$, а $\E(X\mid Y)$ через $Y$
+\item Найдите $Cov(\E(Y\mid X),\E(X\mid Y))$, $Cov(\E(Y\mid X),X)$, $Cov(Y,X)$
+\end{enumerate}}
+\solution{}
+
+\problem{Случайная величина $X$ принимает значения в диапазоне $[0;1]$. Всегда ли существует случайная величина $Y$ принимающая всего два значения, такая что $E(Y|X)=X$? Такая что $E(X|Y)=Y$? }
+\solution{а) рассмотрите случай $Y$ принимающей два значения, 0 и 1 б)}
+
+
+\problem{Цена литра молока, $X$, распределена равномерно на отрезке $[1;2]$. Количество молока, которое дает корова Мурка, $Y$, распределено экспоненциально с $\lambda=1$. Надои не зависят от цены. Величина $Z$ --- выручка кота Матроскина от продажи всего объема молока.
+
+Найдите
+\begin{enumerate}
+\item $E(Z|X)$, $\Var(Z|X)$, корреляцию $Z$ и $X$
+\item Закон распределения $E(Z|X)$
+\item Функцию плотности величины $\Var(Z|X)$
+\end{enumerate}}
+\solution{ $E(X)=1$, $\Var(X)=1$, $E(X^2)=\Var(X)+E^2(X)=2$; 
+
+$E(Y)=3/2$, $\Var(Y)=1/12$, $E(Y^2)=\Var(Y)+E^2(Y)=7/3$;
+
+\begin{equation}
+E(Z|X)=E(XY|X)=XE(Y|X)=XE(Y)=1.5X
+\end{equation}
+
+\begin{equation}
+\Var(Z|X)=\Var(XY|X)=X^2\Var(Y|X)=X^2\Var(Y)=\frac{X^2}{12}
+\end{equation}
+
+\begin{multline}
+Cov(X,Z)=Cov(X,XY)=E(X^2Y)-E(X)E(XY)=\\
+=E(X^2)E(Y)-E(X)E(X)E(Y)=E(Y)\Var(X)=\frac{3}{2}
+\end{multline}
+
+\begin{equation}
+\Var(Z)=E(X^2Y^2)-E(X)^2E(Y)^2=2\cdot \frac{7}{3}-1^2\left(\frac{3}{2}\right)^2=\frac{29}{12}
+\end{equation}
+
+\begin{equation}
+Corr(X,Z)=\frac{3}{2}\cdot \frac{1}{\sqrt{1\cdot \frac{29}{12}}}=\frac{3\sqrt{3}}{\sqrt{29}}
+\end{equation}
+
+Величина $W=E(Z|X)$ равномерна на $[1.5;3]$
+
+Заметим, что $V=X^{2}/12$ и $X=2\sqrt{3}\sqrt{V}$.
+\begin{equation}
+\frac{dx}{dv}=\frac{\sqrt{3}}{\sqrt{v}}
+\end{equation}
+
+Функция плотности
+\begin{equation}
+p(v)=p_{X}\left(2\sqrt{3v}\right)\cdot \frac{\sqrt{3}}{\sqrt{v}}=\exp\left(-2\sqrt{3v}\right)\frac{\sqrt{3}}{\sqrt{v}}
+\end{equation} }
+
+\problem{Кубик подбрасывают бесконечное количество раз. Величина $X$ --- номер подбрасывания, когда впервые выпала единица, а $Y$ --- номер подбрасывания, когда впервые выпала шестерка. Найдите $\E(Y|X)$.}
+\solution{}
+
+\problem{Верно ли что $\E(XY)=\E(\E(X\mid Z)\cdot \E(Y\mid X))$, если левая и правая части определены?}
+\solution{Нет, например, возьмем независимые одинаково распределенные $X$ и $Y$ и $Z=(X+Y)/2$.}
+
+\problem{The random variables $X_1$, $X_2$, \ldots are independent uniformly distributed on $[0;1]$. I~am summing them until the first $X_i$ greater than $0.5$ is added. After this term I stop. Let's denote by $S$ the total sum and by $N$ --- the number of terms added. Find $\E(S|N)$, $\Var(S|N)$, $\E(S)$, $\Var(S)$}
+\solution{}
+
+
+\section{9. Разложение в сумму, первый шаг, цепи Маркова}
+
+% Разложение в сумму, Первый шаг, Принцип отражения и случайное блуждание 
+% Берем из элементарного
+
+
+
+\problem{
+  Information on buy-backs is adapted from investorwords.com.
+  This problem suggests how results on biased random walks
+  can be worked into more realistic models.
+        
+  Consider a naive model for a stock that has a support level
+  of \$20/share because of a corporate buy-back program.
+  (This means the company will buy back stock if shares dip
+  below \$20 per share.   In the case of stocks, this reduces
+  the number of shares outstanding, giving each remaining
+  shareholder a larger percentage ownership of the
+  company. This is usually considered a sign that the
+  company's management is optimistic about the future and
+  believes that the current share price is
+  undervalued. Reasons for buy-backs include putting unused
+  cash to use, raising earnings per share, increasing internal
+  control of the company, and obtaining stock for employee
+  stock option plans or pension plans.)   Suppose also that the
+  stock price moves randomly with a downward bias when the
+  price is above \$20, and randomly with an upward bias when
+  the price is below \$20.  To make the problem concrete, we
+  let $Y_n$ denote the stock price at time $n$, and we express
+  our stock support hypothesis by the assumptions that
+  \begin{eqnarray*}
+   \P[ Y_{n+1} = 21 | Y_{n} = 20] &=& 9/10 \\
+   \P[ Y_{n+1} = 19 | Y_{n} = 20] &=& 1/10
+  \end{eqnarray*}
+        
+  We then reflect the downward bias at price levels above
+  \$20 by requiring that for $k > 20$:
+  \begin{eqnarray*}
+   \P[ Y_{n+1} = k+1 | Y_{n} = k ] &=& 1/3 \\
+   \P[ Y_{n+1} = k-1 | Y_{n} = k ] &=& 2/3.
+  \end{eqnarray*}
+        
+  We then reflect the upward bias at price levels below \$20
+  by requiring that for $k < 20$:
+  \begin{eqnarray*}
+   \P[ Y_{n+1} = k+1 | Y_{n} = k ] &=& 2/3 \\
+   \P[ Y_{n+1} = k-1 | Y_{n} = k ] &=& 1/3
+  \end{eqnarray*}
+
+  Using the methods of ``single-step analysis'' calculate the
+  expected time for the stock to fall from \$25 through the
+  support level all the way down to \$18.
+  (I don't believe that there is any way to solve this problem
+  using formulas.  Instead you will have to go back to basic
+  principles of single-step or first-step analysis to solve
+  the problem.)}
+\solution{
+The first thing to notice is that there is no natural upper
+boundary for this problem. In effect, the stock situation is
+like playing against an infinitely rich adversary. Therefore,
+we will set a temporary
+artificial boundary at $25+M$, where $M$ is some
+positive integer, and then at the end of the problem, we will
+let $M$ go to infinity. Let $D_z$ be the duration of the game,
+that is, the expected number of moves until the stock goes
+from price $25$ to price $18$. Second, we note that the
+conditioning by expectation, or one-step analysis, give the
+following set of equations:
+\begin{eqnarray*}
+ D_{25} &=& (1/3) D_{26} + (2/3) D_{24} + 1  \\
+ D_{24} &=& (1/3) D_{25} + (2/3) D_{23} + 1  \\
+ D_{23} &=& (1/3) D_{24} + (2/3) D_{22} + 1  \\
+ D_{22} &=& (1/3) D_{23} + (2/3) D_{21} + 1  \\
+ D_{21} &=& (1/3) D_{22} + (2/3) D_{20} + 1  \\
+ D_{20} &=& (1/10) D_{19} + (9/10) D_{21} + 1  \\
+ D_{19} &=& (2/3) D_{20} + (1/3) D_{18} + 1  \\
+ D_{18} &=& 0
+\end{eqnarray*}
+Еще одно уравнение! (Или пара)  }
+
+\problem{
+Пусть $S_{n}$ - симметричное случайное блуждание с началом в нуле
+и $\tau$ - момент первого достижения суммы в 1 рубль. Найдите
+$\E(S_{n})$, $\E(S_{n\wedge \tau})$ и $\E(S_{\tau})$. }
+\solution{}
+
+
+
+\problem{
+Допустим, что игрок играет либо до достижения некоторой суммы либо
+до полного проигрыша. Обозначим $p$ вероятность выигрыша в отдельной партии. \\
+Прокомментируйте следующее утверждение: \\
+Ставку выгодно удвоить, если $p<\frac{1}{2}$ и выгодно снизить в
+два раза, если $p>\frac{1}{2}$. }
+\solution{}
+
+\problem{
+Сколько существует маршрутов движения частицы, начинающихся в нуле
+($S_{0}=0$), заканчивающихся в нуле при $t=10$ ($S_{10}=0$) и не
+посещающих ноль между этими моментами времени? }
+\solution{}
+
+
+
+
+\problem{
+Пусть $S_{n}$ - случайное блуждание, $S_{n}-S_{n-1}=\left\{
+\begin{array}{rl}
+  1, & p \\
+  -1, & 1-p \\
+\end{array}
+\right.$. \\
+Пусть $n$ - четное число и $t\le n$. Зависит ли
+$\P(S_{t}=k|S_{n}=0)$ от $p$?}
+\solution{}
+
+
+
+\problem{ The following example is a classic in elementary probability theory called
+the \emph{Ballot Problem.}  In an election, candidate A receives $n$
+votes and candidate B receives $m$ votes, where $m > n$, so A is the
+winner.  Assuming that all orderings of vote countings are equally
+likely, prove that the probability that A is always ahead in the count of votes 
+is $(n-m)/(n+m)$ }
+\solution{}
+
+\problem{   Consider a coin-flipping game, where the probability of a head is
+  $p$ and the probability of a tail is $1-p$.  What is the probability
+  that for the first time on flip $2n$ after beginning, the total number of
+  heads is the same as the total number of tails?  Since the number of
+  heads is the same as the number of tails, the total number of coin-flips
+  is double the number of heads, hence an even number.  Note that we
+  do ask that heads be ahead of tails until flip $2n$ or that tails be
+  ahead of heads, only that they first equalize at flip $2n$
+
+  Equivalently, consider a gambler starting from an initial stake $X_0$.
+  The gambler wins a dollar when the coin flip is heads with
+  probability $p$.  The gambler loses a dollar when the coin flip is
+  tails with probability $1-p$. Let the outcome of the $i$th flip be 
+  \[
+      X = 
+      \begin{cases}
+	1  &  \text{with probability $p$} \\
+        -1 &  \text{with probability $1-p$}
+      \end{cases}
+   \]
+   Then the gambler's fortune at stage $n$ is $X_0 + \sum_{i-1}^n
+   X_i.$ Define the probability that the gambler's fortune is again $X_0$ 
+   for the first time at step $2n$?  We do not care if the gambler has been 
+   ahead or behind, only that he gambler's fortune again is his starting value 
+   at flip $2n$.}
+\solution{}
+
+%%%%%
+\problem{ In a random walk starting at the origin find the probability
+    that the point $a > 0$ will be reached before the point $-b < 0$.}
+\solution{
+Let the probability that $X_i = +1$ be $p$, that is, a step to the
+right occurs with probability $p$.
+The stated random walk problem is equivalent to the
+ruin probability for a gambler starting
+with initial fortune $b$ who succeeds by reaching increasing
+his fortune by $a$ to reach the level 
+$a + b$ before being ruined by losing $b$ reaching 0.  This is the
+complementary probability to the ruin probability and so may
+be expressed as 
+$$
+  p_b = 1 - q_b 
+      = 1 - \frac{ (q/p)^{a+b} - (q/p)^{b}}{(q/p)^{a+b} - 1}
+$$
+This can be simplified to 
+$$ 
+   \frac{ (q/p)^b - 1}{ (q/p)^{a+b} - 1}.
+$$
+Alternatively, we can view this as the ruin of the gambler's
+adversary, and using the idea in the first corollary, express
+this as:
+      $$
+( (p/q)^{a+b} - (p/q)^{a} )/( (p/q)^{a+b} - 1 ).
+      $$
+One can verify with a little algebra that these expressions
+are equivalent. }
+
+%%%%%
+\problem{ Show that in a random walk starting at the origin the
+    probability to reach  $a>0$ before returning to the origin
+    equals $p(1-q_1)$}
+\solution{
+If the walker starts at the origin and
+goes to $-1$ at the first step, then the walk must return to
+the origin again before possibly reaching $a>0$.  Hence we
+need only consider the possibility of the walk starting from
+the point $1$ at the first step, and then reaching the value
+$a>0$ before returning to the origin.  The probability of
+going to $1$ is $p$, and then from $1$ the subsequent
+independent probability of reaching $a$ before returning to
+the origin is the same as the probability of the gambler
+achieving success at $a$ before reaching the origin, which is
+$1-q_{1}$.  Therefore the joint probability of the two
+independent events
+in succession is $p(1-q_{1})$.
+Consider a special case just to check the results.  Consider $p =  1/2 = q$.  
+Then it is easy to compute that $p(1-q_1) = (1/2)(1 - (1 - 1/a)) = 1/(2a)$.  
+Now take $a = 2$, and start from the origin.  It is easy to see that the only to go from
+the origin to the point $a=2$ before returning to the origin is
+to go from $0$ to $1$, and then $1$ to $2$ in sequence.
+Anything whatsoever can then happen, so long as the walk
+ultimately returns to the origin, which it must.  So from direct
+computation, the probability of such a path is $1/4$.  The
+formula gives the probability $1/(2a) = 1/(2 \cdot 2) = 1/4$, so the
+formula agrees with direct calculation in this special case,
+and we are reassured!  }
+
+%%%%%
+\problem{  \begin{enumerate}
+    \item Draw a sample path of a random walk (with $p = 1/2 = q$) 
+      starting from the
+      origin where the walk visits the position $5$ twice before
+      returning to the origin.
+    \item Using the result from questions 2, it can be shown
+      with careful but elementary reasoning that the number of times
+      $N$ that a random
+      walk ($p = 1/2 = q$) reaches the value $a$ a total of
+      $n$ times before
+      returning to the origin is a random variable with
+      probability
+      $$
+           \P[N=0] = 1 - 1/(2a)
+      $$
+      and
+      $$
+          \P[N=n] = \left( \frac{1}{4a^2} \right) \left( 1 -
+          \frac{1}{2a} \right)^{n-1}.
+      $$  for $n \ge 1$.
+      Compute the
+      expected number of visits $E[N]$ to level $a$.
+    \item Compare the expected number of visits of a random walk
+      ($p= 1/2 = q$) to the value ``1 million'' before returning to
+      the origin and to the level $10$ before returning to the origin.
+  \end{enumerate}}
+\solution{
+for part b:
+\begin{quote}
+  If $q \ge p$, conclude from the preceding problem:  In a random
+  walk starting at the origin, the number of visits to the point
+  $a > 0$ that take place before the first return to the
+  geometric distribution with ratio $1 - q q_{a-1}$.  
+  (Explain why the condition $q \ge p$ is necessary)
+\end{quote}
+
+This problem is conceptually and computationally simpler if $p
+= q = 1/2$ so I will work only that case.   
+It is convenient to first calculate and record 
+some probabilities, then solve the problem.
+Starting from the origin, the probability to reach $a>0$ before
+returning to the origin is $p (1-q_1) = p ( 1 - (1 - 1/a)) =
+p (1/a) = 1/(2a)$.
+Starting at $a$, the probability to reach the origin before
+returning to the starting point is $q q_{a-1} = q ( 1 - (a-1)/a)
+= q (1/a) = 1/(2a)$.  This makes sense, since this situation is
+symmetric with the previous situation and so should have the
+same probability.
+The ratio for the geometric probability is supposed to be $1 -
+q q_{a-1} = 1 - q (1 - (a-1)/a) = 1 - q (1/a) = 1 - 1/(2a) =
+(2a-1)/(2a)$.    
+The probability of $0$ visits to $a$ before hitting the
+origin is the complement of the probability of one (or more)
+visits to $a$ before hitting the origin.  Since the random
+walk is recurrent (that is, will hit every point eventually
+from any starting point, this is where the necessity of $p = q
+=1/2$ comes in!) the probability of hitting the origin again
+from $a$ (perhaps after more visits to $a$) is certain, so the
+probability of one (or more) visits to $a$ before hitting the
+origin is the same as the probability of a first visit to $a$
+before returning to the origin,
+namely $p (1-q_1) = 1/(2 a)$.  Then the desired probability of $0$
+visits is $(1 - 1/(2a)) = (2a-1)/(2*a)$.
+The probability of exactly one visit to $a$ before returning to
+the origin is the
+probability of passing from the origin to $a$ without first
+returning to the origin, followed by passing from $a$ to the
+origin without first returning to $a$.  This is
+$p (1-q_1) q q_{a-1} = ( 1/(2 a) ) ( 1/(2 a) ) = 1/(4 a^2)$.
+The probability of exactly two visits to $a$ before
+returning to the origin is the
+probability of passing from the origin to $a$ without first
+returning to the origin, followed by a bridge from to $a$ to $a$
+without touching the origin, followed by passing from $a$ to the
+origin without first returning to $a$.  The middle probability
+is the same as the already computed probability of passing
+exactly $0$ visits to $a$ from the origin, by the symmetry of the
+situation.  This is
+$$
+  p (1-q_1) ( (2 a-1)/(2 a) )   q q_{a-1} = ( 1/(2 a) ) (
+  1/(2 a) ) = 1/(4 a^2) (2 a-1)/(2 a).
+$$
+Now the pattern is clear, and we see that the number of visits
+to $a$ with out first returning to the origin is a deficient geometric
+random variable with ratio $(2a-1)/(2a)$.  
+
+That is, the probability distribution is 
+\begin{eqnarray*}
+  \P[N = 0] &=& (2a-1)/(2a) \\
+  \P[N = 1] &=& 1/(4a^2) \\
+  \P[N = 2] &=& ( 1/(4 a^2)) (2a-1)/(2a) \\
+  \P[N = 3] &=& ( 1/(4 a^2)) ((2a-1)/(2a))^2 \\ 
+\end{eqnarray*}
+and so on the expected value of $N$ is then
+$$
+    E[N] = \sum_{i=1}^{\infty} i \frac{1}{4a^2} \left(
+    \frac{2a-1}{2a} \right)^{i-1} = 1
+$$
+This is astonishing, the expected number of visits to $a$
+before returning to the origin, regardless of the value of $a$
+is 1, the same for 1 million as for $10$!.}
+
+
+
+% Мартингалы (и равномерная интегрируемость пока сюда)
+% сюда же моменты остановки и пр.
+% отличие от п 9 состоит в том, что в задаче требуется понимание, что такое мартингал/
+% /момент остановки
+\section{10. Мартингалы}
+
+\problem{
+Придумайте мартингал $X_{n}$, такой, что одновременно выполнены 3 условия: \\
+1. $sup <\infty$ \\
+2. Существует число $a$, такое что $\P(X_{n}=a i.o.)=1$ \\
+3. Существует число $b>a$, такое что $\P(X_{n}=b i.o.)=1$ }
+\solution{}
+
+
+\problem{
+Приведите пример субмартингала $X_{n}$ такого, что $X_{n}^{2}$ -
+супермартингал. }
+\solution{}
+
+\problem{
+Докажите утверждения: \\
+Если $X_{n}$ - субмартингал, то $(X_{n}-a)^{+}$ - субмартингал. \\
+Если $X_{n}$ - супермартингал, то $X_{n} \wedge a$ -
+супермартингал. }
+\solution{}
+
+\problem{
+Если $X_{n}$ - мартингал по отношению к некоторой фильтрации
+$\mathcal{F}_{n}$, то $X_{n}$ - мартингал по отношению к своей
+естественной фильтрации. }
+\solution{}
+
+
+\problem{
+Пусть $S_{n}$ - симметричное случайное блуждание, $S_{0}=0$. \\
+Верно ли, что $Z_{n}=(-1)^{n}\cos(\pi S_{n})$ - мартингал? \\
+Source: Zastawniak, ex. 3.6 }
+\solution{}
+
+
+
+
+\problem{
+\label{strict Doob} Пусть $M_{n}$ - неотрицательный субмартингал,
+$\lambda>0$ и
+$M_{n}^{*}=\sup_{i\le n}M_{i}$. \\
+Верен ли следующий вариант неравенства Дуба: $\lambda
+\P(M_{n}^{*}>\lambda)\le \E(M_{n}1_{M_{n}^{*}>\lambda})\le
+\E(M_{n})$? \\
+\ref{strict Doob} }
+\solution{
+Да. Доказательство не меняется при замене неравенства. Например,
+Steele, p. 19-20. }
+
+
+\problem{
+$[$Williams, E10.1$]$ \\
+В начальный момент времени в урне лежит 1 черный и 1 белый шар. В
+каждый момент времени из урны наугад извлекается один шар. Вместо
+одного извлеченного шара в урну кладут два шара такого же цвета.
+Пусть $C_{n}$ - количество, а $M_{n}$ - доля черных шаров после
+$n$-го шага. Рассмотрим также величину $B_{n}$, показывающую,
+сколько раз из урны доставали черный шар к моменту времени $n$
+включительно. \\
+а) Как связаны $B_{n}$ и $C_{n}$? \\
+б) Докажите, что $M_{n}$ - мартингал. \\
+в) Найдите $\P(C_{n}=k)$ \\
+г) Как распределен $\lim M_{n}$? \\
+д) Докажите, что для $0<\theta<1$ мартингалом будет последовательность \\
+$N_{n}=(n+1)C_{n}^{B_{n}}\theta^{B_{n}}(1-\theta)^{n-B_{n}}$ }
+\solution{ г) \\
+Процедуру можно представить себе так: \\
+Положим на прямую красный шар. Затем по одному будем класть белые шары (миллион штук). Причем класть их будем равновероятно на любое место между уже положенными шарами, или с любого края полоски. \\
+В результате положение красного шара (отделяющего шары разных урн) распределено равновероятно. \\
+Т.е. в пределе доля распределена равномерно на $[0;1]$ }
+
+
+\problem{
+В фирме работает два менеджера, $A$ и $B$. Изначально у каждого менеджера было по одному клиенту. Обозначим $A_{n}$ и $B_{n}$ - количество клиентов, обративших к менеджерам $A$ и $B$ к моменту времени $n$ включительно. Обозначим $M_{n}=\frac{A_{n}}{A_{n}+B_{n}}$, долю клиентов, предпочедших менеджера $A$. \\
+В каждый момент времени $n$ в фирму приходит один новый клиент. Он обращается к менеджеру $A$ с вероятностью $M_{n-1}$, и к менеджеру $B$ с вероятностью $(1-M_{n-1})$. \\
+a) Верно ли, что $M_{n}$ - мартингал? \\
+b) Верно ли, что $M_{n}$ сходится (as)? \\
+с) К чему сходится (as) $M_{n}$? }
+\solution{}
+
+\problem{
+Вася стреляет в мишень. Вероятность попасть в следующий раз равна доле имеющихся попаданий. В первый раз Вася попал, во второй - нет. }
+\solution{}
+
+
+
+
+\problem{
+Изначально курс акций $S_{0}=100$. Безрисковая процентная ставка
+равна $r=0.1$. В каждый момент времени курс акций может либо
+домножиться на $u=1.2$ c вероятностью $p$, либо на $d=0.9$ c
+вероятностью $1-p$. При каком $p$ дисконтированный курс акций
+будет мартингалом? }
+\solution{}
+
+
+\problem{
+Каждый индивид живет один момент времени. Число потомков каждого
+индивида - случайная величина имеющая закон распределения $X$
+(одинаковый для всех индивидов). Пусть $Y_{n}$ - численность
+$n$-го поколения, $Y_{0}=1$. \\
+a) Найдите константу $\theta$, при которой
+$G_{n}=\frac{Y_{n}}{\theta^{n}}$ будет мартингалом. \\
+б) Пусть $A$ - событие состоящее в том, что рано или поздно
+популяция погибнет. Пусть $\P(A)=\alpha$. Найдите
+$\P(A|\mathcal{F}_{n})$ как функцию от $Y_{n}$. Верно ли, что это
+мартингал? \\
+в) Найдите уравнение на $\alpha$. }
+\solution{}
+
+\problem{
+$[$Williams, E10.9$]$ \\
+Пусть $X_{n}$ - супермартингал, $T$ - момент остановки. Докажите,
+что \\
+a) $\E(X_{T}1_{T<\infty})\le \E(X_{0})$ \\
+b) $c\P(\sup_{n} X_{n} \ge c)\le \E(X_{0})$ }
+\solution{}
+
+
+
+\problem{
+$[$Steele, 2.1.$]$ \\
+$S_{n}=S_{n-1}+X_{n}$, $X_{n}= \left\{ \begin{array}{rcl} -1,
+p=0,52 \\ 1, p=0,45 \\ 2, p=0,03 \\ \end{array} \right.$ \\
+Найдите $x$ чтобы процесс $x^{S_{n}}$ был мартингалом. }
+\solution{}
+
+
+\problem{
+$[$Steele, 2.5.$]$ \\
+Пусть $M_{n}$ - субмартингал, а $\tau\le\nu$ ограниченные моменты
+остановки. Докажите, что $\E(M_{\tau})\le \E(M_{\nu})$ }
+\solution{}
+
+
+
+
+\problem{
+Некоррелированность приращений. \\
+Пусть $X_{n}$ - мартингал, $X_{n}\in L^{2}$, и четыре момента
+времени $n_{1}<n_{2}\le n_{3}<n_{4}$. \\
+Найдите $Cov(X_{n_{2}}-X_{n_{1}},X_{n_{4}}-X_{n_{3}})$ }
+\solution{}
+
+\problem{
+$[$Williams, E10.2$]$ Принцип Беллмана \\
+Выигрыш $X_{n}$ в $n$-ой партии может равняться 1 или -1 c
+вероятностями $p$ и $q=1-p$, соответственно. $Z_{n}$ -
+благосостояние игрока после $n$ партий. Пусть $1/2<p<1$ и
+$Z_{0}>0$. Игрок решил играть $N$ партий. Цель игрока -
+максимизировать ожидаемую <<процентную ставку>>
+$\E(\ln\frac{Z_{N}}{Z_{0}})$. К моменту времени $n$ игрок владеет
+информацией $\mathcal{F}_{n}=\sigma(X_{1},...,X_{n})$. На $n+1$-ую
+партию игрок может поставить любую сумму в диапазоне $[0;Z_{n}]$.
+\\
+Обозначим <<энтропию>> $\alpha=p\ln p+q\ln q+\ln 2$. \\
+a) Докажите, что для любой (предсказуемой) стратегии величина $\ln
+Z_{n}-n\alpha$ будет супермартингалом. \\
+б) Найдите наилучшую стратегию, т.е. такую, что $\ln
+Z_{n}-n\alpha$ будет мартингалом \\
+Примечание: величина $\ln\frac{Z_{N}}{Z_{0}}$ называется
+процентной ставкой в силу того, что $\ln(1+r)\approx r$ }
+\solution{
+Обозначим $s$ размер ставки в $n+1$-ой партии. Тогда
+$Z_{n+1}=Z_{n}+X_{n+1}sZ_{n}$. \\
+Задача сводится к максимизации $E[(\ln Z_{n+1}-(n+1)\alpha) - (\ln
+Z_{n}-n\alpha)|\mathcal{F}_{n}]$ по $s$. \\
+Получаем $s=2p-1=p-q$. }
+
+
+\problem{A propos
+{\it Энтропией} с.в.  $X$  называется число $E\left(\log _{2}
+\frac{1}{p\left(X\right)} \right)$ , где
+$p\left(t\right)=P\left(X=t\right)$  для дискретных с.в., а для
+непрерывных с.в.  $p\left(t\right)$  - функция плотности. Энтропия
+измеряет количество информации, получаемое при наблюдении с.в.
+$X$. При расчете энтропии важны не сами значения величины $X$, а
+их вероятности. \\
+Логарифм можно брать по другому основанию, когда логарифм берется
+по основанию 2, то единица измерения энтропии - бит. \\
+Пусть имеется монетка, выпадающая гербом с вероятностью  $\theta$.
+а) С.в.  $X$  равна единице, если монетка выпадает гербом, и нулю
+в противном случае. При каком  $\theta$  энтропия будет
+максимальной? Чему она при этом будет равна? }
+\solution{}
+
+
+
+\problem{
+Докажите утверждения: \\
+Если $X_{n}$ - субмартингал, то $(X_{n}-a)^{+}$ - субмартингал. \\
+Если $X_{n}$ - супермартингал, то $X_{n} \wedge a$ -
+супермартингал. }
+\solution{}
+
+\problem{Известно, что $X_{n}$ - субмартингал по отношению к фильтрации $\mathcal{F}_{n}$. Также известно, что $\E(X_{n})=const$. Верно ли, что $X_{n}$ - мартингал?}
+\solution{да}
+
+
+\subsection{Равномерная интегрируемость} 
+
+\problem{
+Конечный набор интегрируемых случайных величин равномерно
+интегрируем.  }
+\solution{ По DCT. }
+
+\problem{
+Если $|X_{\alpha}|<Y$ и $\E(Y)<+\infty$, то набор $\{X_{\alpha}\}$
+равномерно интегрируем. }
+\solution{}
+
+\problem{
+Если набор случайных величин ограничен в смысле $L_{p}$,
+$p>1$, то он равномерно интегрируем. \\
+Ограничен в смысле $L^{p}$:
+$\sup_{\alpha}E\left(|X_{\alpha}|^{p}\right)<+\infty$. }
+\solution{}
+
+
+\problem{
+Равномерно интегрируемый набор ограничен в $L_{1}$. [Aad, 1.16]}
+\solution{
+Существует $N$, такое что $\sup_{Z\in \mathcal{H}}E
+\left(|Z|1_{Z>N} \right)<1$. \\
+$\sup_{Z\in \mathcal{H}}E |Z|=\sup_{Z\in \mathcal{H}}E
+\left(|Z|1_{Z>N} \right)+\sup_{Z\in \mathcal{H}}E \left(|Z|1_{Z\le
+N} \right)\le
+1+N$ }
+
+\problem{
+Сходящаяся в $L_{1}$ последовательность является равномерно
+интегрируемой. [Aad, 1.17] }
+\solution{
+(better solution is welcome). \\
+$|X_{k}|1_{|X_{k}|>M}\le |X-X_{k}|1_{|X_{k}|>M}+|X|1_{|X_{k}|>M}$
+\\
+Заметим, что $1_{|X_{k}|>M}\le 1_{|X|>M/2}+1_{|X-X_{k}|>M/2}$ \\
+$|X_{k}|1_{|X_{k}|>M}\le
+|X-X_{k}|+|X|1_{|X|>M/2}+|X|1_{|X-X_{k}|>M/2}$ \\
+Можно выбрать $K$ и $M$ так, что для любого $k\ge K$ правая часть
+будет меньше, чем $3\varepsilon$. А в силу конечности $K$ можно
+выбрать $M$ так, чтобы $|X_{k}|1_{|X_{k}|>M}\le 3\varepsilon$ для
+$k<K$.}
+
+
+
+\problem{
+Пусть наборы случайных величин $\mathcal{H}_{1}$ и
+$\mathcal{H}_{2}$ равномерно интегрируемы.
+Тогда равномерно интегрируемо их объединение. }
+\solution{}
+
+
+\problem{ $[$Grimmett, 7.10.1$]$\\
+ Пусть $\{X_{n}\}$ и $\{Y_{n}\}$ равномерно
+интегрируемы. Верно ли, что последовательность $\{X_{n}+Y_{n}\}$
+равномерно интегрируема?}
+\solution{}
+
+
+\problem{ Show that a convex function of a martingale is a submartingale.
+In other words, let $M_0,M_1,\dots,M_N$ be a martingale and let $\phi$ be a convex function.
+Show that $\phi(M_0),\phi(M_1),\dots,\phi(M_N)$ is a submartingale.}
+\solution{}
+
+
+\problem{Problem 1.3 (Discrete time stochastic integral) Suppose $M_0,M_1,\dots,M_N$
+is a martingale and let $\Dt_0,\Dt_1,\dots,\Dt_{N-1}$ is an adapted process. Define the
+\emph{discrete-time stochastic integral} (sometimes called a \emph{martingale transform})
+$I_0,I_1,\dots,I_N$ by setting $I_0=0$ and
+$$
+I_n=\sum\lims_{j=0}^{n-1} \Dt_j (M_{j+1}-M_j),\quad n=1,2,\dots,N.
+$$
+\ni Show that $I_0,I_1,\dots,I_N$ is a martingale.}
+\solution{}
+
+
+\problem{ Рассмотрим серию испытаний Бернулли с подбрасыванием монеты. Положим $X_j=1,$ 
+  если при $j$-ом подбрасывании монета оказалась верхом стороной \emph{head}, и 
+  $X_j=-1$ иначе. Определим \emph{дискретное случайное блуждание} как 
+  случайный процесс $M_0,M_1,M_2,\dots,$ где $M_0=0$ и
+  $$
+  M_n=\sum\lims_{j=1}^{n} X_j,\quad n\ge 1.
+  $$
+  \ni Докажите, что $M_0,M_1,\dots$ матингал. Пусть $\sgm>0.$ 
+  Положим $S_n=e^{\sgm M_n}\cdot\bl(\fr{2}{e^{\sgm}+e^{-\sgm}} \br)^n$
+  \ni Докажите, что процесс $S_0,S_1,S_2,\dots$ также мартингал.}
+\solution{}
+
+\problem{ Дискретный стохастический интеграл. Пусть процесс $M_0,M_1,\dots,M_N$ является
+  мартингалом, а процесс $\Dt_0,\Dt_1,\dots,\Dt_{N-1}$ адаптирован. Определим новый процесс
+  $I_0,I_1,\dots,I_N$ как
+  $$
+  I_0=0,\quad I_n=\sum\lims_{k=0}^{n-1} \Dt_j\cd (M_{j+1}-M_j),\, n=1,\dots,N.
+  $$
+  \ni Докажите, что $I_0,I_1,\dots,I_N$ также мартингал. }
+\solution{}
+
+\problem{ Toss a symmetric coin repeatedly. Let $X_j=1$ if the $j$-th toss
+results in a head and $X_j=-1$ if the $j$-th toss results in a tail. Consider the
+stochastic process $M_0,M_1,M_2,\dots$ defined by $M_0=0$ and
+$$
+M_n=\sum\lims_{j=1}^{n} X_j,\quad n\ge 1.
+$$
+\ni This is called a \emph{symmetric random walk}; with each head it steps up one,
+and with each tail, it steps down one.
+
+\begin{itemize}
+\item[(i)] Show that $M_0,M_1,\dots$ is a martingale
+
+\item[(ii)] Let $\sgm$ be a positive constant and, for $n\ge 0$, define
+$$
+S_n=e^{\sgm M_n}\cdot\bl(\fr{2}{e^{\sgm}+e^{-\sgm}} \br)^n
+$$
+\ni Show that $S_0,S_1,S_2,\dots$ is a martingale. Note that even though the symmetric random
+walk $M_n$ has no tendency to grow, the \emph{geometric symmetric random walk}, which is
+$e^{\sgm M_n}$ does have a tendency to grow. This is the result of putting a martingale into
+the convex exponential function. In order to again have a martingale, we must "discount" the
+geometric symmetric random walk, using the term  $\fr{2}{e^{\sgm}+e^{-\sgm}}$ as the discount rate.
+\end{itemize}}
+\solution{}
+
+\problem{ [Steele, 2.1.] \\
+$S_{n}=S_{n-1}+X_{n}$, $X_{n}= \left\{ \begin{array}{rcl} -1,
+p=0,52 \\ 1, p=0,45 \\ 2, p=0,03 \\ \end{array} \right.$ \\
+Найдите $x$ чтобы процесс $x^{S_{n}}$ был мартингалом.}
+\solution{}
+
+
+\problem{ /Тема/. \\
+Известно, что $A\in\mathcal{F}_{n}$ и $\omega\in A \Rightarrow
+N(\omega)>n$. Верно ли, что $A \in \mathcal{F}_{n\wedge N}$? }
+\solution{}
+
+\problem{
+Пусть $X_{i}\ge 0$, $S_{n}=S_{n-1}+X_{n}$, $N_{t}=sup(n|S_{n}\le
+t)$. Докажите, что $N_{t}+1$ - момент остановки. }
+\solution{}
+
+\problem{ Обезьяны и Шекспир \\
+Кто-то давным-давно заметил, что обезьяна, посаженная за
+печатающую машинку, напечатает рано или поздно полное собрание
+сочинений Шекспира. Это очевидно. Вопрос в том, сколько ей в
+среднем потребуется нажатий на клавишы (предположим, что их 26 как
+букв в
+английском языке) чтобы напечатать слово ABRACADABRA? \\
+Трюк: Организуем казино! В каждый момент времени в казино приходит
+новый игрок с начальным капиталом в 1 рубль. Каждый входящий игрок
+действует по одной и той же схеме: ставит все имеющиеся деньги на
+очередную букву слова ABRACADABRA (т.е. сначала на А, потом на B и
+т.д., когда слово кончается все деньги снова ставятся на A...).
+Если обезьяна напечатала нужную букву, то игрок получает свою
+ставку, увеличенную в 26 раз, если нет - то игрок покидает казино.
+Рассмотрите мартингал, связанный с суммарным благосостоянием всех
+игроков. \\
+Трюк исполнен профессиональными каскадерами, не пытайтесь
+повторить его самостоятельно (Williams, Proba with Martingales). }
+\solution{}
+
+
+
+\problem{ Гладиаторы-вампиры \\
+Есть две команды гладиаторов-вампиров. У каждого из них своя сила.
+Если вампир силы $a$ убивает вампира силы $b$ (что происходит с
+вероятностью $\frac{a}{a+b}$), то его сила увеличивается на $b$.
+Соревнование между командами построено в форме отдельных
+поединков. От каждой команды выдвигается по одному участнику,
+победитель возвращается в свою команду и начинается следующий
+поединок. Допускается неоднократное участие одного вампира в
+поединках. Пусть в первой команде $n_{x}$ участников с суммарной
+силой $X_{0}$, а во второй - $n_{y}$ участников с суммарной силой
+$Y_{0}$; $X_{n}$ - суммарная сила первой команды после $n$
+поединков. \\
+а) Докажите, что $X_{n}$ - мартингал. \\
+б) Верно ли, что игра закончится к моменту $n_{x}+n_{y}$? \\
+в) Найдите вероятность выигрыша первой команды. }
+\solution{}
+
+\problem{ Пуассоновский процесс. \\
+Случайный процесс $N(t)$ (в непрерывном времени) называется
+Пуассоновским
+процессом с параметром $\lambda$, если выполнены: \\
+P1. При $0=t_{0}<t_{1}<t_{2}<...<t_{n}$ величины
+$\triangle_{k}=N(t_{k})-N(t_{k-1})$ являются независимыми. \\
+P2. Для $t>s$ величина $N(t)-N(s)$ имеет распределение Пуассона с
+параметром $\lambda \cdot (t-s)$ \\
+По смыслу $N(t)$ показывает, сколько событий произошло к моменту
+времени $t$. \\
+Кстати, кто не знал и забыл: \\
+Распределение Пуассона с параметром $\lambda$:
+$\P(X=n)=e^{-\lambda}\frac{\lambda^{n}}{n!}$ \\
+Пусть $t_{n}$ - фиксированные моменты времени и
+$X_{n}=N(t_{n})-\lambda\cdot t_{n}$. \\
+Верно ли, что $X_{n}$ - мартингал? }
+\solution{}
+
+\problem{
+По мотивам Rock-Scissors-Paper and survival of the weakest \\
+Есть $N$ клеток, в каждой из которых живет скорпион. Скорпионы
+бывают трех видов. \\
+Яд скорпиона 1-го вида убивает скорпиона 2-го вида с вероятностью
+$p_{1}$. Яд скорпиона 2-го вида убивает скорпиона 3-го вида с
+вероятностью $p_{2}$. Яд скорпиона 3-го вида убивает скорпиона
+1-го вида с вероятностью $p_{3}$. В остальных случаях яд
+безвреден. \\
+В каждый момент времени случайным образом выбираются 2 клетки.
+Происходит сражение скорпионов. Если один из скорпионов погиб, то
+опустевшая клетка проигравшего скорпиона заселяется новым
+скорпионом победившего вида. \\
+Численности скорпионов в момент времени $t$ обозначим $N_{1}(t)$,
+$N_{2}(t)$ и $N_{3}(t)$. \\
+a) Чему равно $\E(N_{1}(t+1)-N_{1}(t)|\mathcal{F}_{t})$? \\
+б) При каких условиях на $N_{1}(0)$, $N_{2}(0)$ и $N_{3}(0)$
+средняя численность скорпионов каждого вида будет неизменной? \\
+в) Верно ли, что при этих условиях численность скорпионов каждого
+вида будет мартингалом? \\
+г) Как зависят от $p_{1}$, $p_{2}$ и $p_{3}$ равновесные
+численности скорпионов? }
+\solution{}
+
+\problem{
+Перед Машей колода в 52 карты. Маша открывает карты одну за одной.
+В любой момент времени Маша может сделать заявление "Следующая
+карта будет красной!". Маша выигрывает, если ее
+предсказание сбудется. \\
+а) Найдите оптимальную стратегию, используя элементарные методы. \\
+б) Определите мартингал, на который делает ставку Маша }
+\solution{
+Маше безразлично делать ли прогноз на следующую карту или на
+последнюю, т.к. о них в любой момент времени имеется одинаковая
+информация. Исходная вероятность того, что последняя карта будет
+красной равна $\frac{1}{2}$. Следовательно, любая Машина стратегия
+приводит к такой вероятности выигрыша. Маша не может ее ни
+увеличить, ни снизить! }
+
+\problem{ <<La grande martingale>> \\
+Пусть $Y_{i}$ - iid, результат $i$-го подбрасывания правильной
+монетки, т.е. $ Y_{i}= \left\{
+\begin{array}{rcl}
+1, p=1/2 \\
+0, p=1/2 \\
+\end{array}
+\right. $ \\
+Обозначим $X_{n+1}=X_{n}+Y_{n+1}$ \\
+Допустим, что игрок использует "стратегию удвоения" (la grande
+martingale). Т.е. на первый результат подбрасывания он ставит
+рубль. Если он проигрывает, то удваивает ставку. Если он
+выигрывает, то снова начинает со ставки размеров в рубль. \\
+Опишите, как выглядит соответствующее мартингальное преобразование
+$(C\cdot X)_{n}$. \\
+Верно ли, что $C_{i}$ является предсказуемым процессом? \\
+Чему равно ожидаемое благосостояние игрока после $n$ подбрасываний
+монетки? }
+\solution{}
+
+\problem{ Намек на сходимость мартингалов. \\
+Пусть последовательность действительных чисел $\{x_{n}\}$
+сходится. Зафиксируем два числа $a<b$. Верно ли, что число
+пересечений снизу-вверх отрезка $[a;b]$ конечно? \\
+Пусть последовательность действительных чисел $\{x_{n}\}$
+ограничена. Число пересечений снизу-вверх любого отрезка $[a;b]$,
+где $a<b$ конечно. Верно ли, что $\{x_{n}\}$ сходится? }
+\solution{}
+
+\problem{ Let $M_0,M_1,M_2\dots$ ne the symmetric random walk. Define $I_0=0$ and
+$$
+I_n=\sum\lims_{j=0}^{n-1} M_j(M_{j+1}-M_j),\quad n=1,2,\dots
+$$
+\ni Show that
+$$
+I_n=\fr{1}{2}M_n^2-\fr{n}{2}.
+$$}
+\solution{}
+
+\problem{ Докажите, что \\
+а) Если $T$ - момент остановки, то множества $\{T<n\}$, $\{T\le
+n\}$, $\{T=n\}$, $\{T\ge n\}$ и $\{T>n\}$ лежат в
+$\mathcal{F}_{n}$. \\
+б) Случайная величина $T\in \{0\}\cup \mathbb{N}\cup \{+\infty\}$
+является моментом остановки если и только если $\{T=n\}\in
+\mathcal{F}_{n}$ для любого $n$. \\
+в) Если $T_{1}$ и $T_{2}$ моменты остановки, то $T_{1}\vee T_{2}$
+и $T_{1}\wedge T_{2}$ - моменты остановки }
+\solution{}
+
+\problem{ Пусть $T$, $S$ - моменты остановки. \\
+a) Проверьте то, что $\mathcal{F}_{T}$ - действительно
+$\sigma$-алгебра. \\
+б) Можно ли в определении $\mathcal{F}_{T}$ заменить $A\cap (T\le
+n)\in \mathcal{F}_{n}$ на $A\cap (T=n)\in
+\mathcal{F}_{n}$? \\
+в) Пусть $T\equiv n$. Верно ли, что
+$\mathcal{F}_{T}=\mathcal{F}_{n}$? \\
+г) Пусть $T\le S$. Как связаны между собой $\mathcal{F}_{T}$ и
+$\mathcal{F}_{S}$? \\
+д) Верно ли, что $\mathcal{F}_{T\wedge S}=\mathcal{F}_{T}\cap
+\mathcal{F}_{S}$? \\
+е) Пусть $T<\infty$ и $X_{n}$ - адаптированный процесс. Верно
+ли, что $X_{T}\in \mathcal{F}_{T}$? \\
+Комментарий: попробуйте дать сначала интуитивный ответ на вопросы
+в-е, а затем уже возиться с $\sigma$-алгебрами. }
+\solution{}
+
+\problem{ Равномерная интегрируемость... Докажите (или опровергните)... \\
+а) Конечный набор интегрируемых величин равномерно
+интегрируем \\
+б) Если существует $Y\in L^{1}$, такое что для любого $X\in
+\mathcal{A}$ выполнено $|X|\le Y$, то набор $\mathcal{A}$ -
+равномерно интегрируем. \\
+в) Если $\sup_{X\in \mathcal{A}}\E(|X|^{p})<\infty$, где $p>1$, то
+набор $\mathcal{A}$ -
+равномерно интегрируем. \\
+г) Для любых случайных величин $X$ и $Y$ выполнено неравенство:
+$\E(|X|1_{|Y|>M})\le \E(|X|1_{|X|>N})+\frac{N}{M}\E(|Y|1_{|Y|>M})$ \\
+д) Если $\mathcal{A}=\{\E(X|\mathcal{H}):\mathcal{H}\subseteq
+\mathcal{F}\}$, т.е. набор $\mathcal{A}$ - это условные ожидания
+от $X$ по всевозможным $\sigma$-алгебрам, то $\mathcal{A}$ -
+равномерно интегрируем. }
+\solution{}
+
+\problem{
+Пусть $S_{n}$ - симметричное случайное блуждание с началом в
+нуле и $\tau$ - момент первого достижения суммы в 1 рубль. Найдите
+$\E(S_{n})$, $\E(S_{n\wedge \tau})$ и $\E(S_{\tau})$. Почему
+$\lim_{n}
+\E(S_{n\wedge \tau})\neq \E(S_{\tau})$? }
+\solution{}
+
+\problem{
+Приведите примеры процесса в дискретном времени, который: \\
+а) является и мартингалом, и цепью Маркова \\
+б) не является ни мартингалом, ни цепью Маркова \\
+в) является мартингалом, но не цепью Маркова \\
+г) является цепью Маркова, но не мартингалом }
+\solution{}
+
+\subsection{Задачи на тему остановки мартингала} 
+
+\problem{
+Пусть $W_{t}$ - стандартный винеровский процесс, $a$ и $b$ больше 0, $\tau=min\{t|W_{t}=a \cup W_{t}=-b\}$. \\
+Найдите $\P(W_{\tau}=a)$, $\E(\tau)$, $\E(\tau W_{\tau})$ }
+\solution{
+Hint: Мартингалы $W_{t}$, $W_{t}^2-t$, $W_{t}^{3}-3tW_{t}$ вам в помощь }
+
+\problem{
+Пусть $W_{t}$ - стандартный винеровский процесс, $a$ и $b$ больше 0, $X_{t}=W_{t}+\mu t$, $\tau=min\{t|X_{t}=a \cup X_{t}=-b\}$. \\
+Найдите $\P(X_{\tau}=a)$, $\E(\tau)$ }
+\solution{
+Hint: Мартингалы $a^{X_{t}}$ и $X_{t}-\mu t$ вам в помощь }
+
+\problem{
+Карты из колоды в 52 карты извлекаются до появления 2-го туза. Какова вероятность того, что следующая карта будет тузом? }
+\solution{
+Hint: Мартингал $X_{t}$ - доля тузов среди неоткрытых карт вам в помощь }
+
+\problem{
+Двое играют в шахматы друг с другом до перевеса в 5 очков. Победитель партии получает 1 очко, проигравший - 0 очков, в случае ничьей каждый получает по пол-очка. Вася играет лучше Пети, поэтому: вероятность ничьей - одна четверть, вероятность того, что победит Вася равна половине, вероятность победы Пети - одна четверть. \\
+Какова вероятность того, что в результате выиграет Вася? \\
+Сколько партий они в среднем сыграют? }
+\solution{
+Hint:  Если $X_{t}$ - разница в очках, то $a^{X_{t}}$ и $X_{t}+bt$ - мартингалы. }
+
+\problem{У Маши --- неправильная монетка (орел выпадет с вероятностью 0.6), у Светы --- правильная. Маша и Света одновременно подкидывают свои монетки до тех пор, пока у кого-то из них орлов не накопится на два больше, чем у подружки. Побеждает в этой игре набравшая больше орлов. Какова вероятность того, что Маша выиграет?
+
+Hints: Пусть $B_{t}=M_{t}-S_{t}$ --- баланс числа орлов, т.е. преимущество Маши над Светой в момент времени $t$. Какие значения и с какими вероятностями принимает $ \Delta B_{t} $? При каком $ a $ случайный процесс $ a^{B_{t}} $ будет мартингалом?}
+\solution{$ \left(\frac{2}{3}\right)^{B_{t}} $ - мартингал}
+
+
+
+
+\problem{
+Пусть $S_{t}$ - симметрическое случайное блуждание с началом в нуле. $a$ и $b$ больше 0, $\tau=min\{t|S_{t}=a \cup S_{t}=-b\}$. \\
+Найдите $\P(S_{\tau}=a)$, $\E(\tau)$ }
+\solution{
+Hint: Мартингалы $S_{t}$, $S_{t}^2-t$ вам в помощь }
+% аналог с $\E(\tau S_{tau})$ ?
+
+
+\problem{
+Пусть $S_{t}$ - несимметрическое случайное блуждание с началом в нуле, $\P(S_{t}-S_{t-1}=1)=p$, $a$ и $b$ больше 0, $\tau=min\{t|S_{t}=a \cup S_{t}=-b\}$. \\
+Найдите $\P(S_{\tau}=a)$, $\E(\tau)$ }
+\solution{
+Hint: Мартингалы $a^{S_{t}}$, $S_{t}+bt$ вам в помощь }
+
+
+\problem{
+Игральный кубик подбрасывается бесконечное количество раз. Сколько подбрасываний в среднем пройдет до появления последовательности 1-2-3-1-2? }
+\solution{
+Hint: самое сложное тут - подходящий мартингал }
+
+\problem{
+В коробке лежат 30 зеленых и 50 красных шаров. Мы извлекаем два наугад, один берем в левую руку, другой - в правую. Шар в левой руке красим в цвет шара, находящегося в правой руке. Затем возвращаем шары в коробку. Снова извлекаем два наугад и т.д. до тех пор пока в коробке все шары не окрасятся в один цвет. \\
+а) Какова вероятность того, что шары будут окрашены в красный цвет? \\
+б) Сколько в среднем пар шаров будет извлечено? }
+\solution{
+Hint: $K_{t}$ - число красных шаров - мартингал, }
+
+%\problem{
+%Пусть $S_{n}$ - симметричное случайное блуждание, $S_{0}=0$, $K$ -
+%натуральное число, $\tau=\min\{t|S_{t}=K\}$ \\
+%a) Верно ли, что $Z_{n}=(-1)^{n}\cos(\pi(S_{n}+K))$ - мартингал? \\
+%б) Используя Optional Stopping Theorem найдите $\E((-1)^{\tau})$ \\
+%Source: Zastawniak, ex. 3.12 }
+%\solution{ что-то там нужно косинус вообще убрать? проверить!}
+% Задача не очень, т.к. $ Z_{n} $ - детерминистический процесс
+
+
+
+
+\problem{ Safes and keys \\
+source: Taiwan NMO 2006\\
+There are 94 safes and 94 keys. Each key can open only one safe, and each safe can be opened by only one key. We place randomly one key into each safe. 92 safes are then randomly chosen, and then locked. What is the probability that we can open all the safes with the two keys in the two remaining safes?\\
+(Once a safe is opened, the key inside the safe can be used to open another safe.)}
+\solution{
+hint: Consider martingale $X_{n}$ the proportion of keys from the first two safes in safes which are closed at time $t$ \\
+sol (one of many possible) \\
+let $\tau$ be a stopping time - the time when we cannot open more safes (all safes are open or we have no more keys). $T=\tau \wedge (n-1)$ is also a stopping time. The <<last safe>> is the safe not opened at $T$ with minimal possible number. Let $M_{t}$  be the proportion of not opened safes at time $t$  containing keys from the first $k$ safes.  is a martingale. $T$ - bounded stopping time. $\E(M_{T}) = \E(M_{0}) = \frac {k}{n}$ by the optional stopping time theorem. And $\E(M_{T})$ is the probability we have been searching (the probability of opening all safes is exactly the probability that the last safe contains the key from the first  safes). \\
+aops, 1310759 }
+
+% Тождество Вольда, Wald's identity
+\problem{Величины $X_i$ независимы, одинаково распределены и строго положительны, $S_n=\sum_{i=1}^n X_i$. Число $x>0$. Момент остановки $T_x=\min\{n|S_n\geq x\}$. Докажите неравенство $x\leq \E(\min\{X_1,x\})\E(T_x)\leq 2x$}
+\solution{По тождеству Вольда
+\begin{equation}
+ \E(\min\{X_1,x\})\E(T_x)=\E\left(\sum_{i=1}^{T_x}\min\{X_i,x\} \right)
+\end{equation}
+Остается доказать, что $x\leq \sum_{i=1}^{T_x}\min\{X_i,x\}\leq 2x $}
+% источник m.se.com, 76233
+
+
+
+\problem{Вася прыгает на один метр вперед с вероятностью $p$ и на два метра вперед с вероятностью $1-p$. Как только он пересечет дистанцию в 100 метров он останавливается. Получается, что он может остановиться либо на отметке в 100 метров, либо на отметке в 101 метр. Какова вероятность того, что он остановится ровно на отметке в 100 метров?}
+% копия в методе первого шага
+\solution{ Обозначим $P_n$ вероятность остановиться ровно на $n$ метрах. Мы ищем $P_{100}$. 
+
+Решение 1. По методу первого шага:  $P_n=pP_{n-1}+(1-p)P_{n-2}$.
+
+Решение 2. Попасть ровно в $n$ можно двумя способами: перелетев $n-1$ или попав в $n-1$ и сделав шаг в один метр. Значит $P_n=(1-P_{n-1})+pP_{n-1}$.
+
+Решение 3. Обозначим Васину координату в момент времени $t$ как $X_t$. Можно найти $a$ так чтобы процесс $Y_t=a^{X_t}$ был мартингалом. Момент остановки $T=\min\{t|X_t\geq n\}$. Мартингал $Y_{t\wedge T}$ ограничен, теорема Дуба применима. $\E(Y_T)=\E(Y_0)=1$. Получаем уравнение $P_n a^{n}+(1-P_n) a^{n+1}=1$.}
+
+\section{Броуновское движение}
+
+
+\problem{
+Пусть $B_{t}$ - стандартное броуновское движение и $a>0$. \\
+Являются ли следующие процессы броуновским движением? мартингалом? \\
+а) $X_{t}=-B_{t}$; \\
+б) $X_{t}=B_{a+t}-B_{a}$; \\
+в) $X_{t}=\frac{1}{a}B_{a^{2}t}$ \\ 
+г) $X_{t}=B_{t}^{3}$ }
+\solution{
+We have to systematically check each of the defining properties
+of Brownian motion in turn for each of the transformed processes.
+\begin{enumerate}
+  \item
+    $$
+      W_1(t) = cW(t/c^2)
+    $$
+    \begin{enumerate}
+       \item
+       The increments
+       $$
+         W_1(t) - W_1(s) = cW( (t)/c^2 ) - cW(s/c^2) = c
+         ( W( t/c^2  ) - W( s/c^2 ))
+       $$
+       are clearly normally distributed as a multiple of a
+       normally distributed random variable.  Since the
+       increment $ W( t/c^2 ) - W( s/c^2 ) $ has
+       mean zero, then
+       $$
+         W_1(t+s) - W_1(s) = c ( W( t/c^2 ) - W( s/c^2
+         ))
+       $$
+       must have mean zero.  The variance is
+       \begin{eqnarray*}
+         \E[(W_1(t)-W(s))^2] &=& \E[(c W((t)/c^2) - c W(s/c^2))^2]
+         \\
+         &=& c^2 \E[ (W( t/c^2 ) - W(s/c^2))^2] \\
+         &=& c^2 (t/c^2 - s/c^2) = t - s.
+       \end{eqnarray*}
+
+       \item
+       Note that if $ t_1 < t_2 \le t_3 < t_4 $, then $ t_1/c^2
+       < t_2/c^2 \le t_3/c^2 < t_4/c^2 $, and the corresponding
+       increments $ W(t_4/c^2) - W(t_3/c^2) $ and $ W(t_2/c^2)
+       - W(t_1/c^2) $ are independent.  Then the multiples of
+       each by $ c $ are independent and so $ W_1(t_4) - W_1(t_3)
+       $ and $ W_1(t_2) - W_1(t_1) $ are independent.
+
+       \item
+       $ W_1(0) = c W(0/c^2) = c W(0) = 0 $.
+       
+       \item
+       As the composition of continuous functions, $ W_1 $ is
+       continuous.
+    \end{enumerate}
+
+  \item
+  To show that 
+  $$
+    W_2(t) = t W(1/t)
+  $$
+  is a Brownian motion by the four definitional properties
+  seems to be difficult.  Instead the usual proof is to show
+  that any Gaussian process $X(t)$ with mean $0$ and $\cov[X(s),
+  X(t)] = \min(s,t)$ must be Brownian motion. See the reference
+  and outside links for more information.
+  \begin{enumerate}
+    \item
+    $$
+      W_2(t) - W_2(s) = t W(1/t) - s W(1/s)
+    $$
+    which will be the difference of normally distributed
+    random variables each with mean $ 0 $, so the difference
+    will be normal with mean $ 0 $.  It remains to check
+    that the normal random variable has the correct
+    variance.
+    \begin{eqnarray*}
+      \E[ (W_2(t)-W_2(s))^2] &=& \E[ (s W(1/s) - t W(1/
+      t))^2 ] \\
+      &=& \E[ ( s W(1/s) - s W(1/t) + s W(1/t) - t W(1/t)
+       - (s -t) W(0) )^2 ] \\
+      &=& s^2 \E[ (W(1/s) - W(1/t))^2 ] + (s-t)^2 \E[
+      (W(1/t) - W(0))^2
+      ] \\
+      &=& s^2 ( 1/s - 1/t ) + (s-t)^2 ( 1/t ) \\
+      &=& t-s
+    \end{eqnarray*}
+    Note the use of independence of $ W(1/s) - W(1/t) $
+    from $ W(1/t) - W(0) $ at the third equality.
+
+    \item
+    It seems to be hard to show the independence of
+    increments directly.  Instead rely on the fact that a
+    Gaussian process with mean $0$ and covariance function
+    $\min(s,t)$ is a Brownian motion, and thus prove it indirectly.
+    Note that
+    $$
+      \cov[ W_2(s), W_2(t)] = st \min(1/s, 1/t) =
+      \min(s,t).
+    $$
+
+    \item
+    By definition, $ W_2(0) = 0 $.
+    
+    \item
+    The argument that $ \lim_{t to 0} W_2(t) = 0 $ is
+    equivalent to showing that $ \lim_{t \to \infty} W(t)/t
+    = 0 $.  To show this requires use of Kolmogorov's
+    inequality for Brownian motion and clever use of the
+    Borel-Cantelli lemma and is beyond the scope of this
+    course.  Use the translation property in the third
+    statement of this theorem to prove continuity at every
+    value of $ t $.
+  \end{enumerate}
+
+  \item
+  $$
+      W_3(t) = W(t+h) - W(h)
+  $$
+  \begin{enumerate}
+    \item
+    The increment
+    $$
+        W_3(t+s) - W_3(s) = [ W(t+s+h) - W(h) ] - [ W(s+h) -
+        W(h) ] = W(t+s+h) - W(s+h)
+    $$
+    which is by definition normally distributed with mean $
+    0 $ and variance $ t $.
+
+    \item
+    The increment
+    $$
+        W_3(t_4) - W_3(t_3) = W(t_4+h) - W(t_3+h)
+    $$
+    is independent from
+    $$
+        W(t_2+h) - W(t_1+h) = W_3(t_2) - W_3(t_1),
+    $$
+    by the property of independence of disjoint increments
+    of $ W(t) $.
+
+    \item
+    $$
+        W_3(0) = W(0+h) - W(h) = 0.
+    $$
+
+    \item
+    As the composition and difference of continuous
+    functions, $ W_3 $ is continuous.
+    \end{enumerate}
+  \end{enumerate}
+}
+
+
+
+\problem{
+Пусть $Z$ - стандартная нормальная св. Определим случайный процесс $X(t)=\sqrt{t}Z$. \\
+а) Найдите $\E(X(t))$ \\
+б) Найдите $\Var(X(t))$ \\
+в) Верно ли, что у процесса $X(t)$ независимые приращения? \\
+г) Как выглядит типичная реализация $X(t)$? \\
+д) Будет ли $X(t)$ броуновским движением? }
+\solution{}
+
+%Пусть $W_t $
+% - стандартный Винеровский процесс (aka броуновское движение). $W_t $
+% означает положение некоей частицы движущейся на прямой в момент времени $t$
+%. Броуновское движение, в частности, обладает свойствами:
+%\\
+%1. $W_{0}=0$ \\
+%2. Если $t > s$ , то $\left( {W_t  - W_s } \right) \sim N\left(
+%{0;\left( {t - s} \right)} \right)$ . \\
+%3. Если отрезки $\left[ {t_1 ;t_2 } \right]$
+% и $\left[ {t_2 ;t_3 } \right]$
+% не пересекаются, то с.в. $\left( {W_{t_3 }  - W_{t_2 } } \right)$
+% и $\left( {W_{t_2 }  - W_{t_1 } } \right)$
+% независимы. \\
+%4. $\P(W_{t}\text{ непрерывно })=1$ \\
+
+\problem{
+Найдите $\lim_{\Delta t \to 0} E\left[ {\left( {W_{t + \Delta t} -
+W_t } \right)^2 } \right]$ , $\lim_{\Delta t \to 0} \frac{{E\left[
+{\left( {W_{t + \Delta t} - W_t } \right)^2 } \right]}} {{\Delta
+t}}$ , $\lim_{\Delta t \to 0} \frac{{E\left[ {\left( {W_{t +
+\Delta t} - W_t } \right)^2 } \right]}} {{\left( {\Delta t}
+\right)^2 }}$. \\
+Найдите $E\left( {\left| {W_1  - W_0 } \right|} \right)$ ,
+$E\left( {\left| {W_1  - W_{0,5} } \right| + \left| {W_{0,5}  -
+W_0 } \right|} \right)$ , $\lim_{\Delta t \to 0} \frac{{E\left(
+{\left| {W_{t + \Delta t} - W_t } \right|} \right)}} {{\Delta t}}$
+. Какое расстояние (имеется ввиду полная длина пути, а не
+перемещение) успевает в среднем пройти частица за единицу времени?}
+\solution{}
+
+
+
+
+\problem{
+Пусть отрезок времени $[0;T]$ разделен на $n$ равных частей. \\
+Для краткости обозначим $W_{i}=W(i\cdot \frac{T}{n})$, $\Delta W_{i}=W_{i}-W_{i-1}$ \\
+a) Найдите $\E(\Delta W_{i})$, $\Var(\Delta W_{i})$, $\E((\Delta W_{i})^{2})$, $\E((\Delta W_{i})^{3})$, $\E((\Delta W_{i})^{4})$ \\
+б) Пусть $A_{n}=\sum_{i=1}^{n}(\Delta W_{i})^{2}$ \\
+Найдите $\E(A_{n})$, $\Var(A_{n})$ \\
+Найдите к чему стремится $A_{n}$ в смысле $L^{2}$ \\
+в) Пусть $B_{n}=\sum_{i=1}^{n}\Delta W_{i}$ \\
+Найдите $\E(B_{n})$, $\Var(B_{n})$ \\
+Найдите к чему стремится $B_{n}$ в смысле $L^{2}$ \\
+г) Пусть $C_{n}=W_{n}^{2}-\sum_{i=1}^{n}W_{i}\Delta W_{i}$ \\
+Выразите $C_{n}$ через $W_{n}$ и $A_{n}$ \\
+% получается $C_{n}=\frac{1}{2}W_{n}^{2}-\frac{1}{2}A_{n}$ \\
+Найдите $\E(C_{n})$ \\
+Найдите к чему стремится $C_{n}$ в смысле $L^{2}$ \\
+д) Пусть $D_{n}=\sum (\Delta W_{i})^{3}$ \\
+Найдите к чему стремится $D_{n}$ в смысле $L^{2}$ \\
+е) Пусть $X_{n}=\sum W_{i}W_{i-1}\Delta W_{i}$ \\
+К чему стремится $X_{n}$ в смысле $L^{2}$? }
+\solution{}
+
+
+
+\problem{
+Пусть $W(t)$ - винеровский процесс. \\
+К чему сходится $W(n)/n$ и в каком смысле? }
+\solution{Ответ: к 0, пожалуй во всех кроме поточенчном }
+
+
+
+%%%%%
+\problem{  Let $Z$ be a normally distributed random variable, with mean
+  $0$ and variance $1$, $Z \sim N(0,1)$.  Then consider the continuous
+  time stochastic process $X(t) = \sqrt{t} Z$. Show that the distribution of
+  $X(t)$ is normal with mean $0$ with variance $t$.  Is $X(t)$ a
+  Brownian motion?}
+\solution{
+This problem is adapted from Baxter and Rennie, Problem 3.1, page 49.
+No, $X(t)$ is not Brownian motion for two reasons in spite of the fact
+that $\sqrt{t} Z \sim N(0,t)$ (which follows from being a scalar
+multiple by $\sqrt{t}$ of the $N(0,1)$ random variable $Z$.)
+First, for $t_1 < t_2 \le t_3 < t_4$, $X(t_2) - X(t_1) = (\sqrt{t_2} -
+\sqrt{t_1})Z$ is not independent of $X(t_4) - X(t_3) = (\sqrt{t_4} -
+\sqrt{t_3})Z$ since both are multiples of the same sample value $Z$
+drawn from the $N(0,1)$ population.
+Second, the distribution of $(\sqrt{t_2} - \sqrt{t_1})Z$ is normal
+with variance $(\sqrt{t_2} - \sqrt{t_1})^2 \ne t_2 - t_1$.
+Note nevertheless, that $X(0) = 0$ and $X(t)$ is continuous at $t=0$.  }
+
+%%%%%
+\problem{ Let $W_1(t)$ be a Brownian motion and $W_2(t)$ be another
+  \emph{independent} Brownian motion, and $\rho$ is a constant between
+  $-1$ and $1$.  Then consider the process $X(t) = \rho W_1(t) +
+  \sqrt{1-\rho^2} W_2(t)$.  Is this $X(t)$ a Brownian motion? }
+\solution{
+ This problem is adapted from Baxter and Rennie, Problem 3.2, page 49.
+Yes, $X(t)$ is a Brownian motion.  We can see this by verifying each
+of the properties in turn:
+\begin{enumerate}
+  \item  $$
+    X(t) - X(s) = \rho (W_1(t) - W_1(s)) + \sqrt{1 - \rho^2}( W_2(t) -
+    W_2(s) )
+   $$
+   Since $(W_1(t) - W_1(s)) \sim N(0, t-s)$ and $(W_2(t) - W_2(s))
+   \sim N(0, t-s)$ and  $W_1$ and $W_2$ are independent, so in
+   particular the increments $(W_1(t) - W_1(s))$ and $(W_2(t) -
+   W_2(s))$ are independent, then 
+   $$
+      \rho (W_1(t) - W_1(s) + \sqrt{1 - \rho^2}( W_2(t) -
+    W_2(s) ) \sim N(0, \rho^2 (t-s) + ( 1 - \rho^2) (t-s) ) =
+      N(0,t-s).
+   $$
+  \item For every pair of disjoint time intervals $[t_1, t_2]$ and
+          $[t_3, t_4]$, with $ t_1 \le t_2 \le t_3 \le t_4$, the
+          increments 
+   $$
+    X(t_2) - X(t_1) = \rho (W_1(t_2) - W_1(t_1) + \sqrt{1 - \rho^2}( W_2(t_2) -
+    W_2(t_1) )
+   $$ 
+   and
+   $$
+    X(t_4) - X(t_3) = \rho (W_1(t_4) - W_1(t_3) + \sqrt{1 - \rho^2}( W_2(t_4) -
+    W_2(t_3) )
+   $$
+   are independent, since $(W_1(t_2) - W_1(t_1)$, $(W_2(t_2) -
+   W_2(t_1)$, $(W_1(t_4) - W_1(t_3)$, and $(W_2(t_4) - W_2(t_3)$ are
+   all independent of one another.
+  \item 
+    $$
+    X(0) = \rho W_1(0) + \sqrt{1 - \rho^2} W_2(0) = \rho 0 + \sqrt{1 - \rho^2} 0 = 0.
+   $$
+\item   Since $W_1(t)$ is continuous at $0$, and $W_2(t)$ is
+  continuous at $0$, then $X(t) = \rho W_1(t) + \sqrt{1 - \rho^2}
+  W_2(t)$ is continuous at $0$. 
+\end{enumerate}   }
+
+%%%%%
+\problem{ What is the distribution of $W(s) + W(t)$, for $0 \le s \le
+  t$? (Hint: Note that $W(s)$ and $W(t)$ are not independent.  But you
+  can write $W(s) + W(t)$ as a sum of independent variables.  Done
+  properly, this problem requires almost no calculation.}
+\solution{
+$$
+    W(s) + W(t) = (W(s) - W(0)) + W(s) + (W(t) - W(s)) = 2(W(s) -
+    W(0)) + (W(t) - W(s))
+$$
+and $(W(s) - W(0))$ is independent from $(W(t) - W(s))$, so
+$$
+   W(s) + W(t) = 2( W(s) - W(0)) + (W(t) - W(s)) \sim N(0, 2^2 s +
+   (t-s)) = N(0, 3 s + t).
+$$}
+
+\problem{ Show that
+   $$
+      \operatorname{Cov}(W(s),W(t)) = E[W(s) W(t)] = \min(t,s)
+   $$
+  Assuming that a stock price moves according to Brownian motion,
+  interpret this for a stock at $ t $ and $ t+1 $. }
+\solution{
+$$
+   \operatorname{Cov}(W(s),W(t)) = E[W(s) - E[W(s)] \cdot W(t) -
+   E[W(t)]] = E[W(s) \cdot W(t)].
+$$
+Without loss of generality, assume $s < t$.  Then
+$$
+   E[W(s) \cdot W(t)] = E[ W(s) \cdot ( W(t) - W(s) + W(s))]
+   = E[ W(s) \cdot ( W(t) - W(s)) ] + E[ W(s) W(s))] = 0 +
+   \D W(s) = s.
+$$
+The process is exactly analogous if $t < s$, so 
+$$
+   \operatorname{Cov}(W(s),W(t)) = E[W(s) W(t)] = \min(t,s).
+$$
+The interpretation is that a stock above its mean value on day $
+t $ is likely to also be above its mean on day $ t + 1 $. }
+
+
+%%%%%
+\problem{  Show that the probability density function
+  $$
+      p(t;x,y) = \frac{1}{\sqrt{2\pi t}} \exp( -(x-y)^2/(2t) )
+  $$
+  satisfies the partial differential equation for heat flow (the
+  \emph{heat equation})
+  $$
+     \frac{\partial p}{\partial t} = \frac{1}{2} \frac{\partial^2
+     p}{\partial t^2}
+  $$
+}
+\solution{$$
+   \frac{\partial p}{\partial t} 
+    = \frac{-1}{\sqrt{2\pi}  t^{3/2} } \exp( -(x-y)^2/(2t) ) 
+    + \frac{1}{\sqrt{2\pi t}} \exp( -(x-y)^2/(2t) ) \frac{ (x-y)^2}{2 t^2}
+$$
+
+$$
+   \frac{\partial p}{\partial x} 
+    = \frac{1}{\sqrt{2\pi t}} \exp( -(x-y)^2/(2t) ) \frac{ (x-y)}{t}
+$$
+
+$$
+   \frac{\partial^2 p}{\partial x^2} 
+    = \frac{1}{\sqrt{2\pi t}} \exp( -(x-y)^2/(2t) ) \frac{
+   (x-y)^2}{t^2}
+   + \frac{1}{\sqrt{2\pi t}} \exp( -(x-y)^2/(2t) ) \frac{1}{t}  
+$$
+Now after a little combining, 
+the first summand in  $ \frac{\partial p}{\partial t} $ matches
+the second summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$ 
+and the second summand in  $ \frac{\partial p}{\partial t} $ matches
+the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.}
+
+%%%%%
+\problem{ Let $ W(t) $ be standard Brownian motion.
+  \begin{enumerate}
+      \item
+          Evaluate the probability that $ W(5) \le 3 $ given that $
+          W(1) = 1 $.
+      \item
+          Find the number $ c $ such that $ \P[ W(9) > c | W(1)
+          =1 ] = 0.10 $.
+  \end{enumerate}
+}
+\solution{
+\begin{enumerate}
+    \item
+        Since $ W(5) - W(1) \sim N(0,4) $, the required
+        probability is
+        \begin{eqnarray*}
+            \P[ W(5) > 3 | W(1) = 1] &=& \P[ W(5) - W(1) > 3 -
+            1] \\
+            &=& \P[ ( W(5) - W(1))/2 > 1] \\
+            &=& 0.1586552539
+        \end{eqnarray*}
+    \item
+        Since $ W(9) - W(1) \sim N(0,8) $, the required value
+        can be deduced from
+        \begin{eqnarray*}
+            \P[ W(9) > c | W(1) = 1] &=& \P[ W(9) - W(1) > c -
+            1] \\
+            &=& \P[ ( W(9) - W(1))/(2\sqrt{2}) > (c -1)/(2\sqrt
+            {2}) ] \\
+            &=& 0.10
+        \end{eqnarray*}
+        Then $ (c -1)/(2 \sqrt{2}) = 1.281551566 $ and $ c=
+        4.624775211 $.
+\end{enumerate}}
+
+%%%%%
+
+
+
+%%%%%
+\problem{  Show that \( \E[T_a] = \infty \) for $ a > 0 $.}
+\solution{}
+
+%%%%%
+\problem{
+  Suppose that the fluctuations of a share of stock of a certain
+  company are well described by a Brownian Motion process. Suppose
+  that the company is bankrupt if ever the share price drops to
+  zero.  If the starting share price is $ A(0) = 5 $, what is the
+  probability that the company is bankrupt by $ t = 25 $?  What is
+  the probability that the share price is above $ 10 $ at $ t = 25$?.
+  %% Adapted from H. Taylor, S. Karlin, \emph{Introduction to
+  %% Stochastic Modeling} 3rd Edition, Academic Press, 1998.
+  }
+\solution{}
+
+%%%%%
+\problem{
+  Suppose you own one share of stock whose price changes according 
+  to a Brownian Motion Process.  Suppose you purchased the stock
+  at a price $ b+c $, $ c > 0 $ and the present price is $ b $.
+  You have decided to sell the stock either when it reaches the
+  price $ b+c $ or when an additional time $ t $ goes by,
+  whichever comes first.  What is the probability that you do not
+  recover your purchase price?}
+\solution{}
+
+
+%%%%%
+\problem{ \tbf{The Distribution of the Maximum} \\
+  Let $t$ be a given time, let $a>0$ be a given value, then
+  \begin{eqnarray*}
+    \P\{ \max_{0\le u \le t} W(u) \ge a \} &=& \P\{ T_a \le t\} \\
+    &=& \fr{2}{\sqrt{2\pi}} \int_{a/\sqrt{t}}^\infty \exp(-y^2/2)\;dy
+  \end{eqnarray*}}
+\solution{}
+
+
+%%%%%
+\problem{ \tbf{Quadratic Variation.} \\
+  A function $f(x)$ is said to have \textbf{bounded variation} if, over the closed 
+  interval $[a,b]$, there exists an $M$ such that
+  $$
+    | f(t_1) - f(a)| + |f(t_2) - f(t_1)| + \ldots + |f(b) - f(t_n)| \le M
+  $$
+  \ni  for all partitions $a = t_0 < t_1 < t_2 < \ldots < t_n < t_{n+1} = b$ 
+  of the interval.The idea is that we measure the total (hence the absolute value)
+  up-and-down movement of a function.  This is roughly like the arclength of the 
+  graph of the function.  A monotone increasing or decreasing function has bounded 
+  variation.  An everywhere differentiable function has bounded variation.  
+  Some functions, for instance Brownian Motion do not have bounded variation. A function 
+  $f(t)$ is said to have \tbf{quadratic variation} if, over the closed interval $[a,b]$, 
+  there exists an $M$ such that
+  $$
+    (f(t_1) - f(a))^2 + (f(t_2) - f(t_1))^2 + \ldots + (f(b) - f(t_n))^2\le M
+  $$
+  \ni for all partitions $a=t_0<t_1<t_2<\ldots < t_n < t_{n+1} = b$ of the interval.
+  Again, the idea is that we measure the total (hence the positive terms
+  created by squaring) up-and-down movement of a function.  However, the squaring will 
+  make the small ups-and-downs smaller, so that perhaps a function without
+  bounded variation may have quadratic variation.  In fact, this is the
+  case for Brownian Motion. The \textbf{total quadratic variation} of $Q$ a function 
+  $f$ on an interval $[a,b]$ is
+  $$
+    Q = \sup_{P} \sum_{i=0}^{n} (f(t_{i+1}) - f(t_{i})^2
+  $$
+  where the supremum is taken over all partitions $P$ with 
+  $ a = t_0 < t _1 < ... < t_n < t_{n+1} = b$, with mesh size
+  going to zero as the number of partition points $n$ goes to infinity. \\
+  \ni\tbf{Quadratic Variation of Brownian Motion.} \\
+  \ni We can guess that Brownian Motion might have quadratic variation by
+  considering the quadratic variation of our coin-flipping fortune record
+  first.  Consider the function piecewise linear function $S(t)$ 
+  defined by $S_n = X_1 + ... + X_n$ with the Bernoulli random variables 
+  $X_i = +1$ with probability $p = 1/2$ and $X_i = -1$ with probability 
+  $q = 1-p = 1/2$. With a little analysis, it is easy to show that we need
+  only consider the quadratic variation at points $1,2,3, \ldots, n$
+  Then each term $(S(i+1) - S(i))^2 = X_{i+1}^2 = 1$.  Therefore, the
+  quadratic variation is the total number of steps, $Q=n$. Now remember Brownian 
+  Motion is approximated by $(1/\sqrt{n}) S(nt)$.  Each step is size $1/\sqrt{n}$, 
+  then the quadratic variation of the step is $1/n$ and there are $n$ steps on $[0,1]$.  
+  The total quadratic variation of $(1/\sqrt{n})S(nt)$ on $[0,1]$ is $1$.
+  We will not completely rigorously prove that the total quadratic variation of
+  Brownian Motion is $t$, as claimed, but we will prove something very
+  close to that.
+  \begin{theorem}
+  Let $W(t)$ be standard Brownian motion.  For every fixed $t > 0$
+  $$
+    \lim_{n \to \infty}
+             \sum_{n=1}^{2^n} 
+               \left[ 
+                  W\left( \frac{k}{2^n} t \right) - 
+                  W\left( \frac{k-1}{2^n} t \right)
+               \right]^2
+           = t
+  $$
+  \ni with probability $1$ (that is, almost surely).
+  \end{theorem}
+  !!!PROVE THE THEOREM!!!
+}
+\solution{  Introduce some briefer notation for the proof, let:
+  $$
+    \Dt_{nk} = 
+                  W\left( \frac{k}{2^n} t \right) - 
+                  W\left( \frac{k-1}{2^n} t \right)
+          \qquad k = 1, \ldots, 2^n
+  $$
+  and
+  $$
+    W_{nk} = \Delta^{2}_{nk} - t/2^n \qquad k = 1, \ldots, 2^n.
+  $$
+  We want to show that $\sum_{k=1}^{2^n} \Delta^2_{nk} \to t$ or what
+  is equivalent: $\sum_{k=1}^{2^n} W_{nk} \to 0$.  For each $n$, the
+  random variables $W_{nk}, k = 1, \ldots, 2^n$ are independent, and
+  identically distributed by properties 1 and 2 of the definition of
+  standard Brownian motion.  Furthermore,
+  $$
+    E[ W_{nk} ] = E[ \Delta_{nk}^2 ] - t/2^n = 0
+  $$
+  by property 1 of the definition of standard Brownian motion.  Also, a
+ routine (but omitted) 
+  computation of the fourth moment of the normal distribution
+  shows that
+  $$
+    E[W^2_{nk} ] = 2t^2/4^n
+  $$
+  (Note that one way to do the computation is to differentiate the
+  characteristic function $4$ times!)
+  Finally, by property 2 of the definition of standard Brownian motion
+  $$
+    E[ W_{nk}W_{nj} ] = 0, k \ne j
+  $$
+  Now, expanding the square of the sum, and applying all of these
+  computations
+  $$
+    E\left[ \left\{ \sum_{k=1}^{2^n} W_{nk} \right\}^2 \right] =
+    \sum_{k=1}^{2^n} E[W^2_{nk}] = 2^{n+1}t^2/4^n = 2t^2/2^n
+  $$
+  Now apply Chebyshev's Inequality to see:
+  $$
+    \P\left[ \left| \sum_{k=1}^{2^n} W_{nk} \right| > \epsilon \right]
+     \le \frac{2 t^2}{\epsilon^2} \left( \frac{1}{2}
+    \right)^n
+  $$
+  Now since $\sum (1/2)^2$ is a convergent series, the Borel-Cantelli
+  lemma implies that the event
+  $$
+    \left| \sum_{k=1}^{2^n} W_{nk} \right| > \epsilon
+  $$
+  can occur for only finitely many $n$.  That is, for any $\epsilon >
+  0$, there is an $N$, such that for $n > N$
+  $$
+    \left| \sum_{k=1}^{2^n} W_{nk} \right| < \epsilon
+  $$
+  therefore we must have that 
+  $\lim_{n \to \infty} \sum_{k=1}^{2^n} W_{nk} = 0$, 
+  and we have established what we
+  wished to show.}
+
+%%%%%
+\problem{ {\it Comment}:  Starting from
+  $$
+    \lim_{n \to \infty}
+             \sum_{n=1}^{2^n} 
+               \left[ 
+                  W\left( \frac{k}{2^n} t \right) - 
+                  W\left( \frac{k-1}{2^n} t \right)
+               \right]^2
+           = t
+  $$
+  and without thinking too carefully about what it might mean, we can
+  imagine an elementary calculus limit to the left side and write the
+  formula:
+  $$
+    \int_0^t [ dW(\tau) ]^2 = t = \int_0^t d\tau
+  $$
+  In fact, with more advanced mathematics this can be made sensible ad
+  mathematically sound.  Now from this relation, we could write it in
+  differential form:
+  $$
+    dW(\tau)^2 = d\tau.
+  $$
+  \ni The important thing to remember here is that the formula suggests
+  that Brownian motion has differentials that cannot be ignored in
+  second (or squared, or quadratic) order.  Brownian motion ``wiggles''
+  too much, even the total of the squared differences add up!  In
+  retrospect, this is not so surprising given the law of the iterated
+  logarithm.  We know that in any neighborhood $[t, t + dt]$ to the
+  right of $t$, Brownian motion must come close to $\sqrt{2t \log \log
+  t}$.  That is, intuitively, $W(t+dt) - W(t)$ must be about $\sqrt{2
+  dt}$ in magnitude, so we would guess $dW^2 \approx 2dt$  The theorem
+  makes it precise.}
+\solution{}
+
+%%%%%
+\problem{ {\it Comment}:
+  Here's a more rigorous and somewhat different explanation of why the squared 
+  variation of Brownian motion may be guessed to be $t$:  Consider
+  $$
+      \sum_{i=1}^{n} \left( W\left( \frac{it}{n} \right) - W\left(
+      \frac{(i-1)t}{n} \right)  \right)^2.
+  $$
+  Now let
+  $$
+  Z_{ni} = \frac{ \left( W\left( \frac{it}{n} \right) - W\left(
+      \frac{(i-1)t}{n} \right) \right) }{ \sqrt{t/n} }
+  $$
+  Then for each $n$, the sequence $Z_{ni}$ is a sequence of independent,
+  identically distributed standard normal $N(0,1)$ normal random
+  variables.
+  Now we can write the quadratic variation as:
+  $$
+      \sum_{i=1}^{n} \frac{t}{n} Z_{ni}^2 = t \left( \frac{1}{n}
+      \sum_{i=1}^{n} Z_{ni}^2 \right)
+  $$
+  But notice that the expectation $\E(Z_{ni}^2)$ of each term is the same
+  as calculating the variance of a standard normal $N(0,1)$ which is of
+  course $1$..  Then the last term in parentheses above converges by the weak law of
+  large numbers to $1$!  Therefore the quadratic variation of Brownian
+  motion converges to $t$.  This little proof is in itself not
+  sufficient to prove the theorem above because it relies on the weak
+  law of large of number, hence establishes convergence in distribution
+  only, and for the theorem above we want convergence almost surely.}
+\solution{}
+
+\problem{
+  Докажите, что условное распределение $W(s)$ при условии $X(t)=B$, 
+  $s < t $, является нормальным со средним $B s/t$ и дисперсией $(s/t)(t-s)$:
+  $$
+    \P\bl\{ W(s) \in (x,x+\Delta x) |\, W(t) = B\br\} = 
+    \fr{1}{\sqrt{2\pi (s/t)(t-s)}}\cd \exp(-(x-Bs/t)^2/2(t-s)) \cd\Dt x.
+  $$
+}
+\solution{
+The conditional density is
+\begin{eqnarray*}
+  f_{s|t}(x|B) &=& ( f_s(x) f_{t-s}(B-x) )/ f_t(B) \\
+  &=& K_1 \exp( -x^2/(2s) - (B-x)^2/( 2(t-s) ) ) \\
+  &=& K_2 \exp(-x^2(1/(2 s)+ 1/(2 (t-s) )) + Bx/(t-s) ) \\
+  &=& K_2 \exp( -t/( 2 s (t-s) ) ( x^2 - 2 s B x/t) ) \\
+  &=& K_3 \exp( - (t (x - B s/t)^2/ (2 s (t-s)) ) )
+\end{eqnarray*}
+where $ K_1 $, $ K_2 $, and $ K_3 $ are constants that do not depend on $
+x $.  For example, $ K_1 $ is the product of $ 1/\sqrt{2 \pi s} $ from
+the $ f_s(x) $ term, and $ 1/\sqrt{2 \pi (t-s)} $ from the $ f_{t-s}(B-x)
+$ term, times the $ 1/f_t(B) $ term in the denominator.  The $ K_2 $
+term multiplies in an $ \exp(-B^2/(2 (t-s))) $ term.  The $ K_3 $ term
+comes from the adjustment in the exponential to account for completing
+the square.  We know that the result is a conditional density, so the $
+K_3 $ factor must be the correct normalizing factor, and we recognize
+from the form that the result is a normal distribution with mean $ B s/t
+$ and variance $ (s/t) (t-s) $. }
+
+%%%%%
+\problem{ Условная плотность $W(t),$ где $t_1 < t < t_2,$ пр условии, что 
+  $W(t_1)=A$ и $W(t_2) = B,$ является нормальным со средним
+  $$
+    A + ( (B-A)/(t_2-t_1) ) (t-t_1)
+  $$
+  \ni и дисперсией
+  $$
+    (t_2-t)(t-t_1)/(t_2-t_1).
+  $$
+}
+\solution{$ X(t) $ subject to the conditions $ X(t_1) = A $ and $ X(t_2)
+= B $ has the same density as the random variable $ A + X(t-t_1) $,
+under the condition $ X(t_2 - t_1) = B - A $ by condition (2) of the
+definition of Brownian motion.  Then apply the theorem with $ s = t-t_1 $
+and $ t = t_2 - t_1 $. }
+
+\problem{
+\tbf{Quadratic Variation.}
+  \begin{theorem}
+  Let $W(t)$ be standard Brownian motion.  For every fixed $t > 0$
+  $$
+    \lim_{n \to \infty}
+    \sum_{n=1}^{2^n} 
+      \left[ 
+         W\left( \frac{k}{2^n} t \right) - 
+         W\left( \frac{k-1}{2^n} t \right)
+      \right]^2
+		= t
+  $$
+  \ni with probability $1$ (that is, almost surely).
+  \end{theorem}
+}
+\solution{Introduce some briefer notation for the proof, let:
+$$
+  \Dt_{nk} = 
+                W\left( \frac{k}{2^n} t \right) - 
+                W\left( \frac{k-1}{2^n} t \right)
+        \qquad k = 1, \ldots, 2^n
+$$
+and
+$$
+  W_{nk} = \Delta^{2}_{nk} - t/2^n \qquad k = 1, \ldots, 2^n.
+$$
+We want to show that $\sum_{k=1}^{2^n} \Delta^2_{nk} \to t$ or what
+is equivalent: $\sum_{k=1}^{2^n} W_{nk} \to 0$.  For each $n$, the
+random variables $W_{nk}, k = 1, \ldots, 2^n$ are independent, and
+identically distributed by properties 1 and 2 of the definition of
+standard Brownian motion.  Furthermore,
+$$
+  E[ W_{nk} ] = E[ \Delta_{nk}^2 ] - t/2^n = 0
+$$
+by property 1 of the definition of standard Brownian motion.  Also, a
+routine (but omitted) 
+computation of the fourth moment of the normal distribution
+shows that
+$$
+  E[W^2_{nk} ] = 2t^2/4^n
+$$
+(Note that one way to do the computation is to differentiate the
+characteristic function $4$ times!)
+Finally, by property 2 of the definition of standard Brownian motion
+$$
+  E[ W_{nk}W_{nj} ] = 0, k \ne j
+$$
+Now, expanding the square of the sum, and applying all of these
+computations
+$$
+  E\left[ \left\{ \sum_{k=1}^{2^n} W_{nk} \right\}^2 \right] =
+  \sum_{k=1}^{2^n} E[W^2_{nk}] = 2^{n+1}t^2/4^n = 2t^2/2^n
+$$
+Now apply Chebyshev's Inequality to see:
+$$
+  \P\left[ \left| \sum_{k=1}^{2^n} W_{nk} \right| > \epsilon \right]
+   \le \frac{2 t^2}{\epsilon^2} \left( \frac{1}{2}
+  \right)^n
+$$
+Now since $\sum (1/2)^2$ is a convergent series, the Borel-Cantelli
+lemma implies that the event
+$$
+  \left| \sum_{k=1}^{2^n} W_{nk} \right| > \epsilon
+$$
+can occur for only finitely many $n$.  That is, for any $\epsilon >
+0$, there is an $N$, such that for $n > N$
+$$
+  \left| \sum_{k=1}^{2^n} W_{nk} \right| < \epsilon
+$$
+therefore we must have that 
+$\lim_{n \to \infty} \sum_{k=1}^{2^n} W_{nk} = 0$, 
+and we have established what we
+wished to show.}
+
+
+%%%%%
+\problem{ The above theorem can be amusingly summarized in the following
+  way:  Let $dW(t) = W(t + dt) - W(t)$.  Let $dW(t)^2 = ( W(t + dt) -
+  W(t) )^2.$  Then (although mathematically not rigorously) we can say:
+  \begin{eqnarray*}
+     dW(t) &\sim& N(0, dt) \\
+     (dW(t))^2 &\sim& N(dt, 0). \\
+  \end{eqnarray*}
+
+  \begin{theorem}
+  $$
+   \lim_{n \to \infty}
+            \sum_{n=1}^{2^n} 
+              \left|
+                 W\left( \frac{k}{2^n} t \right) - 
+                 W\left( \frac{k-1}{2^n} t \right)
+              \right|
+          = \infty
+  $$
+  In other words, the total variation of a Brownian path is infinite,
+  with probability $1$.  
+  \end{theorem}
+}
+\solution{$$
+    \sum_{n=1}^{2^n} 
+      \left| 
+         W\left(  \frac{k}{2^n} t \right) - 
+         W\left( \frac{k-1}{2^n} t \right)
+      \right|
+   \ge
+   \frac{ 
+                 \sum_{n=1}^{2^n} 
+      \left| 
+         W\left(  \frac{k}{2^n} t \right) - 
+         W\left( \frac{k-1}{2^n} t \right)
+      \right|^2
+       }{
+\max_{j=1, \ldots, 2^n} \left| 
+         W\left(  \frac{k}{2^n} t \right) - 
+         W\left( \frac{k-1}{2^n} t \right)
+      \right|
+     }
+$$
+The numerator on the right converges to $t$, while the denominator
+goes to $0$ because Brownian paths are continuous, therefore
+uniformly continuous on bounded intervals.  Therefore the faction
+on the right goes to infinity.}
+
+
+\problem{ \tbf{Hitting Times.} \\
+  Consider standard Brownian Motion $W(t)$, which starts at $W(0) = 0.$
+  Let $ a > 0 $.  Let us denote the \emph{hitting time} $ T_a $ be the
+  first time the Brownian Motion hits $ a $.  Specifically in notation
+  from analysis
+  $$
+    T_a = \inf \{t > 0 :  W(t) = a \}.
+  $$
+  Note the very strong analogy with the duration of the game in the
+  gambler's ruin. Some Brownian paths will hit $a>0$ fairly directly, 
+  others will make an excursion ( for example, to negative values) and take 
+  a long time to finally reach $a$. Thus $T_a$ will have a probability 
+  distribution. We will determine that distribution by a procedure similar 
+  to the first step analysis we made for coin-flipping fortunes. More specifically, 
+  we will consider a probability by conditioning, conditioning on whether or not 
+  $T_a \le t$, for some given value of $t$.
+  $$
+    \P\{W(t) \ge a\} = \P\{ W(t) \ge a | T_a \le t\} \P\{T_a \le t\} + 
+    \P\{W(t) \ge a | T_a > t\} \P\{T_a > t\}
+  $$
+  Now note that the second conditional probability is $0$ because it is
+  an empty event.  Therefore:
+  $$
+    \P\{ W(t) \ge a\} = \P\{ W(t) \ge a | T_a \le t\} \P\{T_a \le t\}.
+  $$
+  Now, consider Brownian Motion ``started over'' again the time $T_a$
+  when it hits $a$.  By the shifting transformation from the previous
+  section, this would have just the distribution of Brownian Motion again,
+  and so
+  \begin{eqnarray*}
+    \P\{ W(t) \ge a | T_a \le t\} &=& \P\{ W(t) \ge a | W(T_a)=a,T_a\le t\} \\
+    &=&= \P\{ W(t) - W(T_a) \ge 0 | T_a \le t\} \\
+    &=& 1/2.
+  \end{eqnarray*}
+
+  \vsiii\ni Actually, this ``proof'' contains a serious logical gap, since $ T_a $
+  is a ``random time'' not a fixed time, whereas the shifting
+  transformation depends on having a fixed time.  We ought to make sure
+  that ``random times'' act like fixed times.  Under special conditions,
+  random times can act like fixed times.  Specifically, the proof can be
+  fixed and made completely rigorous by showing that Brownian motion has
+  the strong Markov property and that $T_a$ is a Markov time corresponding 
+  to the event of first passage from $0$ to $a$. This argument is a specific 
+  example of the Reflection Principle for Brownian Motion. It says that Brownian 
+  Motion reflected about a first passage has the same distribution as the original 
+  motion. Thus
+  $$
+    \P\{W(t) \ge a\} = (1/2) \P\{T_a \le t\}.
+  $$
+  \ni or
+  \begin{eqnarray*}
+    \P\{ T_a \le t\} &=& 2 \P\{ W(t) \ge a\} \\
+    &=& \frac{2}{\sqrt{2\pi t}} \int_a^\infty \exp(-x^2/(2t)) \; dx \\
+    &=& \frac{2}{\sqrt{2\pi}} \int_{a/\sqrt{t}}^\infty \exp(-y^2/2) \;dy
+  \end{eqnarray*}
+  (note the change of variables $y = x/\sqrt{t}$ in the second integral).
+  One can easily differentiate to obtain the probability distribution function 
+  (p.d.f)
+  $$
+    f_{T_a}(t) = \fr{a}{\sqrt{2\pi}} t^{-3/2} \exp(-a^2/(2t)).
+  $$
+  \ni Note that this is much stronger than the analogous result for the
+  duration of the game until ruin in the coin-flipping game.  There we
+  were only able to derive an expression for the expected value of the
+  hitting time, not the probability distribution of the hitting time. Now
+  we are able to derive the probability distribution of the hitting time
+  fairly intuitively (although strictly speaking there is a gap). Here is
+  a place where it is simpler to derive a quantity for Brownian Motion
+  than it is to derive the corresponding quantity for random walk. \\
+  \ni RESTORE THE DETAILS and GET RID OF NUMEROUS GAPS.}
+\solution{}
+
+%%%%%
+\problem{ \tbf{Hitting Times Continued.} \\
+  Let us now consider the probability that Brownian motion hits $a > 0$,
+  before hitting $-b<0$, where $b>0$. To compute this we will make use of 
+  the interpretation of Standard Brownian Motion as being the limit of the 
+  symmetric random walk. PROVE that in the case of the fair ($p = 1/2 = q$)
+  coin-flipping game the probability that the random walk goes up to 
+  $a$ before going down to $b$ when the step size is \(\Dt x \) is
+  $$
+    \P\{\text{ to $a$ before $-b$ }\} = \fr{b \Dt x}{(a + b)\Dt x} = \fr{b}{a+b}.
+  $$
+  \ni Here is a place where it is easier to derive the result from the 
+  coin-flipping game and pass to the limit than to derive the result from
+  Brownian Motion principles.}
+\solution{}
+
+%%%%%
+\problem{ \tbf{VERY DIFFICULT.} Prove that with probability $1$ (i.e. almost surely) a 
+  Brownian Motion is nowhere (except possibly on set of Lebesgue measure $0$)
+  differentiable.}
+\solution{}
+
+%%%%%
+\problem{ Prove that a Brownian Motion path has no intervals of monotonicity.
+  That is, there is no interval $[a,b]$ with $W(t_2)- W(t_1)>0$  
+  (or $W(t_2)-W(t_1)<0$) for all \(t_2,t_1\in [a,b]\) with $t_2>t_1.$ }
+\solution{}
+
+%%%%%
+\problem{ Show that
+  \begin{eqnarray*}
+    \limsup_{n \to \infty} \frac{W(n)}{\sqrt{n}} &=& +\infty \\
+    \liminf_{n \to \infty} \frac{W(n)}{\sqrt{n}} &=& -\infty \\
+  \end{eqnarray*}}
+\solution{}
+
+%%%%%
+\problem{ Show that for arbitrarily large $t_1$, there is a $t_2>t_1$ 
+  such that $W(t_2)=0$. That is, Brownian Motion paths cross the time-axis for 
+  arbitrarily large values of $t$.}
+\solution{}
+
+%%%%%
+\problem{ Using the fact that the inversion $t W(1/t)$ is also a standard 
+  Brownian motion show that $0$ is an accumulation  point of the zeros of $W(t)$.  
+  That is, Standard Brownian Motion crosses the time axis arbitrarily near $0$.}
+\solution{}
+
+
+
+\problem{
+  \begin{enumerate}
+    \item What is the probability that Geometric Brownian
+    Motion with parameters $r = 0$ and $\sigma$ ever rises to more than
+    twice its original value? In economic terms, if you buy
+    stock whose fluctuations are described by Geometric
+    Brownian Motion, what are your chances to double your
+    money?
+
+    \item What is the probability that Geometric Brownian
+    Motion with parameters $r = -\sigma^2/2$ and $\sigma$ (so
+    that the mean is constant) ever rises to more than twice
+    its original value?  In economic terms, if you buy stock
+    whose fluctuations are described by this Geometric Brownian
+    Motion, what are your chances to double your money?
+  \end{enumerate}}
+\solution{
+\begin{enumerate}
+  \item Use the ``gambler's ruin'' formula for Geometric
+  Brownian Motion:
+  $$
+     \P\left[ 
+          \frac{ z_0 \exp( r T_{A,B} 
+                       + \sigma W(T_{A,B}))}{z_0} = B 
+          \right] =
+          \frac{1 - A^{1 - (2r-\sigma^2)/\sigma^2}}
+               {B^{1 - (2r-\sigma^2)/\sigma^2}
+               - A^{1 - (2r-\sigma^2)/\sigma^2}}
+  $$
+  with $A = 0$ and $B = 2$ to obtain
+  $$
+     \P\left[ 
+          \exp(\sigma W(T_{0,2})) = 2
+          \right] =
+          \frac{1}
+               {2^{1 - (-\sigma^2)/\sigma^2}} =
+              \frac{1}{2^2} = \frac{1}{4}
+  $$
+
+  \item Use the ``gambler's ruin'' formula for Geometric
+  Brownian Motion again:
+  with $A = 0$ and $B = 2$ to obtain
+  $$
+     \P\left[ 
+          \exp(\sigma W(T_{0,2})) = 2
+          \right] =
+          \frac{1}
+               {2^{1 - (-\sigma^2-\sigma^2)/\sigma^2}} =
+            = \frac{1}{2^3} = \frac{1}{8},
+  $$
+
+\end{enumerate}}
+
+
+\problem{ Половина доказательства изометрии \\
+Пусть $X(t)$ - адаптированный (согласованный) случайный процесс. \\
+Пусть $t_{1}<t_{2}<...<t_{n}$ - фиксированные моменты времени. \\
+}
+\solution{$$E\left[\left(\sum_{i=1}^{n}X(t_{i})(W(t_{i+1})-W(t_{i}))\right)^{2}\right]=\sum_{i=1}^{n}\E(X^{2}(t_{i}))(t_{i+1}-t_{i})$$}
+
+\problem{
+For standard Brownian Motion $W(t)$ find the probability $p \{ W(1)>0 \& W(2)<0 \}$ 
+}
+\solution{Straight calculation with densities gives
+$$
+  1/2\pi \cdot \int_0^{+\infty}{dx} \int_{-\infty}^0 dy \cdot exp(-x^2/2) \cdot exp(-(x-y)^2/2)
+$$
+but this is not the way you are supposed to find out the answer.
+Just remember the property of independent increments.
+We know, that $W(1)$ and $W(2)-W(1)$ are independent and even identically distributed. 
+So "we cannot distinguish"  them $\P( |W(2)-W(1)| > |W(1)| ) = 1/2$. Thus, 
+$$
+  P\{ W(1)>0, W(2)<0 \} = P\{ W(1)>0, W(2)-W(1) < 0, |W(2)-W(1)| > |W(1)| \}
+$$
+For Brownian motion, signs and lengths are independent, so,
+$$
+  P\{ W(1)>0, W(2)<0 \} = P\{ W(1)>0) \P(W(2)-W(1) < 0\} \cdot P\{|W(2)-W(1)| > |W(1)|\} = 1/2*1/2*1/2=1/8.
+$$ }
+
+\problem{
+Let $B(t)$ and $W(t)$ be independant Brownian Motions. Find $E\max\{B(t),W(t)\}$ 
+}
+\solution{Note that
+$$
+  E\ \max\{B(t),W(t)\} =  E \{B(t)\} + E\{(W(t) - B(t))\cdot I_{W(t) - B(t) >0}\}.
+$$
+$W(t) - B(t)$ is a normal variate with mean $0$, variance $2t$, so the second expectation is 
+$$
+  1/(4\pi t)\int_0^\infty y \exp(y^2/(4t))dy,
+$$ 
+which I think is $\sqrt{t/\pi}$. }
+
+\problem{
+Петя и Вася сделали ставки по 1 рублю на броуновское движение. Петя выигрывает у Васи ставку, если $W(t)$ достигнет уровня 1 раньше, чем уровня (-1) и наоборот. В игре можно удваивать ставки в любой момент времени. Если от одного угрока поступило предложение удвоить ставки, то другой игрок в ответ на это может либо сдаться (и потерять текущую ставку), либо согласиться на удвоение ставки. Один и тот же игрок не может удваивать ставку два раза подряд. Других запретов на удвоение ставки нет. \\
+а) Какова оптимальная стратегия?\\
+б) Дисперсия выигрыша при использовании обоими игроками оптимальных стратегий? \\
+}
+\solution{Для <<положительного>> игрока: \\
+- предлагать удвоение при $W(t)\geq 0.6$ \\
+- соглашаться на удвоение при $W(t)\geq -0.6$ \\
+решение: \\
+Допустим на уровне $-a$ безразлично соглашаться или нет. Если не согласиться, получим проигрыш в ставку. Если согласиться, то возможно две ситуации: либо проиграем две ставки с вероятностью $\frac{2a}{1+a}$, либо достигаем уровня $a$, где противник безразличен между проигрышем в удвоенную ставку и еще чем-то. \\
+Получаем: $-1=\frac{2a}{1+a}(-2)+\frac{1-a}{1+a}2$ \\
+б) может быть явно не решается, а может и решается...\\
+Source: plus.math.org/issue15/features/doubling }
+
+
+\problem{
+Постройте <<типичную>> реализацию процессов: \\
+a) $X_{t}=W_{t}$ \\
+б) $X_{t}=W_{\frac{t}{1-t}}$ \\
+c) $X_{t}=W_{t\wedge \tau}$, где $\tau=min\{t|W_{t}=-1\}$ \\
+d) $X_{t}=\begin{array}{l}
+W_{\frac{t}{1-t}\wedge\tau}, t\in [0;1) \\
+-1, t\in[1;\infty) \\
+\end{array}$ \\
+e) $X_{t}=Z\sqrt{t}$, где $Z\sim N(0;1)$ }
+\solution{}
+
+
+\problem{For $0<s<t$ calculate the probability $\P(W_t>0 \mid W_s>0)$ and $\P(W_s>0 \mid W_t>0)$. }
+\solution{Перейдем к двум независимым нормальным переменным}
+
+\problem{Цель этого упраженения~--- разобраться, сколько времени процесс $Y_t=at+W_t$ в среднем проводит ниже нуля. Другими словами мы хотим найти $\E(T)$, где 
+\begin{equation}
+T=\int_0^{+\infty} 1_{Y_t<0}\, dt
+\end{equation}
+
+\begin{enumerate}
+\item Найдите $\E(T)$ для $a=1$
+\item Используя тот факт, что $\frac{1}{k}W_{k^2t}$ --- также броуновское движение, докажите, что величина $E(T)$ обратна пропорциональна $a$
+\item Найдите $\E(T)$ для произвольного $a$
+\item Найдите $\E(T)$, если $Y_t=\mu t+\sigma W_t$
+\end{enumerate}}
+\solution{Для нахождения интеграла можно изменить порядок интегрирования. $\E(T)=\frac{\sigma^2}{2\mu^2}$}
+
+
+\problem{Цель этого упраженения~--- разобраться, сколько времени процесс $Y_t=at+W_t$ в среднем проводит в полоске $[0;y]$. Другими словами мы хотим найти $\E(T)$, где 
+\begin{equation}
+T=\int_0^{+\infty} 1_{Y_t\in [0;y]}\, dt
+\end{equation}
+
+\begin{enumerate}
+\item ????
+\item Найдите $\E(T)$, если $Y_t=\mu t+\sigma W_t$
+\end{enumerate}}
+\solution{Для нахождения интеграла можно изменить порядок интегрирования. $\E(T)=y/\mu$}
+
+
+
+\section{12. Интеграл Ито}
+
+\problem{
+Пусть $X_{t}=\left\{
+\begin{array}{ll}
+1, & t\in[0;1) \\
+-2, & t\in[1;2) \\
+W_{1.5},& t\in[2;\infty) \\
+\end{array}\right.$ \\
+Найдите $\int_{0}^{t}X_{u}dW_{u}$ }
+\solution{}
+
+\problem{
+Пусть $X_{t}=cos(t^{2}\cdot W_{t}^{3})$ \\
+a) Найдите $dX_{t}$.\\
+b) Перепишите найденное выражение для $dX_{t}$ с помощью интегралов. }
+\solution{}
+
+
+\problem{ Для следующих случайных процессов найдите $dZ_{t}$ и выпишите соответствующую формулу в полной записи (с интегралами вместо $d$): \\
+a) $Z_{t}=cos(t^{2}\cdot W_{t}^{3})$ \\
+б) $Z_{t}=W^{3}_{t}$ \\
+в) $Z_{t}=t^{2}$ \\
+г) $Z_{t}=e^{\alpha W_{t}}$ \\
+д) $Z_{t}=\int_{0}^{t} aW_{a}dW_{a}$ \\
+е) $Z_{t}=X^{2}_{t}$, где $dX_{t}=\alpha X_{t}dt+\sigma X_{t}dW_{t}$ \\
+ж) $Z_{t}=X^{-1}_{t}$, где $dX_{t}=\alpha X_{t}dt+\sigma X_{t}dW_{t}$ }
+\solution{}
+
+\problem{ $dX_{t}=\alpha X_{t}dt+\sigma X_{t}dW_{t}$, $dY_{t}=\gamma Y_{t}dt+\delta Y_{t}dW_{t}$. $Z_{t}=X_{t}/Y_{t}$. Найдите $dZ_{t}$ }
+\solution{}
+
+\problem{ $dX_{t}=\alpha X_{t}dt+\sigma X_{t}dW_{1t}$, $dY_{t}=\gamma Y_{t}dt+\delta Y_{t}dW_{2t}$. $W_{1t}$ и $W_{2t}$ - два независимых винеровских процесса. $Z_{t}=X_{t}Y_{t}$. Найдите $dZ_{t}$ }
+\solution{}
+
+\problem{ Докажите, что следующие процессы являются мартингалами с использованием и без использования леммы Ито: \\
+а) $X_{t}=W_{t}^{2}-t$ \\
+б) $exp(-uW_{t}-\frac{u^{2}}{2}t)$ }
+\solution{}
+
+
+
+\problem{
+Пусть $f(t)$ - неслучайная дифференциируемая функция и $\int_{0}^{t}f^{2}(s)ds<\infty$ \\
+Найдите интеграл $\int_{0}^{t}f(s)dW(s)$ \\
+Уточнение: <<найдите>> в данном случае означает выразите через более привычный интеграл Римана }
+\solution{ $d(f(t)W_t)=f(t)dW_t+f'(t)W_tdt$, следовательно $\int_0^t f(s)dW_s=f(t)W_t-\int_0^t f'(s)W_sds$ }
+
+\problem{
+Пусть $X(t)$ - геометрическое броуновское движение, т.е. $dX=\alpha Xdt+\sigma XdW$, и $Y=X^{n}$ \\
+Докажите, что $Y$ - тоже геометрическое броуновское движение }
+\solution{}
+
+
+\problem{
+считаем $\int B_{t}dt$ - разными способами: aops, 198662 }
+\solution{}
+
+
+\problem{ Определим $X_t=\int_0^t \exp(as)\dx{W_s}$. Найдите $\E(X_t)$, $\E(W_t\cdot X_t)$, $\E(X_t\cdot X_s)$ }
+\solution{ $0$, Используя изометрию Ито:
+\begin{equation}
+\E(W_t\cdot X_t)=\E\left(\int_0^t\dx{W_s}\int_0^t\exp(as)\dx{W_s}\right)=\int_0^t 1\cdot \exp(as)\dx{s}
+\end{equation}}
+
+
+\problem{Используя лемму Ито и свойства стохастического интеграла найдите 
+\begin{enumerate}
+\item $dW^4_t$ и $\E(W^4_t)$
+\item $dW^6_t$ и $\E(W^6_t)$
+\item $dW^8_t$ и $\E(W^8_t)$
+\item $dW^{2n}_t$ и $\E(W^{2n}_t)$
+\end{enumerate} }
+\solution{ $\E(W^{2n}_t)=1\cdot 3\cdot 5 \cdots (2n-3)(2n-1)t^n$ }
+
+
+
+\section{Стохастические ДУ}
+
+\problem{
+Пусть случайные процессы $X$ и $Y$ являются решениями системы стохастических дифференциальных уравнений: 
+$$dX=aXdt-YdW, X(0)=x_{0}$$
+$$dY=aYdt+XdW, Y(0)=y_{0}$$
+а) Верно ли, что процесс $R(t)=X^{2}(t)+Y^{2}(t)$ является детерминистическим? \\
+б) Найдите $\E(X(t))$ \\
+% в) С помощью системы стохастических дифференциальных уравнений опишите то, что логично было бы назвать <<броуновским движением на окружности>> (??? не уверен) 
+}
+\solution{}
+
+\problem{ Vasicek interest rate model \\
+Пусть процентная ставка удовлетворяет уравнению: \\
+$dR=a(b-R)dt+\sigma dW$, $a$, $b$, $\sigma$ - положительные константы. $R(0)$ - также константа. \\
+а) Прокомментируйте смысл $b$, почему $a$ положительное? \\
+б) Решите уравнение, т.е. найдите $R(t)$ (в ответе будет один неупрощаемый интеграл Ито) \\
+в) Найдите $\E(R(t))$, $\Var(R(t))$ \\
+г) Найдите $\lim_{t\to\infty}\E(R(t))$ и $\lim_{t\to\infty}\Var(R(t))$ }
+\solution{
+
+$ r(t) = r(0) e^{-a t} +  b \left(1- e^{-a t}\right) + \sigma e^{-a t}\int_0^t e^{a s}\,dW_s$ \\
+$\E(r_t)=r_{0}e^{-at}+b(1-e^{-at})$ \\
+$\Var(r_t) = \frac{\sigma^2}{2 a}(1 - e^{-2at})$ }
+
+\problem{Решите $dX_t=\frac{1}{X_t}dt+X_tdW_t$ с начальным условием  $X_0=x$}
+\solution{Сделаем замену $Y_t = \mathrm{e}^{t- 2 W_t} X_t^2$. Применяем лемму Ито:
+\begin{equation}
+  \mathrm{d} Y_t = \mathrm{e}^{t- 2 W_t} \mathrm{d} (X_t^2) + X_t^2 \mathrm{d} \mathrm{e}^{t- 2 W_t} + \mathrm{d} \mathrm{e}^{t- 2 W_t} \cdot \mathrm{d} (X_t^2) 
+\end{equation}
+
+Заметим, что $\mathrm{d} \mathrm{e}^{t- 2 W_t} = \mathrm{e}^{t- 2 W_t} \left( 3 \mathrm{d} t - 2 \mathrm{d} W_t \right)$ и $\mathrm{d}(X_t^2) = (X_t^2 + 2) \mathrm{d} t + 2 X_t^2 \mathrm{d} W_t$.
+
+Получаем
+\begin{equation}
+  \mathrm{d} Y_t = 2 \mathrm{e}^{t- 2 W_t} \mathrm{d} t
+\end{equation}
+Вспоминаем начальное условие $Y_0 = \mathrm{e}^{0 - 2 W_0}X_0^2 = x^2$. Получаем:
+\begin{equation}
+   \mathrm{e}^{t- 2 W_t} X_t^2 = Y_t =  x^2 + \int_0^t 2 \mathrm{e}^{s - 2 W_s} \mathrm{d} s 
+\end{equation}
+Решение
+\begin{equation}
+  X_t = \operatorname{sign}(x) \sqrt{ x^2 \mathrm{e}^{2 W_t - t} + 2 \mathrm{e}^{2 W_t - t} \int_0^t \mathrm{e}^{s - 2 W_s} \mathrm{d} s  }
+\end{equation}
+Источник: \url{http://math.stackexchange.com/questions/80118/}
+}
+
+\problem{Consider the following stochastic differential equation
+\begin{equation}
+dX_t=(\sqrt{1-X_t^2}-0.5X_t)dt+\sqrt{1-X_t^2}dW_t, \quad X_0=0
+\end{equation}
+\begin{enumerate}
+\item Consider a substitution $X_t=\sin Y_t$, where $Y_t$ is some Ito process $dY_t=A_tdt+B_tdW_t$. Using Ito's lemma find $dX_t$.
+\item State conditions on $A_t$ and $B_t$ such that the two $dX_t$ coincides
+\item Find $Y_t$ and $X_t$
+\end{enumerate}}
+\solution{$X_t=\sin(t+W_t)$}
+
+\section{14. Модель Блэка-Шоулса}
+
+\problem{
+В рамках модели Блэка-Шоулса определите сколько стоят в момент времени $t=0$ следующие активы: \\
+а) Актив, выплачивающий в момент времени $T$ величину $\frac{1}{S(T)}$ \\
+б) Актив, выплачивающий в момент времени $T$ величину $\max\{ln(S(T),0\}$ }
+\solution{}
+
+\problem{
+В рамках стандартной модели Блэка-Шоулза рассмотрим актив, который выплачивает величину $S^{2}(T_{1})/S^{2}(T_{0})$ в момент времени $T_{1}$. \\
+Моменты времени $T_{0}<T_{1}$ фиксированы. \\
+Найдите стоимость этого актива в момент времени $t=0$ }
+\solution{}
+
+\problem{
+Цена акции в долларах подчиняется уравнению $dS=\alpha Sdt+\sigma SdW_{1}$ \\
+Валютный курс (евро за доллар) подчиняется уравнению $dY=\beta Ydt+\delta YdW_{2}$ \\
+$W_{1}$ и $W_{2}$ - независимые броуноские движения \\
+Опцион платит $\ln(SY)$ (евро) в момент времени $T$ \\
+$r$ - процентная ставка в евро. \\
+Найдите цену этого опциона в евро в момент времени $0$ (выразите ее через цену акции в евро). }
+\solution{}
+
+\problem{ уравнение Блэка-Шоулза для акций с дивидендами \\
+Допустим по акции платится постоянный дивиденд $\delta$. Т.е. за промежуток времени $dt$ владелец акции получает $\delta Sdt$. Рассмотрим портфель из $(-1)$ опциона колл, $a_{t}$ акций и $b_{t}$ наличности. \\
+а) Подберите $a_{t}$ так, чтобы портфель был безрисковым. \\
+б) Подберите $b_{t}$ так, чтобы выполнялось бюджетное ограничение \\
+в) Выведите уравнение Блэка-Шоулза. \\
+Подсказка 1: При отсутствии арбитража безрисковый портфель должен приносить такую же доходность, как... \\
+Подсказка 2: Готовый ответ отличается всего одним слагаемым. }
+\solution{}
+
+
+
+
+\section{16. Модель Блэка-Шоулса-2}
+
+
+\section{16. Компьютерное моделирование}
+
+
+\problem{  Flip a coin $25$ times, recording whether it comes up Heads  or Tails each time.  Scoring $X_i = +1$ for each Heads and $X_i = -1$ for each flip, also keep track of the accumulated sum $S_n = \sum_{i=1}^n X_i$ for $i = 1 \dots 25$ representing the net fortune at any time.  Plot the resulting $S_n$ versus $n$ on the interval   $[0,25]$.  Finally, using $N=5$ plot the rescaled approximation  $W_5(t) = (1/\sqrt{5}) S(5t)$ on the interval $[0,5]$ on the same graph. }
+\solution{}
+
+
+
+%\section{Asian, Lookback, Knock-out}

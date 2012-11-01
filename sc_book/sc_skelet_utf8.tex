@@ -1,0 +1,98 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/science/tex_general/title_bor_utf8}
+
+
+
+ 
+
+\input{/home/boris/science/tex_general/prob_and_sol_utf8}
+
+
+\hypersetup{pdftitle={Заметки по стохастическому анализу, Борис Демешев},pdfdisplaydoctitle=true} % Определение заголовка файла PDF
+
+\embedfile[desc={Собственно текст лекций}]{sc_body.tex}
+
+
+
+\title{Заметки к курсу стохастического анализа\footnote{Свежая версия: \url{demeshev.wordpress.com/materials}}}
+\author{Борис Демешев, \href{mailto:boris.demeshev@gmail.com}{boris.demeshev@gmail.com} }
+\date{\today}
+
+
+\numberwithin{equation}{page} % уравнения нумеруются на каждой стр. отдельно
+
+
+\newtheorem{myth}[equation]{Теорема} % нумерация сквозная с уравнениями
+
+\theoremstyle{definition} % убирает курсив и что-то еще наверное делает ;)
+\newtheorem{mydef}[equation]{Определение}
+
+\theoremstyle{definition}
+\newtheorem{myex}[equation]{Пример}
+
+%\newtheorem{assertion}{Утверждение}
+%\newtheorem{lemma}{Лемма}
+
+\theoremstyle{definition}
+\newtheorem*{myproof}{Доказательство}
+
+%\newtheorem{problem}{Задача}
+
+
+
+\def \lra{\leftrightarrow} % сокращение для стрелки влево-вправо (туда-сюда), для соответствий
+\def\R{\ensuremath{\mathbb{R}}} % достало уже!
+\def\F{\ensuremath{\mathcal{F}}} % аналогично!
+\def\B{\ensuremath{\mathcal{B}}} % аналогично!
+\def\s{\ensuremath{\sigma}}
+
+%\newcommand{\myth}[1]{Теорема #1.}
+%\newcommand{\myex}[1]{Пример #1.}
+%\newcommand{\mydef}[1]{Определение #1.}
+%\newcommand{\myproof}[1]{Доказательство #1.}
+\newcommand{\indef}[1]{\textbf{#1}}
+
+
+\makeindex % команда для создания предметного указателя
+
+
+\bibliographystyle{plain} % стиль оформления ссылок
+
+%\renewcommand{\refname}{Литературища} % не работает, зараза!
+%\renewcommand{\seename}{Оглавленьице}
+
+%\addto\captionsrussian{ % похоже тоже не работает
+%  \renewcommand{\refname}
+%    {}}
+
+
+\begin{document}
+
+%\pagestyle{myheadings} \markboth{Заметки к курсу стохастического анализа. Демешев Борис. roah@yandex.ru }{Заметки к курсу стохастического анализа. Демешев Борис. roah@yandex.ru}
+
+\maketitle
+\tableofcontents{}
+
+% \parindent=0 pt % отступ равен 0
+
+
+
+
+
+\problemonly
+\input{sc_body}
+
+\restoresection
+\section{Решения}
+\solutiononly
+\input{sc_body}
+\restoresection
+
+\bibliographystyle{plain}
+\bibliography{/home/boris/science/tex_general/opit}
+
+
+\printindex % печать предметного указателя здесь
+\end{document}

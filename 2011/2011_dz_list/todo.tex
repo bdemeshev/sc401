@@ -1,0 +1,68 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+% задаем более широкие поля
+\emergencystretch=2em \voffset=-2cm \hoffset=-1cm
+\unitlength=0.6mm \textwidth=17cm \textheight=25cm
+
+
+
+\usepackage{makeidx}
+
+
+
+\usepackage{cmap}
+
+\usepackage[pdftex]{graphicx} % omit pdftex option if not using pdflatex
+
+\usepackage[colorlinks,hyperindex,unicode]{hyperref}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc} 
+\usepackage[russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{epsfig}
+\usepackage{bm}
+\usepackage{color}
+
+\usepackage{multicol}
+
+
+%моя добавка
+\usepackage{ifpdf}
+\ifpdf
+	\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+% конец добавки
+
+\usepackage{asymptote} % After graphicx!
+\usepackage{sagetex} % i suppose after graphicx also...
+
+
+\title{Это документ!}
+
+
+\begin{document}
+%\maketitle
+Что порешать долгими зимними вечерами по стохастическому анализу?
+\begin{enumerate}
+\item Упражнения в конце лекций Зервоса. Смотрите приложенный прошлогодний вариант.
+\item Два промежуточных теста прошлого года.
+\item Из бета-версии задачника:
+\begin{enumerate}
+\item 2: 32-37
+\item 8: все, что душе угодно
+\item раздел 10.2: все, что хочется
+\item 11: 1, 2, 6-11, 14, 30, 32, 35
+\item 12: все, что нравится
+\item 13.1, 14.1-14.3
+\end{enumerate}
+\end{enumerate}
+
+
+\parindent=0 pt % no indent
+
+\end{document}
