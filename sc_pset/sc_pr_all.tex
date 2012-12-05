@@ -462,7 +462,7 @@ risk-neutral measure, which is defined as in the case of usual binomial asset pr
 
 \item[(iii)] Show that the discounted stock price is not a martingale under the
 risk-neutral measure. However, if $A_{n+1}$ is a constant $a\in(0,1)$, regardless of the value of
-$n$  and the outcome of the coin tossing $\om_1\dots\om_{n+1},$ then $\fr{S_n}{(1-a)^n(1+r)^n}$ is
+$n$  and the outcome of the coin tossing $\om_1\dots\om_{n+1},$ then $\frac{S_n}{(1-a)^n(1+r)^n}$ is
 a martingale under the risk-neutral measure.
 \end{itemize}}
 \solution{}
@@ -474,13 +474,13 @@ the right to receive either a call or a put at time $m$. The owner of the option
 wait until time $m$ before choosing. The call or put chosen expires at time $N$ with
 the strike price $K$. Show that the time-zero price of a chooser option is the sum of
 the time-zero price of a put, expiring at time N and having strike price $K$, and a call,
-expiring at time $m$ and having strike price $\fr{K}{(1+r)^{N-m}}.$}
+expiring at time $m$ and having strike price $\frac{K}{(1+r)^{N-m}}.$}
 \solution{}
 
 \problem{Asian option. Consider an $N$-period binomial model.
 An \emph{Asian option} has a payoff based on the average stock price, i.e.,
 $$
-V_N=f\bl(\fr{1}{N+1}\sum\lims_{n=0}^{N} S_n \br),
+V_N=f\left(\frac{1}{N+1}\sum\lims_{n=0}^{N} S_n \right),
 $$
 \ni where the function $f$ is determined by the contractual details of the option.
 \begin{itemize}
@@ -502,7 +502,7 @@ $v_n(s,y)$ in terms of $V_{N+1}.$
 and let $M$ be a fixed number between $0$ and $N-1$. Consider an Asian option with the payoff
 at time $N$ defined as
 $$
-V_N=f\bl(\fr{1}{N_M}\sum\lims_{n=M+1}^{N} S_n \br),
+V_N=f\left(\frac{1}{N_M}\sum\lims_{n=M+1}^{N} S_n \right),
 $$
 \ni where again the function $f$ is determined by the contractual details of the option.
 
@@ -532,10 +532,10 @@ $v_{M+1}(\cd,\cd).$}
 
 
 
-\problem{ Докажите, что адаптированные случайные процессы $\bl\{ \fr{S_n}{(1+r)^n}\br\}$ и
-  $\bl\{ \fr{X_n}{(1+r)^n}\br\}$ являются мартингалами относительно риск-нейтральной 
+\problem{ Докажите, что адаптированные случайные процессы $\left\{ \frac{S_n}{(1+r)^n}\right\}$ и
+  $\left\{ \frac{X_n}{(1+r)^n}\right\}$ являются мартингалами относительно риск-нейтральной 
   меры $(\ti p, \ti q)$. Условие $0<d<1+r<u$ является естественным \emph{необходимым} условием 
-  отсутствия арбитража. Доказав что $\bl\{ \fr{X_n}{(1+r)^n}\br\}$ мартингал, вы покажете, 
+  отсутствия арбитража. Доказав что $\left\{ \frac{X_n}{(1+r)^n}\right\}$ мартингал, вы покажете, 
   что это условие также является и \emph{достаточным}.}
 \solution{}
 
@@ -1297,8 +1297,8 @@ $\E(X|A^{c})$ и $\E(X|1_{A})$? }
 
 \problem{
 Пусть $X$ и $Y$ независимы и одинаково распределены, $Z=X+Y$. Найдите $p_{X|Z}(x|z)$, $\E(X|Z)$, $\Var(X|Z)$ для случаев: \\
-а) $X$ - эскпоненциально распределено с $\lambda$ \\
-б) $X$ - равномерно распределено на $[0;1]$}
+а) $X$ --- эскпоненциально распределено с $\lambda$ \\
+б) $X$ --- равномерно распределено на $[0;1]$}
 \solution{}
 
 \problem{
@@ -1738,6 +1738,14 @@ p(v)=p_{X}\left(2\sqrt{3v}\right)\cdot \frac{\sqrt{3}}{\sqrt{v}}=\exp\left(-2\sq
 \problem{The random variables $X_1$, $X_2$, \ldots are independent uniformly distributed on $[0;1]$. I~am summing them until the first $X_i$ greater than $0.5$ is added. After this term I stop. Let's denote by $S$ the total sum and by $N$ --- the number of terms added. Find $\E(S|N)$, $\Var(S|N)$, $\E(S)$, $\Var(S)$}
 \solution{}
 
+\problem{ Правильная монетка подбрасывается 3 раза. Случайная величина $X$ --- количество выпавших орлов. Событие $A$ состоит в том, что в первый и третий раз результаты подбрасывания совпали. 
+\begin{enumerate}
+\item Найдите $\sigma(A)$
+\item Сколько элементов в $\sigma(X)$?
+\item Найдите $\E(X\mid A)$
+\item Найдите $\E(X|\sigma(A))$ и $\E(1_A \mid X)$
+\end{enumerate}}
+\solution{ В $\sigma(X)$ 16 множеств}
 
 \section{9. Разложение в сумму, первый шаг, цепи Маркова}
 
@@ -2346,8 +2354,8 @@ $$
   $$
   M_n=\sum\lims_{j=1}^{n} X_j,\quad n\ge 1.
   $$
-  \ni Докажите, что $M_0,M_1,\dots$ матингал. Пусть $\sgm>0.$ 
-  Положим $S_n=e^{\sgm M_n}\cdot\bl(\fr{2}{e^{\sgm}+e^{-\sgm}} \br)^n$
+  \ni Докажите, что $M_0,M_1,\dots$ матингал. Пусть $\sigma>0.$ 
+  Положим $S_n=e^{\sigma M_n}\cdot\left(\frac{2}{e^{\sigma}+e^{-\sigma}} \right)^n$
   \ni Докажите, что процесс $S_0,S_1,S_2,\dots$ также мартингал.}
 \solution{}
 
@@ -2372,15 +2380,15 @@ and with each tail, it steps down one.
 \begin{itemize}
 \item[(i)] Show that $M_0,M_1,\dots$ is a martingale
 
-\item[(ii)] Let $\sgm$ be a positive constant and, for $n\ge 0$, define
+\item[(ii)] Let $\sigma$ be a positive constant and, for $n\ge 0$, define
 $$
-S_n=e^{\sgm M_n}\cdot\bl(\fr{2}{e^{\sgm}+e^{-\sgm}} \br)^n
+S_n=e^{\sigma M_n}\cdot\left(\frac{2}{e^{\sigma}+e^{-\sigma}} \right)^n
 $$
 \ni Show that $S_0,S_1,S_2,\dots$ is a martingale. Note that even though the symmetric random
 walk $M_n$ has no tendency to grow, the \emph{geometric symmetric random walk}, which is
-$e^{\sgm M_n}$ does have a tendency to grow. This is the result of putting a martingale into
+$e^{\sigma M_n}$ does have a tendency to grow. This is the result of putting a martingale into
 the convex exponential function. In order to again have a martingale, we must "discount" the
-geometric symmetric random walk, using the term  $\fr{2}{e^{\sgm}+e^{-\sgm}}$ as the discount rate.
+geometric symmetric random walk, using the term  $\frac{2}{e^{\sigma}+e^{-\sigma}}$ as the discount rate.
 \end{itemize}}
 \solution{}
 
@@ -2532,7 +2540,7 @@ I_n=\sum\lims_{j=0}^{n-1} M_j(M_{j+1}-M_j),\quad n=1,2,\dots
 $$
 \ni Show that
 $$
-I_n=\fr{1}{2}M_n^2-\fr{n}{2}.
+I_n=\frac{1}{2}M_n^2-\frac{n}{2}.
 $$}
 \solution{}
 
@@ -3146,7 +3154,7 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.}
   Let $t$ be a given time, let $a>0$ be a given value, then
   \begin{eqnarray*}
     \P\{ \max_{0\le u \le t} W(u) \ge a \} &=& \P\{ T_a \le t\} \\
-    &=& \fr{2}{\sqrt{2\pi}} \int_{a/\sqrt{t}}^\infty \exp(-y^2/2)\;dy
+    &=& \frac{2}{\sqrt{2\pi}} \int_{a/\sqrt{t}}^\infty \exp(-y^2/2)\;dy
   \end{eqnarray*}}
 \solution{}
 
@@ -3342,8 +3350,8 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.}
   Докажите, что условное распределение $W(s)$ при условии $X(t)=B$, 
   $s < t $, является нормальным со средним $B s/t$ и дисперсией $(s/t)(t-s)$:
   $$
-    \P\bl\{ W(s) \in (x,x+\Delta x) |\, W(t) = B\br\} = 
-    \fr{1}{\sqrt{2\pi (s/t)(t-s)}}\cd \exp(-(x-Bs/t)^2/2(t-s)) \cd\Dt x.
+    \P\left\{ W(s) \in (x,x+\Delta x) |\, W(t) = B\right\} = 
+    \frac{1}{\sqrt{2\pi (s/t)(t-s)}}\cd \exp(-(x-Bs/t)^2/2(t-s)) \cd\Dt x.
   $$
 }
 \solution{
@@ -3567,7 +3575,7 @@ on the right goes to infinity.}
   One can easily differentiate to obtain the probability distribution function 
   (p.d.f)
   $$
-    f_{T_a}(t) = \fr{a}{\sqrt{2\pi}} t^{-3/2} \exp(-a^2/(2t)).
+    f_{T_a}(t) = \frac{a}{\sqrt{2\pi}} t^{-3/2} \exp(-a^2/(2t)).
   $$
   \ni Note that this is much stronger than the analogous result for the
   duration of the game until ruin in the coin-flipping game.  There we
@@ -3589,7 +3597,7 @@ on the right goes to infinity.}
   coin-flipping game the probability that the random walk goes up to 
   $a$ before going down to $b$ when the step size is \(\Dt x \) is
   $$
-    \P\{\text{ to $a$ before $-b$ }\} = \fr{b \Dt x}{(a + b)\Dt x} = \fr{b}{a+b}.
+    \P\{\text{ to $a$ before $-b$ }\} = \frac{b \Dt x}{(a + b)\Dt x} = \frac{b}{a+b}.
   $$
   \ni Here is a place where it is easier to derive the result from the 
   coin-flipping game and pass to the limit than to derive the result from
@@ -3839,10 +3847,10 @@ a) $Z_{t}=cos(t^{2}\cdot W_{t}^{3})$ \\
 \solution{}
 
 
-\problem{ Определим $X_t=\int_0^t \exp(as)\dx{W_s}$. Найдите $\E(X_t)$, $\E(W_t\cdot X_t)$, $\E(X_t\cdot X_s)$ }
+\problem{ Определим $X_t=\int_0^t \exp(as)\,dW_s$. Найдите $\E(X_t)$, $\E(W_t\cdot X_t)$, $\E(X_t\cdot X_s)$ }
 \solution{ $0$, Используя изометрию Ито:
 \begin{equation}
-\E(W_t\cdot X_t)=\E\left(\int_0^t\dx{W_s}\int_0^t\exp(as)\dx{W_s}\right)=\int_0^t 1\cdot \exp(as)\dx{s}
+\E(W_t\cdot X_t)=\E\left(\int_0^t\,dW_s \int_0^t\exp(as)\,dW_s\right)=\int_0^t 1\cdot \exp(as)\,ds
 \end{equation}}
 
 
