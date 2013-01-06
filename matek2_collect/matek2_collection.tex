@@ -229,6 +229,7 @@ subject to $\dot{P}=C^2-(C^*)^2-bP$, $P(0)=P_0>0$, $P\geq 0$, $0\leq C\leq \bar{
 \end{enumerate}
 \end{enumerate}
 
+
 \section{2011}
 
 \subsection{12.01.2011}
@@ -289,6 +290,88 @@ subject to $\dot{k}=A\ln(1+k)-c-\delta k$, where $A>r>\delta>0$, $k(0)=k_0$, $\b
 \item Why are you sure the found growth path maximizes the discounted stream of utility?
 \end{enumerate}
 \end{enumerate}
+
+\subsection{retake, ??.01.2011}
+
+Answer all SIX questions of this section. Each question is worth 10 points.
+
+\begin{enumerate}
+\item  The joint distribution of the random vector $(X,Y)$ is given by its p.d.f 
+\[
+f(x,y)=
+\left\{
+  \begin{array}{l}
+    c e^{x-y}, \text{ for } 0\leq x,y\leq 1 \\
+    0, \text{ otherwise}    
+  \end{array}
+\right.
+\]
+where $c$ is a normalization constant. Find $\E(X\mid Y)$.
+
+\item Let $Y_t=W_t^3-tW_t^4$. Find $\E(Y_t)$ and $\Var(Y_t)$.  You don’t have to use Ito Lemma here.
+\item Let $X_n$ be a discrete time stochastic process that converges in probability to a random number $X$ as $n\to \infty$. Does this condition imply that $X_n$ converges to $X$ in mean? Almost surely? In distribution? Support at least one of your answers with a proof or counterexample. Give a definition for each type of convergence. 
+
+\item Solve the calculus of variations problem to optimize the integral 
+$ \int_{1/2}^1 \sqrt{1+\dot{x}^2}/x\,dt \to \max $
+subject to the conditions $x(1/2)=\sqrt{3}/2$, $x(1)=1$. Justify your answer referring to the sufficiency conditions. What kind of extremum did you find?
+
+\item Let $x(t)$ represent the revenue of a firm. The fraction of it, namely $xu(t)$, where $0\leq u\leq 1$, is spent on investments allowing the revenue to grow according to the rule $\dot{x}=\alpha x u$ with $\alpha=const>0$. 
+
+Another fraction of the revenue $\beta x$, $\beta=const>0$ serves to reimburse the costs. Maximize the profit of the firm over the finite time horizon
+\[
+\int_0^T (1-\beta-u)x\, dt \to \max
+\]
+subject to $\dot{x}=\alpha x u$, $x(0)=x_0$, $0\leq u\leq 1$.
+
+\item Consider the following <<cake-eating>> problem: maximize 
+\[
+\sum_0^{\infty} \beta^t \ln c_t
+\]
+subject to $W_{t+1}=W_t-c_t$, $W_t\leq W$, $W>0$, $0<\beta<1$. Let the state variable be $W$ and denote the next period value of $W$ as $W'$. 
+\begin{enumerate}
+\item Write down the Bellman equation for the value function $V(W)$
+\item Using method of undetermined coefficients find $V(W)$
+\item Find the optimal policy function $c=h(W)$
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+Part B.
+Answer both questions from this section. Each question is worth 20 points.
+Part B lasts for 60 minutes.
+\begin{enumerate}
+\item Let $X_t$ be a stochastic process such that
+$dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{1/\tau}$.
+\begin{enumerate}
+\item Use Ito Lemma to find both differential and integral expressions for $Y_t$ and use them to express $X_t$ (a.s.) in terms of $X_{\infty}$, $X_0$, $\tau$, $\sigma$ and $t$. Here $X_0$ is the value of $X_t$ at time $t=0$.
+\item Find $\E(X_t)$ and $\Var(X_t)$. Sketch the graph of $\E(X_t)$ as a function of $t$ for $X_{\infty}=1$, $\tau=1$, and $X_0 = 0$, $1$, and $2$. Plot a possible trajectory of $X_t$ in each case. Is there any name or names associated with $X_t$? 
+\end{enumerate}
+
+\item Consider the profit maximizing problem over the infinite time horizon
+\[
+\int_0^{\infty} e^{-rt}(2\sqrt{K}-cI)\, dt \to \max
+\]
+where $K$ is capital, $I$ is investment, $c=const$ is the unit cost of investment, $r$ is discount rate. Let $K(0)=K_0>0$. The capital changes under the investment equation $\dot{K}=I-bK$, where $b>0$ is the depreciation rate. Investment is bounded $0\leq I\leq \bar{I}$. Suppose the parameters of the problem satisfy conditions
+\[
+K_0 < \frac{1}{c^2(r+b)^2} < \frac{\bar{I}}{b}
+\]
+\begin{enumerate}
+\item Derive necessary conditions, using the current value Hamiltonian
+\item Does the steady-state solution(s) $(K_s,I_s)$ exist? Explain. If you answer is positive explore its stability.
+\end{enumerate}
+
+\end{enumerate}
+
 
 \section{2012}
 
