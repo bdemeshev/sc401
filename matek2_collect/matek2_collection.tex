@@ -1,0 +1,346 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\input{/home/boris/science/tex_general/title_bor_utf8}
+
+
+\title{Подборка экзаменов по математике для экономистов. Магистратура миэф}
+\author{Коллектив авторов}
+\date{\today}
+
+
+\begin{document}
+\parindent=0 pt % отступ равен 0
+
+\maketitle
+\tableofcontents
+
+\section{2009}
+
+\subsection{12.01.2009}
+
+Final exam consists of the two parts: A and B. Part A lasts for 110 minutes.
+Upon completion of that part the papers will be collected and the students will have 10 minutes break. 
+Part B lasts for 70 minutes.
+Students should answer eight of the following nine questions: six from Part A  and two from Part B. 
+Points will be deducted for the insufficient explanation within your answers.
+
+Part A.
+Answer all SIX questions of this section. Each question is worth 10 points.
+
+\begin{enumerate}
+\item The joint distribution of vector $(X,Y)$ is given by $\P(X=i,Y=j)=0.1$  for $1\leq i\leq j\leq 4$. Find $\E(Y\mid X)$.
+\item The random variable $X$ is exponentially distributed with parameter $\lambda$. The random variable $Y$ is exponentially distributed with parameter $X$. Find $\E(Y|X)$, $\E(Y)$  and $\Var(Y)$.
+\item Let $Y_t=W_t^3-3tW_t$.
+\begin{enumerate}
+\item Using Ito’s lemma find $dY_t$
+\item Using your previous result find $\E(Y_t)$ and $\Var(Y_t)$
+\end{enumerate}
+
+\item Using a current value Hamiltonian maximize the integral 
+\[
+\int_0^2 e^{-t}\left(x-\frac{5}{2}x^2-2y^2\right)\, dt
+\]
+subject to the conditions $\dot{x}=y-x/2$, $x(0)=0$, $x(2)$ is free. Find $x$, $y$, $\mu$.
+\item Solve the bounded control problem 
+\[
+\int_0^T e^{-rt}(1-u)x\, dt \to \max 
+\]
+, subject to $\dot{x}=xu$, $x(0)=1$, $0\leq u\leq 1$, where $0<r<1$.
+\item Consider the following optimization problem 
+\[
+\sum_0^{\infty} u(a_t) \to \max
+\]
+, subject to $\sum_0^{\infty}a_t \leq s$, $s>0$, $a_t \geq 0$.
+\begin{enumerate}
+\item Show that if $u(a)$ is increasing and strictly concave this problem has no solution
+\item What happens if the sum in the maximization problem is changed to $\sum_0^{\infty} \delta^t u(a_t)$ , where $0<\delta<1$? 
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+Part B.
+Answer two questions out of the three from this section. Each question is worth 20 points.
+Part B lasts for 70 minutes.
+\begin{enumerate}
+\item  In the framework of the Black and Scholes model find the price at $t=0$ of an asset that pays $\max\{0,\ln S_T\}$  at time $T$, where $S_T$ denotes the price of one share at time $T$.
+
+\item Let’s consider the following system of stochastic differential equations
+\[
+\left\{
+  \begin{array}{l}
+    dX_t=aX_t dt-Y_t dW_t \\
+    dY_t=aY_t dt+X_t dW_t
+  \end{array}
+\right.
+\]
+with initial conditions $X_0=x_0$ and $Y_0=y_0$ 
+\begin{enumerate}
+\item Find the solution of the form $X_t=f(t)\cos W_t$ and $Y_t=g(t)\sin W_t$ 
+\item Prove that for any solution $D_t=X_t^2+Y_t^2$ is nonstochastic
+\end{enumerate}
+
+
+\item Consider the profit-maximizing problem for a representative competitive firm 
+\[
+\int_0^{\infty} (p-wn(t))q(t)e^{-rt}\, dt \to \max
+\]
+, subject to (*) $\dot{x}=x(1-x)-q$, where the state variable $x(t)$ represents a renewable stock resource (fish) that evolves according to the equation (*) and $q(t)=2\sqrt{x(t)n(t)}$ is the extraction rate. Here $n(y)$ is a labor effort with a constant wage rate $w$. The price of fish is assumed to be constant and equal $p$.  The optimization problem is to choose $n(t)$ to maximize the discounted profits, $0<r<1$.
+\begin{enumerate}
+\item Derive necessary conditions
+\item Draw the phase diagram for this problem with the fish stock and the multiplier labeled on the axes
+\item Show that if $p/w$ is sufficiently large the fish stock will be driven to zero, while $p/w$ is low there is a steady-state with a positive stock
+\end{enumerate}
+\end{enumerate}
+
+
+
+\subsection{retake, ??.??.2009}
+
+Final exam consists of the two parts: A and B. Part A lasts for 110 minutes.
+Upon completion of that part the papers will be collected and the students will have 10 minutes break. 
+Part B lasts for 70 minutes.
+Students should answer eight of the following nine questions: six from Part A  and two from Part B. 
+Points will be deducted for the insufficient explanation within your answers.
+
+Part A.
+Answer all SIX questions of this section. Each question is worth 10 points.
+
+\begin{enumerate}
+\item In the first bag there balls numbered from 0 to 9, in the second bag there are balls numbered from 1 to 10. Two balls were selected. You know that one ball was selected from the first bag and one from the second one. You will select at random one ball from these two and you will know only its number. Let’s denote its number by $X$ and the number of the other of the two balls by $Y$.
+
+Find $\E(Y\mid X)$, optimal strategy for risk-neutral player.
+\item The random variable $X$ is uniformly distributed on $[0;a]$. The random variable $Y$ is uniformly distributed on $[0;X]$.
+
+Find $\E(Y\mid X)$, $\E(Y)$  and $\Var(Y)$.
+\item Let 
+$Y_t=\exp\left(-aW_t-\frac{a^2}{2}t\right)$.
+\begin{enumerate}
+\item Using Ito’s lemma find $dY_t$ 
+\item Using your previous result find $\E(Y_t)$ and $\Var(Y_t)$
+\end{enumerate}
+
+\item Find extremals for the integral 
+$\int_0^1 \left(\frac{1}{2}\dot{x}^2+x\dot{x}+x\right)\, dt$
+when $x(0)=0$ and $x(1)$ is chosen freely.
+
+\item Solve the bounded control problem
+$\int_0^2 (2x-3u)\,dt \to \max$
+, subject to $\dot{x}=x+u$, $x(0)=5$, $0\leq u \leq 2$, where $x(2)$ is free.
+
+\item Consider the following optimization problem: maximize 
+$\sum_0^{\infty}\beta^t u(c_t)$
+, subject to $c_t+k_{t+1}=f(k_t)$, $0<\beta<1$, where both the utility function $u(t)$  and the production function $f(k)$ have the standard properties of monotonicity and strict concavity. Let the state variable be $k$ and denote the next period value of $k$ as $k'$. Substitute $c=f(k)-k'$ into utility function and write down the Bellman equation.
+
+
+Using the formal differentiation of the Bellman equation with respect to $k$ under the sign of $\max$, and drawing  FOC from Bellman equation, exclude the value function and find the equation which combines the values of $u'$ and $f'$  at the adjacent time periods.
+
+\end{enumerate}
+
+Part B.
+Answer two questions out of the three from this section. Each question is worth 20 points.
+Part B lasts for 70 minutes.
+
+\begin{enumerate}
+\item In the framework of the Black and Scholes model find the price at $t=0$  of an asset that pays $\min\{M,\ln S_t\}$  at time $T$, where $S_T$ denotes the price of one share at time $T$,  $M$ --- arbitrary constant, specified at the moment of the issue.
+
+\item The price of a share in euros is driven by the equation $dS=\sigma S dW+\alpha S dt$, the dollar/euro exchange rate is driven by the equation $dU=b U dW+c U dt$. Find the current price in dollars of a European call option with maturity date $T$, strike price $K$.
+
+\item Consider the profit-maximizing problem for a representative competitive firm 
+$\int_0^{\infty} (p-c(x(t)))q(t)e^{-rt}\,dt \to \max$
+, subject to (*) $\dot{x}=1-x-q$, where the state variable $x(t)<1$ represents a nonrenewable stock resource (oil) that depletes according to the equation (*) and $q(t)$ is the extraction rate. Here $c(x)$ is a cost function of the extraction that is defined by $c(x)=e^{-x}$. The price of oil is assumed to be constant and equal $p$ where $1/e<p<1$.  The optimization problem is to choose $q(t)$ to maximize the discounted profits, $0<r<1$.
+\begin{enumerate}
+\item Derive necessary conditions.
+\item Prove that the steady-state exists and is unique. 
+\end{enumerate} 
+
+\end{enumerate}
+
+
+\section{2010}
+
+\subsection{14.01.2010}
+
+Final exam consists of the two parts: A and B. Part A lasts for 120 minutes.
+Upon completion of that part the papers will be collected and the students will have 10 minutes break. 
+Part B lasts for 60 minutes.
+Students should answer eight of the following eight questions: six from Part A and two from Part B. 
+Points will be deducted for the insufficient explanation within your answers.
+
+Part A.
+Answer all SIX questions of this section. Each question is worth 10 points.
+
+\begin{enumerate}
+\item  The joint distribution of the random vector $(X,Y)$ is given by its p.d.f 
+\[
+f(x,y)=
+\left\{
+  \begin{array}{l}
+    c e^{x-y}, \text{ for } 0\leq x,y\leq 1 \\
+    0, \text{ otherwise}    
+  \end{array}
+\right.
+\]
+where $c$ is a normalization constant. Find $\E(X\mid Y)$.
+
+\item Let $Y_t=W_t^3-tW_t^4$. Find $\E(Y_t)$ and $\Var(Y_t)$.  You don’t have to use Ito Lemma here.
+\item Let $X_n$ be a discrete time stochastic process that converges in probability to a random number $X$ as $n\to \infty$. Does this condition imply that $X_n$ converges to $X$ in mean? Almost surely? In distribution? Support at least one of your answers with a proof or counterexample. Give a definition for each type of convergence. 
+\item Seek to optimize the integral 
+$\int_0^{\frac{\ln 2}{2}} (4u-u^2-x-3x^2)\,dt$
+subject to the conditions $\dot{x}=u+x$, $x(0)=5/8$, $x\left(\frac{\ln 2}{2}\right)$ is free. Find $x$, $u$, $\lambda$. What kind of optimum did you find?
+\item Solve the bounded control problem 
+$\int_0^1 (2-5t)u\,dt$
+, subject to $\dot{x}=2x+4te^{2t}u$, $x(0)=0$, $x(1)=e^2$, $-1\leq u\leq 1$.
+\item Consider the following optimization problem: maximize 
+$\sum_0^{\infty} \left(\frac{3}{4}\right)^t \ln c_t$
+, subject to $c_t+k_{t+1}=\sqrt{k_t}$, $k_0>0$. Let the state variable be $k$ and denote the next period value of $k$ as $k'$.
+\begin{enumerate}
+\item Write down the Bellman equation for the value function $V(k)$
+\item Using method of undetermined coefficients find $V(k)$
+\item Find the optimal policy function $k'=h(k)$ 
+\end{enumerate} 
+
+\end{enumerate}
+
+Part B.
+Answer both questions from this section. Each question is worth 20 points.
+Part B lasts for 60 minutes.
+\begin{enumerate}
+\item Let $X_t$ be a stochastic process such that
+$dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{1/\tau}$.
+\begin{enumerate}
+\item Use Ito Lemma to find both differential and integral expressions for $Y_t$ and use them to express $X_t$ (a.s.) in terms of $X_{\infty}$, $X_0$, $\tau$, $\sigma$ and $t$. Here $X_0$ is the value of $X_t$ at time $t=0$.
+\item Find $\E(X_t)$ and $\Var(X_t)$. Sketch the graph of $\E(X_t)$ as a function of $t$ for $X_{\infty}=1$, $\tau=1$, and $X_0 = 0$, $1$, and $2$. Plot a possible trajectory of $X_t$ in each case. Is there any name or names associated with $X_t$? 
+\end{enumerate}
+
+\item Utility $U(C,P)=U_1(C)+U_2(P)$ increases with the consumption $C$ and decreases with the level of pollution $P$. For $C>0$, $P>0$ it is known that $U'_1>0$, $U''_1<0$, $U'_2<0$ and $U''_2<0$. It is known that $\lim_{C\to 0} U'_1(C)=\infty$ and $\lim_{P\to 0} U'_2(C)=0$. 
+
+Consumption lies within the range $0\leq C\leq \bar{C}$. Consumption contributes to pollution, while pollution control reduces it; moreover environment absorbs pollution at a constant rate $b>0$.  Pollution dynamics is governed by equation $\dot{P}=C^2-(C^*)^2-bP$ in which the first two terms represent the net contribution to the pollution flow, where $0<C^*<\bar{C}$. 
+
+Consider the problem of maximizing the discounted ($r>0$) utility stream  
+$\int_0^{\infty}e^{-rt}U(C,P)\, dt \to \max$
+subject to $\dot{P}=C^2-(C^*)^2-bP$, $P(0)=P_0>0$, $P\geq 0$, $0\leq C\leq \bar{C}$.
+\begin{enumerate}
+\item Derive necessary conditions, using the current value Hamiltonian.
+\item Sketch the phase diagram for this problem with the pollution and the consumption labeled on the axes.
+\item Find the condition under which the steady state solution $(P_s,C_s)$ exists and $0<C_s<\bar{C}$.
+\item Explore the stability of the steady state. Hint. You may find the return to the variables $(P,m)$ easier for solving that part.
+\end{enumerate}
+\end{enumerate}
+
+\section{2011}
+
+\subsection{12.01.2011}
+
+Notation: $W_t$ is the standard Wiener process. \\
+
+
+Part A (10 points each problem). Time allowed: 120 minutes.  \\
+
+\begin{enumerate}
+\item The joint probability density function of $X$ and $Y$ is given by
+\begin{equation}
+f(x,y)=\begin{cases}
+x+y, \quad x\in[0;1],\, y\in [0;1] \\
+0, \quad \mbox{otherwise}
+\end{cases} \nonumber
+\end{equation}
+Find $\E(Y|X)$ in terms of $X$, find the probability density function of  $\E(Y|X)$
+\item Consider the process $X_t=\int_0^t sW_s\,dW_s$. Find $\E(X_t)$, $Var(X_t)$, $Cov(X_t,W_t)$
+\item The process $Y_t$ is given by $Y_t=2W_t+5t$. The stopping time $\tau$ is given by $\tau=\min\{t|Y_t^2=100\}$. Find the distribution of the random variable $Y_\tau$ and the expected value $\E(\tau)$.
+
+
+Hint: you may find the martingales $a^{Y_t}$ and $Y_t-f(t)$ useful
+\item Find $\P(W_2-W_1>2)$
+\item In the framework of Black and Scholes model find the price of an asset which gives you the payoff of $1$ rubble only if the final price $S_t$ is at least two times bigger than the initial price $S_0$ of the asset. 
+\item Consider the free end problem, where $T>0$ is not given
+\begin{equation}
+\int_0^T (\dot{x}^2-x+1)dt \to extr \nonumber
+\end{equation}
+At the left end $x(0)=0$
+Find the optimal $T$ value and the extremal. Check that you solved the optimality problem or show the opposite.
+\end{enumerate}
+
+Part B (20 points each prolem). Time allowed: 60 minutes.  \\
+
+\begin{enumerate}
+\item Consider the stochastic differential equation 
+\begin{equation}
+dX_t=(\sqrt{1+X_t^2}+0.5X_t)dt+\sqrt{1+X_t^2}dW_t,\quad X_0=0 \nonumber
+\end{equation}
+\begin{enumerate}
+\item Suppose that $Y_t$ is another process that depens only on $X_t$, i.e. $Y_t=f(X_t)$. Find $dY$ using the Ito's lemma.
+\item Find such function $f$ that the term before $dW$ in $dY$ is constant.
+\item Find $X_t$
+\item Sketch $\P(X_t>0)$ as the function of $t$.
+\end{enumerate}
+
+\item Consider the neoclassical optimal growth model
+\begin{equation}
+\int_0^{\infty}e^{-rt}\left( \bar{U}-\frac{1}{c(t)}\right)\,dt \to \max \nonumber
+\end{equation}
+subject to $\dot{k}=A\ln(1+k)-c-\delta k$, where $A>r>\delta>0$, $k(0)=k_0$, $\bar{U}>0$.
+\begin{enumerate}
+\item Derive necessary conditions, using the current value Hamiltonian
+\item Sketch the phase diagram for this problem with the capital intensity and consumption labeled on the horizontal and vertival axes, respectively
+\item Check that the steady state solution exists. Provide explanation.
+\item Explore the stability of the steady state, using the Jacobian
+\item Why are you sure the found growth path maximizes the discounted stream of utility?
+\end{enumerate}
+\end{enumerate}
+
+\section{2012}
+
+\subsection{retake, 03.02.2012}
+
+Section A.  10 points for each problem.
+
+\begin{enumerate}
+\item Solve the bounded control problem with the free end value where $T>1$ is specified in advance but $x(T)$ is not.
+\begin{equation}
+\int_0^T(x-u)\,dt\to \max,\, x(0)=1 \nonumber
+\end{equation}
+$x'=u$, $0\leq u\leq x$. What guarantees that a maximizer would be found?
+
+\item Two stochastic processes are defined by the system of SDE with the Brownian motions $W_{1t}$, $W_{2t}$ independent of each other
+\begin{equation}
+\begin{cases}
+dX_t=(2+5t+X_t)dt+3dW_{1t} \\
+dY_t=4Y_t dt+8Y_t dW_{1t}+6dW_{2t} \nonumber
+\end{cases}
+\end{equation}
+Calculate $d(X_t Y_t)$
+
+\item Find the value of the constant $a$ such that the process $X_t=W_t^3-a\int_0^t W_s\,ds$ is a martingale.
+
+\item The process $Y_t$ is given by $Y_t=2W_t+5t$. The stopping time $\tau$ is given by $\tau=\min\{t|Y_t^2=100\}$. Find the distribution of the random variable $Y_\tau$ and the expected value $\E(\tau)$.
+
+
+Hint: you may find the martingales $a^{Y_t}$ and $Y_t-f(t)$ useful
+
+\item What is the expected value and variance of $W_t^2$ for $t>s$ given that $W_s=x$?
+
+\item In the framework of Black and Scholes model find the price at the time $0$ of an asset which gives you the payoff $\max\{\ln(S_t),0\}$ at the time $t$. Here $S_t$ is the price of the underlying asset.
+\end{enumerate}
+
+Section B. 20 points for each problem. 
+
+\begin{enumerate}
+\item The goal of this exercise is to solve the SDE
+\begin{equation}
+dX_t=\frac{1}{X_t}dt+X_tdW_t \nonumber
+\end{equation}
+with initial condition  $X_0=1$.
+\begin{enumerate}
+\item Apply the Ito's lemma to the process $Y_t=\exp(f(t)+g(W_t))X_t^2$
+\item Find non-constant functions $f$ and $g$ such that the coefficient before $dW_t$ in the expression for $dY_t$ is zero.
+\item Find $X_t$. The final expression may contain a Riemann integral of some stochastic process.
+\end{enumerate}
+
+\item A typical firm with the production function $x=f(l)$ in an economy employs 1 unit of the capital paying for it $\bar{r}$. There are $n$ identical firms in this economy where $n(t)$ is a function of time. Let the output of a firm be $x(t)$. Then the aggregate supply equals $nx$. Assuming that the market is in the equilibrium we use the inverse demand function $p(nx)$, where $p'(y)<0$. Equation defining the dynamics of labor is given by $\frac{dl}{dt}=a(w-\bar{w})$, where $a>0$  and $\bar{w}$  is some equilibrium wage rate. The growth (or fall) in number of firms is governed by the equation $\frac{dn}{dt}=b(px-\bar{w}l-\bar{r})$, where $b>0$. Write down the system of ODE for the unknowns $l(t)$, $n(t)$, using the first-order condition for the profit-maximizing firm, find and classify the steady-state solutions (if any exist). Production function is twice differentiable and concave everywhere.
+
+\end{enumerate}
+
+
+\end{document}
