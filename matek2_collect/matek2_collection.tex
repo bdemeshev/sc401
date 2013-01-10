@@ -208,7 +208,7 @@ Answer both questions from this section. Each question is worth 20 points.
 Part B lasts for 60 minutes.
 \begin{enumerate}
 \item Let $X_t$ be a stochastic process such that
-$dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{1/\tau}$.
+$dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{t/\tau}$.
 \begin{enumerate}
 \item Use Ito Lemma to find both differential and integral expressions for $Y_t$ and use them to express $X_t$ (a.s.) in terms of $X_{\infty}$, $X_0$, $\tau$, $\sigma$ and $t$. Here $X_0$ is the value of $X_t$ at time $t=0$.
 \item Find $\E(X_t)$ and $\Var(X_t)$. Sketch the graph of $\E(X_t)$ as a function of $t$ for $X_{\infty}=1$, $\tau=1$, and $X_0 = 0$, $1$, and $2$. Plot a possible trajectory of $X_t$ in each case. Is there any name or names associated with $X_t$? 
@@ -342,7 +342,7 @@ Answer both questions from this section. Each question is worth 20 points.
 Part B lasts for 60 minutes.
 \begin{enumerate}
 \item Let $X_t$ be a stochastic process such that
-$dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{1/\tau}$.
+$dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{t/\tau}$.
 \begin{enumerate}
 \item Use Ito Lemma to find both differential and integral expressions for $Y_t$ and use them to express $X_t$ (a.s.) in terms of $X_{\infty}$, $X_0$, $\tau$, $\sigma$ and $t$. Here $X_0$ is the value of $X_t$ at time $t=0$.
 \item Find $\E(X_t)$ and $\Var(X_t)$. Sketch the graph of $\E(X_t)$ as a function of $t$ for $X_{\infty}=1$, $\tau=1$, and $X_0 = 0$, $1$, and $2$. Plot a possible trajectory of $X_t$ in each case. Is there any name or names associated with $X_t$? 
@@ -413,6 +413,66 @@ with initial condition  $X_0=1$.
 \end{enumerate}
 
 \item A typical firm with the production function $x=f(l)$ in an economy employs 1 unit of the capital paying for it $\bar{r}$. There are $n$ identical firms in this economy where $n(t)$ is a function of time. Let the output of a firm be $x(t)$. Then the aggregate supply equals $nx$. Assuming that the market is in the equilibrium we use the inverse demand function $p(nx)$, where $p'(y)<0$. Equation defining the dynamics of labor is given by $\frac{dl}{dt}=a(w-\bar{w})$, where $a>0$  and $\bar{w}$  is some equilibrium wage rate. The growth (or fall) in number of firms is governed by the equation $\frac{dn}{dt}=b(px-\bar{w}l-\bar{r})$, where $b>0$. Write down the system of ODE for the unknowns $l(t)$, $n(t)$, using the first-order condition for the profit-maximizing firm, find and classify the steady-state solutions (if any exist). Production function is twice differentiable and concave everywhere.
+
+\end{enumerate}
+
+\section{2013}
+
+\subsection{Exam, 10.01.2013}
+
+\textbf{Optimal control part}.  
+
+\vspace{20pt}
+
+\begin{enumerate}
+\item $[$10 points] Solve the optimal control problem 
+$\int_0^1 (x+u)\, dt \to \max$
+subject to $\dot{x}=-x+u+t$, $x(0)=0$, $x(1)$ is free, and $0\leq u\leq 1$.
+
+\item $[$10 points] Consider an intertemporal utility maximization problem over the finite horizon in discrete time $t=1,\ldots,T$. The utility is $u(c)=\ln c$, the initial wealth is $W$ and if the remaining wealth at time $t$ was $w_t$, then by the beginning of the next period it becomes $w_{t+1}=(1+r)(w_t-c_t)$, where $r$ is the discount rate and $c_t$ is the consumption.  To find the maximum value of the utility stream one can use the finite version of the Bellman equation written in the form
+$V_t(w)=\max \{ u(c) + V_{t+1}((1+r)(w-c)) \}$
+where the function within the braces is maximized over the values of $0 \leq c \leq w$. It is important to note that the value function $V_t$ is the maximum value of the utility stream from time $t$ onwards.
+\begin{enumerate}
+\item $[$3 points] Let $V_T=\ln w$. Find $V_{T-1}$.
+\item $[$7 points] Try to verify the conjecture that 
+$V_t=\gamma_t \ln (1+r) + (T-t+1) \ln \frac{w}{T-t+1} $
+where $\gamma_t$ is some (unknown) function of time.
+\end{enumerate}
+
+\item $[$20 points] A spill of toxic substance should be cleaned up by a company.  If a cleanup rate is $u(t)$, then the area of the spill shrinks by the law 
+$x(t)=x_0-\int_0^t u(s)\, ds$
+, where $x_0$ is the initial area. According to the government contract by the time $T$ (and not earlier) the area of the spill should  be reduced to $x_T$, where $x_T<x_0$.  Clearly $u(t)\geq 0$, and by technology requirement $u(t)\leq \bar{u}$, where $\bar{u}>(x_0-x_T)/T$. Costs of cleaning are directly proportional to $u(t)$. Let the unit costs equal $c>0$ and the costs are discounted with the discount rate $r>0$.
+\begin{enumerate}
+\item $[$5 points] Formulate the minimization problem with the bounded control. Hint: this is a fixed endpoints problem.
+\item $[$15 points] By using the current value Hamiltonian set the system of equations and solve it.  
+\end{enumerate}
+\end{enumerate}
+
+\vspace{20pt}
+
+\textbf{Stochastic calculus part}. Here $W_t$ always denotes the standard Wiener process. 
+
+\vspace{20pt}
+
+\begin{enumerate}[resume]
+\item $[$10 points] Waves are arriving on the seashore. The sizes of the waves are independent uniform on $[0;1]$ random variables $X_i$. If the size of $i$-th wave is greater than the size of its neighboring waves, $X_i>\max\{X_{i-1},X_{i+1}\}$, then we call it a <<high>> wave. Let $H_i$ be the indicator of the <<high>> waves: $H_i=1$ if $X_i>\max\{X_{i-1},X_{i+1}\}$ and $H_i=0$ otherwise.
+
+Find $\E(X_i \mid H_i)$ and $\E(H_i \mid X_i)$ 
+\item $[$10 points] Find $\E(W_s \cdot W_t)$ and $\E(W_r \cdot W_s \cdot W_t)$ where $r<s<t$.
+\item $[$10 points] Consider the process $X_t=\int_0^t s^2 W_s\,dW_s$. Find $\E(X_t)$, $\Var(X_t)$, $\Cov(X_t,W_t)$
+\item $[$10 points] In the framework of Black and Scholes model find the price at the time $0$ of an asset which gives you the payoff $\ln(S_T)$ at the time $T$. Here $S_t$ is the price of the underlying asset at time $t$.
+
+\item $[$20 points] The goal of this exercise is to solve the SDE
+\[
+dX_t=-9X_t^2(1-X_t)dt+3X_t(1-X_t)dW_t,\quad X_0=1/2
+\]
+\begin{enumerate}
+\item Using Ito's lemma find $dY_t$ for the process $Y_t=f(X_t)$ 
+\item Find such a function $f()$ that the term before $dt$ in $dY_t$ is zero
+\item Obtain a simple differential equation for $Y_t$. It should not contain $X_t$.
+\item Solve the stochastic differential equation for $Y_t$
+\item Express $X_t$ as a function of $W_t$ and $t$.
+\end{enumerate}
 
 \end{enumerate}
 
