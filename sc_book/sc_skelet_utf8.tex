@@ -4,7 +4,7 @@
 \input{/home/boris/science/tex_general/title_bor_utf8}
 
 
-
+\usepackage[backend=biber]{biblatex}
  
 
 \input{/home/boris/science/tex_general/prob_and_sol_utf8}
@@ -58,7 +58,7 @@
 \makeindex % команда для создания предметного указателя
 
 
-\bibliographystyle{plain} % стиль оформления ссылок
+%\bibliographystyle{plain} % стиль оформления ссылок
 
 %\renewcommand{\refname}{Литературища} % не работает, зараза!
 %\renewcommand{\seename}{Оглавленьице}
@@ -67,6 +67,8 @@
 %  \renewcommand{\refname}
 %    {}}
 
+
+\addbibresource{/home/boris/science/tex_general/opit.bib}
 
 \begin{document}
 
@@ -90,9 +92,10 @@
 \input{sc_body}
 \restoresection
 
-\bibliographystyle{plain}
-\bibliography{/home/boris/science/tex_general/opit}
+%\bibliographystyle{plain}
+%\bibliography{/home/boris/science/tex_general/opit}
 
+\printbibliography
 
 \printindex % печать предметного указателя здесь
 \end{document}
