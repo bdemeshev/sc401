@@ -487,4 +487,54 @@ dX_t=-9X_t^2(1-X_t)dt+3X_t(1-X_t)dW_t,\quad X_0=1/2
 
 
 
+
+\subsection{Retake, 08.02.2013}
+
+\textbf{Stochastic calculus part}. Here $W_t$ denotes standard Wiener process 
+
+\vspace{20pt}
+
+\begin{enumerate}
+\item (10 points) Random variables $X$ and $Y$ are jointly normal with zero expected values, unit variances and correlation $\rho$. Find $\E(Y \mid X)$ and $\E(Y^2 \mid X)$
+\item (10 points) Consider the processes $X_t=\int_0^t s^3 W_s\,dW_s$ and $Y_t=\int_0^t W_s \, dW_s$. Find $\E(X_t)$, $\Var(X_t)$, $\Cov(X_t,Y_t)$
+\item (10 points) The stochasctic process $Y_t$ is given by equation $Y_t=W_t^4-6tW_t^2+3t^2$. Find $dY_t$ and $\E(Y_7 \mid Y_2)$
+\item (20 points) Consider the stochastic differential equation
+\[
+dX_t=X_t dt + X_t dW_t, \quad X_0=1
+\]
+\begin{enumerate}
+\item Solve this stochastic differential equation
+\item Let $\tau=\inf_{t>0} \{t:X_t\ge R\}$. Find $\E(\tau)$ applying the optional stopping theorem to the process $W_t$.
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{20pt}
+
+\textbf{Optimal control part}.  
+
+\vspace{20pt}
+
+\begin{enumerate}[resume]
+\item (10 points) Solve the optimal control problem problem: $\int_0^1 u^2 \, dt \to \min$, subject to $\dot{x}=x+u$, $x(0)=1$, $x(1)=0$.
+\item (10 points) Consider a maximization problem over the finite horizon in discrete time $t=1,\ldots,T$:
+\[
+\sum_{t=1}^{T} \left(\frac{t^3}{3}+\frac{t^2}{2}\right)a_t^2 \to \max
+\] 
+subject to constraint $\sum_{t=1}^T a_t=c$, $a_t \geq 0$.  
+
+By introducing $w_t=\sum_{i=1}^t a_i$  reduce that problem to dynamic programming (3 points) and solve it (7 points).  
+
+\item (20 points) Consider the profit-maximizing problem for a representative competitive firm 
+\[
+\int_0^{\infty} (p-c(x(t)))q(t)e^{-rt} \, dt \to \max
+\]
+subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a nonrenewable stock resource (oil) that depletes according to the equation (*) and $q(t)$ is the extraction rate. Here $c(x)$ is a cost function of the extraction that is defined by $c(x)=e^{-x}$. The price of oil is assumed to be constant and equal $p$ where $1/e<p<1$.  The optimization problem is to choose $q(t)$ to maximize the discounted profits, $0<r<1$.
+\begin{enumerate}
+\item (10 points) Derive necessary conditions.
+\item (10 points) Prove that the steady-state exists.
+\end{enumerate}
+\end{enumerate}
+
+
 \end{document}
