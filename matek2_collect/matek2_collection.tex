@@ -1,10 +1,11 @@
 \documentclass[pdftex,12pt,a4paper]{article}
 
-\input{/home/boris/science/tex_general/title_bor_utf8}
+\input{title_bor}
 
-
-\title{Подборка экзаменов по математике для экономистов. Магистратура миэф}
-\author{Коллектив авторов}
+\title{ICEF master program. Maths for economists. \\Exam collection.}
+\author{Joint author}
+%\title{Подборка экзаменов по математике для экономистов. Магистратура миэф}
+%\author{Коллектив авторов}
 \date{\today}
 
 
@@ -14,7 +15,7 @@
 \maketitle
 \tableofcontents
 
-\section{2009}
+\section{2008-2009}
 
 \subsection{Exam, 12.01.2009}
 
@@ -110,7 +111,8 @@ Answer all SIX questions of this section. Each question is worth 10 points.
 \begin{enumerate}
 \item In the first bag there balls numbered from 0 to 9, in the second bag there are balls numbered from 1 to 10. Two balls were selected. You know that one ball was selected from the first bag and one from the second one. You will select at random one ball from these two and you will know only its number. Let’s denote its number by $X$ and the number of the other of the two balls by $Y$.
 
-Find $\E(Y\mid X)$, optimal strategy for risk-neutral player.
+Find $\E(Y\mid X)$ 
+
 \item The random variable $X$ is uniformly distributed on $[0;a]$. The random variable $Y$ is uniformly distributed on $[0;X]$.
 
 Find $\E(Y\mid X)$, $\E(Y)$  and $\Var(Y)$.
@@ -158,7 +160,7 @@ $\int_0^{\infty} (p-c(x(t)))q(t)e^{-rt}\,dt \to \max$
 \end{enumerate}
 
 
-\section{2010}
+\section{2009-2010}
 
 \subsection{Exam, 14.01.2010}
 
@@ -230,7 +232,7 @@ subject to $\dot{P}=C^2-(C^*)^2-bP$, $P(0)=P_0>0$, $P\geq 0$, $0\leq C\leq \bar{
 \end{enumerate}
 
 
-\section{2011}
+\section{2010-2011}
 
 \subsection{Exam, 12.01.2011}
 
@@ -364,7 +366,7 @@ K_0 < \frac{1}{c^2(r+b)^2} < \frac{\bar{I}}{b}
 \end{enumerate}
 
 
-\section{2012}
+\section{2011-2012}
 
 \subsection{Retake, 03.02.2012}
 
@@ -416,7 +418,7 @@ with initial condition  $X_0=1$.
 
 \end{enumerate}
 
-\section{2013}
+\section{2012-2013}
 
 \subsection{Exam, 10.01.2013}
 
@@ -497,7 +499,7 @@ dX_t=-9X_t^2(1-X_t)dt+3X_t(1-X_t)dW_t,\quad X_0=1/2
 \begin{enumerate}
 \item (10 points) Random variables $X$ and $Y$ are jointly normal with zero expected values, unit variances and correlation $\rho$. Find $\E(Y \mid X)$ and $\E(Y^2 \mid X)$
 \item (10 points) Consider the processes $X_t=\int_0^t s^3 W_s\,dW_s$ and $Y_t=\int_0^t W_s \, dW_s$. Find $\E(X_t)$, $\Var(X_t)$, $\Cov(X_t,Y_t)$
-\item (10 points) The stochasctic process $Y_t$ is given by equation $Y_t=W_t^4-6tW_t^2+3t^2$. Find $dY_t$ and $\E(Y_7 \mid Y_2)$
+\item (10 points) The stochastic process $Y_t$ is given by equation $Y_t=W_t^4-6tW_t^2+3t^2$. Find $dY_t$ and $\E(Y_7 \mid Y_2)$
 \item (20 points) Consider the stochastic differential equation
 \[
 dX_t=X_t dt + X_t dW_t, \quad X_0=1
@@ -535,6 +537,123 @@ subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a 
 \item (10 points) Prove that the steady-state exists.
 \end{enumerate}
 \end{enumerate}
+
+\section{2013-2014}
+
+\subsection{Stochastic calculus hometask}
+
+\begin{enumerate}
+
+\item Let $X$ and $Y$ be independent exponentially distributed with parameter $\lambda$. Find $\E(X+Y \mid X-Y)$.
+
+\item Let $S_n$ be symmetric random walk with $S_0=2013$. The stopping time $\tau$ is the first moment when $|S_n|$ reaches the value 2014 or the value $2000$. Find $\E(\tau S_{\tau})$.
+
+Hint: You may construct a martingale of the form $M_n=S_n^3-f(n)S_n$ for some function $f$.
+
+\item Conditional variance is defined as $\Var(Y \mid X)=\E(Y^2 \mid X) - (\E(Y \mid X) )^2$. Find $\Var(W_s \mid W_t)$. 
+
+Hint: do not forget two cases, $t>s$ and $s<t$. You may find inversion property of the Wiener process useful.
+
+\item Let $f$ be a real function such that $f''$ is continuous. Find all such functions $f$ that $X_t=\exp(\alpha t)f(W_t)$ is a martingale. 
+
+\item Solve the stochastic differential equation 
+
+\[
+dX_t=(X_t/t+t)dt+2\sqrt{tX_t}dW_t
+\]
+
+Hint: You may suppose without a proof that the solution has the form $X_t=f(t)g(W_t)$. 
+ % \item Let $X$ be a normal $N(\mu,\sigma^2)$ random variable. Find $\E(e^X)$. 
+
+\item In the framework of Black and Scholes model find the price of the asset, which pays you $S_T$ at the fixed moment of time $T>1$ if $S_{T-1}>1$ and $0$ otherwise.
+  
+
+\end{enumerate}
+
+%\subsection{Solution for stochastic calculus hometask}
+
+%Author: Vladimir Shmarov
+
+
+
+\subsection{Exam, 17.01.2014}
+
+\subsubsection*{Optimal control part}
+
+
+\subsubsection*{Stochastic calculus part}
+
+Here $W_t$ always denotes the standard Wiener process. 
+
+\vspace{10pt}
+
+\begin{center}
+\includegraphics[width=7cm]{gatsby}
+\end{center}
+
+\vspace{10pt}
+
+
+\begin{enumerate}
+\item $[$10 points] It is known that $\Var(X)=16$, $\Var(Y)=9$, $\Cov(X,Y)=-1$, $\E(X)=\E(Y)=0$. Let's denote $\hat{Y}=\E(Y|X)$ and $\hat{X}=\E(X|Y)$. It is also known that $\E(\hat{X}^2)=4$ and $\E(\hat{Y}^2)=1$.  Find $\Var(\hat{Y})$, $\Cov(\hat{X},Y)$, $\Cov(\hat{Y},Y)$.
+\item $[$10 points] Let's consider a Wiener process with drift, $X_t=W_t+\mu t$. 
+\begin{enumerate}
+\item Find a non-trivial martingale of the form $M_t=e^{\beta X_t}$
+\item Let $\tau$ be a stopping time, the first moment when $X_t$ hits $2$ or $-1$. Find the probability $\P(X_\tau=2)$
+\end{enumerate}
+You may assume without proof that some version of Doob's theorem may be applied here.
+\item $[$10 points] Is $X_t=\cos W_t$ a martingale? If not, find any non-zero function $f(t)$ such that $Y_t=f(t)X_t$ is a martingale. Find the variance of $Y_t$.
+
+Hint: You may use the fact that $\E(\cos W_t)=e^{-t/2}$.
+
+\item $[$10 points] In the framework of Black and Scholes model find the price at the time $0$ of an asset which gives you the payoff $S_T^2$ at the time $T$. Here $S_t$ is the price of the underlying asset at time $t$.
+\item $[$20 points] Consider the following stochastic differential equation
+\[
+dX_t=-0.5e^{-2X_t}dt+e^{-X_t}dW_t,
+\]
+with deterministic initial value $X_0$.
+\begin{enumerate}
+\item Is $X_t$ a martingale?
+\item Using the substitution $Y_t=f(X_t)$ solve this differential equation. Hint: try to find a function $f$ such that the term before $dt$ cancels out.
+\item Sketch the possible path of the process $X_t$
+\item Using basic facts about Wiener process find the limit $\lim_{t\to\infty} \P(X_t \geq a)$ for all values of the parameter $a$.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection*{marking scheme}
+
+\begin{enumerate}
+\item 3 pts:
+\[
+\Var(\hat{Y})=\E(\hat{Y}^2)-(\E(\hat{Y}))^2=1-0^2=1
+\]
+3 pts: 
+\[
+\Cov(\hat{X},Y)=\E(\E(X|Y)Y)-\E(\hat{X})\E(Y)=\E(\E(YX|Y))-\E(X)\E(Y)=\Cov(X,Y)
+\]
+4 pts:
+\[
+\Cov(\hat{Y},Y)=\ldots=\Cov(\hat{Y},\hat{Y})
+\]
+
+\item $M_t=e^{2\mu X_t}$ 5 pts, probability --- 5 pts
+
+\item $Y_t=e^{t/2}X_t$ or proportional --- 5 pts, variance --- 5 pts
+
+\item Pricing formula --- 2 pts, risk-neutral substituition --- 2 pts, calculations --- 6 pts
+
+\item
+\begin{enumerate}
+\item  $X_t$ is not a martingale --- 1 pt
+\item $X_t=\ln(W_t+e^{X_0})$. --- 15 pts
+\item Key features: ``jiggly'' ---  1 pt, blows down to minus infinity in finite time --- 2 pts 
+\item The limit does not exist --- 1 pt
+\end{enumerate}
+
+\end{enumerate}
+
+
 
 
 \end{document}
