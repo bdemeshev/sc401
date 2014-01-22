@@ -580,6 +580,44 @@ Hint: You may suppose without a proof that the solution has the form $X_t=f(t)g(
 
 \subsubsection*{Optimal control part}
 
+\begin{enumerate}
+\item $[$10 points] A collector of wine is told by a doctor that he is going to die in $T$ years and he develops a consumption plan that maximizes the utility of consumption of wine over remaining lifetime. At present the stock of wine equals $w(0)=w_0>0$. It will be consumed fully by time $T$, that is $w(T)=0$. The utility function is $U(c)=c$, where $c$ is consumption of wine. The stock of wine follows the rule $w(t)=w_0-\int_0^t c(s) \, ds$. Consumption is bounded $0\leq c \leq \bar{c}$, where $\bar{c}>w_0/T$.
+
+State the dynamic optimization problem, if the discount rate is $r>0$. Introduce the current value Hamiltonian for that problem. Write down the first-order conditions. Solve the system of equations.
+
+\item $[$10 points] Consider the following optimization problem: maximize $\sum_{t=0}^{\infty} 0.75^t \ln c_t$, subject to $c_t+k_t=\sqrt{k_t}$, where $k_0>0$. Let the state variable be $k$ and denote the next period value of $k$ as $k'$.
+
+\begin{enumerate}
+\item Write down the Bellman equation for the value function $V(k)$
+\item Using the method of undetermined coefficients find $V(k)$
+\item Find the optimal policy function $k'=h(k)$
+\end{enumerate}
+
+\item $[$20 points] Consider the nonlinear system of differential equations
+
+\[
+\begin{cases}
+\dot{x}=-y+ax(x^2+y^2) \\
+\dot{y}=x+ay(x^2+y^2)
+\end{cases}
+\]
+where $a$ is a parameter.
+
+\begin{enumerate}
+\item $[$5 points] Linearize the system and classify the steady-state solution
+\item $[$10 points] Restore the nonlinear system and by changing the Carthesian (?) into the polar coordinates show that the system becomes
+\[
+\begin{cases}
+\dot{r}=ar^3 \\
+\dot{\theta}=1
+\end{cases}
+\]
+
+\item $[$5 points] Solve this system and draw the phase diagram for $a<0$, $a=0$, $a>0$.
+\end{enumerate}
+
+
+\end{enumerate}
 
 \subsubsection*{Stochastic calculus part}
 
