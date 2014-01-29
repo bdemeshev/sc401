@@ -570,10 +570,395 @@ Hint: You may suppose without a proof that the solution has the form $X_t=f(t)g(
 
 \end{enumerate}
 
-%\subsection{Solution for stochastic calculus hometask}
+\subsection{Solution for stochastic calculus hometask}
 
-%Author: Vladimir Shmarov
+Author: Vladimir Shmarov
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\dy}{\mathrm{d}y}
+\newcommand{\dz}{\mathrm{d}z}
+\newcommand{\du}{\mathrm{d}u}
+\newcommand{\dv}{\mathrm{d}v}
 
+
+\textbf{Problem 1.}\par
+Denote $\xi = X + Y$ and $\eta = X - Y$.\par
+Then we are gonna find  $E(\xi| \eta)$.\par
+Since $X \sim \mathrm{Exp}(\lambda)$, it has a nice density: $p_{X}(u) = \lambda e^{-\lambda u}\cdot I_{\{u \geqslant 0\}}$.\par
+Similarly, $p_{Y}(v) =  \lambda e^{-\lambda v}\cdot I_{\{v \geqslant 0\}}$.\par
+Since $X$ and $Y$ are independent, the vector $(X,Y)$ has a two-dimensional density, which equals to the product of densities of $X$ and $Y$, i.e.
+$$
+p_{(X,Y)}(u,v) = I_{\{u\geqslant 0, v\geqslant 0\}}\lambda^{2}e^{-\lambda(u+v)}
+$$\par
+We have $X = X(\xi, \eta) = \frac{\ds \xi + \eta}{\ds 2}$ and $Y = Y(\xi, \eta) = \frac{\ds \xi - \eta}{\ds 2}$.\par
+Then $J = \begin{vmatrix}\dfrac{\ds \partial X}{\ds \partial \xi} & \dfrac{\ds \partial X}{\ds \partial \eta}\\ \dfrac{\ds \partial Y}{\ds \partial \xi}& \dfrac{\ds \partial Y}{\ds \partial \eta}
+\end{vmatrix} = \begin{vmatrix}\frac{\ds 1}{\ds 2} & \frac{\ds 1}{\ds 2}\\ \frac{\ds 1}{\ds 2}& -\frac{\ds 1}{\ds 2}
+\end{vmatrix} = - \frac{\ds 1}{\ds 2}$.\par
+Therefore
+$$
+p_{(\xi, \eta)}(s,t) = p_{(X,Y)}\left(\frac{\ds s+t}{\ds 2}, \frac{\ds s-t}{\ds 2}\right)\cdot |J| = \frac{\ds \lambda^{2}}{\ds 2}I_{\{ s + t \geqslant 0\}}I_{\{s - t \geqslant 0\}}e^{-\lambda s} = \frac{\ds \lambda^{2}}{\ds 2}I_{\{ s \geqslant |t|\}}e^{-\lambda s}
+$$
+\par
+is a density of a vector $(\xi, \eta)$.\par
+Further, 
+$$
+p_{\eta}(t) = \int\limits_{\RR}p_{(\xi, \eta)}(s,t)\mathrm{d}s = \frac{\ds \lambda e^{-\lambda|t|}}{\ds 2}
+$$\par
+Then the conditional density is
+$$
+p_{(\xi | \eta)}(s|t) = \frac{\ds p_{(\xi, \eta)}(s,t)}{\ds p_{\eta}(t)} = \lambda e^{-\lambda(s-|t|)}\cdot I_{\{s - |t|\geqslant 0\}}
+$$\par
+And finally, denoting $z = s - |t|$, we get
+$$
+E(\xi|\eta) = \left.\int\limits_{\RR}s\cdot p_{(\xi|\eta)}(s|t)\mathrm{d}s\right|_{t = \eta} = \left.\int\limits_{\RR}(z + |t|)\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta}  = $$  $$= \left.\int\limits_{\RR}z\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} + \left.|t|\int\limits_{\RR}\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} =  \left.\left(\frac{\ds 1}{\ds \lambda} + |t|\right)\right|_{t = \eta} = \frac{\ds 1}{\ds \lambda} + |\eta|
+$$\par
+(the first integral is just the expectation of exponential distribution with parameter $\lambda$,\par and the second is $|t|$ times the integral of the density, which equals 1)\[\]\par
+\textbf{Answer:} $E(X+Y| X-Y) = \frac{\ds 1}{\ds \lambda} + |X-Y|$
+
+
+
+
+
+
+
+
+\textbf{Problem 2 --- part 1 of 2.}\par
+At first, $S_{n} = S_{0}+\sum\limits_{i = 1}^{n}\ee_{i}$, where $\{\ee_{i}\}$ is the sequence of independent random variables with\par
+ $P(\ee_{i} = -1) = P(\ee_{i} = 1) = \frac{\ds 1}{\ds 2}$. Also denote $\FF_{n} = \sigma(\ee_{1},...,\ee_{n})$.\par
+Observe that $\tau$ is really a stopping time, because at each moment of time we precisely know, are we in one of the points $\{2000, 2014\}$ or not.\par
+
+Let's prove that $E(\tau) < \infty$ (which will also imply that $P(\tau = +\infty) = 0$).\par
+We shall obviously reach $\tau$ after any 14 consecutive steps in one direction.
+Then $$P(\tau \geqslant 14n)\leqslant P(\mbox{At least one of }\ee_{1},...,\ee_{14}\mbox{ equals } -1)\ \times\ ...\ \times\  P(\mbox{At least one of }\ee_{14(n-1)+1},...,\ee_{14n}\mbox{ equals } -1) = $$ $$= \left(1 - 2^{-14}\right)^{n} = q^{n}$$\par
+where $q<1$.\par
+Then
+$$
+E(\tau) = \sum\limits_{n = 1}^{+\infty}P(\tau \geqslant n) \leqslant 14\sum\limits_{n = 0}^{+\infty}P(\tau \geqslant 14n+1)\leqslant 14\sum\limits_{n = 0}^{\infty}q^{n} = 14\cdot 2^{14} < \infty
+$$\par
+as required.\par
+\fbox{The sequence $\{S_{t}\}$ is a martingale} w.r.t. filtration $\{\FF_{n}\}$, because it is obviously $\{\FF_{t}\}$-adapted, has a finite (zero) expectation and
+$$
+E(S_{t+1}|\FF_{t}) = E(S_{t} + \ee_{t+1}|\FF_{t}) = S_{t} + E(\ee_{t+1}|\FF_{t}) = S_{t}
+$$
+
+\par Further, $S_{\min\{t, \tau\}}$ is obviously bounded in $t$ (it always lies between $2000$ and $2014$), so the Doob's theorem conditions are satisfied, which means that
+$$
+E(S_{\tau}) = S_{0} = 2013
+$$\par
+But $E(S_{\tau}) = 2000\cdot P(S_{\tau} = 2000) + 2014\cdot P(S_{\tau} = 2014)$, which after the substitution $E(S_{\tau}) = 2013$ gives us \par
+\fbox{$P(S_{\tau} = 2000) = \frac{\ds 1}{\ds 14}$} and \fbox{$P(S_{\tau} = 2014) = \frac{\ds 13}{\ds 14}$}\par
+Further, let's prove that \fbox{the sequence $\{S_{t}^{3} - 3tS_{t}\}$ is a $\{\FF_{t}\}$-martingale}. At first, it is obviously adapted and 
+$
+\left|E(S_{t}^{3} - 3tS_{t})\right| < \infty
+$\par
+Then
+$$
+E(\left. S_{t+1}^{3} - 3(t+1)S_{t+1}\ \right|\FF_{t}) = E\left(\left. (S_{t}+\ee_{t+1})^{3} - 3(t+1)(S_{t}+\ee_{t+1})\ \right|\FF_{t}\right) = $$ $$=
+E\left(\left. S_{t}^{3} + 3 S_{t}^{2}\underline{\ee_{t+1}} + 3\underline{(\ee_{t+1}^{2}  -  1)}S_{t} -3tS_{t} + \underline{\ee_{t+1}^{3}} - 3(t+1)\underline{\ee_{t+1}}\right| \FF_{t}\right) = S_{t}^{3} - 3tS_{t}
+$$\par
+(the underlined terms are going out after taking conditional expectation; $(\ee_{t+1}^{2} - 1)$ goes out even without it)\par
+Denote $X_{t} = S_{t}^{3} - 3tS_{t}$.\par
+For $t \geqslant \tau$ we have $|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}| = 0$, and for $t < \tau$ we have\par
+$|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}| = |X_{t+1} - X_{t}| = |3S_{t}^{2}\ee_{t+1}-(3t+2)\ee_{t+1}|\leqslant 3\times 2014^{2} + 3\tau +2$, which expectation is bounded by the finite number $3\times 2014^{2} + 2 + 3E(\tau)$.\par
+Then, the overall expectation $E\left(|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}|\right) \leqslant 3\times 2014^{2} + 2 + 3E(\tau)$ for every $t$, i.e. is bounded in $t$.\par
+
+
+
+\textbf{Problem 2 --- part 2 of 2.}\par
+Then again, the conditions of the Doob's theorem are satisfied, i.e.
+$$
+E(X_{\tau}) = X_{0} = 2013^{3}
+$$\par
+
+But also $E(X_{\tau}) = E(S_{\tau}^{3}) - 3 E(\tau S_{\tau})$, i.e. 
+$$
+E(\tau S_{\tau}) = \frac{\ds 1}{\ds 3}\left(E(S_{\tau}^{3}) - 2013^{3}\right) = \frac{\ds 1}{\ds 3}\left(\frac{\ds 1}{\ds 14}2000^{3} + \frac{\ds 13}{\ds 14}2014^{3} -2013^{3}\right) = 13\times 2009 = 26117
+$$\[\]\par
+
+\textbf{Answer:} $E(\tau S_{\tau}) = 26117$.
+\[\]\par
+\[\]\par
+
+\textbf{Problem 3.}\par
+\textit{Case 1.} Let $s \geqslant t$.\par
+Then
+$$
+E\left(\left.W_{s}^{2}\right| W_{t}\right) = E\left(\left.W_{t}^{2} + 2 W_{t}(W_{s} - W_{t}) + (W_{s} - W_{t})^{2} \right| W_{t}\right) =$$ $$= W_{t}^{2} + 2W_{t}E(W_{s} - W_{t}) + E\left((W_{s} - W_{t})^{2}\right) = W_{t}^{2} + (s-t)
+$$\par
+Further,
+$$
+E(W_{s} | W_{t}) = W_{t} + E(W_{s} - W_{t}| W_{t}) = W_{t}
+$$
+\par
+Then we have $Var(W_{s}|W_{t}) = E(W_{s}^{2}| W_{t}) - E(W_{s}|W_{t})^{2} = (s-t)$\[\]\par
+\textit{Case 2.} Let $s < t$.\par
+By the inverse property, $V_{t} = tW_{\frac{1}{t}}$ is also a standard Wiener process.\par
+From the case 1 we have
+$$
+\frac{\ds 1}{\ds s} - \frac{\ds 1}{\ds t} = Var\left(\left.V_{\frac{1}{s}}\right| V_{\frac{1}{t}}\right) = Var\left(\left.\frac{\ds 1}{\ds s}W_{s}\right| \frac{\ds 1}{\ds t}W_{t}\right) = \frac{\ds 1}{\ds s^{2}} Var\left(W_{s}\left|\frac{\ds 1}{\ds t}\right.W_{t}\right) = \frac{\ds 1}{\ds s^{2}}Var(W_{s}| W_{t})
+$$\par
+the last equation is because obviously $\sigma(W_{t}) = \sigma\left(\frac{\ds 1}{\ds t}W_{t}\right)$.\par
+Then $Var(W_{s}| W_{t}) = s - \frac{\ds s^{2}}{\ds t}$.\[\]\par
+Summing up these two cases, we get the\[\]\par
+\textbf{Answer:} $Var(W_{s}| W_{t}) = \max\left\{s-t, s - \frac{\ds s^{2}}{\ds t}\right\}$
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Problem 4.}\par
+Let $g(t,W_{t}) = X_{t} = e^{\alpha t}f(W_{t})$, then $g_{t} = \alpha g$, $g_{W_{t}} = e^{\alpha t}f'(W_{t})$ and $g_{W_{t}W_{t}} = e^{\alpha t}f''(W_{t})$.\par
+By the It$\hat{\mbox{o}}$'s lemma we have
+$$
+\mathrm{d}X_{t} = \alpha X_{t}\dt + e^{\alpha t}f'(W_{t})\mathrm{d}W_{t} + \frac{\ds 1}{\ds 2}e^{\alpha t}f''(W_{t})\dt =$$ $$= e^{\alpha t}\left(\alpha f(W_{t}) + \frac{\ds 1}{\ds 2}f''(W_{t})\right)\dt + e^{\alpha t}f'(W_{t})\mathrm{d}W_{t}
+$$\par
+Therefore
+$$
+X_{t} = f(0) + \int\limits_{0}^{t}e^{\alpha u}\left(\alpha f(W_{u}) + \frac{\ds 1}{\ds 2}f''(W_{u})\right)\du + \int\limits_{0}^{t}e^{\alpha u}f'(W_{u})\mathrm{d}W_{u}
+$$
+\par
+The last term in the right-hand side is a martingale, so $X_{t}$ is a martingale if and only if the coefficient near $\dt$ equals zero for all $t$, i.e.
+$$
+\alpha f(W_{t}) + \frac{\ds 1}{\ds 2}f''(W_{t}) = 0 \qquad \mbox{a.s.}
+$$\par
+which (together with continuity of $f''$) implies
+$$
+\alpha f(x) + \frac{\ds 1}{\ds 2}f''(x) = 0\qquad \forall x
+$$
+\par
+We know how to solve the linear differential equations, so I will not go into details and I'll just write the answer.\[\]\par
+\textbf{Answer:} If $\alpha < 0$, then $f(x) = C_{1}e^{t\sqrt{-2\alpha}} + C_{2}e^{-t\sqrt{-2\alpha}}$, where $C_{1}, C_{2}$ are any real constants;\par
+if $\alpha = 0$, then $f(x) = C_{1}x + C_{2}$;\par
+if $\alpha > 0$, then $f(x) = C_{1}\cos(t\sqrt{2\alpha}) + C_{2}\sin(t\sqrt{2\alpha})$
+
+
+
+
+
+
+
+\textbf{Problem 5 --- part 1 of 2.}\par
+Assume for simplicity that $X_{t} = f(t)g(W_{t})$, where $f$ and $g$ are kinda nice functions (defined on $[0, +\infty)$ and continuously differentiable the required number of times on this interval; right-differentiable at zero, of course).\par
+By the It$\hat{\mbox{o}}$'s lemma we have
+$$
+\mathrm{d}X_{t} = \left(f'(t)g(W_{t}) + \frac{\ds 1}{\ds 2}f(t)g''(W_{t})\right)\dt + f(t)g'(W_{t})\mathrm{d}W_{t}
+$$\par
+Substituting this into the condition of the problem and separating the parts with $\dt$ and $\mathrm{d}W_{t}$ we get
+$$
+\left\{
+\begin{aligned}
+f'(t)g(W_{t})+\frac{\ds 1}{\ds 2}f(t)g''(W_{t})  &= \frac{\ds f(t)}{\ds t}g(W_{t}) + t\qquad\qquad\qquad &(1)\\
+ f(t)g'(W_{t}) = 2\sqrt{tf(t)g(W_{t})} & \qquad\qquad\qquad &(2)
+\end{aligned}
+\right.
+$$\par
+Both equations are satisfied for every $t > 0$ almost surely.\[\]\par
+\textit{Step 1.} Let's prove that $f(t) \neq 0$ if $t > 0$. Indeed, if $f(t_{0}) = 0$, (1) gives us 
+$$
+f'(t_{0}) g(W_{t_{0}}) = t_{0}\qquad \mbox{a.s.}
+$$\par
+so
+$$
+g(W_{t_{0}}) = \frac{\ds t_{0}}{\ds f'(t_{0})}\qquad \mbox{a.s.}
+$$\par
+But $g$ is continuous, so this gives us 
+$$
+g(x) \equiv C = Const
+$$ \par
+But then (2) gives
+$$
+X_{t} \equiv 0 \qquad \mbox{a.s.}
+$$\par
+which does not satisfy the condition of the problem.\par
+Therefore, $f(t) \neq 0$, when $t \neq 0$.\[\]\par
+Now (2) can be transformed into 
+$$
+\frac{\ds f(t)}{\ds 4t}g'(W_{t})^{2} = g(W_{t})\qquad\qquad\qquad (3)
+$$\par
+\textit{Step 2.} $g'(x)$ cannot be zero in any interval.\par
+Suppose that $g'(x) = 0$ for all $x \in (a,b)$. From (3) we have $g(x) = 0$ almost everywhere at $(a,b)$ (because $P(W_{t} \in (a,b)) \neq 0$ for $t > 0$), and also $g'(x) = 0$ at $(a,b)$. But substituting these values to (1) provides us contradiction.\[\]\par
+Let $A = \{x \in \RR | g'(x) \neq 0\}$. Since $g'$ is continuous and is not identical zero (from the step 2), the set $A$ has a positive Lebesgue measure; therefore $P(W_{t} \in A) \neq 0$ for all $t > 0$.
+
+
+
+
+
+
+
+\textbf{Problem 5 --- pat 2 of 2.}\par
+
+Now fix some $t_{0} > 0$. From (3) we have that almost everywhere in the event $\{W_{t_{0}} \in A\}$ the equality
+$$
+\frac{\ds g(W_{t_{0}})}{\ds g'(W_{t_{0}})^{2}} = \frac{\ds f(t_{0})}{\ds 4 t_{0}}
+$$\par
+holds. Then for almost all $x \in A$ we have $\frac{\ds g(x)}{\ds g'(x)^{2}} = \frac{\ds f(t_{0})}{\ds 4 t_{0}}$. Now fix any other $t_{1} > 0$.\par
+We have that almost everywhere in $A$ the equality $\frac{\ds g(x)}{\ds g'(x)^{2}} = \frac{\ds f(t_{1})}{\ds 4 t_{1}}$ holds. Since $A$ has a positive measure, we have
+$$
+\frac{\ds f(t_{0})}{\ds 4t_{0}} = \frac{\ds f(t_{1})}{\ds 4t_{1}}
+$$\par
+i.e. $f(t) = Ct$ for all $t > 0$ and some $C = Const$. From the continuity \fbox{$f(t) = Ct$ for all $t \geqslant 0$}\[\]\par
+Substitute this to (1):
+$$
+Cg(W_{t}) + \frac{\ds 1}{\ds 2}Ctg''(W_{t}) = Cg(W_{t}) + t
+$$
+
+$$
+g''(W_{t}) = \frac{\ds 2}{\ds C}\qquad\qquad\qquad (4)
+$$\par
+(4) holds almost everywhere, but since $g''$ is continuous, we have \fbox{$g''(x) \equiv \frac{\ds 2}{\ds C}$}\par
+Then $g'(x) =  \frac{\ds 2x}{\ds C} + D$ and $g(x) = \frac{\ds x^{2}}{\ds C} + Dx + E$ for some constants $D,E$.\par
+From (3) we have
+$$
+g(x) = \frac{\ds f(t)}{\ds 4t}g'(x)^{2} = \frac{\ds C}{\ds 4}g'(x)^{2}
+$$\par
+Substitute the values of $g'(x)$ and $g(x)$:
+$$
+\frac{\ds x^{2}}{\ds C} + Dx + E = \frac{\ds C}{\ds 4}\left(\frac{\ds 2x}{\ds C} + D\right)^{2}
+$$
+
+$$
+\frac{\ds x^{2}}{\ds C} + Dx + E = \frac{\ds x^{2}}{\ds C} + Dx + \frac{\ds CD^{2}}{\ds 4}
+$$\par
+which gives us $E =  \frac{\ds CD^{2}}{\ds 4}$ and $g(x) = (Ax + B)^{2}$, where $A^{2} = \frac{\ds 1}{\ds C}$ and $2AB = D$.\par
+\[\]\par
+\textbf{Answer:} $X_{t} = t(W_{t} + C)^{2}$ for some constant $C$.\par
+(in our notation this constant equals $\frac{\ds B}{\ds A}$)\par
+\textbf{REMARK.} Precisely speaking, this is not a correct answer, because $\sqrt{tX_{t}}$ is always positive , so (2) does not always hold, because the left side of (2), which is $2t(W_{t} + C)$, can be negative with nonzero probability. In other words, we solved similar, but different equation
+$$
+\mathrm{d}X_{t} = \left(\frac{\ds X_{t}}{\ds t} + t\right)\dt\ \pm\ 2\sqrt{t X_{t}}\mathrm{d}W_{t}
+$$\par
+and the original problem has no solutions of the type $f(t)g(W_{t})$.
+ 
+
+
+
+
+
+
+
+
+\textbf{Problem 6 --- part 1 of 4.}\par
+The risky asset $S_{t}$ satisfies the stochastic differential equation $$\mathrm{d}S_{t} = \mu S_{t}\dt + \sigma S_{t}\mathrm{d}W_{t}$$\par which implies
+$$
+S_{t} = S_{0}\exp \left(t\left(\mu - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma W_{t}\right)
+$$\par
+The risk-free asset satisfies the equation
+$$
+\mathrm{d}B_{t} = rB_{t}\dt
+$$\par
+which implies
+$$
+B_{t} = B_{0}e^{rt}
+$$\par
+Let $X_{t}$ be our self-financing portfolio at time $t$, which contains $\Delta_{t}$ shares of the risky asset.\par
+The total amount of money in the risky asset is $\Delta_{t}$, in the risk-free asset --- $(X_{t} - \Delta_{t}S_{t})$.\par
+Therefore
+$$
+\mathrm{d}X_{t} = \Delta_{t}\mathrm{d}S_{t} + r(X_{t} - \Delta_{t}S_{t})\dt
+$$\[\]\par
+Let $\tilde{W}_{t} = \frac{\ds \mu - r}{\ds \sigma}t + W_{t}$, and $\tilde{P}$ is the probability measure, w.r.t. which $\tilde{W}_{t}$ is a standard Wiener process (the existence of such measure is the statement of Girsanov's theorem).\par
+In class we explicitly derived that
+$$
+e^{-rt}X_{t} = X_{0} + \int\limits_{0}^{t}\Delta_{u}e^{-ru}\sigma S_{u}\mathrm{d}\tilde{W}_{u}
+$$\par
+The last term is a $\tilde{P}$-martingale, which means that
+$$
+E_{\tilde{P}}\left(\left.e^{-rT}X_{T}\right|\FF_{0}\right) = X_{0} \qquad\qquad\qquad (1)
+$$\par
+Now remember that
+$$
+X_{T} = S_{T}I_{\{S_{T-1} > 1\}}
+$$\par
+so we need to calculate
+$$
+E_{\tilde{P}}(S_{T}I_{\{S_{T-1} > 1\}}) = \iint\limits_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv
+$$\par
+where $\tilde{p}_{(S_{T}, S_{T-1})}$ is a two-dimensional density of a corresponding vector w.r.t. measure $\tilde{P}$.
+
+
+
+
+
+
+\textbf{Problem 6 --- part 2 of 4.}\par
+But
+$$
+\iint\limits_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv = \int\limits_{1}^{+\infty}\left(\int\limits_{0}^{+\infty}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v) \du\right)\dv = \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv
+$$\par
+Further, 
+$$
+S_{T-1} = S_{0}\exp \left((T-1)\left(\mu - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma W_{T-1}\right) = S_{0}\exp \left((T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma \tilde{W}_{T-1}\right)
+$$\par
+which means that with notation $A(x) = S_{0}\exp \left((T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma x\right)$ we have
+$$
+\tilde{p}_{\tilde{W}_{T-1}}(x) = \tilde{p}_{S_{T-1}}\left(A(x)\right)\cdot \sigma A(x)
+$$\par
+We have $x = \sigma^{-1}\left(\ln\left(\frac{\ds A(x)}{\ds S_{0}}\right) - (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)$. Therefore
+$$
+ \tilde{p}_{S_{T-1}}\left(v\right) = \frac{\ds 1}{\ds \sigma v}\cdot \frac{\ds 1}{\ds \sqrt{2\pi (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(\ln(v) - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right) \qquad \qquad (2)
+$$\par
+Very ugly expression! Let's believe most of those terms will cancel out.\[\]\par
+Now
+$$
+S_{T} = S_{0}\exp \left(T\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma \tilde{W}_{T}\right) = S_{T-1}\cdot \exp\left(r - \frac{\ds \sigma^{2}}{\ds 2} + \sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right)
+$$\par
+and $\left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)$ is independent of the $\sigma$-algebra $\sigma(S_{T-1})\subseteq \FF_{T-1}$.\par
+Then
+$$
+ E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right) =  E_{\tilde{P}}\left(\left.S_{T-1}\cdot \exp\left(r - \frac{\ds \sigma^{2}}{\ds 2} + \sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right) \right| S_{T-1} = v\right) =$$ $$= v\cdot\exp\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) E_{\tilde{P}}\left(\exp\left(\sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right)\right)\qquad\qquad\qquad (3)
+$$\par
+Further, if $\xi \sim \mathcal{N}(0,1)$, then 
+$$
+E(e^{\sigma\xi}) = \frac{\ds 1}{\ds \sqrt{2\pi}}\int\limits_{\RR}e^{-\frac{x^{2}}{2} + \sigma x}\dx = e^{\frac{\sigma^{2}}{2}}\cdot\frac{\ds 1}{\ds \sqrt{2\pi}}\int\limits_{\RR}e^{-\frac{(x-\sigma)^{2}}{2}}\dx = e^{\frac{\sigma^{2}}{2}}
+$$\par
+which gives us
+$$
+E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right) = v\cdot\exp\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\exp\left(\frac{\ds \sigma^{2}}{\ds 2}\right) = ve^{r}\qquad\qquad\qquad (4)
+$$\par
+which, I think, is a very nice formula (especially if we compare it with (2)).\par
+\[\]\par
+
+
+\textbf{Problem 6 --- part 3 of 4.}\par
+Let's continue.\par
+Taking (2) and (4), we have 
+$$
+ \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv =$$ $$= e^{r}\int\limits_{1}^{+\infty}\frac{\ds 1}{\ds \sigma}\cdot \frac{\ds 1}{\ds \sqrt{2\pi (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(\ln(v) - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\dv = $$ $$= e^{r}\int\limits_{0}^{+\infty}e^{s}\cdot \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(s - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\mathrm{d}s
+$$\par
+We substituted $s = \ln(v)$. Of course, $\dv = e^{s}\mathrm{d}s$.\par
+Denote also $B = \ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)$.\par
+Then our integral equals
+$$
+e^{r}\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds s^{2} - 2Bs - 2\sigma^{2}(T-1)s + B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = $$ $$ = \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds \left(s - B - \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = $$ $$ = \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right) \cdot \tilde{P}\left(\eta > -\left(B + \sigma^{2}(T-1)\right)\right)
+$$\par
+where $\eta \sim \mathcal{N}(0, \sigma^{2}(T-1))$. The integral magically turns into the probability, because under the integral there is a well-known density.\[\]\par
+Therefore our integral finally equals
+$$
+ \exp\left(r + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2} - B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\cdot \tilde{P}\left(\frac{\ds \eta}{\ds \sigma\sqrt{T-1}} > -\frac{\ds B + \sigma^{2}(T-1)}{\ds \sigma\sqrt{T-1}}\right) = $$ $$=
+\exp\left(r + B + \frac{\ds \sigma^{2}(T-1)}{\ds 2}\right)\Phi\left(\frac{\ds B + \sigma^{2}(T-1)}{\ds \sigma\sqrt{T-1}}\right) = e^{\ln(S_{0}) + rT}\cdot\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
+$$\par
+where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int\limits_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$.
+
+
+\textbf{Problem 6 --- part 4 of 4.}\par
+And now I'll finish this huge problem.\par
+We had
+$$
+X_{0} = e^{-rT}E_{\tilde{P}}\left(S_{T}I_{\{S_{T-1}> 1\}}\right) = e^{-rT}\cdot e^{\ln(S_{0}) + rT}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right) = $$ $$=
+S_{0}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
+$$\par
+This is our answer.\[\]\par
+\textbf{Answer:} The price of our asset equals
+$$
+S_{0}\cdot\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
+$$\par
+where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int\limits_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$
 
 
 \subsection{Exam, 17.01.2014}
@@ -675,18 +1060,18 @@ with deterministic initial value $X_0$.
 \Cov(\hat{Y},Y)=\ldots=\Cov(\hat{Y},\hat{Y})
 \]
 
-\item $M_t=e^{2\mu X_t}$ 5 pts, probability --- 5 pts
+\item $M_t=e^{-2\mu X_t}$ 5 pts, probability --- 5 pts, $p=\frac{1-\exp(2\mu)}{\exp(-4\mu)-\exp(2\mu)}$
 
-\item $Y_t=e^{t/2}X_t$ or proportional --- 5 pts, variance --- 5 pts
+\item $X_t$ is not a martingale --- 1 pt, $Y_t=e^{t/2}X_t$ or proportional --- 4 pts, variance --- 5 pts $\Var(Y_t)=(e^t+e^{-t}-2)/2$
 
-\item Pricing formula --- 2 pts, risk-neutral substituition --- 2 pts, calculations --- 6 pts
+\item Pricing formula --- 2 pts, risk-neutral substitution --- 2 pts, calculations --- 6 pts, $S_0^2 e^{(r+\sigma^2)T}$.
 
 \item
 \begin{enumerate}
 \item  $X_t$ is not a martingale --- 1 pt
-\item $X_t=\ln(W_t+e^{X_0})$. --- 15 pts
+\item use of Ito's formula --- 5 pts, equation $f'=f$ --- 5 pts, solution $X_t=\ln(W_t+e^{X_0})$. --- 5 pts
 \item Key features: ``jiggly'' ---  1 pt, blows down to minus infinity in finite time --- 2 pts 
-\item The limit does not exist --- 1 pt
+\item The limit does not exist --- 1 pt 
 \end{enumerate}
 
 \end{enumerate}
