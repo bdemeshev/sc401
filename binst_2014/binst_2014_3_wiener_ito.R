@@ -63,6 +63,7 @@ for (j in 1:n.sim) {
 }
 
 qplot(IIto)
+qplot(IIto,geom="density")
 mean(IIto)
 var(IIto)
 sum(IIto>0)/n.sim
