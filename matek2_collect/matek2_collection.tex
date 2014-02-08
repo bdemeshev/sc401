@@ -538,6 +538,17 @@ subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a 
 \end{enumerate}
 \end{enumerate}
 
+\subsubsection*{Answers and hints}
+\begin{enumerate}
+\item Write the joint pdf $f(x,y)$, find $f(y \mid x)$ and then the conditional expected values by integration.
+\item $\E(X_t)=\E(Y_t)=0$, use isometry property
+\item Calculate  $dY_t$. We observe that $dY_t=f(t,W_t)dW_t$, so $Y_t$ is a martingale and $\E(Y_7 \mid Y_2)=Y_2$.
+\item Use the substitution $Y_t=\ln X_t$. The solution is 
+\[
+X_t=X_0\exp(t/2+W_t)
+\]
+\end{enumerate}
+
 \section{2013-2014}
 
 \subsection{Stochastic calculus hometask}
@@ -624,7 +635,7 @@ $$\par
 
 \textbf{Problem 2 --- part 1 of 2.}\par
 At first, $S_{n} = S_{0}+\sum\limits_{i = 1}^{n}\ee_{i}$, where $\{\ee_{i}\}$ is the sequence of independent random variables with\par
- $P(\ee_{i} = -1) = P(\ee_{i} = 1) = \frac{\ds 1}{\ds 2}$. Also denote $\FF_{n} = \sigma(\ee_{1},...,\ee_{n})$.\par
+ $P(\ee_{i} = -1) = P(\ee_{i} = 1) = \frac{\ds 1}{\ds 2}$. Also denote $\FF_{n} = \sigma(\ee_{1},\ldots,\ee_{n})$.\par
 Observe that $\tau$ is really a stopping time, because at each moment of time we precisely know, are we in one of the points $\{2000, 2014\}$ or not.\par
 
 Let's prove that $E(\tau) < \infty$ (which will also imply that $P(\tau = +\infty) = 0$).\par
@@ -1076,7 +1087,63 @@ with deterministic initial value $X_0$.
 
 \end{enumerate}
 
+\subsection{Retake, 08.02.2014}
 
+\subsubsection*{Stochastic calculus part}
+
+
+
+\begin{enumerate}
+
+\item $[$10 points] Is $X_t=\sin W_t$ a martingale? If not, find any non-zero function $f(t)$ such that $Y_t=f(t)X_t$ is a martingale. Find the expected value $\E(X_t)$
+
+\item  $[$10 points] In the framework of Black and Scholes model find the price of the asset, which pays you $S_2/S_1$ at the fixed moment of time $T=2$
+
+\item $[$10 points] Let $\tau$ be a stopping time, the first moment when $W_t$ hits $2$ or $-1$.
+\begin{enumerate}
+\item Find the probability $\P( W_{\tau} = 2)$
+\item Find a martingale of the form $X_t=W_t^2+f(t)$.
+\item Find $\E(\tau)$
+\end{enumerate}
+
+\item $[$10 points]  The joint distribution of the random vector $(X,Y)$ is given by its probability density function
+\[
+f(x,y)=
+\left\{
+  \begin{array}{l}
+    c e^{x-y}, \text{ for } 0\leq x,y\leq 1 \\
+    0, \text{ otherwise}    
+  \end{array}
+\right.
+\]
+where $c$ is a normalization constant. Find $\E(X\mid Y)$.
+
+\item $[$20 points] Let’s consider the following system of stochastic differential equations
+\[
+\left\{
+  \begin{array}{l}
+    dX_t=aX_t dt-Y_t dW_t \\
+    dY_t=aY_t dt+X_t dW_t
+  \end{array}
+\right.
+\]
+with initial conditions $X_0=x_0$ and $Y_0=y_0$ 
+\begin{enumerate}
+\item Find the solution of the form $X_t=f(t)\cos W_t$ and $Y_t=g(t)\sin W_t$ 
+\item Prove that for any solution $D_t=X_t^2+Y_t^2$ is nonstochastic
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection*{Answers and hints}
+
+\begin{enumerate}
+\item $f(t)=e^{t/2}$ or proportional, $\E(X_t)=0$.
+\item $X_0=e^{-r}$
+\item Using Doob's theorem, $\E(W_{\tau})=0$, so $\P(W_{\tau}=2)=1/3$. Using Ito's lemma or otherwise $X_t=W_t^2-t$ is a martingale, so $\E(X_{\tau})=0$ and $\E(\tau)=2$.
+\item $\E(X \mid Y)= \int_0^1 x f(x \mid Y) \, dx$. Here $f(x,y)$ maybe factored, so $X$ and $Y$ are independent, and $\E(X \mid Y)=const$.
+\item Just use Ito's lemma for proposed solution form and obtain 4 equations. For point b just take $dD_t$ and observe that it has no term before $dW$.
+\end{enumerate}
 
 
 \end{document}
