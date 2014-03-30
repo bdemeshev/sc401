@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\renewcommand{\P}{\mathbb{P}}
+
+
+\begin{document}
+
+
+
+
+\begin{enumerate}
+
+\item  $[$10 points] In the framework of Black and Scholes model find the price of the asset, which pays you $S_2/S_1$ at the fixed moment of time $T=2$
+
+\item $[$10 points] Let $\tau$ be a stopping time, the first moment when $W_t$ hits $2$ or $-1$.
+\begin{enumerate}
+\item Find the probability $\P( W_{\tau} = 2)$
+\item Find a martingale of the form $X_t=W_t^2+f(t)$.
+\item Find $\E(\tau)$
+\end{enumerate}
+
+\item $[$10 points] Let $Y_t=W_t^3-tW_t^4$. Find $\E(Y_t)$ and $\Var(Y_t)$.  
+
+
+\item $[$20 points] Solve the stochastic differential equation 
+
+\[
+dX_t=(X_t/t+t)dt+2\sqrt{tX_t}dW_t
+\]
+
+Hint: You may suppose without a proof that the solution has the form $X_t=f(t)g(W_t)$. 
+
+\end{enumerate}
+
+
+\end{document}
