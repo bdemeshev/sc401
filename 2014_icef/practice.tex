@@ -1,0 +1,59 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+Practice problems for stochastic calculus. 2014
+
+\begin{enumerate}
+\item  An enemy submarine is somewhere on the number line. The initial coordinate of the submarine is some unknown integer number. It is moving at some constant integer speed (units per minute).
+
+You can launch a torpedo each minute at any integer on the number line. If the the submarine is there, you hit it and it sinks. You have infinite number of torpedoes. You must sink this enemy sub.
+\begin{enumerate}
+\item Draw a picture of number line and the submarine. Just for fun!
+\item Devise a strategy that is guaranteed to eventually hit the enemy submarine
+\end{enumerate}
+
+\item Compare the power of two sets: $A=\mathbb{Q}$ --- the set of all rational numbers, $B=\mathbb{Q}^2$ --- the set of all possible pairs of rational numbers.
+
+\item Using the fact that the Borel $\sigma$-algebra $\mathcal{B}$ is the smallest $\sigma$-algebra containing all subsets of the form $(-\infty; t]$ show that $\mathbb{N}\in \mathcal{B}$.
+
+\item Let $\Omega=\mathbb{R}$. Find explicitely the smallest $\sigma$-algebra which contains the sets $A=[0;1]$ and $B=[10;100]$.
+
+\item Let $X$ be uniform on $[0;1]$ and $Y=1_{X<0.7}+1_{X>0.1}$. Describe the $\sigma$-algebra $\sigma(Y)$. How many events  $\sigma(Y)$ contains? Is the set $\sigma(X)$ countable?
+
+% Ans: $\sigma(Y)=\{ \emptyset, \Omega, \{Y=1\}, \{Y=2\} \}$, $\sigma(X)$ is not countable
+
+\item How many different $\sigma$-algebras one may construct if $\Omega$ contains three elements? Four?
+
+\item We throw a coin infinite number of times. Let's define the sequence of random variables $X_n$ such that  $X_{n}$ is equal to 1, if the result of $n$-th throw is tail, and 0 otherwise. We also define a bunch of $ \sigma $-algebras: $\mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},\ldots)$.
+
+Give two non-trivial (other  than $ \Omega $ and $ \emptyset $) examples of event $ A $, such that:
+
+\begin{itemize}
+\item $ A\in \mathcal{F}_{2014} $
+\item $ A\notin \mathcal{F}_{2014} $
+\item $A$ belongs to every $\mathcal{H}_{n}$
+\end{itemize}
+
+Which $ \sigma $-algebras contains the events:
+\begin{itemize}
+\item $ A= \{ X_{37}>0\}$
+\item $ B=\{ X_{37}>X_{2014} \}$
+\item $ C= \{X_{37}>X_{2014}>X_{12}\}$
+\end{itemize}
+
+Simplify where possible: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $
+
+\item Veniamin throws a coin until three consecutive tails appear.  Let the random variable $T$ be the number of throws. Let $ \mathcal{F}_{T} $ be the $ \sigma $-algebra of all events distinguishable by Veniamin. 
+\begin{enumerate}
+\item Provide two non-trivial (not equal to $\Omega$ or $\emptyset$) examples of event $A$ such that $A\in  \mathcal{F}_{T}$ but $A\notin \sigma(T)$
+\item Provide two non-trivial (not equal to $\Omega$ or $\emptyset$) examples of event $A$ such that $A\in  \sigma(T)$
+\item Is it true, that $\sigma(T) \subset \mathcal{F}_{T}$?
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
