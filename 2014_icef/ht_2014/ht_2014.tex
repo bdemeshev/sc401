@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+Graded hometask on stochastic calculus. Icef. 2014.
+
+
+\begin{enumerate}
+
+\item Researcher Veniamin throws a fair dice until 6 appears. Let denote by $T$ the total number of throws and by $N$ the number of throws when 5 appeared. Find $\E(N | T)$, $\Var(N | T)$, $\E(N)$, $\Var(N)$ and $\E(T|N)$.
+
+
+
+\item It is $25^\circ C$ in Australia today. Each day the temperature goes one degree up or down with equal probability. Each day I will put the sum equal to the temperature in my piggy bank. So on the first day I will put $25$ roubles. I will stop my investment strategy when the temperature will reach $15^\circ C$ or $30^\circ C$ for the first time. 
+
+\includegraphics[scale=0.25]{piggy.png} 
+
+What will be the expected value of my account in my piggy bank?
+
+\item Veniamin and Varvara are managers of two gladiators-vampires teams. Veniamin has 4 gladiators-vampires with initial strengths $1$, $2$, $3$ and $4$. Varvara has 3 glagiators-vampires with initial strengths $1$, $3$ and $5$. 
+
+The competition between two teams is organised as a sequence of rounds. In each round two gladiators-vampires (one from each team) will meet and fight to the death. Varvara always selects the best gladiator from her team to fight in the next round. 
+
+When the gladiators of strengths $a$ and $b$ meet the first will win with probability $a/(a+b)$, the second --- with probability $b/(a+b)$. The gladiators are vampires, so the strength of the winner will become $a+b$.
+
+What is best strategy for Veniamin? What is the probability that Veniamin's team will win?
+
+\item Consider the processes $X_t=\int_0^t (s W_s)^3 \,dW_s$ and $Y_t=\int_0^t W_s \, dW_s$. Find $\E(X_t)$, $\Var(X_t)$, $\Cov(X_t,Y_t)$
+
+\item The process $X_t$ is given by
+\[
+dX_t=tW_t e^{W_t} \, dt + \sin (tW_t) \, dW_t, \; X_0=1
+\]
+Using Ito-Doeblin lemma find $Z_0$ and $dZ_t$ if $Z_t=X_t^2+t\cos (X_t)$
+
+\item Solve the stochastic differential equation:
+\[
+dX_t=X_t(1-X_t) \, dt+X_t \, dW_t, \; X_0=1
+\]
+
+Some hints: you may find the substitution $Y_t = \ln X_t$ useful.
+
+\item In the framework of Black and Scholes model find the price at $t=0$ of the asset, which pays you $1 \$ $  if $S_{T-1}>1$ and $0$ otherwise. Here $S_t$ denotes the price of a share at time $t$. The payment is made at the fixed moment of time $T >1$.
+
+\end{enumerate}
+
+Note: you may decide not to solve one problem of your choice from this hometask and send me a solution of one problem from old exams collection instead. In this case you should use \LaTeX{} or markdown or (ugly) Word. Please, be polite and avoid sending solutions of already solved problems or problems taken by someone else. You may choose a problem and fill in your choice at \url{http://goo.gl/8TFhWE}. 
+
+The due date for this hometask --- 27.12.2014. If you decide to solve one problem from an old exam you should sent the solution of this problem by e-mail to \href{mailto:boris.demeshev@gmail.com}{boris.demeshev@gmail.com} before 20.12.2014. 
+
+
+\end{document}

@@ -2,11 +2,15 @@
 
 \input{title_bor}
 
+\renewcommand{\FF}{\mathcal{F}}
+\renewcommand{\ee}{\varepsilon}
+
 \title{ICEF master program. Maths for economists. \\Exam collection.}
 \author{Joint author}
 %\title{Подборка экзаменов по математике для экономистов. Магистратура миэф}
 %\author{Коллектив авторов}
 \date{\today}
+
 
 
 \begin{document}
@@ -64,7 +68,7 @@ subject to the conditions $\dot{x}=y-x/2$, $x(0)=0$, $x(2)$ is free. Find $x$, $
 Part B.
 Answer two questions out of the three from this section. Each question is worth 20 points.
 Part B lasts for 70 minutes.
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item  In the framework of the Black and Scholes model find the price at $t=0$ of an asset that pays $\max\{0,\ln S_T\}$  at time $T$, where $S_T$ denotes the price of one share at time $T$.
 
 \item Let’s consider the following system of stochastic differential equations
@@ -95,7 +99,22 @@ with initial conditions $X_0=x_0$ and $Y_0=y_0$
 \end{enumerate}
 \end{enumerate}
 
+\subsection{Exam, 12.01.2009, solutions}
 
+\begin{enumerate}
+\item 
+\item Using Ito’s lemma $dY_t = (3W_t^2 - 3t) \, dW_t + (-3W_t + \frac{1}{2}6W_t) \, dt= (3W_t^2 - 3t) \, dW_t$. Hence, $Y_t$ is a martingale. $Y_0=W_0^3-3\cdot 0 W_0=0$.
+
+Now $\E(Y_t)=\E(Y_0)=0$ and using Ito's isometry:
+\[
+\Var(Y_t)=
+\int_0^t \E((3W_s^2-3s)^2) \, ds = \int_0^t 27s^2 +9s^2-18s^2 \, ds = \int_0^t 18s^2 \, ds = 6t^3
+\]
+
+Here we have used the facts that $\E(W_s^2)=s$ and $\E(W_s^4)=3s^2$.
+\item 
+\item 
+\end{enumerate}
 
 \subsection{Retake, ??.??.2009}
 
@@ -144,7 +163,7 @@ Part B.
 Answer two questions out of the three from this section. Each question is worth 20 points.
 Part B lasts for 70 minutes.
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item In the framework of the Black and Scholes model find the price at $t=0$  of an asset that pays $\min\{M,\ln S_t\}$  at time $T$, where $S_T$ denotes the price of one share at time $T$,  $M$ --- arbitrary constant, specified at the moment of the issue.
 
 \item The price of a share in euros is driven by the equation $dS=\sigma S dW+\alpha S dt$, the dollar/euro exchange rate is driven by the equation $dU=b U dW+c U dt$. Find the current price in dollars of a European call option with maturity date $T$, strike price $K$.
@@ -208,7 +227,7 @@ $\sum_0^{\infty} \left(\frac{3}{4}\right)^t \ln c_t$
 Part B.
 Answer both questions from this section. Each question is worth 20 points.
 Part B lasts for 60 minutes.
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item Let $X_t$ be a stochastic process such that
 $dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{t/\tau}$.
 \begin{enumerate}
@@ -231,15 +250,53 @@ subject to $\dot{P}=C^2-(C^*)^2-bP$, $P(0)=P_0>0$, $P\geq 0$, $0\leq C\leq \bar{
 \end{enumerate}
 \end{enumerate}
 
+\subsection{Exam-solutions}
+\begin{enumerate}
+\item The probability density should integrate to one, so from $\int_0^1 \int_0^1 f(x,y) \, dx\, dy=1$ we infer the value of $c$, $c=e/(e-1)^2$.
+
+Using the formula $f(x|y)=f(x,y)/f(y)$ we obtain $f(x|y)=e^x/(e-1)$.
+
+We obtain marginal density, $f(y)=\int_0^1 f(x,y) \, dx= e^{1-y}/(e-1)$ and hence the conditional density $f(x|y)=e^x/(e-1)$. As one may notice it does not depend on $y$. The reason is that the random variables $X$ and $Y$ are independent and $f(x,y)=f_X(x)f_Y(y)$. So we may expect that $\E(X|Y)=\E(X)$.
+
+And \href{http://en.wikipedia.org/wiki/Coup_de_gr%C3%A2ce}{\textit{coup de grâce}}
+
+\[
+\E(X|Y)=\int_0^1 x f(x|Y) \, dx = 1/(e-1)
+\]
+
+
+\item $\E(Y_t)=\E(W^3_t-tW^4_t) = \E(W^3_t)-\E(tW^4_t) = \E(W^3_t)-t \E(W^4_t)= 0 - 3t^3 = - 3t^3 $, as
+
+$\E(W^{3}_{t})= \frac{3(3-1)}{2} \int_{0}^{t} \E (W^{3-2}_{s}) ds = 0 $
+
+$\E(W^{4}_{t})= \frac{4(4-1)}{2} \int_{0}^{t} \E (W^{4-2}_{s}) ds = 6 \int_{0}^{t} s ds =3 t^2 $
+
+$\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2$
+
+$\E(Y^2_t)=\E(W^3_t-tW^4_t)^2=\E(W^6_t-2tW^7_t+t^2 W^8_t)= \E(W^6_t)-2t\E(W^7_t)+t^2 \E(W^8_t) = 15t^3 + 105t^6$,
+
+as $\E(W^{5}_{t})= \frac{5(5-1)}{2} \int_{0}^{t} \E (W^{5-2}_{s}) ds = 0 $
+
+$\E(W^{6}_{t})= \frac{6(6-1)}{2} \int_{0}^{t} \E (W^{6-2}_{s}) ds = 15 \int_{0}^{t} 3s^2 ds= 15t^3 $
+
+$\E(W^{7}_{t})= \frac{7(7-1)}{2} \int_{0}^{t} \E (W^{7-2}_{s}) ds = 0 $
+
+$\E(W^{8}_{t})= \frac{8(7-1)}{2} \int_{0}^{t} \E (W^{8-2}_{s}) ds = 105t^4 $
+
+$\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2 = 15t^3 + 105t^6 - (-3t^3)^2= 15t^3 + 96 t^6$
+
+\item 
+\end{enumerate}
 
 \section{2010-2011}
 
 \subsection{Exam, 12.01.2011}
 
-Notation: $W_t$ is the standard Wiener process. \\
+Notation: $W_t$ is the standard Wiener process. 
 
 
-Part A (10 points each problem). Time allowed: 120 minutes.  \\
+Part A (10 points each problem). Time allowed: 120 minutes.  
+
 
 \begin{enumerate}
 \item The joint probability density function of $X$ and $Y$ is given by
@@ -265,9 +322,10 @@ At the left end $x(0)=0$
 Find the optimal $T$ value and the extremal. Check that you solved the optimality problem or show the opposite.
 \end{enumerate}
 
-Part B (20 points each prolem). Time allowed: 60 minutes.  \\
+Part B (20 points each prolem). Time allowed: 60 minutes.  
 
-\begin{enumerate}
+
+\begin{enumerate}[resume]
 \item Consider the stochastic differential equation 
 \begin{equation}
 dX_t=(\sqrt{1+X_t^2}+0.5X_t)dt+\sqrt{1+X_t^2}dW_t,\quad X_0=0 \nonumber
@@ -292,6 +350,45 @@ subject to $\dot{k}=A\ln(1+k)-c-\delta k$, where $A>r>\delta>0$, $k(0)=k_0$, $\b
 \item Why are you sure the found growth path maximizes the discounted stream of utility?
 \end{enumerate}
 \end{enumerate}
+
+\subsection{Exam-solutions}
+
+\begin{enumerate}
+\item Let's start, $f(x)=\int_0^1 f(x,y) \, dy= x+1/2$ for $x\in [0;1]$. The conditional density, $f(y|x)=f(x,y)/f(x)=(x+y)/(x+1/2)$ for $x$ and $y$ in $[0;1]$. 
+
+The conditional expected value:
+
+\[
+\E(Y|X)=\int_0^1 y f(y|X) \, dy = \frac{3X+2}{6X+3}=\frac{1}{2}+\frac{1}{12X+6}
+\]
+
+We also need to find the density of $\hat{Y}=\frac{3X+2}{6X+3}$.
+
+Let's first find the probability distribution function:
+
+\[
+F_{\hat{Y}}(t)=\P(\hat{Y} \leq t) = \P\left( \frac{1}{2}+\frac{1}{12X+6} \leq t \right) = \P\left( X \geq \frac{2-3t}{6t-3} \right)=F_X(1)-F_X(a),
+\]
+where $a=\frac{2-3t}{6t-3}$. 
+
+Take the derivative with respect to $t$ to obtain:
+
+\[
+f_{\hat{Y}}(t)=-f_X(a)\frac{da}{dt}=-\left( \frac{2-3t}{6t-3} + \frac{1}{2}  \right) \frac{-3}{(6t-3)^2} 
+\]
+
+\item First, $\E(X_t)=0$. Using Ito's isometry:
+\[
+\Var(X_t)=\int_0^t  \E(s^2 W_s^2)  \, ds = \int_0^t  s^3  \, ds = t^4/4
+\]
+
+Again using Ito's isometry:
+\[
+\Cov( X_t, W_t) = \Cov \left( \int_0^t sW_s \, dW_s , \int_0^t 1 \, dW_s \right) = \int_0^t \E(sW_s\cdot 1) \, ds = 0
+\]
+
+\end{enumerate}
+
 
 \subsection{Retake, ??.01.2011}
 
@@ -342,7 +439,7 @@ subject to $W_{t+1}=W_t-c_t$, $W_t\leq W$, $W>0$, $0<\beta<1$. Let the state var
 Part B.
 Answer both questions from this section. Each question is worth 20 points.
 Part B lasts for 60 minutes.
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item Let $X_t$ be a stochastic process such that
 $dX_t=\frac{X_{\infty}-X_t}{\tau}dt+\sigma dW_t$, where $X_{\infty}$ and $\tau$ are non-random constants, $W_t$ is a Wiener process, and let $Y_t=X_t e^{t/\tau}$.
 \begin{enumerate}
@@ -364,6 +461,58 @@ K_0 < \frac{1}{c^2(r+b)^2} < \frac{\bar{I}}{b}
 \end{enumerate}
 
 \end{enumerate}
+
+
+\subsection{Retake-solutions}
+\begin{enumerate}
+\item Let's go:
+\begin{equation*}
+f(x,y)=
+   \begin{cases}
+   ce^{(x-y)}, 0 \leqslant x,y \leqslant 1\\
+   0, else
+      \end{cases}
+\end{equation*}
+First, we need to find constant c.\\
+$ 1=\int_{0}^{1} \int_{0}^{1} (ce^{x-y})dxdy=\int_{0}^{1}(-ce^{x-y})\bigg|_0^1dx=\int_{0}^{1}(-ce^{x-1}+ce^x)dx=-ce^{x-1}++ce^x\bigg|_0^1=-c+ce+\frac{c}{e}-c=1$\\
+From this simple equation we get $c=\frac{e}{(e-1)^2}$\\
+So the problem now looks like:
+\begin{equation*}
+f(x,y)=
+   \begin{cases}
+   \frac{e}{(e-1)^2}e^{(x-y)}, 0 \leqslant x,y \leqslant 1\\
+   0, else
+      \end{cases}
+\end{equation*}\\
+$E(X|Y)=\int_{0}^{1}xf(x|y)dx$, where $f(x|y)=\frac{f(x,y)}{f(y)}$\\
+$f(y)=\int_{0}^{1}f(x,y)dx=\frac{e}{(e-1)^2}(e^{1-y}-e^{-y})$\\
+$f(x|y)=\frac{e^x}{e-1}$\\
+$E(X|Y)=\int_{0}^{1}\frac{xe^x}{e-1}dx=\frac{1}{e-1}\int_{0}^{1}xde^x=\frac{1}{e-1}(xe^x-e^x)\bigg|_0^1=\frac{1}{e-1}$\\
+So the final answer will be $E(X|Y)=\frac{1}{e-1}$
+
+\item $\E(Y_t)=\E(W^3_t-tW^4_t) = \E(W^3_t)-\E(tW^4_t) = \E(W^3_t)-t \E(W^4_t)= 0 - 3t^3 = - 3t^3 $, as
+
+$\E(W^{3}_{t})= \frac{3(3-1)}{2} \int_{0}^{t} \E (W^{3-2}_{s}) ds = 0 $
+
+$\E(W^{4}_{t})= \frac{4(4-1)}{2} \int_{0}^{t} \E (W^{4-2}_{s}) ds = 6 \int_{0}^{t} s ds =3 t^2 $
+
+$\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2$
+
+$\E(Y^2_t)=\E(W^3_t-tW^4_t)^2=\E(W^6_t-2tW^7_t+t^2 W^8_t)= \E(W^6_t)-2t\E(W^7_t)+t^2 \E(W^8_t) = 15t^3 + 105t^6$,
+
+as $\E(W^{5}_{t})= \frac{5(5-1)}{2} \int_{0}^{t} \E (W^{5-2}_{s}) ds = 0 $
+
+$\E(W^{6}_{t})= \frac{6(6-1)}{2} \int_{0}^{t} \E (W^{6-2}_{s}) ds = 15 \int_{0}^{t} 3s^2 ds= 15t^3 $
+
+$\E(W^{7}_{t})= \frac{7(7-1)}{2} \int_{0}^{t} \E (W^{7-2}_{s}) ds = 0 $
+
+$\E(W^{8}_{t})= \frac{8(7-1)}{2} \int_{0}^{t} \E (W^{8-2}_{s}) ds = 105t^4 $
+
+$\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2 = 15t^3 + 105t^6 - (-3t^3)^2= 15t^3 + 96 t^6$
+
+\item 
+\end{enumerate}
+
 
 
 \section{2011-2012}
@@ -402,7 +551,7 @@ Hint: you may find the martingales $a^{Y_t}$ and $Y_t-f(t)$ useful
 
 Section B. 20 points for each problem. 
 
-\begin{enumerate}
+\begin{enumerate}[resume]
 \item The goal of this exercise is to solve the SDE
 \begin{equation}
 dX_t=\frac{1}{X_t}dt+X_tdW_t \nonumber
@@ -417,6 +566,54 @@ with initial condition  $X_0=1$.
 \item A typical firm with the production function $x=f(l)$ in an economy employs 1 unit of the capital paying for it $\bar{r}$. There are $n$ identical firms in this economy where $n(t)$ is a function of time. Let the output of a firm be $x(t)$. Then the aggregate supply equals $nx$. Assuming that the market is in the equilibrium we use the inverse demand function $p(nx)$, where $p'(y)<0$. Equation defining the dynamics of labor is given by $\frac{dl}{dt}=a(w-\bar{w})$, where $a>0$  and $\bar{w}$  is some equilibrium wage rate. The growth (or fall) in number of firms is governed by the equation $\frac{dn}{dt}=b(px-\bar{w}l-\bar{r})$, where $b>0$. Write down the system of ODE for the unknowns $l(t)$, $n(t)$, using the first-order condition for the profit-maximizing firm, find and classify the steady-state solutions (if any exist). Production function is twice differentiable and concave everywhere.
 
 \end{enumerate}
+
+\subsection{Retake-solutions}
+
+\begin{enumerate}
+\item 
+\item
+\item Using Ito-Doeblin lemma, $dW_t^3=3W_t^2 \, dW_t + \frac{1}{2}6W_t \, dt$. Hence,
+\[
+dX_t=3W_t^2 \, dW_t + (3-a)W_t \, dt
+\]
+Ito's integral is always a martingale, so $a=3$.
+
+\item 
+\item Let's first consider the unconditional version of the problem.
+
+\[
+E(W^{2}_t)=E((W_t-W_0)^{2})=Var(W_t-W_0)+E(W_t-W_0)^{2}=t-0=t
+\]
+\[
+Var(W^{2}_t)=E(W^{4}_t)-E(W^{2}_t)^{2}=E(W^{4}_t)-t^2
+\]
+
+In order to compute $E(W^{4}_t)$ we use the following formula:
+\[
+E(W^{k}_t)=\frac{k(k-1)}{2}\int_{0}^{t}E(W^{k-2}_s)ds
+\]
+
+So,
+\[
+E(W^{4}_t)=6\int_{0}^{t}E(W^{2}_s)ds=6\int_{0}^{t}sds=3t^2 \Rightarrow \Var(W^{2}_t)=3t^2-t^2=2t^2
+\]
+
+However we know that $W_s=x$. Using the properties of Wiener process we may assume that the timer is started again from $0$. So we define $W'_{t'}=W_{t'+s}-x$.
+
+So,
+
+\[
+\E(W_t^2 | W_s=x) = \E( (W'_{t'}+x)^2 )= \E(W^{\prime 2}_{t'}+2xW'_{t'}+x^2)=t'+x^2=(t-s)+x^2
+\]
+
+And
+\begin{multline}
+\Var(W^{2}_t | W_s=x)=\Var((W'_{t'}+x)^2)=\Var(W^{\prime 2}_{t'} +2xW'_{t'}+x^2)= \\
+= \Var(W^{\prime 2}_{t'}) +4x^2 \Var(W'_{t'}) + 0 = 2(t-s)^2+4x^2(t-s)
+\end{multline}
+
+\end{enumerate}
+
 
 \section{2012-2013}
 
@@ -538,7 +735,7 @@ subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a 
 \end{enumerate}
 \end{enumerate}
 
-\subsubsection*{Answers and hints}
+\subsection{retake --- short hints}
 \begin{enumerate}
 \item Write the joint pdf $f(x,y)$, find $f(y \mid x)$ and then the conditional expected values by integration.
 \item $\E(X_t)=\E(Y_t)=0$, use isometry property
@@ -640,42 +837,59 @@ Observe that $\tau$ is really a stopping time, because at each moment of time we
 
 Let's prove that $E(\tau) < \infty$ (which will also imply that $P(\tau = +\infty) = 0$).\par
 We shall obviously reach $\tau$ after any 14 consecutive steps in one direction.
-Then $$P(\tau \geqslant 14n)\leqslant P(\mbox{At least one of }\ee_{1},...,\ee_{14}\mbox{ equals } -1)\ \times\ ...\ \times\  P(\mbox{At least one of }\ee_{14(n-1)+1},...,\ee_{14n}\mbox{ equals } -1) = $$ $$= \left(1 - 2^{-14}\right)^{n} = q^{n}$$\par
-where $q<1$.\par
-Then
-$$
-E(\tau) = \sum\limits_{n = 1}^{+\infty}P(\tau \geqslant n) \leqslant 14\sum\limits_{n = 0}^{+\infty}P(\tau \geqslant 14n+1)\leqslant 14\sum\limits_{n = 0}^{\infty}q^{n} = 14\cdot 2^{14} < \infty
-$$\par
-as required.\par
-\fbox{The sequence $\{S_{t}\}$ is a martingale} w.r.t. filtration $\{\FF_{n}\}$, because it is obviously $\{\FF_{t}\}$-adapted, has a finite (zero) expectation and
-$$
-E(S_{t+1}|\FF_{t}) = E(S_{t} + \ee_{t+1}|\FF_{t}) = S_{t} + E(\ee_{t+1}|\FF_{t}) = S_{t}
-$$
+Then 
+\begin{multline}
+P(\tau \geqslant 14n)\leqslant P(\mbox{At least one of }\ee_{1},\ldots ,\ee_{14}\mbox{ equals } -1)\ \times \ldots \times\  P(\mbox{At least one of }\ee_{14(n-1)+1},\ldots ,\ee_{14n}\mbox{ equals } -1) = \\
+= \left(1 - 2^{-14}\right)^{n} = q^{n}
+\end{multline}
+where $q<1$.
 
-\par Further, $S_{\min\{t, \tau\}}$ is obviously bounded in $t$ (it always lies between $2000$ and $2014$), so the Doob's theorem conditions are satisfied, which means that
-$$
+Then
+\[
+E(\tau) = \sum\limits_{n = 1}^{+\infty}P(\tau \geqslant n) \leqslant 14\sum\limits_{n = 0}^{+\infty}P(\tau \geqslant 14n+1)\leqslant 14\sum\limits_{n = 0}^{\infty}q^{n} = 14\cdot 2^{14} < \infty
+\]
+as required.
+
+
+\fbox{The sequence $\{S_{t}\}$ is a martingale} w.r.t. filtration $\{\FF_{n}\}$, because it is obviously $\{\FF_{t}\}$-adapted, has a finite (zero) expectation and
+\[
+E(S_{t+1}|\FF_{t}) = E(S_{t} + \ee_{t+1}|\FF_{t}) = S_{t} + E(\ee_{t+1}|\FF_{t}) = S_{t}
+\]
+
+Further, $S_{\min\{t, \tau\}}$ is bounded in $t$: it always lies between $2000$ and $2014$. The Doob's theorem conditions are satisfied, which means that
+\[
 E(S_{\tau}) = S_{0} = 2013
-$$\par
-But $E(S_{\tau}) = 2000\cdot P(S_{\tau} = 2000) + 2014\cdot P(S_{\tau} = 2014)$, which after the substitution $E(S_{\tau}) = 2013$ gives us \par
-\fbox{$P(S_{\tau} = 2000) = \frac{\ds 1}{\ds 14}$} and \fbox{$P(S_{\tau} = 2014) = \frac{\ds 13}{\ds 14}$}\par
+\]
+But $E(S_{\tau}) = 2000\cdot P(S_{\tau} = 2000) + 2014\cdot P(S_{\tau} = 2014)$, which after the substitution $E(S_{\tau}) = 2013$ gives us 
+
+
+\fbox{$P(S_{\tau} = 2000) = \frac{\ds 1}{\ds 14}$} and \fbox{$P(S_{\tau} = 2014) = \frac{\ds 13}{\ds 14}$}
+
+
 Further, let's prove that \fbox{the sequence $\{S_{t}^{3} - 3tS_{t}\}$ is a $\{\FF_{t}\}$-martingale}. At first, it is obviously adapted and 
 $
 \left|E(S_{t}^{3} - 3tS_{t})\right| < \infty
-$\par
+$
+
 Then
-$$
-E(\left. S_{t+1}^{3} - 3(t+1)S_{t+1}\ \right|\FF_{t}) = E\left(\left. (S_{t}+\ee_{t+1})^{3} - 3(t+1)(S_{t}+\ee_{t+1})\ \right|\FF_{t}\right) = $$ $$=
+\begin{multline}
+E(\left. S_{t+1}^{3} - 3(t+1)S_{t+1}\ \right|\FF_{t}) = E\left(\left. (S_{t}+\ee_{t+1})^{3} - 3(t+1)(S_{t}+\ee_{t+1})\ \right|\FF_{t}\right) = \\
 E\left(\left. S_{t}^{3} + 3 S_{t}^{2}\underline{\ee_{t+1}} + 3\underline{(\ee_{t+1}^{2}  -  1)}S_{t} -3tS_{t} + \underline{\ee_{t+1}^{3}} - 3(t+1)\underline{\ee_{t+1}}\right| \FF_{t}\right) = S_{t}^{3} - 3tS_{t}
-$$\par
+\end{multline}
+
 (the underlined terms are going out after taking conditional expectation; $(\ee_{t+1}^{2} - 1)$ goes out even without it)\par
 Denote $X_{t} = S_{t}^{3} - 3tS_{t}$.\par
-For $t \geqslant \tau$ we have $|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}| = 0$, and for $t < \tau$ we have\par
+For $t \geqslant \tau$ we have $|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}| = 0$, and for $t < \tau$ we have
+
+
 $|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}| = |X_{t+1} - X_{t}| = |3S_{t}^{2}\ee_{t+1}-(3t+2)\ee_{t+1}|\leqslant 3\times 2014^{2} + 3\tau +2$, which expectation is bounded by the finite number $3\times 2014^{2} + 2 + 3E(\tau)$.\par
-Then, the overall expectation $E\left(|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}|\right) \leqslant 3\times 2014^{2} + 2 + 3E(\tau)$ for every $t$, i.e. is bounded in $t$.\par
+Then, the overall expectation $E\left(|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\}}|\right) \leqslant 3\times 2014^{2} + 2 + 3E(\tau)$ for every $t$, i.e. is bounded in $t$.
 
 
 
-\textbf{Problem 2 --- part 2 of 2.}\par
+\textbf{Problem 2 --- part 2 of 2.}
+
+
 Then again, the conditions of the Doob's theorem are satisfied, i.e.
 $$
 E(X_{\tau}) = X_{0} = 2013^{3}
@@ -899,72 +1113,94 @@ where $\tilde{p}_{(S_{T}, S_{T-1})}$ is a two-dimensional density of a correspon
 
 \textbf{Problem 6 --- part 2 of 4.}\par
 But
-$$
+\[
 \iint\limits_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv = \int\limits_{1}^{+\infty}\left(\int\limits_{0}^{+\infty}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v) \du\right)\dv = \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv
-$$\par
+\]
 Further, 
-$$
+\[
 S_{T-1} = S_{0}\exp \left((T-1)\left(\mu - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma W_{T-1}\right) = S_{0}\exp \left((T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma \tilde{W}_{T-1}\right)
-$$\par
+\]
+
 which means that with notation $A(x) = S_{0}\exp \left((T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma x\right)$ we have
-$$
+\[
 \tilde{p}_{\tilde{W}_{T-1}}(x) = \tilde{p}_{S_{T-1}}\left(A(x)\right)\cdot \sigma A(x)
-$$\par
+\]
+
 We have $x = \sigma^{-1}\left(\ln\left(\frac{\ds A(x)}{\ds S_{0}}\right) - (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)$. Therefore
-$$
+
+\[
  \tilde{p}_{S_{T-1}}\left(v\right) = \frac{\ds 1}{\ds \sigma v}\cdot \frac{\ds 1}{\ds \sqrt{2\pi (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(\ln(v) - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right) \qquad \qquad (2)
-$$\par
-Very ugly expression! Let's believe most of those terms will cancel out.\[\]\par
+\]
+
+Very ugly expression! Let's believe most of those terms will cancel out.
+
 Now
-$$
+\[
 S_{T} = S_{0}\exp \left(T\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma \tilde{W}_{T}\right) = S_{T-1}\cdot \exp\left(r - \frac{\ds \sigma^{2}}{\ds 2} + \sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right)
-$$\par
-and $\left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)$ is independent of the $\sigma$-algebra $\sigma(S_{T-1})\subseteq \FF_{T-1}$.\par
+\]
+and $\left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)$ is independent of the $\sigma$-algebra $\sigma(S_{T-1})\subseteq \FF_{T-1}$.
+
+
 Then
-$$
- E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right) =  E_{\tilde{P}}\left(\left.S_{T-1}\cdot \exp\left(r - \frac{\ds \sigma^{2}}{\ds 2} + \sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right) \right| S_{T-1} = v\right) =$$ $$= v\cdot\exp\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) E_{\tilde{P}}\left(\exp\left(\sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right)\right)\qquad\qquad\qquad (3)
-$$\par
+\begin{multline}
+ E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right) =  E_{\tilde{P}}\left(\left.S_{T-1}\cdot \exp\left(r - \frac{\ds \sigma^{2}}{\ds 2} + \sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right) \right| S_{T-1} = v\right) =\\
+ = v\cdot\exp\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right) E_{\tilde{P}}\left(\exp\left(\sigma \left(\tilde{W}_{T} - \tilde{W}_{T-1}\right)\right)\right)\qquad\qquad\qquad (3)
+\end{multline}
+
+
 Further, if $\xi \sim \mathcal{N}(0,1)$, then 
-$$
+\[
 E(e^{\sigma\xi}) = \frac{\ds 1}{\ds \sqrt{2\pi}}\int\limits_{\RR}e^{-\frac{x^{2}}{2} + \sigma x}\dx = e^{\frac{\sigma^{2}}{2}}\cdot\frac{\ds 1}{\ds \sqrt{2\pi}}\int\limits_{\RR}e^{-\frac{(x-\sigma)^{2}}{2}}\dx = e^{\frac{\sigma^{2}}{2}}
-$$\par
+\]
+
 which gives us
-$$
+\[
 E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right) = v\cdot\exp\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\exp\left(\frac{\ds \sigma^{2}}{\ds 2}\right) = ve^{r}\qquad\qquad\qquad (4)
-$$\par
-which, I think, is a very nice formula (especially if we compare it with (2)).\par
-\[\]\par
+\]
+which, I think, is a very nice formula (especially if we compare it with (2)).
 
 
-\textbf{Problem 6 --- part 3 of 4.}\par
-Let's continue.\par
+\textbf{Problem 6 --- part 3 of 4.}
+
+
 Taking (2) and (4), we have 
-$$
- \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv =$$ $$= e^{r}\int\limits_{1}^{+\infty}\frac{\ds 1}{\ds \sigma}\cdot \frac{\ds 1}{\ds \sqrt{2\pi (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(\ln(v) - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\dv = $$ $$= e^{r}\int\limits_{0}^{+\infty}e^{s}\cdot \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(s - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\mathrm{d}s
-$$\par
+\begin{multline}
+ \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv =\\
+ = e^{r}\int\limits_{1}^{+\infty}\frac{\ds 1}{\ds \sigma}\cdot \frac{\ds 1}{\ds \sqrt{2\pi (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(\ln(v) - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\dv = \\
+ = e^{r}\int\limits_{0}^{+\infty}e^{s}\cdot \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(s - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\mathrm{d}s
+\end{multline}
+
 We substituted $s = \ln(v)$. Of course, $\dv = e^{s}\mathrm{d}s$.\par
 Denote also $B = \ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)$.\par
 Then our integral equals
-$$
-e^{r}\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds s^{2} - 2Bs - 2\sigma^{2}(T-1)s + B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = $$ $$ = \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds \left(s - B - \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = $$ $$ = \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right) \cdot \tilde{P}\left(\eta > -\left(B + \sigma^{2}(T-1)\right)\right)
-$$\par
-where $\eta \sim \mathcal{N}(0, \sigma^{2}(T-1))$. The integral magically turns into the probability, because under the integral there is a well-known density.\[\]\par
+\begin{multline}
+e^{r}\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds s^{2} - 2Bs - 2\sigma^{2}(T-1)s + B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = \\
+= \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds \left(s - B - \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = \\
+= \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right) \cdot \tilde{P}\left(\eta > -\left(B + \sigma^{2}(T-1)\right)\right)
+\end{multline}
+where $\eta \sim \mathcal{N}(0, \sigma^{2}(T-1))$. The integral magically turns into the probability, because under the integral there is a well-known density.
+
+
 Therefore our integral finally equals
-$$
- \exp\left(r + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2} - B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\cdot \tilde{P}\left(\frac{\ds \eta}{\ds \sigma\sqrt{T-1}} > -\frac{\ds B + \sigma^{2}(T-1)}{\ds \sigma\sqrt{T-1}}\right) = $$ $$=
+\begin{multline}
+ \exp\left(r + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2} - B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\cdot \tilde{P}\left(\frac{\ds \eta}{\ds \sigma\sqrt{T-1}} > -\frac{\ds B + \sigma^{2}(T-1)}{\ds \sigma\sqrt{T-1}}\right) = \\
+=
 \exp\left(r + B + \frac{\ds \sigma^{2}(T-1)}{\ds 2}\right)\Phi\left(\frac{\ds B + \sigma^{2}(T-1)}{\ds \sigma\sqrt{T-1}}\right) = e^{\ln(S_{0}) + rT}\cdot\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
-$$\par
+\end{multline}
+
 where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int\limits_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$.
 
 
 \textbf{Problem 6 --- part 4 of 4.}\par
 And now I'll finish this huge problem.\par
 We had
-$$
-X_{0} = e^{-rT}E_{\tilde{P}}\left(S_{T}I_{\{S_{T-1}> 1\}}\right) = e^{-rT}\cdot e^{\ln(S_{0}) + rT}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right) = $$ $$=
+\begin{multline}
+X_{0} = e^{-rT}E_{\tilde{P}}\left(S_{T}I_{\{S_{T-1}> 1\}}\right) = e^{-rT}\cdot e^{\ln(S_{0}) + rT}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right) = \\
+=
 S_{0}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
-$$\par
-This is our answer.\[\]\par
+\end{multline}
+This is our answer.
+
 \textbf{Answer:} The price of our asset equals
 $$
 S_{0}\cdot\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
@@ -1055,7 +1291,7 @@ with deterministic initial value $X_0$.
 
 \end{enumerate}
 
-\subsubsection*{marking scheme}
+\subsection{marking scheme}
 
 \begin{enumerate}
 \item 3 pts:
@@ -1135,7 +1371,7 @@ with initial conditions $X_0=x_0$ and $Y_0=y_0$
 
 \end{enumerate}
 
-\subsubsection*{Answers and hints}
+\subsection{Answers and hints}
 
 \begin{enumerate}
 \item $f(t)=e^{t/2}$ or proportional, $\E(X_t)=0$.
@@ -1144,6 +1380,51 @@ with initial conditions $X_0=x_0$ and $Y_0=y_0$
 \item $\E(X \mid Y)= \int_0^1 x f(x \mid Y) \, dx$. Here $f(x,y)$ maybe factored, so $X$ and $Y$ are independent, and $\E(X \mid Y)=const$.
 \item Just use Ito's lemma for proposed solution form and obtain 4 equations. For point b just take $dD_t$ and observe that it has no term before $dW$.
 \end{enumerate}
+
+\section{2014-2015}
+
+\subsection{Hometask}
+
+\begin{enumerate}
+
+\item Researcher Veniamin throws a fair dice until 6 appears. Let denote by $T$ the total number of throws and by $N$ the number of throws when 5 appeared. Find $\E(N | T)$, $\Var(N | T)$, $\E(N)$, $\Var(N)$ and $\E(T|N)$.
+
+
+
+\item It is $25^\circ C$ in Australia today. Each day the temperature goes one degree up or down with equal probability. Each day I will put the sum equal to the temperature in my piggy bank. So on the first day I will put $25$ roubles. I will stop my investment strategy when the temperature will reach $15^\circ C$ or $30^\circ C$ for the first time. 
+
+\includegraphics[scale=0.25]{piggy.png} 
+
+What will be the expected value of my account in my piggy bank?
+
+\item Veniamin and Varvara are managers of two gladiators-vampires teams. Veniamin has 4 gladiators-vampires with initial strengths $1$, $2$, $3$ and $4$. Varvara has 3 glagiators-vampires with initial strengths $1$, $3$ and $5$. 
+
+The competition between two teams is organised as a sequence of rounds. In each round two gladiators-vampires (one from each team) will meet and fight to the death. Varvara always selects the best gladiator from her team to fight in the next round. 
+
+When the gladiators of strengths $a$ and $b$ meet the first will win with probability $a/(a+b)$, the second --- with probability $b/(a+b)$. The gladiators are vampires, so the strength of the winner will become $a+b$.
+
+What is best strategy for Veniamin? What is the probability that Veniamin's team will win?
+
+\item Consider the processes $X_t=\int_0^t (s W_s)^3 \,dW_s$ and $Y_t=\int_0^t W_s \, dW_s$. Find $\E(X_t)$, $\Var(X_t)$, $\Cov(X_t,Y_t)$
+
+\item The process $X_t$ is given by
+\[
+dX_t=tW_t e^{W_t} \, dt + \sin (tW_t) \, dW_t, \; X_0=1
+\]
+Using Ito-Doeblin lemma find $Z_0$ and $dZ_t$ if $Z_t=X_t^2+t\cos (X_t)$
+
+\item Solve the stochastic differential equation:
+\[
+dX_t=X_t(1-X_t) \, dt+X_t \, dW_t, \; X_0=1
+\]
+
+Some hints: you may find the substitution $Y_t = \ln X_t$ useful.
+
+\item In the framework of Black and Scholes model find the price at $t=0$ of the asset, which pays you $1 \$ $  if $S_{T-1}>1$ and $0$ otherwise. Here $S_t$ denotes the price of a share at time $t$. The payment is made at the fixed moment of time $T >1$.
+
+\end{enumerate}
+
+% \subsection{Hometask-solution}
 
 
 \end{document}
