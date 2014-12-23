@@ -1237,7 +1237,7 @@ where $a$ is a parameter.
 
 \begin{enumerate}
 \item $[$5 points] Linearize the system and classify the steady-state solution
-\item $[$10 points] Restore the nonlinear system and by changing the Carthesian (?) into the polar coordinates show that the system becomes
+\item $[$10 points] Restore the nonlinear system and by changing the Carthesian  into the polar coordinates show that the system becomes
 \[
 \begin{cases}
 \dot{r}=ar^3 \\
@@ -1311,7 +1311,25 @@ with deterministic initial value $X_0$.
 
 \item $X_t$ is not a martingale --- 1 pt, $Y_t=e^{t/2}X_t$ or proportional --- 4 pts, variance --- 5 pts $\Var(Y_t)=(e^t+e^{-t}-2)/2$
 
-\item Pricing formula --- 2 pts, risk-neutral substitution --- 2 pts, calculations --- 6 pts, $S_0^2 e^{(r+\sigma^2)T}$.
+\item Pricing formula --- 2 pts, risk-neutral substitution --- 2 pts, calculations --- 6 pts.
+
+
+Using the pricing formula $X_0=\E_{\tilde{\P}} \left[e^{-rT}X_T \right]$:
+\[
+X_0=\E_{\tilde{\P}} \left[\exp(-rT)X_T \right]=\exp(-rT)\E_{\tilde{\P}} \left[S^2_T \right]
+\]
+
+We substitute $S_T=S_0 \exp((r-\sigma^2/2)T+\sigma \tilde{W}_T)$: 
+\begin{multline}
+X_0=\exp(-rT)\E_{\tilde{\P}} \left[S^2_0 \exp(2(r-\sigma^2/2)T+2 \sigma \tilde{W}_T) \right]=\\
+=S_0^2 \exp(-rT)\exp(2(r-\sigma^2/2)T)\E_{\tilde{\P}} \left[e^{2 \sigma \tilde{W}_T} \right]
+\end{multline}
+
+We use the fact that $\E[\exp(a W_t)]=\exp(a^2 t/ 2)$, so:
+
+\[
+X_0=  S_0^2 e^{-rT}\exp(2(r-\sigma^2/2)T) \exp(4\sigma^2/2) = S_0^2 \exp((r+\sigma^2)T)
+\]
 
 \item
 \begin{enumerate}
@@ -1375,7 +1393,30 @@ with initial conditions $X_0=x_0$ and $Y_0=y_0$
 
 \begin{enumerate}
 \item $f(t)=e^{t/2}$ or proportional, $\E(X_t)=0$.
-\item $X_0=e^{-r}$
+\item Using the pricing formula $X_0=\E_{\tilde{\P}} \left[e^{-rT}X_T \right]$:
+\[
+X_0=\E_{\tilde{\P}} \left[\exp(-rT)X_T \right]=\exp(-2r)\E_{\tilde{\P}} \left[S_2/S_1 \right]
+\]
+
+We substitute $S_T=S_0 \exp((r-\sigma^2/2)T+\sigma \tilde{W}_T)$: 
+
+\begin{multline}
+X_0=\exp(-2r)\E_{\tilde{\P}} \left[ \exp(r-\sigma^2/2+\sigma \tilde{W}_2 - \sigma \tilde{W}_1  ) \right] = \\
+=\exp(-2r) \exp(r-\sigma^2/2) \E_{\tilde{\P}} \left[  \exp(\sigma \tilde{W}_2 - \sigma \tilde{W}_1  )  \right]
+\end{multline}
+
+The distribution of $\tilde{W}_2 - \tilde{W}_1$ is similar to the distribution of $\tilde{W}_1$ and is $N(0;1)$. So, we simplify:
+
+\[
+X_0= \exp(-2r) \exp(r-\sigma^2/2) \E_{\tilde{\P}} 
+\left[  \exp(\sigma \tilde{W}_1 )  \right]
+\]
+
+We use the fact that $\E[\exp(a W_t)]=\exp(a^2 t/ 2)$, so:
+\[
+X_0=\exp(-2r) \exp(r-\sigma^2/2)  \exp(\sigma^2 / 2)=\exp(-r)
+\]
+
 \item Using Doob's theorem, $\E(W_{\tau})=0$, so $\P(W_{\tau}=2)=1/3$. Using Ito's lemma or otherwise $X_t=W_t^2-t$ is a martingale, so $\E(X_{\tau})=0$ and $\E(\tau)=2$.
 \item $\E(X \mid Y)= \int_0^1 x f(x \mid Y) \, dx$. Here $f(x,y)$ maybe factored, so $X$ and $Y$ are independent, and $\E(X \mid Y)=const$.
 \item Just use Ito's lemma for proposed solution form and obtain 4 equations. For point b just take $dD_t$ and observe that it has no term before $dW$.
