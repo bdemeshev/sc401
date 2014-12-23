@@ -3894,6 +3894,11 @@ d(e^{-rt}X_t)= \ldots = (\ldots) \left( \frac{\mu - r}{\sigma } t + W_t  \right)
 
 Сделаем замену $\tilde{W}_t=\frac{\mu - r}{\sigma } t + W_t$. При этом $d\tilde{W}_t = \frac{\mu - r}{\sigma } dt + dW_t$.
 
+Значит
+\[
+d(e^{-rt}X_t)= (\ldots) d\tW_t
+\]
+
 
 Теорема Гирсанова.
 
@@ -3901,6 +3906,12 @@ d(e^{-rt}X_t)= \ldots = (\ldots) \left( \frac{\mu - r}{\sigma } t + W_t  \right)
 
 Здесь $\tilde{W}_t=\frac{\mu-r}{\sigma}t + W_t$
 
+
+Относительно вероятности $\tP$ процесс $e^{-rt}X_t$ будет мартингалом, и, следовательно,
+
+\[
+X_0=\E_{\tP}(e^{-rT}X_T)=e^{-rT}\E_{\tP}(X_T)
+\]
 
 
 Примеры подсчета стоимости активов.
