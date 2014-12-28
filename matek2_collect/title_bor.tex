@@ -36,7 +36,7 @@
 \usepackage{textcomp}  % Чтобы в формулах можно было русские буквы писать через \text{}
 
 % размер листа бумаги
-\usepackage[paper=a4paper,top=20mm, bottom=13.5mm,left=30mm,right=15mm,includefoot]{geometry}
+\usepackage[paper=a4paper,top=2cm, bottom=2cm,left=2cm,right=2cm,includefoot]{geometry}
 
 \usepackage{xcolor}
 
@@ -65,6 +65,7 @@
 \usetikzlibrary{trees} % tikz-прибамбас для рисовки деревьев
 \usepackage{tikz-qtree} % альтернативный tikz-прибамбас для рисовки деревьев
 \usetikzlibrary{arrows} % tikz-прибамбас для рисовки стрелочек подлиннее
+\pgfplotsset{compat=1.8}
 
 \usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
 % \todo{Здесь надо коэффициенты исправить}
@@ -99,8 +100,8 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%  Внедрение tex исходников в pdf файл  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\embedfile[desc={Main tex file}]{\jobname.tex} % Включение кода в выходной файл
-%\embedfile[desc={title_bor}]{/home/boris/science/tex_general/title_bor_utf8.tex}
+\embedfile[desc={Main tex file}]{\jobname.tex} % Включение кода в выходной файл
+\embedfile[desc={title bor}]{title_bor.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

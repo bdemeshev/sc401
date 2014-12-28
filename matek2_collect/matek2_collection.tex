@@ -178,6 +178,18 @@ $\int_0^{\infty} (p-c(x(t)))q(t)e^{-rt}\,dt \to \max$
 
 \end{enumerate}
 
+\subsection{Retake, ??.??.2010-solutions}
+
+\begin{enumerate}
+\item
+\item $\E(Y|X)=X/2$, $\E(Y)=\E(X/2)=a/4$, 
+\[
+\Var(Y)=\E(\Var(Y|X))+\Var(\E(Y|X))=\E(X^2/12)+\Var(X/2)=\frac{7a^2}{12^2}
+\]
+\item $dY_t=-a Y_t \, dW_t$, so $Y_t$ is a martingale, and $\E(Y_t)=Y_0=1$. To find variance one may use Ito's isometry.
+\end{enumerate}
+
+
 
 \section{2009-2010}
 
@@ -571,14 +583,43 @@ with initial condition  $X_0=1$.
 
 \begin{enumerate}
 \item 
-\item
+\item 
+\[
+d(X_t Y_t)=0\, dt + X_t \, dY_t +Y_t \, dX_t + \frac{1}{2} dX_t dY_t 
+\]
+Here $W_{1t}$ and $W_{2t}$ are independent and $dW_{1t} \, dW_{2t}=0$.
+
+
 \item Using Ito-Doeblin lemma, $dW_t^3=3W_t^2 \, dW_t + \frac{1}{2}6W_t \, dt$. Hence,
 \[
 dX_t=3W_t^2 \, dW_t + (3-a)W_t \, dt
 \]
 Ito's integral is always a martingale, so $a=3$.
 
-\item 
+\item The distribution of $Y_{\tau}$ is given by the table 
+
+\begin{tabular}{ccc}
+$y$ & $-10$ & $10$ \\ 
+$\P(Y_{\tau}=y)$ & $1-p$ & $p$ \\ 
+\end{tabular} 
+
+First we find two martingales, $Z_t=Y_t-5t$, and $X_t=\exp(-2.5 Y_t)$. Here Ito's lemma is useful.
+
+According to Doob's theorem $\E(X_t)=X_0=1$ and we have an equation for $p$:
+
+\[
+p\cdot \exp(-25) + (1-p) \cdot \exp(25) = 1
+\]
+
+
+We use once again Doob's theorem, $\E(Z_t)=Z_0=0$, so
+
+\[
+\E(Y_{\tau}-5\tau)=0
+\]
+
+The value of $\E(\tau)$ may be calculated as $\E(\tau)=\E(Y_{\tau})/5=\frac{10p-10(1-p)}{5}$. 
+
 \item Let's first consider the unconditional version of the problem.
 
 \[
@@ -675,13 +716,28 @@ dX_t=-9X_t^2(1-X_t)dt+3X_t(1-X_t)dW_t,\quad X_0=1/2
 
 \end{enumerate}
 
-Ответы и подсказки:
+\subsection{exam 10.01.2013-hints}
 \begin{enumerate}
 \item $\E(H_i \mid X_i)=X_i^2$, $\E(X_i \mid H_i=1)=3/4$, $\E(X_i \mid H_i=0)=3/8$, 
 \item $\E(W_s \cdot W_t)=s$ and $\E(W_r \cdot W_s \cdot W_t)=0$
 \item $\E(X_t)=0$, $\Var(X_t)=t^6/6$, $\Cov(X_t,W_t)=0$
 \item $C_0=e^{-rT}(\ln S_0+(r-\sigma^2/2)T$
-\item Уравнение на $f$ имеет вид $f''(x)(1-x)+2f'(x)=0$. Решается заменой $f'(x)=h(x)$.
+\item Equation for $f$ has the form $f''(x)(1-x)+2f'(x)=0$. Use the substituion $f'(x)=h(x)$. This ordinary differential equation has many solutions, one of them is $f(x)=1/(1-x)$.   We may take any function $f$ that makes initial stochastic differential equation less diffucult, so we take $f(x)=1/(1-x)$, and  $Y_t=1/(1-X_t)$.
+
+And 
+\[
+dY_t = 3X_t / (1-X_t) \, dW_t
+\]
+
+We may notice that $X_t/(1-X_t)=1/(1-X_t)-1=Y_t-1$, so
+
+\[
+dY_t= 3(Y_t-1) \, dW_t
+\]
+
+We use the substitution $Z_t=Y_t-1$, so $dZ_t=3Z_t \, dW_t$ and then the substitution $Q_t = \ln Z_t$.
+
+
 \end{enumerate}
 
 
@@ -715,7 +771,7 @@ dX_t=X_t dt + X_t dW_t, \quad X_0=1
 \vspace{20pt}
 
 \begin{enumerate}[resume]
-\item (10 points) Solve the optimal control problem problem: $\int_0^1 u^2 \, dt \to \min$, subject to $\dot{x}=x+u$, $x(0)=1$, $x(1)=0$.
+\item (10 points) Solve the optimal control problem: $\int_0^1 u^2 \, dt \to \min$, subject to $\dot{x}=x+u$, $x(0)=1$. % , $x(1)=0$.
 \item (10 points) Consider a maximization problem over the finite horizon in discrete time $t=1,\ldots,T$:
 \[
 \sum_{t=1}^{T} \left(\frac{t^3}{3}+\frac{t^2}{2}\right)a_t^2 \to \max
@@ -739,8 +795,8 @@ subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a 
 \begin{enumerate}
 \item Write the joint pdf $f(x,y)$, find $f(y \mid x)$ and then the conditional expected values by integration.
 \item $\E(X_t)=\E(Y_t)=0$, use isometry property
-\item Calculate  $dY_t$. We observe that $dY_t=f(t,W_t)dW_t$, so $Y_t$ is a martingale and $\E(Y_7 \mid Y_2)=Y_2$.
-\item Use the substitution $Y_t=\ln X_t$. The solution is 
+\item Calculate  $dY_t$. We observe that $dY_t=(4W_t^3 - 12t W_t) \, dW_t$, so $Y_t$ is a martingale and $\E(Y_7 \mid Y_2)=Y_2$.
+\item Use the substitution $Y_t=\ln X_t$. Then $dY_t= 0.5 dt + dW_t$ and $Y_t=\ln X_0 + \int_0^t 0.5 \, ds + \int_0^t 1 \, dW_s$. The final solution is 
 \[
 X_t=X_0\exp(t/2+W_t)
 \]
@@ -1217,7 +1273,7 @@ where $\Phi(x)$ is a distribution function of  a standard normal random value, $
 
 State the dynamic optimization problem, if the discount rate is $r>0$. Introduce the current value Hamiltonian for that problem. Write down the first-order conditions. Solve the system of equations.
 
-\item $[$10 points] Consider the following optimization problem: maximize $\sum_{t=0}^{\infty} 0.75^t \ln c_t$, subject to $c_t+k_t=\sqrt{k_t}$, where $k_0>0$. Let the state variable be $k$ and denote the next period value of $k$ as $k'$.
+\item $[$10 points] Consider the following optimization problem: maximize $\sum_{t=0}^{\infty} 0.75^t \ln c_t$, subject to $c_t+k_{t+1}=\sqrt{k_t}$, where $k_0>0$. Let the state variable be $k$ and denote the next period value of $k$ as $k'$.
 
 \begin{enumerate}
 \item Write down the Bellman equation for the value function $V(k)$
@@ -1424,6 +1480,67 @@ X_0=\exp(-2r) \exp(r-\sigma^2/2)  \exp(\sigma^2 / 2)=\exp(-r)
 
 \section{2014-2015}
 
+\subsection{Practice problems}
+
+These problems were not graded.
+
+\begin{enumerate}
+\item  An enemy submarine is somewhere on the number line. The initial coordinate of the submarine is some unknown integer number. It is moving at some constant integer speed (units per minute).
+
+You can launch a torpedo each minute at any integer on the number line. If the the submarine is there, you hit it and it sinks. You have infinite number of torpedoes. You must sink this enemy sub.
+\begin{enumerate}
+\item Draw a picture of number line and the submarine. Just for fun!
+\item Devise a strategy that is guaranteed to eventually hit the enemy submarine
+\end{enumerate}
+
+\item Compare the power of two sets: $A=\mathbb{Q}$ --- the set of all rational numbers, $B=\mathbb{Q}^2$ --- the set of all possible pairs of rational numbers.
+
+\item Using the fact that the Borel $\sigma$-algebra $\mathcal{B}$ is the smallest $\sigma$-algebra containing all subsets of the form $(-\infty; t]$ show that $\mathbb{N}\in \mathcal{B}$.
+
+\item Let $\Omega=\mathbb{R}$. Find explicitely the smallest $\sigma$-algebra which contains the sets $A=[0;1]$ and $B=[10;100]$.
+
+\item Let $X$ be uniform on $[0;1]$ and $Y=1_{X<0.7}+1_{X>0.1}$. Describe the $\sigma$-algebra $\sigma(Y)$. How many events  $\sigma(Y)$ contains? Is the set $\sigma(X)$ countable?
+
+\item How many different $\sigma$-algebras one may construct if $\Omega$ contains three elements? Four?
+
+\item We throw a coin infinite number of times. Let's define the sequence of random variables $X_n$ such that  $X_{n}$ is equal to 1, if the result of $n$-th throw is tail, and 0 otherwise. We also define a bunch of $ \sigma $-algebras: $\mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},\ldots)$.
+
+Give two non-trivial (other  than $ \Omega $ and $ \emptyset $) examples of event $ A $, such that:
+
+\begin{itemize}
+\item $ A\in \mathcal{F}_{2014} $
+\item $ A\notin \mathcal{F}_{2014} $
+\item $A$ belongs to every $\mathcal{H}_{n}$
+\end{itemize}
+
+Which $ \sigma $-algebras contains the events:
+\begin{itemize}
+\item $ A= \{ X_{37}>0\}$
+\item $ B=\{ X_{37}>X_{2014} \}$
+\item $ C= \{X_{37}>X_{2014}>X_{12}\}$
+\end{itemize}
+
+Simplify where possible: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $
+
+\item Veniamin throws a coin until three consecutive tails appear.  Let the random variable $T$ be the number of throws. Let $ \mathcal{F}_{T} $ be the $ \sigma $-algebra of all events distinguishable by Veniamin. 
+\begin{enumerate}
+\item Provide two non-trivial (not equal to $\Omega$ or $\emptyset$) examples of event $A$ such that $A\in  \mathcal{F}_{T}$ but $A\notin \sigma(T)$
+\item Provide two non-trivial (not equal to $\Omega$ or $\emptyset$) examples of event $A$ such that $A\in  \sigma(T)$
+\item Is it true, that $\sigma(T) \subset \mathcal{F}_{T}$?
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection{Practice-solutions}
+
+\begin{enumerate}
+\item
+\item The set $A$ and $B$ have the same power.
+\item
+\item
+\item $\sigma(Y)=\{ \emptyset, \Omega, \{Y=1\}, \{Y=2\} \}$, $\sigma(X)$ is not countable
+\end{enumerate}
+
 \subsection{Hometask}
 
 \begin{enumerate}
@@ -1432,7 +1549,7 @@ X_0=\exp(-2r) \exp(r-\sigma^2/2)  \exp(\sigma^2 / 2)=\exp(-r)
 
 
 
-\item It is $25^\circ C$ in Australia today. Each day the temperature goes one degree up or down with equal probability. Each day I will put the sum equal to the temperature in my piggy bank. So on the first day I will put $25$ roubles. I will stop my investment strategy when the temperature will reach $15^\circ C$ or $30^\circ C$ for the first time. 
+\item It is $25^\circ C$ in Australia today. Each day the temperature goes one degree up or down with equal probability. Each day I will put the sum equal to the temperature in my piggy bank. So today I will put $25$ roubles. I will stop my investment strategy when the temperature will reach $15^\circ C$ or $30^\circ C$ for the first time. 
 
 \includegraphics[scale=0.25]{piggy.png} 
 
@@ -1444,7 +1561,12 @@ The competition between two teams is organised as a sequence of rounds. In each 
 
 When the gladiators of strengths $a$ and $b$ meet the first will win with probability $a/(a+b)$, the second --- with probability $b/(a+b)$. The gladiators are vampires, so the strength of the winner will become $a+b$.
 
-What is best strategy for Veniamin? What is the probability that Veniamin's team will win?
+\begin{enumerate}
+\item Let's denote by $\tau$ the number of the final round. What is the maximum value of $\tau$?
+\item Let's denote by $X_t$ the total strength of the Veniamin's team. Is $X_t$ a martingale?
+\item What is best strategy for Veniamin? What is the probability that Veniamin's team will win?
+\end{enumerate}
+
 
 \item Consider the processes $X_t=\int_0^t (s W_s)^3 \,dW_s$ and $Y_t=\int_0^t W_s \, dW_s$. Find $\E(X_t)$, $\Var(X_t)$, $\Cov(X_t,Y_t)$
 
@@ -1465,7 +1587,170 @@ Some hints: you may find the substitution $Y_t = \ln X_t$ useful.
 
 \end{enumerate}
 
-% \subsection{Hometask-solution}
+
+\subsection{Hometask-solution}
+
+\begin{enumerate}
+\item If the total number of throws it $T$ then the last throw has value $6$. Each of the preceeding $(T-1)$ throws may have a value from $1$ to $5$. So if $T$ is considered fixed, then $N$ has binomial distribution with $n=T-1$ and $p=1/5$. It follows that $\E(N|T)=\frac{T-1}{5}$ and $\Var(N|T)=\frac{4(T-1)}{25}$.
+
+Using tower property of conditional expectation
+\[
+\E(N)=\E(\E(N|T))=\E\left( \frac{T-1}{5} \right)=\frac{\E(T)-1}{5}
+\]
+
+Here $T$ is geometric with $p=1/6$, so $\E(T)=6$ and $\E(N)=1$.
+
+We use the following decomposition of variance:
+\begin{multline}
+\Var(N)=\E(\Var(N|T))+\Var(\E(N|T))=\\
+=\E\left(\frac{4(T-1)}{25}\right)+\Var\left(\frac{T-1}{5}\right)=(\Var(T-1)+4\E(T-1))/25
+\end{multline}
+
+As $T$ is geometric $\Var(T)=(1-p)/p^2=30$. And, hence, $\Var(N)=2$.
+
+If $N$ is fixed, then the total time $T$ is equal to the following sum: from start to first five, from first five to second five, \ldots, from $N$-th five to six, so $\E(T|N)=aN+b$. From the properties of geometric distribution, $b=5$ (no five) and $a=5$ (no six).
+
+\item $X_0=25$, $X_{t+1}=X_t + D_{t+1}$ --- is a martingale. The random variable $X_{\tau}$ can take only the values $30$ and $15$. Applying the Doob's theorem we get $\E(X_{\tau})=25$ and, hence, $\P(X_{\tau}=15)=1/3$. 
+
+Using the second martingale, $X^2_t-t$ and again Doob's theorem, $\E(X^2_{\tau})-\E(\tau)=X_0^2=625$, and $\E(\tau)=50$.
+
+Using the third martingale, $M_t=\sum_{i=0}^t X_i - 25(t+1)$. Here we have $(t+1)$ as there are $(t+1)$ terms in $\sum_{i=0}^t X_i$. Using Doob's theorem, $\E(M_{\tau})=M_0=0$, and, finally, $\E(\sum_{i=0}^{\tau} X_i )=25\cdot 51=1275$.
+
+\item $\tau \in \{3,4,5,6\}$, $X_t$ is a martingale. The random variable $X_{\tau}$ can take only two values, $0$ or $1+2+3+4+1+3+5=19$. According to the Doob's theorem, $\E(X_{\tau})=X_0=10$. And hence $\P(\text{Veniamin wins})=\P(X_{\tau}=19)=10/19$. The strategy does not matter.
+
+\item $\E(X_t)=0$, $\Var(X_t)=3t^10/2$, and $\Cov(X_t,Y_t)=t^6/2$.
+
+The expected value 
+\[
+\E(W_t^{2k})=t^k\cdot 1\cdot 3 \cdot 5 \cdot \ldots \cdot (2k-1)
+\]
+may be useful with Ito's isometry.
+
+\item 
+\begin{multline}
+dZ_t=[\cos X_t+2X_t t W_t e^{W_t}-t^2W_te^{W_t}\sin X_t + \sin^2(tW_t) - 0.5t\cos X_t \sin^2(tW_t)]\,dt + \\
+[\sin(tW_t)(2X_t-t\sin(X_t))]\, dW_t
+\end{multline}
+\item Using the substitution $Y_t=\ln X_t$ we obtain equation $dY_t=(0.5-X_t) \, dt + dW_t$. And $\ln X_t + \int_0^t X_s \, ds = 0.5t+W_t$. 
+
+We exponentiate and then take integral
+\[
+\int_0^t X_s \, ds=\ln \left( 1 + \int_0^t \exp(0.5s+W_s) \, ds \right)
+\]
+
+Differentiate to obtain 
+\[
+X_t=\frac{\exp(0.5t+W_t)}{1+\int_0^t \exp(0.5s+W_s) \, ds}
+\]
+
+\item 
+\[
+X_0=e^{-rT}F\left(  \frac{\ln S_0 - (\sigma^2/2-r)(T-1)}{\sigma \sqrt{T-1}} \right),
+\]
+where $F()$ is the cumulative probability function for standard normal distribution.
+
+\end{enumerate}
+
+\subsection{Exam, 27.12.2014}
+
+\subsubsection*{Optimal control part}
+
+\subsubsection*{Stochastic calculus part}
+
+
+
+Here $W_t$ always denotes the standard Wiener process. 
+
+\vspace{10pt}
+
+\begin{enumerate}
+
+
+\item $[$10 points] Let $\tau$ denote the first moment of time when $|W_t|=100$. 
+\begin{enumerate}
+\item What is the distribution of $W_{\tau}$?
+\item Are $W_{\tau}$ and $\tau$ independent?
+\item Assuming that some version of Doob's theorem may be applied find $\E(e^{-2\tau})$. 
+\end{enumerate}
+Hint: maybe $\exp(2 W_t - 2 t )$ will help?
+
+
+\item $[$10 points] The random variables $X_1$, $X_2$, \ldots, $X_n$, \ldots are independent uniformly distributed on $[0; 1]$. I am summing them until the first $X_i$ greater than 0.5 is added. After this term I stop. Let’s denote by $S$ the total sum and by $N$ --- the number of terms added. Find $\E(S|N)$, $\Var(S|N)$, $E(S)$ % , $Var(S)$.
+
+Hints: If $U$ is uniform on $[a;b]$ then $\Var(U)=(b-a)^2/12$. If $G$ has geometric distribution (the number of throws to get the first success) then $\E(G)=1/p$  where $p$  is the probability of success.
+
+\item $[$10 points] Find $\Var\left(  \int_0^t W_s \, ds  \right)$. 
+
+You may use the following guiding steps:
+
+\begin{enumerate}
+\item Find $d(tW_t)$ in short and full form
+\item Find $\E\left(2t W_t\int_0^t s \, dW_s\right)$
+\item Find $\E\left(\left(\int_0^t s \, dW_s\right)^2 \right)$
+\item Find $\E\left(  \int_0^t W_s \, ds  \right)$
+\item $(a-b)^2=a^2-2ab+b^2$ :)
+\end{enumerate}
+
+\item $[$10 points] The risk-free interest rate is equal to $0.1$. The volatility of the share is equal to $\sigma=1$. You have an option to receive 1\$ two years later if the percentage change of price of the share, $S_t$, during the first year is less than during the second year. Assume the framework of the Black and Scholes model. What is the fair price of this option?
+
+\item $[$20 points] Solve the stochastic differential equation 
+\[
+dX_t = t \, dt + X_t \, dW_t, \; X_0=1
+\]
+
+You may use the following guiding steps:
+\begin{enumerate}
+\item Solve a less difficult stochastic differential equation, $dY_t=-Y_t \, dW_t, \; Y_0=1$
+\item Find $dA_t$, where $A_t=X_t Y_t$ 
+\item Find any deterministic function $f(t)$ such that $d(f(t) A_t)$ contains neither $X_t$ nor $A_t$
+\item Using full form of $d(f(t) A_t)$ find $X_t$. It may depend on some integrals :)
+\end{enumerate}
+
+\end{enumerate}
+
+
+\begin{center}
+\includegraphics[width=12cm]{correlation.png} 
+\end{center}
+
+
+\subsection{Exam, 27.12.2014 - solution}
+
+
+
+\begin{enumerate}
+\item $W_{\tau}$ takes values $100$ and $-100$ with equal probabilities. Yes, independent. $\E\left(  e^{-2\tau} \right) = \frac{2}{e^{200}+e^{-200}}$
+\item $\E(S|N)=0.25N+0.5$, $\Var(S|N)=0.25N/12$, $\E(N)=1/p=2$, $\E(S)=\E(\E(S|N))=1$. One may also find the variance, $\Var(S)=1/8+1/24=1/6$. 
+\item By hints:
+\begin{enumerate}
+\item $d(tW_t)=t \, dW_t+W_t \, dt$
+\item $\E\left(2t W_t\int_0^t s \, dW_s\right)=t^3$ using Ito's isometry
+\item $\E\left(\left(\int_0^t s \, dW_s\right)^2 \right)=t^3/3$ using Ito's isometry
+\item $\E\left(  \int_0^t W_s \, ds  \right)=0$
+\item $\Var\left(  \int_0^t W_s \, ds  \right)=t^3/3$
+\end{enumerate}
+\item Event $\left\{ \frac{S_1-S_0}{S_0} < \frac{S_2-S_1}{S_1} \right\}$ simplifies to $S_1^2<S_0 S_2$ and further simplifies to $2\tilde{W}_1 - \tilde{W}_2 < 0$.
+
+And 
+\[
+X_0=e^{-0.2}\tilde{P}(2\tilde{W}_1 - \tilde{W}_2 < 0) = e^{-0.2}/2
+\]
+
+\item By steps:
+
+\begin{enumerate}
+\item Using the substitution $U_t=\ln Y_t$, one obtains the solution $Y_t=\exp(-W_t-t/2)$
+\item $dA_t= Y_t (t-X_t)dt$
+\item $f(t)=e^t$ for example
+\item 
+\[
+X_t=\frac{1+\int_0^t s \exp(-W_s+s/2) \, ds}{ \exp(-W_t +t/2 )}
+\]
+\end{enumerate}
+
+
+\end{enumerate}
+
 
 
 \end{document}
