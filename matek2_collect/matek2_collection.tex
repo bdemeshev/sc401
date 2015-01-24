@@ -1655,6 +1655,42 @@ where $F()$ is the cumulative probability function for standard normal distribut
 
 \subsubsection*{Optimal control part}
 
+\begin{enumerate}
+\item (10 points) Consider the nonlinear system of DE
+\[
+\begin{cases}
+\dot{x}_1=e^{x_1+x_2}-x_2 \\
+\dot{x}_2=-x_1+x_1x_2
+\end{cases}
+\]
+Determine the points of rest of the system, classify their type and stability and draw the local 
+phase diagram at each of them with the found eigenvectors.
+
+\item (10 points) Solve the optimal control problem 
+\[
+\int_0^T \left[ pK(t)-wK(t)-cI^2(t)  \right] \, dt \to \max
+\]
+subject to $\dot{K}(t)=I(t)$, $K(0)=K_0>0$, $K(T)$ not given, $p>w>0$, $c>0$. 
+
+
+Also show that $K(t)>0$ for $t\in [0;T]$ and $\dot{K}(T)=0$ (4 points for that part).
+
+\item (20 points) Consider the optimal problem for the infinite horizon 
+\[
+\int_0^{\infty} e^{-rt}\left[ -\frac{1}{2}u^2+xu-\frac{1}{2}x^2  \right] \, dt \to \max
+\]
+subject to $\dot{x}=u$, $x(0)=x_0>0$ and $1<r<2$.
+
+\begin{enumerate}
+\item  (5 points) Write down the system of equations based on the current value Hamiltonian
+\item  (3 points) Is the integrand a concave or a strictly concave function?
+\item  (5 points) Reduce the necessary conditions down to a pair of linear DE involving only $x$ and $\lambda$
+\item  (3 points) Find all steady-states of the system
+\item  (4 points) Classify them
+\end{enumerate}
+\end{enumerate}
+
+
 \subsubsection*{Stochastic calculus part}
 
 
