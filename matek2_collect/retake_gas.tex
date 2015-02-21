@@ -1,0 +1,56 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}ar}
+\renewcommand{\P}{\mathbb{P}}
+
+
+\begin{document}
+\begin{enumerate}
+\item In the first bag there balls numbered from 0 to 9, in the second bag there are balls numbered from 1 to 10. Two balls were selected. You know that one ball was selected from the first bag and one from the second one. You will select at random one ball from these two and you will know only its number. Let’s denote its number by $X$ and the number of the other of the two balls by $Y$.
+
+Find $\E(Y\mid X)$, $\Var(Y \mid X)$ 
+
+
+\item The process $Y_t$ is given by $Y_t=2W_t+5t$. The stopping time $\tau$ is given by $\tau=\min\{t|Y_t^2=100\}$. Find the distribution of the random variable $Y_\tau$ and the expected value $\E(\tau)$.
+
+
+Hint: you may find the martingales $a^{Y_t}$ and $Y_t-f(t)$ useful
+
+\item Let 
+$Y_t=\exp\left(2W_t-2t\right)$.
+\begin{enumerate}
+\item Using Ito’s lemma find $dY_t$ 
+\item Using your previous result find $\E(Y_t)$ and $\Var(Y_t)$
+\end{enumerate}
+
+
+\item In the framework of the Black and Scholes model find the price at $t=0$  of an asset that pays $\min\{M,\ln S_t\}$  at time $T$, where $S_T$ denotes the price of one share at time $T$,  $M$ --- arbitrary constant, specified at the moment of the issue.
+
+
+\item (20 points) Let’s consider the following system of stochastic differential equations
+\[
+\left\{
+  \begin{array}{l}
+    dX_t=aX_t dt-Y_t dW_t \\
+    dY_t=aY_t dt+X_t dW_t
+  \end{array}
+\right.
+\]
+with initial conditions $X_0=x_0$ and $Y_0=y_0$ 
+\begin{enumerate}
+\item Find the solution of the form $X_t=f(t)\cos W_t$ and $Y_t=g(t)\sin W_t$ 
+\item Prove that for any solution $D_t=X_t^2+Y_t^2$ is nonstochastic
+\end{enumerate}
+
+
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+
+\begin{document}
+
+Here $W_t$ denotes the standard Wiener process.
+
+\begin{enumerate}
+\item Find the following stochastic integral:
+\[
+I_t = \int_0^t 3W_u-5 \, dW_u
+\]
+
+Find $\E(I_t)$ and $\Var(I_t)$
+
+\item For the standard Wiener process $W_t$ find 
+\begin{enumerate}
+\item $\E(W_6)$, $\E(W_3^7)$, $\E(W_5 \cdot W_6)$
+\item $\Var(W_6)$, $\Var(W_6+W_5)$
+\item $\Cov(2W_3+W_4,W_1)$
+\end{enumerate}
+
+\item Consider the process $X_t=W_t^3-4tW_t$.
+\begin{enumerate}
+\item Use Ito's lemma to find $dX_t$
+\item Write the corresponding full form
+\item Is $X_t$ a martingale?
+\end{enumerate}
+
+\item Let $\tau$ be a stopping time, the first moment of time  when $W_t$ hits $2$ or $-1$.
+\begin{enumerate}
+\item Apply Doob's theorem for the martingale $W_t$ and find $\P(W_{\tau}=2)$
+\item Apply Doob's theorem for the martingale $Y_t=W_t^2-t$ and find $\E(\tau)$
+\end{enumerate}
+
+\item In the framework of Black and Scholes model find the price of an asset which pays you  $X_2=\ln(S_1)$ at the moment $T=2$. Here $S_1$ denotes the price of the share at time $t=1$. Negative value of $X_2$ means that you should pay the corresponding amount. The parameters are: starting share price, $S_0=100$, risk-free rate, $r=0.1$, volatility, $\sigma=0.2$.
+
+
+\end{enumerate}
+
+
+
+\end{document}
