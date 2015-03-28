@@ -48,8 +48,8 @@ $A<B$
 Сравните мощности множеств $A$ и $B$, если $A=\mathbb{N}$, $B$ --- множество подмножеств натуральных чисел.
 \end{problem} 
 \begin{solution} 
-$A<B$}
-
+$A<B$
+\end{solution}
 
 \section{Сигма-алгебры и измеримость} 
 
@@ -564,8 +564,8 @@ Let $ S_{n} $ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+\ldots+X_{n} 
 Случайная величина $X$ равномерна на отрезке $[0;1]$. Величина $Y$ определяется по формуле $Y=1_{X<0.5}+1_{X>0.3}$. Опишите $\sigma$-алгебру $\sigma(Y)$.
 \end{problem} 
 \begin{solution} 
-Содержит 4 элемента, порождается разбиением.}
-
+Содержит 4 элемента, порождается разбиением.
+\end{solution}
 
 \section{Модель в дискретном времени, дерево}
 
@@ -739,13 +739,14 @@ a) calculate standard European call price \\
 b) calculate knockout European call price 
 \end{problem} 
 \begin{solution} 
-}
+\end{solution}
 
 
 
 \subsection{Арбитраж} 
 
-\problem{ Имеется три опциона колл с одинаковым сроком исполнения и разными страйк-ценами: $K_{1}<K_{2}<K_{3}$, причем $K_{2}-K_{1}=K_{3}-K_{2}$. Обозначим цены этих опционов как $C_{1}$, $C_{2}$ и $C_{3}$. Сравните $C_{2}$ и $\frac{C_{1}+C_{3}}{2}$  
+\begin{problem}
+Имеется три опциона колл с одинаковым сроком исполнения и разными страйк-ценами: $K_{1}<K_{2}<K_{3}$, причем $K_{2}-K_{1}=K_{3}-K_{2}$. Обозначим цены этих опционов как $C_{1}$, $C_{2}$ и $C_{3}$. Сравните $C_{2}$ и $\frac{C_{1}+C_{3}}{2}$  
 \end{problem} 
 \begin{solution} 
 
@@ -770,7 +771,7 @@ $P$ --- цена американского опциона пут (со стра
 $D$ --- приведенная к моменту $t$ стоимость дивидендов 
 \end{problem} 
 \begin{solution} 
-}
+\end{solution}
 
 
 
@@ -946,7 +947,8 @@ $\P(B)$
 Существует ли последовательность событий $A_1$, $A_2$, \ldots, такая что $\lim \P(A_i)=1$, но $\P(\cap_{i=k}^{\infty} A_i)=0$ для любого числа $k$?
 \end{problem} 
 \begin{solution} 
-Да}
+Да
+\end{solution}
 
 
 \section{Виды сходимостей} 
@@ -1297,7 +1299,8 @@ f(X_n)=f(a)+f'(a)(X_n-a)+Y_n(X_n-a)
 \end{enumerate}
 \end{problem} 
 \begin{solution} 
-Событие $Y_n\to 0$ лежит в хвостовой $\sigma$-алгебре, поэтому $\P(Y_n\to 0)$ может равняться только нулю или единице.}
+Событие $Y_n\to 0$ лежит в хвостовой $\sigma$-алгебре, поэтому $\P(Y_n\to 0)$ может равняться только нулю или единице.
+\end{solution}
 
 \section{Интеграл Лебега} 
 
@@ -1442,7 +1445,7 @@ $\Var(X)<\E(X)$
 Функции $f_n$ заданы на множестве $[0;\infty)$ формулой $f_n(x)=2nxe^{-nx^2}$. Существует ли  интегрируемая функция $f$, такая что $f\geq f_n$ для всех $n$?
 \end{problem} 
 \begin{solution} 
-}
+\end{solution}
 
 
 \section{Характеристическая функция} 
@@ -1601,7 +1604,8 @@ $\E(\frac{t}{L+1})$, где $L$ --- $Bin(n,t)$. Аналогично, от Ва�
 Пусть $L$ --- $Bin(n,t)$. Считаем $\E(\frac{1}{L+1})$. Для начала находим $\E(x^{L})=(tx+1-t)^{n}$.
 Затем замечаем, что $\frac{1}{L+1}=\int_{0}^{1}x^{L}$. Значит $\E(\frac{1}{L+1})=\int_{0}^{1}\E(x^{L})=\ldots=\frac{1-(1-t)^{n+1}}{t(n+1)}$.
 Получаем ответ: $\E(\frac{t}{L+1})+\E(\frac{t}{R+1})=\frac{2-(1-t)^{n+1}-t^{n+1}}{n+1}$.
-Чтобы кусок получался длиннее лучше хвататься по центру!}
+Чтобы кусок получался длиннее лучше хвататься по центру!
+\end{solution}
 
 
 
@@ -2383,7 +2387,7 @@ $\E(Y|X)=X\cos(X)+15$, $\E(Y|Z)=Z$
 
 \end{problem} 
 \begin{solution} 
-}
+\end{solution}
 
 
 \section{Разложение в сумму, первый шаг, цепи Маркова}
@@ -2393,7 +2397,7 @@ $\E(Y|X)=X\cos(X)+15$, $\E(Y|Z)=Z$
 
 
 
-\problem{
+\begin{problem}
   Information on buy-backs is adapted from investorwords.com.
   This problem suggests how results on biased random walks
   can be worked into more realistic models.
@@ -2724,7 +2728,8 @@ and so on the expected value of $N$ is then
 \]
 This is astonishing, the expected number of visits to $a$
 before returning to the origin, regardless of the value of $a$
-is 1, the same for 1 million as for $10$!.}
+is 1, the same for 1 million as for $10$!.
+\end{solution}
 
 
 
@@ -2974,13 +2979,13 @@ $X_t=tU$, где $U$ равновероятно принимает значен�
 \begin{solution} 
 
 $X_t$ --- случайное блуждание, $\mathcal{F}_t$ --- естественная фильтрация, $\mathcal{H}_t$ --- колдунская фильтрация. Да, мартингал относительно $\mathcal{K}_t=\mathcal{F}_t \cap \mathcal{H}_t$.
-}
+\end{solution}
 
 
 
 \subsection{Равномерная интегрируемость} 
 
-\problem{
+\begin{problem}
 Конечный набор интегрируемых случайных величин равномерно
 интегрируем.  
 \end{problem} 
@@ -3137,7 +3142,7 @@ geometric symmetric random walk, using the term  $\frac{2}{e^{\sigma}+e^{-\sigma
 \end{solution}
 
 \begin{problem}
- [Steele, 2.1.] \\
+ [Steele, 2.1.] 
 $S_{n}=S_{n-1}+X_{n}$, 
 $X_{n}= 
 \begin{cases}
@@ -3407,11 +3412,11 @@ $\lim_{n}
 г) является цепью Маркова, но не мартингалом 
 \end{problem} 
 \begin{solution} 
-}
+\end{solution}
 
 \subsection{Задачи на тему остановки мартингала} 
 
-\problem{
+\begin{problem}
 Пусть $W_{t}$ --- стандартный винеровский процесс, $a$ и $b$ больше 0, $\tau=min\{t|W_{t}=a \cup W_{t}=-b\}$. \\
 Найдите $\P(W_{\tau}=a)$, $\E(\tau)$, $\E(\tau W_{\tau})$ 
 \end{problem} 
@@ -3500,11 +3505,11 @@ $\P$ & $0.5$ & $0.2$ & $0.3$ \\
 \end{problem} 
 \begin{solution} 
 
-Hint: Мартингалы $S_{t}$, $S_{t}^2-t$ вам в помощь }
+Hint: Мартингалы $S_{t}$, $S_{t}^2-t$ вам в помощь 
 % аналог с $\E(\tau S_{tau})$ ?
+\end{solution}
 
-
-\problem{
+\begin{problem}
 Пусть $S_{t}$ --- несимметрическое случайное блуждание с началом в нуле, $\P(S_{t}-S_{t-1}=1)=p$, $a$ и $b$ больше 0, $\tau=min\{t|S_{t}=a \cup S_{t}=-b\}$. \\
 Найдите $\P(S_{\tau}=a)$, $\E(\tau)$ 
 \end{problem} 
@@ -3534,7 +3539,6 @@ Hint: самое сложное тут --- подходящий мартинга
 Hint: $K_{t}$ --- число красных шаров --- мартингал, $p=5/8$. 
 \end{solution}
 
-\begin{problem}
 %Пусть $S_{n}$ --- симметричное случайное блуждание, $S_{0}=0$, $K$ -
 %натуральное число, $\tau=\min\{t|S_{t}=K\}$ \\
 %a) Верно ли, что $Z_{n}=(-1)^{n}\cos(\pi(S_{n}+K))$ --- мартингал? \\
@@ -3546,7 +3550,8 @@ Hint: $K_{t}$ --- число красных шаров --- мартингал, $
 
 
 
-\problem{ Safes and keys \\
+\begin{problem} 
+Safes and keys \\
 source: Taiwan NMO 2006\\
 There are 94 safes and 94 keys. Each key can open only one safe, and each safe can be opened by only one key. We place randomly one key into each safe. 92 safes are then randomly chosen, and then locked. What is the probability that we can open all the safes with the two keys in the two remaining safes?\\
 (Once a safe is opened, the key inside the safe can be used to open another safe.)
@@ -3556,29 +3561,33 @@ There are 94 safes and 94 keys. Each key can open only one safe, and each safe c
 hint: Consider martingale $X_{n}$ the proportion of keys from the first two safes in safes which are closed at time $t$ \\
 sol (one of many possible) \\
 let $\tau$ be a stopping time --- the time when we cannot open more safes (all safes are open or we have no more keys). $T=\tau \wedge (n-1)$ is also a stopping time. The <<last safe>> is the safe not opened at $T$ with minimal possible number. Let $M_{t}$  be the proportion of not opened safes at time $t$  containing keys from the first $k$ safes.  is a martingale. $T$ --- bounded stopping time. $\E(M_{T}) = \E(M_{0}) = \frac {k}{n}$ by the optional stopping time theorem. And $\E(M_{T})$ is the probability we have been searching (the probability of opening all safes is exactly the probability that the last safe contains the key from the first  safes). \\
-aops, 1310759 }
+aops, 1310759 
+\end{solution}
 
 % Тождество Вольда, Wald's identity
-\problem{Величины $X_i$ независимы, одинаково распределены и строго положительны, $S_n=\sum_{i=1}^n X_i$. Число $x>0$. Момент остановки $T_x=\min\{n|S_n\geq x\}$. Докажите неравенство $x\leq \E(\min\{X_1,x\})\E(T_x)\leq 2x$
+\begin{problem}
+Величины $X_i$ независимы, одинаково распределены и строго положительны, $S_n=\sum_{i=1}^n X_i$. Число $x>0$. Момент остановки $T_x=\min\{n|S_n\geq x\}$. Докажите неравенство $x\leq \E(\min\{X_1,x\})\E(T_x)\leq 2x$
 \end{problem} 
 \begin{solution} 
 По тождеству Вольда
 \begin{equation}
  \E(\min\{X_1,x\})\E(T_x)=\E\left(\sum_{i=1}^{T_x}\min\{X_i,x\} \right)
 \end{equation}
-Остается доказать, что $x\leq \sum_{i=1}^{T_x}\min\{X_i,x\}\leq 2x $}
+Остается доказать, что $x\leq \sum_{i=1}^{T_x}\min\{X_i,x\}\leq 2x $
 % источник m.se.com, 76233
+\end{solution}
 
 
-
-\problem{Вася прыгает на один метр вперед с вероятностью $p$ и на два метра вперед с вероятностью $1-p$. Как только он пересечет дистанцию в 100 метров он останавливается. Получается, что он может остановиться либо на отметке в 100 метров, либо на отметке в 101 метр. 
+\begin{problem}
+Вася прыгает на один метр вперед с вероятностью $p$ и на два метра вперед с вероятностью $1-p$. Как только он пересечет дистанцию в 100 метров он останавливается. Получается, что он может остановиться либо на отметке в 100 метров, либо на отметке в 101 метр. 
 \begin{enumerate}
 \item Какова вероятность того, что он остановится ровно на отметке в 100 метров?
 \item Численно с помощью компьютера найдите, при каком $p$ эта вероятность будет минимальной и чему она будет равна?
 \end{enumerate}
-}
+\end{problem}
 % копия в методе первого шага
-\solution{ Обозначим $P_n$ вероятность остановиться ровно на $n$ метрах. Мы ищем $P_{100}$. 
+\begin{solution}  
+Обозначим $P_n$ вероятность остановиться ровно на $n$ метрах. Мы ищем $P_{100}$. 
 
 Решение 1. По методу первого шага:  $P_n=pP_{n-1}+(1-p)P_{n-2}$.
 
@@ -3597,7 +3606,7 @@ P=\frac{1+(1-p)^{101}}{2-p}
 %x <- seq(0,1,by=0.001)
 %qplot(x,f(x),geom="line")
 %@
-}
+\end{solution}
 
 \section{Броуновское движение} 
 
@@ -3622,23 +3631,23 @@ of Brownian motion in turn for each of the transformed processes.
        \item
        The increments
        \[
-         W_1(t) --- W_1(s) = cW( (t)/c^2 ) --- cW(s/c^2) = c
-         ( W( t/c^2  ) --- W( s/c^2 ))
+         W_1(t) - W_1(s) = cW( (t)/c^2 ) - cW(s/c^2) = c
+         ( W( t/c^2  ) - W( s/c^2 ))
        \]
        are clearly normally distributed as a multiple of a
        normally distributed random variable.  Since the
-       increment $ W( t/c^2 ) --- W( s/c^2 ) $ has
+       increment $ W( t/c^2 ) - W( s/c^2 ) $ has
        mean zero, then
        \[
-         W_1(t+s) --- W_1(s) = c ( W( t/c^2 ) --- W( s/c^2
+         W_1(t+s) - W_1(s) = c ( W( t/c^2 ) - W( s/c^2
          ))
        \]
        must have mean zero.  The variance is
        \begin{eqnarray*}
-         \E[(W_1(t)-W(s))^2] &=& \E[(c W((t)/c^2) --- c W(s/c^2))^2]
+         \E[(W_1(t)-W(s))^2] &=& \E[(c W((t)/c^2) - c W(s/c^2))^2]
          \\
-         &=& c^2 \E[ (W( t/c^2 ) --- W(s/c^2))^2] \\
-         &=& c^2 (t/c^2 --- s/c^2) = t --- s.
+         &=& c^2 \E[ (W( t/c^2 ) - W(s/c^2))^2] \\
+         &=& c^2 (t/c^2 - s/c^2) = t - s.
        \end{eqnarray*}
 
        \item
@@ -3646,7 +3655,7 @@ of Brownian motion in turn for each of the transformed processes.
        < t_2/c^2 \le t_3/c^2 < t_4/c^2 $, and the corresponding
        increments $ W(t_4/c^2) - W(t_3/c^2) $ and $ W(t_2/c^2)
        - W(t_1/c^2) $ are independent.  Then the multiples of
-       each by $ c $ are independent and so $ W_1(t_4) --- W_1(t_3)
+       each by $ c $ are independent and so $ W_1(t_4) - W_1(t_3)
        $ and $ W_1(t_2) - W_1(t_1) $ are independent.
 
        \item
@@ -3670,7 +3679,7 @@ of Brownian motion in turn for each of the transformed processes.
   \begin{enumerate}
     \item
     \[
-      W_2(t) --- W_2(s) = t W(1/t) --- s W(1/s)
+      W_2(t) - W_2(s) = t W(1/t) - s W(1/s)
     \]
     which will be the difference of normally distributed
     random variables each with mean $ 0 $, so the difference
@@ -3678,18 +3687,18 @@ of Brownian motion in turn for each of the transformed processes.
     that the normal random variable has the correct
     variance.
     \begin{eqnarray*}
-      \E[ (W_2(t)-W_2(s))^2] &=& \E[ (s W(1/s) --- t W(1/
+      \E[ (W_2(t)-W_2(s))^2] &=& \E[ (s W(1/s) - t W(1/
       t))^2 ] \\
-      &=& \E[ ( s W(1/s) --- s W(1/t) + s W(1/t) --- t W(1/t)
-       --- (s -t) W(0) )^2 ] \\
-      &=& s^2 \E[ (W(1/s) --- W(1/t))^2 ] + (s-t)^2 \E[
-      (W(1/t) --- W(0))^2
+      &=& \E[ ( s W(1/s) - s W(1/t) + s W(1/t) - t W(1/t)
+       - (s -t) W(0) )^2 ] \\
+      &=& s^2 \E[ (W(1/s) - W(1/t))^2 ] + (s-t)^2 \E[
+      (W(1/t) - W(0))^2
       ] \\
-      &=& s^2 ( 1/s --- 1/t ) + (s-t)^2 ( 1/t ) \\
+      &=& s^2 ( 1/s - 1/t ) + (s-t)^2 ( 1/t ) \\
       &=& t-s
     \end{eqnarray*}
-    Note the use of independence of $ W(1/s) --- W(1/t) $
-    from $ W(1/t) --- W(0) $ at the third equality.
+    Note the use of independence of $ W(1/s) - W(1/t) $
+    from $ W(1/t) - W(0) $ at the third equality.
 
     \item
     It seems to be hard to show the independence of
@@ -3718,14 +3727,14 @@ of Brownian motion in turn for each of the transformed processes.
 
   \item
   \[
-      W_3(t) = W(t+h) --- W(h)
+      W_3(t) = W(t+h) - W(h)
   \]
   \begin{enumerate}
     \item
     The increment
     \[
-        W_3(t+s) --- W_3(s) = [ W(t+s+h) --- W(h) ] --- [ W(s+h) -
-        W(h) ] = W(t+s+h) --- W(s+h)
+        W_3(t+s) - W_3(s) = [ W(t+s+h) - W(h) ] - [ W(s+h) -
+        W(h) ] = W(t+s+h) - W(s+h)
     \]
     which is by definition normally distributed with mean $
     0 $ and variance $ t $.
@@ -3733,18 +3742,18 @@ of Brownian motion in turn for each of the transformed processes.
     \item
     The increment
     \[
-        W_3(t_4) --- W_3(t_3) = W(t_4+h) --- W(t_3+h)
+        W_3(t_4) - W_3(t_3) = W(t_4+h) - W(t_3+h)
     \]
     is independent from
     \[
-        W(t_2+h) --- W(t_1+h) = W_3(t_2) --- W_3(t_1),
+        W(t_2+h) - W(t_1+h) = W_3(t_2) - W_3(t_1),
     \]
     by the property of independence of disjoint increments
     of $ W(t) $.
 
     \item
     \[
-        W_3(0) = W(0+h) --- W(h) = 0.
+        W_3(0) = W(0+h) - W(h) = 0.
     \]
 
     \item
@@ -3764,7 +3773,7 @@ of Brownian motion in turn for each of the transformed processes.
 д) Будет ли $X(t)$ броуновским движением? 
 \end{problem} 
 \begin{solution} 
-}
+\end{solution}
 
 %Пусть $W_t $
 % --- стандартный Винеровский процесс (aka броуновское движение). $W_t $
@@ -3772,26 +3781,28 @@ of Brownian motion in turn for each of the transformed processes.
 %. Броуновское движение, в частности, обладает свойствами:
 %\\
 %1. $W_{0}=0$ \\
-%2. Если $t > s$ , то $\left( {W_t  --- W_s } \right) \sim N\left(
-%{0;\left( {t --- s} \right)} \right)$ . \\
+%2. Если $t > s$ , то $\left( {W_t  - W_s } \right) \sim N\left(
+%{0;\left( {t - s} \right)} \right)$ . \\
 %3. Если отрезки $\left[ {t_1 ;t_2 } \right]$
 % и $\left[ {t_2 ;t_3 } \right]$
-% не пересекаются, то с.в. $\left( {W_{t_3 }  --- W_{t_2 } } \right)$
-% и $\left( {W_{t_2 }  --- W_{t_1 } } \right)$
+% не пересекаются, то с.в. $\left( {W_{t_3 }  - W_{t_2 } } \right)$
+% и $\left( {W_{t_2 }  - W_{t_1 } } \right)$
 % независимы. \\
 %4. $\P(W_{t}\text{ непрерывно })=1$ \\
 
-\problem{
+
+
+\begin{problem}
 Найдите $\lim_{\Delta t \to 0} E\left[ {\left( {W_{t + \Delta t} -
 W_t } \right)^2 } \right]$ , $\lim_{\Delta t \to 0} \frac{{E\left[
-{\left( {W_{t + \Delta t} --- W_t } \right)^2 } \right]}} {{\Delta
+{\left( {W_{t + \Delta t} - W_t } \right)^2 } \right]}} {{\Delta
 t}}$ , $\lim_{\Delta t \to 0} \frac{{E\left[ {\left( {W_{t +
-\Delta t} --- W_t } \right)^2 } \right]}} {{\left( {\Delta t}
+\Delta t} - W_t } \right)^2 } \right]}} {{\left( {\Delta t}
 \right)^2 }}$. \\
-Найдите $E\left( {\left| {W_1  --- W_0 } \right|} \right)$ ,
-$E\left( {\left| {W_1  --- W_{0,5} } \right| + \left| {W_{0,5}  -
+Найдите $E\left( {\left| {W_1  - W_0 } \right|} \right)$ ,
+$E\left( {\left| {W_1  - W_{0,5} } \right| + \left| {W_{0,5}  -
 W_0 } \right|} \right)$ , $\lim_{\Delta t \to 0} \frac{{E\left(
-{\left| {W_{t + \Delta t} --- W_t } \right|} \right)}} {{\Delta t}}$
+{\left| {W_{t + \Delta t} - W_t } \right|} \right)}} {{\Delta t}}$
 . Какое расстояние (имеется ввиду полная длина пути, а не
 перемещение) успевает в среднем пройти частица за единицу времени?
 \end{problem} 
@@ -3848,8 +3859,8 @@ First, for $t_1 < t_2 \le t_3 < t_4$, $X(t_2) --- X(t_1) = (\sqrt{t_2} -
 \sqrt{t_1})Z$ is not independent of $X(t_4) --- X(t_3) = (\sqrt{t_4} -
 \sqrt{t_3})Z$ since both are multiples of the same sample value $Z$
 drawn from the $N(0,1)$ population.
-Second, the distribution of $(\sqrt{t_2} --- \sqrt{t_1})Z$ is normal
-with variance $(\sqrt{t_2} --- \sqrt{t_1})^2 \ne t_2 --- t_1$.
+Second, the distribution of $(\sqrt{t_2} - \sqrt{t_1})Z$ is normal
+with variance $(\sqrt{t_2} - \sqrt{t_1})^2 \ne t_2 - t_1$.
 Note nevertheless, that $X(0) = 0$ and $X(t)$ is continuous at $t=0$.  
 \end{solution}
 
@@ -3882,7 +3893,7 @@ of the properties in turn:
           $[t_3, t_4]$, with $ t_1 \le t_2 \le t_3 \le t_4$, the
           increments 
    \[
-    X(t_2) - X(t_1) = \rho (W_1(t_2) - W_1(t_1) + \sqrt{1-- \rho^2}( W_2(t_2) -
+    X(t_2) - X(t_1) = \rho (W_1(t_2) - W_1(t_1) + \sqrt{1- \rho^2}( W_2(t_2) -
     W_2(t_1) )
    \] 
    and
@@ -3912,7 +3923,7 @@ of the properties in turn:
 \begin{solution} 
 
 \[
-    W(s) + W(t) = (W(s) --- W(0)) + W(s) + (W(t) - W(s)) = 2(W(s) -
+    W(s) + W(t) = (W(s) - W(0)) + W(s) + (W(t) - W(s)) = 2(W(s) -
     W(0)) + (W(t) - W(s))
 \]
 and $(W(s) - W(0))$ is independent from $(W(t) - W(s))$, so
@@ -4771,7 +4782,8 @@ T=\int_0^{+\infty} 1_{Y_t\in [0;y]}\, dt
 Найдите закон распределения случайной величины $2W_1-W_2$.
 \end{problem} 
 \begin{solution} 
-$2W_1-W_2=W_1-(W_2-W_1)$, величины $W_2-W_1$ и $W_1=W_1-W_0$ независимы, следовательно, $2W_2-W_1\sim N(0,2)$.}
+$2W_1-W_2=W_1-(W_2-W_1)$, величины $W_2-W_1$ и $W_1=W_1-W_0$ независимы, следовательно, $2W_2-W_1\sim N(0,2)$.
+\end{solution}
 
 
 \section{Интеграл Ито} 
@@ -4880,7 +4892,8 @@ a) $Z_{t}=cos(t^{2}\cdot W_{t}^{3})$ \\
 \end{enumerate} 
 \end{problem} 
 \begin{solution} 
- $\E(W^{2n}_t)=1\cdot 3\cdot 5 \cdots (2n-3)(2n-1)t^n$ }
+ $\E(W^{2n}_t)=1\cdot 3\cdot 5 \cdots (2n-3)(2n-1)t^n$ 
+\end{solution}
 
 
 
@@ -4913,7 +4926,7 @@ $dR=a(b-R)dt+\sigma dW$, $a$, $b$, $\sigma$ --- положительные ко�
 
 $ r(t) = r(0) e^{-a t} +  b \left(1- e^{-a t}\right) + \sigma e^{-a t}\int_0^t e^{a s}\,dW_s$ \\
 $\E(r_t)=r_{0}e^{-at}+b(1-e^{-at})$ \\
-$\Var(r_t) = \frac{\sigma^2}{2 a}(1 --- e^{-2at})$ 
+$\Var(r_t) = \frac{\sigma^2}{2 a}(1 - e^{-2at})$ 
 \end{solution}
 
 \begin{problem}
@@ -4925,19 +4938,19 @@ $\Var(r_t) = \frac{\sigma^2}{2 a}(1 --- e^{-2at})$
   \mathrm{d} Y_t = \mathrm{e}^{t- 2 W_t} \mathrm{d} (X_t^2) + X_t^2 \mathrm{d} \mathrm{e}^{t- 2 W_t} + \mathrm{d} \mathrm{e}^{t- 2 W_t} \cdot \mathrm{d} (X_t^2) 
 \end{equation}
 
-Заметим, что $\mathrm{d} \mathrm{e}^{t- 2 W_t} = \mathrm{e}^{t- 2 W_t} \left( 3 \mathrm{d} t --- 2 \mathrm{d} W_t \right)$ и $\mathrm{d}(X_t^2) = (X_t^2 + 2) \mathrm{d} t + 2 X_t^2 \mathrm{d} W_t$.
+Заметим, что $\mathrm{d} \mathrm{e}^{t- 2 W_t} = \mathrm{e}^{t- 2 W_t} \left( 3 \mathrm{d} t - 2 \mathrm{d} W_t \right)$ и $\mathrm{d}(X_t^2) = (X_t^2 + 2) \mathrm{d} t + 2 X_t^2 \mathrm{d} W_t$.
 
 Получаем
 \begin{equation}
   \mathrm{d} Y_t = 2 \mathrm{e}^{t- 2 W_t} \mathrm{d} t
 \end{equation}
-Вспоминаем начальное условие $Y_0 = \mathrm{e}^{0 --- 2 W_0}X_0^2 = x^2$. Получаем:
+Вспоминаем начальное условие $Y_0 = \mathrm{e}^{0 - 2 W_0}X_0^2 = x^2$. Получаем:
 \begin{equation}
-   \mathrm{e}^{t- 2 W_t} X_t^2 = Y_t =  x^2 + \int_0^t 2 \mathrm{e}^{s --- 2 W_s} \mathrm{d} s 
+   \mathrm{e}^{t- 2 W_t} X_t^2 = Y_t =  x^2 + \int_0^t 2 \mathrm{e}^{s - 2 W_s} \mathrm{d} s 
 \end{equation}
 Решение
 \begin{equation}
-  X_t = \operatorname{sign}(x) \sqrt{ x^2 \mathrm{e}^{2 W_t --- t} + 2 \mathrm{e}^{2 W_t --- t} \int_0^t \mathrm{e}^{s --- 2 W_s} \mathrm{d} s  }
+  X_t = \operatorname{sign}(x) \sqrt{ x^2 \mathrm{e}^{2 W_t - t} + 2 \mathrm{e}^{2 W_t - t} \int_0^t \mathrm{e}^{s - 2 W_s} \mathrm{d} s  }
 \end{equation}
 Источник: \url{http://math.stackexchange.com/questions/80118/}
 
@@ -4955,7 +4968,8 @@ dX_t=(\sqrt{1-X_t^2}-0.5X_t)dt+\sqrt{1-X_t^2}dW_t, \quad X_0=0
 \end{enumerate}
 \end{problem} 
 \begin{solution} 
-$X_t=\sin(t+W_t)$}
+$X_t=\sin(t+W_t)$
+\end{solution}
 
 \section{Модель Блэка-Шоулса} 
 
@@ -5006,7 +5020,7 @@ $r$ --- процентная ставка в евро. \\
 В рамках модели Блэка-Шоулза предположим, что безрисковая процентная ставка, $r=0.05$, волатильность, $\sigma=0.2$ с стартова цена акций $S_0=100$. С помощью численного эксперимента на компьютере найдите стоимость опциона, который в момент времени $T=1$ выплачивает $\max\{ S_{0.2},S_{0.8}\}$. 
 \end{problem} 
 \begin{solution} 
-}
+\end{solution}
 
 
 \section{Модель Блэка-Шоулса-2}
