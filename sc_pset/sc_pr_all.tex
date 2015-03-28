@@ -2612,7 +2612,7 @@ $1-q_{1}$.  Therefore the joint probability of the two
 independent events
 in succession is $p(1-q_{1})$.
 Consider a special case just to check the results.  Consider $p =  1/2 = q$.  
-Then it is easy to compute that $p(1-q_1) = (1/2)(1 --- (1 --- 1/a)) = 1/(2a)$.  
+Then it is easy to compute that $p(1-q_1) = (1/2)(1 - (1 - 1/a)) = 1/(2a)$.  
 Now take $a = 2$, and start from the origin.  It is easy to see that the only to go from
 the origin to the point $a=2$ before returning to the origin is
 to go from $0$ to $1$, and then $1$ to $2$ in sequence.
@@ -3855,8 +3855,8 @@ This problem is adapted from Baxter and Rennie, Problem 3.1, page 49.
 No, $X(t)$ is not Brownian motion for two reasons in spite of the fact
 that $\sqrt{t} Z \sim N(0,t)$ (which follows from being a scalar
 multiple by $\sqrt{t}$ of the $N(0,1)$ random variable $Z$.)
-First, for $t_1 < t_2 \le t_3 < t_4$, $X(t_2) --- X(t_1) = (\sqrt{t_2} -
-\sqrt{t_1})Z$ is not independent of $X(t_4) --- X(t_3) = (\sqrt{t_4} -
+First, for $t_1 < t_2 \le t_3 < t_4$, $X(t_2) - X(t_1) = (\sqrt{t_2} -
+\sqrt{t_1})Z$ is not independent of $X(t_4) - X(t_3) = (\sqrt{t_4} -
 \sqrt{t_3})Z$ since both are multiples of the same sample value $Z$
 drawn from the $N(0,1)$ population.
 Second, the distribution of $(\sqrt{t_2} - \sqrt{t_1})Z$ is normal
@@ -4015,21 +4015,21 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.
 
 \begin{enumerate}
     \item
-        Since $ W(5) --- W(1) \sim N(0,4) $, the required
+        Since $ W(5) - W(1) \sim N(0,4) $, the required
         probability is
         \begin{eqnarray*}
-            \P[ W(5) > 3 | W(1) = 1] &=& \P[ W(5) --- W(1) > 3 -
+            \P[ W(5) > 3 | W(1) = 1] &=& \P[ W(5) - W(1) > 3 -
             1] \\
-            &=& \P[ ( W(5) --- W(1))/2 > 1] \\
+            &=& \P[ ( W(5) - W(1))/2 > 1] \\
             &=& 0.1586552539
         \end{eqnarray*}
     \item
-        Since $ W(9) --- W(1) \sim N(0,8) $, the required value
+        Since $ W(9) - W(1) \sim N(0,8) $, the required value
         can be deduced from
         \begin{eqnarray*}
-            \P[ W(9) > c | W(1) = 1] &=& \P[ W(9) --- W(1) > c -
+            \P[ W(9) > c | W(1) = 1] &=& \P[ W(9) - W(1) > c -
             1] \\
-            &=& \P[ ( W(9) --- W(1))/(2\sqrt{2}) > (c -1)/(2\sqrt
+            &=& \P[ ( W(9) - W(1))/(2\sqrt{2}) > (c -1)/(2\sqrt
             {2}) ] \\
             &=& 0.10
         \end{eqnarray*}
@@ -4090,7 +4090,7 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.
   A function $f(x)$ is said to have \textbf{bounded variation} if, over the closed 
   interval $[a,b]$, there exists an $M$ such that
   \[
-    | f(t_1) - f(a)| + |f(t_2) --- f(t_1)| + \ldots + |f(b) - f(t_n)| \le M
+    | f(t_1) - f(a)| + |f(t_2) - f(t_1)| + \ldots + |f(b) - f(t_n)| \le M
   \]
   \ni  for all partitions $a = t_0 < t_1 < t_2 < \ldots < t_n < t_{n+1} = b$ 
   of the interval.The idea is that we measure the total (hence the absolute value)
@@ -4124,7 +4124,7 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.
   $X_i = +1$ with probability $p = 1/2$ and $X_i = -1$ with probability 
   $q = 1-p = 1/2$. With a little analysis, it is easy to show that we need
   only consider the quadratic variation at points $1,2,3, \ldots, n$
-  Then each term $(S(i+1) --- S(i))^2 = X_{i+1}^2 = 1$.  Therefore, the
+  Then each term $(S(i+1) - S(i))^2 = X_{i+1}^2 = 1$.  Therefore, the
   quadratic variation is the total number of steps, $Q=n$. Now remember Brownian 
   Motion is approximated by $(1/\sqrt{n}) S(nt)$.  Each step is size $1/\sqrt{n}$, 
   then the quadratic variation of the step is $1/n$ and there are $n$ steps on $[0,1]$.  
@@ -4215,7 +4215,7 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.
     \lim_{n \to \infty}
              \sum_{n=1}^{2^n} 
                \left[ 
-                  W\left( \frac{k}{2^n} t \right) --- 
+                  W\left( \frac{k}{2^n} t \right) - 
                   W\left( \frac{k-1}{2^n} t \right)
                \right]^2
            = t
@@ -4239,7 +4239,7 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.
   retrospect, this is not so surprising given the law of the iterated
   logarithm.  We know that in any neighborhood $[t, t + dt]$ to the
   right of $t$, Brownian motion must come close to $\sqrt{2t \log \log
-  t}$.  That is, intuitively, $W(t+dt) --- W(t)$ must be about $\sqrt{2
+  t}$.  That is, intuitively, $W(t+dt) - W(t)$ must be about $\sqrt{2
   dt}$ in magnitude, so we would guess $dW^2 \approx 2dt$  The theorem
   makes it precise.
 \end{problem} 
@@ -4252,12 +4252,12 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.
   Here's a more rigorous and somewhat different explanation of why the squared 
   variation of Brownian motion may be guessed to be $t$:  Consider
   $$
-      \sum_{i=1}^{n} \left( W\left( \frac{it}{n} \right) --- W\left(
+      \sum_{i=1}^{n} \left( W\left( \frac{it}{n} \right) - W\left(
       \frac{(i-1)t}{n} \right)  \right)^2.
   $$
   Now let
   $$
-  Z_{ni} = \frac{ \left( W\left( \frac{it}{n} \right) --- W\left(
+  Z_{ni} = \frac{ \left( W\left( \frac{it}{n} \right) - W\left(
       \frac{(i-1)t}{n} \right) \right) }{ \sqrt{t/n} }
   $$
   Then for each $n$, the sequence $Z_{ni}$ is a sequence of independent,
@@ -4295,10 +4295,10 @@ the first summand in $ \frac{1}{2}  \frac{\partial^2 p}{\partial x^2}$.
 The conditional density is
 \begin{eqnarray*}
   f_{s|t}(x|B) &=& ( f_s(x) f_{t-s}(B-x) )/ f_t(B) \\
-  &=& K_1 \exp( -x^2/(2s) --- (B-x)^2/( 2(t-s) ) ) \\
+  &=& K_1 \exp( -x^2/(2s) - (B-x)^2/( 2(t-s) ) ) \\
   &=& K_2 \exp(-x^2(1/(2 s)+ 1/(2 (t-s) )) + Bx/(t-s) ) \\
-  &=& K_2 \exp( -t/( 2 s (t-s) ) ( x^2 --- 2 s B x/t) ) \\
-  &=& K_3 \exp( --- (t (x --- B s/t)^2/ (2 s (t-s)) ) )
+  &=& K_2 \exp( -t/( 2 s (t-s) ) ( x^2 - 2 s B x/t) ) \\
+  &=& K_3 \exp( - (t (x - B s/t)^2/ (2 s (t-s)) ) )
 \end{eqnarray*}
 where $ K_1 $, $ K_2 $, and $ K_3 $ are constants that do not depend on $
 x $.  For example, $ K_1 $ is the product of $ 1/\sqrt{2 \pi s} $ from
@@ -4327,9 +4327,9 @@ $ and variance $ (s/t) (t-s) $.
 \begin{solution} 
 $ X(t) $ subject to the conditions $ X(t_1) = A $ and $ X(t_2)
 = B $ has the same density as the random variable $ A + X(t-t_1) $,
-under the condition $ X(t_2 --- t_1) = B --- A $ by condition (2) of the
+under the condition $ X(t_2 - t_1) = B - A $ by condition (2) of the
 definition of Brownian motion.  Then apply the theorem with $ s = t-t_1 $
-and $ t = t_2 --- t_1 $. 
+and $ t = t_2 - t_1 $. 
 \end{solution}
 
 \begin{problem}
@@ -4340,7 +4340,7 @@ and $ t = t_2 --- t_1 $.
     \lim_{n \to \infty}
     \sum_{n=1}^{2^n} 
       \left[ 
-         W\left( \frac{k}{2^n} t \right) --- 
+         W\left( \frac{k}{2^n} t \right) - 
          W\left( \frac{k-1}{2^n} t \right)
       \right]^2
 		= t
@@ -4353,13 +4353,13 @@ and $ t = t_2 --- t_1 $.
 Introduce some briefer notation for the proof, let:
 $$
   \Dt_{nk} = 
-                W\left( \frac{k}{2^n} t \right) --- 
+                W\left( \frac{k}{2^n} t \right) - 
                 W\left( \frac{k-1}{2^n} t \right)
         \qquad k = 1, \ldots, 2^n
 $$
 and
 $$
-  W_{nk} = \Delta^{2}_{nk} --- t/2^n \qquad k = 1, \ldots, 2^n.
+  W_{nk} = \Delta^{2}_{nk} - t/2^n \qquad k = 1, \ldots, 2^n.
 $$
 We want to show that $\sum_{k=1}^{2^n} \Delta^2_{nk} \to t$ or what
 is equivalent: $\sum_{k=1}^{2^n} W_{nk} \to 0$.  For each $n$, the
@@ -4367,7 +4367,7 @@ random variables $W_{nk}, k = 1, \ldots, 2^n$ are independent, and
 identically distributed by properties 1 and 2 of the definition of
 standard Brownian motion.  Furthermore,
 $$
-  E[ W_{nk} ] = E[ \Delta_{nk}^2 ] --- t/2^n = 0
+  E[ W_{nk} ] = E[ \Delta_{nk}^2 ] - t/2^n = 0
 $$
 by property 1 of the definition of standard Brownian motion.  Also, a
 routine (but omitted) 
@@ -4412,7 +4412,7 @@ wished to show.
 
 \begin{problem}
  The above theorem can be amusingly summarized in the following
-  way:  Let $dW(t) = W(t + dt) --- W(t)$.  Let $dW(t)^2 = ( W(t + dt) -
+  way:  Let $dW(t) = W(t + dt) - W(t)$.  Let $dW(t)^2 = ( W(t + dt) -
   W(t) )^2.$  Then (although mathematically not rigorously) we can say:
   \begin{eqnarray*}
      dW(t) &\sim& N(0, dt) \\
@@ -4424,7 +4424,7 @@ wished to show.
    \lim_{n \to \infty}
             \sum_{n=1}^{2^n} 
               \left|
-                 W\left( \frac{k}{2^n} t \right) --- 
+                 W\left( \frac{k}{2^n} t \right) - 
                  W\left( \frac{k-1}{2^n} t \right)
               \right|
           = \infty
@@ -4438,19 +4438,19 @@ wished to show.
 $$
     \sum_{n=1}^{2^n} 
       \left| 
-         W\left(  \frac{k}{2^n} t \right) --- 
+         W\left(  \frac{k}{2^n} t \right) - 
          W\left( \frac{k-1}{2^n} t \right)
       \right|
    \ge
    \frac{ 
                  \sum_{n=1}^{2^n} 
       \left| 
-         W\left(  \frac{k}{2^n} t \right) --- 
+         W\left(  \frac{k}{2^n} t \right) - 
          W\left( \frac{k-1}{2^n} t \right)
       \right|^2
        }{
 \max_{j=1, \ldots, 2^n} \left| 
-         W\left(  \frac{k}{2^n} t \right) --- 
+         W\left(  \frac{k}{2^n} t \right) - 
          W\left( \frac{k-1}{2^n} t \right)
       \right|
      }
@@ -4493,7 +4493,7 @@ on the right goes to infinity.
   and so
   \begin{eqnarray*}
     \P\{ W(t) \ge a | T_a \le t\} &=& \P\{ W(t) \ge a | W(T_a)=a,T_a\le t\} \\
-    &=&= \P\{ W(t) --- W(T_a) \ge 0 | T_a \le t\} \\
+    &=&= \P\{ W(t) - W(T_a) \ge 0 | T_a \le t\} \\
     &=& 1/2.
   \end{eqnarray*}
 
@@ -4630,9 +4630,9 @@ on the right goes to infinity.
           \frac{ z_0 \exp( r T_{A,B} 
                        + \sigma W(T_{A,B}))}{z_0} = B 
           \right] =
-          \frac{1 --- A^{1 --- (2r-\sigma^2)/\sigma^2}}
-               {B^{1 --- (2r-\sigma^2)/\sigma^2}
-               --- A^{1 --- (2r-\sigma^2)/\sigma^2}}
+          \frac{1 - A^{1 - (2r-\sigma^2)/\sigma^2}}
+               {B^{1 - (2r-\sigma^2)/\sigma^2}
+               - A^{1 - (2r-\sigma^2)/\sigma^2}}
   $$
   with $A = 0$ and $B = 2$ to obtain
   $$
@@ -4640,7 +4640,7 @@ on the right goes to infinity.
           \exp(\sigma W(T_{0,2})) = 2
           \right] =
           \frac{1}
-               {2^{1 --- (-\sigma^2)/\sigma^2}} =
+               {2^{1 - (-\sigma^2)/\sigma^2}} =
               \frac{1}{2^2} = \frac{1}{4}
   $$
 
@@ -4652,7 +4652,7 @@ on the right goes to infinity.
           \exp(\sigma W(T_{0,2})) = 2
           \right] =
           \frac{1}
-               {2^{1 --- (-\sigma^2-\sigma^2)/\sigma^2}} =
+               {2^{1 - (-\sigma^2-\sigma^2)/\sigma^2}} =
             = \frac{1}{2^3} = \frac{1}{8},
   $$
 
@@ -4698,9 +4698,9 @@ Let $B(t)$ and $W(t)$ be independant Brownian Motions. Find $E\max\{B(t),W(t)\}$
 \begin{solution} 
 Note that
 $$
-  E\ \max\{B(t),W(t)\} =  E \{B(t)\} + E\{(W(t) --- B(t))\cdot I_{W(t) --- B(t) >0}\}.
+  E\ \max\{B(t),W(t)\} =  E \{B(t)\} + E\{(W(t) - B(t))\cdot I_{W(t) - B(t) >0}\}.
 $$
-$W(t) --- B(t)$ is a normal variate with mean $0$, variance $2t$, so the second expectation is 
+$W(t) - B(t)$ is a normal variate with mean $0$, variance $2t$, so the second expectation is 
 $$
   1/(4\pi t)\int_0^\infty y \exp(y^2/(4t))dy,
 $$ 
