@@ -4928,13 +4928,31 @@ a) $Z_{t}=cos(t^{2}\cdot W_{t}^{3})$ \\
 \end{solution}
 
 \begin{problem}
- Докажите, что следующие процессы являются мартингалами с использованием и без использования леммы Ито: \\
-а) $X_{t}=W_{t}^{2}-t$ \\
-б) $exp(-uW_{t}-\frac{u^{2}}{2}t)$ 
+Являются ли процессы мартингалами: 
+\begin{enumerate}
+\item $X_{t}=W_{t}^{2}-t$ 
+\item  $\exp(-uW_{t}-\frac{u^{2}}{2}t)$ 
+\end{enumerate}
 \end{problem} 
-\begin{solution} 
 
+\begin{solution} 
+$X_{t}=W_{t}^{2}-t$ "--- да, $\exp(-uW_{t}-\frac{u^{2}}{2}t)$ "--- да
 \end{solution}
+
+\begin{problem}
+Подберите нетривиальную функцию $f(t)$ так, чтобы процесс $X_t$ был мартингалом:
+\begin{enumerate}
+\item $X_t=f(t) \cos W_t$
+\item $X_t=f(t) \sin W_t$
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+$f(t)=e^{t/2}$
+\end{solution}
+
+
+
 
 \begin{problem}
 Пусть $f(t)$ --- неслучайная дифференциируемая функция и $\int_{0}^{t}f^{2}(s)ds<\infty$ \\
@@ -5001,7 +5019,7 @@ a) $Z_{t}=cos(t^{2}\cdot W_{t}^{3})$ \\
 \end{solution}
 
 \begin{problem}
-Постройтие пять реализаций случайных процессов:
+Постройтие две реализации случайных процессов:
 \begin{enumerate}
 \item $X_t=W_t$
 \item $X_t=\int_0^t W_s \, ds$
@@ -5015,7 +5033,13 @@ a) $Z_{t}=cos(t^{2}\cdot W_{t}^{3})$ \\
 \begin{solution}
 \end{solution}
 
+\begin{problem}
+Найдите интеграл Ито $\int_0^t e^{W_u - 0.5 u} \, dW_u$
+\end{problem}
 
+\begin{solution}
+Способ раз. Продифференциировать подинтегральное выражение. Способ два. Записать этот интеграл в краткой записи и получить обычное дифференциальное уравнение. 
+\end{solution}
 
 \section{Стохастические ДУ} 
 
@@ -5091,7 +5115,27 @@ dX_t=(\sqrt{1-X_t^2}-0.5X_t)dt+\sqrt{1-X_t^2}dW_t, \quad X_0=0
 $X_t=\sin(t+W_t)$
 \end{solution}
 
+
+\begin{problem}
+Предположим, что $S_t$ является геометрическим броуновским движением, то есть 
+\[
+dS_t = \mu S_t \, dt + \sigma S_t \, dW_t
+\]
+
+
+\begin{enumerate}
+\item Найдите $\E(S_t)$ и $\Var(S_t)$
+\item Является ли геометрическими броуновскими движениями процессы $X_t=S_t^{-1}$ и $X_t=S_t^{2}$? Если да, то с каким коэффициентами сноса и волатильности?
+\end{enumerate}
+
+\end{problem} 
+\begin{solution} 
+
+\end{solution}
+
+
 \section{Модель Блэка-Шоулса} 
+
 
 \begin{problem}
 В рамках модели Блэка-Шоулса определите сколько стоят в момент времени $t=0$ следующие активы: \\
