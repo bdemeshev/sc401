@@ -3,7 +3,7 @@
 # .Rnw extension is automatically added
 file_name = sc_problems_main
 
-$(file_name).pdf: $(file_name).tex
+$(file_name).pdf: $(file_name).tex sc_pr_all.tex
 	# protection against biber error
 	# http://tex.stackexchange.com/questions/140814/
 	rm -rf `biber --cache`
