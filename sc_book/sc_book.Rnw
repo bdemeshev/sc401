@@ -4,21 +4,22 @@
 \input{title_bor}
 
 
-\usepackage[backend=biber]{biblatex}
- 
+\usepackage[backend = biber]{biblatex}
+
 
 \input{prob_and_sol}
 
 
 \hypersetup{pdftitle={Заметки по стохастическому анализу, Борис Демешев},pdfdisplaydoctitle=true} % Определение заголовка файла PDF
 
-\embedfile[desc={Собственно текст лекций}]{sc_body.tex}
+%\embedfile[desc={Собственно текст лекций}]{sc_body.tex}
+% ну его? есть же ссылка на репозиторий!
 
 \newcommand{\tP}{\tilde{\mathbb{P}}}
 \newcommand{\tW}{\tilde{W}}
 
 
-\title{Заметки к курсу стохастического анализа\footnote{Свежая версия: \url{demeshev.wordpress.com/materials}}}
+\title{Заметки к курсу стохастического анализа\footnote{Свежая версия: \url{https://github.com/bdemeshev/sc401/tree/master/sc_book}}}
 \author{Борис Демешев, \href{mailto:boris.demeshev@gmail.com}{boris.demeshev@gmail.com} }
 \date{\today}
 
@@ -70,7 +71,7 @@
 %    {}}
 
 
-\addbibresource{/home/boris/science/tex_general/opit.bib}
+\addbibresource{sc_biblio.bib}
 
 \begin{document}
 
@@ -84,18 +85,68 @@
 
 
 
+<<child='chapters/0000_intro.Rnw'>>=
+@
 
-\problemonly
-\input{sc_body}
+<<child='chapters/0100_privivki.Rnw'>>=
+@
 
-\restoresection
-\section{Решения}
-\solutiononly
-\input{sc_body}
-\restoresection
+<<child='chapters/0200_events_sigma_algebras.Rnw'>>=
+@
 
-%\bibliographystyle{plain}
-%\bibliography{/home/boris/science/tex_general/opit}
+<<child='chapters/0300_random_variables.Rnw'>>=
+@
+
+<<child='chapters/0400_probability.Rnw'>>=
+@
+
+<<child='chapters/0500_zoopark.Rnw'>>=
+@
+
+<<child='chapters/0600_expected.Rnw'>>=
+@
+
+<<child='chapters/0700_convergence.Rnw'>>=
+@
+
+<<child='chapters/0800_independence.Rnw'>>=
+@
+
+<<child='chapters/0900_conitional_expectation.Rnw'>>=
+@
+
+<<child='chapters/1000_generating_functons.Rnw'>>=
+@
+
+<<child='chapters/1100_martingales.Rnw'>>=
+@
+
+<<child='chapters/1150_multivariate_normal.Rnw'>>=
+@
+
+<<child='chapters/1200_continuous_time.Rnw'>>=
+@
+
+<<child='chapters/1300_wiener_process.Rnw'>>=
+@
+
+<<child='chapters/1400_ito.Rnw'>>=
+@
+
+<<child='chapters/1500_stochastic_theorems.Rnw'>>=
+@
+
+<<child='chapters/1600_sde.Rnw'>>=
+@
+
+<<child='chapters/1700_option_models.Rnw'>>=
+@
+
+<<child='chapters/1800_appendix.Rnw'>>=
+@
+
+<<child='chapters/2000_unsorted.Rnw'>>=
+@
 
 \printbibliography
 

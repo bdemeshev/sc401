@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+
+
+
+\begin{document}
+
+\pagestyle{empty}
+Graded hometask on stochastic calculus. Icef. 2015.
+
+
+\begin{enumerate}
+
+\item Find the expected value of $\E(\exp(aW_t))$, $\E(1_{W_t\leq b})$, $\E(\exp(aW_t)\cdot 1_{W_t\leq b})$ and $\E(W_t 1_{W_t\leq b})$. Naturally, you may use the standard normal cumulative distribution function $F$ in your answer
+
+
+\item It is known that $\E(Y|X)=0$. Which of the following quantities must be zero: $\E(Y)$? $\E(X)$?, $\Cov(X,Y)$? $\Cov(X^2,Y)$? $\Cov(X,Y^2)$? Prove or provide a counter-example.
+
+
+...
+
+
+
+\item In the framework of Black and Scholes model find the price at $t=0$ of the classic European сall option by calculating corresponding expected value.
+
+European call option with strike price $K$ is the right to buy at time $t$ one share at price $K$. So, at time $t$ it pays you $S_t - K$ if $S_t > K$ and zero otherwise.
+
+\end{enumerate}
+
+\vspace{2cm}
+
+You may decide not to solve any number of problems from this hometask and send me a solution of corresponding number of problems from old exams collection instead. In this case you should use \LaTeX{} or markdown formats. Please, be polite and avoid sending solutions of already solved problems or problems taken by someone else. You may choose problems and fill in your choice at \url{http://goo.gl/8TFhWE}.
+
+The due date for this hometask --- 11.01.2016. If you decide to solve problems from an old exam you should send the solution of these problems by e-mail to \href{mailto:boris.demeshev@gmail.com}{boris.demeshev@gmail.com} before 07.01.2016. I will check your solutions and add them into the exams collection so they will be available for everyone. You will receive extra bonus points in this case.
+
+\end{document}
