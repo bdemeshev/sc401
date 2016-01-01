@@ -1,12 +1,15 @@
-\section{Приложения} \problemtext{
+\Opensolutionfile{solution_file}[sols_chap_18]
+% в квадратных скобках фактическое имя файла
 
-}\subsection{Напоминалка по мат. анализу} \problemtext{
+\section{Приложения}
 
-А может мы ее вперед вынесем вместе с бесконечностями\ldots 
+\subsection{Напоминалка по мат. анализу}
+
+А может мы ее вперед вынесем вместе с бесконечностями\ldots
 
 
 
-}\subsection{Доказательство теоремы Каратеодори} \problemtext{
+\subsection{Доказательство теоремы Каратеодори}
 
 \begin{myth}
 Вероятность $\mathbf{P}$, заданная на алгебре может быть
@@ -241,7 +244,7 @@ $$
 $$
 
 
-\textbf{Расстояние. Метрика.}
+\subsection{Расстояние. Метрика.}
 
 Слова расстояние и метрика - это синонимы.
 
@@ -551,14 +554,14 @@ $A\subseteq\bigcup B_{i}$.
 $\mathbf{P^{'}}(A)< \mathbf{P^{*}}(A)$.
 
 Рассмотрим произвольное $A$. Используя только что опровергнутое
-"во-первых" опровергаем "во-вторых":
+«во-первых» опровергаем «во-вторых»:
 $\mathbf{P^{*}}(\overline{A})\geq\mathbf{P^{'}}(\overline{A})
 \Rightarrow 1-\mathbf{P^{*}}(A)\geq 1-\mathbf{P^{'}}(A)
 \Rightarrow \mathbf{P^{*}}(A)\leq \mathbf{P^{'}}(A)$
 
 
 
-}\subsection{Еще задачи}
+\subsection{Еще задачи}
 
 
-
+\Closesolutionfile{solution_file}

@@ -1,5 +1,5 @@
 %\RequirePackage[l2tabu,orthodox]{nag}
-\documentclass[pdftex,12pt,a4paper]{article}
+\documentclass[pdftex, 12pt, a4paper]{article}
 
 \input{title_bor}
 
@@ -7,11 +7,10 @@
 \usepackage[backend = biber]{biblatex}
 \usepackage{answers}
 
-
-% \input{prob_and_sol}
-
-
-\hypersetup{pdftitle={Заметки по стохастическому анализу, Борис Демешев},pdfdisplaydoctitle=true} % Определение заголовка файла PDF
+\hypersetup{
+pdftitle = {Заметки по стохастическому анализу, Борис Демешев},
+pdfdisplaydoctitle=true, % Определение заголовка файла PDF
+}
 
 %\embedfile[desc={Собственно текст лекций}]{sc_body.tex}
 % ну его? есть же ссылка на репозиторий!
@@ -42,8 +41,6 @@
 \theoremstyle{definition}
 \newtheorem*{myproof}{Доказательство}
 
-%\newtheorem{problem}{Задача}
-
 
 \theoremstyle{definition}
 \newtheorem{problem}{Задача}
@@ -63,24 +60,10 @@
 \def\B{\ensuremath{\mathcal{B}}} % аналогично!
 \def\s{\ensuremath{\sigma}}
 
-%\newcommand{\myth}[1]{Теорема #1.}
-%\newcommand{\myex}[1]{Пример #1.}
-%\newcommand{\mydef}[1]{Определение #1.}
-%\newcommand{\myproof}[1]{Доказательство #1.}
 \newcommand{\indef}[1]{\textbf{#1}}
 
 
 \makeindex % команда для создания предметного указателя
-
-
-%\bibliographystyle{plain} % стиль оформления ссылок
-
-%\renewcommand{\refname}{Литературища} % не работает, зараза!
-%\renewcommand{\seename}{Оглавленьице}
-
-%\addto\captionsrussian{ % похоже тоже не работает
-%  \renewcommand{\refname}
-%    {}}
 
 
 \addbibresource{sc_biblio.bib}
@@ -121,28 +104,6 @@
 <<child='chapters/0700_convergence.Rnw'>>=
 @
 
-\section{Решения}
-\input{sols_chap_01}
-\input{sols_chap_02}
-\input{sols_chap_03}
-\input{sols_chap_04}
-\input{sols_chap_05}
-\input{sols_chap_06}
-\input{sols_chap_07}
-
-
-\printbibliography
-
-\printindex % печать предметного указателя здесь
-\end{document}
-
-
-
-
-
-
-
-
 <<child='chapters/0800_independence.Rnw'>>=
 @
 
@@ -181,3 +142,36 @@
 
 <<child='chapters/2000_unsorted.Rnw'>>=
 @
+
+
+
+\section{Решения}
+
+\input{sols_chap_01}
+\input{sols_chap_02}
+\input{sols_chap_03}
+\input{sols_chap_04}
+\input{sols_chap_05}
+\input{sols_chap_06}
+\input{sols_chap_07}
+\input{sols_chap_08}
+\input{sols_chap_09}
+\input{sols_chap_10}
+\input{sols_chap_11}
+\input{sols_chap_115}
+\input{sols_chap_12}
+\input{sols_chap_13}
+\input{sols_chap_14}
+\input{sols_chap_15}
+\input{sols_chap_16}
+\input{sols_chap_17}
+\input{sols_chap_18}
+% \input{sols_chap_19} % 19ой пока нет
+\input{sols_chap_20}
+
+
+
+\printbibliography
+
+\printindex % печать предметного указателя здесь
+\end{document}

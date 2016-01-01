@@ -1,6 +1,9 @@
+\Opensolutionfile{solution_file}[sols_chap_13]
+% в квадратных скобках фактическое имя файла
 
-\section{Броуновское движение} \problemtext{
-}\subsection{Определение} \problemtext{
+
+\section{Броуновское движение}
+\subsection{Определение}
 
 Wiener process - Винеровский процесс
 
@@ -29,25 +32,25 @@ C $\sigma$-алгебрами. \par
 Первое определение получается из второго если «добавить» подходящую фильтрацию. Например, подходящей фильтрацией будет естественная $\mathcal{F}_{t}=\sigma(W_{s}, s\in[0;t])$ \par
 
 
-}\subsection{Три преобразования} \problemtext{
+\subsection{Три преобразования}
 
 
 
-}\subsection{Множество нулей}  \problemtext{
+\subsection{Множество нулей}
 
-}\subsection{Непрерывное и недифференциируемое}  \problemtext{
+\subsection{Непрерывное и недифференциируемое}
 
 Непрерывным броуновское движение является по определению. Оказывается, с вероятностью 1 траектория броуновского движения является нигде ни дифференциируемой. Интуиция довольно тонкая штука. С одной стороны, кажется что это невозможно: попробуйте нарисовать непрерывную нигде ни дифференциируемую линию! С другой стороны, с чего бы броуновскому движению быть дифференциируемым: берем произвольный момент времени $t_{0}$ и отступаем от него на $\Delta t$ вправо и влево. Два получаемых приращения, $(W(t_{0})-W(t_{0}-\Delta t))$ и $(W(t_{0}+\Delta t)-W(t_{0}))$, независимые случайные величины. А ведь для дифференциируемости они должны быть примерно равны при малом $\Delta t$!
 
-}\subsection{Построения}  \problemtext{
+\subsection{Построения}
 
-}\subsection{Вариации} \problemtext{
+\subsection{Вариации}
 
-Скорости у него нет, но бегает быстро\ldots 
+Скорости у него нет, но бегает быстро\ldots
 
 
 
-}\subsection{Внимательно посмотрим на приращение} \problemtext{
+\subsection{Внимательно посмотрим на приращение}
 
 
 
@@ -66,13 +69,14 @@ $\E((\triangle W)^{k})=o(\triangle t)$, $Var((\triangle W)^{k})=o(\triangle t)$
 Надо продумать тут интуицию
 
 
-Почему нам важна малость дисперсии а не стандартного отклонения? Ведь (упрощенно говоря), множество значений случайной величины - это $[\mu-2\sigma;\mu+2\sigma]$? И согласно этой логике\ldots 
+Почему нам важна малость дисперсии а не стандартного отклонения? Ведь (упрощенно говоря), множество значений случайной величины - это $[\mu-2\sigma;\mu+2\sigma]$? И согласно этой логике\ldots
 
-Дело в том, что мы будем работать только с суммами\ldots 
+Дело в том, что мы будем работать только с суммами\ldots
 
 
 Мораль: если работать в масштабе $\triangle t$ при $\triangle t \approx 0$, то $\triangle W$ - это случайная величина с нулевым матожиданием, а $(\triangle W)^{2}$ - это константа равная $\triangle t$.
-----
+
+
 Хм\ldots  А как ответить на этот аргумент?:
 На всякий случай напомним, что диапазон возможных значений примерно определяется с помощью стандартного отклонения и математического ожидания.
 
@@ -87,16 +91,16 @@ $\E((\triangle W)^{k})=o(\triangle t)$, $Var((\triangle W)^{k})=o(\triangle t)$
 Для наглядности мы на прямой покажем среднее значение плюс-минус три стандартных отклонения.
 
 $\E(\triangle W)=0$, $\sqrt{Var()}=\sqrt{t}$\ldots .
-----
 
 
 
 
-}\subsection{Пространство Омега для броуновского движения}  \problemtext{
+
+\subsection{Пространство Омега для броуновского движения}
 
 Многих интересует вопрос, можно ли как-то более наглядно предъявить какое-нибудь пространство $(\Omega,\F,\P)$, так чтобы на нем  было броуновское движение $W_{t}$?
 
-Приведем два в каком-то смысле «полярных» примера, которые как-то проясняют ответ\ldots 
+Приведем два в каком-то смысле «полярных» примера, которые как-то проясняют ответ\ldots
 
 \begin{itemize}
 \item Простые $\Omega$, $\F$, $\P$, но не очень явный $W_{t}$.
@@ -107,31 +111,60 @@ $\E(\triangle W)=0$, $\sqrt{Var()}=\sqrt{t}$\ldots .
 Мы знаем, что траектории броуновского движения непрерывны, поэтому в качестве $\Omega$ возьмем множество непрерывных на $[0;\infty)$ функций. Обычно оно обозначается $C[0;\infty)$. Рассмотрим какую-нибудь метрику на этом пространстве. Например, в качестве расстояния между двумя непрерывными функциями можно взять $d(f,g)=\sup_{x\geq 0}|f(x)-g(x)|$. Эта метрика определяет открытые множества. А именно, $\varepsilon$-окрестность функции $f$ это все функции $g$, такие, что $d(f,g)<\varepsilon$. С помощью понятия открытого множества зададим борелевскую \s-алгебру - минимальную \s-алгебру порожденную открытыми множествами. Как определить $X_{t}(w)$? Поскольку $w$ - это готовая траектория, то $X_{t}(w):=w(t)$. А вот вероятность $P$ задается неявно. От этой вероятности нужно многого потребовать. Например, того, что $\P(w(10)<0)=0.5$. Ее полное описание совпадет с определением броуновского движения. Утешает лишь теорема (\ldots ), доказывающая, что такая вероятность существует.
 \end{itemize}
 
-}\subsection{На компьютере -?}  \problemtext{
+\subsection{На компьютере}
 
-}\subsection{Модель для игры в нарды}  \problemtext{
+<<>>=
+library("ggplot2")
+library("dplyr")
 
-}\subsection{Еще задачи}
+n <- 1000
+T <- 2
+dt <- T/n
 
-\problem{Пусть $W_{t}$ - винеровский процесс для $t\in [0;1]$. Определим новый процесс для $t\in [0;\infty)$ по формуле:
+obs <- data_frame(dW = rnorm(n, mean=0, sd=sqrt(dt)),
+                  t = seq(T/n, T, by=T/n),
+                  W = cumsum(dW))
+
+
+ggplot(data = obs, aes(x = t, y = W)) + geom_line()
+@
+
+\subsection{Модель для игры в нарды}
+
+\subsection{Еще задачи}
+
+
+\begin{problem}
+Пусть $W_{t}$ - винеровский процесс для $t\in [0;1]$. Определим новый процесс для $t\in [0;\infty)$ по формуле:
 \begin{equation}
 X_{t}=(1+t)\left(W_{(\frac{t}{1+t})}-\frac{tW_{1}}{1+t}\right)
 \end{equation}
-Верно ли, что $X_{t}$ - винеровский процесс?}
-\solution{да}
+Верно ли, что $X_{t}$ - винеровский процесс?
+\begin{sol}
+да
+\end{sol}
+\end{problem}
 
 
-\problem{Пусть $W_{t}$ - стандартное броуновское движение и момент остановки $\tau=\min\{t|W_{t}=1\}$. Найдите $\E(exp())$}
-\solution{}
+\begin{problem}
+Пусть $W_{t}$ - стандартное броуновское движение и момент остановки $\tau=\min\{t|W_{t}=1\}$. Найдите $\E(exp())$
+\begin{sol}
+\end{sol}
+\end{problem}
 
-\problem{ Two questions on Brownian Motion:\par
+\begin{problem}
+Two questions on Brownian Motion:\par
 1) A standard Brownian motion $Z_{t}$ starting at positon $a>0$. There is an absorbing boundary at $0$ - i.e. after $Z_{t}$ first hits zero at time $T_{0}$, $Z_{t}$ stays at zero for $t>T_{0}$. What is the probability that $Z_{t}$ is at zero at any arbitrary time $t$? \
 
-2) Two independent standard Brownian motions $Z_{t}$ and $Z'_{t}$. $Z_{t}$ starts at position $a>0$, $z'_{t}$ starts at position $0$. $Z_{t}$ and $Z'_{t}$ are «mutually absorbing» - i.e. when $Z_{t}=Z'_{t}$ for the first time at $T_{0}$, they both stay at $Z_{T_{0}}=Z'_{T_{0}}$ for $t>T_{0}$. What is the probability that $Z_{t}=Z'_{t}$ at any arbitrary time $t$?}
-\solution{
+2) Two independent standard Brownian motions $Z_{t}$ and $Z'_{t}$. $Z_{t}$ starts at position $a>0$, $z'_{t}$ starts at position $0$. $Z_{t}$ and $Z'_{t}$ are «mutually absorbing» - i.e. when $Z_{t}=Z'_{t}$ for the first time at $T_{0}$, they both stay at $Z_{T_{0}}=Z'_{T_{0}}$ for $t>T_{0}$. What is the probability that $Z_{t}=Z'_{t}$ at any arbitrary time $t$?
+\begin{sol}
 (check!)\par
 Let $T_a = min{t>0:W_t = a}$. Using simple properties of B.M. you can easily show that $\P(T_a<T) = 2\P(W_T>a)$. That's all you need to solve both problems.\par
 1. $2N(-a/sqrt(T))$\par
-2. $2N(-a/sqrt(2T))$}
+2. $2N(-a/sqrt(2T))$
+\end{sol}
+\end{problem}
 
 
+
+\Closesolutionfile{solution_file}
