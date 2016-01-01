@@ -1,4 +1,5 @@
-%\RequirePackage[l2tabu,orthodox]{nag}
+\RequirePackage[l2tabu, orthodox]{nag} % проверка плохого стиля, но что-то она не очень пашет
+
 \documentclass[pdftex, 12pt, a4paper]{article}
 
 \input{title_bor}
@@ -15,8 +16,7 @@ pdfdisplaydoctitle=true, % Определение заголовка файла 
 %\embedfile[desc={Собственно текст лекций}]{sc_body.tex}
 % ну его? есть же ссылка на репозиторий!
 
-\newcommand{\tP}{\tilde{\mathbb{P}}}
-\newcommand{\tW}{\tilde{W}}
+
 
 
 \title{Заметки к курсу стохастического анализа\footnote{Свежая версия: \url{https://github.com/bdemeshev/sc401/tree/master/sc_book}}}
@@ -54,13 +54,8 @@ pdfdisplaydoctitle=true, % Определение заголовка файла 
 
 
 
-\def \lra{\leftrightarrow} % сокращение для стрелки влево-вправо (туда-сюда), для соответствий
-\def\R{\ensuremath{\mathbb{R}}} % достало уже!
-\def\F{\ensuremath{\mathcal{F}}} % аналогично!
-\def\B{\ensuremath{\mathcal{B}}} % аналогично!
-\def\s{\ensuremath{\sigma}}
-
 \newcommand{\indef}[1]{\textbf{#1}}
+% выделение ключевого слова в определениях
 
 
 \makeindex % команда для создания предметного указателя

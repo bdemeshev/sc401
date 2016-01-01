@@ -61,7 +61,7 @@
 
 \usepackage{subfigure} % для создания нескольких рисунков внутри одного
 
-\usepackage{tikz,pgfplots} % язык для рисования графики из latex'a
+\usepackage{tikz, pgfplots} % язык для рисования графики из latex'a
 \usetikzlibrary{trees} % tikz-прибамбас для рисовки деревьев
 \usepackage{tikz-qtree} % альтернативный tikz-прибамбас для рисовки деревьев
 \usetikzlibrary{arrows} % tikz-прибамбас для рисовки стрелочек подлиннее
@@ -88,20 +88,12 @@
 
 %\usepackage{sagetex} % для интеграции с Sage (вероятно тоже должен идти после graphics)
 
-% metapost создает упрощенные eps файлы, которые можно напрямую включать в pdf
-% эта группа команд декларирует, что файлы будут этого упрощенного формата
-% если metapost не используется, то этот блок не нужен
-\usepackage{ifpdf} % для определения, запускается ли pdflatex или просто латех
-\ifpdf
-	\DeclareGraphicsRule{*}{mps}{*}{}
-\fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%  Внедрение tex исходников в pdf файл  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\embedfile[desc={Main tex file}]{\jobname.tex} % Включение кода в выходной файл
-\embedfile[desc={title_bor}]{title_bor.tex}
-
+%\embedfile[desc={Main tex file}]{\jobname.tex} % Включение кода в выходной файл
+%\embedfile[desc={title_bor}]{title_bor.tex}
+% отменено в силу явной ссылки на репозиторий
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -222,6 +214,14 @@
 \def \ZZ{\mbb Z}
 \def \PP{\mbb P}
 
+
+\newcommand{\tP}{\tilde{\mathbb{P}}}
+\newcommand{\tW}{\tilde{W}}
+\def \lra{\leftrightarrow} % сокращение для стрелки влево-вправо (туда-сюда), для соответствий
+\def\R{\ensuremath{\mathbb{R}}} % достало уже!
+\def\F{\ensuremath{\mathcal{F}}} % аналогично!
+\def\B{\ensuremath{\mathcal{B}}} % аналогично!
+\def\s{\ensuremath{\sigma}}
 
 \def \a{\alpha}
 \def \b{\beta}
