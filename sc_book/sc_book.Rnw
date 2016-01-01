@@ -5,9 +5,10 @@
 
 
 \usepackage[backend = biber]{biblatex}
+\usepackage{answers}
 
 
-\input{prob_and_sol}
+% \input{prob_and_sol}
 
 
 \hypersetup{pdftitle={Заметки по стохастическому анализу, Борис Демешев},pdfdisplaydoctitle=true} % Определение заголовка файла PDF
@@ -42,6 +43,17 @@
 \newtheorem*{myproof}{Доказательство}
 
 %\newtheorem{problem}{Задача}
+
+
+\theoremstyle{definition}
+\newtheorem{problem}{Задача}
+\numberwithin{problem}{section}
+
+\Newassociation{sol}{solution}{solution_file}
+% sol --- имя окружения внутри задач
+% solution --- имя окружения внутри solution_file
+% solution_file --- имя файла в который будет идти запись решений
+% можно изменить далее по ходу
 
 
 
@@ -109,6 +121,28 @@
 <<child='chapters/0700_convergence.Rnw'>>=
 @
 
+\section{Решения}
+\input{sols_chap_01}
+\input{sols_chap_02}
+\input{sols_chap_03}
+\input{sols_chap_04}
+\input{sols_chap_05}
+\input{sols_chap_06}
+\input{sols_chap_07}
+
+
+\printbibliography
+
+\printindex % печать предметного указателя здесь
+\end{document}
+
+
+
+
+
+
+
+
 <<child='chapters/0800_independence.Rnw'>>=
 @
 
@@ -147,8 +181,3 @@
 
 <<child='chapters/2000_unsorted.Rnw'>>=
 @
-
-\printbibliography
-
-\printindex % печать предметного указателя здесь
-\end{document}
