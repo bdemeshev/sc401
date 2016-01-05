@@ -2,6 +2,8 @@
 
 \input{title_bor}
 
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cN}{\mathcal{N}}
 \renewcommand{\FF}{\mathcal{F}}
 \renewcommand{\ee}{\varepsilon}
 
@@ -398,6 +400,43 @@ Again using Ito's isometry:
 \[
 \Cov( X_t, W_t) = \Cov \left( \int_0^t sW_s \, dW_s , \int_0^t 1 \, dW_s \right) = \int_0^t \E(sW_s\cdot 1) \, ds = 0
 \]
+
+\item ...
+
+\item We know that $W_{2}-W_{1}\sim \cN(0; 1)$, therefore
+
+$\P(W_{2}-W_{1}> 2)=1-\Phi(2)=1-0.9772=0.0228$
+
+
+\item
+
+\[
+ X_{T}=
+ \begin{cases}
+  1 & \text{if } \frac{S_{T}}{S_{0}}>2, \\
+  0 & \text{otherwise}
+ \end{cases}
+\]
+
+So,
+\[
+X_{0}=e^{-rT}E_{\tilde{\P}}(X_{T}|\cF_{0})=e^{-rT}\tilde{\P}\left(\frac{S_{T}}{S_{0}}>2 |\cF_{0}\right)=e^{-rT}\tilde{\P}\left(\left(\exp\left(r-\frac{\sigma^{2}}{2}\right)T+\sigma\tilde{W_{T}}\right)>2|\cF_{0}\right)
+\]
+
+\[
+ \sigma\tilde{W_{T}}>\ln 2-\left(r-\frac{\sigma^{2}}{2}\right)T \Rightarrow \tilde{W_{T}}>\frac{\ln 2-\left(r-\frac{\sigma^{2}}{2}\right)T}{\sigma}
+\]
+We want standard normal distribution of $\tilde{W_{T}}$, so we standardize by $\sqrt{T}$:
+\[
+ \frac{\tilde{W_{T}}}{\sqrt{T}}>\frac{\ln 2-\left(r-\frac{\sigma^{2}}{2}\right)T}{\sigma \sqrt{T}}
+\]
+
+So,
+\[
+ X_{0}=e^{-rT}\tilde{\P}\left( \frac{\tilde{W_{T}}}{\sqrt{T}}>\frac{\ln 2-\left(r-\frac{\sigma^{2}}{2}\right)T}{\sigma \sqrt{T}}\right)=e^{-rT}\left(1-\Phi\left(\frac{\ln 2-\left(r-\frac{\sigma^{2}}{2}\right)T}{\sigma \sqrt{T}}\right)\right)
+\]
+
+
 
 \end{enumerate}
 
