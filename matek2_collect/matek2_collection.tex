@@ -869,7 +869,25 @@ subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a 
 
 \subsection{retake --- short hints}
 \begin{enumerate}
-\item Write the joint pdf $f(x,y)$, find $f(y \mid x)$ and then the conditional expected values by integration.
+\item First we decompose $Y$ as $Y=aX+bZ$, where $Z$ is independent from $X$ and has unit variance. To obtain $a$ and $b$ we make system:
+\[
+\begin{cases}
+\Var(Y)=a^2\Var(X)+b^2\Var(Z)=1 \\
+\Cov(Y,X)=a\Cov(X,X)=\rho
+\end{cases}
+\]
+
+So, $a=\rho$ and $b=\sqrt{1-\rho^2}$. The variable $Y$ is decomposed as $Y=\rho X + \sqrt{1-\rho^2}Z$. Then
+
+\[
+\E(Y|X)=\E(\rho X + \sqrt{1-\rho^2}Z | X)=\rho X + 0
+\]
+And
+\[
+\E(Y^2|X)=\E(\rho^2 X^2 + (1-\rho^2)Z^2 + 2 \rho \sqrt{1-\rho^2} XZ | X)=\rho^2 X^2 +  (1-\rho^2)\cdot 1 + 2\cdot 0
+\]
+
+
 \item $\E(X_t)=\E(Y_t)=0$, for variance and covariance we use isometry property
 
 \[
