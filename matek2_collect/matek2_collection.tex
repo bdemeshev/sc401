@@ -870,12 +870,43 @@ subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a 
 \subsection{retake --- short hints}
 \begin{enumerate}
 \item Write the joint pdf $f(x,y)$, find $f(y \mid x)$ and then the conditional expected values by integration.
-\item $\E(X_t)=\E(Y_t)=0$, use isometry property
-\item Calculate  $dY_t$. We observe that $dY_t=(4W_t^3 - 12t W_t) \, dW_t$, so $Y_t$ is a martingale and $\E(Y_7 \mid Y_2)=Y_2$.
-\item Use the substitution $Y_t=\ln X_t$. Then $dY_t= 0.5 dt + dW_t$ and $Y_t=\ln X_0 + \int_0^t 0.5 \, ds + \int_0^t 1 \, dW_s$. The final solution is
+\item $\E(X_t)=\E(Y_t)=0$, for variance and covariance we use isometry property
+
 \[
-X_t=X_0\exp(t/2+W_t)
+\Var(X_{t})=\Var\left(\int_{0}^{t}s^{3}W_{s}\,dW_{s}\right)=\int_{0}^{t}\E(s^{3}W_{s})^{2}\,ds=\int_{0}^{t}s^{7}\,ds=\frac{t^{8}}{8}
 \]
+
+\[ \Cov(X_{t},Y_{t})=\Cov\left(\int_{0}^{t}s^{3}W_{s}dW_{s}, \int_{0}^{t}W_{s}dW_{s}\right)=\int_{0}^{t}\E(s^3W_{s}^{2})ds=\int_{0}^{t}s^{4}ds=\frac{t^{5}}{5}
+\]
+
+\item Calculate  $dY_t$. We observe that $dY_t=(4W_t^3 - 12t W_t) \, dW_t$, so $Y_t$ is a martingale and $\E(Y_7 \mid Y_2)=Y_2$.
+\item Use the substitution $Y_t=\ln X_t$. Then, using Ito's lemma we obtain:
+
+\[
+dY_{t}=\frac{1}{X_{t}}dX_{t}-\frac{1}{2X_{t}^{2}}(dX_{t})^2
+\]
+
+Initial SDE gives us $dX_{t}=X_{t}dt+X_{t}dW_{t}$, so we can compute also $(dX_{t})^{2}$ and plug it in the $dY_{t}$.
+\[
+dX_{t}^{2}=(X_{t}dt+X_{t}dW_{t})^{2}=X_{t}^{2}dt
+\]
+Recall that $dW_{t}\cdot dW_{t}=dt$, $dW_{t}\cdot dt=0$ and $dt\cdot dt=0$
+
+Plugging in we get:
+\[ dY_{t}=\frac{X_{t}dt+X_{t}dW_{t}}{X_{t}}-\frac{X_{t}^{2}dt}{2X_{t}^{2}}=dt+dW_{t}-\frac{dt}{2}=dW_{t}+\frac{dt}{2}
+\]
+
+The full form for $Y_{t}$:
+\[
+Y_{t}=Y_{0}+\int_{0}^{t}dW_s+\int_{0}^{t}\frac{ds}{2}=Y_{0}+W_{t}+\frac{t}{2}=\ln{X_{t}}
+\]
+
+Now we are ready to write the solution:
+\[
+X_{t}=e^{Y_{0}}e^{W_{t}}e^{\frac{t}{2}}=X_{0}e^{W_{t}+\frac{t}{2}}
+\]
+
+
 \end{enumerate}
 
 \section{2013-2014}
