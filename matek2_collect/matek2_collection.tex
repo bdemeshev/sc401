@@ -82,7 +82,7 @@ Part B lasts for 70 minutes.
   \end{array}
 \right.
 \]
-with initial conditions $X_0=x_0$ and $Y_0=y_0$
+with initial conditions $X_0=x_0$ and $Y_0=0$
 \begin{enumerate}
 \item Find the solution of the form $X_t=f(t)\cos W_t$ and $Y_t=g(t)\sin W_t$
 \item Prove that for any solution $D_t=X_t^2+Y_t^2$ is nonstochastic
@@ -104,7 +104,69 @@ with initial conditions $X_0=x_0$ and $Y_0=y_0$
 \subsection{Exam, 12.01.2009, solutions}
 
 \begin{enumerate}
-\item
+\item Density table of the joint distribution of $X$ and $Y$
+\begin{table}[h!]
+\centering
+%\caption{Caption for the table.}
+\label{tab:discrete_eyx}
+\begin{tabular}{lllll}
+\toprule
+$X/Y$ & $1$ & $2$ & $3$ & $4$\\
+\midrule
+1& 0.1 & 0.1 & 0.1 & 0.1 \\
+2& 0 & 0.1 & 0.1 & 0.1 \\
+3& 0 & 0 & 0.1 & 0.1 \\
+4& 0 & 0 & 0 & 0.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Fixing a certain value of $X$ we find the conditional expectation of $Y$:
+
+\[
+\E(Y|X) =
+\begin{cases}
+  \frac{1+2+3+4}{4} = 2.5, \text{ if }  x=1\\
+  \frac{2+3+4}{3} = 3, \text{ if } x=2\\
+  \frac{3+4}{2} = 3.5, \text{ if } x=3\\
+  \frac{4}{1} = 4, \text{ if }  x=4\\
+\end{cases}
+\]
+
+Or, simply, $\E(Y|X)=2 + X/2$.
+
+\item Variable $X$ has exponential distribution, so
+\[
+f_X(x)=\lambda e^{-\lambda x}
+\]
+And we know conditional distribution of $Y$:
+\[
+f_{Y|X}(x,y)=\frac{1}{x} e^{-\frac{1}{x}y}
+\]
+
+So,
+\[
+\E(Y|X) = \int _{-\infty}^{+\infty}  y { f_{Y|X}(X,y)} dy=  \int _{0}^{+\infty} y  \frac{1}{X} e^{-\frac{1}{X}y} dy =  \left( {\frac{1}{X} }\right) ^{-1} = X
+\]
+
+
+Expected value:
+\[
+\E(Y) =\E(\E(Y|X)) =\E(X) =  \int _{-\infty}^{+\infty}x f_X(x) \, dx=  \int _{0}^{+\infty} x \lambda e^{-\lambda x} \, dx =\lambda^{-1}
+\]
+
+Variance:
+\begin{multline*}
+\Var(Y) =\Var(\E(Y|X))+ \E( \Var(Y|X)) = \\
+= \Var(X)+ \E \left( \left({\frac{1}{X} }\right) ^{-2}\right)=
+\lambda^{-2}+  \E (X^2)
+\end{multline*}
+
+We know that $ \E (X^2) = \Var(X) + (\E(X))^2$, so:
+\[
+\Var(Y) = \lambda^{-2}+\lambda^{-2} + \lambda^{-2} = 3\lambda^{-2}
+\]
+
 \item Using Ito’s lemma $dY_t = (3W_t^2 - 3t) \, dW_t + (-3W_t + \frac{1}{2}6W_t) \, dt= (3W_t^2 - 3t) \, dW_t$. Hence, $Y_t$ is a martingale. $Y_0=W_0^3-3\cdot 0 W_0=0$.
 
 Now $\E(Y_t)=\E(Y_0)=0$ and using Ito's isometry:
@@ -116,6 +178,64 @@ Now $\E(Y_t)=\E(Y_0)=0$ and using Ito's isometry:
 Here we have used the facts that $\E(W_s^2)=s$ and $\E(W_s^4)=3s^2$.
 \item
 \item
+\item
+\item
+
+\item Using Ito's lemma  we find $dX_t$ and $dY_t$
+\label{spiral_wiener}
+\begin{multline*}
+dX_t=f_t'(t) \cos W_t dt -f(t)\sin W_t \, dW_t-0.5f(t)\cos W_t\, dt=\\
+= (f_t'(t)-0.5f(t))\cos W_tdt -f(t)\sin W_t \,dWt
+\end{multline*}
+\begin{multline*}
+dY_t=g_t'(t) \sin W_t \, dt +g(t)\cos W_t \, dW_t-0.5g(t)\sin W_t\,dt=\\
+= (g_t'(t)-0.5g(t))\sin W_t\,dt +g(t)\cos W_t \,dWt
+\end{multline*}
+
+Comparing these expressions with the system we receive:
+
+\[
+\begin{array}{rcl}
+f_t'(t)-0.5f(t) &=& af(t)\\
+f(t)&=&g(t)\\
+ g_t'(t)-0.5g(t)&=&ag(t)\\
+g(t)&=&f(t)
+\end{array}
+\]
+
+The general solution has the form
+\[
+f(t)=g(t)=A e^{(a+0.5)t}, \quad A\in  \RR
+\]
+
+From initial condition we get $A=x_0$ and
+\[
+f(t)=g(t)=x_0 e^{(a+0.5)t}
+\]
+
+Answer:
+
+\[
+\begin{array}{l}
+X_t=x_0+x_0\int_{0}^{t} a e^{(a+0.5)u} \cos W_u du - x_0\int_{0}^{t} e^{(a+0.5)t}\sin W_u \,dWu\\
+Y_t=x_0\int_{0}^{t} a e^{(a+0.5)u} \sin W_u du +x_0\int_{0}^{t} e^{(a+0.5)t}\cos W_u \, dWu
+\end{array}
+\]
+
+
+Now we use Ito's lemma once again:
+\begin{multline*}
+dD_t=2X_t \, dX_t+2Y_t \, dY_t=2X_t((f_t'(t)-0.5f(t))\cos W_t \, dt -f(t)\sin W_t \,dWt)+\\
++ 2Y_t((g_t'(t)-0.5g(t))\sin W_t ], dt +g(t)\cos W_t\,dWt)=\\
+=2f(t)(f_t'(t)-0.5f(t))\cos^2 W_t \, dt-f^2(t)\cos W_t\sin W_t\,dWt+\\
++2f(t)(f_t'(t)-0.5f(t))\sin^2 W_t \, dt+f^2(t)\cos W_t\sin W_t\,dWt=\\
+=2f(t)(f_t'(t)-0.5f(t) \, dt=2af^2(t)\,dt
+\end{multline*}
+
+\[
+D_t=D_0+\int_{0}^{t} 2a x_0 e^{(2a+1)u }du= x_0^2+\frac{2ax_0}{2a+1}(e^{(2a+1)t}-1)
+\]
+
 \end{enumerate}
 
 \subsection{Retake, ??.??.2009}
@@ -183,7 +303,31 @@ $\int_0^{\infty} (p-c(x(t)))q(t)e^{-rt}\,dt \to \max$
 \subsection{Retake, ??.??.2010-solutions}
 
 \begin{enumerate}
-\item
+\item If $X=0$ we know that that the chosen ball was in the first basket, consequently $Y$ was in the second one.
+\[
+\E(Y|X=0) = \E(Y| \text{ second basket } )=\frac{1+2+\dots+10}{10}=5.5
+\]
+
+Similarly
+\[
+\E(Y|X=10) = \E(Y|\text{ first basket } )=\frac{0+1+\dots+9}{10}=4.5
+\]
+
+Finaly,
+\[
+\E(Y|0<X<10) = \frac{1}{2}\E(Y|\text{ first basket }) +\frac{1}{2}\E(Y|\text{ second basket })=0.5(5.5+4.5)=5
+\]
+
+Answer:
+\[
+\E(Y|X) =
+ \begin{cases}
+   5.5, \text{ if } X=0\\
+  5, \text{ if } 0<X<10\\
+ 4.5, \text{ if }  X=10\\
+   \end{cases}
+\]
+
 \item $\E(Y|X)=X/2$, $\E(Y)=\E(X/2)=a/4$,
 \[
 \Var(Y)=\E(\Var(Y|X))+\Var(\E(Y|X))=\E(X^2/12)+\Var(X/2)=\frac{7a^2}{12^2}
@@ -300,6 +444,38 @@ $\E(W^{8}_{t})= \frac{8(7-1)}{2} \int_{0}^{t} \E (W^{8-2}_{s}) ds = 105t^4 $
 $\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2 = 15t^3 + 105t^6 - (-3t^3)^2= 15t^3 + 96 t^6$
 
 \item
+
+\item
+
+\item
+
+\item
+
+\item
+
+\begin{multline*}
+dY_t=\frac{1}{\tau}X_t e^{\frac{t}{\tau}}dt+ e^{\frac{t}{\tau}}dX_t=
+\frac{1}{\tau}X_t e^{\frac{t}{\tau}}dt+\frac{X_{\infty}-X_t}{\tau} e^{\frac{t}{\tau}}dt+ \sigma e^{\frac{t}{\tau}}dW_t=\\
+=\frac{X_{\infty}}{\tau} e^{\frac{t}{\tau}}dt+ \sigma e^{\frac{t}{\tau}}dW_t
+\end{multline*}
+
+\[
+Y_t=Y_0+\int_{0}^{t} \frac{X_{\infty}}{\tau} e^{\frac{u}{\tau}}du+\int_{0}^{t} \sigma e^{\frac{u}{\tau}}dW_u=
+X_0+X_{\infty}(e^{\frac{t}{\tau}}-1)+\int_{0}^{t} \sigma e^{\frac{u}{\tau}}dW_u
+\]
+
+\[
+X_t=e^{-\frac{t}{\tau}}Y_t= e^{-\frac{t}{\tau}} (X_0+X_{\infty}(e^{\frac{t}{\tau}}-1)+\int_{0}^{t} \sigma e^{\frac{u}{\tau}}dW_u) =X_0 e^{-\frac{t}{\tau}} +X_{\infty}(1- e^{-\frac{t}{\tau}})+\int_{0}^{t} \sigma e^{\frac{u-t}{\tau}}dW_u
+\]
+
+
+\[
+\E(X_t)= X_0 e^{-\frac{t}{\tau}} +X_{\infty}(1- e^{-\frac{t}{\tau}})
+\]
+\[
+\Var(X_t)= \Var( \int_{0}^{t} \sigma e^{\frac{u-t}{\tau}}dW_u )=\int_{0}^{t} \E (\sigma e^{\frac{u-t}{\tau}})^2du = \int_{0}^{t}\sigma^2 e^{\frac{2u-2t}{\tau}}du=\frac{\tau \sigma^2}{2} (1- e^{\frac{-2t}{\tau}})
+\]
+
 \end{enumerate}
 
 \section{2010-2011}
@@ -517,24 +693,24 @@ K_0 < \frac{1}{c^2(r+b)^2} < \frac{\bar{I}}{b}
 \subsection{Retake-solutions}
 \begin{enumerate}
 \item Let's go:
-\begin{equation*}
+\[
 f(x,y)=
    \begin{cases}
    ce^{(x-y)}, 0 \leqslant x,y \leqslant 1\\
    0, else
       \end{cases}
-\end{equation*}
+\]
 First, we need to find constant c.\\
 $ 1=\int_{0}^{1} \int_{0}^{1} (ce^{x-y})dxdy=\int_{0}^{1}(-ce^{x-y})\bigg|_0^1dx=\int_{0}^{1}(-ce^{x-1}+ce^x)dx=-ce^{x-1}++ce^x\bigg|_0^1=-c+ce+\frac{c}{e}-c=1$\\
 From this simple equation we get $c=\frac{e}{(e-1)^2}$\\
 So the problem now looks like:
-\begin{equation*}
+\[
 f(x,y)=
    \begin{cases}
    \frac{e}{(e-1)^2}e^{(x-y)}, 0 \leqslant x,y \leqslant 1\\
    0, else
       \end{cases}
-\end{equation*}\\
+\]\\
 $E(X|Y)=\int_{0}^{1}xf(x|y)dx$, where $f(x|y)=\frac{f(x,y)}{f(y)}$\\
 $f(y)=\int_{0}^{1}f(x,y)dx=\frac{e}{(e-1)^2}(e^{1-y}-e^{-y})$\\
 $f(x|y)=\frac{e^x}{e-1}$\\
@@ -1562,7 +1738,7 @@ where $c$ is a normalization constant. Find $\E(X\mid Y)$.
   \end{array}
 \right.
 \]
-with initial conditions $X_0=x_0$ and $Y_0=y_0$
+with initial conditions $X_0=x_0$ and $Y_0=0$
 \begin{enumerate}
 \item Ignoring the initial conditions find solution of the form $X_t=f(t)\cos W_t$ and $Y_t=g(t)\sin W_t$
 \item Modify your solution to take into account the initial conditions
@@ -1601,7 +1777,8 @@ X_0=\exp(-2r) \exp(r-\sigma^2/2)  \exp(\sigma^2 / 2)=\exp(-r)
 
 \item Using Doob's theorem, $\E(W_{\tau})=0$, so $\P(W_{\tau}=2)=1/3$. Using Ito's lemma or otherwise $X_t=W_t^2-t$ is a martingale, so $\E(X_{\tau})=0$ and $\E(\tau)=2$.
 \item $\E(X \mid Y)= \int_0^1 x f(x \mid Y) \, dx$. Here $f(x,y)$ maybe factored, so $X$ and $Y$ are independent, and $\E(X \mid Y)=const$.
-\item Just use Ito's lemma for proposed solution form and obtain 4 equations. For point b just take $dD_t$ and observe that it has no term before $dW$.
+\item See the solution of problem 8 from exam of 2008-2009 \hyperref[spiral_wiener]{on page \pageref{spiral_wiener}}
+
 \end{enumerate}
 
 \section{2014-2015}
