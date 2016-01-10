@@ -2092,4 +2092,53 @@ X_t=\frac{1+\int_0^t s \exp(-W_s+s/2) \, ds}{ \exp(-W_t +t/2 )}
 
 
 
+\section{2015-2016}
+
+\subsection{Stochastic calculus hometask}
+
+
+\begin{enumerate}
+
+\item Find the expected value of $\E(\exp(aW_t))$, $\E(1_{W_t\leq b})$, $\E(\exp(aW_t)\cdot 1_{W_t\leq b})$ and $\E(W_t 1_{W_t\leq b})$. Naturally, you may use the standard normal cumulative distribution function $F$ in your answer
+
+
+\item It is known that $\E(Y|X)=0$. Which of the following quantities must be zero: $\E(Y)$? $\E(X)$? $\Cov(X,Y)$? $\Cov(X^2,Y)$? $\Cov(X,Y^2)$? Prove or provide a counter-example.
+
+\item Alisa and Bob throw a fair coin until either the sequence THTH or the sequence HTHH appears. Alisa wins if the sequence THTH appears first and Bob wins if the sequence HTHH appears first.
+\begin{enumerate}
+\item What is the probability that Alisa will win?
+\item What is the expected duration of the game in tosses?
+\end{enumerate}
+
+Hint: you may introduce a martingale from lecture or solve this problem without martingales at all
+
+\item Consider the process $Y_t=\exp(2W_t-2t)$.
+
+\begin{enumerate}
+\item Find $dY_t$
+\item Find $\int_0^t Y_u \, dW_u$
+\item Find $\E(Y_t)$ and $\Var(Y_t)$
+\end{enumerate}
+
+\item Consider stochastic differential equation
+\[
+dX_t = (a - bX_t) dt + c dW_t, \; X_0=x_0
+\]
+
+\begin{enumerate}
+\item Solve this differential equation\footnote{The answer may contain an Ito integral that cannot be simplified.}.
+\item Find $\E(X_t)$ and $\Var(X_t)$
+\end{enumerate}
+
+\item In the framework of Black and Scholes model find the price at $t=0$ of the classic European сall option by calculating corresponding expected value.
+
+European call option with strike price $K$ is the right to buy at time $t$ one share at price $K$. So, at time $t$ it pays you $S_t - K$ if $S_t > K$ and zero otherwise.
+
+\end{enumerate}
+
+
+
+
+
+
 \end{document}
