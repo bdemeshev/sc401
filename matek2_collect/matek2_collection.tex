@@ -706,10 +706,10 @@ From this simple equation we get $c=\frac{e}{(e-1)^2}$\\
 So the problem now looks like:
 \[
 f(x,y)=
-   \begin{cases}
+\begin{cases}
    \frac{e}{(e-1)^2}e^{(x-y)}, 0 \leqslant x,y \leqslant 1\\
    0, else
-      \end{cases}
+\end{cases}
 \]\\
 $E(X|Y)=\int_{0}^{1}xf(x|y)dx$, where $f(x|y)=\frac{f(x,y)}{f(y)}$\\
 $f(y)=\int_{0}^{1}f(x,y)dx=\frac{e}{(e-1)^2}(e^{1-y}-e^{-y})$\\
@@ -740,7 +740,23 @@ $\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2 = 15t^3 + 105t^6 - (-3t^3)^2= 15t^3 + 96 t^6$
 \item
 \end{enumerate}
 
+\subsection{Reretake, 08.02.2011}
 
+\subsubsection*{Stochastic calculus part}
+
+\begin{enumerate}
+
+\item (10 pts) The joint density of random variables $X$ and $Y$ is given by $f(x,y)=x+y$ for $x\in [0;1]$ and $y\in[0;1]$. Find $\E(Y|X)$ and $\Var(Y|X)$
+\item (10 pts) The random variables $X_i$ are independent and uniformly distributed on $[0;2011]$. We define $Y_n=(X_1\cdot X_2\cdot \ldots \cdot X_n)^{1/n}$. In what sense does the sequence $Y_n$ converge? What is the limit? Find the expected value and the variance of the limit.
+\item (10 pts) Let $W_1(t)$ and $W_2(t)$ be two independent Wiener processes. Consider $Y_t=aW_1(t)+\sqrt{1-a^2}W_2 (t)$. Is $Y_t$ a Wiener process?
+\item (20 pts) Consider the Vasicek interest rate model, $dR_t=a(b-R) \, dt+s \, dW_t$, where $a$, $b$ and $s$ are positive constants.
+\begin{enumerate}
+\item Using the substitution $Y_t=e^{-at} R_t$ find the solution of the stochastic differential equation
+\item Find $\E(R_t)$ and $\Var(R_t)$
+\end{enumerate}
+
+
+\end{enumerate}
 
 \section{2011-2012}
 
@@ -2139,6 +2155,250 @@ European call option with strike price $K$ is the right to buy at time $t$ one s
 
 
 
+\subsection{Stochastic calculus hometask --- Solution}
 
+\begin{enumerate}
+
+\item xx
+\item Short answers:
+
+\begin{enumerate}
+\item $\E(Y)=\E(\E(Y|X))=0$.
+\item The value $\E(X)$ can be non-zero, counterexample: $X\sim N(42; 42)$, $Y=0=const$.
+\item $\Cov(Y, f(X)) = \E(f(X)Y) - \E(Y)\E(f(X))=\E(f(X)Y)$.
+\[
+\E(f(X)Y)= \E(\E(f(X)Y|X))=\E(f(X)\E(Y|X))=\E(0)=0
+\]
+So, $\Cov(Y,X)=\Cov(Y,X^2)=0$
+\item $\Cov(X, Y^2)$ may be non-zero. Let $Y$ take the values $-1$, $1$, $-2$ and $2$ with equal probability. And $X=Y^2$. In this case $\Cov(X, Y^2)=\Var(X)>0$.
+\end{enumerate}
+
+\item Let's denote the moment of time when the sequences $A$ and $B$ appear by $N_A$ and $N_B$ correspondingly. The game ends at moment $N=\min \{N_A, N_B\}$.
+
+We need to find $p_A = \P(N=N_A)$, $p_B=\P(N=N_B)$ and $\E(N)$. We have one equation, $p_A + p_B = 1$ so we need two more equations:
+
+We build them from nothing :)
+\[
+\begin{cases}
+\E(N_A) = \E(N) + \E(N_A - N) \\
+\E(N_B) = \E(N) + \E(N_B - N) \\
+\end{cases}
+\]
+
+Or
+\[
+\begin{cases}
+\E(N_A) = \E(N) + p_A\E(N_A - N | N=N_A) + p_B \E(N_A - N | N=N_B) \\
+\E(N_B) = \E(N) + p_A\E(N_B - N | N=N_A) + p_B \E(N_B - N | N=N_B) \\
+\end{cases}
+\]
+
+\[
+\begin{cases}
+\E(N_A) = \E(N) + p_B \E(N_A - N | N=N_B) \\
+\E(N_B) = \E(N) + p_A \E(N_B - N | N=N_A)  \\
+\end{cases}
+\]
+
+\ldots 
+
+Based on \url{http://projecteuclid.org/download/pdf_1/euclid.aop/1176994578}
+
+There is also a solution using Markov chains.
+
+\end{enumerate}
+
+
+
+\subsection{Exam, 12.01.2016}
+
+\subsubsection*{Stochastic calculus part}
+
+Here $W_t$ always denotes the standard Wiener process.
+
+\vspace{10pt}
+
+\begin{enumerate}
+
+
+\item $[$10 points] You throw a fair coin until «head» appears. Let's denote the result of the first toss by $Y_1$ ($0$ for tail and $1$ for head) and the total number of throws by $N$. Find $\E(Y_1|N)$, $\Var(Y_1|N)$ and $\E(N|Y_1)$
+
+\item $[$10 points] Consider $\tau$, the first moment of time when the standard Wiener process will touch the barrier $4y^2=x+1$, or formally, $\tau = \inf\{t \; \mid \; t \geq 0, \; |W_t|= 0.5 \sqrt{t+1} \}$. Find $\E(\tau)$.
+
+Hint: you may find the process $M_t=W_t^2 - t$ useful, you may also suppose that technical conditions of Doob's theorem are satisfied
+
+
+\item $[$10 points] Let
+\[
+Y_t = \exp \left(-6t^3 + \int_0^t f(s)\, dW_s \right),
+\]
+where $f$ is some deterministic function.
+
+\begin{enumerate}
+\item Using Ito's lemma find $dY_t$
+\item Find at least one function $f$ such that $Y_t$ is a martingale
+\end{enumerate}
+
+\item $[$10 points] The risk-free interest rate is equal to $0.1$. The volatility of the share is equal to $\sigma=1$. You have an option to receive 1\$ two years later if the price growth during the second year is higher than 5\%. Assume the framework of the Black and Scholes model. What is the fair price of this option?
+
+\item $[$20 points] Consider the stochastic differential equation
+\[
+dX_t = X_t^3 \, dt + X_t^2 \, dW_t,
+\]
+
+\begin{enumerate}
+\item Apply Ito's lemma to $Y_t=f(X_t)$
+\item Find all the functions $f$ that makes $Y_t$ a martingale
+\item Find all the solutions of the stochastic differential equation
+\item Find the solution such that $X_0 = 2$.
+\item Find the probability that the sample path of $X_t$ will be continuous for $t \in [0; \infty)$
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\subsubsection*{Optimal control part}
+
+\begin{enumerate}[resume]
+
+\item	(10 points) Given the system of differential equations
+\[
+\begin{cases}
+  \dot x = \sin (x + y) \\
+  \dot y = \sin (x - y)
+\end{cases}
+\]
+explore the behavior of its solutions in the neighborhood of the 2 points: $A(\pi, \pi)$ and $B(3\pi/2, 3\pi/2)$. Draw the phase portraits near $A$ and $B$ based on the knowledge of their eigenvalues, eigenvectors where possible.
+
+\item	(10 points) Solve the bounded control problem: maximize
+\[
+\int_0^1(2x-u^2/2)\, dt
+\]
+subject to constraints $\dot x = u - x + t^2$, $x(0)=0$, $-1 \leq u \leq 0$. Verify that the maximizer has been found by applying one of the sufficient conditions.
+
+\item	(20 points) Solve so-called “limit pricing problem”. A homogeneous product is produced by a dominant firm along with the “competitive fringe” consisting of the $x(t)$ identical firms ($x$ is a continuous variable). Demand on good is given by $f(p)\in C^2$, where $p(t)$ is the price, $f'(p)<0$ for $p>0$.
+Let the dominant firm has a constant returns to scale technology with the marginal costs $c=const>0$. Then $(p-c)f(p)$ is a strictly concave function. The problem of the firm is to maximize the discounted stream of profits
+\[
+\int_0^{\infty}e^{-rt}(p-c)(f(p)-x)\, dt
+\]
+(each fringe firm produces only one unit of good) subject to constraint $\dot x = k(p-\bar p)$ where $k$ is some number, $\bar p$ is the equilibrium price and $r>0$. Also $x(0)=x_0$.
+\begin{enumerate}
+\item	Application of the current value Hamiltonian is required here. Derive the system of the first-order conditions.
+\item	By eliminating the Lagrange multiplier reduce the system to 2 equations with respect to $(x,p)$. Check that  $H_{pp}<0$.
+\item	Show that if the dominant firm operates at the price level $\bar p =c$ then the fringe firms supply the entire market in the equilibrium.
+\item	Let the equilibrium price $\bar p$ be slightly above $c$. By evaluating the derivative $\frac{\partial x^s}{\partial \bar p}$  at $\bar p = c$ show that the dominant firm’s market share becomes positive if $\bar p$ is slightly above $c$ ($x^s$ is the equilibrium number of the fringe firms).
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection{Solution, exam 12.01.2016}
+
+\begin{enumerate}
+\item If we know the value $N$ then we know the value of $Y_1$, so $\Var(Y_1|N)=0$ and
+\[
+\E(Y_1|N) = \begin{cases}
+0, \text{ if } N > 1; \\
+1, \text{ if } N = 1
+\end{cases}
+\]
+
+\[
+\E(N|Y_1) = \begin{cases}
+1, \text{ if } Y_1 = 1; \\
+1 + 2, \text{ if } Y_1 = 0
+\end{cases}
+\]
+
+Or, simply, $\E(N|Y_1)=3-2Y_1$
+
+\item We check that $M_t$ is a martingale: $dM_t= -dt +2W_t \,dW_t + \frac{1}{2}2\,dt=2W_t\, dW_t$. And we apply Doob's theorem:
+
+\[
+\E(W_{\tau}^2-\tau)=\E(M_{\tau})=\E(M_0)=0
+\]
+So, $\E(W_{\tau}^2)=\E(\tau)$
+
+From the definition of $\tau$, $W_{\tau}^2=(\tau + 1)/4$. We get the equation
+\[
+\E(\tau)=\E(\tau+1)/4
+\]
+
+And $\E(\tau)=1/3$
+
+Based on \url{http://www-stat.wharton.upenn.edu/~shepp/publications/14.pdf}.
+
+\item Let's write the process $Y_t$ as $Y_t=\exp(Z_t)$ where $Z_t = -6t^3 + \int_0^t f(s)\, dW_s$. So, $dY_t = \exp(Z_t) \, dZ_t + \frac{1}{2}\exp(Z_t) \, (dZ_t)^2$.
+
+We find $dZ_t$:
+\[
+dZ_t = -18t^2 \, dt + f(t) \, dW_t
+\]
+
+So, $(dZ_t)^2 = f^2(t) \, dt$ and
+\[
+dY_t=\exp(Z_t) (-18t^2 \, dt + f(t) \, dW_t) + \frac{1}{2}\exp(Z_t) f^2(t) \, dt
+\]
+
+To cancel the term before $dt$ one should have
+\[
+-18t^2 + \frac{1}{2} f^2(t) = 0
+\]
+
+Possible solutions are $f(t)=6t$ and $f(t)=-6t$
+
+\item We should find the discounted expected price:
+
+\[
+X_0 = e^{-2r}\tilde\P(S_2/S_1 > 1.05) = e^{-2r} \tilde\P( \exp((r-\sigma^2/2) + \sigma (\tilde W_2 - \tilde W_1)) > 1.05)
+\]
+
+We remark that $\tilde W_2 - \tilde W_1 \sim N(0; 1)$ under $\tilde \P$. So
+
+\[
+X_0 = e^{-2r} \tilde P( N(0; 1) > \ln 1.05 - r + \sigma^2/2 ) = e^{-2r}F(r-\sigma^2/2 - \ln 1.05) = e^{-0.2}F(-0.45)
+\]
+
+
+\item Step by step
+\begin{enumerate}
+\item Apply Ito's lemma:
+\[
+dY_t = f'(X_t) \, dX_t + \frac{1}{2} f''(X_t) \, (dX_t)^2 = f'\cdot (X_t^3 \, dt + X_t^2 \, dW_t) + \frac{1}{2}f''\cdot X_t^4 \, dt
+\]
+\item To cancel the term before $dt$ the following condition must be satisfied
+\[
+f' \cdot X_t^3 + \frac{1}{2} f'' \cdot X_t^4 = 0
+\]
+
+Let's denote $f'$ by $g$, so $g + g'\cdot x /2 = 0$. This equation may be solved by separation of variables:
+
+\[
+-2\frac{dx}{x}=\frac{dg}{g}
+\]
+
+The general solution is $g(x)=c x^{-2}$, so the general solution for $f$ is
+\[
+f(x)=c_1 x^{-1} + c_2
+\]
+
+\item To find all the solutions we use the simpliest possible $f$, $f(x)=x^{-1}$. In this case
+\[
+dY_t= 0\, dt + f' \cdot X_t^2 \, dW_t = - dW_t
+\]
+
+So, $Y_t = Y_0 - W_t$ and
+\[
+X_t = \frac{1}{c - W_t}
+\]
+
+\item If $X_0=2$ than $X_t = 1/ (0.5 - W_t)$
+
+\item The probability that $W_t$ will forever stay below $0.5$ is zero, so the probability that $X_t$ will have continuous sample path for all $t$ is also zero.
+
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}
