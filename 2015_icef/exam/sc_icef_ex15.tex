@@ -1,0 +1,110 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{comment}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{todonotes}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage[left = 1cm, right = 1cm, top = 1cm, bottom = 1cm]{geometry}
+\usepackage{graphicx}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\subsubsection*{Stochastic calculus part, 12.01.2016}
+
+Here $W_t$ always denotes the standard Wiener process.
+
+\vspace{10pt}
+
+\begin{enumerate}
+
+
+\item $[$10 points] You throw a fair coin until «head» appears. Let's denote the result of the first toss by $Y_1$ ($0$ for tail and $1$ for head) and the total number of throws by $N$. Find $\E(Y_1|N)$, $\Var(Y_1|N)$ and $\E(N|Y_1)$
+
+\item $[$10 points] Consider $\tau$, the first moment of time when the standard Wiener process will touch the barrier $4y^2=x+1$, or formally, $\tau = \inf\{t \; \mid \; t \geq 0, \; |W_t|= 0.5 \sqrt{t+1} \}$. Find $\E(\tau)$.
+
+Hint: you may find the process $M_t=W_t^2 - t$ useful, you may also suppose that technical conditions of Doob's theorem are satisfied
+
+% \url{http://www-stat.wharton.upenn.edu/~shepp/publications/14.pdf}
+
+\item $[$10 points] Let
+\[
+Y_t = \exp \left(-6t^3 + \int_0^t f(s)\, dW_s \right),
+\]
+where $f$ is some deterministic function.
+
+\begin{enumerate}
+\item Using Ito's lemma find $dY_t$
+\item Find at least one function $f$ such that $Y_t$ is a martingale
+\end{enumerate}
+
+\item $[$10 points] The risk-free interest rate is equal to $0.1$. The volatility of the share is equal to $\sigma=1$. You have an option to receive 1\$ two years later if the price growth during the second year is higher than 5\%. Assume the framework of the Black and Scholes model. What is the fair price of this option?
+
+\item $[$20 points] Consider the stochastic differential equation
+\[
+dX_t = X_t^3 \, dt + X_t^2 \, dW_t,
+\]
+
+\begin{enumerate}
+\item Apply Ito's lemma to $Y_t=f(X_t)$
+\item Find all the functions $f$ that makes $Y_t$ a martingale
+\item Find all the solutions of the stochastic differential equation
+\item Find the solution such that $X_0 = 2$.
+\item Find the probability that the sample path of $X_t$ will be continuous for $t \in [0; \infty)$
+\end{enumerate}
+
+\end{enumerate}
+
+%\begin{center}
+%\includegraphics[width=12cm]{correlation.png}
+%\end{center}
+
+\newpage
+\thispagestyle{empty}
+
+\subsubsection*{Optimal control part}
+
+\begin{enumerate}[resume]
+
+\item	(10 points) Given the system of differential equations
+\[
+\begin{cases}
+  \dot x = \sin (x + y) \\
+  \dot y = \sin (x - y)
+\end{cases}
+\]
+explore the behavior of its solutions in the neighborhood of the 2 points: $A(\pi, \pi)$ and $B(3\pi/2, 3\pi/2)$. Draw the phase portraits near $A$ and $B$ based on the knowledge of their eigenvalues, eigenvectors where possible.
+
+\item	(10 points) Solve the bounded control problem: maximize
+\[
+\int_0^1(2x-u^2/2)\, dt
+\]
+subject to constraints $\dot x = u - x + t^2$, $x(0)=0$, $-1 \leq u \leq 0$. Verify that the maximizer has been found by applying one of the sufficient conditions.
+
+\item	(20 points) Solve so-called “limit pricing problem”. A homogeneous product is produced by a dominant firm along with the “competitive fringe” consisting of the $x(t)$ identical firms ($x$ is a continuous variable). Demand on good is given by $f(p)\in C^2$, where $p(t)$ is the price, $f'(p)<0$ for $p>0$.
+Let the dominant firm has a constant returns to scale technology with the marginal costs $c=const>0$. Then $(p-c)f(p)$ is a strictly concave function. The problem of the firm is to maximize the discounted stream of profits
+\[
+\int_0^{\infty}e^{-rt}(p-c)(f(p)-x)\, dt
+\]
+(each fringe firm produces only one unit of good) subject to constraint $\dot x = k(p-\bar p)$ where $k$ is some number, $\bar p$ is the equilibrium price and $r>0$. Also $x(0)=x_0$.
+\begin{enumerate}
+\item	Application of the current value Hamiltonian is required here. Derive the system of the first-order conditions.
+\item	By eliminating the Lagrange multiplier reduce the system to 2 equations with respect to $(x,p)$. Check that  $H_{pp}<0$.
+\item	Show that if the dominant firm operates at the price level $\bar p =c$ then the fringe firms supply the entire market in the equilibrium.
+\item	Let the equilibrium price $\bar p$ be slightly above $c$. By evaluating the derivative $\frac{\partial x^s}{\partial \bar p}$  at $\bar p = c$ show that the dominant firm’s market share becomes positive if $\bar p$ is slightly above $c$ ($x^s$ is the equilibrium number of the fringe firms).
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
