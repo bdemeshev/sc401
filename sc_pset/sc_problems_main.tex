@@ -1,7 +1,18 @@
+\RequirePackage[l2tabu, orthodox]{nag} % проверка плохого стиля, но что-то она не очень пашет
+
 \documentclass[pdftex,12pt,a4paper]{article}
 
 \input{title_bor}
 
+\usepackage[backend = biber]{biblatex}
+\addbibresource{sc_biblio.bib}
+
+\usepackage{answers}
+
+\hypersetup{
+pdftitle = {Заметки по стохастическому анализу, Борис Демешев},
+pdfdisplaydoctitle=true, % Определение заголовка файла PDF
+}
 
 %\input{prob_and_sol}
 
@@ -18,10 +29,14 @@
 
 \newtheorem*{theorem}{Theorem}
 
-\newtheorem{solution}{Решение}
 \newtheorem{problem}{Задача}
 \numberwithin{problem}{section}
-\numberwithin{solution}{section}
+
+\Newassociation{sol}{solution}{solution_file}
+% sol --- имя окружения внутри задач
+% solution --- имя окружения внутри solution_file
+% solution_file --- имя файла в который будет идти запись решений
+% можно изменить далее по ходу
 
 
 \begin{document}
@@ -40,11 +55,12 @@
 
 \section{Решения}
 
-
+\input{all_solutions}
 
 
 %\bibliography{/home/boris/Dropbox/Public/tex_general/opit}
 
+\printbibliography
 
 \printindex % печать предметного указателя здесь
 
