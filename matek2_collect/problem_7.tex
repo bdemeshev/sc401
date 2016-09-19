@@ -1,0 +1,99 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\textbf{Problem 7 (Retake 2009)}
+
+\[X_{0} = E_{\tilde{p}}\left( exp\left( - rT \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right)\]
+
+\[\begin{matrix}
+X_{T} = Min\left\{ M,\ lnS_{T} \right\} \\
+S_{T} = S_{0}\exp\left( \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \right)\ ;\ {\tilde{W}}_{T}\sim N\left( 0,T \right) \\
+\begin{matrix}
+\ln S_{T} = lnS_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \\
+X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right) = M*\tilde{p}\left( \ln S_{T} > M \right) + \int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} \\
+\begin{matrix}
+1)\ \tilde{p}\left( \ln S_{T} > M \right) = \tilde{p}\left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} > M \right) = \left\lbrack Z = \frac{{\tilde{W}}_{T}}{\sqrt{T}}\sim N(0,1) \right\rbrack = \\
+ = \tilde{p}\left( Z < \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) = \Phi\left( \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
+\[\begin{matrix}
+\Phi - cummulative\ standard\ normal\ distribution \\
+2)\ M = lnS_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}m\ \ ;\ \ m = \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \\
+\begin{matrix}
+\int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} = \int_{- \infty}^{m}{\left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}Z \right)\frac{1}{\sqrt{2\pi}}\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}} =} \\
+\begin{matrix}
+\begin{matrix}
+ = \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) + \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\int_{- \infty}^{m}{Z\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}}} = \\
+\left\lbrack \int_{}^{}{Z\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}} =}\begin{bmatrix}
+Let\ s = - \frac{Z^{2}}{2}\  \\
+ds = - ZdZ \\
+dZ = - \frac{\text{ds}}{Z} \\
+\end{bmatrix} = \int_{}^{}{\left( - e^{s} \right)\text{ds}} = - e^{s} = - \exp\left( - \frac{Z^{2}}{2} \right) \right\rbrack \\
+ = \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) \\
+\end{matrix} \\
+\begin{matrix}
+3)\ X_{0} = M\Phi\left( \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) + \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \\
+ - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = M + \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
+\[\begin{matrix}
+ = M - m\sigma\sqrt{T}\Phi\left( m \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) \\
+ \\
+\mathbf{Answer:\ }\mathbf{X}_{\mathbf{0}}\mathbf{= \ }\mathbf{M - \sigma}\sqrt{\mathbf{T}}\left( \mathbf{\text{mΦ}}\left( \mathbf{m} \right)\mathbf{+}\frac{\mathbf{1}}{\sqrt{\mathbf{2\pi}}}\exp\left( \mathbf{-}\frac{\mathbf{m}^{\mathbf{2}}}{\mathbf{2}} \right) \right)\mathbf{\ ,\ where\ }\mathbf{m =}\frac{\mathbf{M - ln}\mathbf{S}_{\mathbf{0}}\mathbf{-}\left( \mathbf{r -}\frac{\mathbf{\sigma}^{\mathbf{2}}}{\mathbf{2}} \right)\mathbf{T}}{\mathbf{\sigma}\sqrt{\mathbf{T}}} \\
+\end{matrix}\]
+
+\end{document}

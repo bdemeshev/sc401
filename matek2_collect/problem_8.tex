@@ -1,0 +1,132 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\textbf{Problem 8 (Retake 2009)}
+
+We need to find a price of the classic European option in dollars, while
+stock prices are in euros. K-strike price. Xt-option price at time t.
+
+\[\begin{matrix}
+X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right) = exp\left( - r_{\$}T \right)\int_{0}^{\infty}{X_{T}\tilde{p}\left( X_{T} \right)}dX_{T} \\
+\begin{matrix}
+\begin{matrix}
+X_{T} = U_{T}S_{T} - K\ if\ U_{T}S_{T} > K,\ 0\ otherwise \\
+\end{matrix} \\
+\begin{matrix}
+\begin{matrix}
+1)\ S_{T} = S_{0}\exp\left( \left( r_{} - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \right)\ ;\ {\tilde{W}}_{T}\sim N\left( 0,T \right)\  \\
+\begin{matrix}
+2)\ U_{T} = U_{0}*\exp\left( \left( r_{\$} - \frac{b^{2}}{2} \right)T + \sigma{\tilde{w}}_{T} \right);\ {\tilde{w}}_{T}\sim N\left( 0,T \right)\  \\
+\text{under\ condition\ of\ no\ arbitrage}\exp\left( r_{\$}T \right) = exp\left( r_{\$}T \right)\exp\left( r_{}T \right) \rightarrow \ r_{\$} = r_{\$} + r_{} \\
+\end{matrix}\  \\
+\begin{matrix}
+\begin{matrix}
+\begin{matrix}
+3)\ X_{T} = {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} + b{\tilde{w}}_{T} \right)\  \\
+{\tilde{w}}_{T}\text{\ and\ }{\tilde{W}}_{T}\ are\ independent\ (in\ common\ sense),\ then\ \sigma{\tilde{W}}_{T} + b{\tilde{w}}_{T}\sim\left( 0,\left( \sigma^{2} + b^{2} \right)T \right) \\
+\text{le}t^{'}smake\ a\ substitution\ Z = \frac{\sigma{\tilde{W}}_{T} + b{\tilde{w}}_{T}}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}}\sim\left( 0,1 \right) \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\begin{matrix}
+\begin{matrix}
+4)\ X_{0} = exp\left( - r_{\$}T \right)\int_{a}^{\infty}{\left( {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) - K \right)\tilde{p}\left( Z \right)}\text{dZ} \\
+where\ a = - \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \\
+\end{matrix} \\
+\begin{matrix}
+\begin{matrix}
+\int_{a}^{\infty}{K\tilde{p}\left( Z \right)}\text{dZ} \\
+\end{matrix} = K\int_{a}^{\infty}{\tilde{p}\left( Z \right)}dZ = K\int_{- \infty}^{- a}{\tilde{p}\left( Z \right)}dZ = K*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) \\
+\begin{matrix}
+\Phi - cummulative\ standard\ normal\ distribution \\
+\begin{matrix}
+\begin{matrix}
+\int_{a}^{\infty}{\left( {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) \right)\tilde{p}\left( Z \right)}dZ = dZ = \\
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{a}^{\infty}{\left( \exp\left( - \frac{1}{2}\left( \sigma^{2} + b^{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) \right)\frac{1}{\sqrt{2\pi}}exp\left( - \frac{Z^{2}}{2} \right)}dZ = \\
+\end{matrix} \\
+\begin{matrix}
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{a}^{\infty}{\exp\left( - \frac{1}{2}\left( Z - \sqrt{\left( \sigma^{2} + b^{2} \right)T} \right)^{2} \right)}dZ = \\
+\begin{matrix}
+\left\lbrack \text{let}^{'}s\ make\ a\ substitution\ V = Z - \sqrt{\left( \sigma^{2} + b^{2} \right)T} \right\rbrack \\
+ = \left\lbrack b = - \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{\sigma^{2}}{2} + \frac{b^{2}}{2} \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right\rbrack = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{b}^{\infty}{\exp\left( - \frac{V^{2}}{2} \right)}dV = \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
+\[\begin{matrix}
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{- \infty}^{- b}{\exp\left( - \frac{V^{2}}{2} \right)}dV = \\
+\begin{matrix}
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) \\
+\begin{matrix}
+\begin{matrix}
+X_{0} = U_{0}S_{0}\frac{\exp\left( \left( r_{\$} + r_{} \right)T \right)}{exp\left( r_{\$}T \right)}*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) - \\
+ - \frac{K}{\exp\left( r_{\$}T \right)}*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) = \left\lbrack r_{\$} = r_{\$} + r_{} \right\rbrack = \\
+\begin{matrix}
+ = U_{0}S_{0}\Phi\left( N_{1} \right) - \exp{\left( {- r}_{\$}T \right)K}\Phi\left( N_{1} - \sqrt{\left( \sigma^{2} + b^{2} \right)T} \right),\ where\ N_{1} = \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \\
+\end{matrix} \\
+\end{matrix} \\
+\begin{matrix}
+\mathbf{Answer:\ X}_{\mathbf{0}}\mathbf{=}\mathbf{U}_{\mathbf{0}}\mathbf{S}_{\mathbf{0}}\mathbf{\Phi}\left( \mathbf{N}_{\mathbf{1}} \right)\mathbf{-}\exp{\left( \mathbf{- r}_{\mathbf{\$}}\mathbf{T} \right)\mathbf{K}}\mathbf{\Phi}\left( \mathbf{N}_{\mathbf{1}}\mathbf{-}\sqrt{\left( \mathbf{\sigma}^{\mathbf{2}}\mathbf{+}\mathbf{b}^{\mathbf{2}} \right)\mathbf{T}} \right)\mathbf{,\ where} \\
+\mathbf{N}_{\mathbf{1}}\mathbf{=}\frac{\mathbf{\ln}\left( \frac{{\mathbf{U}_{\mathbf{0}}\mathbf{S}}_{\mathbf{0}}}{\mathbf{K}} \right)\mathbf{+}\left( \mathbf{r}_{\mathbf{\$}}\mathbf{+}\mathbf{r}_{\mathbf{}}\mathbf{+}\frac{\mathbf{1}}{\mathbf{2}}\left( \mathbf{\sigma}^{\mathbf{2}}\mathbf{+}\mathbf{b}^{\mathbf{2}} \right) \right)\mathbf{T}}{\sqrt{\left( \mathbf{\sigma}^{\mathbf{2}}\mathbf{+}\mathbf{b}^{\mathbf{2}} \right)\mathbf{T}}} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
+\end{document}
