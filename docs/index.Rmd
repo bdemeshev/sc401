@@ -5,7 +5,7 @@ output: html_document
 
 Крупные материалы
 -----------------
-* [Учебник](https://github.com/bdemeshev/sc_book/raw/master/sc_book/sc_book.pdf) (черновик)
+* [Учебник](https://github.com/bdemeshev/sc_book/raw/master/sc_book.pdf) (черновик)
 * Прототип [задачника](https://github.com/bdemeshev/sc401/raw/master/sc_pset/sc_problems_main.pdf)
 * [Видео-запись](http://www.youtube.com/playlist?list=PL1poMUvVlAqeZOvhE75ViZPKnCTmWLRxf) лекций Димы Борзых для 2 курса бакалавриата экономики
 * [Видео-запись](https://vimeo.com/album/2609503)  лекций для 1 курса магистратуры миэф
@@ -21,10 +21,10 @@ output: html_document
 * Зачёт [2014](https://github.com/bdemeshev/sc401/raw/master/binst_2014/zachet_14/zach_14.pdf)
 * Заметки-2014 от [Ассель](https://github.com/bdemeshev/sc401/raw/master/binst_2014/binst_sc_assel_notes.pdf)
 и [Полины](https://github.com/bdemeshev/sc401/raw/master/binst_2014/binst_sc_polina_notes.pdf)
-* Скрипты 2014: [условное ожидание](https://github.com/bdemeshev/sc401/blob/master/binst_2014/binst_2014_01_25_cond_exp.R), [винеровский процесс](https://github.com/bdemeshev/sc401/raw/master/binst_2014/binst_2014_3_wiener_ito.R), [оценка опциона](https://github.com/bdemeshev/sc401/raw/master/binst_2014/binst_2014_option_price.R)
+* Скрипты 2014: [условное ожидание](https://github.com/bdemeshev/sc401/raw/master/binst_2014/binst_2014_01_25_cond_exp.R), [винеровский процесс](https://github.com/bdemeshev/sc401/raw/master/binst_2014/binst_2014_3_wiener_ito.R), [оценка опциона](https://github.com/bdemeshev/sc401/raw/master/binst_2014/binst_2014_option_price.R)
 * Зачёт [2015](https://github.com/bdemeshev/sc401/raw/master/binst_2015/zachet_15.pdf)
 * 2016: Оценивание опциона с [помощью симуляций в R](https://github.com/bdemeshev/sc401/raw/master/binst_2016/sem_01.R)
-* Зачёт [2016](https://github.com/bdemeshev/sc401/raw/master/binst_2016/zachet_16.pdf)
+* Зачёт [2016](https://github.com/bdemeshev/sc401/raw/master/binst_2016/zach_16/zach_16.pdf)
 
 
 Ссылки
@@ -34,9 +34,11 @@ output: html_document
 * Ivan Wilde, [Stochastic calculus](http://homepage.ntlworld.com/ivan.wilde/notes/sa/index.html)
 * Ivan Wilde, [Measure and probability](http://homepage.ntlworld.com/ivan.wilde/notes/mip/index.html)
 * Silke Göbel, [The mathematician Wolfgang Doeblin](http://www.zentralblatt-math.org/year-of-mathematics/yom-11.pdf), краткая история о первооткрывателе формулы Ито
-* Joe Chang, [Stochastic processes](http://www.stat.yale.edu/~jtc5/251/stochastic-processes.pdf)
+* Joe Chang, [Stochastic processes](http://www.stat.yale.edu/~pollard/Courses/251.spring09/Handouts/Chang-notes.pdf)
+* David Pollard, [Stochastic processes](http://www.stat.yale.edu/~pollard/Courses/251.spring09/) course: шикарный курс с кучей доп. материалов и идеями проектов
 
 Кто такой Марков и почему он размахивает цепями? 
+
 * James Norris, [Markov Chains](http://www.statslab.cam.ac.uk/~rrw1/markov/M.pdf) --- короткий вменяемый текст по марковским цепям. Есть красивейшие штучки, но и занудства в начале хватает :)
 * Шесть [видеолекций на lektorium.tv](https://www.lektorium.tv/course/22882) и [заметки к ним](http://www.win.tue.nl/~jkomjath/SPBlecturenotes.pdf)
 * Yuval Peres, [Markov chains and mixing times](http://www.cs.cmu.edu/~15859n/RelatedWork/MarkovChains-MixingTimes.pdf)
