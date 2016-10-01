@@ -1,6 +1,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%  Загрузка пакетов  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\usepackage{showkeys} % показывать метки в готовом pdf 
+%\usepackage{showkeys} % показывать метки в готовом pdf
+
+
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" OTF-fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+
+
+
 
 \usepackage{etex} % расширение классического tex
 % в частности позволяет подгружать гораздо больше пакетов, чем мы и займёмся далее
@@ -11,15 +31,17 @@
 %\usepackage{cmap} % для поиска русских слов в pdf --- теперь устарело?
 \usepackage{verbatim} % для многострочных комментариев
 \usepackage{makeidx} % для создания предметных указателей
-\usepackage[X2,T2A]{fontenc}
-\usepackage[utf8]{inputenc} % задание utf8 кодировки исходного tex файла
+
+
+
+
 \usepackage{setspace}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage{mathrsfs} % sudo yum install texlive-rsfs
 \usepackage{dsfont} % sudo yum install texlive-doublestroke
 \usepackage{array,multicol,multirow,bigstrut} % sudo yum install texlive-multirow
 \usepackage{indentfirst} % установка отступа в первом абзаце главы
-\usepackage[british,russian]{babel} % выбор языка для документа
+
 \usepackage{bm}
 \usepackage{bbm} % шрифт с двойными буквами
 \usepackage[perpage]{footmisc}
@@ -27,20 +49,20 @@
 \usepackage{dcolumn} % центрирование по разделителю для apsrtable
 
 % создание гиперссылок в pdf
-\usepackage[pdftex,unicode,colorlinks=true,urlcolor=blue,hyperindex,breaklinks]{hyperref} 
+\usepackage[unicode, colorlinks=true, urlcolor=blue, hyperindex, breaklinks]{hyperref}
 
-% свешиваем пунктуацию 
+% свешиваем пунктуацию
 % теперь знаки пунктуации могут вылезать за правую границу текста, при этом текст выглядит ровнее
 \usepackage{microtype}
 
 \usepackage{textcomp}  % Чтобы в формулах можно было русские буквы писать через \text{}
 
 % размер листа бумаги
-\usepackage[paper=a4paper,top=13.5mm, bottom=13.5mm,left=16.5mm,right=13.5mm,includefoot]{geometry}
+\usepackage[paper=a4paper, top=13.5mm, bottom=13.5mm, left=16.5mm, right=13.5mm, includefoot]{geometry}
 
 \usepackage{xcolor}
 
-\usepackage[pdftex]{graphicx} % для вставки графики 
+\usepackage{graphicx} % для вставки графики
 
 \usepackage{float,longtable}
 \usepackage{soulutf8}
@@ -52,12 +74,11 @@
 \usepackage{cancel,xspace} % sudo yum install texlive-cancel
 
 %\usepackage{minted} % display program code with syntax highlighting
-% требует установки pygments и python 
+% требует установки pygments и python
 
 \usepackage{numprint} % sudo yum install texlive-numprint
 \npthousandsep{,}\npthousandthpartsep{}\npdecimalsign{.}
 
-\usepackage{embedfile} % Чтобы код LaTeXа включился как приложение в PDF-файл
 
 \usepackage{subfigure} % для создания нескольких рисунков внутри одного
 
@@ -74,7 +95,7 @@
 
 % более красивые таблицы
 \usepackage{booktabs}
-% заповеди из докупентации: 
+% заповеди из докупентации:
 % 1. Не используйте вертикальные линни
 % 2. Не используйте двойные линии
 % 3. Единицы измерения - в шапку таблицы
@@ -88,7 +109,7 @@
 
 %\usepackage{sagetex} % для интеграции с Sage (вероятно тоже должен идти после graphics)
 
-% metapost создает упрощенные eps файлы, которые можно напрямую включать в pdf 
+% metapost создает упрощенные eps файлы, которые можно напрямую включать в pdf
 % эта группа команд декларирует, что файлы будут этого упрощенного формата
 % если metapost не используется, то этот блок не нужен
 \usepackage{ifpdf} % для определения, запускается ли pdflatex или просто латех
@@ -98,11 +119,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%  Внедрение tex исходников в pdf файл  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\embedfile[desc={Main tex file}]{\jobname.tex} % Включение кода в выходной файл
-\embedfile[desc={title_bor}]{title_bor.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -368,4 +384,4 @@
 % Утверждения нумеруются по главам
 % независимо от Лемм и Теорем
 %\newtheorem{prop}{Утверждение}
-%\newtheorem{cor}{Следствие} 
+%\newtheorem{cor}{Следствие}

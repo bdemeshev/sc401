@@ -631,16 +631,28 @@ $ \mathcal{H}_{1} \subset \mathcal{H}_{2} $
 \end{problem}
 
 \begin{problem}
-Let $ S_{n} $ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+\ldots+X_{n} $ where $ X_{n} $ are independent and identically distributed with $ \P(X_{n}=1)=\P(X_{n}=-1)=0.5 $. Let $T$ be the time of the second local maximum plus one. For example: if the sequence of $ X_{n} $ is given by $ +1,+1,-1,-1,-1,+1,-1,-1,+1,\ldots $ then $ T= 7$. We define the following sigma-algebras: $ \mathcal{F}_{n}:=\sigma(X_{1},X_{2},\ldots,X_{n})$ and $ \mathcal{F}_{T} $ --- all events which may be distninguished by a rational agent who knows all $ X_{i} $ up to time $ T $.
+Let $ S_{n} $ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+\ldots+X_{n} $ where $ X_{n} $ are independent and identically distributed with $ \P(X_{n}=1)=\P(X_{n}=-1)=0.5 $. Let $T$ be the time of the second local maximum plus one. For example: if the sequence of $ X_{n} $ is given by $ +1,+1,-1,-1,-1,+1,-1,-1,+1,\ldots$ then $T=7$. We define the following sigma-algebras: $ \mathcal{F}_{n}:=\sigma(X_{1},X_{2},\ldots,X_{n})$ and $ \mathcal{F}_{T} $ --- all events which may be distninguished by a rational agent who knows all $ X_{i} $ up to time $ T $.
 \begin{itemize}
-\item[a.] Give an example of event $A$ such that $ A\notin \mathcal{F}_{T} $ but $ A\in \mathcal{F}_{2010} $
-\item[b.] Give an example of event $B$ such that $ B\in \mathcal{F}_{T} $ but $ B\notin \mathcal{F}_{2010} $
-\item[c.] Prove that $ \mathcal{F}_{T} $ is different from each $ \mathcal{F}_{n} $
+\item Give an example of event $A$ such that $ A\notin \mathcal{F}_{T} $ but $ A\in \mathcal{F}_{2010} $
+\item Give an example of event $B$ such that $ B\in \mathcal{F}_{T} $ but $ B\notin \mathcal{F}_{2010} $
+\item Prove that $ \mathcal{F}_{T} $ is different from each $ \mathcal{F}_{n} $
+\item Does $T=5$ belongs to $\cF_T$? Does $T=5$ belongs to $\sigma(T)$?
+\item Does $\{X_1 = 1, X_2 = -1, X_3 = 1, X_4 = -1 \}$ belongs to $\cF_T$? To $\sigma(T)$?
+\item Does $\{X_1 = 1, X_2 = -1, X_3 = 1, X_4 = -1, X_5 = 1 \}$ belongs to $\cF_T$? To $\sigma(T)$?
+\item Are sigma-algebras $\cF_T$ and $\sigma(T)$ equal?
 \end{itemize}
 
 
 \begin{sol}
-
+  \begin{itemize}
+    \item
+    \item
+    \item
+    \item
+    \item yes, yes
+    \item no, no
+    \item no, consider $\{X_1 = 1, X_2 = -1, X_3 = 1, X_4 = 1, X_5 = -1 \}$
+  \end{itemize}
 \end{sol}
 \end{problem}
 
@@ -5578,5 +5590,3 @@ $r$ --- процентная ставка в евро. \\
 
 
 \Closesolutionfile{solution_file}
-
-

@@ -1,6 +1,6 @@
 \RequirePackage[l2tabu, orthodox]{nag} % проверка плохого стиля, но что-то она не очень пашет
 
-\documentclass[pdftex,12pt,a4paper]{article}
+\documentclass[12pt, a4paper]{article}
 
 \input{title_bor}
 
@@ -10,7 +10,7 @@
 \usepackage{answers}
 
 \hypersetup{
-pdftitle = {Заметки по стохастическому анализу, Борис Демешев},
+pdftitle = {Сборник задач по стохастическому анализ, Борис Демешев},
 pdfdisplaydoctitle=true, % Определение заголовка файла PDF
 }
 
@@ -18,10 +18,9 @@ pdfdisplaydoctitle=true, % Определение заголовка файла 
 
 \newcommand{\cF}{\mathcal{F}}
 
-\embedfile[desc={Problems...}]{sc_pr_all.tex} % Включение кода в выходной файл
 
 
-% если задача решается несколькими методами - дать ее (ссылку на нее) в нескольких разделах
+% если задача решается несколькими методами - дать её (ссылку на нее) в нескольких разделах
 
 
 \makeindex % команда для создания предметного указателя
@@ -43,10 +42,10 @@ pdfdisplaydoctitle=true, % Определение заголовка файла 
 \parindent=0 pt % отступ равен 0
 
 \textbf{Цель} \\
-Сборник задач по стохастическому. Цели:
+Сборник задач по стохастическому анализу. Цели:
 \begin{enumerate}
-\item Открытость. \url{https://github.com/bdemeshev/sc401/wiki/}
-\item Задачи под курс стохастического анализа ВШЭ
+\item Открытость: \url{bdemeshev.github.io/sc401}
+\item Задачи под курс стохастического анализа для экономистов
 \end{enumerate}
 
 \tableofcontents
