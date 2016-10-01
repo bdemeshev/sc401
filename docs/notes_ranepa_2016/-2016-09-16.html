@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html  lang="ru-RU">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Конспект по стохастическому анализу</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Конспект по стохастическому анализу :)">
+  <meta name="generator" content="bookdown 0.1.14 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Конспект по стохастическому анализу" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Конспект по стохастическому анализу :)" />
+  <meta name="github-repo" content="bdemeshev/sc401" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Конспект по стохастическому анализу" />
+  
+  <meta name="twitter:description" content="Конспект по стохастическому анализу :)" />
+  
+
+<meta name="author" content="Борис Демешев">
+
+  
+<meta name="date" content="2016-10-01">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="-2016-09-02.html">
+<link rel="next" href="-2-sigma-2016-09-25.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Конспект по стохастическому анализу</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>О проекте</a></li>
+<li class="chapter" data-level="1" data-path="-2016-09-02.html"><a href="-2016-09-02.html"><i class="fa fa-check"></i><b>1</b> Счетные и несчетные множества, 2016-09-02</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.1</b> Счётное множество</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.2</b> Сравнимость мощностей</a></li>
+<li class="chapter" data-level="1.3" data-path="-2016-09-02.html"><a href="-2016-09-02.html#--"><i class="fa fa-check"></i><b>1.3</b> Доказательство от принцессы</a></li>
+<li class="chapter" data-level="1.4" data-path="-2016-09-02.html"><a href="-2016-09-02.html#section-1.4"><i class="fa fa-check"></i><b>1.4</b> Мораль</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="-2016-09-16.html"><a href="-2016-09-16.html"><i class="fa fa-check"></i><b>2</b> Счетные множества и другие бесконечности. Решение интересных задачек, 2016-09-16</a><ul>
+<li class="chapter" data-level="2.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-1-1.3---captain-nemo-problem"><i class="fa fa-check"></i><b>2.1</b> Задача №1 (1.3 в задачнике) “Captain Nemo problem”</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>2.1.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.1.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--."><i class="fa fa-check"></i><b>2.2</b> Бесконечности бывают разные.</a></li>
+<li class="chapter" data-level="2.3" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-2-1.8----"><i class="fa fa-check"></i><b>2.3</b> Задача №2 (1.8) “Эта задачка — просто космос”</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--1"><i class="fa fa-check"></i><b>2.3.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.3.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-1"><i class="fa fa-check"></i><b>2.3.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-3-1.9------"><i class="fa fa-check"></i><b>2.4</b> Задача №3 (1.9) “Помоги Даше спасти гномов от дракона”</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--2"><i class="fa fa-check"></i><b>2.4.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-2"><i class="fa fa-check"></i><b>2.4.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-4--------"><i class="fa fa-check"></i><b>2.5</b> Задача №4 “И Деды Морозы бывают хитрыми” (картинка с Жебером)</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--3"><i class="fa fa-check"></i><b>2.5.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.5.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-3"><i class="fa fa-check"></i><b>2.5.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="-2016-09-16.html"><a href="-2016-09-16.html#section-2.6"><i class="fa fa-check"></i><b>2.6</b> Бонус</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html"><i class="fa fa-check"></i><b>3</b> Лекция 2, Сигма-алгебра (<span class="math inline">\(\sigma\)</span> - алгебра), 2016-09-25</a><ul>
+<li class="chapter" data-level="3.1" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html#-sigma-"><i class="fa fa-check"></i><b>3.1</b> Определение <span class="math inline">\(\sigma\)</span>-алгебры</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html#section-3.1.1"><i class="fa fa-check"></i><b>3.1.1</b> Обозначения:</a></li>
+<li class="chapter" data-level="3.1.2" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html#--sigma---"><i class="fa fa-check"></i><b>3.1.2</b> Неформальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+<li class="chapter" data-level="3.1.3" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html#---"><i class="fa fa-check"></i><b>3.1.3</b> Пример с игровым кубиком:</a></li>
+<li class="chapter" data-level="3.1.4" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html#--sigma---"><i class="fa fa-check"></i><b>3.1.4</b> Формальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html#----"><i class="fa fa-check"></i><b>3.2</b> Упражнение про Петров и Николаев:</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown"   target="blank">Создано с использованием пакета bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Конспект по стохастическому анализу</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="----.----2016-09-16" class="section level1">
+<h1><span class="header-section-number">Глава 2</span> Счетные множества и другие бесконечности. Решение интересных задачек, 2016-09-16</h1>
+<p>Конспект: Дуров Илья</p>
+<div id="-1-1.3---captain-nemo-problem" class="section level2">
+<h2><span class="header-section-number">2.1</span> Задача №1 (1.3 в задачнике) “Captain Nemo problem”</h2>
+<div id="-" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Условие задачи:</h3>
+<p>Вражеская подводная лодка находится где-то на числовой прямой (рассматриваем только целые координаты). Она начинает двигаться в определенном направлении, проходя за минуту целое число точек прямой. Вы не знаете ни ее начальной позиции,ни скорости движения вдоль прямой. При этом вы можете запускать торпеды куждую минуту, напрявляя их в любую точку с целой координатой - если подлодка в этоот момент времени находиться в этой точке, вы ее подбили и она тонет. У вас есть неограниченное количество времени и торпед для того, чтобы потопить вражескую лодку.</p>
+<p>Разработаейте стратегию, которая в конечном счете гарантирует потопление подлодки.</p>
+</div>
+<div id="section-2.1.2" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Решение:</h3>
+<p>Заметим, что лодка характиризуется двумя параметрами: стартовой позицией (положение на целочисленной прямой) и скоростью-направлением движения. Таким образом за счетное число шагов (счетное число единиц времени и потраченных торпед) можно перебрать–“обстрелять” все гипотечиские положения лодки.</p>
+<p>Графически это можно представить следующим образом:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, -<span class="dv">1</span>, -<span class="dv">1</span>, -<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)
+v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, -<span class="dv">1</span>, -<span class="dv">1</span>, -<span class="dv">1</span>, -<span class="dv">1</span>, <span class="dv">0</span>)
+d &lt;-<span class="st"> </span><span class="kw">data.frame</span>(s, v)
+  
+<span class="kw">ggplot</span>(d, <span class="kw">aes</span>(s, v)) +
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Стартовая позиция&quot;</span>) +
+<span class="st">      </span><span class="kw">ylab</span>(<span class="st">&quot;Скорость&quot;</span>) +
+<span class="st">      </span><span class="kw">xlim</span>(<span class="kw">c</span>(-<span class="dv">3</span>, <span class="dv">3</span>)) +
+<span class="st">      </span><span class="kw">ylim</span>(<span class="kw">c</span>(-<span class="dv">3</span>, <span class="dv">3</span>)) +
+<span class="st">     </span><span class="kw">geom_point</span>(<span class="dt">colour=</span><span class="st">&quot;blue&quot;</span>) +
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="kw">aes</span>(<span class="dt">xend =</span> <span class="kw">c</span>(<span class="kw">tail</span>(s, <span class="dt">n =</span> -<span class="dv">1</span>), <span class="ot">NA</span>), <span class="dt">yend =</span> <span class="kw">c</span>(<span class="kw">tail</span>(v, <span class="dt">n =</span> -<span class="dv">1</span>), <span class="ot">NA</span>)),                             <span class="dt">arrow=</span><span class="kw">arrow</span>(<span class="dt">length =</span> <span class="kw">unit</span>(<span class="fl">0.3</span>, <span class="st">&quot;cm&quot;</span>)))</code></pre></div>
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_segment).</code></pre>
+<p><img src="lecture_notes_sc_files/figure-html/submarine-1.png" width="672" /></p>
+<p>Здесть, например, точке (0,0) соответсвует лодка, стартующая из положения 0 на целочисленной прямой и двигающаяся со скоростью 0, то есть стоящая на месте. Поэтому в первый момент времени удобно направить торпеду в эту точку, начав перебор всех вариантов. Пусть дальше стреляем в лодку, соответсвующую точке (1,0): у нее скорость тоже равна 0, поэтому даже во второй момент времени она останется на стартовой позиции 1, куда мы и отправим вторую торпеду.И так далее по спирали, как показано на рисунке. Для уверенности, рассмотрим седьмой момент времени (шаг), которому соответсвуюет точка (-1,-1). Стартуя за из точки -1, за семь секунд эта лодка продалевает дистанцию в семь единиц, двигаясь влево по числовой прямой. В итоге она оказывается в точке -8, куда мы и отправляем торпеду, помогая капитану Немо победить зловредных врагов.</p>
+</div>
+</div>
+<div id="--." class="section level2">
+<h2><span class="header-section-number">2.2</span> Бесконечности бывают разные.</h2>
+<p>Градация бесконечных множеств:</p>
+<p>счетное <span class="math inline">\(-&gt;\)</span> континуум (например, R — множество рациональных) <span class="math inline">\(-&gt;\)</span> больше континуума (например множество все подмножеств R)</p>
+</div>
+<div id="-2-1.8----" class="section level2">
+<h2><span class="header-section-number">2.3</span> Задача №2 (1.8) “Эта задачка — просто космос”</h2>
+<div id="--1" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Условие задачи:</h3>
+<p>Назовём две бесконечных вправо последовательности из нулей и единиц «похожими», если они отличаются конечное количество членов. Это отношение «похожести» разбивает все последовательности на классы похожих последовательностей.</p>
+<ol style="list-style-type: decimal">
+<li><p>Какова мощность множества последовательностей похожих на последовательность из одних нулей?</p></li>
+<li><p>Какова мощность множества классов похожих последовательностей?</p></li>
+</ol>
+</div>
+<div id="-1" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Решение:</h3>
+<ol style="list-style-type: decimal">
+<li>Для урощение воспрятия подключим воображение и представим каждую последовательность и похожие на нее в виде созвездий, звезды в которые объединяются по принципу “похожести” (теперь вы поняли, почему задачка — космос?). Или графа, где вершины — последовательности, а ребра между вершинами указывают на наличие похожести этих вершин, причем каждое созвездий — связный граф.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g0 &lt;-<span class="st"> </span><span class="kw">sample_gnp</span>(<span class="dv">20</span>, <span class="dv">1</span>)
+g1&lt;-<span class="st"> </span><span class="kw">sample_gnp</span>(<span class="dv">15</span>, <span class="dv">1</span>)
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">plot.igraph</span>(g0, <span class="dt">vertex.size =</span> <span class="dv">5</span>)
+<span class="kw">plot.igraph</span>(g1, <span class="dt">vertex.size =</span> <span class="dv">5</span>)</code></pre></div>
+<p><img src="lecture_notes_sc_files/figure-html/stars-1.png" width="672" /></p>
+<p>Так как по условию, “похожие” — те последовательности–звезды, которые отличаются друг от друга на конечное число элементов (0 или 1), то легко понять, что и множество “похожих” последовательностей на последовательноть только из нулей будет не более, чем счетное множество.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Теперь повеселее. Главное, что надо понять при решение этого, казалось бы, нетривиального пункта, как раз довольно тривиально - множество всех звезд представляет собой объединение всех созвездий. Вторая важная вещь — то, что было установленно на одном из предыдущих занятий (вспоминаем канторовскую диагональную процедуру): множество последовательностей из 0 и 1 (звезд) несчетно (имеет мощность континуум).</li>
+</ol>
+<p>Теперь, когда мы вооружены этими двумя фактами, как Рембо, давайти разберемся с решением это задачей, так же как и он разбирался со своими: предположим, что совездий конечно или счетно. Но, как известно, объединение счетного или конечного числа счетных множеств (множеств звезд в каждом созвездии - см. первый пункт) тоже счетно, а мы только что установили, что объединение созвездий дает несчетное множество звезд (космически звучит!). Значит, и множество созвездий представляет собой множество мощности континуум.</p>
+<p>Более формальное решение выглядит так:</p>
+<p><span class="math inline">\(B=\{ Ci \}; A = \cup Ci =&gt; card A = card (\cup Ci) = континуум &lt;=&gt; card B = континуум\)</span></p>
+<p>Тут A — множество звезды, С — множество звезд в i-ом созвездии, B — множество созвездий.</p>
+</div>
+</div>
+<div id="-3-1.9------" class="section level2">
+<h2><span class="header-section-number">2.4</span> Задача №3 (1.9) “Помоги Даше спасти гномов от дракона”</h2>
+<div class="figure">
+<img src="https://pp.vk.me/c9599/u33879959/a_298d897f.jpg" alt="Ты поможешь Даше спасти гномов" />
+<p class="caption">Ты поможешь Даше спасти гномов</p>
+</div>
+<div id="--2" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Условие задачи:</h3>
+<p>Злобный Дракон поймал бесконечное счётное количество гномов. Расставил их в шеренгу так, что первые видит всех остальных, второй –— всех, начиная с третьего гнома, и т.д. Далее Дракон надевает каждому гному либо чёрный, либо белый колпак. Гномы одновременно пытаются угадать цвет своего колпака. Гномы, не угадавшие цвет своего колпака, съедаются Драконом.</p>
+<p>Есть ли у гномов стратегия, позволяющая им иметь конечные боевые потери при встречи со Злобным Драконом?</p>
+</div>
+<div id="-2" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Решение:</h3>
+<p>Решение задачи с нуля может показаться довольно сложной, но у нас, на самом деле, есть мощный инстремент выводов из предыдущей. Итак, у нас есть счетное число гномов, которое увидело подлетающего дракона, промышляющего надеванием колпаков. Эти гному знют, что колпаки бывают двух цветов — черного и белого, поэтому последовательность из белых и черных колпаков (надетых на головы бедных гномов, конечно) является последовательностью абсолютно эквивалентной последовательности из нулей и единиц,как рассмотренной в предыдущей задаче. Что же ммешает нам посоветовать гномам заранее определить представительскую последовательность в каждом каждом классе похожих (главную звезду в созвездии похожих звезд колпаков) и угадывать свой цвет, согласно ей?!</p>
+<p>Ниже представлен пример визуализации выбора представительской последовательности в классе похожих (красная вершина — выбранная последовательность):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g3 &lt;-<span class="st"> </span><span class="kw">sample_gnp</span>(<span class="dv">10</span>, <span class="dv">1</span>)
+<span class="kw">plot.igraph</span>(g3,<span class="dt">layout=</span>layout_as_star,
+            <span class="dt">vertex.color=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="kw">rep</span>(<span class="st">&quot;NA&quot;</span>, <span class="kw">length</span>(<span class="kw">V</span>(g3)) -<span class="st"> </span><span class="dv">1</span>)))</code></pre></div>
+<p><img src="lecture_notes_sc_files/figure-html/hats-1.png" width="672" /></p>
+<p>Тогда, каждый гном, видя цвета колпаков своих друзей, стоящих впереди, сможет определить класс, к которому принадлежит реальная последовательность колпаков (определенная драконом при расдаче колпаков). Так как эта последовательность “похожа” на выбранную гномами в качестве представительнской, то она будет оличаться от нее на конечное число колпаков. Значит, гадая согласно выбранной последовательности, лишь конечное число гномов (бедняги) назовут свои цвета неправильно.</p>
+</div>
+</div>
+<div id="-4--------" class="section level2">
+<h2><span class="header-section-number">2.5</span> Задача №4 “И Деды Морозы бывают хитрыми” (картинка с Жебером)</h2>
+<div class="figure">
+<img src="http://cs4.pikabu.ru/images/big_size_comm/2014-11_6/14171924987385.jpg" alt="Злой Жебер" />
+<p class="caption">Злой Жебер</p>
+</div>
+<div id="--3" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Условие задачи:</h3>
+<p>Дед Мороз пришёл к детишкам на Новый Год с мешком, в котором счётное количество пронумерованных конфет. Конфеты можно есть только после наступления Нового Года. Ровно за минуту до Нового Года Дед Мороз выдаёт детишкам конфеты номер 1 и 2 и тут же забирает конфету номер 1 обратно. Ровно за полминуты –— выдаёт конфеты номер 3 и 4 и забирает конфету номер 2. Ровно за четверть минуты –— выдаёт конфеты номер 5 и 6 и забирает конфету номер 3. И так далее, ускоряясь, выдаёт из мешка две очередные конфеты и забирает у детишек конфету с наименьшим номером.</p>
+<ol style="list-style-type: decimal">
+<li><p>На сколько изменяется количество конфет у детишек за одну операцию дарения–забирания?</p></li>
+<li><p>У кого к Новому Году окажется конфета номер 1?</p></li>
+<li><p>У кого к Новому Году окажется конфета номер 2016?</p></li>
+<li><p>Сколько конфет будет у детишек к Новому Году?</p></li>
+</ol>
+</div>
+<div id="-3" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Решение:</h3>
+<ol style="list-style-type: decimal">
+<li><p>Первый вопрос — для понимания, но с подвохом для дальнейших расуждений: за одну операцию Дед Мороз дарит две конфеты и забирает одну, следовательно, количество конфет у детей меняеться на 1 за одну операцию, причем конфет становиться на одну больше.</p></li>
+<li><p>Этот вопрос тоже не сложен, но играет важную роль в дальнейшем понимании: Дед Мороз забирает первую конфету у детей еще при первой операции, значит, в итоге она остается у него.</p></li>
+<li><p>Вот здесь будет посложнее: казалось бы времени до Нового года так мало — всего минута — а Дед Мороз должен успеть выдать 2016 конфету и забрать ее. Для упрощения понимания давайте построим таблицу:</p></li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Минут до новго года</th>
+<th>ДМ выдал</th>
+<th>ДМ забрал</th>
+<th>У детей</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1;2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>1/2</td>
+<td>3;4</td>
+<td>2</td>
+<td>3;4</td>
+</tr>
+<tr class="odd">
+<td>1/4</td>
+<td>5;6</td>
+<td>3</td>
+<td>4;5;6</td>
+</tr>
+<tr class="even">
+<td>1/8</td>
+<td>7;8</td>
+<td>4</td>
+<td>5;6;7;8</td>
+</tr>
+<tr class="odd">
+<td>1/16</td>
+<td>9;10</td>
+<td>5</td>
+<td>6;7;8;9;10</td>
+</tr>
+</tbody>
+</table>
+<p>На первый взгляд может показаться, что количество конфет у детей по мере приблежения к Новому году расте — это же говорит нам и ответ на первый пункт (+1 за операцию). Однако можно заметить, что, например, пятую конфету ДМ забирает у детей на пятой операции за 1/16 (<span class="math inline">\(1/16=1/2^4\)</span>) минут до праздника. Точно так же можно определить номер операции и время, оставшееся до Новго года, для 2016–конфеты: она будет забрана у детей на 2016 шаге за <span class="math inline">\(1/2^{2015}\)</span> минут до торжества. Дело в том, что моменты времени (доли минуты) представляют множество рациональных чисел, которое, как известно, счетно (было установлено на первом занятии), а не конечно, как привычно считать обычному человеку.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Этот факт помогает понять, что мы с точностью можем назвать момент времени (минут до Нового года), когда будет забрана n-ая конфета:</li>
+</ol>
+<p><span class="math inline">\(Tn=1/2^{n-1}\)</span>, где T — момент времени забирания кофеты с номером n</p>
+<p>Формализируем наше решение: Пусть <span class="math inline">\(A_i\)</span> — множество конфет у детей сразу после i-ой операции “дарения–забирания”. Тогда нетрудно увидеть (см. таблицу), что <span class="math inline">\(card A_i = i\)</span>. При этом <span class="math inline">\(\{A_i\}\)</span> — возрастающая последовательность (как и было показано в пункте 1 и таблице). Следовательно, <span class="math inline">\(\lim_{i\to\infty} card A_i = \infty\)</span>.</p>
+<p>Однако физически этот предел означет, сколько конфет будет у детей за мгновение до праздника. Но после этого мгновения наш сверхсветовой Дед Мороз все еще будет продолжать своершать свои хитрые операции. То есть нам надо узнать, размер множества <span class="math inline">\(A_i\)</span> на очень отдаленном шаге. Что бы это понять, необходимо проследить за каждой конфетой — определить, будет ли она входить в это отдаленное множество. Иначе — будет ли она когда-нибудь забрана Дедом Морозом. Но нам известно, что для каждой конфеты можно определить момент ее забирания, и это множество останется пустым, а его размерность нулевой.</p>
+<p><span class="math inline">\(\lim_{i\to\infty} A_i = \emptyset =&gt; card (\lim_{i\to\infty} A_i) = 0\)</span>.</p>
+<p>То есть в Новый год все конфеты окажутся у Деда Мороза (хотя такими действиями он порочит это имя)</p>
+</div>
+</div>
+<div id="section-2.6" class="section level2">
+<h2><span class="header-section-number">2.6</span> Бонус</h2>
+<p>После хорошего занятие, можно сделать маленькую передышку и посмотреть видео, которое, скорее всего послужило основой задачи про Дедад Мороза:</p>
+<p><a href="https://www.youtube.com/watch?v=P5EG9A26tL8">Никакого праздника</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-2016-09-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-2-sigma-2016-09-25.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": true,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bdemeshev/sc401/issues",
+"text": null
+},
+"download": [["lecture_notes_sc.pdf", "PDF"], ["lecture_notes_sc.epub", "EPUB"], ["lecture_notes_sc.mobi", "MOBI"]],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true,
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

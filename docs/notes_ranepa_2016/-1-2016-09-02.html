@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html  lang="ru-RU">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Конспект по стохастическому анализу</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Конспект по стохастическому анализу :)">
+  <meta name="generator" content="bookdown 0.1.14 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Конспект по стохастическому анализу" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Конспект по стохастическому анализу :)" />
+  <meta name="github-repo" content="bdemeshev/sc401" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Конспект по стохастическому анализу" />
+  
+  <meta name="twitter:description" content="Конспект по стохастическому анализу :)" />
+  
+
+<meta name="author" content="Борис Демешев">
+
+  
+<meta name="date" content="2016-10-01">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="-3-2016-09-16.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Конспект по стохастическому анализу</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>О проекте</a></li>
+<li class="chapter" data-level="1" data-path="-1-2016-09-02.html"><a href="-1-2016-09-02.html"><i class="fa fa-check"></i><b>1</b> Лекция 1, Счетные и несчетные множества, 2016-09-02</a></li>
+<li class="chapter" data-level="2" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html"><i class="fa fa-check"></i><b>2</b> Лекция 3, Счетные множества и другие бесконечности. Решение интересных задачек, 2016-09-16</a><ul>
+<li class="chapter" data-level="2.1" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#-1-1.3---captain-nemo-problem"><i class="fa fa-check"></i><b>2.1</b> Задача №1 (1.3 в задачнике) “Captain Nemo problem”</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>2.1.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.1.2" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#--."><i class="fa fa-check"></i><b>2.2</b> Бесконечности бывают разные.</a></li>
+<li class="chapter" data-level="2.3" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#-2-1.8----"><i class="fa fa-check"></i><b>2.3</b> Задача №2 (1.8) “Эта задачка — просто космос”</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#--1"><i class="fa fa-check"></i><b>2.3.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.3.2" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#-1"><i class="fa fa-check"></i><b>2.3.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#-3-1.9------"><i class="fa fa-check"></i><b>2.4</b> Задача №3 (1.9) “Помоги Даше спасти гномов от дракона”</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#--2"><i class="fa fa-check"></i><b>2.4.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#-2"><i class="fa fa-check"></i><b>2.4.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#-4--------"><i class="fa fa-check"></i><b>2.5</b> Задача №4 “И Деды Морозы бывают хитрыми” (картинка с Жебером)</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#--3"><i class="fa fa-check"></i><b>2.5.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.5.2" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#-3"><i class="fa fa-check"></i><b>2.5.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="-3-2016-09-16.html"><a href="-3-2016-09-16.html#section-2.6"><i class="fa fa-check"></i><b>2.6</b> Бонус</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-2-sigma-2016-09-25.html"><a href="-2-sigma-2016-09-25.html"><i class="fa fa-check"></i><b>3</b> Лекция 2, Сигма-алгебра (<span class="math inline">\(\sigma\)</span> - алгебра), 2016-09-25</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown"   target="blank">Создано с использованием пакета bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Конспект по стохастическому анализу</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="-1-----2016-09-02" class="section level1">
+<h1><span class="header-section-number">Глава 1</span> Лекция 1, Счетные и несчетные множества, 2016-09-02</h1>
+<p>Конспект: Людмила Гадий</p>
+<p>Рассмотрим ряд примеров на определение счетности/несчетности множеств:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb{N}\)</span> = {1, 2, 3, …} ;</li>
+<li><span class="math inline">\(\mathbb{Z}\)</span> = {- … , -3, -2, -1, 0, 1, 2, 3, …} ;</li>
+<li><span class="math inline">\(\mathbb{Q}\)</span> = { <span class="math inline">\(\frac{m}{n}\)</span> | <span class="math inline">\(m\in\mathbb{Z}\)</span>, <span class="math inline">\(n\in\mathbb{N}\)</span>} ;<br />
+</li>
+<li><span class="math inline">\(\mathbb{R}\)</span> – множество действительных чисел;</li>
+<li>Точки на плоскости с целыми координатами;<br />
+</li>
+<li>[0 ; 1] ;<br />
+</li>
+<li>[0 ; 1]<span class="math inline">\(\times\)</span>[0 ; 1] = { (x, y) | <span class="math inline">\(x\in\)</span>, <span class="math inline">\(y\in\)</span> } ;<br />
+</li>
+<li>Множество бесконечных последовательностей из нулей и единиц.</li>
+</ol>
+<p>Будет рассматривать эти примеры в ходе изложения в порядке их нумерации.</p>
+<p><strong>Определение</strong>:<br />
+<em>Счетное множество</em> - это либо конечное, либо равномощное натуральным числам множество (иными словами, каждому элементу можно сопоставить натуральное число взаимно однозначно, то есть так, что ни один элемент в таких множествах не будет пропущен).</p>
+<ol style="list-style-type: decimal">
+<li><p>Элементы множества натуральных чисел можно пронумеровать, следовательно множество <span class="math inline">\(\mathbb{N}\)</span> - счетно.</p></li>
+<li><p>По определению счетного множества, множество целых чисел <span class="math inline">\(\mathbb{Z}\)</span> - счётно, так как целые числа можно расположить в виде последовательности 0, 1, −1, 2, −2, 3, −3, … . Иными словами, можно привести взаимнооднозначное соответствие между целыми и натуральными числами, например, таким способом (см. рисунок):<br />
+<span class="math inline">\(0\leftrightarrow1\)</span><br />
+<span class="math inline">\(1\leftrightarrow2\)</span><br />
+<span class="math inline">\(-1\leftrightarrow3\)</span><br />
+<span class="math inline">\(2\leftrightarrow4\)</span><br />
+<span class="math inline">\(-2\leftrightarrow5\)</span><br />
+<span class="math inline">\(3\leftrightarrow6\)</span><br />
+…</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">c</span>(-<span class="dv">5</span>:<span class="dv">5</span>), <span class="kw">c</span>(-<span class="dv">5</span>:<span class="dv">5</span>), <span class="dt">type=</span><span class="st">&#39;n&#39;</span>, <span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>, <span class="dt">yaxt=</span><span class="st">&quot;n&quot;</span>)
+<span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at=</span>-<span class="dv">5</span>:<span class="dv">5</span>, <span class="dt">labels=</span>-<span class="dv">5</span>:<span class="dv">5</span>)
+<span class="kw">axis</span>(<span class="dv">2</span>, <span class="dt">at=</span>-<span class="dv">5</span>:<span class="dv">5</span>, <span class="dt">labels=</span>-<span class="dv">5</span>:<span class="dv">5</span>)
+x1=<span class="kw">rep</span>(<span class="kw">c</span>(<span class="fl">0.5</span>,<span class="dv">0</span>),<span class="dv">3</span>)
+r=<span class="kw">seq</span>(<span class="dv">1</span>:<span class="dv">6</span>)/<span class="dv">2</span>
+for(i in <span class="dv">1</span>:<span class="dv">6</span>){
+<span class="kw">curve</span>(<span class="kw">sqrt</span>((r[i])^<span class="dv">2</span>-(x-x1[i])^<span class="dv">2</span>), x1[i]-r[i], x1[i]+r[i], <span class="dt">add=</span><span class="ot">TRUE</span>)
+if(i %%<span class="st"> </span><span class="dv">2</span> ==<span class="st"> </span><span class="dv">1</span>) <span class="kw">arrows</span>(x1[i]+r[i],<span class="fl">0.01</span>,x1[i]+r[i],<span class="dv">0</span>, <span class="dt">length=</span><span class="fl">0.1</span>)
+else <span class="kw">arrows</span>(x1[i]-r[i],<span class="fl">0.01</span>,x1[i]-r[i],<span class="dv">0</span>, <span class="dt">length=</span><span class="fl">0.1</span>)
+}
+<span class="kw">arrows</span>(-<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">arrows</span>(<span class="dv">0</span>,-<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h =</span> -<span class="dv">5</span>:<span class="dv">5</span>, <span class="dt">v =</span> -<span class="dv">5</span>:<span class="dv">5</span>, <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>)</code></pre></div>
+<p><img src="lecture_notes_sc_files/figure-html/unnamed-chunk-2-1.png" width="768" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Докажем счетность множества рациональных чисел:<br />
+Расположим рациональные числа в виде таблицы, строку которой с номером n образуют дроби со знаменателем n. Нумеруем по прямоугольникам, начиная с нуля и пропуская при этом числа, которые уже получили номер ранее. Так, любое рациональное число получит некоторый номер, что доказывает счетность множества рациональных чисел.</li>
+</ol>
+<p><strong>Утверждение</strong>: Если множество А равномощно подмножеству В, то либо мощность А меньше мощности В, либо А и В равномощны.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Из курса высшей алгебры:<br />
+Для доказательства счетности множества предположим противное. Пусть множество <span class="math inline">\(\mathbb{R}\)</span> состоит из чисел a<sub>1</sub>,a<sub>2</sub>,…,a<sub>n</sub>,…. Рассмотрим дробные части <span class="math inline">\(\alpha\)</span><sub>n</sub> чисел a<sub>n</sub>, 0 &lt; <span class="math inline">\(\alpha\)</span><sub>n</sub> &lt; 1, расположим в виде таблицы:<br />
+<span class="math inline">\(\alpha\)</span><sub>1</sub> = 0, <span class="math inline">\(\alpha\)</span><sub>11</sub>, <span class="math inline">\(\alpha\)</span><sub>12</sub>, …, <span class="math inline">\(\alpha\)</span><sub>1n</sub>, …<br />
+<span class="math inline">\(\alpha\)</span><sub>2</sub> = 0, <span class="math inline">\(\alpha\)</span><sub>21</sub>, <span class="math inline">\(\alpha\)</span><sub>22</sub>, …, <span class="math inline">\(\alpha\)</span><sub>2n</sub>, …<br />
+…<br />
+Чтобы опровергнуть гипотезу о счетности множества <span class="math inline">\(\mathbb{R}\)</span>, приведем пример числа a, отличного от всех чисел a<sub>1</sub>,a<sub>2</sub>,…,a<sub>n</sub>,… .<br />
+Рассмотрим число <span class="math inline">\(\beta\)</span> = 0, <span class="math inline">\(\beta\)</span><sub>1</sub>, <span class="math inline">\(\beta\)</span><sub>2</sub>, …, <span class="math inline">\(\beta\)</span><sub>n</sub>, … . Пусть <span class="math inline">\(\beta_1\ne\alpha_{11}\)</span>, <span class="math inline">\(\beta_2\ne\alpha_{22}\)</span>, …, <span class="math inline">\(\beta_n\ne\alpha_{nn}\)</span>, тогда <span class="math inline">\(\beta_k\ne\alpha_k\)</span>, k = 1,2,…,n,…, т.е. это число не совпадает ни с одним из чисел a<sub>1</sub>,a<sub>2</sub>,…,a<sub>n</sub>,…, что означает, что наше предположение о том, что все числа множества <span class="math inline">\(\mathbb{R}\)</span> удалось пронумеровать, привело к противоречию, и множество несчетно.</li>
+</ol>
+<p>Кроме того, <span class="math inline">\(\mathbb{R}\)</span> ~ [0 ; 1] - это несчетные множества с одинаковой мощностью. Однако как можно показать, что <span class="math inline">\(\mathbb{R}\)</span> не мощнее [0 ; 1] ? Для наглядности можно использовать график арктангенса. Преобразуем его до вида <span class="math inline">\(atan(x)/pi+1/2\)</span>. Видно, что его асимптоты будут иметь координаты 0 и 1 по оси ординат. Также видно, что каждой точке на оси X (эквивалентно множеству <span class="math inline">\(\mathbb{R}\)</span>) соответствует значение на оси Y, причем каждое из соответствующих значений лежит в промежутке от нуля до единицы. Таким образом, <span class="math inline">\(\mathbb{R}\)</span> ~ (0 ; 1).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">atan</span>(x)/pi<span class="dv">+1</span>/<span class="dv">2</span>, <span class="dt">from =</span> -<span class="dv">10</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">main =</span> <span class="st">&quot;График arctg(x)/pi+1/2&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;ArcTg(x)&quot;</span>) 
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">1</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>:<span class="dv">40</span>/<span class="dv">20</span>, <span class="dt">v =</span> -<span class="dv">20</span>:<span class="dv">20</span>/<span class="dv">2</span>, <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>)
+x1 &lt;-<span class="st"> </span><span class="kw">tan</span>((<span class="dv">1</span>/<span class="dv">4-1</span>/<span class="dv">2</span>)*pi)
+<span class="kw">arrows</span>(x1, <span class="dv">1</span>/<span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">1</span>/<span class="dv">4</span>)
+<span class="kw">arrows</span>(x1, <span class="kw">atan</span>(x1)/pi<span class="dv">+1</span>/<span class="dv">2</span>, x1, <span class="dv">0</span>)</code></pre></div>
+<p><img src="lecture_notes_sc_files/figure-html/unnamed-chunk-3-1.png" width="768" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Проведем в данном случае аналогию с точками на плоскости. Так, например, можно двигаться “по спирали”, пересчитывая тем самым все точки на этой плоскости.<br />
+Во избежание путаницы, важно отметить, что в рамках этого способа <span class="math inline">\((-3,-1)\ne(-6,-2)\)</span>, в то время как <span class="math inline">\(\frac{-3}{-1}=\frac{-6}{-2}\)</span>.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">c</span>(-<span class="dv">5</span>:<span class="dv">5</span>),<span class="kw">c</span>(-<span class="dv">5</span>:<span class="dv">5</span>),<span class="dt">type=</span><span class="st">&quot;n&quot;</span>,<span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)
+<span class="kw">arrows</span>(-<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">0</span>, <span class="dt">length=</span><span class="fl">0.25</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">arrows</span>(<span class="dv">0</span>,-<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">5</span>, <span class="dt">length=</span><span class="fl">0.25</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h =</span> -<span class="dv">5</span>:<span class="dv">5</span>, <span class="dt">v =</span> -<span class="dv">5</span>:<span class="dv">5</span>, <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>)
+x=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,-<span class="dv">1</span>,-<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>:-<span class="dv">2</span>,-<span class="dv">2</span>,-<span class="dv">2</span>,-<span class="dv">2</span>,-<span class="dv">2</span>:<span class="dv">3</span>)
+y=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,-<span class="dv">1</span>,-<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>:-<span class="dv">2</span>,-<span class="dv">2</span>,-<span class="dv">2</span>,-<span class="dv">2</span>,-<span class="dv">2</span>,-<span class="dv">2</span>)
+s=<span class="kw">seq</span>(<span class="dv">6</span>)
+<span class="kw">arrows</span>(x[s],y[s],x[s<span class="dv">+1</span>],y[s<span class="dv">+1</span>], <span class="dt">length=</span><span class="fl">0.15</span>, <span class="dt">angle=</span><span class="dv">20</span>)
+s=<span class="kw">seq</span>(<span class="dv">14</span>)+<span class="dv">7</span>
+<span class="kw">points</span>(x[s],y[s], <span class="dt">pch=</span><span class="dv">16</span>)</code></pre></div>
+<p><img src="lecture_notes_sc_files/figure-html/unnamed-chunk-4-1.png" width="768" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Отрезок [0,1] равномощен множеству всех бесконечных последовательностей нулей и единиц, то есть является несчетным множеством. Подробнее см. в учебнике Н.К.Верещагина и А.Шень <a href="http://www.mccme.ru/free-books/shen/shen-logic-part1-2.pdf">Начала теории множеств</a>.</p></li>
+<li><p>[0 ; 1]<span class="math inline">\(\times\)</span>[0 ; 1] - декартов квадрат; он обладает большей мощностью, чем отрезок [0 ; 1], который является несчетным множеством. Заключаем, что [0 ; 1]<span class="math inline">\(\times\)</span>[0 ; 1] - несчетное множество.</p></li>
+<li><p>Пусть есть некоторое множество А, состоящее из последовательностей 0 и 1. Рассмотрим такие последовательности и пронумеруем их:<br />
+<span class="math inline">\(1\leftrightarrow{\underline{0} ,1,0,1,0,1,0,1,... }\in A\)</span><br />
+<span class="math inline">\(2\leftrightarrow{0,\underline{0},0,1,0,0,0,1,... }\in A\)</span><br />
+…<br />
+Во множестве А содержится бесконечное количество элементов - последовательностей из 0 и 1.</p></li>
+</ol>
+<p><strong>Утверждение</strong>: А - несчетно.<br />
+<em>Доказательство от принцессы</em>: Тому, кто приведет взаимнооднозначное соответствие между множеством А и множеством натуральных чисел <span class="math inline">\(\mathbb{N}\)</span>, полагается сердце и полцарства в придачу!<br />
+Пусть пришел индийский принц. Принц развернул длинный список, и она видит, что он пронумеровал бесконечно много последовательностей из нулей и единиц. Что будет делать принцесса? Предположим, что в его списке, помимо отмеченных нами последовательностей №1 и №2, присутствуют и такие последовательности:<br />
+<span class="math inline">\(3\leftrightarrow{1,1,\underline{1} ,1,1,1,1,1,... }\in A\)</span><br />
+<span class="math inline">\(4\leftrightarrow{0,0,0,\underline{0},0,0,0,0,... }\in A\)</span>.<br />
+Чтобы принцу ничего не досталось, принцесса меняет значение i-го элемента i-го списка на противоположное (0 на 1 и 1 на 0 соответственно). Это можно сделать в каждой последовательности, тогда<br />
+…<br />
+<span class="math inline">\(101\leftrightarrow{... \underline{1}}\in A\)</span><br />
+…<br />
+И такая измененная последовательность не может быть у него ни под каким номером.<br />
+Пусть пришел и арабский принц. Принцесса проводит аналогичную операцию по замене значения i-го элемента i-го списка на противоположное:<br />
+<span class="math inline">\(1\leftrightarrow{\underline{1} ,1,1,1,1,1,1,1,1,1,...}\in A\)</span><br />
+<span class="math inline">\(2\leftrightarrow{1,\underline{0},1,0,0,1,0,0,0,1,...}\in A\)</span><br />
+<span class="math inline">\(3\leftrightarrow{...\underline{ }...}\in A\)</span><br />
+Аналогичный результат и со списком второго принца. Таким образом, мы можем сделать вывод, что такого взаимнооднозначного соответствия не существует, и принцесса может отказать любому принцу! Отсюда следует, что множество А не равномощно множеству <span class="math inline">\(\mathbb{N}\)</span>.<br />
+<em>Пояснение</em>: A &gt; <span class="math inline">\(\mathbb{N}\)</span> :<br />
+<span class="math inline">\(1\leftrightarrow{100000...}\in A\)</span><br />
+<span class="math inline">\(2\leftrightarrow{010000...}\in A\)</span><br />
+<span class="math inline">\(3\leftrightarrow{001000...}\in A\)</span><br />
+<span class="math inline">\(4\leftrightarrow{000100...}\in A\)</span><br />
+…</p>
+<p><strong>Мораль</strong>:<br />
+1. Счетные множества - это конечные + равномощные множеству <span class="math inline">\(\mathbb{N}\)</span> ( <span class="math inline">\(\mathbb{N}\)</span> , <span class="math inline">\(\mathbb{Q}\)</span> , <span class="math inline">\(\mathbb{Z}\times\mathbb{Z}\)</span> ) ;<br />
+2. Несчетная мощность &gt; Счетная мощность : <span class="math inline">\(\mathbb{R}\)</span> , [0 ; 1] , ( 0 ; 1 ) , [0 ; 1]<span class="math inline">\(\times\)</span>[0 ; 1] ;<br />
+3. Бесконечности бывают разные: одна больше, другая меньше…<br />
+card <span class="math inline">\(\mathbb{N}\)</span> &lt; card <span class="math inline">\(\mathbb{R}\)</span> &lt; card { Все подмножества прямой } &lt; …<br />
+<span class="math inline">\(\Uparrow\)</span><br />
+Это самая маленькая бесконечность - она является счетным множеством.<br />
+card ~ cardinality</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-3-2016-09-16.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": true,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bdemeshev/sc401/issues",
+"text": null
+},
+"download": [["lecture_notes_sc.pdf", "PDF"], ["lecture_notes_sc.epub", "EPUB"], ["lecture_notes_sc.mobi", "MOBI"]],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true,
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
