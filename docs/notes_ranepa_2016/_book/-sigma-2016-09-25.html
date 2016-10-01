@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html  lang="ru-RU">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Конспект по стохастическому анализу</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Конспект по стохастическому анализу :)">
+  <meta name="generator" content="bookdown 0.1.14 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Конспект по стохастическому анализу" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Конспект по стохастическому анализу :)" />
+  <meta name="github-repo" content="bdemeshev/sc401" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Конспект по стохастическому анализу" />
+  
+  <meta name="twitter:description" content="Конспект по стохастическому анализу :)" />
+  
+
+<meta name="author" content="Студенты РАНХиГС и Борис Демешев">
+
+  
+<meta name="date" content="2016-10-01">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="-2016-09-16.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Конспект по стохастическому анализу</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>О проекте</a></li>
+<li class="chapter" data-level="1" data-path="-2016-09-02.html"><a href="-2016-09-02.html"><i class="fa fa-check"></i><b>1</b> Счетные и несчетные множества, 2016-09-02</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.1</b> Счётное множество</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.2</b> Сравнимость мощностей</a></li>
+<li class="chapter" data-level="1.3" data-path="-2016-09-02.html"><a href="-2016-09-02.html#--"><i class="fa fa-check"></i><b>1.3</b> Доказательство от принцессы</a></li>
+<li class="chapter" data-level="1.4" data-path="-2016-09-02.html"><a href="-2016-09-02.html#section-1.4"><i class="fa fa-check"></i><b>1.4</b> Мораль</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="-2016-09-16.html"><a href="-2016-09-16.html"><i class="fa fa-check"></i><b>2</b> Счетные множества и другие бесконечности. Решение интересных задачек, 2016-09-16</a><ul>
+<li class="chapter" data-level="2.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-1-1.3---captain-nemo-problem"><i class="fa fa-check"></i><b>2.1</b> Задача №1 (1.3 в задачнике) “Captain Nemo problem”</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>2.1.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.1.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--."><i class="fa fa-check"></i><b>2.2</b> Бесконечности бывают разные.</a></li>
+<li class="chapter" data-level="2.3" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-2-1.8----"><i class="fa fa-check"></i><b>2.3</b> Задача №2 (1.8) “Эта задачка — просто космос”</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--1"><i class="fa fa-check"></i><b>2.3.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.3.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-1"><i class="fa fa-check"></i><b>2.3.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-3-1.9------"><i class="fa fa-check"></i><b>2.4</b> Задача №3 (1.9) “Помоги Даше спасти гномов от дракона”</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--2"><i class="fa fa-check"></i><b>2.4.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-2"><i class="fa fa-check"></i><b>2.4.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-4--------"><i class="fa fa-check"></i><b>2.5</b> Задача №4 “И Деды Морозы бывают хитрыми” (картинка с Жебером)</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="-2016-09-16.html"><a href="-2016-09-16.html#--3"><i class="fa fa-check"></i><b>2.5.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.5.2" data-path="-2016-09-16.html"><a href="-2016-09-16.html#-3"><i class="fa fa-check"></i><b>2.5.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="-2016-09-16.html"><a href="-2016-09-16.html#section-2.6"><i class="fa fa-check"></i><b>2.6</b> Бонус</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-sigma-2016-09-25.html"><a href="-sigma-2016-09-25.html"><i class="fa fa-check"></i><b>3</b> Сигма-алгебра (<span class="math inline">\(\sigma\)</span> - алгебра), 2016-09-25</a><ul>
+<li class="chapter" data-level="3.1" data-path="-sigma-2016-09-25.html"><a href="-sigma-2016-09-25.html#-sigma-"><i class="fa fa-check"></i><b>3.1</b> Определение <span class="math inline">\(\sigma\)</span>-алгебры</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="-sigma-2016-09-25.html"><a href="-sigma-2016-09-25.html#section-3.1.1"><i class="fa fa-check"></i><b>3.1.1</b> Обозначения:</a></li>
+<li class="chapter" data-level="3.1.2" data-path="-sigma-2016-09-25.html"><a href="-sigma-2016-09-25.html#--sigma---"><i class="fa fa-check"></i><b>3.1.2</b> Неформальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+<li class="chapter" data-level="3.1.3" data-path="-sigma-2016-09-25.html"><a href="-sigma-2016-09-25.html#---"><i class="fa fa-check"></i><b>3.1.3</b> Пример с игровым кубиком:</a></li>
+<li class="chapter" data-level="3.1.4" data-path="-sigma-2016-09-25.html"><a href="-sigma-2016-09-25.html#--sigma---"><i class="fa fa-check"></i><b>3.1.4</b> Формальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="-sigma-2016-09-25.html"><a href="-sigma-2016-09-25.html#----"><i class="fa fa-check"></i><b>3.2</b> Упражнение про Петров и Николаев:</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown"   target="blank">Создано с использованием пакета bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Конспект по стохастическому анализу</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="--sigma----2016-09-25" class="section level1">
+<h1><span class="header-section-number">Глава 3</span> Сигма-алгебра (<span class="math inline">\(\sigma\)</span> - алгебра), 2016-09-25</h1>
+<p>Конспект: Антон Гисин</p>
+<div id="-sigma-" class="section level2">
+<h2><span class="header-section-number">3.1</span> Определение <span class="math inline">\(\sigma\)</span>-алгебры</h2>
+<div id="section-3.1.1" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Обозначения:</h3>
+<p>Случайные величины принято обозначать заглавными последними буквами латинского алфавита, например <span class="math inline">\(X, Y, Z\)</span>. События обычно обозначают заглавными первыми буквами латинского алфавита, например <span class="math inline">\(A,B,C\)</span>. Для обозначения <span class="math inline">\(\sigma\)</span>-алгебры обычно используются каллиграфические заглавные буквы латинского алфавита, например <span class="math inline">\(\mathcal{A,F,H}\)</span>.</p>
+</div>
+<div id="--sigma---" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Неформальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</h3>
+<p><span class="math inline">\(\sigma\)</span>-алгебра индивида - множество событий, про которые индивид может гарантированно сказать, произошли они или нет, вне зависимости от исхода эксперимента. Цель использования <span class="math inline">\(\sigma\)</span>-алгебр - описать наделенность информацией индивидов.</p>
+</div>
+<div id="---" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Пример с игровым кубиком:</h3>
+<p>Эксперимент заключается в однократном подбрасывании игрового кубика. Пространство элементарных исходов: <span class="math display">\[ \Omega = \{1,2,3,4,5,6\}\]</span> Имеется три наблюдателя эксперимента: Антон - знает что кубик бросали, но не видел что на нем выпало. Обозначим <span class="math inline">\(\sigma\)</span>-алгебру Антона <span class="math inline">\(\mathcal{F}\)</span>, Берта - внимательно наблюдала эксперимент, видела исход. Обозначим <span class="math inline">\(\sigma\)</span>-алгебру Берты <span class="math inline">\(\mathcal{H}\)</span>. Ваня - так же видел исход эксперимента, но он из южно-американского племени Пираху, где при счете различают только 1, 2 и “много”. <span class="math inline">\(\sigma\)</span>-алгебра Вани - <span class="math inline">\(\mathcal{V}\)</span>.</p>
+<p>Определим, из каких элементов состоит каждая <span class="math inline">\(\sigma\)</span>-алгебра. Антон не видел исход эксперимента, но знал, что эксперимент был, таким образом он может ответить на вопрос: “Упал ли кубик?”, или по-другому: “Выпало ли какое-нибудь число?”. То есть Антон различает только два события: “кубик упал”, которому соответствует все пространство элементарных исходов, и “кубик не упал”, которому соответствует пустое множество. Получаем, что <span class="math inline">\(\sigma\)</span>-алгебра Антона состоит из двух элементов: <span class="math display">\[\mathcal{F}=\{\varnothing,\Omega \}\]</span></p>
+<p>Берта видела исход эксперимента и различает все исходы, а значит, различает все возможные события, которые могут произойти в ходе эксперимента, их объединения, пересечения и прочие логические операции над ними ( мы предполагаем, что наши индивиды умеют делать логические выводы, на основе имеющейся информации). <span class="math inline">\(\sigma\)</span>-алгебра Берты - булеан <span class="math inline">\(\Omega\)</span>.</p>
+<p>Между делом посмотрим, как вычисляется булеан конечного множества. Вычислим мощность <span class="math inline">\(\mathcal{H}\)</span>. Пусть событие <span class="math inline">\(A_{i}\)</span> - на кубике выпало число очков, равное <span class="math inline">\(i\)</span>, <span class="math inline">\(i=1,\dots,6\)</span>. Элементы множества <span class="math inline">\(\mathcal{H}\)</span> - это все возможные события нашего эксперимента. Каждое событие можно представить в виде объединения всех <span class="math inline">\(A_{i}\)</span> или их дополнений <span class="math inline">\(\bar{A}_{i}\)</span>: <span class="math display">\[
+\begin{bmatrix}
+A_{1} \\
+\bar{A}_{1}
+\end{bmatrix}
+\cup
+\begin{bmatrix}
+A_{2} \\
+\bar{A}_{2}
+\end{bmatrix}
+\cup
+\begin{bmatrix}
+A_{3} \\
+\bar{A}_{3}
+\end{bmatrix}
+\cup
+\begin{bmatrix}
+A_{4} \\
+\bar{A}_{4}
+\end{bmatrix}
+\cup
+\begin{bmatrix}
+A_{5} \\
+\bar{A}_{5}
+\end{bmatrix}
+\cup
+\begin{bmatrix}
+A_{6} \\
+\bar{A}_{6}
+\end{bmatrix}
+\]</span> То есть <span class="math inline">\(A_{i}\)</span> означает, что мы “включаем” i-ый исход, а <span class="math inline">\(\bar{A}_{i}\)</span> - “исключаем” i-ый исход. Поясним это на примерах. Так событие “выпало четное число очков”, можно представить следующим образом: <span class="math display">\[
+\bar{A}_{1}\cup A_{2}
+\cup \bar{A}_{3}\cup A_{4}
+\cup \bar{A}_{5}\cup A_{6}
+\]</span> Событию “кубик упал” соответствует: <span class="math display">\[
+A_{1}\cup A_{2}
+\cup A_{3}\cup A_{4}
+\cup A_{5}\cup A_{6}
+\]</span> а событию “кубик вообще не кидали”, то есть пустому множеству, соответствует: <span class="math display">\[
+\bar{A}_{1}\cup \bar{A}_{2}
+\cup \bar{A}_{3}\cup \bar{A}_{4}
+\cup \bar{A}_{5}\cup \bar{A}_{6}
+\]</span> С помощью простых комбинаторных методов считаем все возможные комбинации таких событий, получаем: <span class="math display">\[ card\mathcal{H}=2^6=64 \]</span> То есть в <span class="math inline">\(\sigma\)</span> - алгебре Берты 64 элемента. В общем случае мощность булеана конечного множества <span class="math inline">\(A\)</span>, в котором <span class="math inline">\(n\)</span> элементов, вычисляется по формуле: <span class="math display">\[ card\mathcal{P}(A)=2^n \]</span> Вернемся к нашей первоначальной задаче. В ситуации с Антоном и Бертой все достаточно просто, у Вани же дела обстоят немного интереснее. Рассмотрим некоторые примеры событий и выясним, лежат ли они в <span class="math inline">\(\sigma\)</span>-алгебре Вани или нет. “Выпало 1” = <span class="math inline">\(\{1\}\in\mathcal{V}\)</span>, так как Ваня знает что такое 1. “Выпало 5”=<span class="math inline">\(\{5\}\notin\mathcal{V}\)</span>, так как все, что больше 2 Ваня считает за “много”, следовательно 5 к примеру от 3 или 6 он не отличит. “Выпало четное число” = <span class="math inline">\(\{2,4,6\}\notin\mathcal{V}\)</span>, так как если Ваня не различает числа больше 2, он не может определить и их четность. “Не выпало 2”=<span class="math inline">\(\{1,3,4,5,6\}\in\mathcal{V}\)</span>, так как раз Ваня знает, что такое 2, то и сказать, что все остальное это не 2, он тоже сможет. Следуя этой логике, выпишем все элементы <span class="math inline">\(\sigma\)</span>-алгебры Вани: <span class="math display">\[ \mathcal{V}=\{\varnothing,\Omega,\{1\},\{2\},\{1,2\},\{1,3,4,5,6\},\{3,4,5,6\},\{2,3,4,5,6\}\} \]</span> Можем себя проверить, вычислив мощность <span class="math inline">\(\mathcal{V}\)</span>. <span class="math inline">\(\sigma\)</span>-алгебра Вани это есть ничто иное, как булеан множества элементарных исходов, которые Ваня различает, {1,2,“много”}. По формуле мощности булеана, указанной выше, получаем: <span class="math display">\[ card\mathcal{H}=2^3=8 \]</span> В нашем списке тоже 8 элементов, значит мы выписали все правильно.</p>
+</div>
+<div id="--sigma---" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Формальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</h3>
+<p>Множество <span class="math inline">\(\mathcal{F}\)</span> называется <span class="math inline">\({\bf\sigma - алгеброй}\)</span> для множества элементарных исходов <span class="math inline">\(\Omega\)</span>, если:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\varnothing,\Omega \in \mathcal{F}\)</span></li>
+<li>Если <span class="math inline">\(A \in \mathcal{F}\)</span>, то и <span class="math inline">\(\bar{A} \in \mathcal{F}\)</span></li>
+<li>Если <span class="math inline">\(A_{1}, A_{2},\dots \in \mathcal{F}\)</span>, то любое событие, которое можно получить из <span class="math inline">\(A_{i}\)</span> с помощью любой логической операции <strong>в счетном количестве</strong>, обязательно лежит в <span class="math inline">\(\mathcal{F}\)</span>.</li>
+</ol>
+<p>На самом деле, некоторые пункты в данном определении можно опустить, так как другие пункты так же их учитывают. Минимальные требования, при которых определение остается корректным:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\varnothing \in \mathcal{F}\)</span></li>
+<li>Если <span class="math inline">\(A \in \mathcal{F}\)</span>, то и <span class="math inline">\(\bar{A} \in \mathcal{F}\)</span></li>
+<li>Если <span class="math inline">\(A_{1}, A_{2},\dots \in \mathcal{F}\)</span>, то и <span class="math inline">\(\bigcup_{i=1}^{\infty} A_{i} \in \mathcal{F}\)</span></li>
+</ol>
+</div>
+</div>
+<div id="----" class="section level2">
+<h2><span class="header-section-number">3.2</span> Упражнение про Петров и Николаев:</h2>
+<p>В ходе эксперимента монетку подбрасывают бесконечное число раз. Пусть событие <span class="math inline">\(A_{i}\)</span> - в i-ом подбрасывании выпал орел, <span class="math inline">\(i=1,2,\dots\)</span> .Имеются два типа наблюдателей, Петры и Николаи. <span class="math inline">\(Петр_{1}\)</span> видел все подбрасывания, начиная с первого, <span class="math inline">\(Петр_{2}\)</span> видел все подбрасывания, начиная со второго и тд. То есть <span class="math inline">\(Петр_{i}\)</span> видел все подбрасывания, начиная с i-ого. <span class="math inline">\(Николай_{1}\)</span> видел первое подбрасывание, а потом ушел, <span class="math inline">\(Николай_{2}\)</span> видел первое и второе подбрасывание, а потом ушел и тд. То есть <span class="math inline">\(Николай_{i}\)</span> видел все подбрасывания до i-ого включительно, а остальные не видел. Обозначим <span class="math inline">\(\sigma\)</span> - алгебру i-ого Петра <span class="math inline">\(\mathcal{F}_{i}\)</span>, а <span class="math inline">\(\sigma\)</span>-алгебру i-ого Николая <span class="math inline">\(\mathcal{H}_{i}\)</span>.</p>
+<p><strong>Задания:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Выпишите явно <span class="math inline">\(\mathcal{H}_{1}\)</span> и <span class="math inline">\(\mathcal{H}_{2}\)</span>.</li>
+<li>Сколько событий в <span class="math inline">\(\mathcal{H}_{2016}\)</span> ?</li>
+<li>Сравните <span class="math inline">\(\mathcal{H}_{100}\)</span> и <span class="math inline">\(\mathcal{H}_{200}\)</span> .</li>
+<li>Сравните <span class="math inline">\(\mathcal{F}_{100}\)</span> и <span class="math inline">\(\mathcal{F}_{200}\)</span> .</li>
+<li>В какие <span class="math inline">\(\sigma\)</span>-алгебры входят следующие события:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(A_{1}\)</span></li>
+<li><span class="math inline">\(A_{40}\)</span></li>
+<li><span class="math inline">\(A_{1} \cup A_{40}\)</span></li>
+<li><p><span class="math inline">\(A_{1} \cap A_{40}\)</span></p></li>
+<li><p><span class="math inline">\(\bigcap_{i=1}^{\infty}A_{i}\)</span></p></li>
+<li><p><span class="math inline">\(\bigcup_{i=1}^{\infty}A_{i}\)</span></p></li>
+<li><p><span class="math inline">\(A_{56}\cap \bar{A}_{47}\)</span></p></li>
+<li><p><span class="math inline">\(\bigcup_{j=40}^{\infty}A_{j}\)</span></p></li>
+<li><p><span class="math inline">\(\bigcap_{i=1}^{\infty}(\bigcup_{j=i}^{\infty}A_{j})\)</span></p></li>
+<li><p><span class="math inline">\(\bigcup_{i=1}^{\infty}(\bigcap_{j=i}^{\infty}A_{j})\)</span></p></li>
+</ul>
+<p><em>Решение:</em></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathcal{H}_{1}=\{A_{1},\bar{A}_{1},\Omega,\varnothing\}\)</span>;</li>
+</ol>
+<p>В <span class="math inline">\(\sigma\)</span>-алгебру <span class="math inline">\(Николая_{2}\)</span> входят <span class="math inline">\(A_{1},{A}_{2}\)</span> и все возможные логические операции над этими событиями. Изобразим это с помощью диаграмм Эйлера-Венна:</p>
+<div class="figure">
+<img src="images/VennDiagramPar.PNG" alt="выполнено с использованием пакета tikz в LaTeX" />
+<p class="caption"><em>выполнено с использованием пакета tikz в LaTeX</em></p>
+</div>
+<p>Диаграмма условно разбита на 4 сектора, которые обозначены <span class="math inline">\(R_{1},R_{2},R_{3}\)</span> и <span class="math inline">\(R_{4}\)</span>. Элементы <span class="math inline">\(\sigma\)</span>-алгебры <span class="math inline">\(Николая_{2}\)</span> - это все возможные комбинации “включения” и “исключения” областей <span class="math inline">\(R_{i}\)</span>. Получаем:</p>
+<p><span class="math display">\[\mathcal{H}_{2}=\{
+A_{1},\bar{A}_{1},
+A_{2},\bar{A}_{2},
+A_{1}\cup{A}_{2},
+A_{1}\cap{A}_{2},
+\bar{A}_{1}\cup{A}_{2},
+A_{1}\cup \bar{A}_{2},
+\bar{A}_{1}\cap{A}_{2},
+A_{1}\cap \bar{A}_{2},
+\bar{A}_{1}\cup \bar{A}_{2},
+\bar{A}_{1}\cap \bar{A}_{2},
+A_{1}\Delta{A}_{2},
+\overline{A_{1}\Delta{A}_{2}},
+\Omega,\varnothing\
+\}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><span class="math inline">\(card\mathcal{H}_{2016}=2^{2016}\)</span></p></li>
+<li><p><span class="math inline">\(card\mathcal{H}_{100}&lt;card\mathcal{H}_{200}\)</span></p></li>
+<li><span class="math inline">\(\mathcal{F}_{100}&gt;\mathcal{F}_{200}\)</span></li>
+<li></li>
+</ol>
+<ul>
+<li><span class="math inline">\(A_{1}\in \mathcal{H}_{i}, i=1,2,\dots\)</span>,</li>
+</ul>
+<p><span class="math inline">\(A_{1}\in \mathcal{F}_{1}\)</span></p>
+<ul>
+<li><span class="math inline">\(A_{40} \in \mathcal{H}_{i}, i=40,41,\dots\)</span>,</li>
+</ul>
+<p><span class="math inline">\(A_{40} \in \mathcal{F}_{j}, j=1,2,\dots,40\)</span></p>
+<ul>
+<li><span class="math inline">\(A_{1} \cup A_{40}\in \mathcal{F}_{1}\)</span>,</li>
+</ul>
+<p><span class="math inline">\(A_{1} \cup A_{40}\in \mathcal{H}_{i}, i=40,41,\dots\)</span></p>
+<ul>
+<li><span class="math inline">\(A_{1} \cap A_{40}\in \mathcal{F}_{1}\)</span>,</li>
+</ul>
+<p><span class="math inline">\(A_{1} \cap A_{40}\in \mathcal{H}_{i}, i=40,41,\dots\)</span></p>
+<ul>
+<li><p>“в каждом подбрасывании выпал орел” <span class="math inline">\(\bigcap_{i=1}^{\infty}A_{i}\in \mathcal{F}_{1}\)</span></p></li>
+<li><p>“за все подбрасывания хотя бы раз выпал орел” <span class="math inline">\(\bigcup_{i=1}^{\infty}A_{i}\in \mathcal{F}_{1}\)</span></p></li>
+<li><p><span class="math inline">\(A_{56}\cap \bar{A}_{47}\in \mathcal{H}_{i}, i=56,57,\dots\)</span>,</p></li>
+</ul>
+<p><span class="math inline">\(A_{56}\cap \bar{A}_{47}\in \mathcal{F}_{i}, j=1,2,\dots,47\)</span></p>
+<ul>
+<li>“после 39 подбрасывания хотя бы раз выпал орел” <span class="math inline">\(\bigcup_{i=40}^{\infty}A_{i}\in \mathcal{F}_{j}, j=1,2,\dots,40\)</span></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-2016-09-16.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": true,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bdemeshev/sc401/issues",
+"text": null
+},
+"download": [["lecture_notes_sc.pdf", "PDF"], ["lecture_notes_sc.epub", "EPUB"], ["lecture_notes_sc.mobi", "MOBI"]],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true,
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

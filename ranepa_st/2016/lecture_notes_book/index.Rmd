@@ -1,6 +1,6 @@
 --- 
 title: "Конспект по стохастическому анализу"
-author: "Борис Демешев"
+author: "Студенты РАНХиГС и Борис Демешев"
 date: '`r Sys.Date()`'
 output:
   bookdown::gitbook:
@@ -67,9 +67,6 @@ biblio-style: alphabetic
 ---
 
 # О проекте {-}
-
-Конспект пишут студенты РАНХиГС :)
-
 
 ```{r "knitr options"}
 library("knitr")
