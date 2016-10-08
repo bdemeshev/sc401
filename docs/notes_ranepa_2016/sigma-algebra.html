@@ -39,8 +39,8 @@ MathJax.Hub.Config({
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
+<link rel="prev" href="sigma-algebra-intro.html">
 
-<link rel="next" href="countable-sets.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -171,83 +171,130 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Конспект по стохастическому анализу 2016</h1>
-<h4 class="author"><em>Студенты РАНХиГС и Борис Демешев</em></h4>
-<h4 class="date"><em>2016-10-08</em></h4>
+<div id="sigma_algebra" class="section level1">
+<h1><span class="header-section-number">Глава 4</span> Сигма-алгебра (<span class="math inline">\(\sigma(x)\)</span> - алгебра)</h1>
+<p>Дата: 25 сентября 2016</p>
+<p>Конспект: Вероника Закирова</p>
+<div id="." class="section level2">
+<h2><span class="header-section-number">4.1</span> Повторение.</h2>
+<p>Прежде чем перейти к рассмотрению задач, давайте вспомним сами определения сигма-алгебры.</p>
+<div id="-" class="section level4">
+<h4><span class="header-section-number">4.1.0.1</span> Определение (интуитивное):</h4>
+<p>Пусть <span class="math inline">\(Х\)</span> - температура завтра. Я знаю <span class="math inline">\(Х\)</span>, а значит, что я могу различать (гарантированно сказать, произошло ли событие вне зависимоти от исхода эксперимента) события сигма-алгебры <span class="math inline">\(\mathcal{F}\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(\{ X&gt;10 \in \mathcal{F}\}\)</span></p></li>
+<li><p><span class="math inline">\(\{X=10 \in \mathcal{F}\}\)</span></p></li>
+</ul>
 </div>
-<div id="-" class="section level1 unnumbered">
-<h1>О проекте</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;knitr&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;tikzDevice&quot;</span>)
+<div id="-" class="section level4">
+<h4><span class="header-section-number">4.1.0.2</span> Определение (формальное):</h4>
+<p><span class="math inline">\(\sigma(x)\)</span> - минимальная <span class="math inline">\(\sigma\)</span> алгебра, порожденная величиной <span class="math inline">\(X\)</span>, то есть - это список событий, которые различает индивид, знающий <span class="math inline">\(X\)</span>.</p>
+<p><span class="math inline">\(\sigma(x)\)</span> - самая маленькая <span class="math inline">\(\sigma\)</span> алгебра, содержащая все события вида: <span class="math inline">\(\{X \leqslant A\}\)</span>, например, <span class="math inline">\(\{X \leqslant 7\}\)</span> и так далее.</p>
+<p>В сигма-алгебру входит еще объединение, пересечение, дополнение событий:</p>
+<p><span class="math inline">\(\{X \leqslant 7\} \in \mathcal{F} \Rightarrow \{X \geqslant 7\} \in \mathcal{F}\)</span></p>
+</div>
+</div>
+<div id="." class="section level2">
+<h2><span class="header-section-number">4.2</span> Упражненение.</h2>
+<p>Пусть монетку подбросили один раз. <span class="math inline">\(Z\)</span> - некий показатель, который в зависомости от произошедшего события принимает определеное значение.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\Omega\)</span></th>
+<th>орёл</th>
+<th>решка</th>
+<th>ребро</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p</td>
+<td>0.49</td>
+<td>0.49</td>
+<td>0.02</td>
+</tr>
+<tr class="even">
+<td>Z</td>
+<td>5</td>
+<td>7</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>Определить:</p>
+<p>а) минимальную <span class="math inline">\(\sigma\)</span>-алгебру на пространстве элементарных исходов <span class="math inline">\(\Omega\)</span></p>
+<p>б) <span class="math inline">\(\mathcal{F}\)</span> - самую большую <span class="math inline">\(\sigma\)</span>-алгебру на пространстве элементарных исходов <span class="math inline">\(\Omega\)</span></p>
+<p>а) рассмотрим различные значения, которые может принимать <span class="math inline">\(Z\)</span>:</p>
+<ul>
+<li><span class="math inline">\(Z \leqslant 0 - \varnothing\)</span></li>
+<li><span class="math inline">\(Z \leqslant 5 - \{орел, ребро\}\)</span></li>
+<li><span class="math inline">\(Z = 7 - \{решка\}\)</span></li>
+<li><span class="math inline">\(Z \leqslant 20 - \Omega\)</span></li>
+</ul>
+<p>Получаем: <span class="math inline">\(\sigma(Z) =\{ \varnothing,\{орел,ребро\}, \{решка\}, \Omega \}.\)</span></p>
+<p>б) Для того, чтобы получить <span class="math inline">\(\mathcal{F}\)</span> необходимо применить элементарные операции над множествами к элементам <span class="math inline">\(\sigma(x)\)</span>: <span class="math inline">\(\mathcal{F} =\{ \varnothing,\{орел\}, \{ребро\},\{решка\}, не\ решка, не\ орел, не\ ребро, \Omega \}.\)</span></p>
+</div>
+<div id="---2--1.-" class="section level2">
+<h2><span class="header-section-number">4.3</span> Упражнение с пары №2 (семинар 1). [Доразбор]</h2>
+<p>В ходе эксперимента монетку подбрасывают бесконечное число раз. есть два наблюдателя: Петры и Николаи.</p>
+<p>Пётр<span class="math inline">\(_i\)</span> видит все события, начиная с <span class="math inline">\(i\)</span> - его сигма-алгебра <span class="math inline">\(\mathcal{F}_i\)</span>.</p>
+<p>Николай<span class="math inline">\(_i\)</span> видит все события, которые произошли до <span class="math inline">\(i\)</span> – его сигма-алгебра <span class="math inline">\(\mathcal{H}_i\)</span>.</p>
+<p>Напомним: <span class="math inline">\(A_i =\{на\ i-й\ раз\ выпал\ орел\}\)</span></p>
+<p>В какие <span class="math inline">\(\sigma\)</span>-алгебры входят следующие события:</p>
+<ul>
+<li><span class="math inline">\(\underset{i=1}{\overset{\infty}\cap}(\underset{j=1}{\overset{\infty}\cup}A_j)\)</span> ;</li>
+<li><span class="math inline">\(\underset{i=1}{\overset{\infty}\cup}(\underset{j=1}{\overset{\infty}\cap}A_j)\)</span> ?</li>
+</ul>
+<p>Решение:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\underset{i=1}{\overset{\infty}\cap}(\underset{j=1}{\overset{\infty}\cup}A_j)\)</span></li>
+</ol>
+<p>Распишем это событие подробнее и назовем его <span class="math inline">\(B\)</span>:</p>
+<p><span class="math inline">\((\underset{j=1}{\overset{\infty}\cup}A_j)\cap (\underset{j=2}{\overset{\infty}\cup}A_j) \cap (\underset{j=3}{\overset{\infty}\cup}A_j)\dots = B\)</span></p>
+<p><span class="math inline">\(\underbrace{(\underset{j=1}{\overset{\infty}\cup}A_j)}_{хоть\ 1\ орел\ с\ 1го\ броска}\underbrace{\cap}_{и}\underbrace{ (\underset{j=2}{\overset{\infty}\cup}A_j)}_{хоть\ 1\ орел\ со\ 2го\ броска} \underbrace{\cap}_{и}\underbrace{ (\underset{j=3}{\overset{\infty}\cup}A_j)}_{хоть\ 1\ орел\ с\ 3го\ броска}\underbrace{\dots}_{и\ тд.}\)</span></p>
+<p>Событие <span class="math inline">\(B\)</span> можно записать словами так: орел выпал <span class="math inline">\(\infty\)</span> число раз.</p>
+<p>Примеры:</p>
+<ul>
+<li><span class="math inline">\(PPPPPPP \dots\)</span> - <span class="math inline">\(B\)</span> не случилось</li>
+<li><span class="math inline">\(POOOOPPPPP \dots\)</span> - <span class="math inline">\(B\)</span> не случилось</li>
+<li><span class="math inline">\(POPOPOPOPO \dots\)</span> - <span class="math inline">\(B\)</span> случилось</li>
+<li><span class="math inline">\(POPOOPOOOPOOOOPOOOOO \dots\)</span> - <span class="math inline">\(B\)</span> случилось</li>
+</ul>
+<p>Событие <span class="math inline">\(B\)</span> входит в сигма-алгебры:</p>
+<p><span class="math inline">\(B \in \mathcal{F}_1, B \in \mathcal{F}_2, \dots\)</span> , то есть все Петры смогут сказать произошло ли оно.</p>
+<p>Так как каждый их Николаев видит лишь конечное число событий, то <span class="math inline">\(B \not\in \mathcal{H}_i\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><span class="math inline">\(\underset{i=1}{\overset{\infty}\cup}(\underset{j=1}{\overset{\infty}\cap}A_j)\)</span></li>
+</ol>
+<p>По аналогии с <span class="math inline">\(B\)</span> распишем это событие подробнее и назовем его <span class="math inline">\(С\)</span>:</p>
+<p><span class="math inline">\((\underset{j=1}{\overset{\infty}\cap}A_j)\cup (\underset{j=2}{\overset{\infty}\cap}A_j) \cup (\underset{j=3}{\overset{\infty}\cap}A_j)\dots = С\)</span></p>
+<p><span class="math inline">\(\underbrace{(\underset{j=1}{\overset{\infty}\cap}A_j)}_{все\ орлы\ с\ 1го\ броска}\underbrace{\cup}_{или}\underbrace{ (\underset{j=2}{\overset{\infty}\cap}A_j)}_{все\ орлы\ со\ 2го\ броска}\underbrace{\cap}_{или}\underbrace{ (\underset{j=3}{\overset{\infty}\cap}A_j)}_{все\ орлы\ с\ 3го\ броска}\underbrace{\dots}_{и\ тд.}\)</span></p>
+<p>Резюмируя, событие <span class="math inline">\(C\)</span> можно записать словами так: решек выпало конечное число.</p>
+<p>Примеры:</p>
+<ul>
+<li><span class="math inline">\(PPPPPPP \dots\)</span> - <span class="math inline">\(С\)</span> не случилось</li>
+<li><span class="math inline">\(POOOOPPPPP \dots\)</span> - <span class="math inline">\(С\)</span> не случилось</li>
+<li><span class="math inline">\(PPPOOOOOOOO \dots\)</span> - <span class="math inline">\(С\)</span> случилось</li>
+<li><span class="math inline">\(OPPOOPOOOOO \dots\)</span> - <span class="math inline">\(С\)</span> случилось</li>
+</ul>
+<p>Событие <span class="math inline">\(C\)</span> входит в сигма-алгебры:</p>
+<p><span class="math inline">\(C \in \mathcal{F}_1, C \in \mathcal{F}_2, \dots\)</span> , то есть все Петры смогут сказать произошло ли оно.</p>
+<p>Так как каждый их Николаев видит лишь конечное число событий, то <span class="math inline">\(C \not\in \mathcal{H}_i\)</span></p>
+<div id="." class="section level4">
+<h4><span class="header-section-number">4.3.0.1</span> Приложение.</h4>
+<p>При наборе данного семинара, приходилось практически постоянно переключать раскладки с EN на RUS и наоборот, да и почти каждому знакома проблема “напечатал много предложений, поднял голову, а там на английской раскладке все”.</p>
+<p>Если Вы все еще перепечатываете текст, тогда <a href="https://yandex.ru/soft/punto/">punto switcher</a> специально для Вас.</p>
 
-activateTikz &lt;-<span class="st"> </span>function() {
-  
-  <span class="co"># tikz plots options</span>
-  <span class="kw">options</span>(<span class="dt">tikzDefaultEngine =</span> <span class="st">&quot;xetex&quot;</span>)
-  
-  <span class="co"># cash font metrics for speed:</span>
-  <span class="kw">options</span>(<span class="dt">tikzMetricsDictionary =</span> <span class="st">&quot;./tikz_metrics&quot;</span>) 
-  
-  add_xelatex &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}&quot;</span>,
-                   <span class="st">&quot;</span><span class="ch">\\</span><span class="st">setmainfont{Linux Libertine O}&quot;</span>,
-                   <span class="st">&quot;</span><span class="ch">\\</span><span class="st">setmonofont{Linux Libertine O}&quot;</span>,
-                   <span class="st">&quot;</span><span class="ch">\\</span><span class="st">setsansfont{Linux Libertine O}&quot;</span>,
-        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">newfontfamily{</span><span class="ch">\\</span><span class="st">cyrillicfonttt}{Linux Libertine O}&quot;</span>,
-        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">newfontfamily{</span><span class="ch">\\</span><span class="st">cyrillicfont}{Linux Libertine O}&quot;</span>,
-        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">newfontfamily{</span><span class="ch">\\</span><span class="st">cyrillicfontsf}{Linux Libertine O}&quot;</span>)
-  
-  <span class="kw">options</span>(<span class="dt">tikzXelatexPackages =</span> <span class="kw">c</span>(<span class="kw">getOption</span>(<span class="st">&quot;tikzXelatexPackages&quot;</span>),
-                                  add_xelatex))
-  
-  <span class="co"># does remove warnings:</span>
-  <span class="co"># it is important to remove fontenc package wich is loaded by default</span>
-  <span class="kw">options</span>(<span class="dt">tikzUnicodeMetricPackages =</span> <span class="kw">c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usetikzlibrary{calc}&quot;</span>,    
-                                        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage{fontspec, xunicode}&quot;</span>, add_xelatex)) 
-  
-  
-  opts_chunk$<span class="kw">set</span>(<span class="dt">dev =</span> <span class="st">&quot;tikz&quot;</span>, <span class="dt">dev.args =</span> <span class="kw">list</span>(<span class="dt">pointsize =</span> <span class="dv">11</span>))
-}
-
-
-colFmt &lt;-<span class="st"> </span>function(x, color) {
-  outputFormat &lt;-<span class="st"> </span>opts_knit$<span class="kw">get</span>(<span class="st">&quot;rmarkdown.pandoc.to&quot;</span>)
-  if (outputFormat ==<span class="st"> &quot;latex&quot;</span>) {
-    result &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">textcolor{&quot;</span>, color, <span class="st">&quot;}{&quot;</span>, x, <span class="st">&quot;}&quot;</span>)
-  } else if (outputFormat %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;html&quot;</span>, <span class="st">&quot;epub&quot;</span>)) {
-    result &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;&lt;font color=&#39;&quot;</span>, color, <span class="st">&quot;&#39;&gt;&quot;</span>, x, <span class="st">&quot;&lt;/font&gt;&quot;</span>)
-  } else {
-    result &lt;-<span class="st"> </span>x
-  }
-  <span class="kw">return</span>(result)
-}
-
-outputFormat &lt;-<span class="st"> </span>opts_knit$<span class="kw">get</span>(<span class="st">&quot;rmarkdown.pandoc.to&quot;</span>)
-
-
-if (outputFormat ==<span class="st"> &quot;latex&quot;</span>) {
-  <span class="kw">activateTikz</span>()
-  <span class="co"># другую тему для ggplot2 выставить?</span>
-}</code></pre></div>
-<p>Данная версия конспекта скомпилирована для html.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>) <span class="co"># графики</span>
-<span class="kw">library</span>(<span class="st">&quot;sandwich&quot;</span>) <span class="co"># оценка Var для гетероскедастичности</span>
-<span class="kw">library</span>(<span class="st">&quot;lmtest&quot;</span>) <span class="co"># тест Бройша-Пагана</span>
-<span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>) <span class="co"># манипуляции с данными</span>
-<span class="kw">library</span>(<span class="st">&quot;broom&quot;</span>) <span class="co"># преобразование всего и вся в стандартные таблички</span>
-<span class="kw">library</span>(<span class="st">&quot;data.table&quot;</span>) <span class="co"># манипуляции с данными</span>
-<span class="kw">library</span>(<span class="st">&quot;reshape2&quot;</span>) <span class="co"># преобразование длинных таблиц в широкие</span>
-<span class="kw">library</span>(<span class="st">&quot;tidyr&quot;</span>) <span class="co"># причесывание данных</span>
-<span class="kw">library</span>(<span class="st">&quot;igraph&quot;</span>) <span class="co"># изображения графов</span></code></pre></div>
-
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="sigma-algebra-intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="countable-sets.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

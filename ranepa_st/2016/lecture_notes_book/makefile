@@ -42,7 +42,8 @@ deploy:
 	# what the hell?
 
 copy:
-	cp -R _book ../../../docs/notes_ranepa_2016
+	-rm -rfv ../../../docs/notes_ranepa_2016
+	cp -rfv _book ../../../docs/notes_ranepa_2016
 
 
 clean:
