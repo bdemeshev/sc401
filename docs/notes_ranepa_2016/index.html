@@ -26,7 +26,7 @@
 <meta name="author" content="Студенты РАНХиГС и Борис Демешев">
 
   
-<meta name="date" content="2016-10-08">
+<meta name="date" content="2016-10-09">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -110,7 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Конспект по стохастическому анализу</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>О проекте</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>О конспекте</a></li>
 <li class="chapter" data-level="1" data-path="countable-sets.html"><a href="countable-sets.html"><i class="fa fa-check"></i><b>1</b> Счетные и несчетные множества</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.1</b> Счётное множество</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.2</b> Сравнимость мощностей</a></li>
@@ -174,61 +174,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Конспект по стохастическому анализу 2016</h1>
 <h4 class="author"><em>Студенты РАНХиГС и Борис Демешев</em></h4>
-<h4 class="date"><em>2016-10-08</em></h4>
+<h4 class="date"><em>2016-10-09</em></h4>
 </div>
 <div id="-" class="section level1 unnumbered">
-<h1>О проекте</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;knitr&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;tikzDevice&quot;</span>)
-
-activateTikz &lt;-<span class="st"> </span>function() {
-  
-  <span class="co"># tikz plots options</span>
-  <span class="kw">options</span>(<span class="dt">tikzDefaultEngine =</span> <span class="st">&quot;xetex&quot;</span>)
-  
-  <span class="co"># cash font metrics for speed:</span>
-  <span class="kw">options</span>(<span class="dt">tikzMetricsDictionary =</span> <span class="st">&quot;./tikz_metrics&quot;</span>) 
-  
-  add_xelatex &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}&quot;</span>,
-                   <span class="st">&quot;</span><span class="ch">\\</span><span class="st">setmainfont{Linux Libertine O}&quot;</span>,
-                   <span class="st">&quot;</span><span class="ch">\\</span><span class="st">setmonofont{Linux Libertine O}&quot;</span>,
-                   <span class="st">&quot;</span><span class="ch">\\</span><span class="st">setsansfont{Linux Libertine O}&quot;</span>,
-        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">newfontfamily{</span><span class="ch">\\</span><span class="st">cyrillicfonttt}{Linux Libertine O}&quot;</span>,
-        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">newfontfamily{</span><span class="ch">\\</span><span class="st">cyrillicfont}{Linux Libertine O}&quot;</span>,
-        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">newfontfamily{</span><span class="ch">\\</span><span class="st">cyrillicfontsf}{Linux Libertine O}&quot;</span>)
-  
-  <span class="kw">options</span>(<span class="dt">tikzXelatexPackages =</span> <span class="kw">c</span>(<span class="kw">getOption</span>(<span class="st">&quot;tikzXelatexPackages&quot;</span>),
-                                  add_xelatex))
-  
-  <span class="co"># does remove warnings:</span>
-  <span class="co"># it is important to remove fontenc package wich is loaded by default</span>
-  <span class="kw">options</span>(<span class="dt">tikzUnicodeMetricPackages =</span> <span class="kw">c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">usetikzlibrary{calc}&quot;</span>,    
-                                        <span class="st">&quot;</span><span class="ch">\\</span><span class="st">usepackage{fontspec, xunicode}&quot;</span>, add_xelatex)) 
-  
-  
-  opts_chunk$<span class="kw">set</span>(<span class="dt">dev =</span> <span class="st">&quot;tikz&quot;</span>, <span class="dt">dev.args =</span> <span class="kw">list</span>(<span class="dt">pointsize =</span> <span class="dv">11</span>))
-}
-
-
-colFmt &lt;-<span class="st"> </span>function(x, color) {
-  outputFormat &lt;-<span class="st"> </span>opts_knit$<span class="kw">get</span>(<span class="st">&quot;rmarkdown.pandoc.to&quot;</span>)
-  if (outputFormat ==<span class="st"> &quot;latex&quot;</span>) {
-    result &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">textcolor{&quot;</span>, color, <span class="st">&quot;}{&quot;</span>, x, <span class="st">&quot;}&quot;</span>)
-  } else if (outputFormat %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;html&quot;</span>, <span class="st">&quot;epub&quot;</span>)) {
-    result &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;&lt;font color=&#39;&quot;</span>, color, <span class="st">&quot;&#39;&gt;&quot;</span>, x, <span class="st">&quot;&lt;/font&gt;&quot;</span>)
-  } else {
-    result &lt;-<span class="st"> </span>x
-  }
-  <span class="kw">return</span>(result)
-}
-
-outputFormat &lt;-<span class="st"> </span>opts_knit$<span class="kw">get</span>(<span class="st">&quot;rmarkdown.pandoc.to&quot;</span>)
-
-
-if (outputFormat ==<span class="st"> &quot;latex&quot;</span>) {
-  <span class="kw">activateTikz</span>()
-  <span class="co"># другую тему для ggplot2 выставить?</span>
-}</code></pre></div>
+<h1>О конспекте</h1>
+<p>Стохастический анализ с R :)</p>
+<p>Напутствия:</p>
+<ol style="list-style-type: decimal">
+<li><p>Идеальный конспект — интересный и без отклонений от здравомыслия. Примочки и пеночки нужны!</p></li>
+<li><p>Конспект одного семинара должен иметь одно заглавие уровня <code>#</code> и несколько, скажем от двух до пяти, подзаголовков уровня <code>##</code>. После «решёточек» должен идти пробел. После заголовка должен стоять краткий английский уникальный идентификатор, например, <code>{#04_matrix_algebra}</code>.</p></li>
+<li><p>Помни об оформлении знаков препинания: после запятой есть пробел, а до запятой — нет. Существует длинное тире, <code>—</code>, которое отличается от просто дефиса <code>-</code>.</p></li>
+<li><p>Рисунки оформляй в открытом софте (<a href="http://www.computational-logic.org/content/study/master/documents/softskills_tikz.pdf">tex + tikz</a>, <a href="https://inkscape.org/en/">inkscape</a>, <a href="https://inkscape.org/en/">graphviz</a>, <a href="https://www.geogebra.org/">geogebra</a>, <a href="https://www.draw.io/">draw.io</a> и прочее) и прикладывай к работе.</p></li>
+<li><p>Рисунки клади в подпапку <code>images</code></p></li>
+<li><p>Соблюдай конвенцию о названиях файлов: файлы относящиеся к третьему семинару должны начинаться с <code>03_</code>, и сам конспект и рисунки. Имена файлов не должны содержать русских букв и пробелов.</p></li>
+<li><p>Никаких <code>здесь</code> и <code>тут</code> в ссылках. Текст, замещающий ссылку, должен быть осмысленным!</p></li>
+<li><p>Немного <a href="https://guides.github.com/features/mastering-markdown/">про маркдаун</a>.</p></li>
+<li><p>Немного <a href="http://www.ccas.ru/voron/download/voron05latex.pdf">про тех от Воронцова</a>.</p></li>
+<li><p>Посмотри, <a href="https://github.com/bdemeshev/sc401/tree/master/ranepa_st/2016/lecture_notes_book">как сделали конспект другие</a>, и сделай лучше! :) Обрати внимание на название .Rmd файлов, на структуру внутри .Rmd файлов.</p></li>
+<li><p>Каждый кусок кода должен иметь уникальное название, например, <code>{r, &quot;plotting_histogram&quot;}</code></p></li>
+<li><p>Уважай букву <code>ё</code> – ставь над ней точки! :)</p></li>
+</ol>
 <p>Данная версия конспекта скомпилирована для html.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>) <span class="co"># графики</span>
 <span class="kw">library</span>(<span class="st">&quot;sandwich&quot;</span>) <span class="co"># оценка Var для гетероскедастичности</span>

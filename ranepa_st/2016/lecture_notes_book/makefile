@@ -4,6 +4,7 @@ preclean:
 	export LC_ALL=en_US.UTF-8
 	export LC_CTYPE=en_US.UTF-8
 	rm -rf `biber --cache`
+	-rm -rfv _book
 	-rm lecture_notes_sc.run.xml
 	-rm lecture_notes_sc.Rmd
 

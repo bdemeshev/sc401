@@ -1,4 +1,4 @@
---- 
+---
 title: "Конспект по стохастическому анализу 2016"
 author: "Студенты РАНХиГС и Борис Демешев"
 date: '`r Sys.Date()`'
@@ -66,37 +66,66 @@ site: bookdown::bookdown_site
 biblio-style: alphabetic
 ---
 
-# О проекте {-}
+# О конспекте {-}
 
-```{r "knitr options"}
+Стохастический анализ с R :)
+
+Напутствия:
+
+1. Идеальный конспект — интересный и без отклонений от здравомыслия. Примочки и пеночки нужны!
+
+1. Конспект одного семинара должен иметь одно заглавие уровня `#` и несколько, скажем от двух до пяти, подзаголовков уровня `##`. После «решёточек» должен идти пробел. После заголовка должен стоять краткий английский уникальный идентификатор, например, `{#04_matrix_algebra}`.
+
+1. Помни об оформлении знаков препинания: после запятой есть пробел, а до запятой — нет. Существует длинное тире, `—`, которое отличается от просто дефиса `-`.
+
+1. Рисунки оформляй в открытом софте ([tex + tikz](http://www.computational-logic.org/content/study/master/documents/softskills_tikz.pdf), [inkscape](https://inkscape.org/en/), [graphviz](https://inkscape.org/en/), [geogebra](https://www.geogebra.org/), [draw.io](https://www.draw.io/) и прочее) и прикладывай к работе.
+
+1. Рисунки клади в подпапку `images`
+
+1. Соблюдай конвенцию о названиях файлов: файлы относящиеся к третьему семинару должны начинаться с `03_`, и сам конспект и рисунки. Имена файлов не должны содержать русских букв и пробелов.
+
+1. Никаких `здесь` и `тут` в ссылках. Текст, замещающий ссылку, должен быть осмысленным!
+
+1. Немного [про маркдаун](https://guides.github.com/features/mastering-markdown/).
+
+1. Немного [про тех от Воронцова](http://www.ccas.ru/voron/download/voron05latex.pdf).
+
+1. Посмотри, [как сделали конспект другие](https://github.com/bdemeshev/sc401/tree/master/ranepa_st/2016/lecture_notes_book), и сделай лучше! :) Обрати внимание на название .Rmd файлов, на структуру внутри .Rmd файлов.
+
+1. Каждый кусок кода должен иметь уникальное название, например, `{r, "plotting_histogram"}`
+
+1. Уважай букву `ё` – ставь над ней точки! :)
+
+
+```{r, "knitr options", echo = FALSE}
 library("knitr")
 library("tikzDevice")
 
 activateTikz <- function() {
-  
+
   # tikz plots options
   options(tikzDefaultEngine = "xetex")
-  
+
   # cash font metrics for speed:
-  options(tikzMetricsDictionary = "./tikz_metrics") 
-  
-  add_xelatex <- c("\\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}",
+  # options(tikzMetricsDictionary = "./tikz_metrics")
+
+  add_xelatex <- c("\\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}",
                    "\\setmainfont{Linux Libertine O}",
                    "\\setmonofont{Linux Libertine O}",
                    "\\setsansfont{Linux Libertine O}",
         "\\newfontfamily{\\cyrillicfonttt}{Linux Libertine O}",
         "\\newfontfamily{\\cyrillicfont}{Linux Libertine O}",
         "\\newfontfamily{\\cyrillicfontsf}{Linux Libertine O}")
-  
+
   options(tikzXelatexPackages = c(getOption("tikzXelatexPackages"),
                                   add_xelatex))
-  
+
   # does remove warnings:
   # it is important to remove fontenc package wich is loaded by default
-  options(tikzUnicodeMetricPackages = c("\\usetikzlibrary{calc}",    
-                                        "\\usepackage{fontspec, xunicode}", add_xelatex)) 
-  
-  
+  options(tikzUnicodeMetricPackages = c("\\usetikzlibrary{calc}",
+                                        "\\usepackage{fontspec, xunicode}", add_xelatex))
+
+
   opts_chunk$set(dev = "tikz", dev.args = list(pointsize = 11))
 }
 
@@ -123,6 +152,7 @@ if (outputFormat == "latex") {
 
 ```
 
+
 Данная версия конспекта скомпилирована для `r outputFormat`.
 
 
@@ -137,6 +167,3 @@ library("reshape2") # преобразование длинных таблиц �
 library("tidyr") # причесывание данных
 library("igraph") # изображения графов
 ```
-
-
-
