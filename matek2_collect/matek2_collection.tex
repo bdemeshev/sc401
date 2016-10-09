@@ -1,4 +1,4 @@
-\documentclass[pdftex,12pt,a4paper]{article}
+\documentclass[12pt, a4paper]{article}
 
 \input{title_bor}
 
@@ -6,6 +6,14 @@
 \newcommand{\cN}{\mathcal{N}}
 \renewcommand{\FF}{\mathcal{F}}
 \renewcommand{\ee}{\varepsilon}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\dy}{\mathrm{d}y}
+\renewcommand{\dz}{\mathrm{d}z}
+\newcommand{\du}{\mathrm{d}u}
+\newcommand{\dv}{\mathrm{d}v}
+
 
 \title{ICEF master program. Maths for economists. \\Exam collection.}
 \author{Kirill Bukin, Dmitri Pervouchine, Boris Demeshev}
@@ -333,9 +341,134 @@ Answer:
 \Var(Y)=\E(\Var(Y|X))+\Var(\E(Y|X))=\E(X^2/12)+\Var(X/2)=\frac{7a^2}{12^2}
 \]
 \item $dY_t=-a Y_t \, dW_t$, so $Y_t$ is a martingale, and $\E(Y_t)=Y_0=1$. To find variance one may use Ito's isometry.
+
+
+\item This is the autoconversion from the ugly word: 
+
+\[X_{0} = E_{\tilde{p}}\left( exp\left( - rT \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right)\]
+
+\[\begin{matrix}
+X_{T} = Min\left\{ M,\ lnS_{T} \right\} \\
+S_{T} = S_{0}\exp\left( \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \right)\ ;\ {\tilde{W}}_{T}\sim N\left( 0,T \right) \\
+\begin{matrix}
+\ln S_{T} = lnS_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \\
+X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right) = M*\tilde{p}\left( \ln S_{T} > M \right) + \int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} \\
+\begin{matrix}
+1)\ \tilde{p}\left( \ln S_{T} > M \right) = \tilde{p}\left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} > M \right) = \left\lbrack Z = \frac{{\tilde{W}}_{T}}{\sqrt{T}}\sim N(0,1) \right\rbrack = \\
+ = \tilde{p}\left( Z < \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) = \Phi\left( \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
+\[\begin{matrix}
+\Phi - cummulative\ standard\ normal\ distribution \\
+2)\ M = lnS_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}m\ \ ;\ \ m = \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \\
+\begin{matrix}
+\int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} = \int_{- \infty}^{m}{\left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}Z \right)\frac{1}{\sqrt{2\pi}}\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}} =} \\
+\begin{matrix}
+\begin{matrix}
+ = \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) + \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\int_{- \infty}^{m}{Z\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}}} = \\
+\left\lbrack \int_{}^{}{Z\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}} =}\begin{bmatrix}
+Let\ s = - \frac{Z^{2}}{2}\  \\
+ds = - ZdZ \\
+dZ = - \frac{\text{ds}}{Z} \\
+\end{bmatrix} = \int_{}^{}{\left( - e^{s} \right)\text{ds}} = - e^{s} = - \exp\left( - \frac{Z^{2}}{2} \right) \right\rbrack \\
+ = \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) \\
+\end{matrix} \\
+\begin{matrix}
+3)\ X_{0} = M\Phi\left( \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) + \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \\
+ - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = M + \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
+\[\begin{matrix}
+ = M - m\sigma\sqrt{T}\Phi\left( m \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) \\
+ \\
+\mathbf{Answer:\ }\mathbf{X}_{\mathbf{0}}\mathbf{= \ }\mathbf{M - \sigma}\sqrt{\mathbf{T}}\left( \mathbf{\text{mΦ}}\left( \mathbf{m} \right)\mathbf{+}\frac{\mathbf{1}}{\sqrt{\mathbf{2\pi}}}\exp\left( \mathbf{-}\frac{\mathbf{m}^{\mathbf{2}}}{\mathbf{2}} \right) \right)\mathbf{\ ,\ where\ }\mathbf{m =}\frac{\mathbf{M - ln}\mathbf{S}_{\mathbf{0}}\mathbf{-}\left( \mathbf{r -}\frac{\mathbf{\sigma}^{\mathbf{2}}}{\mathbf{2}} \right)\mathbf{T}}{\mathbf{\sigma}\sqrt{\mathbf{T}}} \\
+\end{matrix}\]
+
+\item This is the autoconversion from the ugly word:
+
+We need to find a price of the classic European option in dollars, while
+stock prices are in euros. K-strike price. Xt-option price at time t.
+
+\[\begin{matrix}
+X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right) = exp\left( - r_{\$}T \right)\int_{0}^{\infty}{X_{T}\tilde{p}\left( X_{T} \right)}dX_{T} \\
+\begin{matrix}
+\begin{matrix}
+X_{T} = U_{T}S_{T} - K\ if\ U_{T}S_{T} > K,\ 0\ otherwise \\
+\end{matrix} \\
+\begin{matrix}
+\begin{matrix}
+1)\ S_{T} = S_{0}\exp\left( \left( r_{} - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \right)\ ;\ {\tilde{W}}_{T}\sim N\left( 0,T \right)\  \\
+\begin{matrix}
+2)\ U_{T} = U_{0}*\exp\left( \left( r_{\$} - \frac{b^{2}}{2} \right)T + \sigma{\tilde{w}}_{T} \right);\ {\tilde{w}}_{T}\sim N\left( 0,T \right)\  \\
+\text{under\ condition\ of\ no\ arbitrage}\exp\left( r_{\$}T \right) = exp\left( r_{\$}T \right)\exp\left( r_{}T \right) \rightarrow \ r_{\$} = r_{\$} + r_{} \\
+\end{matrix}\  \\
+\begin{matrix}
+\begin{matrix}
+\begin{matrix}
+3)\ X_{T} = {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} + b{\tilde{w}}_{T} \right)\  \\
+{\tilde{w}}_{T}\text{\ and\ }{\tilde{W}}_{T}\ are\ independent\ (in\ common\ sense),\ then\ \sigma{\tilde{W}}_{T} + b{\tilde{w}}_{T}\sim\left( 0,\left( \sigma^{2} + b^{2} \right)T \right) \\
+\text{le}t^{'}smake\ a\ substitution\ Z = \frac{\sigma{\tilde{W}}_{T} + b{\tilde{w}}_{T}}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}}\sim\left( 0,1 \right) \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\begin{matrix}
+\begin{matrix}
+4)\ X_{0} = exp\left( - r_{\$}T \right)\int_{a}^{\infty}{\left( {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) - K \right)\tilde{p}\left( Z \right)}\text{dZ} \\
+where\ a = - \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \\
+\end{matrix} \\
+\begin{matrix}
+\begin{matrix}
+\int_{a}^{\infty}{K\tilde{p}\left( Z \right)}\text{dZ} \\
+\end{matrix} = K\int_{a}^{\infty}{\tilde{p}\left( Z \right)}dZ = K\int_{- \infty}^{- a}{\tilde{p}\left( Z \right)}dZ = K*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) \\
+\begin{matrix}
+\Phi - cummulative\ standard\ normal\ distribution \\
+\begin{matrix}
+\begin{matrix}
+\int_{a}^{\infty}{\left( {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) \right)\tilde{p}\left( Z \right)}dZ = dZ = \\
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{a}^{\infty}{\left( \exp\left( - \frac{1}{2}\left( \sigma^{2} + b^{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) \right)\frac{1}{\sqrt{2\pi}}exp\left( - \frac{Z^{2}}{2} \right)}dZ = \\
+\end{matrix} \\
+\begin{matrix}
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{a}^{\infty}{\exp\left( - \frac{1}{2}\left( Z - \sqrt{\left( \sigma^{2} + b^{2} \right)T} \right)^{2} \right)}dZ = \\
+\begin{matrix}
+\left\lbrack \text{let}^{'}s\ make\ a\ substitution\ V = Z - \sqrt{\left( \sigma^{2} + b^{2} \right)T} \right\rbrack \\
+ = \left\lbrack b = - \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{\sigma^{2}}{2} + \frac{b^{2}}{2} \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right\rbrack = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{b}^{\infty}{\exp\left( - \frac{V^{2}}{2} \right)}dV = \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
+\[\begin{matrix}
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)\int_{- \infty}^{- b}{\exp\left( - \frac{V^{2}}{2} \right)}dV = \\
+\begin{matrix}
+ = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) \\
+\begin{matrix}
+\begin{matrix}
+X_{0} = U_{0}S_{0}\frac{\exp\left( \left( r_{\$} + r_{} \right)T \right)}{exp\left( r_{\$}T \right)}*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) - \\
+ - \frac{K}{\exp\left( r_{\$}T \right)}*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) = \left\lbrack r_{\$} = r_{\$} + r_{} \right\rbrack = \\
+\begin{matrix}
+ = U_{0}S_{0}\Phi\left( N_{1} \right) - \exp{\left( {- r}_{\$}T \right)K}\Phi\left( N_{1} - \sqrt{\left( \sigma^{2} + b^{2} \right)T} \right),\ where\ N_{1} = \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \\
+\end{matrix} \\
+\end{matrix} \\
+\begin{matrix}
+\mathbf{Answer:\ X}_{\mathbf{0}}\mathbf{=}\mathbf{U}_{\mathbf{0}}\mathbf{S}_{\mathbf{0}}\mathbf{\Phi}\left( \mathbf{N}_{\mathbf{1}} \right)\mathbf{-}\exp{\left( \mathbf{- r}_{\mathbf{\$}}\mathbf{T} \right)\mathbf{K}}\mathbf{\Phi}\left( \mathbf{N}_{\mathbf{1}}\mathbf{-}\sqrt{\left( \mathbf{\sigma}^{\mathbf{2}}\mathbf{+}\mathbf{b}^{\mathbf{2}} \right)\mathbf{T}} \right)\mathbf{,\ where} \\
+\mathbf{N}_{\mathbf{1}}\mathbf{=}\frac{\mathbf{\ln}\left( \frac{{\mathbf{U}_{\mathbf{0}}\mathbf{S}}_{\mathbf{0}}}{\mathbf{K}} \right)\mathbf{+}\left( \mathbf{r}_{\mathbf{\$}}\mathbf{+}\mathbf{r}_{\mathbf{}}\mathbf{+}\frac{\mathbf{1}}{\mathbf{2}}\left( \mathbf{\sigma}^{\mathbf{2}}\mathbf{+}\mathbf{b}^{\mathbf{2}} \right) \right)\mathbf{T}}{\sqrt{\left( \mathbf{\sigma}^{\mathbf{2}}\mathbf{+}\mathbf{b}^{\mathbf{2}} \right)\mathbf{T}}} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix} \\
+\end{matrix}\]
+
 \end{enumerate}
-
-
 
 \section{2009-2010}
 
@@ -1154,12 +1287,6 @@ Hint: You may suppose without a proof that the solution has the form $X_t=f(t)g(
 \subsection{Solution for stochastic calculus hometask}
 
 Author: Vladimir Shmarov
-\newcommand{\ds}{\displaystyle}
-\newcommand{\dx}{\mathrm{d}x}
-\newcommand{\dy}{\mathrm{d}y}
-\newcommand{\dz}{\mathrm{d}z}
-\newcommand{\du}{\mathrm{d}u}
-\newcommand{\dv}{\mathrm{d}v}
 
 
 \textbf{Problem 1.}\par
