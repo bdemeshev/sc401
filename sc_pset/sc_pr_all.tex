@@ -2670,7 +2670,28 @@ p(v)=p_{X}\left(2\sqrt{3v}\right)\cdot \frac{\sqrt{3}}{\sqrt{v}}=\exp\left(-2\sq
 \begin{problem}
 The random variables $X_1$, $X_2$, \ldots are independent uniformly distributed on $[0;1]$. I~am summing them until the first $X_i$ greater than $0.5$ is added. After this term I stop. Let's denote by $S$ the total sum and by $N$ --- the number of terms added. Find $\E(S|N)$, $\Var(S|N)$, $\E(S)$, $\Var(S)$
 
+Котёнок с улицы Лизюкова ловит карасей до тех пор, пока не поймает карася длиной более полуметра. Длины карасей независимы и равномерны от 0 до 1 метра. Обозначим буквой $N$ количество пойманных карасей, а буквой $S$ — их суммарную длину. Найдите $\E(S|N)$, $\Var(S|N)$, $\E(S)$, $\Var(S)$.
+
 \begin{sol}
+\[
+\E(S|N)= \frac{0.5}{2} (N-1) + \frac{1.5}{2} = \frac{N}{4}+\frac{1}{2}
+\]
+
+Случайные величины $X_i$ условно независимы при фиксированном $N$, поэтому
+\[
+\Var(S|N) = (N-1)\frac{0.5^2}{12} + \frac{0.5^2}{12} = N/48
+\]
+
+Обратим внимание, что $N$ имеет геометрическое распределение:
+\[
+\E(S)=\E(\E(S|N))=\frac{1}{4}\E(N)+\frac{1}{2}=1
+\]
+
+Переходим к дисперсии:
+\[
+\Var(S)=\Var(\E(S|N)) + \E(\Var(S|N)) = 1/6
+\]
+
 
 \end{sol}
 \end{problem}
