@@ -39,8 +39,8 @@ MathJax.Hub.Config({
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="expected-value-definition.html">
-<link rel="next" href="martingales.html">
+<link rel="prev" href="martingales.html">
+
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -213,83 +213,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="expected_value_masha" class="section level1">
-<h1><span class="header-section-number">Глава 8</span> Условное математическое ожидание</h1>
-<p>Конспект: Иван Максимов</p>
-<p>дата: 11 ноября 2016 г.</p>
-<div id="---8.51--" class="section level2">
-<h2><span class="header-section-number">8.1</span> Машенька и грибы (8.51 из <a href="https://github.com/bdemeshev/sc401/raw/master/sc_pset/sc_problems_main.pdf">задачника</a>)</h2>
-<div class="figure">
-<img src="http://mycoweb.ru/Submitted/AWP/Korsina_AWP_20131011.jpg" />
-
-</div>
-<p><strong>УСЛОВИЕ</strong>: Маша пошла в лес собирать грибы. Она собрала <span class="math inline">\(n\)</span> грибов.Ей могли попасться рыжика с вероятностью <span class="math inline">\(r&gt;0\)</span>, лисички с вероятностью <span class="math inline">\(l&gt;0\)</span> или мухоморы с вероятностью <span class="math inline">\(m&gt;0\)</span>. Обозначим количество собранных рыжиков, лисичек и мухоморов за <span class="math inline">\(R, L, M\)</span> соответственно.</p>
-<p><strong>НАЙТИ</strong>:</p>
+<div id="--r-markdown-06r_markdown_example" class="section level1">
+<h1><span class="header-section-number">Глава 10</span> Пример использования R Markdown {#06R_Markdown_example}</h1>
+<p>Конспект: Винни-Пух</p>
+<p>Дата: 16 сентября 2016 г</p>
+<div id="-" class="section level2">
+<h2><span class="header-section-number">10.1</span> Подзаголовки так</h2>
+<p>Обычный текст печатается без решеток.</p>
+<p>Формулы задаются в долларах, вот так: <span class="math inline">\(a^2+b^2=c^2\)</span>, <span class="math inline">\(S=\sqrt{p(p-a)(p-b)(p-c)}\)</span>. Если хочется вывести формулу посредине, то синтаксис такой:</p>
+<p><span class="math display">\[
+card\sigma(R,M)=2^{101\cdot51}
+\]</span></p>
+<p>События для сигма-алгебры тоже задаются в долларах. Cap и cup это пересечение и объединение соответственно: <span class="math inline">\(A \cap ((B \Delta C) \cup D)\)</span></p>
+<p>Косинус сорока двух самому можно не считать. R знает его лучше вас. Просто сообщите ему эту команду в апострофах (З.Ы. буква ё на клавиатуре) и в конце властно поставьте точку : -0.3999853.</p>
+<p>Для построения графика ступайте в Code -&gt; Incert Chunk. Откроется такая штука ниже. Загрузите пакет в ggplot2 в R (если вы еще не позаботились о загрузке этого пакета с репозитория, то Tools-&gt;Install Packages и вводите названия пакетов,которые вам нужны). Здесь строим график, используя данные о спортивных машинах(cars), которые содержались в пакете ggplot2. По иксу откладываем скорость и подписываем эту ось, по игреку расстояние, и тоже подписываем:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)
+<span class="kw">qplot</span>(<span class="dt">data =</span> cars, <span class="dt">x =</span> speed, <span class="dt">y =</span> dist) +
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Начальная скорость, миль/час&quot;</span>) +<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Длина тормозного пути, футов&quot;</span>)</code></pre></div>
+<p><img src="lecture_notes_sc_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Также можно указывать ссылки, например, на <a href="https://mail.ru/">почту</a></p>
+<p>Можно загрузить картинку из Интернета, например <a href="http://dic.academic.ru/pictures/wiki/files/67/Carl_Friedrich_Gauss.jpg">портрет самого Гаусса</a></p>
+<p>Или можно указать ссылку на учебник, например, на <a href="http://www.ccas.ru/voron/download/voron05latex.pdf">Его величество LaTex</a></p>
+<p>Важные-важные уточнения:</p>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(E(R+L|M)\)</span></p></li>
-<li><p><span class="math inline">\(E(M|R+L)\)</span></p></li>
-<li><p><span class="math inline">\(E(R|L)\)</span></p></li>
-<li><p><span class="math inline">\(Var(R|L)\)</span></p></li>
-<li><p><span class="math inline">\(E(R+M|L+M)\)</span></p></li>
-<li><p><span class="math inline">\(P(E(R|L)=0)\)</span></p></li>
-<li><p><span class="math inline">\(P(R=0|L)\)</span></p></li>
-<li><p><span class="math inline">\(E((\dfrac{m}{r+m})^{100-L})\)</span></p></li>
+<li><p>Cтроку language: ru-RU надо дописывать самому</p></li>
+<li><p>Сохранять файл надо в UTF-8</p></li>
+<li><p>Русские буквы и пробелы в названии - страшный кошмар для R Markdown</p></li>
+<li><p>Лучше выбирать формат Rmd для сохранения файла. Он универсален.</p></li>
+<li><p>Необходимые пакеты для загрузки ищутся в Интернете по запросу со словами CRAN и RStudio</p></li>
+<li><p>Для поиска необходимого символа для написания кода <a href="http://detexify.kirelabs.org/classify.html">рисуйте его в окошке слева, а справа будет список команд</a></p></li>
+<li><p>Хороший <a href="http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/">сайт с обозначениями символов в LaTex</a></p></li>
 </ol>
-<p><strong>РЕШЕНИЕ</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p>Очевидно, что <span class="math inline">\(R+L+M=n =&gt;R+L=n-M\)</span>, тогда при известном <span class="math inline">\(M\)</span> величина <span class="math inline">\(R+L\)</span> известна и не случайна <span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(R+L|M)=E(R+L|R+L)=R+L=n-M
-\]</span></p></li>
-<li><p>Аналогично, зная <span class="math inline">\(R+L\)</span>, можно определить <span class="math inline">\(M=n-R-L\)</span> <span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(M|R+L)=E(M|M)=M=n-R-L
-\]</span></p></li>
-<li><p>Для решение этого пункта рассмотрим для начала частный случай. Пусть <span class="math inline">\(L=40, n=100\)</span>. Найдем <span class="math inline">\(E(R|L=40)\)</span> Так как лисичек 40, то оставшихся грибов <span class="math inline">\(100-40=60\)</span>, так как <span class="math inline">\(R+M=n-L\)</span>. Среди <span class="math inline">\(60\)</span> оставшихся грибов может быть <span class="math inline">\(0,1,2,...,60\)</span> рыжиков. Найдем, например, <span class="math inline">\(P(R=0|L=40)\)</span>, то есть вероятность того, что среди оставшихся <span class="math inline">\(60\)</span> грибов будет <span class="math inline">\(0\)</span> рыжиков. Заметим, что число собранных лисичек распределено биномиально, так как найденную лисичку можно рассматривать, как “успех”, а найденную не лисичку - как “не успех”. <span class="math display">\[
-L \sim Bin(n=100, p=l) =&gt;
-\]</span> <span class="math display">\[
-P(R=0|L=40)=\dfrac{P(R=0;L=40)}{P(L=40)}=\dfrac{(C^{40}_{100}l^{40})(С^{60}_{60}m^{60})}{C^{40}_{100}l^{40}l^{100-40}}
-\]</span></p></li>
-</ol>
-<p>Поясним числитель дроби: из 100 грибов выбираются 40 лисичек, а из оставшихся 60 грибов - 40 мухоморов. Найдем <span class="math inline">\(P(R=3|L=40)\)</span>: <span class="math display">\[
-P(R=3|L=40)=\dfrac{P(R=3;L=40)}{P(L=40)}=\dfrac{P(R=3;L=40;M=47)}{P(L=40)}=\dfrac{(C^{40}_{100}l^{40})(C^{3}_{60}r^{3})(С^{57}_{47}m^{57})}{C^{40}_{100}l^{40}l^{100-40}}=C^{3}_{60}(\dfrac{r}{r+m})^3(\dfrac{m}{r+m})^{47}
-\]</span> Можно заметить, что <span class="math inline">\(R|L=40 \sim Bin(n=60;p=\dfrac{r}{r+m}) =&gt;R|L\sim Bin(n=n-L;p=\dfrac{r}{r+m}) =&gt;\)</span> по формуле ожидания биномиального распределения:</p>
-<p><span class="math display">\[
-E(R|L)=(n-L)\dfrac{r}{r+m}
-\]</span> 4) По формуле для дисперсии биномиального распределения с учетом того, что <span class="math inline">\(L|L+M\sim Bin(n=L+M;p=\dfrac{l}{l+m})\)</span>: <span class="math display">\[
-var(R|L)=(n-L)\dfrac{r}{r+m}\dfrac{m}{r+m}
-\]</span> 5) По аналогии с предыдущим пунктом, используя свойство условного мат.ожидания(мат. ожидание суммы=суммы мат.ожиданий), получим: <span class="math display">\[
-E(R+L|L+M)=E(R|L+M)+E(L|L+M)=n-L-M+(L+M)\dfrac{l}{l+m}
-\]</span></p>
-<ol start="6" style="list-style-type: decimal">
-<li>С учетом того, что мы в пункте 3 уже посчитали <span class="math inline">\(E(R|L)\)</span> получаем:</li>
-</ol>
-<p><span class="math display">\[
-P(E(R|L)=0)=P((n-L)\dfrac{r}{r+m}=0)&lt;=&gt;P(L=n)=l^{100}
-\]</span> 7) Учитывая, что <span class="math inline">\(M|L\sim Bin(n=n-L,p=\dfrac{m}{r+m})\)</span>, получим: <span class="math display">\[
-P(R=0|L)=P(M=n-L|L)=(\dfrac{m}{r+m})^{n-L}
-\]</span> 8) Заметим,что <span class="math inline">\((\dfrac{m}{r+m})^{100-L}=P(R=0|L)\)</span>. С учетом этого: <span class="math display">\[
-E((\dfrac{m}{r+m})^{100-L})=E(P(R=0|L))=(1-r)^{100}=(l+m)^{100}
-\]</span> Доказательство законности первого равенства в п.8 см.в 11.2</p>
-</div>
-<div id="--.----" class="section level2">
-<h2><span class="header-section-number">8.2</span> Закон повторного мат.ожидания действует и с вероятностью</h2>
-<p>Известно, что выполняется равенство: <span class="math inline">\(E(E(X|Y))=E(X)\)</span></p>
-<p><strong>Утверждаю, что также верно следующее</strong>: <span class="math inline">\(E(P(A|Y))=P(A)\)</span></p>
-<p><em>Доказательство</em>: Вероятность можно трактовать, как математическое ожидание: пусть событие <span class="math inline">\(A=\)</span> {Мила выйдет и увидит котёнка}, Тогда <span class="math inline">\(I_A=1\)</span>, если событие <span class="math inline">\(A\)</span> наступило и <span class="math inline">\(I_A=0\)</span>, если событие <span class="math inline">\(A\)</span> не наступило. Тогда <span class="math display">\[E(I_A)=P(A)\]</span> Если <span class="math inline">\(X=I_A\)</span>, то:</p>
-<p><span class="math display">\[
-E(E(X|Y))=E(Y) &lt;=&gt; E(P(A|Y))=E(I_A)=P(A)
-\]</span></p>
-</div>
-<div id="-----" class="section level2">
-<h2><span class="header-section-number">8.3</span> Неожиданный факт про условное математическое ожидание</h2>
-<p>Так как агент, который знает <span class="math inline">\(R\)</span> однозначно может посчитать <span class="math inline">\(R^3\)</span>, то можно делать так: <span class="math display">\[
-E(L|R)=E(L|R^3)
-\]</span> НО агент, которые знает <span class="math inline">\(R^2-3\)</span> не может однозначно посчитать <span class="math inline">\(R\)</span>, то есть он не отличает события <span class="math inline">\(R=1\)</span> и <span class="math inline">\(R=4\)</span><span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(L|R)\neq E(L|(R-3)^2)
-\]</span></p>
-</div>
-<div id="--" class="section level2">
-<h2><span class="header-section-number">8.4</span> Если возникли проблемы</h2>
-<p>Если у вас что-то не получается с условным математическим ожиданием и дисперсией, то предлагаю посмотреть короткие <a href="https://www.coursera.org/learn/ekonometrika/lecture/ATG3O/2-1-1-uslovnoie-matiematichieskoie-ozhidaniie-opriedielieniie">видеолекции</a> от Бориса Борисовича по данной теме. Это лекции 2.1.1-2.1.4 в курсе <a href="https://www.coursera.org/learn/ekonometrika">Эконометрика</a> на Coursera. Не забудьте предварительно зарегистрироваться на курс:)</p>
 
 </div>
 </div>
@@ -298,8 +252,8 @@ E(L|R)\neq E(L|(R-3)^2)
           </div>
         </div>
       </div>
-<a href="expected-value-definition.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="martingales.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="martingales.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

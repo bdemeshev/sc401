@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html  lang="ru-RU">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Конспект по стохастическому анализу 2016</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Конспект по стохастическому анализу :)">
+  <meta name="generator" content="bookdown 0.1.14 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Конспект по стохастическому анализу 2016" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Конспект по стохастическому анализу :)" />
+  <meta name="github-repo" content="bdemeshev/sc401" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Конспект по стохастическому анализу 2016" />
+  
+  <meta name="twitter:description" content="Конспект по стохастическому анализу :)" />
+  
+
+<meta name="author" content="Студенты РАНХиГС и Борис Демешев">
+
+  
+<meta name="date" content="2016-11-15">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="-example-for-cardinality-and-measurability.html">
+<link rel="next" href="expected-value-definition.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Конспект по стохастическому анализу</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>О конспекте</a></li>
+<li class="chapter" data-level="1" data-path="countable-sets.html"><a href="countable-sets.html"><i class="fa fa-check"></i><b>1</b> Счётные и несчётные множества</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.1</b> Счётное множество</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.2</b> Сравнимость мощностей</a></li>
+<li class="chapter" data-level="1.3" data-path="countable-sets.html"><a href="countable-sets.html#--"><i class="fa fa-check"></i><b>1.3</b> Доказательство от принцессы</a></li>
+<li class="chapter" data-level="1.4" data-path="countable-sets.html"><a href="countable-sets.html#section-1.4"><i class="fa fa-check"></i><b>1.4</b> Мораль</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="other-infinities.html"><a href="other-infinities.html"><i class="fa fa-check"></i><b>2</b> Счетные множества и другие бесконечности. Решение интересных задачек</a><ul>
+<li class="chapter" data-level="2.1" data-path="other-infinities.html"><a href="other-infinities.html#-1-1.3---captain-nemo-problem"><i class="fa fa-check"></i><b>2.1</b> Задача №1 (1.3 в задачнике) “Captain Nemo problem”</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>2.1.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.1.2" data-path="other-infinities.html"><a href="other-infinities.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="other-infinities.html"><a href="other-infinities.html#--."><i class="fa fa-check"></i><b>2.2</b> Бесконечности бывают разные.</a></li>
+<li class="chapter" data-level="2.3" data-path="other-infinities.html"><a href="other-infinities.html#-2-1.8----"><i class="fa fa-check"></i><b>2.3</b> Задача №2 (1.8) “Эта задачка — просто космос”</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="other-infinities.html"><a href="other-infinities.html#--1"><i class="fa fa-check"></i><b>2.3.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.3.2" data-path="other-infinities.html"><a href="other-infinities.html#-1"><i class="fa fa-check"></i><b>2.3.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="other-infinities.html"><a href="other-infinities.html#-3-1.9------"><i class="fa fa-check"></i><b>2.4</b> Задача №3 (1.9) “Помоги Даше спасти гномов от дракона”</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="other-infinities.html"><a href="other-infinities.html#--2"><i class="fa fa-check"></i><b>2.4.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="other-infinities.html"><a href="other-infinities.html#-2"><i class="fa fa-check"></i><b>2.4.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="other-infinities.html"><a href="other-infinities.html#-4--------"><i class="fa fa-check"></i><b>2.5</b> Задача №4 “И Деды Морозы бывают хитрыми” (картинка с Жебером)</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="other-infinities.html"><a href="other-infinities.html#--3"><i class="fa fa-check"></i><b>2.5.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.5.2" data-path="other-infinities.html"><a href="other-infinities.html#-3"><i class="fa fa-check"></i><b>2.5.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="other-infinities.html"><a href="other-infinities.html#section-2.6"><i class="fa fa-check"></i><b>2.6</b> Бонус</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html"><i class="fa fa-check"></i><b>3</b> Сигма-алгебра (<span class="math inline">\(\sigma\)</span> - алгебра)</a><ul>
+<li class="chapter" data-level="3.1" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#-sigma-"><i class="fa fa-check"></i><b>3.1</b> Определение <span class="math inline">\(\sigma\)</span>-алгебры</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#section-3.1.1"><i class="fa fa-check"></i><b>3.1.1</b> Обозначения:</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#--sigma---"><i class="fa fa-check"></i><b>3.1.2</b> Неформальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+<li class="chapter" data-level="3.1.3" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#---"><i class="fa fa-check"></i><b>3.1.3</b> Пример с игровым кубиком:</a></li>
+<li class="chapter" data-level="3.1.4" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#--sigma---"><i class="fa fa-check"></i><b>3.1.4</b> Формальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#----"><i class="fa fa-check"></i><b>3.2</b> Упражнение про Петров и Николаев:</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sigma-algebra.html"><a href="sigma-algebra.html"><i class="fa fa-check"></i><b>4</b> Сигма-алгебра (<span class="math inline">\(\sigma(x)\)</span> - алгебра)</a><ul>
+<li class="chapter" data-level="4.1" data-path="sigma-algebra.html"><a href="sigma-algebra.html#."><i class="fa fa-check"></i><b>4.1</b> Повторение.</a></li>
+<li class="chapter" data-level="4.2" data-path="sigma-algebra.html"><a href="sigma-algebra.html#."><i class="fa fa-check"></i><b>4.2</b> Упражненение.</a></li>
+<li class="chapter" data-level="4.3" data-path="sigma-algebra.html"><a href="sigma-algebra.html#---2--1.-"><i class="fa fa-check"></i><b>4.3</b> Упражнение с пары №2 (семинар 1). [Доразбор]</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="-example-for-cardinality-and-measurability.html"><a href="-example-for-cardinality-and-measurability.html"><i class="fa fa-check"></i><b>5</b> Грибная задача {#example_for cardinality_and_measurability}</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="-example-for-cardinality-and-measurability.html"><a href="-example-for-cardinality-and-measurability.html#---2.32-----."><i class="fa fa-check"></i><b>5.0.1</b> Продолжение грибной задачки (№ 2.32 в задачнике) с предыдущей лекции.</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html"><i class="fa fa-check"></i><b>6</b> Решение задач по теме Сигма-алгебра</a><ul>
+<li class="chapter" data-level="6.1" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-1-2.35---7_1_ex1"><i class="fa fa-check"></i><b>6.1</b> 7.1 Задача №1 (№ 2.35 в задачнике) {##7_1_ex1}</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#--7_1_ex1_1"><i class="fa fa-check"></i><b>6.1.1</b> 7.1.1. Условие задачи: {###7_1_ex1_1}</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-7_1_ex1_2"><i class="fa fa-check"></i><b>6.1.2</b> 7.1.2. Решение: {###7_1_ex1_2}</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-2---007-2.43---7_2_ex2"><i class="fa fa-check"></i><b>6.2</b> 7.2 Задача №2 Про Агента 007 (№ 2.43 в задачнике) {##7_2_ex2}</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#--7_2_ex2_1"><i class="fa fa-check"></i><b>6.2.1</b> 7.2.1 Условие задачи {###7_2_ex2_1}</a></li>
+<li class="chapter" data-level="6.2.2" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#--7_2_ex2_2"><i class="fa fa-check"></i><b>6.2.2</b> 7.2.2 Решение задачи {###7_2_ex2_2}</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-3-2.39---7_3_ex3"><i class="fa fa-check"></i><b>6.3</b> 7.3 Задача №3 (2.39 в задачнике) {##7_3_ex3}</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#---7_3_ex3_1"><i class="fa fa-check"></i><b>6.3.1</b> 7.3.1 Условие задачи (перевод) {###7_3_ex3_1}</a></li>
+<li class="chapter" data-level="6.3.2" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#--7_3_ex3_2"><i class="fa fa-check"></i><b>6.3.2</b> 7.3.2 Решение задачи ###{7_3_ex3_2}</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="expected-value-definition.html"><a href="expected-value-definition.html"><i class="fa fa-check"></i><b>7</b> Условное математическое ожидание</a><ul>
+<li class="chapter" data-level="7.1" data-path="expected-value-definition.html"><a href="expected-value-definition.html#----."><i class="fa fa-check"></i><b>7.1</b> Формальное определение условного математического ожидания.</a></li>
+<li class="chapter" data-level="7.2" data-path="expected-value-definition.html"><a href="expected-value-definition.html#section-7.2"><i class="fa fa-check"></i><b>7.2</b> Пример:</a></li>
+<li class="chapter" data-level="7.3" data-path="expected-value-definition.html"><a href="expected-value-definition.html#---."><i class="fa fa-check"></i><b>7.3</b> Формальное определение математического ожидания.</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="expected-value-masha.html"><a href="expected-value-masha.html"><i class="fa fa-check"></i><b>8</b> Условное математическое ожидание</a><ul>
+<li class="chapter" data-level="8.1" data-path="expected-value-masha.html"><a href="expected-value-masha.html#---8.51--"><i class="fa fa-check"></i><b>8.1</b> Машенька и грибы (8.51 из <a href="https://github.com/bdemeshev/sc401/raw/master/sc_pset/sc_problems_main.pdf">задачника</a>)</a></li>
+<li class="chapter" data-level="8.2" data-path="expected-value-masha.html"><a href="expected-value-masha.html#--.----"><i class="fa fa-check"></i><b>8.2</b> Закон повторного мат.ожидания действует и с вероятностью</a></li>
+<li class="chapter" data-level="8.3" data-path="expected-value-masha.html"><a href="expected-value-masha.html#-----"><i class="fa fa-check"></i><b>8.3</b> Неожиданный факт про условное математическое ожидание</a></li>
+<li class="chapter" data-level="8.4" data-path="countable-sets.html"><a href="countable-sets.html#--"><i class="fa fa-check"></i><b>8.4</b> Если возникли проблемы</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="martingales.html"><a href="martingales.html"><i class="fa fa-check"></i><b>9</b> Мартингалы</a><ul>
+<li class="chapter" data-level="9.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>9.1</b> 14.1 Определение мартингала</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#----"><i class="fa fa-check"></i><b>9.1.1</b> 14.1.1 Необходимые сведения перед основным определением</a></li>
+<li class="chapter" data-level="9.1.2" data-path="other-infinities.html"><a href="other-infinities.html#--1"><i class="fa fa-check"></i><b>9.1.2</b> 14.1.2 Определение мартингала</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="martingales.html"><a href="martingales.html#section-9.2"><i class="fa fa-check"></i><b>9.2</b> 14.2 Задачи</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>9.2.1</b> 14.2.1 Постановка задачи</a></li>
+<li class="chapter" data-level="9.2.2" data-path="martingales.html"><a href="martingales.html#-4"><i class="fa fa-check"></i><b>9.2.2</b> 14.2.2 Решение</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="countable-sets.html"><a href="countable-sets.html#--"><i class="fa fa-check"></i><b>9.3</b> 14.3 Зачем изучать мартингалы?</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="-r-markdown-06r-markdown-example.html"><a href="-r-markdown-06r-markdown-example.html"><i class="fa fa-check"></i><b>10</b> Пример использования R Markdown {#06R_Markdown_example}</a><ul>
+<li class="chapter" data-level="10.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>10.1</b> Подзаголовки так</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown"   target="blank">Создано с использованием пакета bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Конспект по стохастическому анализу 2016</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sigma_algebra_solution" class="section level1">
+<h1><span class="header-section-number">Глава 6</span> Решение задач по теме Сигма-алгебра</h1>
+<p>Конспект: Алиса Жильцова</p>
+<p>дата: 30 сентября 2016 г.</p>
+<div id="-1-2.35---7_1_ex1" class="section level2">
+<h2><span class="header-section-number">6.1</span> 7.1 Задача №1 (№ 2.35 в задачнике) {##7_1_ex1}</h2>
+<div id="--7_1_ex1_1" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> 7.1.1. Условие задачи: {###7_1_ex1_1}</h3>
+<p>Монетка подкидывается бесконечное количество раз: <span class="math inline">\(X_n\)</span> равно 1, если при n-ом подбрасывании выпадает орёл, и 0, если решка. Определим кучу <span class="math inline">\(\sigma\)</span> - алгебр: <span class="math inline">\(\mathcal{F}_n:= \sigma(X_1, X_2, ...., X_n), \mathcal{H}_n := \sigma( X_n, X_{n+1}, X_{n+2},....).\)</span></p>
+<p>Приведите по два нетривиальных (т.е. <span class="math inline">\(\Omega\)</span> и <span class="math inline">\(\emptyset\)</span> не называть) примера такого события A, что:</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(A\in\mathcal{F}_{2010}\)</span>;</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(A\notin\mathcal{F}_{2010}\)</span>;</p>
+<p><span class="math inline">\(\bullet\)</span> A лежит в каждой <span class="math inline">\(\mathcal{H}_n\)</span>.</p>
+<p>В какие из упомянутых <span class="math inline">\(\sigma\)</span> - алгебр входят события:</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(X_{37} &gt; 0\)</span>;</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(X_{37} &gt; X_{2010}\)</span>;</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(X_{37} &gt; X_{2010} &gt; X_{12}\)</span>.</p>
+<p>Упростите выражения: <span class="math inline">\(\mathcal{F}_{11}\cap\mathcal{F}_{25}, \mathcal{F}_{11}\cup \mathcal{F}_{25}, \mathcal{H}_{11}\cap\mathcal{H}_{25}, \mathcal{H}_{11}\cup \mathcal{H}_{25}.\)</span></p>
+</div>
+<div id="-7_1_ex1_2" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> 7.1.2. Решение: {###7_1_ex1_2}</h3>
+<p>Приведём по два нетривиальных (т.е. <span class="math inline">\(\Omega\)</span> и <span class="math inline">\(\emptyset\)</span> не называть) примера такого события A, что:</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(A\in\mathcal{F}_{2010}\)</span> :</p>
+<p>Начнём с того, что <span class="math inline">\(\mathcal{F}_{2010}\)</span> можно определить как совокупность знаний человека, который видел первые 2010 подбрасываний монетки. Тогда данную задачу можно переформулировать следующим образом: что знает Джон, видевший первые 2010 подбрасываний? Знает ли, что при четвёртом подбрасывании выпал орёл? Знает! А знает ли, что в первые 100 подбрасываний выпало не более 70 орлов? Знает! Таким образом, возможными примерами события <span class="math inline">\(A\in\mathcal{F}_{2010}\)</span> являются события: {<span class="math inline">\(X_4=1\)</span>} и {за первые 100 подрабрасываний выпало не более 70 орлов}.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(A\notin\mathcal{F}_{2010}\)</span></p>
+<p>На основе рассуждений из предыдущего пункта, достаточно просто привести примеры событий <span class="math inline">\(A\notin\mathcal{F}_{2010}\)</span>. Так, Джон, видевший первые 2010 событий, не знает, что в 2011-й раз выпал орёл или, выражаясь языком формул, – { <span class="math inline">\(X_{2011}=1\)</span> }.</p>
+<p><span class="math inline">\(\bullet\)</span> A лежит в каждой <span class="math inline">\(\mathcal{H}_n\)</span></p>
+<p>Для того, чтобы понять, какие события лежат во всех <span class="math inline">\(\mathcal{H}_n\)</span>, попробуем для начала сформулировать хотя бы одно событие лежащее, например, в <span class="math inline">\(\mathcal{H}_{100}\)</span>.</p>
+<p><span class="math inline">\(\sigma\)</span> - алгебра <span class="math inline">\(\mathcal{H}_{100}\)</span> представляет собой совокупность знаний человека, видевшего все подбрасывания начиная с 100-го. Тогда примером события, принадлежащего данной <span class="math inline">\(\sigma\)</span> - алгебре может быть: {во всех подбрасываниях начиная с 100-го подбрасывания выпадали только орлы}.</p>
+<p>А какое событие лежит в <span class="math inline">\(\mathcal{H}_{1000}\)</span> ? Например, {в 5000-ом подбрасывании выпала решка}.</p>
+<p>Оказывается, достаточно легко привести пример события, лежащего в каком-то отдельном <span class="math inline">\(\mathcal{H_n}\)</span>. А что же тогда лежит во всех <span class="math inline">\(\mathcal{H}_n\)</span> ? Например, будет ли лежать в такой <span class="math inline">\(\sigma\)</span>-алгебре событие: решка выпала конечное число раз? Проверим! В <span class="math inline">\(\mathcal{H}_{100}\)</span>, например, лежит: если Джон видел все подбрасывания, начиная с 100-го,то он может однозначно определить, выпала ли решка конечное число раз. Если он увидит конечное количество решек, значит утверждение верно. А если увидит решку бесконечное количество раз, то первые 99 “неувиденных” подбрасываний никак не отразятся на “увиденной” бесконечности. То есть, первое конечное число подбрасываний никак не отразится на конечности или бесконечности числа решек во всех подбрасываниях. Рассуждая аналогичным образом, легко заметить, что такое событие лежит и в <span class="math inline">\(\mathcal{H}_{101}\)</span>, и в <span class="math inline">\(\mathcal{H}_{1000}\)</span>, и во всех остальных <span class="math inline">\(\mathcal{H}_n\)</span>.</p>
+<p>Вывод: событие {решка выпала конечное число раз} лежит во всех <span class="math inline">\(\mathcal{H}_n\)</span>.</p>
+<p>Попробуем привести другой пример события, лежащего во всех <span class="math inline">\(\mathcal{H}_n\)</span> (помимо вариаций на тему предыдущего вроде : {орёл выпал конечное/бесконечное количество раз}).</p>
+<p>Подходит ли событие {решка выпадает через раз}? Ответ: нет. Так как в данном случае первые 99 (или любое другое конечно число) неувиденных подбрасываний повлияют на результат. А вот событие {последовательность решка-орёл-решка выпадала конечное/бесконечное число раз} или {подряд два орла выпадали конечное/бесконечное число раз} лежит во всех <span class="math inline">\(\mathcal{H}_n\)</span>.</p>
+<p>Попробуем придумать более страшный пример события, лежащего во всех <span class="math inline">\(\mathcal{H}_n\)</span>!</p>
+<p>Введём случайную величину <span class="math inline">\(Q_n\)</span>, обозначающую долю орлов среди первых n подбрасываний. Тогда <span class="math inline">\(Q_1\)</span> может принимать следующие значения: 0 и 1 с вероятностью 1/2 каждое.Возможными значениями случайной величины <span class="math inline">\(Q_2\)</span>, соответсвенно, будут: 0 с вероятностью 1/4, 1/2 с вероятностью 1/2 и 1 с вероятностью 1/4. И так далее. Страшно? Это еще цветочки!</p>
+<p>Теперь рассмотрим событие {<span class="math inline">\(\lim_{n \to \infty}Q_n\geqslant 0.51\)</span>}, которое означает, что в пределе доля орлов была больше 0.51. Очевидно, что такое событие может как произойти, так и не произойти. Например, если выпадают все орлы, то оно произойдёт. А вот если орлы и решки чередуются, то - не произойдет.</p>
+<p>Допустим, Джон опоздал и не видел первые 99 подбрасываний. Сможет ли он определить, произошло ли событие {<span class="math inline">\(\lim_{n \to \infty}Q_n\geqslant 0.51\)</span>}? Ответ: да. Так как на предел первые члены последовательности не влияют. Таким образом, можем сделать вывод о том, что {<span class="math inline">\(\lim_{n \to \infty}Q_n\geqslant 0.51\)</span>} лежит во всех <span class="math inline">\(\mathcal{H}_n\)</span>.</p>
+<p>Важно отметить, что отдельные события {<span class="math inline">\(Q_n\)</span>}, например, {<span class="math inline">\(Q_n=1\)</span>} уже не будет лежать во всех <span class="math inline">\(\mathcal{H}_n\)</span>.</p>
+<p>Теперь проделаем обратную задачу и определим, в какие из упомянутых <span class="math inline">\(\sigma\)</span>-алгебр входят события:</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(X_{37} &gt; 0\)</span></p>
+<p>Событие <span class="math inline">\(X_{37} &gt; 0\)</span> означает, что в 37-м подбрасывании выпал орёл. Оно входит во все <span class="math inline">\(\mathcal{H}_i\)</span> для всех i = 1,…,37 и во все <span class="math inline">\(\mathcal{F}_j\)</span> для всех j = 37,…,n.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(X_{37} &gt; X_{2010}\)</span></p>
+<p>Данное событие является чуть более сложным случаем чем первый пример. Его способен распознать Джон, если он видел и 37-е, и 2010-е подбрасывания. Такое знание соответсвует <span class="math inline">\(\sigma\)</span> - алгебрам <span class="math inline">\(\mathcal{F}_j\)</span> для любых j начиная с 2010 и <span class="math inline">\(\mathcal{H}_i\)</span> для всех i = 1,…,37.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(X_{37} &gt; X_{2010} &gt; X_{12}\)</span></p>
+<p>А этот пример еще интереснее! В нем есть ловушка! :)</p>
+<p>Так как любой <span class="math inline">\(X_n\)</span> может принимать только два значения: 0 или 1, то событие {<span class="math inline">\(X_{37} &gt; X_{2010} &gt; X_{12}\)</span>} невозможно! Т.е. оно эквивалетно пустому множеству! А как известно из определения, пустое множество содержится в любой <span class="math inline">\(\sigma\)</span> - алгебре.</p>
+<p>Отметим, что если бы вместо строгого знака неравенства был бы нестрогий, а именно :<span class="math inline">\({X_{37} &gt; X_{2010} \geqslant X_{12}}\)</span>, то такое событие входило бы во все <span class="math inline">\(\mathcal{F}_j\)</span> для j начиная с 2010 и <span class="math inline">\(\mathcal{H}_i\)</span> для всех i = 1,…,37.</p>
+<p>P.s. Если случайно забыл(а) определение <span class="math inline">\(\sigma\)</span>-алгебры событий, то его можно подсмотреть в <a href="http://bdemeshev.github.io/sc401/notes_ranepa_2016/sigma-algebra.html">главе 4</a></p>
+<p>Упростим следующие выражения:</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(\mathcal{F}_{11}\cap\mathcal{F}_{25}\)</span></p>
+<p>Сигма-алгебре <span class="math inline">\(\mathcal{F}_{11}\)</span> соответствуют знания Джона, который видел все подбрасывания монетки с 1 по 11. А сигма алгебре <span class="math inline">\(\mathcal{F}_{25}\)</span> соответсвуют знания человека, который видел все подбрасывания монетки с 1 по 25. Тогда пересечением этих двух сигма-алгебр или, другими словами, информацией, которой обладает Джон, видевший подбрасывания и с 1 по 11, и с 1 по 25, будет <span class="math inline">\(\mathcal{F}_{11}\)</span>.</p>
+<p>Другое объяснение: пересечение двух множеств равно меньшему из этих множеств. В данном случае в <span class="math inline">\(\mathcal{F}_{25}\)</span> лежит больше событий чем в <span class="math inline">\(\mathcal{F}_{11}\)</span>. Поэтому <span class="math inline">\(\mathcal{F}_{11}\cap\mathcal{F}_{25} = \mathcal{F}_{11}\)</span>.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(\mathcal{F}_{11}\cup \mathcal{F}_{25}\)</span></p>
+<p>Данный пример очень похож на предыдущий за исключением того, что здесь спрашивается объединение данных сигма-алгебр или знания, которыми обладает Джон, видевший либо с 1 по 11 подбрасывания, либо с 1 по 25. Такой сигма-алгеброй будет – <span class="math inline">\(\mathcal{F}_{25}\)</span>.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(\mathcal{H}_{11}\cap\mathcal{H}_{25}\)</span></p>
+<p>В <span class="math inline">\(\mathcal{H}_{11}\)</span> лежит больше событий чем в <span class="math inline">\(\mathcal{H}_{25}\)</span> или <span class="math inline">\(\mathcal{H}_{11}\supset{H}_{25}\)</span> (т.к. в <span class="math inline">\(\mathcal{H}_{11}\)</span> входят все подбрасывания монетки с 11 до n, а в <span class="math inline">\(\mathcal{H}_{25}\)</span> - с 25 до n). Тогда, основываясь на приведенных в предыдущих двух пунктах рассуждениях, получим: <span class="math inline">\(\mathcal{H}_{11}\cap\mathcal{H}_{25}\)</span> = <span class="math inline">\(\mathcal{H}_{25}\)</span>.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(\mathcal{H}_{11}\cup\mathcal{H}_{25}\)</span></p>
+<p>Аналогично предыдущим пунктам получим: <span class="math inline">\(\mathcal{H}_{11}\cup \mathcal{H}_{25}=\mathcal{H}_{11}\)</span></p>
+</div>
+</div>
+<div id="-2---007-2.43---7_2_ex2" class="section level2">
+<h2><span class="header-section-number">6.2</span> 7.2 Задача №2 Про Агента 007 (№ 2.43 в задачнике) {##7_2_ex2}</h2>
+<div class="figure">
+<img src="https://ae01.alicdn.com/kf/HTB1SFuJHpXXXXbSaXXXq6xXFXXXq/%D0%94%D0%B6%D0%B5%D0%B9%D0%BC%D1%81%D0%B0-%D0%B1%D0%BE%D0%BD%D0%B4%D0%B0-%D1%88%D0%BE%D0%BD-%D0%BA%D0%BE%D0%BD%D0%BD%D0%B5%D1%80%D0%B8-%D0%BF%D0%BB%D0%B0%D0%BA%D0%B0%D1%82-%D0%B8%D0%BC%D1%8F-%D0%B2-%D0%B1%D0%BE%D0%BD%D0%B4-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B5-%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-007.jpg" alt="Джеймс Бонд" />
+<p class="caption">Джеймс Бонд</p>
+</div>
+<div id="--7_2_ex2_1" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> 7.2.1 Условие задачи {###7_2_ex2_1}</h3>
+<p>Сейчас либо солнечно, либо дождь, либо пасмурно без дождя. Соответственно множество <span class="math inline">\(\Omega\)</span> состоит из трёх исходов, <span class="math inline">\(\Omega\)</span> = {солнечно, дождь, пасмурно}. Джеймс Бонд пойман и привязан к стулу с завязанными глазами, но он может на слух отличать, идет ли дождь.</p>
+<ol style="list-style-type: decimal">
+<li><p>Как выглядит <span class="math inline">\(\sigma\)</span> - алгебра событий, которые различает агент 007?</p></li>
+<li><p>Как выглядит минимальная <span class="math inline">\(\sigma\)</span> - алгебра, содержащая событие A={}?</p></li>
+<li><p>Сколько различных <span class="math inline">\(\sigma\)</span> - алгебр можно придумать для данного <span class="math inline">\(\Omega\)</span> ?</p></li>
+</ol>
+</div>
+<div id="--7_2_ex2_2" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> 7.2.2 Решение задачи {###7_2_ex2_2}</h3>
+<ol style="list-style-type: decimal">
+<li>Как выглядит <span class="math inline">\(\sigma\)</span>-алгебра событий, которые различает агент 007?</li>
+</ol>
+<p>Введём случайную величину Z, означающую то, что различает Джеймс Бонд. Другими словами, зная Z Джеймс Бонд с легкостью сможет сказать, идёт сейчас дождь или нет. Но он не отличает события {солнечно} и {пасмурно}.</p>
+<p>Оформим возможные значения Z в виде таблицы:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\Omega\)</span></th>
+<th>Солнечно</th>
+<th>Дождь</th>
+<th>Пасмурно</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Z</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\sigma\)</span>(Z) - то, что различает Джеймс Бонд.</p>
+<p>Тогда <span class="math inline">\(\sigma\)</span>(Z) = {дождь, {солнечно,пасмурно} , <span class="math inline">\(\Omega\)</span>, <span class="math inline">\(\emptyset\)</span>}</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Как выглядит минимальная <span class="math inline">\(\sigma\)</span>-алгебра, содержащая событие A={}?</li>
+</ol>
+<p>(прим. {} - пустое множество)</p>
+<p>Минимальная <span class="math inline">\(\sigma\)</span>-алгебра, содержащая событие A={} выглядит следующим образом:</p>
+<p><span class="math inline">\(\sigma\)</span>(A) = {<span class="math inline">\(\Omega\)</span>, <span class="math inline">\(\emptyset\)</span>}</p>
+<p>На бытовом языке такую сигма-алгебру можем описать как список событий, который различает Джеймс Бонд, если бы ему завязали глаза и заткнули бы уши (печально!), т.е. если бы он не знал ничего.</p>
+<p>Отметим, что каким бы не было <span class="math inline">\(\Omega\)</span>, всегда есть самая “бедная” сигма - алгебра на нём, содержащая только само <span class="math inline">\(\Omega\)</span> и пустое множество.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Сколько различных <span class="math inline">\(\sigma\)</span> - алгебр можно придумать для данного <span class="math inline">\(\Omega\)</span> ?</li>
+</ol>
+<p>У нас уже есть две сигма - алгебры. Нужно перебрать все возможные варианты. В данном случае это вполне реально, т.к. здесь таких сигма - алгебр будет не так много.</p>
+<p>Изобразим такие сигма-алгебры графически:</p>
+<div class="figure">
+<img src="images/07_1.png" alt="Ответ: таких сигма-алгебр существует всего 5!" />
+<p class="caption">Ответ: таких сигма-алгебр существует всего 5!</p>
+</div>
+</div>
+</div>
+<div id="-3-2.39---7_3_ex3" class="section level2">
+<h2><span class="header-section-number">6.3</span> 7.3 Задача №3 (2.39 в задачнике) {##7_3_ex3}</h2>
+<div id="---7_3_ex3_1" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> 7.3.1 Условие задачи (перевод) {###7_3_ex3_1}</h3>
+<p>Пусть <span class="math inline">\(S_n\)</span> - симметричное случайное блуждание, т.е. <span class="math inline">\(S_n = X_1 +X_2 +....+X_n\)</span>, где <span class="math inline">\(X_n\)</span> - независимые и имеющие одинаковое распределение с <span class="math inline">\(P(X_n=1) = P(X_n=-1) = 0.5\)</span>. Пусть T - это момент второго локального максимума плюс один ( прим. следующий момент после момента наступления второго локального максимума). Например, если последовательность <span class="math inline">\(X_n\)</span> задана следующим образом: +1, +1, -1, -1, -1, +1, -1, -1, +1,…, то T=7. Определим следующие сигма - алгебры: <span class="math inline">\(\mathcal{F}_n:=\sigma(X_1, X_2, ..., X_n)\)</span> и <span class="math inline">\(\mathcal{F}_T\)</span> – список тех событий, которые способен различить рациональный агент, знающий все <span class="math inline">\(X_i\)</span> до момента T.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Приведите пример такого события <span class="math inline">\(A\)</span>, что <span class="math inline">\(A\notin\mathcal{F}_T\)</span>, но <span class="math inline">\(A\in\mathcal{F}_{2010}\)</span>;</p></li>
+<li><p>Приведите пример такого события <span class="math inline">\(A\)</span>, что <span class="math inline">\(A\in\mathcal{F}_T\)</span>, но <span class="math inline">\(A\notin\mathcal{F}_{2010}\)</span>;</p></li>
+<li><p>Докажите, что <span class="math inline">\(\mathcal{F}_T\)</span> отличается от всех <span class="math inline">\(\mathcal{F}_n\)</span>.</p></li>
+</ol>
+</div>
+<div id="--7_3_ex3_2" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> 7.3.2 Решение задачи ###{7_3_ex3_2}</h3>
+<p>Прежде чем приступить к решению следует сразу разобраться в условии задачи. Выделим некоторые ключевые моменты, необходимые для понимания:</p>
+<p><span class="math inline">\(\bullet\)</span> Первый момент не может являться локальным максимумом. В нашей последовательности <span class="math inline">\(X_0\)</span> отсутствует, а значит, первый момент не берется в рассмотрение!</p>
+<p><span class="math inline">\(\bullet\)</span> Для того, чтобы лучше понять, что же такое T, приведем пример с помощью картинки для последовательности (+1,+1,-1,-1,+1,-1):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">xx&lt;-<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)
+yy&lt;-<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)
+<span class="kw">plot</span>(xx, yy, <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>, <span class="dt">xlab =</span> <span class="st">&quot;T&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;y&quot;</span>, <span class="dt">xaxt =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">yaxt =</span> <span class="st">&quot;l&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>:<span class="dv">2</span>, <span class="dt">v =</span> <span class="dv">0</span>:<span class="dv">6</span>, <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>)
+<span class="kw">points</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>), <span class="dt">pch =</span> <span class="dv">16</span> )
+<span class="kw">points</span>(<span class="dv">5</span>,<span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">points</span>(<span class="dv">6</span>,<span class="dv">0</span>, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>)
+<span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">0</span>, <span class="dt">labels =</span> <span class="st">&quot;T&quot;</span>, <span class="dt">col =</span><span class="st">&quot;green&quot;</span>, <span class="dt">pos =</span> <span class="dv">3</span>)
+<span class="kw">text</span>(<span class="dv">2</span>,<span class="dv">2</span>, <span class="dt">labels =</span> <span class="st">&quot;1 loc max&quot;</span>, <span class="dt">pos =</span> <span class="dv">1</span>)
+<span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">1</span>, <span class="dt">labels =</span> <span class="st">&quot;2 loc max&quot;</span>, <span class="dt">pos =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</code></pre></div>
+<p><img src="lecture_notes_sc_files/figure-html/plot_max_min-1.png" width="672" /></p>
+<p>На графике видим, что вторым локальным максимумом является точка (5,1), а момент T равен 6.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(\mathcal{F}_T\)</span> – это не то же самое, что <span class="math inline">\(\sigma(T)\)</span>! Согласно условию задачи <span class="math inline">\(\mathcal{F}_T\)</span> – это все события, которые может различить рациональный агент, знающий все <span class="math inline">\(X_i\)</span> до момента T.</p>
+<p>Интуитивно это можно представить так: Джон играет с ребятами, а в момент времени Т его зовёт бабушка Йоко. Что знает Джон? Он знает всё, что было до момента времени Т включительно, а что было после, он уже не видел. Что он может знать? Он знает, чему равно T.</p>
+<p><span class="math inline">\(\bullet\)</span> <span class="math inline">\(\mathcal{F}_T\not=\mathcal{F}_5\)</span>! <span class="math inline">\(\mathcal{F}_5\)</span> – всё, что знает персонаж, видевший первые пять <span class="math inline">\(X_n\)</span>. <span class="math inline">\(\mathcal{F}_T\)</span> – совокупность знаний Джона, который видел первые Т <span class="math inline">\(X_n\)</span>. Т - неопределенно! – это случайное значение. НО! <span class="math inline">\(\mathcal{F}_T\)</span> – это одна конкретная сигма-алгебра, определенный список событий, он не случаен! Его размер определяется не случайно!</p>
+<p>Приведем пример событий, которые входят и не входят в <span class="math inline">\(\mathcal{F}_5\)</span>. {<span class="math inline">\(X_6=1\)</span>} - не входит в <span class="math inline">\(\mathcal{F}_5\)</span>, а вот {<span class="math inline">\(X_3=X_4\)</span>} - входит.</p>
+<p>Теперь приведем примеры событий, которые входят и не входят в <span class="math inline">\(\mathcal{F}_T\)</span>.{ <span class="math inline">\(X_6=1\)</span> } или { <span class="math inline">\(X_3=X_4\)</span> } не входят в <span class="math inline">\(\mathcal{F}_T\)</span>. {<span class="math inline">\(X_{T-3}=1\)</span>} - входит в <span class="math inline">\(\mathcal{F}_T\)</span>: Джон “тусил” до момента Т и знает то, что было за три дня до того, как его позвала бабушка Йоко. Событие {<span class="math inline">\(X_{T-2}=X_{T-3}\)</span>} так же входит в <span class="math inline">\(\mathcal{F}_T\)</span>. Кроме того, сюда же входит событие {T=5}: Джон видел все <span class="math inline">\(X_n\)</span>, посчитает их и скажет, чему равно T.</p>
+<p>Теперь, детально разобрав условие задачи, ответим на следующие вопросы.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Приведите пример такого события <span class="math inline">\(A\)</span>, что <span class="math inline">\(A\notin\mathcal{F}_T\)</span>, но <span class="math inline">\(A\in\mathcal{F}_{2010}\)</span></li>
+</ol>
+<p>{T=5} – событие, лежащее и в <span class="math inline">\(\mathcal{F}_T\)</span>, и в <span class="math inline">\(\mathcal{F}_{2010}\)</span>.</p>
+<p>{<span class="math inline">\(X_6=1\)</span>} – лежит в <span class="math inline">\(\mathcal{F}_{2010}\)</span>, но не лежит в <span class="math inline">\(\mathcal{F}_T\)</span>.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Приведите пример такого события <span class="math inline">\(A\)</span>, что <span class="math inline">\(A\in\mathcal{F}_T\)</span>, но <span class="math inline">\(A\notin\mathcal{F}_{2010}\)</span></li>
+</ol>
+<p>{T=2040} – лежит в <span class="math inline">\(\mathcal{F}_T\)</span> (Джон знает, чему равно Т), но не лежит в <span class="math inline">\(\mathcal{F}_{2010}\)</span> (Джон видел первые 2010 <span class="math inline">\(X_n\)</span>, но не знает чему равно Т.)</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Докажите, что <span class="math inline">\(\mathcal{F}_T\)</span> отличается от всех <span class="math inline">\(\mathcal{F}_n\)</span>.</li>
+</ol>
+<p><span class="math inline">\(\mathcal{F}_T\)</span> и <span class="math inline">\(\mathcal{F}_{2010}\)</span> не совпадают (см. предыдущий пункт). По аналогичным причинам <span class="math inline">\(\mathcal{F}_T\)</span> не совпадает с <span class="math inline">\(\mathcal{F}_{2015}\)</span> и так будет для любого другого n.</p>
+<p>Вопрос на засыпку: как соотносятся между собой <span class="math inline">\(\mathcal{F}_T\)</span> и <span class="math inline">\(\sigma(T)\)</span>?</p>
+<p><span class="math inline">\(\mathcal{F}_T\)</span> будет больше чем <span class="math inline">\(\sigma(T)\)</span>. Т.к. <span class="math inline">\(\mathcal{F}_T\)</span> – вся первичная информация (все <span class="math inline">\(X_n\)</span> ), а <span class="math inline">\(\sigma(T)\)</span> – информация, посчитанная на основе первичной (T). Например, в <span class="math inline">\(\sigma(T)\)</span> входит событие {T&gt;7}. А вот событие <span class="math inline">\(A\)</span> = {момент первого локального максимума &lt; 9} лежит в <span class="math inline">\(\mathcal{F}_T\)</span>, а в <span class="math inline">\(\sigma(T)\)</span> – нет.</p>
+<p>Внимание! Ловушка! Что не так в следующем рассуждении? При Т=4 <span class="math inline">\(\mathcal{F}_T\)</span>=<span class="math inline">\(\sigma(T)\)</span>, так как последовательность удовлетворяющая условию T=4 определяется однозначно: (1,-1,1,-1). И зная такую последовательность можно легко определить, что Т=4.</p>
+<p>Рассуждение выглядит вполне логичным. Но! <span class="math inline">\(\sigma(T)\)</span> - это список НЕ случайных событий, который НЕ зависит от Т. Нельзя сказать, что при T=5 <span class="math inline">\(\sigma(T)\)</span> – это один список, а при <span class="math inline">\(\sigma(T)\)</span> – другой.То есть сама формулировка “При Т=4 <span class="math inline">\(\mathcal{F}_T\)</span>=<span class="math inline">\(\sigma(T)\)</span>” не верна!</p>
+<p>Однако интересно, что события {T=4} и {<span class="math inline">\(X_1=1,X_2=-1,X_3=1,X_4=-1\)</span>} равнозначны и лежат и в <span class="math inline">\(\sigma(T)\)</span>, и в <span class="math inline">\(\mathcal{F}_T\)</span>.</p>
+<div class="figure">
+<img src="http://vignette3.wikia.nocookie.net/simpsons/images/6/65/John_lennon_1969_Simpsons.jpeg/revision/latest?cb=20140207184317" alt="А вот и тот самый Джон :)" />
+<p class="caption">А вот и тот самый Джон :)</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-example-for-cardinality-and-measurability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="expected-value-definition.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": true,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bdemeshev/sc401/issues",
+"text": null
+},
+"download": [["lecture_notes_sc.pdf", "PDF"], ["lecture_notes_sc.epub", "EPUB"], ["lecture_notes_sc.mobi", "MOBI"]],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true,
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
