@@ -39,8 +39,8 @@ MathJax.Hub.Config({
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="examples-for-geometries.html">
-<link rel="next" href="martingales-define.html">
+<link rel="prev" href="expected-value-masha.html">
+<link rel="next" href="-r-markdown-06r-markdown-example.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -232,83 +232,137 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="expected_value_masha" class="section level1">
-<h1><span class="header-section-number">Глава 10</span> Условное математическое ожидание</h1>
-<p>Конспект: Иван Максимов</p>
-<p>дата: 11 ноября 2016 г.</p>
-<div id="---8.51--" class="section level2">
-<h2><span class="header-section-number">10.1</span> Машенька и грибы (8.51 из <a href="https://github.com/bdemeshev/sc401/raw/master/sc_pset/sc_problems_main.pdf">задачника</a>)</h2>
-<div class="figure">
-<img src="http://mycoweb.ru/Submitted/AWP/Korsina_AWP_20131011.jpg" />
-
+<div id="martingales_define" class="section level1">
+<h1><span class="header-section-number">Глава 11</span> Мартингалы</h1>
+<p>Конспект: Маслова Инна</p>
+<p>дата: 14 ноября 2016</p>
+<div id="-" class="section level2">
+<h2><span class="header-section-number">11.1</span> Определение мартингала</h2>
+<div id="----" class="section level3">
+<h3><span class="header-section-number">11.1.1</span> Необходимые сведения перед основным определением</h3>
+<ul>
+<li>Определение 1: Случайный процесс в дискретном времени - это последовательность случайных величин <span class="math inline">\(x_1,x_2,x_3,\ldots\)</span> Формальная запись: (<span class="math inline">\(x_n\)</span>).</li>
+<li>Определение 2: Фильтрация (поток <span class="math inline">\(\sigma\)</span>-алгебр) - последовательность <span class="math inline">\(\sigma\)</span>-алгебр <span class="math inline">\(\mathcal{F_1}\)</span>,<span class="math inline">\(\mathcal{F_2}\)</span>,<span class="math inline">\(\mathcal{F_3}\)</span>,<span class="math inline">\(\ldots\)</span> такая, что для любого <span class="math inline">\(n\)</span> <span class="math inline">\(\mathcal{F}_n\subseteq \mathcal{F_{n+1}}\)</span> (последующая <span class="math inline">\(\sigma\)</span>-алгебра содержит предыдущую).</li>
+<li>Определение 3: фильтрация <span class="math inline">\(\mathcal{F}_n\)</span> называется естественной фильтрацией для процесса (<span class="math inline">\(x_n\)</span>), если все, что я знаю - значение <span class="math inline">\(x\)</span>, то есть для любого <span class="math inline">\(n\)</span>: <span class="math inline">\(\mathcal{F}_n=\sigma(x_1,x_2,\ldots,x_n)\)</span> ( то есть в 1 день я знаю, что было в <span class="math inline">\(x_1\)</span>,во 2 день- что было в <span class="math inline">\(x_1\)</span> и <span class="math inline">\(x_2\)</span> и так далее).</li>
+</ul>
 </div>
-<p><strong>УСЛОВИЕ</strong>: Маша пошла в лес собирать грибы. Она собрала <span class="math inline">\(n\)</span> грибов.Ей могли попасться рыжика с вероятностью <span class="math inline">\(r&gt;0\)</span>, лисички с вероятностью <span class="math inline">\(l&gt;0\)</span> или мухоморы с вероятностью <span class="math inline">\(m&gt;0\)</span>. Обозначим количество собранных рыжиков, лисичек и мухоморов за <span class="math inline">\(R, L, M\)</span> соответственно.</p>
-<p><strong>НАЙТИ</strong>:</p>
+<div id="--1" class="section level3">
+<h3><span class="header-section-number">11.1.2</span> Определение мартингала</h3>
+<p>Процесс (<span class="math inline">\(x_n\)</span>) называется мартингалом по отношению к фильтрации <span class="math inline">\(\mathcal{F}_n\)</span>, если выполнены 2 условия:</p>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(E(R+L|M)\)</span></p></li>
-<li><p><span class="math inline">\(E(M|R+L)\)</span></p></li>
-<li><p><span class="math inline">\(E(R|L)\)</span></p></li>
-<li><p><span class="math inline">\(Var(R|L)\)</span></p></li>
-<li><p><span class="math inline">\(E(R+M|L+M)\)</span></p></li>
-<li><p><span class="math inline">\(P(E(R|L)=0)\)</span></p></li>
-<li><p><span class="math inline">\(P(R=0|L)\)</span></p></li>
-<li><p><span class="math inline">\(E((\dfrac{m}{r+m})^{100-L})\)</span></p></li>
+<li><p>для любого <span class="math inline">\(n\)</span> <span class="math inline">\(x_n\)</span> измерима относительно <span class="math inline">\(\mathcal{F}_n\)</span> (мне хватает <span class="math inline">\(\mathcal{F}_n\)</span> чтобы сказать, чему равно <span class="math inline">\(x_n\)</span>) <span class="math inline">\(\newcommand{\Expect}{\mathsf{E}}\)</span></p></li>
+<li><p><span class="math inline">\(\Expect (x_{n+1}|\mathcal{F}_n)=x_n\)</span></p></li>
 </ol>
-<p><strong>РЕШЕНИЕ</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p>Очевидно, что <span class="math inline">\(R+L+M=n =&gt;R+L=n-M\)</span>, тогда при известном <span class="math inline">\(M\)</span> величина <span class="math inline">\(R+L\)</span> известна и не случайна <span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(R+L|M)=E(R+L|R+L)=R+L=n-M
-\]</span></p></li>
-<li><p>Аналогично, зная <span class="math inline">\(R+L\)</span>, можно определить <span class="math inline">\(M=n-R-L\)</span> <span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(M|R+L)=E(M|M)=M=n-R-L
-\]</span></p></li>
-<li><p>Для решение этого пункта рассмотрим для начала частный случай. Пусть <span class="math inline">\(L=40, n=100\)</span>. Найдем <span class="math inline">\(E(R|L=40)\)</span> Так как лисичек 40, то оставшихся грибов <span class="math inline">\(100-40=60\)</span>, так как <span class="math inline">\(R+M=n-L\)</span>. Среди <span class="math inline">\(60\)</span> оставшихся грибов может быть <span class="math inline">\(0,1,2,...,60\)</span> рыжиков. Найдем, например, <span class="math inline">\(P(R=0|L=40)\)</span>, то есть вероятность того, что среди оставшихся <span class="math inline">\(60\)</span> грибов будет <span class="math inline">\(0\)</span> рыжиков. Заметим, что число собранных лисичек распределено биномиально, так как найденную лисичку можно рассматривать, как “успех”, а найденную не лисичку - как “не успех”. <span class="math display">\[
-L \sim Bin(n=100, p=l) =&gt;
-\]</span> <span class="math display">\[
-P(R=0|L=40)=\dfrac{P(R=0;L=40)}{P(L=40)}=\dfrac{(C^{40}_{100}l^{40})(С^{60}_{60}m^{60})}{C^{40}_{100}l^{40}l^{100-40}}
-\]</span></p></li>
-</ol>
-<p>Поясним числитель дроби: из 100 грибов выбираются 40 лисичек, а из оставшихся 60 грибов - 40 мухоморов. Найдем <span class="math inline">\(P(R=3|L=40)\)</span>: <span class="math display">\[
-P(R=3|L=40)=\dfrac{P(R=3;L=40)}{P(L=40)}=\dfrac{P(R=3;L=40;M=47)}{P(L=40)}=\dfrac{(C^{40}_{100}l^{40})(C^{3}_{60}r^{3})(С^{57}_{47}m^{57})}{C^{40}_{100}l^{40}l^{100-40}}=C^{3}_{60}(\dfrac{r}{r+m})^3(\dfrac{m}{r+m})^{47}
-\]</span> Можно заметить, что <span class="math inline">\(R|L=40 \sim Bin(n=60;p=\dfrac{r}{r+m}) =&gt;R|L\sim Bin(n=n-L;p=\dfrac{r}{r+m}) =&gt;\)</span> по формуле ожидания биномиального распределения:</p>
-<p><span class="math display">\[
-E(R|L)=(n-L)\dfrac{r}{r+m}
-\]</span> 4) По формуле для дисперсии биномиального распределения с учетом того, что <span class="math inline">\(L|L+M\sim Bin(n=L+M;p=\dfrac{l}{l+m})\)</span>: <span class="math display">\[
-var(R|L)=(n-L)\dfrac{r}{r+m}\dfrac{m}{r+m}
-\]</span> 5) По аналогии с предыдущим пунктом, используя свойство условного мат.ожидания(мат. ожидание суммы=суммы мат.ожиданий), получим: <span class="math display">\[
-E(R+L|L+M)=E(R|L+M)+E(L|L+M)=n-L-M+(L+M)\dfrac{l}{l+m}
-\]</span></p>
-<ol start="6" style="list-style-type: decimal">
-<li>С учетом того, что мы в пункте 3 уже посчитали <span class="math inline">\(E(R|L)\)</span> получаем:</li>
-</ol>
-<p><span class="math display">\[
-P(E(R|L)=0)=P((n-L)\dfrac{r}{r+m}=0)&lt;=&gt;P(L=n)=l^{100}
-\]</span> 7) Учитывая, что <span class="math inline">\(M|L\sim Bin(n=n-L,p=\dfrac{m}{r+m})\)</span>, получим: <span class="math display">\[
-P(R=0|L)=P(M=n-L|L)=(\dfrac{m}{r+m})^{n-L}
-\]</span> 8) Заметим,что <span class="math inline">\((\dfrac{m}{r+m})^{100-L}=P(R=0|L)\)</span>. С учетом этого: <span class="math display">\[
-E((\dfrac{m}{r+m})^{100-L})=E(P(R=0|L))=(1-r)^{100}=(l+m)^{100}
-\]</span> Доказательство законности первого равенства в п.8 см.в 11.2</p>
+<p>Мартингал - процесс, который в среднем не меняется.</p>
 </div>
-<div id="--.----" class="section level2">
-<h2><span class="header-section-number">10.2</span> Закон повторного мат.ожидания действует и с вероятностью</h2>
-<p>Известно, что выполняется равенство: <span class="math inline">\(E(E(X|Y))=E(X)\)</span></p>
-<p><strong>Утверждаю, что также верно следующее</strong>: <span class="math inline">\(E(P(A|Y))=P(A)\)</span></p>
-<p><em>Доказательство</em>: Вероятность можно трактовать, как математическое ожидание: пусть событие <span class="math inline">\(A=\)</span> {Мила выйдет и увидит котёнка}, Тогда <span class="math inline">\(I_A=1\)</span>, если событие <span class="math inline">\(A\)</span> наступило и <span class="math inline">\(I_A=0\)</span>, если событие <span class="math inline">\(A\)</span> не наступило. Тогда <span class="math display">\[E(I_A)=P(A)\]</span> Если <span class="math inline">\(X=I_A\)</span>, то:</p>
-<p><span class="math display">\[
-E(E(X|Y))=E(Y) &lt;=&gt; E(P(A|Y))=E(I_A)=P(A)
-\]</span></p>
 </div>
-<div id="-----" class="section level2">
-<h2><span class="header-section-number">10.3</span> Неожиданный факт про условное математическое ожидание</h2>
-<p>Так как агент, который знает <span class="math inline">\(R\)</span> однозначно может посчитать <span class="math inline">\(R^3\)</span>, то можно делать так: <span class="math display">\[
-E(L|R)=E(L|R^3)
-\]</span> НО агент, которые знает <span class="math inline">\(R^2-3\)</span> не может однозначно посчитать <span class="math inline">\(R\)</span>, то есть он не отличает события <span class="math inline">\(R=1\)</span> и <span class="math inline">\(R=4\)</span><span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(L|R)\neq E(L|(R-3)^2)
-\]</span></p>
+<div id="section-11.2" class="section level2">
+<h2><span class="header-section-number">11.2</span> Задачи</h2>
+<div id="-" class="section level3">
+<h3><span class="header-section-number">11.2.1</span> Постановка задачи</h3>
+<p>Является ли процесс (<span class="math inline">\(x_n\)</span>) мартингалом по отношению к фильтрации <span class="math inline">\(\mathcal{F}_n\)</span>?</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(z_1,z_2,\ldots,z_n\)</span> - независимы и <span class="math inline">\(z_i\sim N(0,49)\)</span>, <span class="math inline">\(x_n=\sum_{i=1}^n z_i\)</span>. Фильтрация: <span class="math inline">\(\mathcal{F}_n=\sigma(z_1,z_2,\ldots,z_n)\)</span></p></li>
+<li><p><span class="math inline">\(z_1,z_2,\ldots,z_n\)</span> - независимы и <span class="math inline">\(z_i\sim U[0,1]\)</span>, <span class="math inline">\(x_n=\sum_{i=1}^n z_i\)</span>. Фильтрация: <span class="math inline">\(\mathcal{F}_n=\sigma(z_1,z_2,\ldots,z_n)\)</span></p></li>
+<li><p>Есть колода карт. Всего 52 карты, 4 масти.Я открываю одну карту за другой и смотрю, какую карту я открыла. Пусть <span class="math inline">\(x_n\)</span> - доля тузов в оставшейся колоде после открытия <span class="math inline">\(n\)</span> карт.<span class="math inline">\(\mathcal{F}_n\)</span> - знаю те карты, которые открыты. Рассмотрим, какие значения могут принимать <span class="math inline">\(x_0\)</span> и <span class="math inline">\(x_{51}\)</span>.</p></li>
+</ol>
+<p><span class="math inline">\(x_0=\dfrac4{52}\)</span></p>
+<p>После открытия 51 карты, получим, что значения, которые принимает <span class="math inline">\(x_{51}\)</span> будет либо 1 (последняя карта - туз), либо 0 (последняя карта - не туз). Тогда вероятность того, что последняя карта окажется тузом, равна <span class="math inline">\(\dfrac4{52}\)</span>, так как всего 4 туза, а количество карт равно 52.</p>
+<table>
+<thead>
+<tr class="header">
+<th>исход</th>
+<th>не туз</th>
+<th>туз</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_{51}\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p\)</span></td>
+<td><span class="math inline">\(\dfrac{48}{52}\)</span></td>
+<td><span class="math inline">\(\dfrac4{52}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Сколько элементов в <span class="math inline">\(\mathcal{F_1}\)</span> и <span class="math inline">\(\mathcal{F_2}\)</span>? Понять, что больше, число элементарных частиц во Вселенной или число элементов в <span class="math inline">\(\mathcal{F_2}\)</span>?</li>
+</ol>
+</div>
+<div id="-7" class="section level3">
+<h3><span class="header-section-number">11.2.2</span> Решение</h3>
+<p>Для всех случаев нужно проверить выполнение 2 условий из определения мартингала.</p>
+<p><strong>a) Рассмотрим 1 случай</strong></p>
+<p>1 условие: Я знаю <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span> и так как <span class="math inline">\(x_n=\sum_{i=1}^n z_i\)</span>, то я знаю <span class="math inline">\(x_n\)</span>.</p>
+<p>2 условие: <span class="math inline">\(\Expect (x_{n+1}|\mathcal{F}_n)=\Expect (z_1+z_2+\ldots+z_{n+1}|z_1,z_2,\ldots,z_n)\)</span>=(знаю <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span>, поэтому могу их вынести)=<span class="math inline">\(z_1+z_2+\ldots+z_n+\Expect (z_{n+1}|z_1,z_2,\ldots,z_n)\)</span>=</p>
+<p>=<span class="math inline">\(z_1+z_2+\ldots+z_n+\Expect (z_{n+1})=z_1+z_2+\ldots+z_n=x_n\)</span></p>
+<p>Пояснения к вычислениям ко 2 условию: (<span class="math inline">\(\Expect (z_{n+1})=0\)</span> так как <span class="math inline">\(z_i=N(0,1)\)</span></p>
+<p><span class="math inline">\(\Expect (z_{n+1}|z_1,z_2,\ldots,z_n)=\Expect (z_{n+1})\)</span>, так как случайные величины <span class="math inline">\(z_1,z_2,\ldots,z_{n+1}\)</span> независимы)</p>
+<p>Оба условия выполняются, значит, процесс (<span class="math inline">\(x_n\)</span>) мартингал по отношению к фильтрации <span class="math inline">\(\mathcal{F}_n\)</span>.</p>
+<p><strong>b) Рассмотрим 2 случай</strong></p>
+<p>1 условие: Я знаю <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span> и так как <span class="math inline">\(x_n=\sum_{i=1}^n z_i\)</span>, то я знаю <span class="math inline">\(x_n\)</span>.</p>
+<p>2 условие: <span class="math inline">\(\Expect (x_{n+1}|\mathcal{F}_n)=\Expect (z_1+z_2+\ldots+z_{n+1}|z_1,z_2,\ldots,z_n)\)</span>=(знаю <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span>, поэтому могу их вынести)=<span class="math inline">\(z_1+z_2+\ldots+z_n+\Expect (z_{n+1}|z_1,z_2,\ldots,z_n)=z_1+z_2+\ldots+z_n+\Expect (z_{n+1})\)</span>=</p>
+<p>=<span class="math inline">\(z_1+z_2+\ldots+z_n+\dfrac{0+1}{2}=x_n+\dfrac12 \ne x_n\)</span></p>
+<p>2 условие не выполняется, значит, в этом случае процесс (<span class="math inline">\(x_n\)</span>) не является мартингалом.</p>
+<p><strong>c) Рассмотрим 3 случай</strong></p>
+<p>1 условие: выполнено, так как если я вижу открытые карты, то могу посчитать долю тузов среди неоткрытых, то есть могу посчитать <span class="math inline">\(x_n\)</span></p>
+<p>2 условие: Спрогнозируем долю тузов, когда открою следующую карту : <span class="math inline">\(\Expect (x_{n+1}|\mathcal{F}_n)\)</span></p>
+<p>Сейчас: открыто <span class="math inline">\(n\)</span>, закрыто 52-<span class="math inline">\(n\)</span></p>
+<p>Доля тузов среди закрытых карт: <span class="math inline">\(x_n\)</span></p>
+<p>Количество закрытых тузов: <span class="math inline">\(x_n(52-n)\)</span></p>
+<p>Тогда вероятность того, что при открытии <span class="math inline">\(n+1\)</span> карты будет туз равна доле тузов среди закрытых карт или <span class="math inline">\(x_n\)</span>. Если карта - туз, то после её открытия доля тузов будет равна <span class="math inline">\(x_{n+1}=\dfrac{(52-n)x_n-1}{51-n}\)</span>. Если же при открытии карта окажется не тузом, то <span class="math inline">\(x_{n+1}=\dfrac{(52-n)x_n}{51-n}\)</span>. Ниже представлена таблица с долями тузов и вероятностями исходов.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Исход</th>
+<th>туз</th>
+<th>не туз</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_{n+1}\)</span></td>
+<td><span class="math inline">\(\dfrac{(52-n)x_n-1}{51-n}\)</span></td>
+<td><span class="math inline">\(\dfrac{(52-n)x_n}{51-n}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p\)</span></td>
+<td><span class="math inline">\(x_n\)</span></td>
+<td><span class="math inline">\(1-x_n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\Expect (x_{n+1}|\mathcal{F}_n)=x_n\dfrac{(52-n)x_n-1}{51-n}+(1-x_n)\dfrac{(52-n)x_n}{51-n}\)</span>=</p>
+<p>=<span class="math inline">\(\dfrac{52x_n^2-nx_n^2-x_n+52x_n-52x_n^2-nx_n+nx_n^2}{51-n}=\dfrac{51x_n-nx_n}{51-n}=x_n\)</span></p>
+<p>2 условие выполняется.</p>
+<p>Оба условия выполняются, значит, процесс (<span class="math inline">\(x_n\)</span>) мартингал по отношению к фильтрации <span class="math inline">\(\mathcal{F}_n\)</span>.</p>
+<p><strong>d) Последнее задание</strong></p>
+<p><span class="math inline">\(\mathcal{F_1}\)</span> содержит 52 элементарных события (например, карта №1 - крести, карта №2 - туз пик и т.д.). Каждое событие либо включаем либо не включаем, поэтому получим <span class="math inline">\(card\mathcal{F_1}=2^{52}\)</span></p>
+<p><span class="math inline">\(card\mathcal{F_2}=2^{C_{52}^1C_{51}^1}=2^{52*51}\approx(4*10^{15})^{51}=4^{51}*10^{15*51}\)</span></p>
+<p>Число элементарных частиц во Вселенной <span class="math inline">\(10^{81}\)</span></p>
+<p><span class="math inline">\(4^{51}*10^{15*51}\gg 10^{81}\)</span></p>
+</div>
 </div>
 <div id="--" class="section level2">
-<h2><span class="header-section-number">10.4</span> Если возникли проблемы</h2>
-<p>Если у вас что-то не получается с условным математическим ожиданием и дисперсией, то предлагаю посмотреть короткие <a href="https://www.coursera.org/learn/ekonometrika/lecture/ATG3O/2-1-1-uslovnoie-matiematichieskoie-ozhidaniie-opriedielieniie">видеолекции</a> от Бориса Борисовича по данной теме. Это лекции 2.1.1-2.1.4 в курсе <a href="https://www.coursera.org/learn/ekonometrika">Эконометрика</a> на Coursera. Не забудьте предварительно зарегистрироваться на курс:)</p>
+<h2><span class="header-section-number">11.3</span> Зачем изучать мартингалы?</h2>
+<p>В реальности случайные процессы - не мартингалы. Можно сделать из процесса мартингал, изучить его (все просто считается), сделать какие-то выводы, а затем, используя эти выводы, изучить исходный процесс.</p>
+<p><strong>Упражнение</strong></p>
+<p><span class="math inline">\(z_1,z_2,\ldots,z_n\)</span> - независимы и <span class="math inline">\(z_i\sim U[0,1]\)</span>, <span class="math inline">\(x_n=\sum_{i=1}^n z_i\)</span>. Фильтрация: <span class="math inline">\(\mathcal{F}_n=\sigma(x_1,x_2,\ldots,x_n)\)</span>. Возьмем процесс <span class="math inline">\(M_n=a^{x_n}\)</span>. Нужно подобрать число <span class="math inline">\(a\)</span> так, чтобы <span class="math inline">\((M_n)\)</span> был мартингалом относительно фильтрации <span class="math inline">\(\mathcal{F}_n\)</span>.</p>
+<p><strong>Решение</strong></p>
+<p>Простой случай: <span class="math inline">\(a=1\)</span>. Действительно, <span class="math inline">\((M_n)=(1,1,1,1,\ldots)\)</span>. Тогда <span class="math inline">\(\Expect (M_{n+1}|\mathcal{F}_n)=1=M_n\)</span>, а значит, <span class="math inline">\((M_n)\)</span> - мартингал.</p>
+<p>Теперь попробуем найти <span class="math inline">\(a \ne 1\)</span>. Для этого проверим выполнимость двух условий из определения мартингала.</p>
+<p>1 условие: <span class="math inline">\(M_n\)</span> измерим относительно <span class="math inline">\(\mathcal{F}_n\)</span> при известном <span class="math inline">\(a\)</span></p>
+<p>2 условие: <span class="math inline">\(\Expect (M_{n+1}|\mathcal{F}_n)=\Expect (a^{x_{n+1}}|\mathcal{F}_n)=\Expect (a^{z_1+z_2+\ldots+z_{n+1}}|\mathcal{F}_n)\)</span>=(знаю <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span>, поэтому могу их вынести)=<span class="math inline">\(a^{z_1+z_2+\ldots+z_n}\Expect (a^{z_{n+1}}|\mathcal{F}_n)=a^{x_n}\Expect (a^{z_{n+1}}|\mathcal{F}_n)\)</span>=(так как случайная величина <span class="math inline">\(z_{n+1}\)</span> не зависит от <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span>) =<span class="math inline">\(M_n\Expect (a^{z_{n+1}})\)</span>=(должно быть равно по определению мартингала)=<span class="math inline">\(M_n\)</span>.Тогда</p>
+<p><span class="math inline">\(\Expect (a^{z_{n+1}})=1\)</span></p>
+<p><span class="math inline">\(\Expect (a^{z_{n+1}})=\int\limits_0^1 a^t\,dt=1\)</span></p>
+<p><span class="math inline">\(\int\limits_0^1 e^{t*\ln a}\,dt=\left. \dfrac{e^{t*\ln a}}{\ln a}\right|_0^1=\dfrac{e^{\ln a}}{\ln a}-\dfrac1{\ln a}=\dfrac{e^{\ln a}-1}{\ln a}=\dfrac{a-1}{\ln a}=1\)</span> =&gt;</p>
+<p>=&gt; <span class="math inline">\(a-1=\ln a\)</span></p>
+<p>Это уравнение имеет единственное решение <span class="math inline">\(a=1\)</span></p>
+<p>Получаем:Процесс <span class="math inline">\(M_n=a^{x_n}\)</span> является мартингалом относительно фильтрации <span class="math inline">\(\mathcal{F}_n\)</span> только при <span class="math inline">\(a=1\)</span></p>
 
 </div>
 </div>
@@ -317,8 +371,8 @@ E(L|R)\neq E(L|(R-3)^2)
           </div>
         </div>
       </div>
-<a href="examples-for-geometries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="martingales-define.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="expected-value-masha.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-r-markdown-06r-markdown-example.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

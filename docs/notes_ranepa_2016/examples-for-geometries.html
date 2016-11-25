@@ -39,8 +39,8 @@ MathJax.Hub.Config({
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="examples-for-geometries.html">
-<link rel="next" href="martingales-define.html">
+<link rel="prev" href="condition-on-algebra.html">
+<link rel="next" href="expected-value-masha.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -232,83 +232,208 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="expected_value_masha" class="section level1">
-<h1><span class="header-section-number">Глава 10</span> Условное математическое ожидание</h1>
-<p>Конспект: Иван Максимов</p>
-<p>дата: 11 ноября 2016 г.</p>
-<div id="---8.51--" class="section level2">
-<h2><span class="header-section-number">10.1</span> Машенька и грибы (8.51 из <a href="https://github.com/bdemeshev/sc401/raw/master/sc_pset/sc_problems_main.pdf">задачника</a>)</h2>
+<div id="examples_for_geometries" class="section level1">
+<h1><span class="header-section-number">Глава 9</span> Примеры на геометрии случайных величин</h1>
+<p>Конспект: Камила Кунакбаева</p>
+<p>Дата: 7 октября 2016 г</p>
+<p>Вспомним геометрии случайных величин. <strong>Расстояние</strong> между случайными величинами X и Y определяется:</p>
+<ul>
+<li>в геометрии 1 (далее Г1):</li>
+</ul>
+<p><span class="math inline">\(d(X;Y) = \sqrt{E((X - Y)^2)}\)</span></p>
+<ul>
+<li>в геометрии 2 (далее Г2):</li>
+</ul>
+<p><span class="math inline">\(d(X;Y) = \sqrt{Var(X - Y)}\)</span></p>
+<p><strong>Косинус угла</strong> между случайными величинами:</p>
+<ul>
+<li>Г1:</li>
+</ul>
+<p><span class="math inline">\(cos(X,Y) = \frac{E(X \cdot Y)}{d(0;X) \cdot d(0;Y)}\)</span></p>
+<ul>
+<li>Г2:</li>
+</ul>
+<p><span class="math inline">\(cos(X,Y) = \frac{Cov(X,Y)}{\sigma_{x} \cdot \sigma_{y}}\)</span></p>
+<div id="-1.-." class="section level2">
+<h2><span class="header-section-number">9.1</span> Пример 1. Монетка.</h2>
+<p>Пусть монетка подбрасывается два раза, X - количество орлов. Найти в обеих геометриях:</p>
+<p>а) длину X;</p>
+<p>б) такие случайные величины Y, что Y перпендикулярна X (X <span class="math inline">\(\perp\)</span> Y).</p>
+<p><strong>Решение.</strong></p>
+<p><strong>а)</strong></p>
+<ul>
+<li>Г1:</li>
+</ul>
+<p><span class="math inline">\(d(0;X) = \sqrt{E((0 - X)^2)} = \sqrt{E(X^2)} = \sqrt{1/4 \cdot 0^2 + 1/2 \cdot 1^2 + 1/4 \cdot 2^2} = \sqrt{3/2}\)</span></p>
+<ul>
+<li>Г2:</li>
+</ul>
+<p><span class="math inline">\(d(0;X) = \sqrt{Var(0 - X)} = \sqrt{npq} = \sqrt{2 \cdot 1/2 \cdot (1-1/2)} = \sqrt{1/2}\)</span></p>
+<p>Здесь использовалось то, что дисперсия биномиального распределения равна npq.</p>
+<p><strong>б)</strong> Случайные величины перпендикулярны, если косинус угла между ними равен нулю.</p>
+<ul>
+<li>Косинус угла в Г1:</li>
+</ul>
+<p><span class="math inline">\(cos(X,Y) = \frac{E(X \cdot Y)}{d(0;X) \cdot d(0;Y)} = 0,\)</span></p>
+<p><span class="math inline">\(E(X \cdot Y) = 0,\)</span></p>
+<p>Составим таблицу значений X и Y. Вероятность каждого исхода равна 1/4.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Возможный исход</th>
+<th>Значение X</th>
+<th>Значение Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Орёл,Орёл</td>
+<td>2</td>
+<td><span class="math inline">\(Y_{o o}\)</span></td>
+</tr>
+<tr class="even">
+<td>Орёл, Решка</td>
+<td>1</td>
+<td><span class="math inline">\(Y_{o p}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Решка,Орёл</td>
+<td>1</td>
+<td><span class="math inline">\(Y_{p o}\)</span></td>
+</tr>
+<tr class="even">
+<td>Решка, Решка</td>
+<td>0</td>
+<td><span class="math inline">\(Y_{p p}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Тогда <span class="math inline">\(E(X \cdot Y) = 1/4 \cdot (2 \cdot Y_{o o} + 1 \cdot Y_{o p} + 1 \cdot Y_{p o} + 0 \cdot Y_{p p})=0,\)</span></p>
+<p><span class="math inline">\(2 \cdot Y_{o o} + Y_{o p} + Y_{p o}=0.\)</span></p>
+<p>Любые случайные величины Y, удовлетворяющие этому уравнению перпендикулярны X.</p>
+<p>Например, случайная величина Z, которая равна 1, если два раза выпали решки, и 0 в остальных случаях. Действительно, <span class="math inline">\(E(X \cdot Z) = 1/4 \cdot (2 \cdot 0 + 1 \cdot 0 + 1 \cdot 0 + 0 \cdot 1)=0\)</span> =&gt; <span class="math inline">\(cos(X,Z) = 0\)</span> =&gt; X <span class="math inline">\(\perp\)</span> Z в Г1.</p>
+<ul>
+<li>Косинус угла в Г2:</li>
+</ul>
+<p><span class="math inline">\(cos(X,Y) = \frac{Cov(X,Y)}{\sigma_{x} \cdot \sigma_{y}} = 0,\)</span></p>
+<p><span class="math inline">\(Cov(X,Y) = 0,\)</span></p>
+<p><span class="math inline">\(E(X \cdot Y) - E(X) \cdot E(Y) = 0,\)</span></p>
+<p><span class="math inline">\(E(X \cdot Y) = E(X) \cdot E(Y),\)</span></p>
+<p><span class="math inline">\(E(X \cdot Y) = E(Y),\)</span> т.к. <span class="math inline">\(E(X) = 1/4 \cdot (2 + 1 + 1 + 0) = 1\)</span></p>
+<p><span class="math inline">\(1/4 \cdot (2 \cdot Y_{o o} + 1 \cdot Y_{o p} + 1 \cdot Y_{p o} + 0 \cdot Y_{p p}) = 1/4 \cdot (Y_{o o} + Y_{o p} + Y_{p o} + Y_{p p}),\)</span></p>
+<p><span class="math inline">\(2 \cdot Y_{o o} + Y_{o p} + Y_{p o} = Y_{o o} + Y_{o p} + Y_{p o} + Y_{p p},\)</span></p>
+<p><span class="math inline">\(Y_{o o} = Y_{p p},\)</span> <span class="math inline">\(Y_{o p},Y_{p o} = \forall\)</span></p>
+<p>Примером перпендикулярной X величины может быть случайная величина Z, равная Х за вычетом по модулю количества решек.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Возможный исход</th>
+<th>Значение X</th>
+<th>Количество решек</th>
+<th>Значение Z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Орёл,Орёл</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Орёл, Решка</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Решка,Орёл</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Решка, Решка</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Тогда <span class="math inline">\(Cov(X,Z) = E(X \cdot Z) - E(Z) \cdot E(Z) = 1/4 \cdot (2 \cdot 2 + 1 \cdot 0 + 1 \cdot 0 + 0 \cdot 2) - 1 \cdot 1/4 \cdot (2 + 0 + 0 + 2) = 1 - 1 = 0\)</span> =&gt; <span class="math inline">\(cos(X,Y) = 0\)</span> =&gt; X <span class="math inline">\(\perp\)</span> Z</p>
+</div>
+<div id="-1" class="section level2">
+<h2><span class="header-section-number">9.2</span> Бонус!</h2>
+<ul>
+<li>Все <em>теоремы</em> из “обычной” геометрии справедливы и для Г1 и Г2 случайных величин.</li>
+</ul>
+<p>Например, теорема Пифагора: <span class="math inline">\(d^2(X;Y) = d^2(0;X) + d^2(0;Y)\)</span>, если X <span class="math inline">\(\perp\)</span> Y.</p>
+<p>Докажем её для Г1.</p>
+<p><span class="math inline">\(E((X - Y)^2) = E(X^2) + E(Y^2),\)</span></p>
+<p><span class="math inline">\(E(X^2) + 2 \cdot E(X \cdot Y) + E(Y^2) = E(X^2) + E(Y^2),\)</span> Т.к. X <span class="math inline">\(\perp\)</span> Y, то <span class="math inline">\(E(X \cdot Y) = 0\)</span>, из чего следует требуемое.</p>
+<p>Второй пример — теорема синусов: <span class="math inline">\(\frac{d(0;X)}{sin(Y;Y-X)} = \frac{d(0;Y)}{sin(X;Y-X)}.\)</span></p>
+<ul>
+<li><em>Скалярное произведение</em> — &lt; X, Y &gt;.</li>
+</ul>
+<p>Расстояние: <span class="math inline">\(d(X;Y) = \sqrt{d^2(X;Y)} = \sqrt{&lt; X - Y, X - Y &gt;^2}\)</span></p>
+<p>Косинус угла: <span class="math inline">\(cos(X,Y) = \frac{&lt; X, Y &gt;}{\sqrt{&lt; X , X &gt; \cdot &lt; Y , Y &gt;}}\)</span></p>
+<p>Требования к скалярному произведению:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(&lt; X, Y &gt; = &lt; Y, X &gt;,\)</span></p></li>
+<li><p><span class="math inline">\(&lt; X, X &gt; \ge 0,\)</span></p></li>
+<li><p><span class="math inline">\(&lt; X + Y, Z &gt; = &lt; X, Z &gt; + &lt; Y, Z &gt;,\)</span></p></li>
+</ol>
+<p>Отсюда, скалярное произведение случайных величин в геометриях 1 и 2:</p>
+<p>Г1:</p>
+<p><span class="math inline">\(&lt; X, Y &gt; = E(X \cdot Y)\)</span></p>
+<p>Г2:</p>
+<p><span class="math inline">\(&lt; X, Y &gt; = Cov(X,Y)\)</span></p>
+</div>
+<div id="--sigma-." class="section level2">
+<h2><span class="header-section-number">9.3</span> Геометрии и <span class="math inline">\(\sigma\)</span>-алгебра.</h2>
+<p>Определение (свойства) математического ожидания случайной величины относительно сигмы алгебры, т.е. <span class="math inline">\(E(x|\mathcal{F})\)</span>, смотри в предыдущей лекции.</p>
+<ul>
+<li><strong>Г2</strong></li>
+</ul>
+<p>Из свойства 3 <span class="math inline">\(E(X|\mathcal{F})\)</span>:</p>
+<p><span class="math inline">\(Cov(X,\overset{\heartsuit}{X}) = Cov(\widehat{X},\overset{\heartsuit}{X}),\)</span> где <span class="math inline">\(\overset{\heartsuit}{X}\)</span> — любая <span class="math inline">\(\mathcal{F}\)</span>-измеримая случайная величина.</p>
+<p><span class="math inline">\(Cov(X - \widehat{X},\overset{\heartsuit}{X}) = 0,\)</span></p>
+<p><span class="math inline">\(cos(X - \widehat{X},\overset{\heartsuit}{X}) = 0\)</span> в Г2 =&gt; <span class="math inline">\((X - \widehat{X}) \perp Z\)</span> в геометрии 2.</p>
+<p>На рисунке это выглядит так: есть плоскость (множество) <span class="math inline">\(\mathcal{F}\)</span>-измеримых случайных величин, в которой и лежит <span class="math inline">\(\overset{\heartsuit}{X}\)</span>. Тогда <span class="math inline">\(\widehat{X}\)</span> есть проекция X на эту плоскость в Г2.</p>
 <div class="figure">
-<img src="http://mycoweb.ru/Submitted/AWP/Korsina_AWP_20131011.jpg" />
-
+<img src="https://pp.vk.me/c604827/v604827035/16edd/K-MHeNK0kkA.jpg" alt="Рис.1. Иллюстрация E(X|F) в Г2" />
+<p class="caption">Рис.1. Иллюстрация E(X|F) в Г2</p>
 </div>
-<p><strong>УСЛОВИЕ</strong>: Маша пошла в лес собирать грибы. Она собрала <span class="math inline">\(n\)</span> грибов.Ей могли попасться рыжика с вероятностью <span class="math inline">\(r&gt;0\)</span>, лисички с вероятностью <span class="math inline">\(l&gt;0\)</span> или мухоморы с вероятностью <span class="math inline">\(m&gt;0\)</span>. Обозначим количество собранных рыжиков, лисичек и мухоморов за <span class="math inline">\(R, L, M\)</span> соответственно.</p>
-<p><strong>НАЙТИ</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(E(R+L|M)\)</span></p></li>
-<li><p><span class="math inline">\(E(M|R+L)\)</span></p></li>
-<li><p><span class="math inline">\(E(R|L)\)</span></p></li>
-<li><p><span class="math inline">\(Var(R|L)\)</span></p></li>
-<li><p><span class="math inline">\(E(R+M|L+M)\)</span></p></li>
-<li><p><span class="math inline">\(P(E(R|L)=0)\)</span></p></li>
-<li><p><span class="math inline">\(P(R=0|L)\)</span></p></li>
-<li><p><span class="math inline">\(E((\dfrac{m}{r+m})^{100-L})\)</span></p></li>
-</ol>
-<p><strong>РЕШЕНИЕ</strong>:</p>
-<ol style="list-style-type: decimal">
-<li><p>Очевидно, что <span class="math inline">\(R+L+M=n =&gt;R+L=n-M\)</span>, тогда при известном <span class="math inline">\(M\)</span> величина <span class="math inline">\(R+L\)</span> известна и не случайна <span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(R+L|M)=E(R+L|R+L)=R+L=n-M
-\]</span></p></li>
-<li><p>Аналогично, зная <span class="math inline">\(R+L\)</span>, можно определить <span class="math inline">\(M=n-R-L\)</span> <span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(M|R+L)=E(M|M)=M=n-R-L
-\]</span></p></li>
-<li><p>Для решение этого пункта рассмотрим для начала частный случай. Пусть <span class="math inline">\(L=40, n=100\)</span>. Найдем <span class="math inline">\(E(R|L=40)\)</span> Так как лисичек 40, то оставшихся грибов <span class="math inline">\(100-40=60\)</span>, так как <span class="math inline">\(R+M=n-L\)</span>. Среди <span class="math inline">\(60\)</span> оставшихся грибов может быть <span class="math inline">\(0,1,2,...,60\)</span> рыжиков. Найдем, например, <span class="math inline">\(P(R=0|L=40)\)</span>, то есть вероятность того, что среди оставшихся <span class="math inline">\(60\)</span> грибов будет <span class="math inline">\(0\)</span> рыжиков. Заметим, что число собранных лисичек распределено биномиально, так как найденную лисичку можно рассматривать, как “успех”, а найденную не лисичку - как “не успех”. <span class="math display">\[
-L \sim Bin(n=100, p=l) =&gt;
-\]</span> <span class="math display">\[
-P(R=0|L=40)=\dfrac{P(R=0;L=40)}{P(L=40)}=\dfrac{(C^{40}_{100}l^{40})(С^{60}_{60}m^{60})}{C^{40}_{100}l^{40}l^{100-40}}
-\]</span></p></li>
-</ol>
-<p>Поясним числитель дроби: из 100 грибов выбираются 40 лисичек, а из оставшихся 60 грибов - 40 мухоморов. Найдем <span class="math inline">\(P(R=3|L=40)\)</span>: <span class="math display">\[
-P(R=3|L=40)=\dfrac{P(R=3;L=40)}{P(L=40)}=\dfrac{P(R=3;L=40;M=47)}{P(L=40)}=\dfrac{(C^{40}_{100}l^{40})(C^{3}_{60}r^{3})(С^{57}_{47}m^{57})}{C^{40}_{100}l^{40}l^{100-40}}=C^{3}_{60}(\dfrac{r}{r+m})^3(\dfrac{m}{r+m})^{47}
-\]</span> Можно заметить, что <span class="math inline">\(R|L=40 \sim Bin(n=60;p=\dfrac{r}{r+m}) =&gt;R|L\sim Bin(n=n-L;p=\dfrac{r}{r+m}) =&gt;\)</span> по формуле ожидания биномиального распределения:</p>
-<p><span class="math display">\[
-E(R|L)=(n-L)\dfrac{r}{r+m}
-\]</span> 4) По формуле для дисперсии биномиального распределения с учетом того, что <span class="math inline">\(L|L+M\sim Bin(n=L+M;p=\dfrac{l}{l+m})\)</span>: <span class="math display">\[
-var(R|L)=(n-L)\dfrac{r}{r+m}\dfrac{m}{r+m}
-\]</span> 5) По аналогии с предыдущим пунктом, используя свойство условного мат.ожидания(мат. ожидание суммы=суммы мат.ожиданий), получим: <span class="math display">\[
-E(R+L|L+M)=E(R|L+M)+E(L|L+M)=n-L-M+(L+M)\dfrac{l}{l+m}
-\]</span></p>
-<ol start="6" style="list-style-type: decimal">
-<li>С учетом того, что мы в пункте 3 уже посчитали <span class="math inline">\(E(R|L)\)</span> получаем:</li>
-</ol>
-<p><span class="math display">\[
-P(E(R|L)=0)=P((n-L)\dfrac{r}{r+m}=0)&lt;=&gt;P(L=n)=l^{100}
-\]</span> 7) Учитывая, что <span class="math inline">\(M|L\sim Bin(n=n-L,p=\dfrac{m}{r+m})\)</span>, получим: <span class="math display">\[
-P(R=0|L)=P(M=n-L|L)=(\dfrac{m}{r+m})^{n-L}
-\]</span> 8) Заметим,что <span class="math inline">\((\dfrac{m}{r+m})^{100-L}=P(R=0|L)\)</span>. С учетом этого: <span class="math display">\[
-E((\dfrac{m}{r+m})^{100-L})=E(P(R=0|L))=(1-r)^{100}=(l+m)^{100}
-\]</span> Доказательство законности первого равенства в п.8 см.в 11.2</p>
+<p>Вывод: <span class="math inline">\(E(X|\mathcal{F})\)</span> — это ближайшая к X случайная величина из множества <span class="math inline">\(\mathcal{F}\)</span>-измеримых.</p>
+<p>“Ближайшая” означает, что расстояние по Г2 между X и <span class="math inline">\(\widehat{X}\)</span> минимальное. Т.е. <span class="math inline">\(d_{2}(X;\widehat{X}) = \sqrt{Var(X - \widehat{X})}\)</span> минимально. Значит, <span class="math inline">\(Var(X - \widehat{X}) \leqslant Var(X - \overset{\heartsuit}{X})\)</span>.</p>
+<ul>
+<li><strong>Г1</strong></li>
+</ul>
+<p>Расстояния в Г1 и Г2: <span class="math inline">\(d_{1}(X;Y) = \sqrt{E((X - Y)^2)}\)</span> и <span class="math inline">\(d_{2}(X;Y) = \sqrt{Var(X - Y)}\)</span>.</p>
+<p><span class="math inline">\(d_{1}^2(X;Y) = d_{2}^2(X;Y) + E^2(X - Y),\)</span></p>
+<p><span class="math inline">\(d_{1}^2(X;Y) \leqslant d_{2}^2(X;Y)\)</span> =&gt; в первой геометрии длины короче.</p>
+<p>Посмотрим на <span class="math inline">\(d_{1}(X;Y)\)</span> в случае, если <span class="math inline">\(Y = E(X|\mathcal{F})\)</span>.</p>
+<p>Во-первых, <span class="math inline">\(Var(X - E(X|\mathcal{F}))\)</span> минимально из предыдущего пункта.</p>
+<p>Во-вторых, <span class="math inline">\(E(X - Y) = E(X - E(X|\mathcal{F})) = E(X) - E(E(X|\mathcal{F}) = 0\)</span> по 2 свойству <span class="math inline">\(E(X|\mathcal{F})\)</span>.</p>
+<p>Тогда при условии <span class="math inline">\(Y = E(X|\mathcal{F})\)</span></p>
+<p><span class="math inline">\(d_{1}^2(X;Y) = Var(X - Y) + E^2(X - Y)\)</span> тоже минимально.</p>
 </div>
-<div id="--.----" class="section level2">
-<h2><span class="header-section-number">10.2</span> Закон повторного мат.ожидания действует и с вероятностью</h2>
-<p>Известно, что выполняется равенство: <span class="math inline">\(E(E(X|Y))=E(X)\)</span></p>
-<p><strong>Утверждаю, что также верно следующее</strong>: <span class="math inline">\(E(P(A|Y))=P(A)\)</span></p>
-<p><em>Доказательство</em>: Вероятность можно трактовать, как математическое ожидание: пусть событие <span class="math inline">\(A=\)</span> {Мила выйдет и увидит котёнка}, Тогда <span class="math inline">\(I_A=1\)</span>, если событие <span class="math inline">\(A\)</span> наступило и <span class="math inline">\(I_A=0\)</span>, если событие <span class="math inline">\(A\)</span> не наступило. Тогда <span class="math display">\[E(I_A)=P(A)\]</span> Если <span class="math inline">\(X=I_A\)</span>, то:</p>
-<p><span class="math display">\[
-E(E(X|Y))=E(Y) &lt;=&gt; E(P(A|Y))=E(I_A)=P(A)
-\]</span></p>
-</div>
-<div id="-----" class="section level2">
-<h2><span class="header-section-number">10.3</span> Неожиданный факт про условное математическое ожидание</h2>
-<p>Так как агент, который знает <span class="math inline">\(R\)</span> однозначно может посчитать <span class="math inline">\(R^3\)</span>, то можно делать так: <span class="math display">\[
-E(L|R)=E(L|R^3)
-\]</span> НО агент, которые знает <span class="math inline">\(R^2-3\)</span> не может однозначно посчитать <span class="math inline">\(R\)</span>, то есть он не отличает события <span class="math inline">\(R=1\)</span> и <span class="math inline">\(R=4\)</span><span class="math inline">\(=&gt;\)</span> <span class="math display">\[
-E(L|R)\neq E(L|(R-3)^2)
-\]</span></p>
-</div>
-<div id="--" class="section level2">
-<h2><span class="header-section-number">10.4</span> Если возникли проблемы</h2>
-<p>Если у вас что-то не получается с условным математическим ожиданием и дисперсией, то предлагаю посмотреть короткие <a href="https://www.coursera.org/learn/ekonometrika/lecture/ATG3O/2-1-1-uslovnoie-matiematichieskoie-ozhidaniie-opriedielieniie">видеолекции</a> от Бориса Борисовича по данной теме. Это лекции 2.1.1-2.1.4 в курсе <a href="https://www.coursera.org/learn/ekonometrika">Эконометрика</a> на Coursera. Не забудьте предварительно зарегистрироваться на курс:)</p>
+<div id="-2.---sigma-." class="section level2">
+<h2><span class="header-section-number">9.4</span> Пример 2. Геометрия и <span class="math inline">\(\sigma\)</span>-алгебра.</h2>
+<p><span class="math inline">\(U \sim U[0;1],\)</span> <span class="math inline">\(X = U^2,\)</span> <span class="math inline">\(\mathcal{F}\)</span> = {<span class="math inline">\(\varnothing\)</span>, <span class="math inline">\(\Omega\)</span>, {u <span class="math inline">\(&lt;\)</span> 0.7}, {u <span class="math inline">\(\geqslant\)</span> 0.7}}</p>
+<p>Найти а) <span class="math inline">\(E(X),\)</span> б) <span class="math inline">\(E(X|\mathcal{F})\)</span>.</p>
+<p>а) <span class="math inline">\(E(X) = E(U^2) = \int\limits_0^1 u^2 \cdot f(u)\ du = \int\limits_0^1 u^2 \cdot 1\ du = \left. \frac{u^3}{3} \right|_0^1 = \frac{1}{3}.\)</span></p>
+<p>б) <span class="math inline">\(E(X|\mathcal{F}) = \widehat{X} = \begin{cases} a, &amp; \text{если $u&lt;0.7$;} \\b, &amp; \text{если $u\geqslant 0.7$.} \end{cases}\)</span></p>
+<p>Как мы знаем из <strong>Геометрии и <span class="math inline">\(\sigma\)</span>-алгебра</strong> <span class="math inline">\(\widehat{X}\)</span> минимизирует квадрат расстояния в Г1. Следовательно, найдем <span class="math inline">\(\widehat{X}\)</span> из минимизации <span class="math inline">\(d_{1}^2(X;Y) = E((X - Y)^2)\)</span> по a и b.</p>
+<p><span class="math inline">\(E((X - \widehat{X})^2) = E((U^2 - \widehat{X})^2) = \underset{0}{\overset{0.7}{\int}}(u^2-a)^2 \cdot f(u)\ du + \underset{0.7}{\overset{1}{\int}} (u^2 - b)^2 \cdot f(u)\ du\)</span>, т.к.<span class="math inline">\(f(u) = 1\)</span>, то</p>
+<p><span class="math inline">\(\underset{0}{\overset{0.7}{\int}} (u^4 - 2au^2 + a^2)\ du + \underset{0.7}{\overset{1}{\int}} (u^4 - 2bu^2 + b^2)\ du = (u^5/5 - 2au^3/3 + a^2u) \underset{0}{\overset{0.7}{|}} + (u^5/5 - 2bu^3/3 + b^2u) \underset{0.7}{\overset{1}{|}} =\)</span> <span class="math inline">\(= \frac{u^5}{5} \underset{0}{\overset{1}{|}} - 2/3a \cdot 0.7^3 - 2/3b \cdot (1-0.7^3) + 0.7a^2 + 0.3b^2 \rightarrow \underset{a,b}{min}\)</span></p>
+<p>Частные производные:</p>
+<p><span class="math inline">\(\frac{\partial E((X - \widehat{X})^2)}{\partial a} = - 2/3 \cdot 0.7^3 + 1.4a = 0\)</span> =&gt; <span class="math inline">\(a = 0.7^2/3 \thickapprox 0.163\)</span></p>
+<p><span class="math inline">\(\frac{\partial E((X - \widehat{X})^2)}{\partial b} = - 2/3 \cdot (1-0.7^3) + 0.6b = 0\)</span> =&gt; <span class="math inline">\(b = \frac{1-0.7^3}{0.9} = 0.73\)</span></p>
+<p>Ответ: <span class="math inline">\(E(X|\mathcal{F}) = \begin{cases} 0.163, &amp; \text{если $u&lt;0.7$;} \\0.73, &amp; \text{если $u\geqslant 0.7$.} \end{cases}\)</span></p>
+<p>Другой способ нахождения a и b.</p>
+<p><span class="math inline">\(a = E(u^2|u &lt; 0.7) = \frac{E(u^2)}{P(u &lt; 0.7)} = \underset{0}{\overset{0.7}{\int}}u^2 \cdot f(u)\ du / 0.7 = \frac{u^3}{0.7 \cdot 3} \underset{0}{\overset{0.7}{|}} = 0.7^2 / 3 \thickapprox 0.163\)</span></p>
+<p><span class="math inline">\(b = E(u^2|u \ge 0.7) = \frac{E(u^2)}{P(u \ge 0.7)} = \frac{u^3}{0.3 \cdot 3} \underset{0.7}{\overset{1}{|}} = \frac{1-0.7^3}{0.9} = 0.73\)</span></p>
 
 </div>
 </div>
@@ -317,8 +442,8 @@ E(L|R)\neq E(L|(R-3)^2)
           </div>
         </div>
       </div>
-<a href="examples-for-geometries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="martingales-define.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="condition-on-algebra.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="expected-value-masha.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

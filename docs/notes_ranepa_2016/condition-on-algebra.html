@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html  lang="ru-RU">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Конспект по стохастическому анализу 2016</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Конспект по стохастическому анализу :)">
+  <meta name="generator" content="bookdown 0.1.14 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Конспект по стохастическому анализу 2016" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Конспект по стохастическому анализу :)" />
+  <meta name="github-repo" content="bdemeshev/sc401" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Конспект по стохастическому анализу 2016" />
+  
+  <meta name="twitter:description" content="Конспект по стохастическому анализу :)" />
+  
+
+<meta name="author" content="Студенты РАНХиГС и Борис Демешев">
+
+  
+<meta name="date" content="2016-11-25">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="expected-value-definition.html">
+<link rel="next" href="examples-for-geometries.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Конспект по стохастическому анализу</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>О конспекте</a></li>
+<li class="chapter" data-level="1" data-path="countable-sets.html"><a href="countable-sets.html"><i class="fa fa-check"></i><b>1</b> Счётные и несчётные множества</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.1</b> Счётное множество</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>1.2</b> Сравнимость мощностей</a></li>
+<li class="chapter" data-level="1.3" data-path="countable-sets.html"><a href="countable-sets.html#--"><i class="fa fa-check"></i><b>1.3</b> Доказательство от принцессы</a></li>
+<li class="chapter" data-level="1.4" data-path="countable-sets.html"><a href="countable-sets.html#section-1.4"><i class="fa fa-check"></i><b>1.4</b> Мораль</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="other-infinities.html"><a href="other-infinities.html"><i class="fa fa-check"></i><b>2</b> Счетные множества и другие бесконечности. Решение интересных задачек</a><ul>
+<li class="chapter" data-level="2.1" data-path="other-infinities.html"><a href="other-infinities.html#-1-1.3---captain-nemo-problem"><i class="fa fa-check"></i><b>2.1</b> Задача №1 (1.3 в задачнике) “Captain Nemo problem”</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>2.1.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.1.2" data-path="other-infinities.html"><a href="other-infinities.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="other-infinities.html"><a href="other-infinities.html#--."><i class="fa fa-check"></i><b>2.2</b> Бесконечности бывают разные.</a></li>
+<li class="chapter" data-level="2.3" data-path="other-infinities.html"><a href="other-infinities.html#-2-1.8----"><i class="fa fa-check"></i><b>2.3</b> Задача №2 (1.8) “Эта задачка — просто космос”</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="other-infinities.html"><a href="other-infinities.html#--1"><i class="fa fa-check"></i><b>2.3.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.3.2" data-path="other-infinities.html"><a href="other-infinities.html#-1"><i class="fa fa-check"></i><b>2.3.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="other-infinities.html"><a href="other-infinities.html#-3-1.9------"><i class="fa fa-check"></i><b>2.4</b> Задача №3 (1.9) “Помоги Даше спасти гномов от дракона”</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="other-infinities.html"><a href="other-infinities.html#--2"><i class="fa fa-check"></i><b>2.4.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="other-infinities.html"><a href="other-infinities.html#-2"><i class="fa fa-check"></i><b>2.4.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="other-infinities.html"><a href="other-infinities.html#-4--------"><i class="fa fa-check"></i><b>2.5</b> Задача №4 “И Деды Морозы бывают хитрыми” (картинка с Жебером)</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="other-infinities.html"><a href="other-infinities.html#--3"><i class="fa fa-check"></i><b>2.5.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="2.5.2" data-path="other-infinities.html"><a href="other-infinities.html#-3"><i class="fa fa-check"></i><b>2.5.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="other-infinities.html"><a href="other-infinities.html#section-2.6"><i class="fa fa-check"></i><b>2.6</b> Бонус</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html"><i class="fa fa-check"></i><b>3</b> Сигма-алгебра (<span class="math inline">\(\sigma\)</span> - алгебра)</a><ul>
+<li class="chapter" data-level="3.1" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#-sigma-"><i class="fa fa-check"></i><b>3.1</b> Определение <span class="math inline">\(\sigma\)</span>-алгебры</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#section-3.1.1"><i class="fa fa-check"></i><b>3.1.1</b> Обозначения:</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#--sigma---"><i class="fa fa-check"></i><b>3.1.2</b> Неформальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+<li class="chapter" data-level="3.1.3" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#---"><i class="fa fa-check"></i><b>3.1.3</b> Пример с игровым кубиком:</a></li>
+<li class="chapter" data-level="3.1.4" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#--sigma---"><i class="fa fa-check"></i><b>3.1.4</b> Формальное определение <span class="math inline">\(\sigma\)</span> - алгебры:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#----"><i class="fa fa-check"></i><b>3.2</b> Упражнение про Петров и Николаев:</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sigma-algebra.html"><a href="sigma-algebra.html"><i class="fa fa-check"></i><b>4</b> Сигма-алгебра (<span class="math inline">\(\sigma(x)\)</span> - алгебра)</a><ul>
+<li class="chapter" data-level="4.1" data-path="sigma-algebra.html"><a href="sigma-algebra.html#."><i class="fa fa-check"></i><b>4.1</b> Повторение.</a></li>
+<li class="chapter" data-level="4.2" data-path="sigma-algebra.html"><a href="sigma-algebra.html#."><i class="fa fa-check"></i><b>4.2</b> Упражненение.</a></li>
+<li class="chapter" data-level="4.3" data-path="sigma-algebra.html"><a href="sigma-algebra.html#---2--1.-"><i class="fa fa-check"></i><b>4.3</b> Упражнение с пары №2 (семинар 1). [Доразбор]</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="-example-for-cardinality-and-measurability.html"><a href="-example-for-cardinality-and-measurability.html"><i class="fa fa-check"></i><b>5</b> Грибная задача {#example_for cardinality_and_measurability}</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="-example-for-cardinality-and-measurability.html"><a href="-example-for-cardinality-and-measurability.html#---2.32-----."><i class="fa fa-check"></i><b>5.0.1</b> Продолжение грибной задачки (№ 2.32 в задачнике) с предыдущей лекции.</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html"><i class="fa fa-check"></i><b>6</b> Решение задач по теме Сигма-алгебра</a><ul>
+<li class="chapter" data-level="6.1" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-1-2.35--"><i class="fa fa-check"></i><b>6.1</b> Задача №1 (№ 2.35 в задачнике)</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#--5"><i class="fa fa-check"></i><b>6.1.1</b> Условие задачи:</a></li>
+<li class="chapter" data-level="6.1.2" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-4"><i class="fa fa-check"></i><b>6.1.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-2---007-2.43--"><i class="fa fa-check"></i><b>6.2</b> Задача №2 Про Агента 007 (№ 2.43 в задачнике)</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#--6"><i class="fa fa-check"></i><b>6.2.1</b> Условие задачи</a></li>
+<li class="chapter" data-level="6.2.2" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>6.2.2</b> Решение задачи</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="sigma-algebra-solution.html"><a href="sigma-algebra-solution.html#-3-2.39--"><i class="fa fa-check"></i><b>6.3</b> Задача №3 (2.39 в задачнике)</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="countable-sets.html"><a href="countable-sets.html#--"><i class="fa fa-check"></i><b>6.3.1</b> Условие задачи (перевод)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="other-infinities.html"><a href="other-infinities.html#--1"><i class="fa fa-check"></i><b>6.3.2</b> Решение задачи</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="expected-value-definition.html"><a href="expected-value-definition.html"><i class="fa fa-check"></i><b>7</b> Условное математическое ожидание</a><ul>
+<li class="chapter" data-level="7.1" data-path="expected-value-definition.html"><a href="expected-value-definition.html#----."><i class="fa fa-check"></i><b>7.1</b> Формальное определение условного математического ожидания.</a></li>
+<li class="chapter" data-level="7.2" data-path="expected-value-definition.html"><a href="expected-value-definition.html#section-7.2"><i class="fa fa-check"></i><b>7.2</b> Пример:</a></li>
+<li class="chapter" data-level="7.3" data-path="expected-value-definition.html"><a href="expected-value-definition.html#---."><i class="fa fa-check"></i><b>7.3</b> Формальное определение математического ожидания.</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="condition-on-algebra.html"><a href="condition-on-algebra.html"><i class="fa fa-check"></i><b>8</b> Условное математическое ожидание от сигма–алгебры</a><ul>
+<li class="chapter" data-level="8.1" data-path="other-infinities.html"><a href="other-infinities.html#-1"><i class="fa fa-check"></i><b>8.1</b> Задание №1</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>8.1.1</b> Условия задачи:</a></li>
+<li class="chapter" data-level="8.1.2" data-path="condition-on-algebra.html"><a href="condition-on-algebra.html#-5"><i class="fa fa-check"></i><b>8.1.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="other-infinities.html"><a href="other-infinities.html#-2"><i class="fa fa-check"></i><b>8.2</b> Задание №2</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="other-infinities.html"><a href="other-infinities.html#--1"><i class="fa fa-check"></i><b>8.2.1</b> Условия задачи:</a></li>
+<li class="chapter" data-level="8.2.2" data-path="condition-on-algebra.html"><a href="condition-on-algebra.html#-6"><i class="fa fa-check"></i><b>8.2.2</b> Решение:</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="condition-on-algebra.html"><a href="condition-on-algebra.html#-----"><i class="fa fa-check"></i><b>8.3</b> Определение условного математического ожидания от сигма–алгебры:</a></li>
+<li class="chapter" data-level="8.4" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#---"><i class="fa fa-check"></i><b>8.4</b> Определение геометрий случайных величин:</a></li>
+<li class="chapter" data-level="8.5" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>8.5</b> Дружеские рекомендации:</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="examples-for-geometries.html"><a href="examples-for-geometries.html"><i class="fa fa-check"></i><b>9</b> Примеры на геометрии случайных величин</a><ul>
+<li class="chapter" data-level="9.1" data-path="examples-for-geometries.html"><a href="examples-for-geometries.html#-1.-."><i class="fa fa-check"></i><b>9.1</b> Пример 1. Монетка.</a></li>
+<li class="chapter" data-level="9.2" data-path="other-infinities.html"><a href="other-infinities.html#-1"><i class="fa fa-check"></i><b>9.2</b> Бонус!</a></li>
+<li class="chapter" data-level="9.3" data-path="examples-for-geometries.html"><a href="examples-for-geometries.html#--sigma-."><i class="fa fa-check"></i><b>9.3</b> Геометрии и <span class="math inline">\(\sigma\)</span>-алгебра.</a></li>
+<li class="chapter" data-level="9.4" data-path="examples-for-geometries.html"><a href="examples-for-geometries.html#-2.---sigma-."><i class="fa fa-check"></i><b>9.4</b> Пример 2. Геометрия и <span class="math inline">\(\sigma\)</span>-алгебра.</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="expected-value-masha.html"><a href="expected-value-masha.html"><i class="fa fa-check"></i><b>10</b> Условное математическое ожидание</a><ul>
+<li class="chapter" data-level="10.1" data-path="expected-value-masha.html"><a href="expected-value-masha.html#---8.51--"><i class="fa fa-check"></i><b>10.1</b> Машенька и грибы (8.51 из <a href="https://github.com/bdemeshev/sc401/raw/master/sc_pset/sc_problems_main.pdf">задачника</a>)</a></li>
+<li class="chapter" data-level="10.2" data-path="expected-value-masha.html"><a href="expected-value-masha.html#--.----"><i class="fa fa-check"></i><b>10.2</b> Закон повторного мат.ожидания действует и с вероятностью</a></li>
+<li class="chapter" data-level="10.3" data-path="condition-on-algebra.html"><a href="condition-on-algebra.html#-----"><i class="fa fa-check"></i><b>10.3</b> Неожиданный факт про условное математическое ожидание</a></li>
+<li class="chapter" data-level="10.4" data-path="countable-sets.html"><a href="countable-sets.html#--"><i class="fa fa-check"></i><b>10.4</b> Если возникли проблемы</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="martingales-define.html"><a href="martingales-define.html"><i class="fa fa-check"></i><b>11</b> Мартингалы</a><ul>
+<li class="chapter" data-level="11.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>11.1</b> Определение мартингала</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="sigma-algebra-intro.html"><a href="sigma-algebra-intro.html#----"><i class="fa fa-check"></i><b>11.1.1</b> Необходимые сведения перед основным определением</a></li>
+<li class="chapter" data-level="11.1.2" data-path="other-infinities.html"><a href="other-infinities.html#--1"><i class="fa fa-check"></i><b>11.1.2</b> Определение мартингала</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="martingales-define.html"><a href="martingales-define.html#section-11.2"><i class="fa fa-check"></i><b>11.2</b> Задачи</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>11.2.1</b> Постановка задачи</a></li>
+<li class="chapter" data-level="11.2.2" data-path="martingales-define.html"><a href="martingales-define.html#-7"><i class="fa fa-check"></i><b>11.2.2</b> Решение</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="countable-sets.html"><a href="countable-sets.html#--"><i class="fa fa-check"></i><b>11.3</b> Зачем изучать мартингалы?</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="-r-markdown-06r-markdown-example.html"><a href="-r-markdown-06r-markdown-example.html"><i class="fa fa-check"></i><b>12</b> Пример использования R Markdown {#06R_Markdown_example}</a><ul>
+<li class="chapter" data-level="12.1" data-path="index.html"><a href="index.html#-"><i class="fa fa-check"></i><b>12.1</b> Подзаголовки так</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown"   target="blank">Создано с использованием пакета bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Конспект по стохастическому анализу 2016</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="condition_on_algebra" class="section level1">
+<h1><span class="header-section-number">Глава 8</span> Условное математическое ожидание от сигма–алгебры</h1>
+<p>Конспект: Ксения Кинякина</p>
+<p>дата: 7 октября 2016 г</p>
+<p>Немного о работе с Rmarkdown прежде чем перейти к делу.</p>
+<p>Возможно, у вас возникнет необходимость или личное желание нарисовать что-либо в Rmarkdown. Для этого можно использовать такие прекрасные tools, как:</p>
+<ul>
+<li><p><a href="https://www.draw.io/">Draw.io</a></p></li>
+<li><p><a href="https://inkscape.org/en/">Inkscape</a></p></li>
+<li><p><a href="https://www.geogebra.org/">GeoGebra</a></p></li>
+<li><p><a href="https://www.gimp.org/">Gimp</a></p></li>
+<li><p><a href="http://www.graphviz.org/">Graphviz</a></p></li>
+<li><p><span class="math inline">\(\LaTeX\)</span> + <a href="http://www.computational-logic.org/content/study/master/documents/softskills_tikz.pdf">tikz</a></p></li>
+</ul>
+<hr />
+<p>Тепеть обратимся к <em>условному математическому ожиданию</em>.</p>
+<p>Стоит напомнить, что <span class="math inline">\(E(X|\mathcal{F})\)</span> — это наилучший прогноз <span class="math inline">\(X\)</span>, если мы различаем события из <span class="math inline">\(\sigma\)</span>-алгебры, согласно интуитивному определению.</p>
+<div id="-1" class="section level2">
+<h2><span class="header-section-number">8.1</span> Задание №1</h2>
+<div id="-" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Условия задачи:</h3>
+<p>Пусть даны случайные величины <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> и вероятности их совместного наступления:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\((X, Y)\)</span></th>
+<th align="center"><span class="math inline">\(0\)</span></th>
+<th align="center"><span class="math inline">\(4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(1\)</span></strong></td>
+<td align="center"><span class="math inline">\(a = 0.1\)</span></td>
+<td align="center"><span class="math inline">\(b = 0.2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(2\)</span></strong></td>
+<td align="center"><span class="math inline">\(c = 0.2\)</span></td>
+<td align="center"><span class="math inline">\(d = 0.5\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>и дана <span class="math inline">\(\sigma\)</span>–алгебра <span class="math inline">\(\mathcal{F} = \{ \{a\} , \{b, c, d\}, \varnothing, \Omega \}\)</span>.</p>
+<p>Необходимо найти:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>a.1. <span class="math inline">\(E(X|\mathcal{F})\)</span></p>
+<p>a.2. <span class="math inline">\(E(Y|\mathcal{F})\)</span></p>
+<p>a.3. <span class="math inline">\(E(XY|\mathcal{F})\)</span></p></li>
+<li><p><span class="math inline">\(\mathcal{H} = \sigma(Y)\)</span></p></li>
+<li><p>c.1. <span class="math inline">\(E(X|\mathcal{H})\)</span></p>
+<p>c.2. <span class="math inline">\(E(Y|\mathcal{H})\)</span></p></li>
+<li><p><span class="math inline">\(\mathcal{A} = \{ \varnothing, \Omega \}\)</span></p>
+<p>d.1. <span class="math inline">\(E(X|\mathcal{A})\)</span></p>
+<p>d.2. <span class="math inline">\(E(Y|\mathcal{A})\)</span></p></li>
+<li><p><span class="math inline">\(\mathcal{K} = \sigma(X, Y)\)</span></p>
+<p>e.1. <span class="math inline">\(E(X|\mathcal{K})\)</span></p>
+<p>e.2. <span class="math inline">\(E(Y|\mathcal{K})\)</span></p></li>
+</ol>
+<hr />
+</div>
+<div id="-5" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Решение:</h3>
+<p>Для начала приведём таблицу в более удобный для решения вид:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\Omega\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+<th align="center"><span class="math inline">\(b\)</span></th>
+<th align="center"><span class="math inline">\(c\)</span></th>
+<th align="center"><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(X\)</span></strong></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Y\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(Pr\)</span></strong></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Освежим в памяти смысл <span class="math inline">\(E(X|{a})\)</span>: это математическое ожидание <span class="math inline">\(X\)</span>, если нам известно, что <span class="math inline">\(a\)</span> — произошло.</p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p>a.1. Распишем <span class="math inline">\(E(X|\mathcal{F})\)</span> по компонентам.</p>
+<p>Исходя из условий, <span class="math inline">\(X\)</span> примет значение 1, если известно <span class="math inline">\(a\)</span> (смотрим в таблице на пересечение столбца <span class="math inline">\(a\)</span> и строки <span class="math inline">\(X\)</span>). Поэтому <span class="math inline">\({E(X|{a}) = 1}\)</span>.</p>
+<p>Заданная <span class="math inline">\(\sigma\)</span>-алгебра не различает значения <span class="math inline">\(\{b\}, \{c\}, \{d\}\)</span>, только “слипшиеся” вместе — <span class="math inline">\(\{b, c, d\}\)</span>. Посчитаем же <span class="math inline">\(E(X|\{b, c, d\})\)</span>: для этого нам потребуется таблица. Вероятность наступления <span class="math inline">\(b\)</span> среди событий <span class="math inline">\(b, c, d\)</span>: <span class="math inline">\(\frac{0.2}{(0.2+0.2+0.5)}\)</span> — это доля наступления <span class="math inline">\(b\)</span>, рассуждая интуитивно. Аналогично для <span class="math inline">\(c\)</span> и <span class="math inline">\(d\)</span>: <span class="math inline">\(\frac{0.2}{(0.2+0.2+0.5)}\)</span> и <span class="math inline">\(\frac{0.5}{(0.2+0.2+0.5)}\)</span>, соответсвенно. Таким образом, <span class="math inline">\(E(X|\{b, c, d\}) = 1\frac{0.2}{(0.2+0.2+0.5)} + 2\frac{0.2}{(0.2+0.2+0.5)} + 2\frac{0.5}{(0.2+0.2+0.5)} = 1\frac{2}{9} + 2\frac{2}{9} + 2\frac{5}{9} = \frac{16}{9}\)</span></p>
+<p>В нашу таблицу можно добавить еще одну строку:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\Omega\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+<th align="center"><span class="math inline">\(b\)</span></th>
+<th align="center"><span class="math inline">\(c\)</span></th>
+<th align="center"><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(X\)</span></strong></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Y\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(Pr\)</span></strong></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">**$E(X</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>a.2. Аналогичны рассуждения для <span class="math inline">\(E(Y|\mathcal{F})\)</span>, запишем сразу в таблицу:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\Omega\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+<th align="center"><span class="math inline">\(b\)</span></th>
+<th align="center"><span class="math inline">\(c\)</span></th>
+<th align="center"><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(X\)</span></strong></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Y\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(Pr\)</span></strong></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">**$E(X</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">**$E(Y</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{28}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{28}{9}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>a.3. Случай <span class="math inline">\(E(XY|\mathcal{F})\)</span> разберём более подробно. <span class="math inline">\(XY\)</span> примет значения <span class="math inline">\(0, 4, 0, 8\)</span>. То есть, вектор <span class="math inline">\(X = (1, 1, 2, 2)\)</span>, вектор <span class="math inline">\(Y = (0, 4, 0, 4)\)</span>, отсюда получаем, что вектор <span class="math inline">\(XY = (0, 4, 0, 8)\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\Omega\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+<th align="center"><span class="math inline">\(b\)</span></th>
+<th align="center"><span class="math inline">\(c\)</span></th>
+<th align="center"><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(X\)</span></strong></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Y\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(XY\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(8\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Pr\)</span></strong></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">**$E(X</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">**$E(Y</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{28}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{28}{9}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(E(X|\mathcal{F})\)</span>, как мы уже знаем, разбивается на два случая: <span class="math inline">\(E(X|\{a\})\)</span> и <span class="math inline">\(E(X|\{b, c, d\})\)</span>.</p>
+<p><span class="math inline">\(E(X|\{a\}) = 0\)</span>, так как значению <span class="math inline">\(a\)</span> в векторе <span class="math inline">\(XY\)</span> соответсвует <span class="math inline">\(0\)</span>.</p>
+<p><span class="math inline">\(E(X|\{b, c, d\}) = 4\frac{0.2}{(0.2+0.2+0.5)} + 0\frac{0.2}{(0.2+0.2+0.5)} + 8\frac{0.5}{(0.2+0.2+0.5)} = 4\frac{2}{9} + 0\frac{2}{9} + 8\frac{5}{9} = \frac{48}{9}\)</span>.</p>
+<p>Таблица, в свою очередь, примет вид:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\Omega\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+<th align="center"><span class="math inline">\(b\)</span></th>
+<th align="center"><span class="math inline">\(c\)</span></th>
+<th align="center"><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(X\)</span></strong></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Y\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(XY\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(8\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Pr\)</span></strong></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">**$E(X</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{16}{9}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">**$E(Y</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{28}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{28}{9}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">**$E(XY</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{48}{9}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{48}{9}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>По сути, на этом разбор данного задания заканчивается. Однако решение остальных пунктов всё же приведено ниже с оговоркой: оно было сверено, но достоверно не проверено.</p>
+<hr />
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\mathcal{H} = \sigma(Y) = \{\{a, c\}, \{b, d\}, \varnothing, \Omega \}\)</span>.</li>
+</ol>
+<hr />
+<ol start="3" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p>c.1. <span class="math inline">\(E(X|\mathcal{H}) = E(X|\{a, c\}) + E(X|\{b, d\})\)</span>.</p>
+<p>Посчитаем покомпонентно:</p>
+<p><span class="math inline">\(E(X|\{a, c\}) = 1\frac{0.1}{(0.1+0.2)} + 2\frac{0.2}{(0.1+0.2)} = \frac{5}{3}\)</span></p>
+<p><span class="math inline">\(E(X|\{b, d\}) = 1\frac{0.2}{(0.2+0.5)} + 2\frac{0.5}{(0.2+0.5)} = \frac{12}{7}\)</span></p>
+<p>Таблица примет вид:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\Omega\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+<th align="center"><span class="math inline">\(b\)</span></th>
+<th align="center"><span class="math inline">\(c\)</span></th>
+<th align="center"><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(X\)</span></strong></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Pr\)</span></strong></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">**$E(X</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(\frac{5}{3}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{12}{7}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{3}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>c.2. Механизм решения для <span class="math inline">\(E(Y|\mathcal{H})\)</span> аналогичный. Запишем ответ в таблицу:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\Omega\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+<th align="center"><span class="math inline">\(b\)</span></th>
+<th align="center"><span class="math inline">\(c\)</span></th>
+<th align="center"><span class="math inline">\(d\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(X\)</span></strong></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(Y\)</span></strong></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(Pr\)</span></strong></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">**$E(X</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(\frac{5}{3}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{12}{7}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{3}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">**$E(Y</td>
+<td align="center">)$**</td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<ol start="4" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\mathcal{A} = \{ \varnothing, \Omega \}\)</span></li>
+</ol>
+<p>d.1. <span class="math inline">\(E(X|\mathcal{A}) =\)</span> так как <span class="math inline">\(X\)</span> не зависит от <span class="math inline">\(\mathcal{A} = E(X) = 1(0.1+0.3) + 2(0.2+0.5) = 1.7\)</span></p>
+<p>d.2. <span class="math inline">\(E(Y|\mathcal{A}) =\)</span> так как <span class="math inline">\(Y\)</span> не зависит от <span class="math inline">\(\mathcal{A} = E(Y) = 0(0.1+0.2) + 4(0.2+0.5) = 2.8\)</span></p>
+<hr />
+<p>И наконец…</p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\mathcal{K} = \sigma(X, Y)\)</span> — все подмножества <span class="math inline">\(\Omega\)</span>.</li>
+</ol>
+<p>e.1. <span class="math inline">\(E(X|\mathcal{K}) = X\)</span>, так как <span class="math inline">\(X\)</span> — измерима относительно <span class="math inline">\(\mathcal{K}\)</span>.</p>
+<p>e.2. <span class="math inline">\(E(Y|\mathcal{K}) = Y\)</span>, так как <span class="math inline">\(Y\)</span> — измерима относительно <span class="math inline">\(\mathcal{K}\)</span>.</p>
+<p>Итак, первое задание разобрано полностью. Хочется верить, что лапши на уши навешано не было.</p>
+<hr />
+</div>
+</div>
+<div id="-2" class="section level2">
+<h2><span class="header-section-number">8.2</span> Задание №2</h2>
+<div id="--1" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Условия задачи:</h3>
+<p>Это задание — продолжение задачи <span class="math inline">\(2.39\)</span> из задачника. Ниже вкратце изложены условия:</p>
+<p><span class="math inline">\(\mathcal{S_n}\)</span> — симметричное случайное блуждание, то есть <span class="math inline">\(\mathcal{S_n} = X_1 + X_2 + ... + X_n\)</span>, где <span class="math inline">\(X_n\)</span> — независимые и одинаково распределённые случайные величины с вероятностью <span class="math inline">\(P(X_n = 1) = P(X_n = −1) = 0.5\)</span>. Пусть <span class="math inline">\(T\)</span> — время второго локального максимума <span class="math inline">\(+1\)</span>. Определены следующие <span class="math inline">\(\sigma\)</span>–алгебры: <span class="math inline">\(\mathcal{F_n} = \sigma(X_1, X_2, ..., X_n)\)</span> и <span class="math inline">\(\mathcal{F_T}\)</span> — все события <span class="math inline">\(X_i\)</span>, которые могут быть распознаны до момента <span class="math inline">\(T\)</span>.</p>
+<p>Необходимо найти:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(E(X_{T-3}|\mathcal{F}_T)\)</span></p></li>
+<li><p><span class="math inline">\(E(T|\sigma(T))\)</span></p></li>
+<li><p><span class="math inline">\(E(X_T|\sigma(T))\)</span></p></li>
+<li><p><span class="math inline">\(E(S_T|\sigma(T))\)</span></p></li>
+</ol>
+<hr />
+</div>
+<div id="-6" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Решение:</h3>
+<p>Напомним, что <span class="math inline">\(\sigma(T)\)</span> — знание момента времени второго локального максимума <span class="math inline">\(+1\)</span>, а <span class="math inline">\(\mathcal{F_T}\)</span> — все события <span class="math inline">\(X_i\)</span>, которые могут быть распознаны до момента второго локального максимума <span class="math inline">\(+1\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(E(X_{T-3}|\mathcal{F}_T)\)</span>: событие <span class="math inline">\(X_{T-3}\)</span> — измеримо относительно <span class="math inline">\(\sigma\)</span>–алгебры <span class="math inline">\(\mathcal{F}_T\)</span>, поэтому <span class="math inline">\(E(X_{T-3}|\mathcal{F}_T) = X_{T-3}\)</span>.</li>
+</ol>
+<hr />
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(E(T|\sigma(T))\)</span>: аналогично с пунктом a. <span class="math inline">\(T\)</span> — измерима относительно <span class="math inline">\(\sigma(T)\)</span>, поэотму <span class="math inline">\(E(T|\sigma(T)) = T\)</span>.</li>
+</ol>
+<hr />
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(E(X_T|\sigma(T))\)</span>: так как в <span class="math inline">\(\sigma(T)\)</span> содержится информация о моменте <span class="math inline">\(T\)</span>, который, грубо говоря, означает переход с <span class="math inline">\(1\)</span> на <span class="math inline">\(-1\)</span>, то <span class="math inline">\(E(X_T|\sigma(T)) = -1\)</span>.</li>
+</ol>
+<p>Наглядное изображение:</p>
+<div class="figure">
+<img src="images/09_diag2.png" alt="Иллюстрация T — второго локального максимума +1." />
+<p class="caption">Иллюстрация <span class="math inline">\(T\)</span> — второго локального максимума <span class="math inline">\(+1\)</span>.</p>
+</div>
+<hr />
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Не будем создавать интригу и сразу дадим ответ: <span class="math inline">\(E(S_T|\sigma(T)) = 0\)</span>.</li>
+</ol>
+<p>Алгоритм решения заключается в кропотливом переборе всех возможных комбинаций <span class="math inline">\(S_T\)</span> при каждом значении <span class="math inline">\(T\)</span>. Например, при разобранном нами значении <span class="math inline">\(T=17\)</span> <span class="math inline">\((S_T|T=17)\)</span> будет принимать значения <span class="math inline">\(\pm{13}, \pm{11}, \pm{9}, \pm{7}, \pm{5}, \pm{3}, \pm{1}\)</span>.</p>
+<hr />
+<p>На этом разбор упражнений заканчивается. Как приятный бонус, определим условное математическое ожидание от <span class="math inline">\(\sigma\)</span>–алгебры формально.</p>
+</div>
+</div>
+<div id="-----" class="section level2">
+<h2><span class="header-section-number">8.3</span> Определение условного математического ожидания от сигма–алгебры:</h2>
+<p><em>Если <span class="math inline">\(E(|X|) &lt; \infty\)</span>, то можно определить <span class="math inline">\(E(X|\mathcal{F})\)</span>.</em></p>
+<p><em><span class="math inline">\(E(X|\mathcal{F})\)</span> — это случайная величина <span class="math inline">\(\hat{X}\)</span>, обладающая следующими свойствами:</em></p>
+<p><em>1. <span class="math inline">\(\hat{X}\)</span> измеримо относительно <span class="math inline">\(\sigma\)</span>–алгебры <span class="math inline">\(\mathcal{F}\)</span>, то есть, зная информацию из <span class="math inline">\(\mathcal{F}\)</span>, можно определить <span class="math inline">\(X\)</span>.</em></p>
+<p><em>2. <span class="math inline">\(E(\hat{X}) = E(X)\)</span>.</em></p>
+<p><em>3. Если взять любую <span class="math inline">\(\mathcal{F}\)</span>–измеримую случайную величину <span class="math inline">\(Z\)</span>, то окажется, что <span class="math inline">\(cov(Z, X) = cov(Z, \hat{X})\)</span>.</em></p>
+<hr />
+<p>Зачастую в задачах данного курса встречается много разных замечательных персонажей, будь то Маша с грибами, Петры с Николаями, злобный Дед Мороз, Дракон с гномами или Виноградная улитка. Для интуитивной интерпретации представленного выше определения, придумаем простого мальчика Васю. Он знает, произошли ли события из <span class="math inline">\(\mathcal{F}\)</span>. Мальчик Вася также может посчитать <span class="math inline">\(\hat{X}\)</span> (свойство 1), Вася умеет считать <span class="math inline">\(E(\hat{X})\)</span> и <span class="math inline">\(E(X)\)</span> (свойство 2), кроме того, мальчик Вася не отличает <span class="math inline">\(X\)</span> от <span class="math inline">\(\hat{X}\)</span>, если он может считать только ковариации (свойство 3).</p>
+<hr />
+<p>Идём дальше.</p>
+</div>
+<div id="---" class="section level2">
+<h2><span class="header-section-number">8.4</span> Определение геометрий случайных величин:</h2>
+<p>Для случайных величин, помимо всего прочего, можно определять геометрии. <strong>У случайных величин есть длина, а между двумя случайными величинами можно определить угол!</strong></p>
+<p>Для решения следующих упражнений, дадим определение двум геометриям:</p>
+<table style="width:25%;">
+<colgroup>
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(№\)</span></th>
+<th align="center"><span class="math inline">\(Г_1\)</span></th>
+<th align="center"><span class="math inline">\(Г_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(dist(X,Y)\)</span></strong></td>
+<td align="center"><span class="math inline">\(\sqrt{E((X-Y)(X-Y))}\)</span></td>
+<td align="center"><span class="math inline">\(\sqrt{Var(X-Y)}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong><span class="math inline">\(cos(X,Y)\)</span></strong></td>
+<td align="center"><span class="math inline">\(\frac{E(XY)}{dist(0, X)dist(0, Y)}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{cov(X, Y)}{\sigma_{X}\sigma_{Y}}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong><span class="math inline">\(&lt;X, Y&gt;\)</span></strong></td>
+<td align="center"><span class="math inline">\(E(XY)\)</span></td>
+<td align="center"><span class="math inline">\(Cov(X, Y)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Упражнения же на геометрии случайных величин будут разобраны в следующем конспекте.</p>
+<hr />
+</div>
+<div id="-" class="section level2">
+<h2><span class="header-section-number">8.5</span> Дружеские рекомендации:</h2>
+<ol style="list-style-type: decimal">
+<li><p>В процессе работы над конспектом часто приходится использовать специальные символы, которые в Rmarkdown записываются достаточно громоздко. Например, за символом <span class="math inline">\(\mathcal{F}\)</span> скрывается вот такой крокодильчик: <code>$\mathcal{F}$</code>. Согласитесь, каждый раз набивать руками подобные символы не столь приятно. Гораздо удобнее копировать из заранее созданного файла, в который <del>ленивый</del> студент добавляет специальные символы по мере написания конспекта. И оттуда же берёт уже единожды введёное руками.</p></li>
+<li><p>А вы набивали макет для таблицы самостоятельно? Если <em>ещё</em> нет, то этот <a href="http://www.tablesgenerator.com/markdown_tables">генератор таблиц</a> облегчит вашу участь.</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="expected-value-definition.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="examples-for-geometries.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": true,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bdemeshev/sc401/issues",
+"text": null
+},
+"download": [["lecture_notes_sc.pdf", "PDF"], ["lecture_notes_sc.epub", "EPUB"], ["lecture_notes_sc.mobi", "MOBI"]],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true,
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
