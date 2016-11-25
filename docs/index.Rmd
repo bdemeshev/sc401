@@ -3,22 +3,29 @@ title: "Стохастический анализ"
 output: html_document
 ---
 
-## Крупные материалы
+
+## Материалы
 
 * [Учебник](https://github.com/bdemeshev/sc_book/raw/master/sc_book.pdf) (черновик)
 * Прототип [задачника](https://github.com/bdemeshev/sc401/raw/master/sc_pset/sc_problems_main.pdf)
-* [Видео-запись](http://www.youtube.com/playlist?list=PL1poMUvVlAqeZOvhE75ViZPKnCTmWLRxf) лекций Димы Борзых для 2 курса бакалавриата экономики
-* [Видео-запись](https://vimeo.com/album/2609503)  лекций для 1 курса магистратуры миэф
-
-## Мелкие материалы
-
 * Теорема Дуба [об остановке мартингала](https://github.com/bdemeshev/sc401/raw/master/stop_theorem/stop_theorem_main.pdf)
-* Подборка [экзаменов миэф](https://github.com/bdemeshev/sc401/raw/master/matek2_collect/matek2_collection.pdf)
+* [Видео-запись](http://www.youtube.com/playlist?list=PL1poMUvVlAqeZOvhE75ViZPKnCTmWLRxf) лекций Димы Борзых для 2 курса бакалавриата экономики
+
+
+
+## ICEF master course
+
+* Exams [collection](https://github.com/bdemeshev/sc401/raw/master/matek2_collect/matek2_collection.pdf)
+* Some video [lectures-2013](https://vimeo.com/album/2609503) 
+* Student lecture notes-2016:
+    - lecture 1: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_01.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_01.tex)
+  
 
 ## Курс в РАНХиГС
 
 * [Домашнее задание - 2015](https://github.com/bdemeshev/sc401/raw/master/ranepa_st/2015/dz_ranh/sc_dz_ranh.pdf). 
-* [Конспект курса - 2016](http://bdemeshev.github.io/sc401/notes_ranepa_2016/). Для конспектирующих [типичные .Rmd-файлы](https://github.com/bdemeshev/sc401/tree/master/ranepa_st/2016/lecture_notes_book) :) 
+* [Конспект курса - 2016](http://bdemeshev.github.io/sc401/notes_ranepa_2016/). Для конспектирующих [типичные .Rmd-файлы](https://github.com/bdemeshev/sc401/tree/master/ranepa_st/2016/lecture_notes_book) 
+* Контрольная [работа-2016](https://github.com/bdemeshev/sc401/raw/master/ranepa_st/2016/kr_01/kr_01_sc_ranepa.pdf) :) 
 
 
 ## Курс в банковском институте
