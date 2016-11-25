@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+
+\usepackage[top=2cm, left=1.5cm, right=1.5cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Стохастический анализ}
+\chead{}
+\rhead{2016-11-25, праздник номер раз :)}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\usepackage{bbm}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+
+
+%% эконометрические сокращения
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\def \hb{\hat{\beta}}
+\def \hs{\hat{\sigma}}
+\def \htheta{\hat{\theta}}
+\def \s{\sigma}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \v1{\vec{1}}
+\def \e{\varepsilon}
+\def \he{\hat{\e}}
+\def \z{z}
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+\def \cN{\mathcal{N}}
+
+
+\renewcommand{\P}{\mathbb{P}}
+
+\begin{document}
+
+
+
+
+
+\begin{enumerate}
+
+\item Рассмотрим множество последовательностей из произвольных натуральных чисел, обозначим его буквой $A$. Например, одним элементом $A$ является последовательность $(1, 2, 3, 4, \ldots)$. Определим подмножество $B \subset A$, последовательностей в которых единица упомянута не больше 1 раза, двойка — не более двух раз, тройка — не более трёх и так далее. Определим подмножество $C \subset A$, последовательностей, в которых все числа кроме числа 2016 упоминаются конечное количество раз, а число 2016 может упоминаться любое количество раз.
+
+Найдите $\card A$, $\card B$, $\card C$
+
+\item У Буратино есть три монетки: одна целиком зелёная, вторая — целиком красная и третья — с одной стороны зелёная, с другой — красная. Сначала Буратино подбрасывает цветную монетку. Если цветная монетка выпадает красной стороной, то Буратино подбрасывает красную монетку, если зелёной — то зелёную. Вероятности выпадения орла равны: $0.2$ для красной, $0.4$ для зелёной, $0.7$ для цветной. Пусть $X$ — индикатор того, выпал ли орёл на цветной монетке, а $Y$ — индикатор того, выпал ли орёл при втором броске.
+
+Найдите $\E(Y|X)$, $\E(X|Y)$, $\Var(X|Y)$
+
+\item Величины $X_{1}, \ldots,  X_{100}$ независимы и равномерны на  отрезке $ [0;1] $. Пусть $L=\max\{X_{1},X_{2},\ldots, X_{80}\}$ а $R=\max\{X_{81},X_{82},\ldots,X_{100}\}$ и $M=\max\{X_{1},\ldots,X_{100}\}$
+
+Найдите
+\begin{enumerate}
+\item $ \P(L>R|L)$ и $ \P(L>R|R) $ и $ \P(L>R|M)$, $\P(L>R|L,M) $
+\item $\E( X_1 | L )$, $\E( X_1 | \min \{ X_1, \ldots, X_{100} \})$
+\end{enumerate}
+
+\item You throw a fair coin infinite number of times. Let's denote the result of the second toss by $Y_2$ ($0$ for tail and $1$ for head) and the number of throws to get the first «head» by $N$. Find $\E(Y_2|N)$, $\Var(Y_2|N)$ and $\E(N|Y_2)$
+
+\item It is known that $\E(Y|X)=0$. Which of the following quantities must be zero: $\E(Y)$? $\E(X)$? $\Cov(X,Y)$? $\Cov(X^2,Y)$? $\Cov(X,Y^2)$? Prove or provide a counter-example.
+
+\item The random variables $X_1$, $X_2$, \ldots, $X_n$, \ldots are independent uniformly distributed on $[0; 1]$. I am summing them until the first $X_i$ greater than 0.5 is added. After this term I stop. Let’s denote by $S$ the total sum and by $N$ — the number of terms added. Find $\E(S|N)$, $\Var(S|N)$, $E(S)$
+
+
+\end{enumerate}
+
+\end{document}
