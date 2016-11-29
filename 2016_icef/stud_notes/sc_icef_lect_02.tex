@@ -1,0 +1,219 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+
+
+
+
+\usepackage{amsmath} % Математические окружения AMS
+\usepackage{amsfonts} % Шрифты AMS
+\usepackage{amssymb} % Символы AMS
+\usepackage{mathtext} % Русские буквы в фомулах
+\usepackage{graphicx} % Вставить pdf- или png-файлы
+
+\usepackage{color}
+\usepackage{bbold}
+
+\usepackage{booktabs}
+
+\usepackage{mathrsfs} % Красивый шрифт
+
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строкв таблице
+
+\usepackage{indentfirst} % Отступ в первом абзаце.
+\usepackage{tikz}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
+
+\usepackage{verbatim}
+
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+\DeclareMathOperator{\card}{\mathop{card}}
+
+\usepackage{enumitem}
+
+
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+
+
+
+
+
+\pagestyle{fancy} \makeatletter \fancyhead[L]{\footnotesize ICEF, 2016/17, «Mathematics for Economists»}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+ \begin{document}
+ \begin{center}
+ {\Large{Конспект лекции 22.11.16}}
+ \end{center}
+  \begin{center}
+ {\large{Марданов Тимур}}
+ \end{center}
+ \par {\bf\underline{Упражнение 8.}} Пошла Маша в лес и собрала 100 грибов: $L$ лисичек, $R$ рыжиков и $M$ мухоморов. Пусть $p_{L}, p_{R}, p_{M}$ - вероятности найти гриб определенного типа, такие что $\begin{cases} p_{L}, p_{R}, p_{M} > 0\\p_{L} + p_{R} +p_{M} = 1\end{cases}$.
+
+ Пусть также расположение каждого гриба не зависит от расположения других.
+
+ Найдите:
+\begin{enumerate}
+	\item $E(R+L \mid M)$, $E(M \mid R+L)$;
+	\item $E(R \mid L)$;
+	\item $Var(R \mid L)$;
+	\item $E(R+L \mid L+M)$;
+	\item $P(E(R \mid L))=0$;
+	\item $P(R=0 \mid L)$;
+	\item $E((\frac{p_{M}}{p_{R}+p_{L}})^{100-L})$;
+	\item $P(R=7\mid L)$.
+\end{enumerate}
+\par{\underline{Решение:}}
+\begin{enumerate}
+	\item Если известно, что Маша собрала $M$ мухоморов, то очевидно, что она собрала $100 - M$ лисичек и рыжиков. $E(R+L \mid M) = 100 - M$.
+	Аналогично $E(M \mid R+L) = 100 - R - L$.
+	\item Если Маша собрала $L$ лисичек, то тогда $R\in \left \{0, 1\ldots, 100 - L  \right \}$. Заметим, что случайная величина $R$ имеет биномиальное распределение $R \sim Bin(n=100, p =p_{R}) \rightarrow \\ \rightarrow (R\mid L) \sim Bin(n =100-L,p =\frac{p_{R}}{p_{R}+p_{M}})$. \\ Матожидание биномиального распределения $E(R) = np$. Тогда $E(R \mid L) = (100-L)(\frac{p_{R}}{p_{M}+p_{R}})$.
+	\item Дисперсия биномиального распределения $Var(R) = np(1-p)$. \\ Тогда $Var(R\mid L)=(100-L)(\frac{p_{R}}{p_{M}+p_{R}})(1-\frac{p_{R}}{p_{M}+p_{R}})$.
+	\item $E(R+L\mid L+M) = E(R\mid L+M) + E(L\mid L +M) = (100-(L+M)) + ((L+M)\frac{p_{L}}{p_{L}+p_{M}})$. Здесь главное заметить, что $L\mid L +M$ имеет биномиальное распределние.
+	\item Необходимо просто подставить ответ из пункта 2) \\ $P(E(R\mid L)=0) = P((100-L)(\frac{p_{R}}{p_{M}+p_{R}})=0) = P(L=100) =p_{L}^{100}$.
+	\item Иногда для нахождения общего решения удобно подставлять конкретные значения вместо случайных величин и находить частное решение. Попробуем найти не $P(R=0\mid L)$,  а \\ $P(R=0\mid L=7) = P(M=93\mid L=7) = (\frac{p_{M}}{p_{M}+p_{R}})^{93}$. Тогда $P(R=0\mid L) = (\frac{p_{M}}{p_{M}+p_{R}})^{100 - L}$.
+	\item $E((\frac{p_{M}}{p_{M}+p_{R}})^{100 - L})=E(P(R=0\mid L))=\left \{ E(E(X\mid \mathcal{F}))=E(X) \right \} = P(R=0)=(1-p_{R})^{100}$.
+	\item Вспомнив формулу для биномиального распределения $P(R=x)=C_{n}^{x}p^{x}(1-p)^{n-x}$ и результаты пункта 2), получим $P(R=7\mid L)=\begin{cases}
+	0 & \text{ if } L= 93\\
+	C_{100-L}^{7}(\frac{p_{R}}{p_{R}+p_{M}})^{7}(1-\frac{p_{R}}{p_{R}+p_{M}})^{100-L-7} & \text{ if } L\neq 93 \end{cases}$.
+\end{enumerate}
+\par {\bf\underline{Упражнение 9 (8.58 из задачника).}}
+\\
+\par{$x_{1},\ldots, x_{100} \sim \mathcal{U}[0;1]$ и независимые.
+
+$L = max\left \{  x_{1},\ldots, x_{80}\right \}$;
+$R = max\left \{  x_{81},\ldots, x_{100}\right \}$;
+$M = max\left \{L,R\right \}$.}
+
+Найдите:
+\begin{enumerate}
+\item $P(L>R\mid L)$;
+
+\item $E(x_{1}\mid L)$;
+
+\item $E(min\left \{  x_{1},\ldots, x_{100}\right \}\mid M)$;
+
+\item $E(min\left \{  x_{1},\ldots, x_{100}\right \}\mid x_{1})$.
+\end{enumerate}
+\par{\underline{Решение:}}
+\begin{enumerate}
+\item Предположим $L=0.7$. Тогда $P(L>R\mid L=0.7) = P(0.7>R\mid L=0.7) = \left \{R\  \text{и} \ L - \text{независимы}  \right \} = P(R<0.7)= P(x_{81}<0.7,\ldots, x_{100}<0.7)=$\\$
+=\left \{  x_{i} - \text{независимы}\right \} = P(x_{81}<0.7) * \ldots  * P(x_{100}<0.7) = 0.7^{20} \rightarrow P(L>R\mid L) = L^{20}$ \\
+$(*) \ E(L^{20})=E(P(L>P\mid L))=\left \{ E(E(X\mid \mathcal{F}))=E(X) \right \}=P(L>R)=\frac{80}{100}$.
+
+\item Попробуем сначала найти $E(x_{1}\mid max\left \{x_{1},x_{2},x_{3}  \right \} = 0.7)= p_{x_{1}=max}0.7+p_{x_{1}\neq max}E(x_{1}) =\frac{1}{3}0.7+ \\ +\frac{2}{3}0.35$.
+\\Тогда $E(x_{1}\mid L) =\frac{1}{80}L+\frac{79}{80}\frac{L}{2}$.
+
+\item Попробуем сначала найти $E(min\left \{  x_{1},\ldots, x_{100}\right \}\mid M = 0.7) =  \left \{  y \sim \mathcal{U}[0;0.7] \right \}=E(min\left \{y_{1},\ldots, y_{99}\right \})$. Проведём мысленный эксперимент: возьмём отрезок [0,0.7] и отметим на нём 99 точек случайным образом. Так мы поделим отрезок на 100 маленьких отрезков. И хотя их длинна различна, в среднем она равна $\frac{0.7}{100}$. А величина, которую мы ищем, равна рсстоянию от нуля до первой точки = средняя длинна маленького отрезка. Тогда $E(min\left \{  x_{1},\ldots, x_{100}\right \}\mid M = 0.7) = \frac{0.7}{100}$, а в общем случае $E(min\left \{  x_{1},\ldots, x_{100}\right \}\mid M) = \frac{M}{100}$.
+\item $E(min\left\{x_{1},\ldots, x_{100} \right\} \mid x_{1})= p_{x_{1}=min}x_{1} + p_{x_{1}\neq min}E(min \left \{x_{2},\ldots, x_{100}  \right \}) = \frac{1}{100}x_{1} + \frac{99}{100}\frac{1}{100}$.
+\end{enumerate}
+  \begin{center}
+	{\large{Мартингалы}}
+\end{center}
+\par{\bf\underline{Определение.}} Фильтрация $(\mathcal{F}_{n})$ — последовательность $\sigma$-алгебр таких, что $\mathcal{F}_{1}\subseteq \mathcal{F}_{2} \subseteq \ldots  \subseteq \mathcal{F}_{n}$. Иногда фильтрацию называют потоком $\sigma$-алгебр.
+\\
+\par{\bf\underline{Определение.}} Случайный процесс ($X_{n}$) — последовательность случайных величин $X_{n}$.
+\\
+\par{\bf\underline{Определение.}} Случайный процесс ($X_{n}$) адаптирован к фильтрации $(\mathcal{F}_{n})$, если $\forall n$ величина $X_{n}$ является $\mathcal{F}_{n}$-измеримой.
+\\
+\par{\bf\underline{Определение.}} Случайный процесс ($X_{n}$) — мартингал по отношению к фильтрации $(\mathcal{F}_{n})$, если
+\begin{enumerate}
+	\item $E(X_{n})$ - существует $\forall n$;
+	\item ($X_{n}$) адаптирован к фильтрации $(\mathcal{F}_{n})$;
+	\item $\forall n \ E(X_{n+1} \mid \mathcal{F}_{n})=X_{n}$ (лучший прогноз на завтра - сегодняшнее значение).
+\end{enumerate}
+\par\underline{Пример 1.} Имеется колода из 52 карт. Достаем по очереди одну карту. $X_{n}\equiv$ доля тузов в неоткрытой части колоды после открытия $n$ карт. Тогда:
+\\
+\[\begin{tabular}{cc}
+$X_{0}$&$\frac{4}{52}$\\
+\midrule
+P&$1$\\
+\end{tabular}
+\quad \quad
+\begin{tabular}{ccc}
+$X_{1}$&$\frac{3}{51}$&$\frac{4}{51}$\\
+\midrule
+P&$\frac{4}{52}$&$\frac{48}{52}$\\
+\end{tabular}
+\quad \quad \begin{tabular}{ccc}
+$X_{51}$&$1$&$0$\\
+\midrule
+P&$\frac{48}{52}$&$\frac{4}{52}$\\
+\end{tabular}\]
+Является ли $X_{n}$ мартингалом? Первые два условия выполняются. Проверим третье:
+
+\[\begin{tabular}{c|c|c}
+&сейчас&следующий момент\\
+\hline
+извлечено карт&$n$&$n+1$\\
+\hline
+осталось карт&$52-n$&$51-n$\\
+\hline
+доля тузов в колоде&$X_{n}$&$X_{n+1}$\\
+\hline
+штук тузов в колоде&$X_{n}(52-n)$&$X_{n+1}(51-n)$\\
+\hline
+тузов открыто&$4-X_{n}(52-n)$&$4-X_{n+1}(51-n)$\\
+\end{tabular}\]
+$ E(X_{n+1}\mid \mathcal{F}_{n} )  =\left\lbrace X_{n} - \text{условная пвероятность извлечь туза} \right\rbrace = X_{n}(\frac{X_{n}(52-n)-1}{51-n}) + (1 -X_{n})(\frac{X_{n}(52-n)}{51-n}) = \\ = \frac{X_{n}(52-n)(X_{n}+1-X_{n})-X_{n}}{51-n} = X_{n}\rightarrow X_{n}$ - мартингал.
+\clearpage
+\par\underline{Пример 2.} $ \mathcal{F}_{n} = \sigma(z_{1},\ldots, z_{n}); z_{i} -$ случайные величины, независимые и одинаково распределённые. $P(z_{i}=-1)=P(z_{i}=1)=\frac{1}{2}$. Являются ли мартингалами следующие случайные процессы?
+\begin{enumerate}
+	\item $(z_{n})$;
+	\item $(X_{n}), \ X_{n}=\sum_{i = 1}^{n}z_{i}$;
+	\item $(R_{n}), \ R_{n}=X_{n}^{2}$;
+	\item $(L_{n}), \ L_{n}=X_{n}^{2}-n$.
+\end{enumerate}
+\par{{Решение:}} все процессы адаптированы к $(\mathcal{F}_{n})$
+\begin{enumerate}
+	\item $E(z_{n+1}\mid \mathcal{F}_{n})=E(z_{n+1}\mid z_{1},\ldots, z_{n})=\left\lbrace z_{i} - \text{независимы}\right\rbrace = E(z_{n+1}) = 0 \neq z_n=1 \ or -1 \rightarrow \\ \rightarrow(z_{n}) -$ не мартингал.
+	\item $E(X_{n+1}\mid \mathcal{F}_{n})=E(\sum_{i=1}^{n+1}z_{i}\mid z_{1},\ldots, z_{n})=\sum_{i=1}^{n}z_{i}+E(z_{n+1}\mid z_{1},\ldots, z_{n}) = \sum_{i=1}^{n}z_{i} = X_{n} \rightarrow \\ \rightarrow(X_{n}) - $ мартингал.
+	\item $E(R_{n+1}\mid \mathcal{F}_{n})=E(X_{n+1}^{2}\mid z_{1},\ldots, z_{n})=\left\lbrace X_{n+1}=X_{n}+z_{n+1}\right\rbrace = E((X_{n}+z_{n+1})^{2}\mid z_{1},\ldots, z_{n})= \\ = E(X_{n}^{2}\mid z_{1},\ldots, z_{n}) + E(2X_{n}z_{n+1}\mid z_{1},\ldots, z_{n})+E(z_{n+1}^{2}\mid z_{1},\ldots, z_{n})=X_{n}^2+0+1 \neq R_{n}\rightarrow \\ \rightarrow(R_{n}) - $ не мартингал.
+	\item $E(L_{n+1}\mid \mathcal{F}_{n})=E(X_{n+1}^{2}-(n+1)\mid z_{1},\ldots, z_{n})=E(X_{n+1}^{2}\mid z_{1},\ldots, z_{n})-E((n+1)\mid z_{1},\ldots, z_{n})= \\ =E(R_{n+1}\mid z_{1},\ldots, z_{n})-n-1=X_{n}^2+1-n-1=X_{n}^2-n =L_{n} \rightarrow (L_{n}) - $ мартингал.
+\end{enumerate}
+\begin{center}{\large Свойства мартингалов}\end{center}
+Если $(X_{n})$ — мартингал, то:
+\begin{enumerate}
+	\item $E(X_{n})=const$ \\ Доказательство: $E(X_{n+1}\mid \mathcal{F}_{n})=X_{n} \rightarrow E(E(X_{n+1}\mid \mathcal{F}_{n}))=E(X_{n}) \rightarrow E(X_{n+1})=E(X_{n}) \ $ для $\forall n$.
+	\item $E(X_{n+k}\mid \mathcal{F}_{n})=X_{n}$ для $\forall k\geq1$ \\ Доказательство:
+	\begin{itemize}
+		\item Случай $k = 1$: \quad $E(X_{n+1}\mid \mathcal{F}_{n})=X_{n}$
+		\item Предположим $E(X_{n+i}\mid \mathcal{F}_{n})=X_{n}$: \quad $E(X_{n+i+1}\mid \mathcal{F}_{n})=\left\lbrace \mathcal{F}_{n} \subseteq \mathcal{F}_{n+i}  \right\rbrace = \\ =E(E(X_{n+i+1}\mid \mathcal{F}_{n+i})\mid \mathcal{F}_{n})=\left\lbrace   E(X_{n+i+1}\mid \mathcal{F}_{n+i}) = X_{n+i} \right\rbrace =E(X_{n+i}\mid \mathcal{F}_{n})=X_{n}$.
+	\end{itemize}
+\end{enumerate}
+\par{\bf\underline{Определение.}} Случайная величина $\tau$ называется моментом остановки (stopping time) по отношению к фильтрации $(\mathcal{F}_{n})$, если:
+\begin{enumerate}
+	\item $\tau \in \left\lbrace 0,1,2,3,\ldots \right\rbrace \cup \left\lbrace +\infty \right\rbrace $.
+	\item $\forall n$ индивид, различающий события из $\mathcal{F}_{n}$, способен понять: наступил момент $\tau$ или нет. Формально: событие $\left\lbrace \tau \leq n \right\rbrace$ лежит в $\sigma$-алгебре $\mathcal{F}_{n}$.
+\end{enumerate}
+\par{Пример:} внук играет с кошкой во дворе. Предположим, что  у внука есть часы и он знает, убежала ли кошка и во сколько. Бабушка может установить следующие правила, когда нужно идти домой:
+\begin{enumerate}
+	\item $\tau_{1}=$ вернуться через час после того, как кошка убежит.
+	\item $\tau_{2}=$ вернуться за час до того, как кошка убежит.
+\end{enumerate}
+Величина $\tau_{1}$ является моментом остановки, так как внук всегда может сказать, когда убежала кошка и сколько времени прошло. \\
+Величина $\tau_{2}$ не является моментом остановки, так как внук не может сказать, когда убежит кошка, не заглядывая в будущее. \\
+\par{\bf\underline{Теорема об остановке мартингала}} (теорема Дуба или stopping time theorem). Если $(X_{n}$ — мартингал по отношению к $(\mathcal{F}_{n})$; $\tau$ - момент остановки по отношению к $(\mathcal{F}_{n})$ и выполнено хотя бы одно из условий 1-3, то $E(X_{\tau})=E(X_{1})$
+\par{Условия:}
+\begin{enumerate}
+	\item Существует число $m$ такое, что $\tau < m$.
+	\item $P(\tau = +\infty) =0$ и при это существует такое число $m$, что $|X_{min\left\lbrace n,\tau \right\rbrace }|<m$
+	\item $E(\tau)<\infty$ и существует такое число $m$, что $E(|X_{min\left\lbrace n+1,\tau \right\rbrace } - X_{min\left\lbrace n,\tau \right\rbrace }|\mathcal{F}_{n})<m$
+\end{enumerate}
+\end{document}

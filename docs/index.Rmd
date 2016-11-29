@@ -19,7 +19,7 @@ output: html_document
 * Some video [lectures-2013](https://vimeo.com/album/2609503) 
 * Student lecture notes-2016:
     - lecture 1: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_01.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_01.tex)
-  
+    - lecture 2: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_02.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_02.tex)  
 
 ## Курс в РАНХиГС
 
