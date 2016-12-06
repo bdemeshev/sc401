@@ -343,7 +343,7 @@ Answer:
 \item $dY_t=-a Y_t \, dW_t$, so $Y_t$ is a martingale, and $\E(Y_t)=Y_0=1$. To find variance one may use Ito's isometry.
 
 
-\item This is the autoconversion from the ugly word: 
+\item This is the autoconversion from the ugly word:
 
 \[X_{0} = E_{\tilde{p}}\left( exp\left( - rT \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right)\]
 
@@ -690,9 +690,9 @@ We also need to find the density of $\hat{Y}=\frac{3X+2}{6X+3}$.
 Let's first find the probability distribution function:
 
 \[
-F_{\hat{Y}}(t)=\P(\hat{Y} \leq t) = \P\left( \frac{1}{2}+\frac{1}{12X+6} \leq t \right) = \P\left( X \geq \frac{2-3t}{6t-3} \right)=F_X(1)-F_X(a),
+F_{\hat{Y}}(t)=\P(\hat{Y} \leq t) = \P\left( \frac{1}{2}+\frac{1}{12X+6} \leq t \right) = \P\left( X \geq \frac{2-3t}{6t-3} \right)= 1 - F_X(a),
 \]
-where $a=\frac{2-3t}{6t-3}$.
+where $a=\frac{2-3t}{6t-3}$ and $F_X(a) = \int_0^a f(t) \, dt$.
 
 Take the derivative with respect to $t$ to obtain:
 
