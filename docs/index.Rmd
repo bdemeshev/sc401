@@ -21,6 +21,8 @@ output: html_document
     - lecture 1: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_01.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_01.tex)
     - lecture 2: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_02.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_02.tex)
     - lecture 3: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_03.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_03.tex) 
+    - lecture 4: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_04.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_04.tex) 
+    - lecture 5: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_05.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_05.tex) 
 
 ## Курс в РАНХиГС
 
