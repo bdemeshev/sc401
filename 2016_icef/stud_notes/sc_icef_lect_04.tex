@@ -1,73 +1,75 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
-%Russian-specific packages
-%--------------------------------------
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
-%--------------------------------------
+\usepackage{fontspec}
+\usepackage{polyglossia}
 
-%Hyphenation rules
-%--------------------------------------
-\usepackage{hyphenat}
-%--------------------------------------
+\setmainlanguage{russian}
+\setotherlanguages{english}
 
-\documentclass[12pt]{article}
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
 
-\usepackage{amsmath}
-\usepackage{scicite}
+\usepackage{amsmath} % Математические окружения AMS
+\usepackage{amsfonts} % Шрифты AMS
+\usepackage{amssymb} % Символы AMS
+\usepackage{mathtext} % Русские буквы в фомулах
+\usepackage{graphicx} % Вставить pdf- или png-файлы
 
+\usepackage{color}
+\usepackage{bbold}
 
-\usepackage{graphicx}
-\usepackage{epstopdf}
-\graphicspath{{C:\Users\user\Downloads}}
+\usepackage{booktabs}
 
-\usepackage{times}
-\topmargin 0.0cm
-\oddsidemargin 0.2cm
-\textwidth 16cm
-\textheight 21cm
-\footskip 1.0cm
+\usepackage{mathrsfs} % Красивый шрифт
 
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строкв таблице
 
-\newenvironment{sciabstract}{%
-\begin{quote} \bf}
-{\end{quote}}
-\renewcommand\refname{References and Notes}
+\usepackage{indentfirst} % Отступ в первом абзаце.
+\usepackage{tikz}
 
-\newcounter{lastnote}
-\newenvironment{scilastnote}{%
-\setcounter{lastnote}{\value{enumiv}}%
-\addtocounter{lastnote}{+1}%
-\begin{list}%
-{\arabic{lastnote}.}
-{\setlength{\leftmargin}{.22in}}
-{\setlength{\labelsep}{.5em}}}
-{\end{list}}
-\title{Лекция {\it 6.12.16\/}}
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
 
-\author
-{Демешев Б.Б.}
+\usepackage{verbatim}
 
-\date{}
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+\DeclareMathOperator{\card}{\mathop{card}}
 
-%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+\usepackage{enumitem}
 
 
-\begin{document}
-
-% Double-space the manuscript.
-
-\baselineskip12pt
-
-% Make the title.
-\maketitle
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
 
 
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
 
-\begin{sciabstract}
-  Свойства Винеровского процесса, масштабирование, инверсия, стохастический интеграл.
-\end{sciabstract}
+
+\pagestyle{fancy} \makeatletter \fancyhead[L]{\footnotesize ICEF, 2016/17, «Mathematics for Economists»}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\usepackage{wrapfig}
+
+ \begin{document}
+ \begin{center}
+ {\Large{Конспект лекции 6.12.16}}
+ \end{center}
+  \begin{center}
+ {\large{???}}
+ \end{center}
+
+
+Свойства Винеровского процесса, масштабирование, инверсия, стохастический интеграл.
+
 
 
 \section*{Свойства винеровского процесса}
@@ -140,7 +142,7 @@ $\mathcal{F}_s\subseteq \mathcal{F}_{8+s}$
 
 Независимость сигма-алгебр $\mathcal{F}$ и $\mathcal{H}$
 
-$\forall$F$\in$\mathcal{F} и $\forall$H$\in$\mathcal{H}$
+$\forall F \in \mathcal{F}$ и $\forall H\in \mathcal{H}$
 
 $p(F\cap H)=p(F)\cdot p(H)$;
 
@@ -148,13 +150,13 @@ $p(F\cap H)=p(F)\cdot p(H)$;
 
 ${(X\le t)}$ и $\mathcal{F}$ - независимы;
 
-$X=\sigma({x\le t}) $и $\mathcal{F}$ независимы;
+$X=\sigma({x\le t}) $ и $\mathcal{F}$ независимы;
 
 \section*{Масштабирование}
 
-$Z_t=\alpha W_2_t$
+$Z_t=\alpha W_{2t}$
 
-$F_t=\sigma((Z_s))_{s\le t$};
+$\mathcal{F}_t=\sigma((Z_s))_{s\le t}$;
 
 Найти $\alpha$ такое, чтобы $Z_t$ был Винеровским процессом.
 
@@ -166,7 +168,7 @@ $F_t=\sigma((Z_s))_{s\le t$};
 
 3) $Z_t-Z_s$ не зависит от $\mathcal{F}_s$ (независимость от прошлого);
 
-4) Нормальность: $Z_t-Z_s= \alpha (W_{2t} - W_{2s}) \sim N(0;2t-2s)$; (Цель: $Z_t-Z_s \sim N(0;t-s))$;
+4) Нормальность: $Z_t-Z_s= \alpha (W_{2t} - W_{2s}) \sim N(0;2t-2s)$; (Цель: $Z_t-Z_s \sim N(0; t-s))$;
 
 $\alpha = \frac{1}{\sqrt{2}}$;
 
@@ -179,12 +181,12 @@ $\alpha = \frac{1}{\sqrt{2}}$;
 \begin{equation*}
 R_t =
  \begin{cases}
-   1, &\text{при $t=0$}\\
-   f(t)\cdot W_\frac{1}{t}, &\text{при $t>0$}
+   1, &\text{при } t=0 \\
+   f(t)\cdot W_\frac{1}{t}, &\text{при } t>0
  \end{cases}
 \end{equation*}
 
-Найдите $f(t)$ такую, что $R_t$ - Винеровский процесс
+Найдите $f(t)$ такую, что $R_t$ — Винеровский процесс
 
 1) R(0)=0;
 
@@ -243,7 +245,7 @@ $E(4R_\frac{1}{4}|7R_\frac{1}{7})$ - В данном случае мы може�
 Сравним диспрерсии: $var(W_3|W_7)$ и $var(W_6|W_7)$.
 Какая дисперсия будет больше?
 Ближе к концу интервала дисперсия будет ниже ($var(W_6|W_7)$).
-Максимальная дисперсия: $var(W_3_,_5|W_6)$ (середина интервала).
+Максимальная дисперсия: $var(W_{3.5}|W_6)$ (середина интервала).
 
 \begin{figure}[h!]
 \includegraphics[width=0.5\linewidth]{04_lecture1}
@@ -342,7 +344,7 @@ $X_n \sim N (5;\frac{1}{n})$;
 
 Проверка по определению:
 
-$E((X_n-5)^2) = var (X_n)$ =$\frac{1}{n} \to 0.
+$E((X_n-5)^2) = var (X_n) =\frac{1}{n} \to 0$.
 
 Доказали: сходится к константе 5.
 

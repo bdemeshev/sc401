@@ -3,14 +3,14 @@
 \usepackage[inline]{enumitem}
 \usepackage{xcolor}
 \usepackage{fontspec}
-\usepackage[english,russian]{babel}
+\usepackage[english, russian]{babel}
 
 % download "Linux Libertine" fonts:
 % http://www.linuxlibertine.org/index.php?id=91&L=1
-\setmainfont{arial.ttf} % or Helvetica, Arial, Cambria
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{arial.ttf}
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
 
 
 
@@ -60,16 +60,16 @@
 \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
 
-\linespread{1.5} 
+\linespread{1.5}
  \begin{document}
  \begin{center}
  {\Large{Конспект лекции 29.11.16}}
  \end{center}
  \par {\bf\underline{Интуиция (теорема об остановке мартингала):}} Если ${M}_t$ (мартингал) $\equiv$ справедливая игра \\ То есть, если \begin{enumerate*}[label={\alph*)},font={\color{red!50!black}\bfseries}] \item Правило входа из игры не "заглядывает" в будущее \item Ставки не растут слишком быстро (технические условия теоремы А,Б,В) \end{enumerate*} то $E({M}_\tau)$=$E({M}_1)$, то есть ожидаемый выигрыш на момент выхода равен стартовому благосостоянию (невозможно повысить или понизить начальное благосостояние)
  \\
- \par {\bf\underline{Упражнение 1:}} 
+ \par {\bf\underline{Упражнение 1:}}
 \begin{figure}[h]
-\center{\includegraphics[width=1\linewidth]{home.jpg}}
+\center{\includegraphics[width=1\linewidth]{03_home.jpg}}
 \label{image}
 \end{figure}
 В начальный момент времени улитка находится в точке с координатой ''$0$''. Она может передвигаться на один шаг вправо или влево в каждую следующую единицу времени. Ее передвижения ограничены: в точке с координатой ''$-5$'' находится пропасть, а в точке с координатой ''$30$'' -- ее дом.
@@ -79,7 +79,7 @@
 \centering
 \begin{tabular}{l|c|c}
 ${Z}_i$ & $-1$ & $1$ \\ \hline
-$p$ & $\frac{1}{4}$ & $\frac{3}{4}$  
+$p$ & $\frac{1}{4}$ & $\frac{3}{4}$
 \end{tabular}
 \end{table}
 (${Z}_i=-1$ -- движение влево, ${Z}_i=1$ -- вправо)
@@ -93,7 +93,7 @@ $p$ & $\frac{1}{4}$ & $\frac{3}{4}$
 \\ $E({Y}_{t+1}|\mathcal{F}_t)=E({X}_{t+1}-b*(t+1)|\mathcal{F}_t)={X}_t+\frac{1}{2}-b*t-b={Y}_t+\frac{1}{2}-b \Rightarrow b=\frac{1}{2}$
 \item  Найти такое $c\neq{1}$, что ${R}_t=c^{{X}_t}$ будет мартингалом
 \\ Аналогично предыдущему пункту:$E({R}_{t+1}|\mathcal{F}_t)={R}_t$
-\\ $E({R}_{t+1}|\mathcal{F}_t)=E(c^{{X}_{t+1}}|\mathcal{F}_t)=E(c^{{X}_t+{Z}_{t+1}}|\mathcal{F}_t)=c^{{X}_t}*E(c^{{Z}_{t+1}|\mathcal{F}_t})=c^{{X}_t}*E(c^{{Z}_{t+1}})=c^{{X}_t}*(\frac{1}{4}*c^{-1}+\frac{3}{4}*c)={R}_t=c^{{X}_t} \Rightarrow \frac{1}{4}*c^{-1}+\frac{3}{4}*c=1 \Rightarrow  3*c^2-4*c+1=0 \Rightarrow {c}_1=1,{c}_2=\frac{1}{3}$  
+\\ $E({R}_{t+1}|\mathcal{F}_t)=E(c^{{X}_{t+1}}|\mathcal{F}_t)=E(c^{{X}_t+{Z}_{t+1}}|\mathcal{F}_t)=c^{{X}_t}*E(c^{{Z}_{t+1}|\mathcal{F}_t})=c^{{X}_t}*E(c^{{Z}_{t+1}})=c^{{X}_t}*(\frac{1}{4}*c^{-1}+\frac{3}{4}*c)={R}_t=c^{{X}_t} \Rightarrow \frac{1}{4}*c^{-1}+\frac{3}{4}*c=1 \Rightarrow  3*c^2-4*c+1=0 \Rightarrow {c}_1=1,{c}_2=\frac{1}{3}$
 \\ Ответ: ${R}_t={\frac{1}{3}}^{{X}_t}$
 \item $Pr(\text{улитка дойдет до точки ''30''})=?$
 \\ Введем момент остановки: $\tau=\min(t|{X}_t=30 \ \text{или} \ {X}_t=-5)$
@@ -106,7 +106,7 @@ $p$ & $\frac{1}{4}$ & $\frac{3}{4}$
 \centering
 \begin{tabular}{l|c|c}
 ${X}_{\tau}$ & $30$ & $-5$ \\ \hline
-$p$ & $k$ & $1-k$  
+$p$ & $k$ & $1-k$
 \end{tabular}
 \end{table}
 \\ Где ''$k$'' -- искомая вероятность
@@ -114,7 +114,7 @@ $p$ & $k$ & $1-k$
 \\ Ответ:  $Pr(\text{улитка дойдет до точки ''30''})=0.996$
 \item Определить ожидаемое количество шагов до одной из конечных точек
 \\ Из предыдущего пункта знаем, что $E({X}_{\tau})-\frac{1}{2}*E(\tau)=0 \Rightarrow E({X}_{\tau})=30*k-5*(1-k)=30*0.996-5*0.004=\frac{1}{2}*E(\tau) \Rightarrow E(\tau)=2*E({X}_{\tau})=60*0.996-10*0.004=59.72$
-\\ Ответ: ожидаемое количество шагов до одной из конечных точек -- $59.72$ 
+\\ Ответ: ожидаемое количество шагов до одной из конечных точек -- $59.72$
 \end{enumerate}
 \par {\bf\underline{Упражнение 2 (Задача о мартышке):}} Мартышка нажимает кнопки на клавиатуре случайным образом, делая одно нажатие в секунду. Пусть $\tau$ -- момент первого написания мартышкой слова ''AБРАКАДАБРА''. Найдите $E(\tau)$.
 \\Решение: необходимо придумать мартингал. \\ Пусть существует ''казино'' в котором можно делать ставки на следующую букву, набранную мартышкой. Действуют следующие правила: \begin{enumerate*}[font={\color{red!50!black}\bfseries}] \item Если $s$ -- ставка, то в случае угадывания выигрыш составляет $33*s$, в случае проигрыша $-s$; \ \item Каждая следующая ставка равна всему предыдущему благосостоянию игрока (то есть все имеющиеся деньги ставятся на следующую букву); \ \item В каждый момент времени в ''казино''приходит один новый игрок со стартовым благосостоянием равным одному рублю. \end{enumerate*}
@@ -126,9 +126,9 @@ $p$ & $k$ & $1-k$
 \par {\bf\underline{Определение}} Фильтрация $({\mathcal{F}_{t}})_{t\in[0;+\infty)}$ -- упорядоченное множество $\sigma$-алгебр $\mathcal{F}_{s} \subseteq \mathcal{F}_{t}$ при $s\leq t$
 \par {\bf\underline{Определение}} Случайный процесс $({X}_t)$ -- мартингал по отношению к фильтрации $({\mathcal{F}_{t}})$, если \begin{enumerate}
  \item Существует $E({X}_{t})$ $\forall t$
- \item ${X}_t$ является ${\mathcal{F}_{t}}$-измеримой $\forall t$ 
+ \item ${X}_t$ является ${\mathcal{F}_{t}}$-измеримой $\forall t$
  \item $E({X}_{t+\delta}|{\mathcal{F}_{t}})={X}_{t} \ \forall t, \ \delta \geq 0$
- \end{enumerate} 
+ \end{enumerate}
 \par {\bf\underline{Определение}} $({W}_t)$ -- винеровский процесс (или броуновское движение) по отношению к фильтрации $({\mathcal{F}_{t}})$, если
  \begin{enumerate}
  \item  ${W}_0=0$
@@ -153,7 +153,7 @@ $p$ & $k$ & $1-k$
 \item Для $s<t$: $E({W}_t*{W}_s)=\text{Cov}[{W}_s+\delta, {W}_s]=\text{Cov}[{W}_s, {W}_s]+ \text{Cov}[\delta,{W}_s]=\text{Var}({W}_s)=s$ (Примечание: $\delta={W}_t-{W}_s$, по свойству 3. определения ${W}_t-{W}_s$ не зависит от $\mathcal{F}_{s}$, а значит $\text{Cov}[\delta,{W}_s]=\text{Cov}[{W}_t-{W}_s,{W}_s]=0$)
 \\ Аналогично для $s>t$: $E({W}_t*{W}_s)=t \Rightarrow$ в общем случае $E({W}_t*{W}_s)=\text{min}[s,t]$
 \item $\text{Cov}[{W}_t,{W}_s] =E({W}_t*{W}_s)-E({W}_t)*E({W}_s)=\text{min}[s,t]-0*0=\text{min}[s,t]$
-\item $\text{Corr}[{W}_t,{W}_s]=\frac{\text{Cov}[{W}_t,{W}_s]}{ \sqrt{\text{Var}({W}_s)}*\sqrt{\text{Var}({W}_t)}}=\frac{\text{min}[s,t]}{\sqrt{t*s}}$ 
+\item $\text{Corr}[{W}_t,{W}_s]=\frac{\text{Cov}[{W}_t,{W}_s]}{ \sqrt{\text{Var}({W}_s)}*\sqrt{\text{Var}({W}_t)}}=\frac{\text{min}[s,t]}{\sqrt{t*s}}$
 \item Проверка по определению: $E({W}_{t+\delta}|{\mathcal{F}_{t}})=E({W}_{t+\delta}+{W}_{t}-{W}_{t}|{\mathcal{F}_{t}})={W}_{t}+E({W}_{t+\delta}-{W}_{t}|{\mathcal{F}_{t}})={W}_{t} \Rightarrow$ $({W}_{t})$ -- мартингал. (Примечание: $E({W}_{t+\delta}-{W}_{t})=0$ по свойству 4. определения)
 \item  Проверка по определению: $E({W^2}_{t+\delta}-t-\delta|{\mathcal{F}_{t}})=-t-\delta+E({W^2}_{t+\delta}|{\mathcal{F}_{t}})=-t-\delta+E(({W}_{t}+({W}_{t+\delta}-{W}_{t}))^2|{\mathcal{F}_{t}})=-t-\delta+{{W}^2}_t + 2{W}_{t}*E({W}_{t+\delta}-{W}_{t})+E(({W}_{t+\delta}-{W}_{t})^2)=-t-\delta+{{W}^2}_t+\text{Var}({W}_{t+\delta}-{W}_{t})={{W}^2}_t-t \Rightarrow$ \ $({{W}^2}_t-t)$ -- мартингал
 \item $Pr({W}_7>9*{W}_4)=Pr({W}_7-9*{W}_4>0)=Pr(({W}_7-{W}_4) - 8*{W}_4>0)$ \\ ${W}_7-{W}_4 \sim \mathcal{N}(0,3)$, $8*{W}_4 \sim \mathcal{N}(0,64*4)\Rightarrow \text{Var}(({W}_7-{W}_4) - 8*{W}_4)=64*4+3=259 \Rightarrow ({W}_7-{W}_4) - 8*{W}_4 \sim \mathcal{N}(0,259) \Rightarrow Pr(({W}_7-{W}_4) - 8*{W}_4>0)=\frac{1}{2} $
