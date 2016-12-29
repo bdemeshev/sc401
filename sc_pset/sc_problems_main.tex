@@ -37,6 +37,11 @@ pdfdisplaydoctitle=true, % Определение заголовка файла 
 % solution_file --- имя файла в который будет идти запись решений
 % можно изменить далее по ходу
 
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 1]{label=\asbuk*),ref=\asbuk*}
+
+
+
 
 \begin{document}
 \parindent=0 pt % отступ равен 0

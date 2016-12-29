@@ -458,12 +458,12 @@ $\sum_{i=1}^{N}X_{i}$ — случайная величина?
 
 \begin{problem}
  Правильный кубик подбрасывается один раз. $Y$ — индикатор того, выпала ли четная грань. $Z$ — индикатор того, выпало ли число больше 2-х. \\
-\begin{itemize}
+\begin{enumerate}
 \item Сколько элементов $\sigma(Z)$?
 \item Сколько элементов в $\sigma(Y\cdot Z)$?
 \item Сколько элементов в $\sigma(Y,Z)$?
 \item Как связаны между собой $ \sigma $-алгебры $\sigma(Y\cdot Z)$ и $\sigma(Y,Z)$?
-\end{itemize}
+\end{enumerate}
 
 
 \begin{sol}
@@ -551,14 +551,14 @@ Let $X_{n}$ be the proportion of heads after the first $n$ tosses.
 
 \begin{problem}
 В лесу есть три вида грибов: рыжики, лисички и мухоморы. Попадаются они равновероятно и независимо друг от друга. Маша нашла 100 грибов. Пусть $R$ — количество рыжиков, $L$ — количество лисичек, а $M$ — количество мухоморов среди найденных грибов.
-\begin{itemize}
+\begin{enumerate}
 \item Сколько элементов $ \sigma(R)$?
 \item Сколько элементов $ \sigma(R,M)$?
 \item Измерима ли $L$ относительно $ \sigma(R)$?
 \item Измерима ли $L$ относительно $ \sigma(R,M)$?
 \item Измерима ли $L$ относительно $ \sigma(R+M)$?
 \item Измерима ли $L$ относительно $ \sigma(R-M)$?
-\end{itemize}
+\end{enumerate}
 
 \begin{sol}
 $ 2^{101} $, $2^{101\cdot 51}$, нет, да
@@ -568,7 +568,7 @@ $ 2^{101} $, $2^{101\cdot 51}$, нет, да
 \begin{problem}
 Сначала подбрасываем кубик. Если выпала нечетная грань, то подбрасываем правильную монетку один раз. Если четная — то два. Пусть $X$ — количество подбрасываний монетки, а $Y$ — количество выпавших орлов.
 
-\begin{itemize}
+\begin{enumerate}
 
 \item Сколько элементов в $ \sigma(X)$?
 \item Сколько элементов в $ \sigma(Y)$?
@@ -576,7 +576,7 @@ $ 2^{101} $, $2^{101\cdot 51}$, нет, да
 \item Измерима ли $ X $ относительно $ \sigma(Y)$?
 \item Измерима ли $ Y $ относительно $ \sigma(X)$?
 
-\end{itemize}
+\end{enumerate}
 
 \begin{sol}
  $ 2^{2} $, $ 2^{3} $, $ 2^{5} $, нет, нет
@@ -596,18 +596,18 @@ $ 2^{101} $, $2^{101\cdot 51}$, нет, да
 
 Приведите по два нетривиальных (отличных от $\Omega$ и $\emptyset$) примера такого события $A$, что:
 
-\begin{itemize}
+\begin{enumerate}
 \item $ A\in \mathcal{F}_{2010} $
 \item $ A\notin \mathcal{F}_{2010} $
 \item $A$ лежит в каждой $\mathcal{H}_{n}$
-\end{itemize}
+\end{enumerate}
 
 В какие из упомянутых $ \sigma $-алгебр входят события:
-\begin{itemize}
+\begin{enumerate}
 \item $ X_{37}>0$
 \item $ X_{37}>X_{2010}$
 \item $ X_{37}>X_{2010}>X_{12}$
-\end{itemize}
+\end{enumerate}
 
 Упростите выражения: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $
 
@@ -642,7 +642,7 @@ $ \mathcal{H}_{1} \subset \mathcal{H}_{2} $
 
 \begin{problem}
 Let $S_{n}$ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+\ldots+X_{n} $ where $ X_{n} $ are independent and identically distributed with $ \P(X_{n}=1)=\P(X_{n}=-1)=0.5 $. Let $T$ be the time of the second local maximum plus one. For example: if the sequence of $ X_{n} $ is given by $ +1,+1,-1,-1,-1,+1,-1,-1,+1,\ldots$ then $T=7$. We define the following sigma-algebras: $ \mathcal{F}_{n}:=\sigma(X_{1},X_{2},\ldots,X_{n})$ and $ \mathcal{F}_{T} $ — all events which may be distninguished by a rational agent who knows all $ X_{i} $ up to time $ T $.
-\begin{itemize}
+\begin{enumerate}
 \item Give an example of event $A$ such that $ A\notin \mathcal{F}_{T} $ but $ A\in \mathcal{F}_{2010} $
 \item Give an example of event $B$ such that $ B\in \mathcal{F}_{T} $ but $ B\notin \mathcal{F}_{2010} $
 \item Prove that $ \mathcal{F}_{T} $ is different from each $ \mathcal{F}_{n} $
@@ -650,11 +650,11 @@ Let $S_{n}$ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+\ldots+X_{n} $ 
 \item Does $\{X_1 = 1, X_2 = -1, X_3 = 1, X_4 = -1 \}$ belongs to $\cF_T$? To $\sigma(T)$?
 \item Does $\{X_1 = 1, X_2 = -1, X_3 = 1, X_4 = -1, X_5 = 1 \}$ belongs to $\cF_T$? To $\sigma(T)$?
 \item Are sigma-algebras $\cF_T$ and $\sigma(T)$ equal?
-\end{itemize}
+\end{enumerate}
 
 
 \begin{sol}
-  \begin{itemize}
+  \begin{enumerate}
     \item
     \item
     \item
@@ -662,17 +662,17 @@ Let $S_{n}$ be a symmetric random walk, i.e. $ S_{n}=X_{1}+X_{2}+\ldots+X_{n} $ 
     \item yes, yes
     \item no, no
     \item no, consider $\{X_1 = 1, X_2 = -1, X_3 = 1, X_4 = 1, X_5 = -1 \}$
-  \end{itemize}
+  \end{enumerate}
 \end{sol}
 \end{problem}
 
 \begin{problem}
 Монетка подбрасывается бесконечное количество раз. $ X_{n} $ — результат $ n $-го подбрасывания, 1, если решка и 0, если орел. Let $T$ be the first moment of time when the proportion of head is greater than 0.5. We define the following sigma-algebras: $ \mathcal{F}_{n}:=\sigma(X_{1},X_{2},\ldots,X_{n})$ and $ \mathcal{F}_{T} $ — all events which may be distninguished for sure by a rational agent who knows all $ X_{i} $ up to time $ T $.
-\begin{itemize}
+\begin{enumerate}
 \item[a.] Give an example of event $A$ such that $ A\notin \mathcal{F}_{T} $ but $ A\in \mathcal{F}_{2010} $
 \item[b.] Give an example of event $B$ such that $ B\in \mathcal{F}_{T} $ but $ B\notin \mathcal{F}_{2010} $
 \item[c.] Prove that $ \mathcal{F}_{T} $ is different from each $ \mathcal{F}_{n} $
-\end{itemize}
+\end{enumerate}
 
 
 \begin{sol}
@@ -785,7 +785,7 @@ a portfolio value governed by the wealth equation:
 X_{n+1}&=\Dt_n S_{n+1}+(1+r) (X_n-\Dt_n S_n) +\Dt_n A_{n+1} Y_{n+1} S_n \\
 &=\Dt_n Y_{n+1} S_n+(1+r)(X_n-\Dt_n S_n).
 \end{align}
-\begin{itemize}
+\begin{enumerate}
 \item[(i)] Show that such a discounted wealth process is a martingale under the
 risk-neutral measure, which is defined as in the case of usual binomial asset pricing model
 (prove it as well!!!).
@@ -796,7 +796,7 @@ risk-neutral measure, which is defined as in the case of usual binomial asset pr
 risk-neutral measure. However, if $A_{n+1}$ is a constant $a\in(0,1)$, regardless of the value of
 $n$  and the outcome of the coin tossing $\om_1\dots\om_{n+1},$ then $\frac{S_n}{(1-a)^n(1+r)^n}$ is
 a martingale under the risk-neutral measure.
-\end{itemize}
+\end{enumerate}
 
 \begin{sol}
 
@@ -825,7 +825,7 @@ An \emph{Asian option} has a payoff based on the average stock price, i.e.,
 V_N=f\left(\frac{1}{N+1}\sum\lims_{n=0}^{N} S_n \right),
 \]
 \ni where the function $f$ is determined by the contractual details of the option.
-\begin{itemize}
+\begin{enumerate}
 \item[(i)] Let $Y_n=\sum\lims_{k=0}^{n} S_k$. Show that the two-dimensional process
 $(S_n,Y_n),\, n=0,1,\dots,N$ is Markov.
 
@@ -836,7 +836,7 @@ V_n=v_n(S_n,Y_n),\, n=0,1,\dots,N.
 \]
 \ni Give a formula for $v_N(s,y)$ and provide an algorithm for backward computing
 $v_n(s,y)$ in terms of $V_{N+1}.$
-\end{itemize}
+\end{enumerate}
 
 
 \begin{sol}
@@ -1423,10 +1423,10 @@ $(\Omega,\mathcal{B}[0;1],P)$, где $P=\lambda$ — классическая
 
 \begin{problem}
 Let $X_{n}=X\cdot 1_{X\leq n}$. In what sense (as., in $L^{2}$, in probability, in law) does the sequence $ \{X_{n}\} $ converge? What is the limit? Consider two cases:
-\begin{itemize}
+\begin{enumerate}
 \item $X\sim N(0;1)$ (standard normal distribution).
 \item $X =2^{T}$ where $T$ is the time of the first head in the infinite sequence of coin tosses.
-\end{itemize}
+\end{enumerate}
 
 
 \begin{sol}
@@ -3626,7 +3626,7 @@ M_n=\sum\lims_{j=1}^{n} X_j,\quad n\ge 1.
 \ni This is called a \emph{symmetric random walk}; with each head it steps up one,
 and with each tail, it steps down one.
 
-\begin{itemize}
+\begin{enumerate}
 \item[(i)] Show that $M_0,M_1,\dots$ is a martingale
 
 \item[(ii)] Let $\sigma$ be a positive constant and, for $n\ge 0$, define
@@ -3638,7 +3638,7 @@ walk $M_n$ has no tendency to grow, the \emph{geometric symmetric random walk}, 
 $e^{\sigma M_n}$ does have a tendency to grow. This is the result of putting a martingale into
 the convex exponential function. In order to again have a martingale, we must «discount» the
 geometric symmetric random walk, using the term  $\frac{2}{e^{\sigma}+e^{-\sigma}}$ as the discount rate.
-\end{itemize}
+\end{enumerate}
 
 \begin{sol}
 
