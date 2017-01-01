@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left = 1cm, right = 1cm, top = 2cm, bottom = 2cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Graded hometask on stochastic calculus}
+\chead{}
+\rhead{ICEF. Fall 2016}
+
+
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+
+\let\P\relax
+\DeclareMathOperator{\P}{P}
+
+
+
+\begin{document}
+
+
+\begin{enumerate}
+
+\item Consider the two independent Brownian motions, $(W_t)$ and $(V_t)$. Which of the following processes is Brownian motion:
+\begin{enumerate}
+\item $Z_t = \frac{1}{2}W_t + \frac{1}{2}V_t$
+\item $Q_t = \frac{1}{\sqrt{2}}W_t + \frac{1}{\sqrt{2}}V_t$
+\end{enumerate}
+
+\item Let $Y_t = \int_0^t (W_u + u)^2 \, dW_u$. Find $\E(Y_t)$ and $\Var(Y_t)$.
+
+\item James Bond plays in a casino. At every bet he wins one pound with probability $0.5$, looses one pound with probability $0.4$ or wins nothing with probability $0.1$. His initial fortune is $X_0 = 10$ pounds. He stops playing if he goes bankrupt or if he achieves the fortune of $300$ pounds (airline ticket price from London to Moscow).
+\begin{enumerate}
+\item Find the constant $a$ such that $M_t = a^{X_t}$ is a martingale.
+\item What is the probability that James Bond will win enough to buy the ticket?
+\end{enumerate}
+
+
+\item Let $R_t$ be the exchange rate at time $t$. We suppose that $dR_t = \mu R_t dt + \sigma R_t dW_t$. Consider the inverse exchange rate $I_t = 1/R_t$. Find the expression for $dI_t$. The expression should not contain $R_t$.
+
+\item It is known that $M_t$ is a martingale. We also know that in short-hand notation $(dM_t)^2 = dt$. What can we say about the process $Y_t = M_t^2 - t + 2017$?
+
+\item Solve the stochastic differential equation
+\begin{equation}
+dX_t = \frac{-1}{1 - t}X_t \, dt + dW_t, \; X_0 = 0
+\end{equation}
+
+You may use or not use the following hints:
+
+\begin{enumerate}
+\item The correct answer will contain the integral $\int_0^t \frac{1}{1 - u} dW_u$ that cannot be simplified.
+\item Solve the ordinary differential equation
+\begin{equation}
+dY_t = \frac{-1}{1 - t}Y_t \, dt, \; Y_0 = 1
+\end{equation}
+\item Represent $X_t$ as $X_t = Y_t \cdot Z_t$ and find the equation for $dZ_t$. Find the expression for $Z_t$.
+\end{enumerate}
+
+\item Consider the framework of the Black and Scholes model. Let $\P$ be the original probability measure and $\tilde{\P}$ be the risk-neutral probability measure. Provide an example of three events $A$, $B$ and $C$ such that $\P(A) > \tilde{\P}(A)$,  $\P(B) < \tilde{\P}(B)$, $\P(C) = \tilde{\P}(C)$.
+
+\item Consider the framework of the Black and Scholes model. The asset pays you 1 dollar at fixed time $T$ if and only if the price of a share $S_T$ is above the strike-price $K$. Find the current price $X_0$ of this asset.
+
+\end{enumerate}
+
+\vspace{0.5cm}
+You may decide not to solve any number of problems from this hometask and send me a solution of corresponding number of problems from the old exams collection instead (see \url{http://bdemeshev.github.io/sc401/}). In this case you should use \LaTeX{} or markdown formats. Please, be polite and avoid sending solutions of already solved problems or problems taken by someone else. You should fill in your choice at \url{http://goo.gl/8TFhWE}.
+
+The due date for this hometask — 10.01.2017 before exam. If you decide to solve problems from an old exam you should send the solution of these problems by e-mail to \href{mailto:boris.demeshev@gmail.com}{boris.demeshev@gmail.com} before 09.01.2017 consultation hour. I will check your solutions and add them into the exams collection so they are available for everyone.
+\end{document}
