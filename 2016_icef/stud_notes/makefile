@@ -8,7 +8,7 @@ file_name_04 = sc_icef_lect_04
 file_name_05 = sc_icef_lect_05
 file_name_06 = sc_icef_lect_06
 
-all: $(file_name_01).pdf $(file_name_02).pdf $(file_name_03).pdf $(file_name_04).pdf $(file_name_05).pdf 
+all: $(file_name_01).pdf $(file_name_02).pdf $(file_name_03).pdf $(file_name_04).pdf $(file_name_05).pdf $(file_name_06).pdf 
 
 $(file_name_01).pdf: $(file_name_01).tex
 	# protection against biber error
