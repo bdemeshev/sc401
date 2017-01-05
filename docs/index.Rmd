@@ -23,6 +23,7 @@ output: html_document
     - lecture 3: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_03.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_03.tex) 
     - lecture 4: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_04.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_04.tex) 
     - lecture 5: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_05.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_05.tex) 
+    - lecture 6: [pdf](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_06.pdf), [tex](https://github.com/bdemeshev/sc401/raw/master/2016_icef/stud_notes/sc_icef_lect_06.tex) 
 * Actual [Hometask](https://github.com/bdemeshev/sc401/raw/master/2016_icef/htask/ht_2016.pdf)
 
 ## Курс в РАНХиГС
