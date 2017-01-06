@@ -1,0 +1,227 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\usepackage{amsmath} % Математические окружения AMS
+\usepackage{amsfonts} % Шрифты AMS
+\usepackage{amssymb} % Символы AMS
+\usepackage{mathtext} % Русские буквы в фомулах
+\usepackage{graphicx} % Вставить pdf- или png-файлы
+
+\usepackage{xcolor}
+
+\newcommand{\highlight}[1]{%
+  \colorbox{red!50}{$\displaystyle#1$}}
+
+\usepackage{color}
+\usepackage{bbold}
+
+\usepackage{booktabs}
+
+\usepackage{mathrsfs} % Красивый шрифт
+
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строкв таблице
+
+\usepackage{indentfirst} % Отступ в первом абзаце.
+\usepackage{tikz}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
+
+\usepackage{verbatim}
+
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+\DeclareMathOperator{\card}{\mathop{card}}
+%\newcommand{\e}[1]{{\mathbb E}\left[ #1 \right]}
+\DeclareMathOperator{\E}{E}
+
+\let\P\relax
+\DeclareMathOperator{\P}{P}
+\newcommand{\cN}{\mathcal{N}}
+
+\usepackage{enumitem}
+\usepackage{mathtools, bm, etoolbox}
+
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+
+\providecommand\given{}
+\DeclarePairedDelimiterXPP\Aver[1]{\mathbb{E}}{[}{]}{}{
+\renewcommand\given{  \nonscript\:
+  \delimsize\vert
+  \nonscript\:
+  \mathopen{}
+  \allowbreak}
+#1
+}
+
+
+
+
+\newcommand{\shrug}[1][]{%
+\begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
+\def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
+\draw \arm;
+\draw[xscale=-1] \arm;
+\def\headpart{(0.6,0) arc[start angle=-40, end angle=40,x radius=0.6,y radius=0.8]};
+\draw \headpart;
+\draw[xscale=-1] \headpart;
+\def\eye{(-0.075,0.15) .. controls (0.02,0) .. (0.075,-0.15)};
+\draw[shift={(-0.3,0.8)}] \eye;
+\draw[shift={(0,0.85)}] \eye;
+% draw mouth
+\draw (-0.1,0.2) to [out=15,in=-100] (0.4,0.95);
+\end{tikzpicture}}
+
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+
+\pagestyle{fancy} \makeatletter \fancyhead[L]{\footnotesize ICEF, 2016/17, «Mathematics for Economists»}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\usepackage{wrapfig}
+
+ \begin{document}
+ \begin{center}
+ {\Large{Конспект лекции 20.12.16}}
+ \end{center}
+  \begin{center}
+ {\large{Аня Терещенко}}
+ \end{center}
+
+\section*{Упражнения по стохастическому анализу}
+
+\section*{Упражнение 1}
+
+\parindent=1cm
+
+Рассмотрим модель Блэка-Шоулза
+
+$\mu=0.2$
+
+$r=0.1$
+
+$\delta=0.1$
+
+Найти вероятности:
+
+\begin{enumerate}
+
+\item $\P(W_2>0)$
+
+\item $\widetilde{\P}(W_2>0)$
+
+\item $\P(\widetilde{W_2}>0)$
+
+\item $\widetilde{\P}(\widetilde{W_2}>0)$
+\end{enumerate}
+
+Сразу можно сказать, что в пункте 1) и 4) ответ равен $0.5$,
+
+то есть $\P(W_2>0)=0,5$ и  $\widetilde{\P}(\widetilde{W_2}>0)=0.5$.
+
+$W_2$ распределен нормально с математическим ожиданием 0 и дисперсией 2.
+
+$X_2 \sim N(0;2)$
+
+То есть справа от нуля лежит половина распределения.
+
+А значит, вероятность попадания в правую часть равна 0,5.
+
+$\widetilde{W_t}=W_t+\frac{\mu -r}{\delta}$
+
+2) $\widetilde{\P}(W_2>0)=\widetilde{\P}(\widetilde{W_2}-\frac{0.2-0.1}{0.1}\cdot 2 >0)=\widetilde{\P}(\widetilde{W_2}>2)=\widetilde{\P}(N(0;1)>\frac{2}{\sqrt{2}})=1-F(1.4142135)$
+
+Относительно p процесс $W_t$- броуновское движение.
+
+Относительно  $\widetilde{\P}$ процесс $\widetilde{W_t}$- броуновское движение.
+
+4) $\widetilde{\P}(\widetilde{W_2}>0)=\P(W_2+\frac{0.2-0.1}{0.1}\cdot 2>0)=\P(W_2>-2)=\P(N(0;1)>-\sqrt{2})=F(1.41)$,
+
+где $F$ - функция распределения для $\cN(0;1)$.
+
+\section*{Пусть $S_0=100$}
+
+\parindent=1cm
+
+Найти:
+
+\begin{enumerate}
+
+\item $\P(S_1>110)$
+
+\item $\widetilde{\P}(S_1>110)$
+
+\item $\E_{\P}(S_1)$
+
+\item $\E_{\widetilde{\P}}(S_1)$
+
+\end{enumerate}
+
+$S_t=S_0e^{(\mu-\frac{\delta^2}{2})\cdot t+\delta W_t}$
+
+$\P(S_1>110)=\P(S_0e^{(0.2-\frac{0.01}{0.2})\cdot 1+0.1 W_1}>110)=\P(100e^{0.195+0.1\cdot W_1}>110)=\P(e^{0.195+0.1 \cdot W_1)}>1.1)=\P(e^{0.195+0.1 \cdot W_1}>e^{\ln 1.1})=\P(0.195+0.1 \cdot W_t> \ln 1.1)=\P(W_1>\frac{\ln 1.1 -0.195}{0.1})=1-F(\frac{\ln 1.1-0.195}{0.1})=0.84$
+
+$W_1 \sim N(0;1)$
+
+$W_1=\widetilde{W_1}-\frac{0.2-0.1}{0.1}$
+
+$\E_{\P}(S_1)=\E(S_0e^{(\mu-\frac{\delta^2}{2})\cdot t+\delta W_t})=\E(100e^{(0.2-\frac{0.01}{0.2})\cdot 1+0.1 W_t})=100e^{0.195}\E_{\P}(e^{0.1 W_1})$
+
+Если $W_1 \sim \cN(\mu;\delta^2)$,
+
+то $\E(e^{\alpha X})=e^{\alpha \mu} +\frac{\alpha^2 \delta^2}{2}$
+
+Так как $W_1 \sim \cN(0;1)$,
+
+то $100e^{0.195}\E_{\P}(e^{0.1 W_1})=100e^{0.195}e^{0.1 \cdot 0+\frac{0.1^2 \cdot 1}{2}}=100e^{0.2}$
+
+$\E_{\widetilde{\P}}(S_1)$
+
+Свойство $\widetilde{\P}$
+
+$X_0=\E_{\widetilde{\P}}(e^{-r t} X_t|\mathcal{F}_0)$
+
+Цена акции $S_1$ определяется броуновским движением и от прошлого не зависит (не зависит от $\mathcal{F}_0$)
+
+$S_0=\E_{\widetilde{\P}}(e^{-r \cdot 1} S_1|\mathcal{F}_0)=e^{-0.1}E_{\P}(S_1)$
+
+$\E_{\widetilde{\P}}(S_1)=100e^{0.1}$
+
+\section*{Упражнение 2}
+
+В рамках модели Блэка-Шоулза оцените в T=0 актив, который в момент времени Т стоит $X_T=\ln S$
+
+$\widetilde{W_t}=W_t+\frac{\mu -r}{\delta}$
+
+$X_0=\E_{\widetilde{\P}}(e^{-rT}\cdot X_T|\mathcal{F}_0)=e^{-rT}\cdot \E_{\widetilde{\P}}(\ln S_T|\mathcal{F}_0)=e^{-rt}\cdot \E_{\widetilde{\P}}(\ln (S_0 \cdot e^{(\mu -\frac{\delta^2}{2})\cdot T+\delta \cdot W_T}|\mathcal{F}_0)=e^{-rT}(\ln S_0+(\mu -\frac{\delta^2}{2})\cdot T + \E_{\widetilde{\P}}(\delta W_t|\mathcal{F}_0))$
+
+$\E_{\widetilde{\P}}(\delta W_t|\mathcal{F}_0)=\E_{\widetilde{\P}}(\delta \cdot (\widetilde{W}-\frac{\mu - r}{\delta}\cdot T)=\delta(\E_{\widetilde{\P}}(\widetilde{W_T})-\frac{\mu-r}{\delta}\cdot T)=-\delta \cdot (\mu-r)\cdot T$,
+
+$\widetilde{W_T} \sim \cN(0;T-s)$
+
+следовательно $\E_{\widetilde{\P}}(\widetilde{W_T})=0$
+
+$X_0=e^{-rT}(\ln S_0 +(\mu -\frac{\delta^2}{2})\cdot T-T(\mu-r)$
+
+$X_0=e^{-rT}(\ln S_0-T \cdot \frac{\delta^2}{2}+rT)$
+
+
+\end{document}
