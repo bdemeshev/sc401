@@ -31,6 +31,8 @@
 
 \section{2008-2009}
 
+
+
 \subsection{Exam, 12.01.2009}
 
 Final exam consists of the two parts: A and B. Part A lasts for 110 minutes.
@@ -294,7 +296,7 @@ Answer two questions out of the three from this section. Each question is worth 
 Part B lasts for 70 minutes.
 
 \begin{enumerate}[resume]
-\item In the framework of the Black and Scholes model find the price at $t=0$  of an asset that pays $\min\{M,\ln S_t\}$  at time $T$, where $S_T$ denotes the price of one share at time $T$,  $M$ --- arbitrary constant, specified at the moment of the issue.
+\item In the framework of the Black and Scholes model find the price at $t=0$  of an asset that pays $\min\{M,\ln S_t\}$  at time $T$, where $S_T$ denotes the price of one share at time $T$,  $M$ — arbitrary constant, specified at the moment of the issue.
 
 \item The price of a share in euros is driven by the equation $dS=\sigma S dW+\alpha S dt$, the dollar/euro exchange rate is driven by the equation $dU=b U dW+c U dt$. Find the current price in dollars of a European call option with maturity date $T$, strike price $K$.
 
@@ -710,7 +712,41 @@ Again using Ito's isometry:
 \Cov( X_t, W_t) = \Cov \left( \int_0^t sW_s \, dW_s , \int_0^t 1 \, dW_s \right) = \int_0^t \E(sW_s\cdot 1) \, ds = 0
 \]
 
-\item ...
+\item First we find distribution of $Y_{\tau}$:
+
+\begin{tabular}{rrr}
+\toprule
+$Y_{\tau}$ & $-10$ & $10$ \\
+          & $p$   & $1-p$ \\
+\bottomrule
+\end{tabular}
+
+We introduce $Z_t = a^{Y_t}$. To make $Z_t$ martingale we should eliminate $dt$ part in $dZ_t$. Hence $\ln a = -2.5$.  And $Z_t = e^{-2.5 Y_t}$ is a martingale. 
+
+\begin{tabular}{rrr}
+\toprule
+$Z_{\tau}$ & $e^{25}$ & $e^{-25}$ \\
+          & $p$   & $1-p$ \\
+\bottomrule
+\end{tabular}
+
+From Doob's theorem: $\E(Z_{\tau}) = Z_0 = 1$. And we obtain $p$ from linear equation
+
+\[
+p e^{25} + (1-p) e^{-25} = 1
+\]
+
+The process $R_t = Y_t - 5t$ is a martingale. By Doob's theorem $\E(R_{\tau}) = R_0 = 0$, but
+
+\[
+\E(R_{\tau}) = \E(Y_{\tau}) - 5\E(\tau) 
+\]
+
+So, 
+\[
+\E(\tau) = \E(Y_{tau}) / 5 = -2p + 2(1-p)=2-4p
+\]
+
 
 \item We know that $W_{2}-W_{1}\sim \cN(0; 1)$, therefore
 
@@ -1096,7 +1132,7 @@ $x(t)=x_0-\int_0^t u(s)\, ds$
 \vspace{20pt}
 
 \begin{enumerate}[resume]
-\item $[$10 points] Waves are arriving on the seashore. The sizes of the waves are independent uniform on $[0;1]$ random variables $X_i$. If the size of $i$-th wave is greater than the size of its neighboring waves, $X_i>\max\{X_{i-1},X_{i+1}\}$, then we call it a <<high>> wave. Let $H_i$ be the indicator of the <<high>> waves: $H_i=1$ if $X_i>\max\{X_{i-1},X_{i+1}\}$ and $H_i=0$ otherwise.
+\item $[$10 points] Waves are arriving on the seashore. The sizes of the waves are independent uniform on $[0;1]$ random variables $X_i$. If the size of $i$-th wave is greater than the size of its neighboring waves, $X_i>\max\{X_{i-1},X_{i+1}\}$, then we call it a «high» wave. Let $H_i$ be the indicator of the «high» waves: $H_i=1$ if $X_i>\max\{X_{i-1},X_{i+1}\}$ and $H_i=0$ otherwise.
 
 Find $\E(X_i \mid H_i)$ and $\E(H_i \mid X_i)$
 \item $[$10 points] Find $\E(W_s \cdot W_t)$ and $\E(W_r \cdot W_s \cdot W_t)$ where $r<s<t$.
@@ -1120,7 +1156,16 @@ dX_t=-9X_t^2(1-X_t)dt+3X_t(1-X_t)dW_t,\quad X_0=1/2
 \subsection{exam 10.01.2013-hints}
 \begin{enumerate}
 \item $\E(H_i \mid X_i)=X_i^2$, $\E(X_i \mid H_i=1)=3/4$, $\E(X_i \mid H_i=0)=3/8$, $\E(X_i \mid H_i)= (3+3H_i)/8$
-\item $\E(W_s \cdot W_t)=s$ and $\E(W_r \cdot W_s \cdot W_t)=0$
+\item $\E(W_s \cdot W_t)=s$ and 
+
+Let's introduce deltas: $D_1 = W_s - W_r$ and $D_2 = W_t - W_s$. The bonus of this notation is that $D_1$, $D_2$ and $W_r$ are independent random variables. And
+
+\[
+\E(W_r \cdot (W_r + D_1) \cdot (W_r + D_1 + D_2))=\E(W_r^3 + W_r^2 D_1 + W_r^2 D_2 + W_r^2 D_1 + W_r D_1^2 + W_r D_1 D_2) = 0 + 0 + 0 + 0 + 0 + 0 = 0
+\]
+
+
+
 \item $\E(X_t)=0$, $\Var(X_t)=t^6/6$, $\Cov(X_t,W_t)=0$
 \item $C_0=e^{-rT}(\ln S_0+(r-\sigma^2/2)T$
 \item Equation for $f$ has the form $f''(x)(1-x)-2f'(x)=0$. Use the substituion $f'(x)=h(x)$. This ordinary differential equation has many solutions, one of them is $f(x)=1/(1-x)$.   We may take any function $f$ that makes initial stochastic differential equation less diffucult, so we take $f(x)=1/(1-x)$, and  $Y_t=1/(1-X_t)$.
@@ -1192,7 +1237,7 @@ subject to (*) $\dot{x}=1-x-q$, where the state variable  $x(t)<1$ represents a 
 \end{enumerate}
 \end{enumerate}
 
-\subsection{retake --- short hints}
+\subsection{retake — short hints}
 \begin{enumerate}
 \item First we decompose $Y$ as $Y=aX+bZ$, where $Z$ is independent from $X$ and has unit variance. To obtain $a$ and $b$ we make system:
 \[
@@ -1330,7 +1375,7 @@ $$\par
 
 
 
-\textbf{Problem 2 --- part 1 of 2.}\par
+\textbf{Problem 2 — part 1 of 2.}\par
 At first, $S_{n} = S_{0}+\sum\limits_{i = 1}^{n}\ee_{i}$, where $\{\ee_{i}\}$ is the sequence of independent random variables with\par
  $P(\ee_{i} = -1) = P(\ee_{i} = 1) = \frac{\ds 1}{\ds 2}$. Also denote $\FF_{n} = \sigma(\ee_{1},\ldots,\ee_{n})$.\par
 Observe that $\tau$ is really a stopping time, because at each moment of time we precisely know, are we in one of the points $\{2000, 2014\}$ or not.\par
@@ -1387,7 +1432,7 @@ Then, the overall expectation $E\left(|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\
 
 
 
-\textbf{Problem 2 --- part 2 of 2.}
+\textbf{Problem 2 — part 2 of 2.}
 
 
 Then again, the conditions of the Doob's theorem are satisfied, i.e.
@@ -1468,7 +1513,7 @@ if $\alpha > 0$, then $f(x) = C_{1}\cos(t\sqrt{2\alpha}) + C_{2}\sin(t\sqrt{2\al
 
 
 
-\textbf{Problem 5 --- part 1 of 2.}\par
+\textbf{Problem 5 — part 1 of 2.}\par
 Assume for simplicity that $X_{t} = f(t)g(W_{t})$, where $f$ and $g$ are kinda nice functions (defined on $[0, +\infty)$ and continuously differentiable the required number of times on this interval; right-differentiable at zero, of course).\par
 By the It$\hat{\mbox{o}}$'s lemma we have
 $$
@@ -1516,7 +1561,7 @@ Let $A = \{x \in \RR | g'(x) \neq 0\}$. Since $g'$ is continuous and is not iden
 
 
 
-\textbf{Problem 5 --- pat 2 of 2.}\par
+\textbf{Problem 5 — pat 2 of 2.}\par
 
 Now fix some $t_{0} > 0$. From (3) we have that almost everywhere in the event $\{W_{t_{0}} \in A\}$ the equality
 $$
@@ -1568,7 +1613,7 @@ and the original problem has no solutions of the type $f(t)g(W_{t})$.
 
 
 
-\textbf{Problem 6 --- part 1 of 4.}\par
+\textbf{Problem 6 — part 1 of 4.}\par
 The risky asset $S_{t}$ satisfies the stochastic differential equation $$\mathrm{d}S_{t} = \mu S_{t}\dt + \sigma S_{t}\mathrm{d}W_{t}$$\par which implies
 $$
 S_{t} = S_{0}\exp \left(t\left(\mu - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma W_{t}\right)
@@ -1582,7 +1627,7 @@ $$
 B_{t} = B_{0}e^{rt}
 $$\par
 Let $X_{t}$ be our self-financing portfolio at time $t$, which contains $\Delta_{t}$ shares of the risky asset.\par
-The total amount of money in the risky asset is $\Delta_{t}$, in the risk-free asset --- $(X_{t} - \Delta_{t}S_{t})$.\par
+The total amount of money in the risky asset is $\Delta_{t}$, in the risk-free asset — $(X_{t} - \Delta_{t}S_{t})$.\par
 Therefore
 $$
 \mathrm{d}X_{t} = \Delta_{t}\mathrm{d}S_{t} + r(X_{t} - \Delta_{t}S_{t})\dt
@@ -1611,7 +1656,7 @@ where $\tilde{p}_{(S_{T}, S_{T-1})}$ is a two-dimensional density of a correspon
 
 
 
-\textbf{Problem 6 --- part 2 of 4.}\par
+\textbf{Problem 6 — part 2 of 4.}\par
 But
 \[
 \iint\limits_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv = \int\limits_{1}^{+\infty}\left(\int\limits_{0}^{+\infty}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v) \du\right)\dv = \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv
@@ -1660,7 +1705,7 @@ E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right) = v\cdot\exp\left(r - \frac{\ds \s
 which, I think, is a very nice formula (especially if we compare it with (2)).
 
 
-\textbf{Problem 6 --- part 3 of 4.}
+\textbf{Problem 6 — part 3 of 4.}
 
 
 Taking (2) and (4), we have
@@ -1691,7 +1736,7 @@ Therefore our integral finally equals
 where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int\limits_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$.
 
 
-\textbf{Problem 6 --- part 4 of 4.}\par
+\textbf{Problem 6 — part 4 of 4.}\par
 And now I'll finish this huge problem.\par
 We had
 \begin{multline}
@@ -1807,11 +1852,43 @@ with deterministic initial value $X_0$.
 \Cov(\hat{Y},Y)=\ldots=\Cov(\hat{Y},\hat{Y})
 \]
 
-\item $M_t=e^{-2\mu X_t}$ 5 pts, probability --- 5 pts, $p=\frac{1-\exp(2\mu)}{\exp(-4\mu)-\exp(2\mu)}$
+\item $M_t=e^{-2\mu X_t}$ 5 pts, probability — 5 pts, $p=\frac{1-\exp(2\mu)}{\exp(-4\mu)-\exp(2\mu)}$
 
-\item $X_t$ is not a martingale --- 1 pt, $Y_t=e^{t/2}X_t$ or proportional --- 4 pts, variance --- 5 pts $\Var(Y_t)=(e^t+e^{-t}-2)/2$
+\item $X_t$ is not a martingale — 1 pt,
 
-\item Pricing formula --- 2 pts, risk-neutral substitution --- 2 pts, calculations --- 6 pts.
+\[
+dY_t = \cos W_t f'(t) dt + f(t)(-\sin W_t dW_t + \frac{1}{2}(-\cos W_t)dt)
+\]
+
+We obtain simple differential equation $f'(t)-f(t)/2=0$, we choose any solution, for example,  $f(t)=e^{t/2}$.
+
+$Y_t=e^{t/2}X_t$ or proportional — 4 pts, variance — 5 pts 
+
+\[
+\Var(Y_t)=\E(Y_t^2) - (\E(Y_t))^2 
+\]
+
+We note that $Y_t$ is a martingale by construction, so $\E(Y_t) = Y_0 = 1$.
+
+So, $\E(e^{t/2}\cos W_t) = 1$. Hence $\E(\cos W_t) = e^{-t/2}$.
+
+Let's recall from middle school that $\cos^2 W_t = \frac{1+\cos 2W_t}{2}$.
+
+We also note that $2W_t \sim \cN(0; 4t)$ and $W_{4t} \sim \cN(0; 4t)$. In any expectation we may safely replace $2W_t$ by $W_{4t}$.
+
+\[
+\E(Y_t^2) = \E(e^t \cos^2 W_t) = \E\left(e^t \frac{1+\cos 2W_t}{2}\right) = \frac{e^t}{2} + \frac{e^t}{2} \E(\cos 2W_t) 
+\]
+
+Where $\E(\cos 2Wt) = \E(\cos(W_{4t})) = e^{-4t/2}=e^{-2t}$.
+
+Finally we obtain,
+
+\[
+\Var(Y_t)=(e^t+e^{-t}-2)/2
+\]
+
+\item Pricing formula — 2 pts, risk-neutral substitution — 2 pts, calculations — 6 pts.
 
 
 Using the pricing formula $X_0=\E_{\tilde{\P}} \left[e^{-rT}X_T \right]$:
@@ -1833,9 +1910,9 @@ X_0=  S_0^2 e^{-rT}\exp(2(r-\sigma^2/2)T) \exp(4\sigma^2/2) = S_0^2 \exp((r+\sig
 
 \item
 \begin{enumerate}
-\item  $X_t$ is not a martingale --- 1 pt
-\item use of Ito's formula --- 5 pts, equation $f'=f$ --- 5 pts, solution $X_t=\ln(W_t+e^{X_0})$. --- 5 pts
-\item Key features: ``jiggly'' ---  1 pt, blows down to minus infinity in finite time --- 2 pts
+\item  $X_t$ is not a martingale — 1 pt
+\item use of Ito's formula — 5 pts, equation $f'=f$ — 5 pts, solution $X_t=\ln(W_t+e^{X_0})$. — 5 pts
+\item Key features: ``jiggly'' —  1 pt, blows down to minus infinity in finite time — 2 pts
 \item The limit is zero.
 \end{enumerate}
 
@@ -1939,7 +2016,7 @@ You can launch a torpedo each minute at any integer on the number line. If the t
 \item Devise a strategy that is guaranteed to eventually hit the enemy submarine
 \end{enumerate}
 
-\item Compare the power of two sets: $A=\mathbb{Q}$ --- the set of all rational numbers, $B=\mathbb{Q}^2$ --- the set of all possible pairs of rational numbers.
+\item Compare the power of two sets: $A=\mathbb{Q}$ — the set of all rational numbers, $B=\mathbb{Q}^2$ — the set of all possible pairs of rational numbers.
 
 \item Using the fact that the Borel $\sigma$-algebra $\mathcal{B}$ is the smallest $\sigma$-algebra containing all subsets of the form $(-\infty; t]$ show that $\mathbb{N}\in \mathcal{B}$.
 
@@ -2005,7 +2082,7 @@ What will be the expected value of my account in my piggy bank?
 
 The competition between two teams is organised as a sequence of rounds. In each round two gladiators-vampires (one from each team) will meet and fight to the death. Varvara always selects the best gladiator from her team to fight in the next round.
 
-When the gladiators of strengths $a$ and $b$ meet the first will win with probability $a/(a+b)$, the second --- with probability $b/(a+b)$. The gladiators are vampires, so the strength of the winner will become $a+b$.
+When the gladiators of strengths $a$ and $b$ meet the first will win with probability $a/(a+b)$, the second — with probability $b/(a+b)$. The gladiators are vampires, so the strength of the winner will become $a+b$.
 
 \begin{enumerate}
 \item Let's denote by $\tau$ the number of the final round. What is the maximum value of $\tau$?
@@ -2056,7 +2133,7 @@ As $T$ is geometric $\Var(T)=(1-p)/p^2=30$. And, hence, $\Var(N)=2$.
 
 If $N$ is fixed, then the total time $T$ is equal to the following sum: from start to first five, from first five to second five, \ldots, from $N$-th five to six, so $\E(T|N)=aN+b$. From the properties of geometric distribution, $b=5$ (no five) and $a=5$ (no six).
 
-\item $X_0=25$, $X_{t+1}=X_t + D_{t+1}$ --- is a martingale. The random variable $X_{\tau}$ can take only the values $30$ and $15$. Applying the Doob's theorem we get $\E(X_{\tau})=25$ and, hence, $\P(X_{\tau}=15)=1/3$.
+\item $X_0=25$, $X_{t+1}=X_t + D_{t+1}$ — is a martingale. The random variable $X_{\tau}$ can take only the values $30$ and $15$. Applying the Doob's theorem we get $\E(X_{\tau})=25$ and, hence, $\P(X_{\tau}=15)=1/3$.
 
 Using the second martingale, $X^2_t-t$ and again Doob's theorem, $\E(X^2_{\tau})-\E(\tau)=X_0^2=625$, and $\E(\tau)=50$.
 
@@ -2157,7 +2234,7 @@ Here $W_t$ always denotes the standard Wiener process.
 Hint: maybe $\exp(2 W_t - 2 t )$ will help?
 
 
-\item $[$10 points] The random variables $X_1$, $X_2$, \ldots, $X_n$, \ldots are independent uniformly distributed on $[0; 1]$. I am summing them until the first $X_i$ greater than 0.5 is added. After this term I stop. Let’s denote by $S$ the total sum and by $N$ --- the number of terms added. Find $\E(S|N)$, $\Var(S|N)$, $E(S)$ % , $Var(S)$.
+\item $[$10 points] The random variables $X_1$, $X_2$, \ldots, $X_n$, \ldots are independent uniformly distributed on $[0; 1]$. I am summing them until the first $X_i$ greater than 0.5 is added. After this term I stop. Let’s denote by $S$ the total sum and by $N$ — the number of terms added. Find $\E(S|N)$, $\Var(S|N)$, $E(S)$ % , $Var(S)$.
 
 Hints: If $U$ is uniform on $[a;b]$ then $\Var(U)=(b-a)^2/12$. If $G$ has geometric distribution (the number of throws to get the first success) then $\E(G)=1/p$  where $p$  is the probability of success.
 
@@ -2206,7 +2283,16 @@ You may use the following guiding steps:
 \item By hints:
 \begin{enumerate}
 \item $d(tW_t)=t \, dW_t+W_t \, dt$
-\item $\E\left(2t W_t\int_0^t s \, dW_s\right)=t^3$ using Ito's isometry
+\item Using Ito's isometry:
+
+\begin{multline}
+\E\left(2t W_t\int_0^t s \, dW_s\right) = 2t \E\left(\int_0^t 1 \, dW_s \int_0^t s \, dW_s\right) =
+2t \Cov\left(\int_0^t 1 \, dW_s, \int_0^t s \, dW_s\right) = \\
+= 2t \int_0^t \E( 1 \cdot s) \, ds = t^3
+\end{multline}
+
+
+
 \item $\E\left(\left(\int_0^t s \, dW_s\right)^2 \right)=t^3/3$ using Ito's isometry
 \item $\E\left(  \int_0^t W_s \, ds  \right)=0$
 \item $\Var\left(  \int_0^t W_s \, ds  \right)=t^3/3$
@@ -2221,10 +2307,38 @@ X_0=e^{-0.2}\tilde{P}(2\tilde{W}_1 - \tilde{W}_2 < 0) = e^{-0.2}/2
 \item By steps:
 
 \begin{enumerate}
-\item Using the substitution $U_t=\ln Y_t$, one obtains the solution $Y_t=\exp(-W_t-t/2)$
-\item $dA_t= Y_t (t-X_t)dt$
-\item $f(t)=e^t$ for example
+\item Using the substitution $U_t=\ln Y_t$, one obtains
+\[
+dU_t= - dW_t - \frac{1}{2}dt
+\]
+And the solution $Y_t=\exp(-W_t-t/2)$
+\item As $A_t = X_t Y_t$ we have:
+\[
+dA_t = X_t dY_t + Y_t dX_t + \frac{1}{2} 2 dX_t dY_t
+\]
+
+Finally
+\[
+dA_t= Y_t (t-X_t)dt
+\]
 \item
+\[
+d(f(t)A_t) = f'(t) A_t dt + f(t) dA_t = f'(t) X_t Y_t dt + f(t)Y_t (t - X_t)dt
+\]
+
+To kill $X_t$ in this expression we need to find a function $f$ such that $f'(t)- f(t)=0$. For example, $f(t)=e^t$.
+\item From previous point we have
+\[
+d(e^t A_t) = e^t Y_t t dt
+\]
+
+And
+\[
+e^t A_t = e^0 A_0 + \int_0^t e^s Y_s s \, ds
+\]
+
+From initial condition $A_0=0$ and finally
+
 \[
 X_t=\frac{1+\int_0^t s \exp(-W_s+s/2) \, ds}{ \exp(-W_t +t/2 )}
 \]
@@ -2282,7 +2396,7 @@ European call option with strike price $K$ is the right to buy at time $t$ one s
 
 
 
-\subsection{Stochastic calculus hometask --- Solution}
+\subsection{Stochastic calculus hometask — Solution}
 
 \begin{enumerate}
 
@@ -2604,5 +2718,73 @@ Production function $f(k)=\alpha k$ and $\alpha >\delta $. Find the optimal solu
 \item (10 points) Solve the problem on the bounded optimal control $\int _{0}^{T}(1-\beta -u)xdt \to \max$, subject to $\dot{x}=\alpha xu$, $x(0)=x_{0}$, $0\le u\le 1$. In this problem $\alpha>0$ and $0<\beta <1$.
 
 \end{enumerate}
+
+\section{2016-2017}
+
+\subsection{Hometask}
+
+
+\begin{enumerate}
+
+\item Consider the two independent Brownian motions, $(W_t)$ and $(V_t)$. Which of the following processes is Brownian motion:
+\begin{enumerate}
+\item $Z_t = \frac{1}{2}W_t + \frac{1}{2}V_t$
+\item $Q_t = \frac{1}{\sqrt{2}}W_t + \frac{1}{\sqrt{2}}V_t$
+\end{enumerate}
+
+\item Let $Y_t = \int_0^t (W_u + u)^2 \, dW_u$. Find $\E(Y_t)$ and $\Var(Y_t)$.
+
+\item James Bond plays in a casino. At every bet he wins one pound with probability $0.5$, looses one pound with probability $0.4$ or wins nothing with probability $0.1$. His initial fortune is $X_0 = 10$ pounds. He stops playing if he goes bankrupt or if he achieves the fortune of $300$ pounds (airline ticket price from London to Moscow).
+\begin{enumerate}
+\item Find the constant $a$ such that $M_t = a^{X_t}$ is a martingale.
+\item What is the probability that James Bond will win enough to buy the ticket?
+\end{enumerate}
+
+
+\item Let $R_t$ be the exchange rate at time $t$. We suppose that $dR_t = \mu R_t dt + \sigma R_t dW_t$. Consider the inverse exchange rate $I_t = 1/R_t$. Find the expression for $dI_t$. The expression should not contain $R_t$.
+
+\item It is known that $M_t$ is a martingale. We also know that in short-hand notation $(dM_t)^2 = dt$. What can we say about the process $Y_t = M_t^2 - t + 2017$?
+
+\item Solve the stochastic differential equation
+\begin{equation}
+dX_t = \frac{-1}{1 - t}X_t \, dt + dW_t, \; X_0 = 0
+\end{equation}
+
+You may use or not use the following hints:
+
+\begin{enumerate}
+\item The correct answer will contain the integral $\int_0^t \frac{1}{1 - u} dW_u$ that cannot be simplified.
+\item Solve the ordinary differential equation
+\begin{equation}
+dY_t = \frac{-1}{1 - t}Y_t \, dt, \; Y_0 = 1
+\end{equation}
+\item Represent $X_t$ as $X_t = Y_t \cdot Z_t$ and find the equation for $dZ_t$. Find the expression for $Z_t$.
+\end{enumerate}
+
+\item Consider the framework of the Black and Scholes model. Let $\P$ be the original probability measure and $\tilde{\P}$ be the risk-neutral probability measure. Provide an example of three events $A$, $B$ and $C$ such that $\P(A) > \tilde{\P}(A)$,  $\P(B) < \tilde{\P}(B)$, $\P(C) = \tilde{\P}(C)$.
+
+\item Consider the framework of the Black and Scholes model. The asset pays you 1 dollar at fixed time $T$ if and only if the price of a share $S_T$ is above the strike-price $K$. Find the current price $X_0$ of this asset.
+
+\end{enumerate}
+
+
+\section{Some junk}
+
+\subsection{Problems}
+\begin{enumerate}
+\item Let $Y_t = W_t +\mu t$. Find all constants $b$ such that $Z_t = e^{bY_t}$ is a martingale.
+
+\end{enumerate}
+
+\subsection{Solutions}
+\begin{enumerate}
+\item Using Ito's lemma
+\[
+dZ_t = e^{bY_t}b \left(dW_t + \mu dt + \frac{1}{2}b \, dt \right)
+\]
+So $b=0$ and $b=-2\mu$ are ok.
+
+\end{enumerate}
+
 
 \end{document}
