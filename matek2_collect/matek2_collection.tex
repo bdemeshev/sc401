@@ -2866,10 +2866,48 @@ when both endpoint values $x(0)$ and $x(1)$ can be chosen freely.
 \[
 \E(Y|X) = \frac{n-2}{n-1}X + \frac{1}{6}
 \]
+\[
+\E(X|Y) = \frac{n-2}{n-1}Y + \frac{1}{6}
+\]
 \item Take $dY_t$, kill term before $dt$, $b=-0.1$.
+\[
+dY_t = (W_t^3 + 10bW_t^3) \, dt + 5bW_t^4 \, dW_t
+\]
 \item The process $X_t$ is not a martingale as $\E(X_t)=1-t$.
+\[
+\Var(X_t) = (1-t)^2\E(I^2) = (1-t)^2 \int_0^t \frac{1}{(1-u)^2} \, du = t(1-t)
+\]
+\[
+\Cov(W_t, X_t) = (1-t) \cdot \left( \int_0^t dW_u \cdot \int_0^t \frac{1}{1-u}dW_u  \right) = (1-t) \E\left( \int_0^t \frac{1}{1-u} \, du \right) = (t-1)\ln(1-t)
+\]
 \item
+\[
+X_0 = e^{-rT}\tilde{\E}(S_T \cdot 1_{S_T>K})
+\]
 \item
+\[
+dX_t = dr_t = -\lambda X_t dt + \sigma dW_t
+\]
+Solving ODE we obtain $Y_t = e^{-\lambda t}$.
+
+\[
+dX_t = Y_t dZ_t + Z_t dY_t + dY_t dZ_t
+\]
+
+Equation for $Z_t$:
+\[
+dZ_t = e^{\lambda t}\sigma dW_t
+\]
+
+Just recover the full form:
+\[
+Z_t = Z_0 + \sigma \int_0^t e^{\lambda u} dW_u
+\]
+
+Finally,
+\[
+r_t = e^{-\lambda t}\left(r_0 - c + \sigma \int_0^t e^{\lambda u} \, dW_u  \right) + c
+\]
 
 \end{enumerate}
 
