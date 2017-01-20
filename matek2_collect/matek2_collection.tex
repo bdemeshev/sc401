@@ -721,7 +721,7 @@ $Y_{\tau}$ & $-10$ & $10$ \\
 \bottomrule
 \end{tabular}
 
-We introduce $Z_t = a^{Y_t}$. To make $Z_t$ martingale we should eliminate $dt$ part in $dZ_t$. Hence $\ln a = -2.5$.  And $Z_t = e^{-2.5 Y_t}$ is a martingale. 
+We introduce $Z_t = a^{Y_t}$. To make $Z_t$ martingale we should eliminate $dt$ part in $dZ_t$. Hence $\ln a = -2.5$.  And $Z_t = e^{-2.5 Y_t}$ is a martingale.
 
 \begin{tabular}{rrr}
 \toprule
@@ -739,10 +739,10 @@ p e^{25} + (1-p) e^{-25} = 1
 The process $R_t = Y_t - 5t$ is a martingale. By Doob's theorem $\E(R_{\tau}) = R_0 = 0$, but
 
 \[
-\E(R_{\tau}) = \E(Y_{\tau}) - 5\E(\tau) 
+\E(R_{\tau}) = \E(Y_{\tau}) - 5\E(\tau)
 \]
 
-So, 
+So,
 \[
 \E(\tau) = \E(Y_{tau}) / 5 = -2p + 2(1-p)=2-4p
 \]
@@ -1156,7 +1156,7 @@ dX_t=-9X_t^2(1-X_t)dt+3X_t(1-X_t)dW_t,\quad X_0=1/2
 \subsection{exam 10.01.2013-hints}
 \begin{enumerate}
 \item $\E(H_i \mid X_i)=X_i^2$, $\E(X_i \mid H_i=1)=3/4$, $\E(X_i \mid H_i=0)=3/8$, $\E(X_i \mid H_i)= (3+3H_i)/8$
-\item $\E(W_s \cdot W_t)=s$ and 
+\item $\E(W_s \cdot W_t)=s$ and
 
 Let's introduce deltas: $D_1 = W_s - W_r$ and $D_2 = W_t - W_s$. The bonus of this notation is that $D_1$, $D_2$ and $W_r$ are independent random variables. And
 
@@ -1862,10 +1862,10 @@ dY_t = \cos W_t f'(t) dt + f(t)(-\sin W_t dW_t + \frac{1}{2}(-\cos W_t)dt)
 
 We obtain simple differential equation $f'(t)-f(t)/2=0$, we choose any solution, for example,  $f(t)=e^{t/2}$.
 
-$Y_t=e^{t/2}X_t$ or proportional — 4 pts, variance — 5 pts 
+$Y_t=e^{t/2}X_t$ or proportional — 4 pts, variance — 5 pts
 
 \[
-\Var(Y_t)=\E(Y_t^2) - (\E(Y_t))^2 
+\Var(Y_t)=\E(Y_t^2) - (\E(Y_t))^2
 \]
 
 We note that $Y_t$ is a martingale by construction, so $\E(Y_t) = Y_0 = 1$.
@@ -1877,7 +1877,7 @@ Let's recall from middle school that $\cos^2 W_t = \frac{1+\cos 2W_t}{2}$.
 We also note that $2W_t \sim \cN(0; 4t)$ and $W_{4t} \sim \cN(0; 4t)$. In any expectation we may safely replace $2W_t$ by $W_{4t}$.
 
 \[
-\E(Y_t^2) = \E(e^t \cos^2 W_t) = \E\left(e^t \frac{1+\cos 2W_t}{2}\right) = \frac{e^t}{2} + \frac{e^t}{2} \E(\cos 2W_t) 
+\E(Y_t^2) = \E(e^t \cos^2 W_t) = \E\left(e^t \frac{1+\cos 2W_t}{2}\right) = \frac{e^t}{2} + \frac{e^t}{2} \E(\cos 2W_t)
 \]
 
 Where $\E(\cos 2Wt) = \E(\cos(W_{4t})) = e^{-4t/2}=e^{-2t}$.
@@ -2767,6 +2767,111 @@ dY_t = \frac{-1}{1 - t}Y_t \, dt, \; Y_0 = 1
 
 \end{enumerate}
 
+
+\subsection{exam, 10.01.2017}
+
+
+\subsubsection*{Stochastic calculus part}
+
+Here $W_t$ always denotes the standard Wiener process.
+
+\vspace{10pt}
+
+\begin{enumerate}
+
+
+\item (10 points) You throw a standard fair die $n$ times. Let $X$ be the number of «fives» in the first $(n-1)$ throws and $Y$ — the number of «fives» in the last $(n-1)$ throws.
+
+For $n\geq 3$ calculate $\E(Y|X)$, $\E(X|Y)$, $\Var(Y|X)$.
+
+\item (10 points) Find a constant $b$ such that $Y_t = \int_0^t W_u^3 \, du + b W_t^5$ is a martingale.
+
+
+\item (10 points) The process $X_t$ evolves according to the formula
+\[
+X_t = 1 - t + (1 - t) \int_0^t \frac{1}{1-u} \, dW_u
+\]
+
+\begin{enumerate}
+\item Is $X_t$ a martingale?
+\item Find $\E(X_t)$, $\Var(X_t)$ and $\Cov(W_t, X_t)$
+\item Draw $\E(X_t)$ and $\Var(X_t)$ as functions of $t$
+\item Draw two possible trajectories of $X_t$
+\end{enumerate}
+
+
+\item (10 points) Find the price of the «Asset-or-nothing» call option at time $t=0$ in the framework of Black and Scholes model. The risk-free interest rate is equal to $r$. The volatility of the share is equal to $\sigma$. The current share price is $S_0$. The «Asset-or-nothing» call option pays you at fixed time $T$ the sum $S_T$ if $S_T$ is higher than the strike price $K$ or nothing otherwise.
+
+Hint: the correct answer will contain the normal cumulative distribution function $F()$.
+
+\item (20 points) Interest rate evolves according to the stochastic differential equation
+\[
+dr_t = -\lambda (r_t - c) \, dt + \sigma dW_t
+\]
+where $r_0$, $c$, $\lambda$ and $\sigma$ are some positive constants.
+
+Solve this stochastic differential equation.
+
+You may use or not use the following hints:
+
+\begin{enumerate}
+\item Obtain a stochastic differential equation for $X_t = r_t - c$.
+\item Solve the ordinary differential equation $dY_t = -\lambda Y_t \, dt, \; Y_0 = 1$
+\item Represent $X_t$ as $X_t = Y_t \cdot Z_t$ and find the equation for $dZ_t$.
+\item Solve the equation for $Z_t$.
+\item The correct answer for $r_t$ will contain an Ito's integral that cannot be simplified.
+\end{enumerate}
+
+\end{enumerate}
+
+%\begin{center}
+%\includegraphics[width=12cm]{correlation.png}
+%\end{center}
+
+
+\subsubsection*{Optimal control part}
+
+\begin{enumerate}[resume]
+
+\item (10 points) Solve the bounded control problem:
+\[
+\int\limits_0^T {{{(u - x)}^2}dt \to \min }
+\]
+subject to $\dot x = \frac{1}{2}(u - x)$, $x(0) = 1$, $\left| u \right| \leqslant 1$, $T > 0$.
+
+\item (10 points) Find the extremals for the calculus of variations problem:
+\[
+\int\limits_0^1 \frac{1}{2}{{\dot x}^2} + x\dot x + x \, dt
+\]
+when both endpoint values $x(0)$ and $x(1)$ can be chosen freely.
+
+
+\item (20 points) Costs of the farmer’s production $C(x,y)$ depends on the output $y(t)$ and the fertility of soil $x(t)$ by the formula $C = {y^2} + \frac{1}{{\sqrt x }}$. This industry is perfectly competitive and the price of the harvest per unit is $p$. Fertility changes over time by the dynamic law $\dot x = B - \alpha y$, where $p\alpha  > 2B > 0$, and $x(0) > 0$. Constant $B$ is defined by the government subsidy. Profit of the firm is discounted with the rate $r > 0$.
+
+\begin{enumerate}
+\item Write down the problem of maximizing the stream of discounted profit over the infinite time horizon.
+\item Write down the system of first order conditions using the current value Hamiltonian.  Draw the phase portrait in $(x,y)$ coordinate system, in which $x$ — axis is drawn horizontally. Find the steady-state $(x_s, y_s)$ if it exists, classify it using Jacobian. With the help of the arrows provide the sketch of the dynamic paths of the system.
+\item Find the sign of $\partial x_s / \partial p$. What justification of this sign can you provide from the economic point of view?
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+\subsection{exam, solution}
+
+\begin{enumerate}
+\item
+\[
+\E(Y|X) = \frac{n-2}{n-1}X + \frac{1}{6}
+\]
+\item Take $dY_t$, kill term before $dt$, $b=-0.1$.
+\item The process $X_t$ is not a martingale as $\E(X_t)=1-t$.
+\item
+\item
+
+\end{enumerate}
 
 \section{Some junk}
 
