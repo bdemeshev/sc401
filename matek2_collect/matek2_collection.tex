@@ -2768,6 +2768,155 @@ dY_t = \frac{-1}{1 - t}Y_t \, dt, \; Y_0 = 1
 \end{enumerate}
 
 
+\subsection{ht, solution}
+
+Solution by Anastasia Andreeva:
+
+\begin{enumerate}
+
+\item 
+\begin{enumerate}
+\item  
+\[
+Z_t=\frac12 W_t+\frac12 V_t
+\]
+$\Var(Z_t-Z_s)=\Var[0.5\cdot(W_t-W_s+V_t-V_s)]=\frac14 \Var(W_t-W_s)+\frac14 \Var(V_t-V_s)=\frac12(t-s)$
+Thus, $Z_t-Z_s\sim \cN\left(0,\frac{t-s}{2}\right)$, therefore, $Z_t$ is not a Brownian motion.
+
+\item 
+\[
+Q_t=\frac1{\sqrt2} W_t+\frac1{\sqrt2} V_t
+\]
+Let's check all the conditions:
+\begin{enumerate}
+\item $Q_0=\frac1{\sqrt2}(W_0+V_0)=0$\\
+\item $P(Q_t \text{trajectory is continuous}) = 1$ since $W_t$ and $V_t$ correspond to this condition
+\item $Q_t-Q_s=\frac1{\sqrt2}(W_t-W_s)+\frac1{\sqrt2}(V_t-V_s)$ is independent on $\mathcal{F}_s$ since $W_t-W_s$ and $V_t-V_s$ are independent on $\mathcal{F}_s$\\
+\item $\E(Q_t-Q_s)=\frac1{\sqrt2} \E(W_t-W_s)+\frac1{\sqrt2} \E(V_t-V_s)=0$\\
+$\Var(Q_t-Q_s)=\Var\left(\frac1{\sqrt2}\cdot(W_t-W_s+V_t-V_s)\right)=\frac12 \Var(W_t-W_s)+\frac12 \Var(V_t-V_s)=t-s$
+Thus, $Q_t-Q_s\sim \cN\left(0,t-s\right)$\\
+\item $Q_t$ is measurable relative to $\mathcal{F}_t$
+\end{enumerate}
+
+Thus, $Q_t$ is a Brownian motion.
+\end{enumerate}
+
+\item
+\[
+Y_t=\int\limits_0^t(W_u+u)^2dW_u
+\]
+$Y_t$ is a martingale because it is a stochastic integral, so $\E(Y_t)=\E(Y_0)=0$.
+\[
+\E(W_u^4)=3u^2, \E(W_u^2)=u, \E(W_u^3)=\E(W_u)=0
+\]
+\begin{multline}
+\Var(Y_t)=\int\limits_0^t \E(W_u+u)^4du=\int\limits_0^t\E(W_u^4+4W_u^3u+6W_u^2u^2+4W_uu^3+u^4)du= \\
+=\int\limits_0^t(3u^2+6u^3+u^4)du=\left.u^3+\frac{3u^4}{2}+\frac{u^5}{5}\right|^t_0=t^3+\frac{3t^4}{2}+\frac{t^5}{5}
+\end{multline}
+
+
+\item
+\begin{enumerate}
+\item $\E(M_{t+1}|\mathcal{F}_t)=\E(a^{X_{t+1}}|\mathcal{F}_t)=0.5a^{X_t+1}+0.4a^{X_t-1}+0.1a^{X_t}=a^{X_t}(0.5a+0.4a^{-1}+0.1)$\\
+$0.5a+0.4a^{-1}+0.1=1\Rightarrow a^2-1.8a+0.8=0\Rightarrow a_1=1,a_2=0.8$\\
+$a\neq1$ otherwise $M_t=1$ for all $t$. So, $a=0.8$.
+
+\item James Bond will get 300 with probability $p$ and lose all money with probability $(1-p)$. $\tau$ is the stopping moment (win or lose).
+
+According to Doob's theorem, $\E(M_{\tau})=\E(M_0)=0.8^{10}$.\\
+At the same time $\E(M_{\tau})=\E(0.8^{X_{\tau}})=p\cdot 0.8^{300}+(1-p)\cdot 0.8^0=0.8^{10}$\\
+Then $p=\frac{1-0.8^{10}}{1-0.8^{300}}\approx0.89$\\
+Thus, the answer is 89\%.
+\end{enumerate}
+
+\item I will use the Ito's formula:
+\[
+(dR_t)^2=\sigma^2R_t^2dt
+\]
+\begin{multline}
+dI_t=-\frac{1}{R_t^2}dR_t+\frac{1}{R_t^3} (dR_t)^2=-\frac{1}{R_t^2}(\mu R_t dt+\sigma R_tdW_t)+\frac{\sigma^2}{R_t}dt=\\
+=\frac{1}{R_t}((\sigma^2-\mu)dt+\sigma dW_t)=I_t((\sigma^2-\mu)dt+\sigma dW_t)
+\end{multline}
+
+\item
+\[
+dY_t=2M_tdM_t-dt+2dt=2M_tdM_t+dt
+\]
+Since the expression includes $dt$, $Y_t$ is not a martingale.
+
+\item
+\[
+dX_t=-\frac{1}{1-t}X_tdt+dW_t,X_0=0
+\]
+\begin{enumerate}
+\item 
+\[
+dY_t=-\frac{1}{1-t}Y_tdt, Y_0=1
+\]
+\[
+\frac{dY_t}{Y_t}=-\frac{dt}{1-t}
+\]
+\[
+\ln|Y_t|=\ln|1-t|+C_0
+\]
+\[
+Y_t=C(1-t), Y_0=C=1\Rightarrow Y_t=1-t
+\]
+\item 
+\[
+X_t=Y_tZ_t
+\]
+\[
+dX_t=-\frac{X_t}{1-t}dt+dW_t=Z_tdY_t+Y_tdZ_t=-\frac{Z_tY_t}{1-t}dt+Y_tdZ_t=-\frac{X_t}{1-t}dt+(1-t)dZ_t
+\]
+\[
+dW_t=(1-t)dZ_t\Rightarrow dZ_t=\frac{dW_t}{1-t}\Rightarrow Z_t=Z_0+\int\limits_0^t \frac{dW_u}{1-u}
+\]
+\item
+\[
+X_t=Y_tZ_t=(1-t)\left(Z_0+\int\limits_0^t \frac{dW_u}{1-u}\right), X_0=0=Z_0
+\]
+\[
+X_t=(1-t)\int\limits_0^t \frac{dW_u}{1-u}
+\]
+\end{enumerate}
+
+\item
+$W_t$ is a Brownian motion for $P$. $Y_t=W_t+\frac{\mu-r}{\sigma} t$ is a Brownian motion for $\tilde P$. 
+
+If $\mu>r$, then $Y_t>W_t$ and $\tilde \P(Y_t>0)=\P(W_t>0)=\P(Y_t>\mu t)<\P(Y_t>0)$.
+
+If $\mu<r$, then $Y_t<W_t$ and $\tilde \P(Y_t>0)>\P(Y_t>0)$.
+
+If $\mu=r$, then $W_t=Y_t$ and $\P(W_t>0)=\tilde \P(W_t>0)$.
+
+
+\item
+\[
+X_T=\begin{cases}
+1, \text{if } S_T>K\\
+0, \text{otherwise}
+\end{cases}
+\]
+\[
+X_0=e^{-rT}\E_{\tilde P}(X_T|\mathcal{F}_0)=e^{-rT}\tilde \P(S_T>K|\mathcal{F}_0)=e^{-rT}\tilde \P(S_0e^{(r-0.5\sigma^2)T+\sigma \tilde{W_T}}>K|\mathcal{F}_0)
+\]
+\[
+\tilde W_T>\frac{\ln\frac{K}{S_0} -\left(r-\frac{\sigma^2}{2}\right)T}{\sigma}
+\]
+Further, we standardize $\tilde W_T$:
+\[
+\frac{\tilde W_T}{\sqrt T}>\frac{\ln\frac{K}{S_0} -\left(r-\frac{\sigma^2}{2}\right)T}{\sigma\sqrt T}
+\]
+Thus,
+\[
+X_0=e^{-rT}\tilde P\left(\frac{\tilde W_T}{\sqrt T}>\frac{\ln\frac{K}{S_0} -\left(r-\frac{\sigma^2}{2}\right)T}{\sigma\sqrt T}\right)=e^{-rT}\left(1-\Phi\left(\frac{\ln\frac{K}{S_0} -\left(r-\frac{\sigma^2}{2}\right)T}{\sigma\sqrt T}\right)\right)
+\]
+
+\end{enumerate}
+
+
+
 \subsection{exam, 10.01.2017}
 
 
