@@ -1905,7 +1905,7 @@ X_0=\exp(-rT)\E_{\tilde{\P}} \left[S^2_0 \exp(2(r-\sigma^2/2)T+2 \sigma \tilde{W
 We use the fact that $\E[\exp(a W_t)]=\exp(a^2 t/ 2)$, so:
 
 \[
-X_0=  S_0^2 e^{-rT}\exp(2(r-\sigma^2/2)T) \exp(4\sigma^2/2) = S_0^2 \exp((r+\sigma^2)T)
+X_0=  S_0^2 e^{-rT}\exp(2(r-\sigma^2/2)T) \exp(4\sigma^2 T/2) = S_0^2 \exp((2r+\sigma^2)T)
 \]
 
 \item
@@ -2774,16 +2774,16 @@ Solution by Anastasia Andreeva:
 
 \begin{enumerate}
 
-\item 
+\item
 \begin{enumerate}
-\item  
+\item
 \[
 Z_t=\frac12 W_t+\frac12 V_t
 \]
 $\Var(Z_t-Z_s)=\Var[0.5\cdot(W_t-W_s+V_t-V_s)]=\frac14 \Var(W_t-W_s)+\frac14 \Var(V_t-V_s)=\frac12(t-s)$
 Thus, $Z_t-Z_s\sim \cN\left(0,\frac{t-s}{2}\right)$, therefore, $Z_t$ is not a Brownian motion.
 
-\item 
+\item
 \[
 Q_t=\frac1{\sqrt2} W_t+\frac1{\sqrt2} V_t
 \]
@@ -2849,7 +2849,7 @@ Since the expression includes $dt$, $Y_t$ is not a martingale.
 dX_t=-\frac{1}{1-t}X_tdt+dW_t,X_0=0
 \]
 \begin{enumerate}
-\item 
+\item
 \[
 dY_t=-\frac{1}{1-t}Y_tdt, Y_0=1
 \]
@@ -2862,7 +2862,7 @@ dY_t=-\frac{1}{1-t}Y_tdt, Y_0=1
 \[
 Y_t=C(1-t), Y_0=C=1\Rightarrow Y_t=1-t
 \]
-\item 
+\item
 \[
 X_t=Y_tZ_t
 \]
@@ -2882,7 +2882,7 @@ X_t=(1-t)\int\limits_0^t \frac{dW_u}{1-u}
 \end{enumerate}
 
 \item
-$W_t$ is a Brownian motion for $P$. $Y_t=W_t+\frac{\mu-r}{\sigma} t$ is a Brownian motion for $\tilde P$. 
+$W_t$ is a Brownian motion for $P$. $Y_t=W_t+\frac{\mu-r}{\sigma} t$ is a Brownian motion for $\tilde P$.
 
 If $\mu>r$, then $Y_t>W_t$ and $\tilde \P(Y_t>0)=\P(W_t>0)=\P(Y_t>\mu t)<\P(Y_t>0)$.
 
