@@ -1,0 +1,90 @@
+\documentclass[12pt, a4paper]{article}
+
+
+%%%%% russian xetex
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguages{russian}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+%%%%% end russian xetex
+
+\usepackage{comment}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{todonotes}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage[left=1cm, right=1cm, top=1.7cm, bottom=1.7cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lastpage}
+
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Maths for economists, master course}
+\chead{}
+\rhead{27.02.2017, final retake}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\E}{E}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\begin{document}
+
+\begin{enumerate}
+
+
+\item Consider the optimal control problem
+\[
+\int\limits_0^\infty  e^{ - rt} \left(\bar U - \frac{1}{2} (c(t))^{-1} \right) \, dt \to \max,
+\]
+subject to $\dot k = \ln (1 + k) - c - \frac{1}{2}k$ and $k(0) = {k_0} > 0$.
+It is known that $0 < r < 1/2$ and $\bar U$ is sufficiently large in order to keep the integrand positive.
+\begin{enumerate}
+\item Derive the system of differential equations in  $(k, c)$–plane, using current value Hamiltonian, where $k$-axis is horizontal.
+\item Prove that the steady-state solution exists and is unique.
+\item Sketch the phase portrait of the system in the neighborhood of the equilibrium.
+\item Show by pointing arrows the directions along the paths.
+\end{enumerate}
+
+\item Let $Y_t=W_t^3-3tW_t + 1$.
+\begin{enumerate}
+\item Using Ito’s lemma find $dY_t$.
+\item Using your previous result find $\E(Y_t)$ and $\Var(Y_t)$.
+\end{enumerate}
+
+
+\item Find the price of the «Asset-or-nothing» call option at time $t=0$ in the framework of Black and Scholes model. The risk-free interest rate is equal to $r$. The volatility of the share is equal to $\sigma$. The current share price is $S_0$. The «Asset-or-nothing» call option pays you at fixed time $T$ the sum $S_T$ if $S_T$ is higher than the strike price $K$ or nothing otherwise.
+
+Hint: the correct answer will contain the normal cumulative distribution function $F()$.
+
+
+
+\end{enumerate}
+
+%\begin{center}
+%\includegraphics[width=12cm]{correlation.png}
+%\end{center}
+
+
+
+\end{document}

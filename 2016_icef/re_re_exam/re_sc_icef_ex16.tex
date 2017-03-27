@@ -1,0 +1,103 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{comment}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{todonotes}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage[left=1cm, right=1cm, top=1.7cm, bottom=1.7cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lastpage}
+
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Maths for economists, master course}
+\chead{}
+\rhead{15.02.2017, retake}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\E}{E}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\begin{document}
+
+\subsubsection*{Stochastic calculus part}
+
+Here $W_t$ always denotes the standard Wiener process.
+
+\vspace{10pt}
+
+\begin{enumerate}
+
+
+\item (10 points) Find $\E(W_6^2|W_4)$ and $\P(W_6>0|W_4)$.
+
+Hint: the answer may contain the normal cumulative distribution function.
+
+\item (10 points) I wait until Wiener process will hit the level $4$ or the level $-3$, that is up to the moment $\tau=min\{t|W_{t}=4 \cup W_{t}=-3\}$.
+
+Find $\P(W_{\tau}=4)$ and $\E(\tau)$.
+
+Hint: you may consider martingales $W_{t}$, $W_{t}^2-t$
+
+
+\item (10 points) The process $X_t$ is defined as
+\[
+X_{t}=\begin{cases}
+1, & t\in[0;1) \\
+-2, & t\in[1;2) \\
+W_{1.5},& t\in[2;\infty) \\
+\end{cases}
+\]
+
+\begin{enumerate}
+\item Explicitely find $Z_t = \int_{0}^{t}X_{u}dW_{u}$
+\item Find $\E(Z_t)$ and $\Var(Z_t)$
+\end{enumerate}
+
+
+\item (10 points) Find the price of the «Asset-or-nothing» call option at time $t=0$ in the framework of Black and Scholes model. The risk-free interest rate is equal to $r$. The volatility of the share is equal to $\sigma$. The current share price is $S_0$. The «Asset-or-nothing» call option pays you at fixed time $T$ the sum $S_T$ if $S_T$ is higher than the strike price $K$ or nothing otherwise.
+
+Hint: the correct answer will contain the normal cumulative distribution function $F()$.
+
+\item (20 points) Solve the stochastic differential equation
+\[
+dX_t = X_t dt + 2X_t dW_t + 3 dt + 4 dW_t, \quad X_0 = 1.
+\]
+
+You may use or not use the following guiding steps:
+
+\begin{enumerate}
+\item Using substitution $S_t = \ln Y_t$ solve a simplier equation
+\[
+dY_t = Y_t dt + 2Y_t dW_t
+\]
+\item Represent $X_t$ as $X_t = Y_t \cdot Z_t$ and write down the equation for $dZ_t$.
+\item Solve the equation for $Z_t$.
+\item Finalise the solution and find $X_t$.
+\end{enumerate}
+
+\end{enumerate}
+
+%\begin{center}
+%\includegraphics[width=12cm]{correlation.png}
+%\end{center}
+
+
+
+\end{document}
