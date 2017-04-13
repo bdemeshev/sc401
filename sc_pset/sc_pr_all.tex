@@ -2835,6 +2835,20 @@ $\E(Y|X)=X\cos(X)+15$, $\E(Y|Z)=Z$
 \end{sol}
 \end{problem}
 
+\begin{problem}
+Величины $X$ и $Y$ имеют совместную функцию плотности
+\[
+f(x, y) = \begin{cases}
+x+y, \text{ если } x, y \in [0; 1], \\
+0, \text{ иначе } \\
+\end{cases}.
+\]
+Найдите $f(x)$, $f(y|x)$, $\E(Y|X)$.
+\begin{sol}
+  $f(x)=x+0.5$ при $x\in[0; 1]$, $f(y|x) = \frac{x+y}{x+0.5}$, $\E(Y|X) = \int_0^1 y \cdot f(y|X) \, dy = \frac{3X+2}{6X+3}$.
+\end{sol}
+\end{problem}
+
 
 \section{Разложение в сумму, первый шаг, цепи Маркова}
 

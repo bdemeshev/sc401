@@ -1,6 +1,9 @@
 ---
 title: "Стохастический анализ"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
+lang: ru-RU
 ---
 
 
@@ -55,7 +58,7 @@ output: html_document
 * Silke Göbel, [The mathematician Wolfgang Doeblin](http://www.zentralblatt-math.org/year-of-mathematics/yom-11.pdf), краткая история о первооткрывателе формулы Ито
 * Joe Chang, [Stochastic processes](http://www.stat.yale.edu/~pollard/Courses/251.spring09/Handouts/Chang-notes.pdf)
 * David Pollard, [Stochastic processes](http://www.stat.yale.edu/~pollard/Courses/251.spring09/) course: шикарный курс с кучей доп. материалов и идеями проектов
-* Thomas Mikosch, [Elementary stochastic calculus with finance in view](https://eclass.uoa.gr/modules/document/file.php/MATH342/Βοηθητικό%20υλικό/Biblio2.pdf)
+* Thomas Mikosch, [Elementary stochastic calculus with finance in view](https://goo.gl/Oz827mf)
 * Ovidiu Calin, [An Introduction to Stochastic Calculus with Applications
 to Finance](https://people.emich.edu/ocalin/Teaching_files/D18N.pdf). Добротный курс — отличный ориентир!
 * Gregory Lawler, [Stochastic Calculus: An Introduction with
