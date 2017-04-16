@@ -53,8 +53,8 @@ lang: ru-RU
 
 * Gary Schurman, [Applied Business Economics Classroom](http://www.appliedbusinesseconomics.com/webClassroom.htm) Несколько доказательств формулы Блэка-Шоулса и много других вкусностей
 * Robert Ash, [Probability and Measure Theory](http://www.lce.esalq.usp.br/arquivos/aulas/2011/LCE5866/ebooksclub.org__Probability__amp__Measure_Theory__Second_Edition.pdf)
-* Ivan Wilde, [Stochastic calculus](http://homepage.ntlworld.com/ivan.wilde/notes/sa/index.html)
-* Ivan Wilde, [Measure and probability](http://homepage.ntlworld.com/ivan.wilde/notes/mip/index.html)
+* Ivan Wilde, [Stochastic calculus](https://github.com/bdemeshev/sc401/raw/master/materials/ivan_wilde_stochastic_analysis_notes.pdf)
+* Ivan Wilde, [Measure and probability](https://github.com/bdemeshev/sc401/raw/master/materials/ivan_wilde_measure_integration_probability.pdf)
 * Silke Göbel, [The mathematician Wolfgang Doeblin](http://www.zentralblatt-math.org/year-of-mathematics/yom-11.pdf), краткая история о первооткрывателе формулы Ито
 * Joe Chang, [Stochastic processes](http://www.stat.yale.edu/~pollard/Courses/251.spring09/Handouts/Chang-notes.pdf)
 * David Pollard, [Stochastic processes](http://www.stat.yale.edu/~pollard/Courses/251.spring09/) course: шикарный курс с кучей доп. материалов и идеями проектов
