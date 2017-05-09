@@ -1,0 +1,172 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: svm-latex-syllabus.tex
+geometry: margin=1in
+
+title: "Stochastic calculus syllabus"
+author: "Boris Demeshev"
+date: "Spring 2017"
+
+email: "bdemeshev@hse.ru"
+web: "bdemeshev.github.io/sc401"
+officehours: "by appointment"
+office: "Shabolovka 26, 2112"
+
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+lang: ru-RU
+---
+
+
+
+```{r setup, include=FALSE}
+library(RefManageR)
+# library(knitcitations)
+# library(rcrossref)
+bib <- ReadBib("stochastic_calculus.bib")
+myopts <- BibOptions(bib.style = "authoryear", 
+                     style = "latex", 
+                     first.inits = FALSE, 
+                     max.names = 20)
+```
+
+# Course Description
+
+Stochastic calculus is used in financial engineering. We will cover the minimum of required math: sigma-algebras, conditional expectations, martingales, Wiener process, stochastic integration. The goal of this course is the Black and Scholes model and option pricing using martingale approach. 
+
+The big problem is that stochastic calculus is very hard from a mathematical viewpoint. This course is aimed at students with no measure theory background. We will formulate all the required theorems mostly without proofs. The only prerequisite for this course is probability theory: students should know how to calculate expectations, probabilities and conditional probabilities in discrete and continuous cases. 
+
+This course is elective. 
+
+# Learning objectives and outcomes
+
+Successful student will
+
+* Understand the following mathematical concepts with their properties:
+  
+    * sigma-algebra
+    * expectation with respect to sigma algebra 
+    * martingale
+    * Wiener process 
+    * Ito's stochastic integral
+
+* Be able to formulate and apply in simple context the following theorems:
+
+    * Ito's lemma
+    * Girsanov's theorem
+
+* Understand the Black and Scholes model:
+
+    * price simple European options using martingale approach
+    * price exotic European options using simulations in open source software like R, python or julia
+
+# Reading List
+
+## Required
+
+```{r, echo = FALSE, results="asis"} 
+bib["brzezniak2000basic"]
+``` 
+
+## Optional
+
+```{r, echo = FALSE, results="asis"} 
+bib[2:4]
+``` 
+
+# Course Plan
+
+## Sigma-algebras
+
+Motivation, formal definition, properties. Random variables measurable with respect to given sigma-algebras.
+
+```{r, echo = FALSE, results="asis"} 
+a <- bib["brzezniak2000basic"]
+a$chapter <- "1"
+a
+```
+
+## Conditional expectation
+
+Motivation, formal definition, properties. Geometry of conditional expectation. Conditional variance. Expectation conditional on another random variable.
+
+```{r, echo = FALSE, results="asis"} 
+a <- bib["brzezniak2000basic"]
+a$chapter <- "2"
+a
+```
+
+## Martingales
+
+Stochastic processes in discrete time, filtration. Martingales: motivation, formal definition properties. Examples of martingales and non-martingales.
+
+```{r, echo = FALSE, results="asis"} 
+a <- bib["brzezniak2000basic"]
+a$chapter <- "3"
+a
+```
+
+## Wiener process
+
+Stochastic processes in continuous time. Two definitions of Wiener process (with and without sigma-algebras). Transformations. 
+
+```{r, echo = FALSE, results="asis"} 
+a <- bib["brzezniak2000basic"]
+a$chapter <- "6.3"
+a
+```
+
+## Ito's integral
+
+Motivation, formal definition, properties. Exersices on Ito's isometry.
+
+```{r, echo = FALSE, results="asis"} 
+a <- bib["brzezniak2000basic"]
+a$chapter <- "7.1 — 7.3"
+a
+```
+
+## Ito's lemma and Girsanov theorem
+
+Ito's process. Univariate and multivariate versions of Ito's lemma. Girsanov theorem: motivation and formal statement.
+
+```{r, echo = FALSE, results="asis"} 
+a <- bib["brzezniak2000basic"]
+a$chapter <- "7.4 — 7.5"
+a
+```
+
+## Black and Scholes model
+
+Assumptions of the model. Pricing European options using martingale approach. Pricing European options with simulations. 
+
+```{r, echo = FALSE, results="asis"} 
+a <- bib["shreve2004stochasticII"]
+a$chapter <- "5.2"
+a
+```
+
+# Grading System 
+
+- **50%** of the grade will be determined by a hometask.
+
+- **50%** of the grade will be determined by a final exam.
+
+> *Showing up is 80 percent of life* -- Woody Allen, [via Marshall Brickman](http://quoteinvestigator.com/2013/06/10/showing-up/#note-6553-1)
+
+
+# Methods of Instruction
+
+The stochastic calculus is very taugh from a mathematical viewpoint. Most students are not ready for the math required. So the accent is done on problem solving. We will solve a lot of problems during classes. That is the only way to do math. 
+
+# Special Equipment and Software Support
+
+We will price some options using free open source software (R or python or julia). Students are supposed to bring their own laptops with installed software during this session. For this last class the projector will be used.
+
