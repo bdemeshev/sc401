@@ -46,6 +46,7 @@ lang: ru-RU
 * Зачёт [2015](https://github.com/bdemeshev/sc401/raw/master/binst_2015/zachet_15.pdf)
 * 2016: Оценивание опциона с [помощью симуляций в R](https://github.com/bdemeshev/sc401/raw/master/binst_2016/sem_01.R)
 * Зачёт [2016](https://github.com/bdemeshev/sc401/raw/master/binst_2016/zach_16/zach_16.pdf)
+* Зачёт [2017](https://github.com/bdemeshev/sc401/raw/master/binst_2017/zach_2017/sc_binst_2017.pdf). Срок сдачи домашнего задания: 8 июня. Разумнее всего принести его в печатном виде в комнату 2112. Если там никого нет, то можно просунуть его под дверь, я заберу как появлюсь. 
 
 
 
