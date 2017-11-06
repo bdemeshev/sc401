@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+
+\usepackage[top=2cm, left=1.5cm, right=1.5cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Стохастический анализ}
+\chead{}
+\rhead{2017-10-27, праздник номер раз :)}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\usepackage{bbm}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+
+
+%% эконометрические сокращения
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\def \hb{\hat{\beta}}
+\def \hs{\hat{\sigma}}
+\def \htheta{\hat{\theta}}
+\def \s{\sigma}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \v1{\vec{1}}
+\def \e{\varepsilon}
+\def \he{\hat{\e}}
+\def \z{z}
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+\def \cN{\mathcal{N}}
+
+
+\renewcommand{\P}{\mathbb{P}}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item Рассмотрим множество $M$ всех многочленов с натуральными коэффициентами. Например, $5x^2+6x+7 \in M$, а $\cos x \notin M$.
+\begin{enumerate}
+  \item Найдите мощность множества $M$.
+  \item (*) Джейсон Борн хочет узнать все коэффициенты этого многочлена. Джейсон Борн имеет право задавать только вопросы о значениях этого многочлена в натуральных точках по своему выбору. Сколько вопросов ему достаточно задать?
+\end{enumerate}
+
+\item У майора Пронина есть несколько множеств:
+
+\begin{itemize}
+\item $A$ — все подмножества натуральных чисел; например, $\{5, 6, 11\} \in A$, а $\{5, 6.5\} \notin A$.
+\item $B$ — все подмножества натуральных чисел, состоящие из одного «куска» подряд идущих чисел; например, $\{5, 6, 7\} \in B$, а $\{5, 6, 11\} \notin B$.
+\item $C$ — все подмножества натуральных чисел, состоящие из конечного числа «кусков»; например, $\{5, 6, 7, 19, 20\} \in C$, а $\{2k | k \in \mathbb{N}\} \notin C$.
+\end{itemize}
+
+Помогите майору Пронину определить, какие из этих множеств равномощны $\mathbb{N}$, и какие равномощны $\mathbb{R}$.
+
+\item Джон Смит равновероятно выбирает одну из четырех точек на плоскости: $(0, 0)$, $(1, 1)$, $(0, 2)$, $(1, -3)$. Пусть $X$ и $Y$ — координаты выбранной точки.
+
+Найдите $\E(Y|X)$, $\Var(Y|X)$.
+
+\item Шерлок Холмс подбрасывает кубик бесконечное количество раз. Пусть $X$ — номер броска, когда впервые выпало пять, а $Y$ — когда впервые выпало шесть.
+
+Найдите $\E(Y|X)$, $\Var(Y|X)$.
+
+\item Величины $X$ и $Y$ имеют совместное нормальное распределение с нулевым математическим ожиданием и ковариационной матрицей
+\[
+\begin{pmatrix}
+4 & -1 \\
+-1 & 9 \\
+\end{pmatrix}.
+\]
+
+Найдите $\E(Y|X)$, $\Var(Y|X)$.
+
+Секретный хинт: $f(v) \propto \exp(-\frac{1}{2}v' \Sigma^{-1}v')$.
+
+\item Джеймс Бонд подбрасывает правильную монетку 30 раз. Величина $X$ — количество орлов при первых 20 бросках, $Y$ — количество орлов при последних 20 бросках.
+
+Найдите $\E(X|Y)$, $\E(Y|X)$, $\Var(Y|X)$.
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,82 @@
+# Свойства стохастических интегралов {#Stoch_Integral}
+
+Конспект: Нарежная Екатерина
+
+дата: 09 декабря 2016
+
+Если  $\int\limits_0^t E(x_u^2)\mathrm{d}u < \infty$, то выполняются следующие свойства:
+
+ 1) $\int\limits_0^t ( x_u + y_u )\mathrm{d}W_u = \int\limits_0^t x_u\mathrm{d}W_u + \int\limits_0^t y_u\mathrm{d}W_u$ 
+ 
+ 2) $\int\limits_0^t \alpha \cdot  x_u\mathrm{d}W_u = \alpha \cdot  \int\limits_0^t x_u\mathrm{d}W_u$ 
+ 
+ 3) $\int\limits_a^c x_u\mathrm{d}W_u = \int\limits_a^b x_u\mathrm{d}W_u + \int\limits_b^c y_u\mathrm{d}W_u$ 
+
+ 4) Если $I_t = \int\limits_0^t x_u\mathrm{d}W_u$, то $I_t$ — это мартингал
+
+ 5) $E(I_t) = 0$  
+ 6) $Var(I_t) = \int\limits_0^t E(x_u^2)\mathrm{d}u$
+ 7) $Cov(\int\limits_0^t x_u\mathrm{d}W_u, \int\limits_0^t y_u\mathrm{d}W_u) = \int\limits_0^t E(x_u \cdot  y_u)\mathrm{d}u$
+ 
+ Не забываем, что $W_u$ — броуновское движение по отношению к фильтрации $\mathcal{F_u}$, $x_u$ измерима относительно $\sigma$-алгебры $\mathcal{F}_u$.
+
+
+## Лемма Ито
+
+### Определение теоремы
+Существуют две формы записи этой теоремы: полная и краткая 
+
+#### Полная запись (в ней каждый объект осмыслен (существует))
+$I_t = I_0 + \int\limits_0^t x_u\mathrm{d}W_u + \int\limits_0^t y_u\mathrm{d}u$
+
+ Но из-за того, что эта теорема очень часто используется, придумали краткую форму записи.
+ 
+#### Краткая запись (это просто условная запись и надо понимать, что такие объекты не существуют!)
+$\mathrm{d}I_u = x_u\mathrm{d}W_u + y_u\mathrm{d}u$
+
+### Мини упражнение: Записать 4) свойство в краткой форме
+
+$I_t = \int\limits_0^t x_u\mathrm{d}W_u$ — полная запись
+
+$\mathrm{d}I_t = x_u\mathrm{d}W_u$ — краткая запись
+
+### Простая лемма Ито
+
+Если $Y_t = f(W_t, t)$, нам понадобится найти  $f'_w$, $f''_{ww}$ и $f'_t$
+
+$\mathrm{d}Y_u = f'_w\mathrm{d}W_t + f'_t\mathrm{d}t + \frac 1 2 \cdot  f'_{ww}\mathrm{d}t$
+
+Теперь распишем её в полной форме
+
+$Y_t = Y_0 + \int\limits_0^t f'_w( W_u, u)\mathrm{d}W_u + \int\limits_0^t f'_t( W_u, u)\mathrm{d}u + \frac 1 2 \cdot  \int\limits_0^t f'_{ww}( W_u, u)\mathrm{d}u$
+
+### Упражнение для закрепления: 
+
+$Y_t = W_t^5 \cdot  t^3$
+
+1) $\mathrm{d}Y_u = 5 \cdot  W_t^4 \cdot  t^3\mathrm{d}W_t + 3 \cdot  W_t^5 \cdot  t^2\mathrm{d}t + \frac 1 2 \cdot  20 \cdot  W_t^3 \cdot  t^3\mathrm{d}t$ (Краткая запись)
+
+ $Y_t = Y_0 + 5 \cdot  \int\limits_0^t W_u^4 \cdot  u^3\mathrm{d}W_u + 3 \cdot  \int\limits_0^t u^2 \cdot  W_u^5\mathrm{d}u + \frac 1 2 \cdot  20 \cdot  \int\limits_0^t W_u^3 \cdot  u^3\mathrm{d}u$
+ 
+ Y_0 = 0
+
+2) $Y_t = 5 \cdot  \int\limits_0^t W_u^4 \cdot  u^3\mathrm{d}W_u + 3 \cdot  \int\limits_0^t u^2 \cdot  W_u^5\mathrm{d}u + 10 \cdot  \int\limits_0^t W_u^3 \cdot  u^3\mathrm{d}u$ (Полная )
+
+Мы рассмотрели простую лемму, но ещё есть "боевая" и "попонтоваться". 
+
+## Домашнее задание
+ 
+ 1) $Y_t = \frac {W_t}{t}$
+ 
+ 2) $Y_t = W_t^2$
+ 
+ 3) $Y_t = t \cdot  \cos(W_t)$
+ 
+ 4) $Y_t = \sin(W_t)$
+ 
+ 5) $Cov(W_t, \int\limits_0^t W_u\mathrm{d}W_u) — ?$
+ 
+ 6) $Var(\int\limits_0^t W_u\mathrm{d}W_u) — ?$
+ 
+ 7) $E(\int\limits_0^t W_u^{2016}\mathrm{d}W_u) — ?$
+

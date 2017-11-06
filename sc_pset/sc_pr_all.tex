@@ -2281,9 +2281,13 @@ $\E(X|X+Y)=0.5(X+Y)$, $\E(X-Y|X+Y)=0$, $\E(X^{2}-Y^{2}|X+Y)=0$
 \end{problem}
 
 \begin{problem}
-Пусть $X_{i}$ — iid, $U[0;1]$. \\
-Найдите $\E(X_{1}|\min\{X_{1},\ldots,X_{n}\})$ и
-$\E(X_{1}|\max\{X_{1},\ldots,X_{n}\})$
+	Пусть $X_{i}$ — независимы и равномерны $U[0;1]$, $X_{min} = \min \{X_1, X_2, \ldots, X_n\}$, и $X_{max} = \max\{X_1, \ldots, X_n\}$.
+\begin{enumerate}
+	\item Найдите $\E(X_{1}| X_{min}$ и $\E(X_{1}| X_{max})$
+\item Найдите $\E(X_1 | X_{min}, X_{max})$.
+\item Найдите $\E(X_1^2 | X_{min})$.
+\end{enumerate}
+
 
 \begin{sol}
 
@@ -2293,10 +2297,17 @@ $\E(X_{1}|\min\{X_{1},\ldots,X_{n}\})=\frac{(1+\min)(n-1)}{2n}$
 \end{problem}
 
 \begin{problem}
-Пусть $X\sim N(0;1)$. Найдите $\E(X|X^{2})$
+Известно, что $Y=X^2$. Найдите $\E(X|Y)$ если
+\begin{enumerate}
+	\item $X\sim \cN(0; 1)$;
+	\item $X\sim \cN(1; 1)$;
+\end{enumerate}
 
 \begin{sol}
-0
+0, 
+\[
+	\E(X|Y) = -\sqrt{Y} \frac{f(-\sqrt{Y})}{f(-\sqrt{y}) + f(\sqrt{Y})} + \sqrt{Y} \frac{f(\sqrt{Y})}{f(-\sqrt{y}) + f(\sqrt{Y})} = \sqrt{Y} \frac{\exp(2\sqrt{Y}) - 1}{\exp(2\sqrt{Y})+1} 
+\]
 \end{sol}
 \end{problem}
 
@@ -2870,7 +2881,20 @@ x+y, \text{ если } x, y \in [0; 1], \\
 \end{problem}
 
 
-
+\begin{problem}
+Храбрая исследовательница Василиса подбрасывает правильную монетку до выпадений двух орлов подряд. Пусть $X$ — это количество орлов, $Y$ — решек, а $Z$ — всего подбрасываний. 
+\begin{enumerate}
+\item Найдите $\E(X|Y=3)$;
+\item Найдите $\E(X|Y)$, $\E(Y|X)$, $\E(X|Z)$, $\E(Z|X)$, $\E(Y|Z)$ и $\E(Z|Y)$;
+\item Хм, а $\E(X^2|Y)$?
+\end{enumerate}
+\begin{sol}
+\[
+	\E(X|Y) = 2 + \E(T_1 + T_2 + \ldots + T_Y | Y),
+\]
+где $T_i$ равна 1, если непосредственно до $i$-ой решки был орёл. Все $\E(T_i |Y)$ равны. Находим $\E(T_1 |Y)$. Каждому варианту исходу, начинающемуся с Р соответствует ровно один исход начинающийся с ОР, но в два раза менее вероятный. Отсюда $\E(T_1 | Y) = 1/3$ и $\E(X|Y) = 2 + Y/3$.
+\end{sol}
+\end{problem}
 
 \section{Разложение в сумму, первый шаг, цепи Маркова}
 
