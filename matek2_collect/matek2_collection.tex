@@ -10,7 +10,7 @@
 \newcommand{\ds}{\displaystyle}
 \newcommand{\dx}{\mathrm{d}x}
 \newcommand{\dy}{\mathrm{d}y}
-\renewcommand{\dz}{\mathrm{d}z}
+\newcommand{\dz}{\mathrm{d}z}
 \newcommand{\du}{\mathrm{d}u}
 \newcommand{\dv}{\mathrm{d}v}
 
@@ -2400,7 +2400,7 @@ European call option with strike price $K$ is the right to buy at time $t$ one s
 
 \begin{enumerate}
 
-\item xx
+\item $\E(\exp(aW_t))=e^{a^2t/2}$, $\E(1_{W_t\leq b})=F(b/\sqrt{t})$, $\E(\exp(aW_t)\cdot 1_{W_t\leq b})=...$, $\E(W_t 1_{W_t\leq b})=...$
 \item Short answers:
 
 \begin{enumerate}
@@ -2425,6 +2425,8 @@ We build them from nothing :)
 \E(N_B) = \E(N) + \E(N_B - N) \\
 \end{cases}
 \]
+
+Here $\E(N_A) = 16 + 4 =20$, $\E(N_B) = 16 + 2 =18$.
 
 Or
 \[
@@ -2718,6 +2720,26 @@ Production function $f(k)=\alpha k$ and $\alpha >\delta $. Find the optimal solu
 \item (10 points) Solve the problem on the bounded optimal control $\int _{0}^{T}(1-\beta -u)xdt \to \max$, subject to $\dot{x}=\alpha xu$, $x(0)=x_{0}$, $0\le u\le 1$. In this problem $\alpha>0$ and $0<\beta <1$.
 
 \end{enumerate}
+
+\subsection{Retake, solution}
+
+\begin{enumerate}
+\item
+\[
+\E(Y_2 |N) =\begin{cases}
+0.5, \text{ if } N=1; \\
+1, \text{ if } N=2; \\
+0, \text{ if } N>2; \\
+\end{cases}
+\]
+\[
+\Var(Y_2 |N) =\begin{cases}
+0.25, \text{ if } N=1; \\
+0, \text{ if } N>1; \\
+\end{cases}
+\]
+\end{enumerate}
+
 
 \section{2016-2017}
 
