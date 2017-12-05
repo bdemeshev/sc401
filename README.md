@@ -3,4 +3,4 @@ sc401
 
 Stochastic calculus, russian language
 
-[Pretty web page](bdemeshev.github.io/sc401/)
+[Pretty web page](http://bdemeshev.github.io/sc401/)
