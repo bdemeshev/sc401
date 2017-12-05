@@ -2026,24 +2026,17 @@ You can launch a torpedo each minute at any integer on the number line. If the t
 
 \item How many different $\sigma$-algebras one may construct if $\Omega$ contains three elements? Four?
 
-\item We throw a coin infinite number of times. Let's define the sequence of random variables $X_n$ such that  $X_{n}$ is equal to 1, if the result of $n$-th throw is tail, and 0 otherwise. We also define a bunch of $ \sigma $-algebras: $\mathcal{F}_{n}:=\sigma(X_{1},X_{2},...,X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},\ldots)$.
+\item We throw a coin infinite number of times. Let's define the sequence of random variables $X_n$ such that  $X_{n}$ is equal to 1, if the result of $n$-th throw is tail, and 0 otherwise. We also define a bunch of $ \sigma $-algebras: $\mathcal{F}_{n}:=\sigma(X_{1}, X_{2}, \ldots, X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},\ldots)$.
 
-Give two non-trivial (other  than $ \Omega $ and $ \emptyset $) examples of event $ A $, such that:
-
-\begin{itemize}
-\item $ A\in \mathcal{F}_{2014} $
-\item $ A\notin \mathcal{F}_{2014} $
-\item $A$ belongs to every $\mathcal{H}_{n}$
-\end{itemize}
-
-Which $ \sigma $-algebras contains the events:
-\begin{itemize}
-\item $ A= \{ X_{37}>0\}$
-\item $ B=\{ X_{37}>X_{2014} \}$
-\item $ C= \{X_{37}>X_{2014}>X_{12}\}$
-\end{itemize}
-
-Simplify where possible: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $
+\begin{enumerate}
+\item Give two non-trivial (other  than $ \Omega $ and $ \emptyset $) examples of event $ A $, such that $ A\in \mathcal{F}_{2014} $.
+\item Give two non-trivial examples of event $ A $, such that $ A\notin \mathcal{F}_{2014} $.
+\item Give two non-trivial examples of event $ A $, such that $A$ belongs to every $\mathcal{H}_{n}$.
+\item Which $ \sigma $-algebras contains the event $ A= \{ X_{37}>0\}$?
+\item Which $ \sigma $-algebras contains the event $ B=\{ X_{37}>X_{2014} \}$?
+\item Which $ \sigma $-algebras contains the event $ C= \{X_{37}>X_{2014}>X_{12}\}$?
+\item Simplify where possible: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $.
+\end{enumerate}
 
 \item Veniamin throws a coin until three consecutive tails appear.  Let the random variable $T$ be the number of throws. Let $ \mathcal{F}_{T} $ be the $ \sigma $-algebra of all events distinguishable by Veniamin.
 \begin{enumerate}
@@ -2738,6 +2731,11 @@ Production function $f(k)=\alpha k$ and $\alpha >\delta $. Find the optimal solu
 0, \text{ if } N>1; \\
 \end{cases}
 \]
+\item We find that
+\[
+X_t = 2016 + t^2 + \int_0^t u^2 dW_u
+\]
+So $\E(X_t) = 2016 + t^2$ and $\Var(X_t) = t^5/5$.
 \end{enumerate}
 
 
