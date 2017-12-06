@@ -2393,7 +2393,13 @@ European call option with strike price $K$ is the right to buy at time $t$ one s
 
 \begin{enumerate}
 
-\item $\E(\exp(aW_t))=e^{a^2t/2}$, $\E(1_{W_t\leq b})=F(b/\sqrt{t})$, $\E(\exp(aW_t)\cdot 1_{W_t\leq b})=...$, $\E(W_t 1_{W_t\leq b})=...$
+\item Let's remark that $W_t \sim \cN(0;t)$ and $Z=W_t/\sqrt{t} \sim \cN(0;1)$.
+\[
+\E(\exp(aW_t))=\E(\exp(a\sqrt{t} Z))=
+\int_{-\infty}^{\infty}\exp(a\sqrt{t} z)f(z)dz =
+e^{a^2t/2}
+\]
+$\E(1_{W_t\leq b})=F(b/\sqrt{t})$, $\E(\exp(aW_t)\cdot 1_{W_t\leq b})=...$, $\E(W_t 1_{W_t\leq b})=...$
 \item Short answers:
 
 \begin{enumerate}
