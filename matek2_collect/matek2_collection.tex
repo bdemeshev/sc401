@@ -2861,14 +2861,16 @@ Thus, the answer is 89\%.
 \]
 \begin{multline}
 dI_t=-\frac{1}{R_t^2}dR_t+\frac{1}{R_t^3} (dR_t)^2=-\frac{1}{R_t^2}(\mu R_t dt+\sigma R_tdW_t)+\frac{\sigma^2}{R_t}dt=\\
-=\frac{1}{R_t}((\sigma^2-\mu)dt+\sigma dW_t)=I_t((\sigma^2-\mu)dt+\sigma dW_t)
+=\frac{1}{R_t}((\sigma^2-\mu)dt-\sigma dW_t)=I_t((\sigma^2-\mu)dt-\sigma dW_t)
 \end{multline}
 
 \item
 \[
-dY_t=2M_tdM_t-dt+2dt=2M_tdM_t+dt
+dY_t=2M_tdM_t-dt+\frac{1}{2}2dt=2M_tdM_t
 \]
-Since the expression includes $dt$, $Y_t$ is not a martingale.
+Since $M_t$ is a martingale $dM_t = A_t dW_t$. So $dY_t = 2M_t A_t dW_t$.
+
+Since the expression does not include $dt$, $Y_t$ is  a martingale.
 
 \item
 \[
