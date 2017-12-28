@@ -1,3 +1,97 @@
+\documentclass[12pt]{article}
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Stochastic calculus hometask}
+\chead{}
+\rhead{deadline is 2017-12-29}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+%\setotherlanguages{russian}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+%\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\def \hb{\hat{\beta}}
+\def \hs{\hat{\sigma}}
+\def \htheta{\hat{\theta}}
+\def \s{\sigma}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \v1{\vec{1}}
+\def \e{\varepsilon}
+\def \he{\hat{\e}}
+\def \z{z}
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+\def \cN{\mathcal{N}}
+
+
+\begin{document}
+
 Here $W_t$ denotes the standard Wiener process.
 
 \begin{enumerate}
@@ -5,9 +99,15 @@ Here $W_t$ denotes the standard Wiener process.
 
 \item Let $Y = 1_{W_3 \leq 2}$. Find $\E(W_5 \cdot Y)$, $\Var(W_5 \cdot Y)$, $\Cov(W_5, Y)$, $\Cov(W_5, W_5 \cdot Y)$.
 
-\item doobs theorem
+\item At time $n=0$ I have one apples and one banana. At each moment of time I choose one of all my fruits randomly with equal probabilities. I eat it and by two more of the same kind. For example, if I choose banana I will eat it and buy two bananas more. I repeat the process of choosing, eating and buying fruits indefinitely. Let $A_n$ and $B_n$ be the number of apples and bananas after $n$ rounds.
 
-\item lito + martingale
+\begin{enumerate}
+  \item Find non-trivial function $f$ such that $M_n = f(n) \cdot A_n$ is a martingale.
+  \item Let $\tau$ be the moment when the first banana is chosen. Assuming that Doob's theorem is applicable find $E(1/(\tau + 2))$.
+\end{enumerate}
+
+
+\item Find all constants $a$ such that $Y_t = 42 + W_t^7 + a\int_0^t W_u^5 \, du + \int_0^t u^2 \cos W_u \, dW_u$ is a martingale. Find $\E(Y_t)$.
 
 \item Consider the framework of the Black and Scholes model. The asset pays you 1 dollar at fixed time $T$ if and only if
 \[
@@ -16,9 +116,30 @@ Here $W_t$ denotes the standard Wiener process.
 Find the current price $X_0$ of this asset.
 
 
-\item sde
+\item Solve the stochastic differential equation and find $\E(X_t)$ and $\Var(X_t)$
+\[
+dX_t + aX_t dt = b dt + c dW_t;
+\]
+
+You are free to use or not to use the following guiding steps:
+
+\begin{enumerate}
+  \item Find $dY_t$ for $Y_t = \exp(\gamma t)X_t$;
+  \item Find the value of $\gamma$ such that in $dY_t$ the term before $dt$ is non-random.
+  \item Solve the equation for $Y_t$ and then find $X_t$;
+  \item Do not forget about $\E(X_t)$ and $\Var(X_t)$.
+\end{enumerate}
+
+
+
 
 
 
 
 \end{enumerate}
+
+
+
+
+
+\end{document}

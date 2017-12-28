@@ -920,12 +920,33 @@ $\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2 = 15t^3 + 105t^6 - (-3t^3)^2= 15t^3 + 96 t^6$
 \item (10 pts) Let $W_1(t)$ and $W_2(t)$ be two independent Wiener processes. Consider $Y_t=aW_1(t)+\sqrt{1-a^2}W_2 (t)$. Is $Y_t$ a Wiener process?
 \item (20 pts) Consider the Vasicek interest rate model, $dR_t=a(b-R) \, dt+s \, dW_t$, where $a$, $b$ and $s$ are positive constants.
 \begin{enumerate}
-\item Using the substitution $Y_t=e^{-at} R_t$ find the solution of the stochastic differential equation
+\item Using the substitution $Y_t=e^{at} R_t$ find the solution of the stochastic differential equation
 \item Find $\E(R_t)$ and $\Var(R_t)$
 \end{enumerate}
 
 
 \end{enumerate}
+
+\subsection{Reretake, 08.02.2011, solution}
+
+\begin{enumerate}
+\item
+\item Consider $R_n = \ln Y_n$, then $R_n$ is the average of $\ln X_1$, \ldots, $\ln X_n$. By the law of large numbers $R_n$ converges to $\E(\ln X_1)$ in probability and almost surely.
+\item Yes, $Y_t$ is a Wiener process. We just check all properties: independence of increments, stationarity of increments, $Y_0=0$, continuity of path, normality of increments.
+\item Start with Ito's lemma:
+\[
+dY_t = a e^{at} R_t dt + e^{at} dR_t =
+a e^{at} R_t dt + e^{at} (a(b-R) \, dt+s \, dW_t) =
+ e^{at} (ab \, dt+s \, dW_t)
+\]
+
+So,
+\[
+Y_t = Y_0 + \int_0^t e^{au}ab du + \int_0^t se^{au}\,dW_u;
+\]
+
+\end{enumerate}
+
 
 \section{2011-2012}
 
