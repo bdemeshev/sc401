@@ -1,0 +1,229 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[top=1.5cm, left=2cm, right=2cm, bottom=1.5cm]{geometry} % размер текста на странице
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{verbatim} % для комментов
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+\usepackage{amssymb} % и символов
+\usepackage{bbm}
+
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+
+
+
+\usepackage{fontspec} % хз
+\usepackage{polyglossia} % для выбора языка в xelatex
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*} % списки уровня 2 будут буквами а) б) ...
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo[inline]{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет картина Последний день Помпеи}
+% команда \listoftodos — печатает все поставленные \todo'шки
+
+\usepackage{booktabs} % красивые таблицы
+% заповеди из документации:
+% 1. Не используйте вертикальные линии
+% 2. Не используйте двойные линии
+% 3. Единицы измерения помещайте в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+% \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Mathematics, exam}
+\chead{}
+\rhead{2017-12-29}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+
+
+
+%% эконометрические сокращения
+\def \hb{\hat{\beta}}
+\DeclareMathOperator{\sVar}{sVar}
+\DeclareMathOperator{\sCov}{sCov}
+\DeclareMathOperator{\sCorr}{sCorr}
+
+\def \1{\mathbbm{1}}
+
+\def \hs{\hat{s}}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \he{\hat{\varepsilon}}
+\def \v1{\vec{1}}
+\def \cN{\mathcal{N}}
+\def \e{\varepsilon}
+\def \z{z}
+
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\plim}{plim}
+
+%% лаг
+\renewcommand{\L}{\mathrm{L}}
+
+
+\begin{document}
+
+\section{Dynamic Optimization}
+
+\begin{enumerate}
+
+
+\item {[10 points]} Consider a system of differential equations
+\[
+\begin{cases}
+  \dot x = - 2y + x({x^2} + {y^2} - 1);\\
+  \dot y =  2x + y({x^2} + {y^2} - 1).\\
+\end{cases}
+\]
+\begin{enumerate}
+  \item {[5 points]} Check that $(0,0)$ is the only point of rest of this system. Change the variables from the Cartesian to the polar $(r, \phi )$. Rewrite the system in the polar coordinates.
+  \item {[5 points]} Draw two time paths of the system for $r_0 > 1$, where $r_0$ is the radius of the initial point and for $0 < r_0 < 1$. Justify your sketch. What if $r_0 = 1$?
+\end{enumerate}
+
+\item {[10 points]} Solve the calculus of variations problem \[
+\int_1^2 \left( \frac{2y^2}{x^2} + (y')^2 \right) \, dx \to \max /\min
+\]
+with the fixed endpoints $y(1) = 0$, $y(2) = \frac{7}{2}$.
+
+Hint: for solving Euler’s equation try to find solutions in the form of $x^a$. Check all available second-order conditions.
+
+\item {[20 points]} Road construction costs minimization.
+
+Let the terrain profile be represented by the function
+\[
+y(t) =
+\begin{cases}
+3 - 3|t|, \text{ if } |t|\leq 1 \\
+0, \text{ otherwise.} \\
+\end{cases}
+\]
+
+The contractor minimizes the excavation costs given by the formula
+\[
+\int_{-c}^c (x(t) - y(t))^2 \, dt,
+\]
+where $x(t)$ is the road profile we need to find, $c > 2$ and $[ - c,c]$ — road section where the excavation takes place ($c$ is not set). Allowable grade of the road satisfies  $| \dot x | \leq 1$.
+
+\begin{enumerate}
+%\item State the optimal bounded control problem with  constraint.
+\item {[5 points]} Form Hamiltonian and derive first-order conditions taking into account that multiplier $\lambda$ satisfies transversality conditions $\lambda(-c) = \lambda(c) = 0$.
+\item {[15 points]} Find $x(t)$ on the section $[ - c,c]$.
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\newpage
+\section{Stochastic Calculus}
+
+Standard Wiener process is denoted by $W_t$.
+
+\begin{enumerate}
+  \item {[10 points]} Let $Y$ be equal to $1$ if $W_2>0$ and $0$ otherwise.
+
+  Find $\E(Y|W_1)$, $\Var(Y|W_1)$, $\E(Y|W_1^2)$.
+  \item {[10 points]} James Bond flips a biased coin until the sequence Head-Tail-Head-Tail appears. The probability of «Head» is equal to $p$. Using Doog's theorem and an appropriate martingale find the expected number of coin flips.
+  \item {[10 points]} The process $X_t$ is given by
+  \[
+    X_t = 2017 + t^2 W_t^2 + \int_0^t u \, dW_u
+  \]
+  \begin{enumerate}
+    \item Find $dX_t$;
+    \item Is $X_t$ a martingale?
+    \item Find $\E(X_t)$.
+  \end{enumerate}
+
+  \item {[10 points]} Consider the framework of the Black and Scholes model. You agreed with Warren Buffett that at fixed time $T$ he will pay you the strange sum
+  \[
+  X_T = \ln S_T \cdot \ln S_{T/2},
+  \]
+where $S_t$ is the price of a share.
+
+What is the non-arbitrage price $X_0$ of this agreement?
+  \item {[20 points]} Solve the stochastic differential equation
+  \[
+  dY_t =(Y_t^3 - Y_t) \, dt + Y_t^2 \, dW_t
+  \]
+
+  You are free to use or not to use the following guiding steps:
+
+  \begin{enumerate}
+    \item {[5 points]} Consider $Z_t = Y_t^n$ and find $dZ_t$;
+    \item {[3 points]} Find a constant $n$ such that the term before $dW_t$ in $dZ_t$ is non-random.
+    \item {[2 points]} Write down the equation for $dZ_t$ in terms of $t$ and $Z_t$ only: you should get rid of $Y_t$.
+    \item {[8 points]} Solve the equation for $dZ_t$.
+
+    Hint: It's just the particular case of the equation in your hometask~:) Do you remember? Multiply $Z_t$ by some exponent~:)
+    \item {[2 points]} Finally, find $Y_t$.
+  \end{enumerate}
+
+\begin{comment}
+  % Надо подумать ещё!!!!
+  \item Solve the stochastic differential equation
+  \[
+  dX_t =(X_t^3 + X_t) \, dt + X_t \, dW_t
+  \]
+
+  You are free to use or not to use the following guiding steps:
+
+  \begin{enumerate}
+    \item Consider $Y_t = f(X_t)$ and find $dY_t$;
+    \item State equation on $f$ such that in $dY_t$ the term before $dt$ is non-random.
+    \item Find at least one
+    \item Solve the equation for $Y_t$ and then find $X_t$;
+  \end{enumerate}
+\end{comment}
+
+\end{enumerate}
+
+
+
+
+\end{document}

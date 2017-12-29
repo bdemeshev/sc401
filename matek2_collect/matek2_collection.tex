@@ -4,7 +4,7 @@
 
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cN}{\mathcal{N}}
-\renewcommand{\FF}{\mathcal{F}}
+\renewcommand{\FF}{\cF}
 \renewcommand{\ee}{\varepsilon}
 
 \newcommand{\ds}{\displaystyle}
@@ -114,7 +114,7 @@ with initial conditions $X_0=x_0$ and $Y_0=0$
 \subsection{Exam, 12.01.2009, solutions}
 
 \begin{enumerate}
-\item Density table of the joint distribution of $X$ and $Y$
+\item Joint distribution table of $X$ and $Y$ is:
 \begin{table}[h!]
 \centering
 %\caption{Caption for the table.}
@@ -347,14 +347,14 @@ Answer:
 
 \item This is the autoconversion from the ugly word:
 
-\[X_{0} = E_{\tilde{p}}\left( exp\left( - rT \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right)\]
+\[X_{0} = E_{\tilde{p}}\left( exp\left( - rT \right)X_{T}\left| \cF_{0} \right.\  \right)\]
 
 \[\begin{matrix}
 X_{T} = Min\left\{ M,\ lnS_{T} \right\} \\
 S_{T} = S_{0}\exp\left( \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \right)\ ;\ {\tilde{W}}_{T}\sim N\left( 0,T \right) \\
 \begin{matrix}
 \ln S_{T} = lnS_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \\
-X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right) = M*\tilde{p}\left( \ln S_{T} > M \right) + \int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} \\
+X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \cF_{0} \right.\  \right) = M*\tilde{p}\left( \ln S_{T} > M \right) + \int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} \\
 \begin{matrix}
 1)\ \tilde{p}\left( \ln S_{T} > M \right) = \tilde{p}\left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} > M \right) = \left\lbrack Z = \frac{{\tilde{W}}_{T}}{\sqrt{T}}\sim N(0,1) \right\rbrack = \\
  = \tilde{p}\left( Z < \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) = \Phi\left( \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) \\
@@ -397,7 +397,7 @@ We need to find a price of the classic European option in dollars, while
 stock prices are in euros. K-strike price. Xt-option price at time t.
 
 \[\begin{matrix}
-X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \mathcal{F}_{0} \right.\  \right) = exp\left( - r_{\$}T \right)\int_{0}^{\infty}{X_{T}\tilde{p}\left( X_{T} \right)}dX_{T} \\
+X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \cF_{0} \right.\  \right) = exp\left( - r_{\$}T \right)\int_{0}^{\infty}{X_{T}\tilde{p}\left( X_{T} \right)}dX_{T} \\
 \begin{matrix}
 \begin{matrix}
 X_{T} = U_{T}S_{T} - K\ if\ U_{T}S_{T} > K,\ 0\ otherwise \\
@@ -1176,7 +1176,15 @@ dX_t=-9X_t^2(1-X_t)dt+3X_t(1-X_t)dW_t,\quad X_0=1/2
 
 \subsection{exam 10.01.2013-hints}
 \begin{enumerate}
-\item $\E(H_i \mid X_i)=X_i^2$, $\E(X_i \mid H_i=1)=3/4$, $\E(X_i \mid H_i=0)=3/8$, $\E(X_i \mid H_i)= (3+3H_i)/8$
+\item $\E(H_i \mid X_i)=X_i^2$,
+\[
+\E(X_i \mid H_i=1)= \E(X_i|X_i \text{ is the biggest of three waves}) = \frac{3}{4}
+\]
+
+\[
+\E(X_i \mid H_i=0)=\frac{1}{2}\E(X_i|X_i \text{ is the smallest of three waves}) + \frac{1}{2}\E(X_i|X_i \text{ is the median of three waves}) = \frac{1}{2}\frac{1}{4} + \frac{1}{2}\frac{1}{2}=\frac{3}{8}
+\]
+$\E(X_i \mid H_i)= (3+3H_i)/8$
 \item $\E(W_s \cdot W_t)=s$ and
 
 Let's introduce deltas: $D_1 = W_s - W_r$ and $D_2 = W_t - W_s$. The bonus of this notation is that $D_1$, $D_2$ and $W_r$ are independent random variables. And
@@ -1361,33 +1369,34 @@ Then we are gonna find  $E(\xi| \eta)$.\par
 Since $X \sim \mathrm{Exp}(\lambda)$, it has a nice density: $p_{X}(u) = \lambda e^{-\lambda u}\cdot I_{\{u \geqslant 0\}}$.\par
 Similarly, $p_{Y}(v) =  \lambda e^{-\lambda v}\cdot I_{\{v \geqslant 0\}}$.\par
 Since $X$ and $Y$ are independent, the vector $(X,Y)$ has a two-dimensional density, which equals to the product of densities of $X$ and $Y$, i.e.
-$$
+\[
 p_{(X,Y)}(u,v) = I_{\{u\geqslant 0, v\geqslant 0\}}\lambda^{2}e^{-\lambda(u+v)}
-$$\par
+\]
 We have $X = X(\xi, \eta) = \frac{\ds \xi + \eta}{\ds 2}$ and $Y = Y(\xi, \eta) = \frac{\ds \xi - \eta}{\ds 2}$.\par
 Then $J = \begin{vmatrix}\dfrac{\ds \partial X}{\ds \partial \xi} & \dfrac{\ds \partial X}{\ds \partial \eta}\\ \dfrac{\ds \partial Y}{\ds \partial \xi}& \dfrac{\ds \partial Y}{\ds \partial \eta}
 \end{vmatrix} = \begin{vmatrix}\frac{\ds 1}{\ds 2} & \frac{\ds 1}{\ds 2}\\ \frac{\ds 1}{\ds 2}& -\frac{\ds 1}{\ds 2}
 \end{vmatrix} = - \frac{\ds 1}{\ds 2}$.\par
 Therefore
-$$
+\[
 p_{(\xi, \eta)}(s,t) = p_{(X,Y)}\left(\frac{\ds s+t}{\ds 2}, \frac{\ds s-t}{\ds 2}\right)\cdot |J| = \frac{\ds \lambda^{2}}{\ds 2}I_{\{ s + t \geqslant 0\}}I_{\{s - t \geqslant 0\}}e^{-\lambda s} = \frac{\ds \lambda^{2}}{\ds 2}I_{\{ s \geqslant |t|\}}e^{-\lambda s}
-$$
+\]
 \par
 is a density of a vector $(\xi, \eta)$.\par
 Further,
-$$
+\[
 p_{\eta}(t) = \int\limits_{\RR}p_{(\xi, \eta)}(s,t)\mathrm{d}s = \frac{\ds \lambda e^{-\lambda|t|}}{\ds 2}
-$$\par
+\]
 Then the conditional density is
-$$
+\[
 p_{(\xi | \eta)}(s|t) = \frac{\ds p_{(\xi, \eta)}(s,t)}{\ds p_{\eta}(t)} = \lambda e^{-\lambda(s-|t|)}\cdot I_{\{s - |t|\geqslant 0\}}
-$$\par
+\]
 And finally, denoting $z = s - |t|$, we get
-$$
-E(\xi|\eta) = \left.\int\limits_{\RR}s\cdot p_{(\xi|\eta)}(s|t)\mathrm{d}s\right|_{t = \eta} = \left.\int\limits_{\RR}(z + |t|)\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta}  = $$  $$= \left.\int\limits_{\RR}z\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} + \left.|t|\int\limits_{\RR}\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} =  \left.\left(\frac{\ds 1}{\ds \lambda} + |t|\right)\right|_{t = \eta} = \frac{\ds 1}{\ds \lambda} + |\eta|
-$$\par
+\begin{multline}
+\E(\xi|\eta) = \left.\int\limits_{\RR}s\cdot p_{(\xi|\eta)}(s|t)\mathrm{d}s\right|_{t = \eta} = \left.\int\limits_{\RR}(z + |t|)\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta}  = \\
+= \left.\int\limits_{\RR}z\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} + \left.|t|\int\limits_{\RR}\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} =  \left.\left(\frac{\ds 1}{\ds \lambda} + |t|\right)\right|_{t = \eta} = \frac{\ds 1}{\ds \lambda} + |\eta|
+\end{multline}
 (the first integral is just the expectation of exponential distribution with parameter $\lambda$,\par and the second is $|t|$ times the integral of the density, which equals 1)\[\]\par
-\textbf{Answer:} $E(X+Y| X-Y) = \frac{\ds 1}{\ds \lambda} + |X-Y|$
+\textbf{Answer:} $\E(X+Y| X-Y) = \frac{\ds 1}{\ds \lambda} + |X-Y|$
 
 
 
@@ -2047,23 +2056,23 @@ You can launch a torpedo each minute at any integer on the number line. If the t
 
 \item How many different $\sigma$-algebras one may construct if $\Omega$ contains three elements? Four?
 
-\item We throw a coin infinite number of times. Let's define the sequence of random variables $X_n$ such that  $X_{n}$ is equal to 1, if the result of $n$-th throw is tail, and 0 otherwise. We also define a bunch of $ \sigma $-algebras: $\mathcal{F}_{n}:=\sigma(X_{1}, X_{2}, \ldots, X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},\ldots)$.
+\item We throw a coin infinite number of times. Let's define the sequence of random variables $X_n$ such that  $X_{n}$ is equal to 1, if the result of $n$-th throw is tail, and 0 otherwise. We also define a bunch of $ \sigma $-algebras: $\cF_{n}:=\sigma(X_{1}, X_{2}, \ldots, X_{n})$, $\mathcal{H}_{n}:=\sigma(X_{n},X_{n+1},X_{n+2},\ldots)$.
 
 \begin{enumerate}
-\item Give two non-trivial (other  than $ \Omega $ and $ \emptyset $) examples of event $ A $, such that $ A\in \mathcal{F}_{2014} $.
-\item Give two non-trivial examples of event $ A $, such that $ A\notin \mathcal{F}_{2014} $.
+\item Give two non-trivial (other  than $ \Omega $ and $ \emptyset $) examples of event $ A $, such that $ A\in \cF_{2014} $.
+\item Give two non-trivial examples of event $ A $, such that $ A\notin \cF_{2014} $.
 \item Give two non-trivial examples of event $ A $, such that $A$ belongs to every $\mathcal{H}_{n}$.
 \item Which $ \sigma $-algebras contains the event $ A= \{ X_{37}>0\}$?
 \item Which $ \sigma $-algebras contains the event $ B=\{ X_{37}>X_{2014} \}$?
 \item Which $ \sigma $-algebras contains the event $ C= \{X_{37}>X_{2014}>X_{12}\}$?
-\item Simplify where possible: $ \mathcal{F}_{11}\cap \mathcal{F}_{25} $, $ \mathcal{F}_{11}\cup \mathcal{F}_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $.
+\item Simplify where possible: $ \cF_{11}\cap \cF_{25} $, $ \cF_{11}\cup \cF_{25} $, $ \mathcal{H}_{11}\cap \mathcal{H}_{25} $, $ \mathcal{H}_{11}\cup \mathcal{H}_{25} $.
 \end{enumerate}
 
-\item Veniamin throws a coin until three consecutive tails appear.  Let the random variable $T$ be the number of throws. Let $ \mathcal{F}_{T} $ be the $ \sigma $-algebra of all events distinguishable by Veniamin.
+\item Veniamin throws a coin until three consecutive tails appear.  Let the random variable $T$ be the number of throws. Let $ \cF_{T} $ be the $ \sigma $-algebra of all events distinguishable by Veniamin.
 \begin{enumerate}
-\item Provide two non-trivial (not equal to $\Omega$ or $\emptyset$) examples of event $A$ such that $A\in  \mathcal{F}_{T}$ but $A\notin \sigma(T)$
+\item Provide two non-trivial (not equal to $\Omega$ or $\emptyset$) examples of event $A$ such that $A\in  \cF_{T}$ but $A\notin \sigma(T)$
 \item Provide two non-trivial (not equal to $\Omega$ or $\emptyset$) examples of event $A$ such that $A\in  \sigma(T)$
-\item Is it true, that $\sigma(T) \subset \mathcal{F}_{T}$?
+\item Is it true, that $\sigma(T) \subset \cF_{T}$?
 \end{enumerate}
 
 \end{enumerate}
@@ -2838,11 +2847,11 @@ Let's check all the conditions:
 \begin{enumerate}
 \item $Q_0=\frac1{\sqrt2}(W_0+V_0)=0$\\
 \item $P(Q_t \text{trajectory is continuous}) = 1$ since $W_t$ and $V_t$ correspond to this condition
-\item $Q_t-Q_s=\frac1{\sqrt2}(W_t-W_s)+\frac1{\sqrt2}(V_t-V_s)$ is independent on $\mathcal{F}_s$ since $W_t-W_s$ and $V_t-V_s$ are independent on $\mathcal{F}_s$\\
+\item $Q_t-Q_s=\frac1{\sqrt2}(W_t-W_s)+\frac1{\sqrt2}(V_t-V_s)$ is independent on $\cF_s$ since $W_t-W_s$ and $V_t-V_s$ are independent on $\cF_s$\\
 \item $\E(Q_t-Q_s)=\frac1{\sqrt2} \E(W_t-W_s)+\frac1{\sqrt2} \E(V_t-V_s)=0$\\
 $\Var(Q_t-Q_s)=\Var\left(\frac1{\sqrt2}\cdot(W_t-W_s+V_t-V_s)\right)=\frac12 \Var(W_t-W_s)+\frac12 \Var(V_t-V_s)=t-s$
 Thus, $Q_t-Q_s\sim \cN\left(0,t-s\right)$\\
-\item $Q_t$ is measurable relative to $\mathcal{F}_t$
+\item $Q_t$ is measurable relative to $\cF_t$
 \end{enumerate}
 
 Thus, $Q_t$ is a Brownian motion.
@@ -2864,7 +2873,7 @@ $Y_t$ is a martingale because it is a stochastic integral, so $\E(Y_t)=\E(Y_0)=0
 
 \item
 \begin{enumerate}
-\item $\E(M_{t+1}|\mathcal{F}_t)=\E(a^{X_{t+1}}|\mathcal{F}_t)=0.5a^{X_t+1}+0.4a^{X_t-1}+0.1a^{X_t}=a^{X_t}(0.5a+0.4a^{-1}+0.1)$\\
+\item $\E(M_{t+1}|\cF_t)=\E(a^{X_{t+1}}|\cF_t)=0.5a^{X_t+1}+0.4a^{X_t-1}+0.1a^{X_t}=a^{X_t}(0.5a+0.4a^{-1}+0.1)$\\
 $0.5a+0.4a^{-1}+0.1=1\Rightarrow a^2-1.8a+0.8=0\Rightarrow a_1=1,a_2=0.8$\\
 $a\neq1$ otherwise $M_t=1$ for all $t$. So, $a=0.8$.
 
@@ -2948,7 +2957,7 @@ X_T=\begin{cases}
 \end{cases}
 \]
 \[
-X_0=e^{-rT}\E_{\tilde P}(X_T|\mathcal{F}_0)=e^{-rT}\tilde \P(S_T>K|\mathcal{F}_0)=e^{-rT}\tilde \P(S_0e^{(r-0.5\sigma^2)T+\sigma \tilde{W_T}}>K|\mathcal{F}_0)
+X_0=e^{-rT}\E_{\tilde P}(X_T|\cF_0)=e^{-rT}\tilde \P(S_T>K|\cF_0)=e^{-rT}\tilde \P(S_0e^{(r-0.5\sigma^2)T+\sigma \tilde{W_T}}>K|\cF_0)
 \]
 \[
 \tilde W_T>\frac{\ln\frac{K}{S_0} -\left(r-\frac{\sigma^2}{2}\right)T}{\sigma}
@@ -3108,6 +3117,219 @@ r_t = e^{-\lambda t}\left(r_0 - c + \sigma \int_0^t e^{\lambda u} \, dW_u  \righ
 \]
 
 \end{enumerate}
+
+
+
+
+
+
+\section{2017-2018}
+
+\subsection{Hometask}
+
+\begin{enumerate}
+
+
+\item Let $Y = 1_{W_3 \leq 2}$. Find $\E(W_5 \cdot Y)$, $\Var(W_5 \cdot Y)$, $\Cov(W_5, Y)$, $\Cov(W_5, W_5 \cdot Y)$.
+
+\item At time $n=0$ I have one apples and one banana. At each moment of time I choose one of all my fruits randomly with equal probabilities. I eat it and by two more of the same kind. For example, if I choose banana I will eat it and buy two bananas more. I repeat the process of choosing, eating and buying fruits indefinitely. Let $A_n$ and $B_n$ be the number of apples and bananas after $n$ rounds.
+
+\begin{enumerate}
+  \item Find non-trivial function $f$ such that $M_n = f(n) \cdot A_n$ is a martingale.
+  \item Let $\tau$ be the moment when the first banana is chosen. Assuming that Doob's theorem is applicable find $E(1/(\tau + 2))$.
+\end{enumerate}
+
+
+\item Find all constants $a$ such that $Y_t = 42 + W_t^7 + a\int_0^t W_u^5 \, du + \int_0^t u^2 \cos W_u \, dW_u$ is a martingale. Find $\E(Y_t)$.
+
+\item Consider the framework of the Black and Scholes model. The asset pays you 1 dollar at fixed time $T$ if and only if
+\[
+\frac{S_T}{S_{T/2}} > \frac{S_{T/2}}{S_0}.
+\]
+Find the current price $X_0$ of this asset.
+
+
+\item Solve the stochastic differential equation and find $\E(X_t)$ and $\Var(X_t)$
+\[
+dX_t + aX_t dt = b dt + c dW_t;
+\]
+
+You are free to use or not to use the following guiding steps:
+
+\begin{enumerate}
+  \item Find $dY_t$ for $Y_t = \exp(\gamma t)X_t$;
+  \item Find the value of $\gamma$ such that in $dY_t$ the term before $dt$ is non-random.
+  \item Solve the equation for $Y_t$ and then find $X_t$;
+  \item Do not forget about $\E(X_t)$ and $\Var(X_t)$.
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection{Hometask soltuion}
+
+Solution by Evgeny Zalyubovsky
+
+\begin{enumerate}
+	\item 
+\begin{multline*}
+\E{W_5 \cdot Y} = \E{W_5\ |\ W_3 \le 2} = \E{W_5 - W_3\ |\ W_3 \le 2} + \E{W_3\ |\ W_3 \le 2} = 0 + \int_{-\infty}^{2} x\dfrac{e^{-x^2/6}}{\sqrt{6\pi}} dx =\\= \frac{1}{2\sqrt{6\pi}} \left(\int_{+\infty}^{0} e^{-z/6}\,dz + \int_{0}^{4} e^{-z/6}\,dz\right) = -\frac{\sqrt{6}}{2\sqrt{\pi}} \left(1 + e^{-4/6} - 1\right) = -\sqrt{\frac{3}{2\pi}} e^{-2/3}
+\end{multline*}
+\begin{multline*}
+\Var(W_5 \cdot Y) = \E{W_5^2 \cdot Y} - (\E{W_5 \cdot Y})^2 = \E{(W_5 - W_3)^2\ |\ W_3 \le 2} +\\+ 2\E{W_5 \cdot (W_5 - W_3)\ |\ W_3 \le 2} + \E{W_3^2\ |\ W_3 \le 2} - \frac{3e^{-4/3}}{2\pi} = 3\E{(W_5 - W_3)^2} +\\+ 2\E{W_3 \cdot (W_5 - W_3)\ |\ W_3 \le 2} + \int_{-\infty}^{2} x^2 \frac{e^{-x^2/6}}{\sqrt{6\pi}} dx - \frac{3e^{-4/3}}{2\pi} =\\= 3 \left(\Var(W_5 - W_3) + \left(\E{W_5 - W_3}\right)^2\right) + 2 \E{W_3\ |\ W_3 \le 2} \E{W_5 - W_3} +\\+ \frac{1}{\sqrt{6\pi}} \left(-\int_{0}^{+\infty} x^2 e^{-x^2/6}\,dx + \int_{0}^{2} x^2 e^{-x^2/6}\,dz\right) - \frac{3e^{-4/3}}{2\pi} = 3 \cdot (2 + 0) + 0 - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx -{}\\- \frac{3e^{-4/3}}{2\pi} = 6 - \frac{3e^{-4/3}}{2\pi} - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx,
+% \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3x \left(-\frac{x}{3} e^{-x^2/6}\right) dx = 6 - \frac{3e^{-4/3}}{2\pi} + \left(\frac{3xe^{-x^2/6}}{\sqrt{6\pi}}\right)\bigg|_{2}^{+\infty} -\\- \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3e^{-x^2/6}\,dx = 
+\end{multline*}
+where
+\begin{multline*}
+-\frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx = \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3x \left(-\frac{x}{3} e^{-x^2/6}\right) dx = \left(\frac{3xe^{-x^2/6}}{\sqrt{6\pi}}\right)\bigg|_{2}^{+\infty} - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3e^{-x^2/6}\,dx =\\= -\frac{e^{-2/3}}{\sqrt{\pi/6}} - 3 + 3\Phi\left(2/\sqrt{3}\right) \Rightarrow
+\end{multline*}
+\begin{multline*}
+\Rightarrow \Var(W_5 \cdot Y) = 6 - \frac{3e^{-4/3}}{2\pi} - \frac{e^{-2/3}}{\sqrt{\pi/6}} - 3 + 3\Phi\left(2/\sqrt{3}\right) = 3 - \frac{3e^{-4/3}}{2\pi} - \frac{e^{-2/3}}{\sqrt{\pi/6}} + 3\Phi\left(\sqrt{4/3}\right)
+\end{multline*}
+\begin{multline*}
+\Cov{W_5,Y} = \E{\left(W_5 - \E{W_5}\right)\left(Y - \E{Y}\right)} = \E{W_5 \left(Y - \Pr(W_3 \le 2)\right)} =\\= \E{W_5 \cdot Y} - \Phi\left(\sqrt{4/3}\right) \E{W_5} = -\sqrt{\frac{3}{2\pi}} e^{-2/3} - 0 = -\sqrt{\frac{3}{2\pi}} e^{-2/3}
+\end{multline*}
+\begin{multline*}
+	\Cov(W_5,W_5 \cdot Y) = \E{W_5 \left(W_5 \cdot Y - \E{W_5 \cdot Y}\right)} = \E{W_5^2 \cdot Y} - \E{W_5 \cdot Y} \E{W_5} =\\= \Var(W_5 \cdot Y) + \left(\E{W_5 \cdot Y}\right)^2 - 0 = 3 - \frac{e^{-2/3}}{\sqrt{\pi/6}} + 3\Phi\left(\sqrt{4/3}\right)
+\end{multline*}
+$\E{W_5 \cdot Y} = -\sqrt{\frac{3}{2\pi}} e^{-2/3}$; $\Var(W_5 \cdot Y) = 3 - \frac{3e^{-4/3}}{2\pi} - \frac{e^{-2/3}}{\sqrt{\pi/6}} + 3\Phi\left(\sqrt{4/3}\right)$; $\Cov{W_5,Y} = -\sqrt{\frac{3}{2\pi}} e^{-2/3}$; $\Cov{W_5, W_5 \cdot Y} = 3 - \frac{e^{-2/3}}{\sqrt{\pi/6}} + 3\Phi\left(\sqrt{4/3}\right)$.
+
+
+\item Consider a function $f$ such that
+\begin{equation}\label{eq:2amart}
+\E{M_{n+k}\ |\ \cF_n} = M_n.
+\end{equation}
+Obviously, as $A_n$ is always finite, so are $f(n)$ and $\E{M_n}$. Moreover, $A_n$ is always adapted to $\cF_n$ while $f(n)$ is a constant, so $M_n$ is also always adapted to $\cF_n$. Therefore, condition \eqref{eq:2amart} is both necessary and sufficient for $M_n$ to be a martingale. Before using that to obtain $f(n)$, let's derive a formula for $\E{A_{n+k}\ |\ \cF_n}$:
+\begin{multline*}
+\E{A_{n+1}\ |\ \cF_n} = A_n + \frac{A_n}{A_n + B_n} = A_n + \frac{A_n}{A_0 + B_0 + n} = A_n + \frac{A_n}{2 + n} = \frac{n+3}{n+2} A_n \Rightarrow\\\Rightarrow \E{A_{n+k}\ |\ \cF_n} = \E{\E{A_{n+k}\ |\ \cF_{n+k-1}}\ \big|\ \cF_n} = \E{\frac{(n+k-1)+3}{(n+k-1)+2} A_{n+k-1}\ \bigg|\ \cF_n} =\\= \frac{(n+k-1)+3}{(n+k-1)+2} \cdot \E{A_{n+k-1}\ |\ \cF_n} = \ldots = \E{A_{n}\ |\ \cF_n} \cdot \prod\limits_{i=0}^{k-1} \frac{n+i+3}{n+i+2} = \frac{n+k+2}{n+2} A_n.
+\end{multline*}
+\begin{multline*}
+\eqref{eq:2amart} \Rightarrow \E{M_{n+k}\ |\ \cF_n} = \E{f(n+k) \cdot A_{n+k}\ |\ \cF_n} = f(n+k) \frac{n+k+2}{n+2} A_n = M_n = f(n) A_n \Rightarrow\\\Rightarrow f(n+k) \frac{n+k+2}{n+2} = f(n) \Rightarrow f(n) = \dfrac{1}{n+2}
+\end{multline*}
+
+Finally, $f(n) = \dfrac{1}{n+2}$.
+
+First, note that $A_n + B_n = n + 2\ \forall n$, so if $\frac{1}{n+2} A_n$ is a martingale, then so are $1 - \frac{1}{n+2} B_n$ and $\frac{1}{n+2} B_n$. What is more, $\tau = \min_n \{n\ |\ B_n = 2\} \Rightarrow B_\tau = 2\ \forall \tau$. According to Doob's theorem, we have that $\E{\frac{B_\tau}{\tau + 2}} = \E{\frac{B_0}{0 + 2}} = \frac{1}{2}$, but $\E{\frac{B_\tau}{\tau + 2}} = \E{\frac{2}{\tau + 2}} = 2 \E{\frac{1}{\tau + 2}}$, hence $\E{\frac{1}{\tau + 2}} = \frac{1}{4}$.
+$\E{\frac{1}{\tau + 2}} = \frac{1}{4}$.
+
+\end{enumerate}
+
+
+\subsection{Exam 2017-12-29}
+
+\subsubsection{Dynamic optimization}
+
+
+\begin{enumerate}
+
+
+\item {[10 points]} Consider a system of differential equations
+\[
+\begin{cases}
+  \dot x = - 2y + x({x^2} + {y^2} - 1);\\
+  \dot y =  2x + y({x^2} + {y^2} - 1).\\
+\end{cases}
+\]
+\begin{enumerate}
+  \item {[5 points]} Check that $(0,0)$ is the only point of rest of this system. Change the variables from the Cartesian to the polar $(r, \phi )$. Rewrite the system in the polar coordinates.
+  \item {[5 points]} Draw two time paths of the system for $r_0 > 1$, where $r_0$ is the radius of the initial point and for $0 < r_0 < 1$. Justify your sketch. What if $r_0 = 1$?
+\end{enumerate}
+
+\item {[10 points]} Solve the calculus of variations problem \[
+\int_1^2 \left( \frac{2y^2}{x^2} + (y')^2 \right) \, dx \to \max /\min
+\]
+with the fixed endpoints $y(1) = 0$, $y(2) = \frac{7}{2}$.
+
+Hint: for solving Euler’s equation try to find solutions in the form of $x^a$. Check all available second-order conditions.
+
+\item {[20 points]} Road construction costs minimization.
+
+Let the terrain profile be represented by the function
+\[
+y(t) =
+\begin{cases}
+3 - 3|t|, \text{ if } |t|\leq 1 \\
+0, \text{ otherwise.} \\
+\end{cases}
+\]
+
+The contractor minimizes the excavation costs given by the formula
+\[
+\int_{-c}^c (x(t) - y(t))^2 \, dt,
+\]
+where $x(t)$ is the road profile we need to find, $c > 2$ and $[ - c,c]$ — road section where the excavation takes place ($c$ is not set). Allowable grade of the road satisfies  $| \dot x | \leq 1$.
+
+\begin{enumerate}
+%\item State the optimal bounded control problem with  constraint.
+\item {[5 points]} Form Hamiltonian and derive first-order conditions taking into account that multiplier $\lambda$ satisfies transversality conditions $\lambda(-c) = \lambda(c) = 0$.
+\item {[15 points]} Find $x(t)$ on the section $[ - c,c]$.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection{Stochastic Calculus}
+
+Standard Wiener process is denoted by $W_t$.
+
+\begin{enumerate}
+  \item {[10 points]} Let $Y$ be equal to $1$ if $W_2>0$ and $0$ otherwise.
+
+  Find $\E(Y|W_1)$, $\Var(Y|W_1)$, $\E(Y|W_1^2)$.
+  \item {[10 points]} James Bond flips a biased coin until the sequence Head-Tail-Head-Tail appears. The probability of «Head» is equal to $p$. Using Doog's theorem and an appropriate martingale find the expected number of coin flips.
+  \item {[10 points]} The process $X_t$ is given by
+  \[
+    X_t = 2017 + t^2 W_t^2 + \int_0^t u \, dW_u
+  \]
+  \begin{enumerate}
+    \item Find $dX_t$;
+    \item Is $X_t$ a martingale?
+    \item Find $\E(X_t)$.
+  \end{enumerate}
+
+  \item {[10 points]} Consider the framework of the Black and Scholes model. You agreed with Warren Buffett that at fixed time $T$ he will pay you the strange sum
+  \[
+  X_T = \ln S_T \cdot \ln S_{T/2},
+  \]
+where $S_t$ is the price of a share.
+
+What is the non-arbitrage price $X_0$ of this agreement?
+  \item {[20 points]} Solve the stochastic differential equation
+  \[
+  dY_t =(Y_t^3 - Y_t) \, dt + Y_t^2 \, dW_t
+  \]
+
+  You are free to use or not to use the following guiding steps:
+
+  \begin{enumerate}
+    \item {[5 points]} Consider $Z_t = Y_t^n$ and find $dZ_t$;
+    \item {[3 points]} Find a constant $n$ such that the term before $dW_t$ in $dZ_t$ is non-random.
+    \item {[2 points]} Write down the equation for $dZ_t$ in terms of $t$ and $Z_t$ only: you should get rid of $Y_t$.
+    \item {[8 points]} Solve the equation for $dZ_t$.
+
+    Hint: It's just the particular case of the equation in your hometask~:) Do you remember? Multiply $Z_t$ by some exponent~:)
+    \item {[2 points]} Finally, find $Y_t$.
+  \end{enumerate}
+
+\begin{comment}
+  % Надо подумать ещё!!!!
+  \item Solve the stochastic differential equation
+  \[
+  dX_t =(X_t^3 + X_t) \, dt + X_t \, dW_t
+  \]
+
+  You are free to use or not to use the following guiding steps:
+
+  \begin{enumerate}
+    \item Consider $Y_t = f(X_t)$ and find $dY_t$;
+    \item State equation on $f$ such that in $dY_t$ the term before $dt$ is non-random.
+    \item Find at least one
+    \item Solve the equation for $Y_t$ and then find $X_t$;
+  \end{enumerate}
+\end{comment}
+
+\end{enumerate}
+
+
 
 \section{Some junk}
 
