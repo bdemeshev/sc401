@@ -3374,6 +3374,75 @@ What is the non-arbitrage price $X_0$ of this agreement?
 
 \end{enumerate}
 
+\subsection{Exam, solution}
+
+\begin{enumerate}
+  \item 
+    \[
+      \E(Y|W_1) = \P(W_2 > 0 |W_1)=\P(W_2 - W_1 > -W_1 | W_1)= 1 - F(-W_1)=F(W_1)
+    \]
+    \[
+      \Var(Y|W_1) = F(W_1)(1-F(W_1)) 
+    \]
+    \[
+      \E(Y|W_1^2)=\P(W_2 > 0|W_1^2)=0.5F(-|W_1|)+0.5F(|W_1|)=0.5
+    \]
+  \item We organise a casino. 
+    Each entrant brings one dollar into the casino. 
+    And bets all his fortune every time. 
+    Each player bets on head, tail, head and then tail consecutively. 
+    To make the fortune of each player a martingale we will pay him 
+    $1/p$ if he guesses head correctly and $1/(1-p)$ if he guesses tail correctly. 
+    
+    The total wealth of all players, $S_t$, 
+    is not a martingale because $\E(S_t)=t$. 
+    But the process $M_t = S_t - t$ is a martingale. 
+    Let $\tau$ be the first moment when the sequence HTHT appears. 
+
+    We note that $M_0 = 0$ and $M_{\tau}=\frac{1}{p}\frac{1}{1-p} + \frac{1}{p}\frac{1}{1-p}\frac{1}{p}\frac{1}{1-p}-\tau$.
+
+    According to Doob's theorem $\E(M_{\tau})=\E(M_0)=0$.
+
+    So 
+    \[
+      \E(\tau) = \frac{1}{p}\frac{1}{1-p} + \frac{1}{p}\frac{1}{1-p}\frac{1}{p}\frac{1}{1-p}-\tau
+    \] 
+  \item 
+    \[
+      dX_t = (2tW_t^2 t^2) \, dt + (2t^2 W_t + t) \, dW_t 
+    \]
+
+    $X_t$ is not a martingale because the term before $dt$ is not zero.
+
+    \[
+      \E(X_t) = 2017 + \E(t^2 W_t^2) = 2017 + t^3
+    \]
+  \item 
+    \[
+ X_0 = \exp(-rT) \tilde{\E}(X_T | \cF) = \ldots = 
+ \exp(-rT)(\ln^2 S_0 + \frac{3}{2}\ln S_0 (r-\sigma^2/2)T  + (r-\sigma^2/2)^2T^2/2 + \sigma^2 T/2 )
+    \]
+  \item 
+    \[
+dZ_t = n(Y_t^{n+2} - Y_t^n + \frac{n-1}{2}Y_t^{n+2}) \, dt + n Y_t^{n+1} \, dW_t 
+\]
+There are two values of $n$, $n=0$ and $n=-1$. 
+The value $n=0$ is useless. 
+Consider $n=-1$.
+\[
+  dZ_t = Z_t \, dt - dW_t
+\]
+ 
+Let's introduce $X_t = e^{-t} Z_t$:
+\[
+  dX_t = \ldots = -\exp(-t) \, dW_t
+\]
+So
+\[
+  Y_t = \frac{1}{\exp(t)/Y_0 - \exp(t)\int_0^t\exp(-u) \, dW_u}
+\]
+
+\end{enumerate}
 
 
 \section{Some junk}

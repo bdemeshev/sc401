@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+
+\usepackage[top=2cm, left=1.5cm, right=1.5cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Стохастический анализ}
+\chead{}
+\rhead{2018-01-18, праздник номер два :)}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\usepackage{bbm}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+
+
+%% эконометрические сокращения
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\def \hb{\hat{\beta}}
+\def \hs{\hat{\sigma}}
+\def \htheta{\hat{\theta}}
+\def \s{\sigma}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \v1{\vec{1}}
+\def \e{\varepsilon}
+\def \he{\hat{\e}}
+\def \z{z}
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+\def \cN{\mathcal{N}}
+
+
+\renewcommand{\P}{\mathbb{P}}
+
+\begin{document}
+
+
+
+
+
+\begin{enumerate}
+
+\item Для процесса $Y_t = W_t^3\cos W_t + tW_t$ найдите $dY_t$ и выпишите ответ в полной форме записи.
+
+\item Для процесса $Y_t = f(t) \exp(t+W_t)$ найдите $dY_t$ и подберите функцию $f(t)$ так, чтобы процесс $Y_t$ был мартингалом.
+
+
+\item Найдите $\E(\int_0^t W_s \cos s dW_s)$ и $\Var(\int_0^t W_s \cos s dW_s)$
+
+\item Для броуновского движения $W_t$ определим величину $Y$ равную единице, если $W_2>0$, и нулю иначе. Найдите $\Cov(Y,W_3)$, $\Cov(Y, W_1)$.
+
+\item The process $X_t$ is given by
+\[
+  X_t = 2017 + t^2 W_t^2 + \int_0^t u \, dW_u
+\]
+\begin{enumerate}
+  \item Find $dX_t$;
+  \item Is $X_t$ a martingale?
+  \item Find $\E(X_t)$.
+\end{enumerate}
+
+\item The process $Y_t$ is given by $Y_t=2W_t+5t$. The stopping time $\tau$ is given by $\tau=\min\{t|Y_t^2=100\}$. Find the distribution of the random variable $Y_\tau$ and the expected value $\E(\tau)$.
+
+
+Hint: you may find the martingales $a^{Y_t}$ and $Y_t-f(t)$ useful
+
+
+\item Consider the framework of the Black and Scholes model. You agreed with Warren Buffett that at fixed time $T$ he will pay you the strange sum
+\[
+X_T = \ln S_T \cdot \ln S_{T/2},
+\]
+where $S_t$ is the price of a share.
+
+What is the non-arbitrage price $X_0$ of this agreement?
+
+
+
+
+\end{enumerate}
+
+\end{document}
