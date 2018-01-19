@@ -3405,11 +3405,11 @@ What is the non-arbitrage price $X_0$ of this agreement?
 
     So 
     \[
-      \E(\tau) = \frac{1}{p}\frac{1}{1-p} + \frac{1}{p}\frac{1}{1-p}\frac{1}{p}\frac{1}{1-p}-\tau
+      \E(\tau) = \frac{1}{p}\frac{1}{1-p} + \frac{1}{p}\frac{1}{1-p}\frac{1}{p}\frac{1}{1-p}
     \] 
   \item 
     \[
-      dX_t = (2tW_t^2 t^2) \, dt + (2t^2 W_t + t) \, dW_t 
+      dX_t = (2tW_t^2 + t^2) \, dt + (2t^2 W_t + t) \, dW_t 
     \]
 
     $X_t$ is not a martingale because the term before $dt$ is not zero.
@@ -3439,7 +3439,7 @@ Let's introduce $X_t = e^{-t} Z_t$:
 \]
 So
 \[
-  Y_t = \frac{1}{\exp(t)/Y_0 - \exp(t)\int_0^t\exp(-u) \, dW_u}
+  Y_t = e^{-t}\frac{1}{1/Y_0 - \int_0^t\exp(-u) \, dW_u}
 \]
 
 \end{enumerate}
