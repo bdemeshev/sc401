@@ -3171,19 +3171,19 @@ You are free to use or not to use the following guiding steps:
 Solution by Evgeny Zalyubovsky
 
 \begin{enumerate}
-	\item 
+	\item
 \begin{multline*}
 	\E(W_5 \cdot Y) = \E(W_5\ |\ W_3 \le 2) = \E(W_5 - W_3\ |\ W_3 \le 2) + \E(W_3\ |\ W_3 \le 2) = 0 + \int_{-\infty}^{2} x\dfrac{e^{-x^2/6}}{\sqrt{6\pi}} dx =\\= \frac{1}{2\sqrt{6\pi}} \left(\int_{+\infty}^{0} e^{-z/6}\,dz + \int_{0}^{4} e^{-z/6}\,dz\right) = -\frac{\sqrt{6}}{2\sqrt{\pi}} \left(1 + e^{-4/6} - 1\right) = -\sqrt{\frac{3}{2\pi}} e^{-2/3}
 \end{multline*}
 \begin{multline*}
 	\Var(W_5 \cdot Y) = \E(W_5^2 \cdot Y) - (\E(W_5 \cdot Y))^2 = \E((W_5 - W_3)^2\ |\ W_3 \le 2) +\\
-	+ 2\E(W_5 \cdot (W_5 - W_3)\ |\ W_3 \le 2) + \E(W_3^2\ |\ W_3 \le 2) - \frac{3e^{-4/3}}{2\pi} = 
+	+ 2\E(W_5 \cdot (W_5 - W_3)\ |\ W_3 \le 2) + \E(W_3^2\ |\ W_3 \le 2) - \frac{3e^{-4/3}}{2\pi} =
 	3\E((W_5 - W_3)^2) +\\
 	+ 2\E(W_3 \cdot (W_5 - W_3)\ |\ W_3 \le 2) + \int_{-\infty}^{2} x^2 \frac{e^{-x^2/6}}{\sqrt{6\pi}} dx - \frac{3e^{-4/3}}{2\pi} =\\
 	= 3 \left(\Var(W_5 - W_3) + \left(\E(W_5 - W_3)\right)^2\right) + 2 \E(W_3\ |\ W_3 \le 2) \E(W_5 - W_3) +\\
 	+ \frac{1}{\sqrt{6\pi}} \left(-\int_{0}^{+\infty} x^2 e^{-x^2/6}\,dx + \int_{0}^{2} x^2 e^{-x^2/6}\,dz\right) - \frac{3e^{-4/3}}{2\pi} = 3 \cdot (2 + 0) + 0 - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx -{}\\
 	- \frac{3e^{-4/3}}{2\pi} = 6 - \frac{3e^{-4/3}}{2\pi} - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx,
-% \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3x \left(-\frac{x}{3} e^{-x^2/6}\right) dx = 6 - \frac{3e^{-4/3}}{2\pi} + \left(\frac{3xe^{-x^2/6}}{\sqrt{6\pi}}\right)\bigg|_{2}^{+\infty} -\\- \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3e^{-x^2/6}\,dx = 
+% \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3x \left(-\frac{x}{3} e^{-x^2/6}\right) dx = 6 - \frac{3e^{-4/3}}{2\pi} + \left(\frac{3xe^{-x^2/6}}{\sqrt{6\pi}}\right)\bigg|_{2}^{+\infty} -\\- \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3e^{-x^2/6}\,dx =
 \end{multline*}
 where
 \begin{multline*}
@@ -3218,12 +3218,12 @@ Obviously, as $A_n$ is always finite, so are $f(n)$ and $\E(M_n)$. Moreover, $A_
 
 First, note that $A_n + B_n = n + 2\ \forall n$, so if $\frac{1}{n+2} A_n$ is a martingale, then so are $1 - \frac{1}{n+2} B_n$ and $\frac{1}{n+2} B_n$. What is more, $\tau = \min_n \{n\ |\ B_n = 2\} \Rightarrow B_\tau = 2\ \forall \tau$. According to Doob's theorem, we have that $\E(\frac{B_\tau}{\tau + 2}) = \E(\frac{B_0}{0 + 2}) = \frac{1}{2}$, but $\E(\frac{B_\tau}{\tau + 2)} = \E(\frac{2}{\tau + 2}) = 2 \E(\frac{1}{\tau + 2})$, hence $\E(\frac{1}{\tau + 2}) = \frac{1}{4}$.
 
-\item 
+\item
 $dY_t = 7W_t^6 \,dW_t + \frac{1}{2} 42W_t^5 \,dt + a W_t^5 \,dt + t^2 \cos W_t \,dW_t = \left(7W_t^6 + t^2 \cos W_t\right) \,dW_t + (21 + a) W_t^5 \,dt \Rightarrow$ in order to have no terms with $dt$, we need that $21 + a = 0 \Leftrightarrow a = -21$.
 
 As for the ultimate question, due to $Y_t$ being a martingale, $\E(Y_t) = Y_0 = 42$.
 
-\item 
+\item
 \begin{multline*}
 	X_0 = B_0 \tilde\E(\frac{X_T}{B_T}\ \bigg|\ \cF_0) = B_0 \tilde\E(\frac{1_{S_0 S_T > S_{T/2}^2}}{B_0 e^{rT}}\ \bigg|\ \cF_0) = e^{-rT} \widetilde{\P}\left(S_0 S_T > S_{T/2}^2\ \big|\ \cF_0\right) =\\
 	= e^{-rT} \widetilde{\P}\left(S_0^2 e^{\left(\mu - \sigma^2/2\right) T + \sigma W_T} > S_{0}^2 e^{(\mu - \sigma^2/2) T + 2\sigma W_{T/2}}\ \big|\ \cF_0\right) = e^{-rT} \widetilde{\P}\left(e^{W_T} > e^{2W_{T/2}}\ \big|\ \cF_0\right) =\\
@@ -3377,39 +3377,39 @@ What is the non-arbitrage price $X_0$ of this agreement?
 \subsection{Exam, solution}
 
 \begin{enumerate}
-  \item 
+  \item
     \[
       \E(Y|W_1) = \P(W_2 > 0 |W_1)=\P(W_2 - W_1 > -W_1 | W_1)= 1 - F(-W_1)=F(W_1)
     \]
     \[
-      \Var(Y|W_1) = F(W_1)(1-F(W_1)) 
+      \Var(Y|W_1) = F(W_1)(1-F(W_1))
     \]
     \[
       \E(Y|W_1^2)=\P(W_2 > 0|W_1^2)=0.5F(-|W_1|)+0.5F(|W_1|)=0.5
     \]
-  \item We organise a casino. 
-    Each entrant brings one dollar into the casino. 
-    And bets all his fortune every time. 
-    Each player bets on head, tail, head and then tail consecutively. 
-    To make the fortune of each player a martingale we will pay him 
-    $1/p$ if he guesses head correctly and $1/(1-p)$ if he guesses tail correctly. 
-    
-    The total wealth of all players, $S_t$, 
-    is not a martingale because $\E(S_t)=t$. 
-    But the process $M_t = S_t - t$ is a martingale. 
-    Let $\tau$ be the first moment when the sequence HTHT appears. 
+  \item We organise a casino.
+    Each entrant brings one dollar into the casino.
+    And bets all his fortune every time.
+    Each player bets on head, tail, head and then tail consecutively.
+    To make the fortune of each player a martingale we will pay him
+    $1/p$ if he guesses head correctly and $1/(1-p)$ if he guesses tail correctly.
+
+    The total wealth of all players, $S_t$,
+    is not a martingale because $\E(S_t)=t$.
+    But the process $M_t = S_t - t$ is a martingale.
+    Let $\tau$ be the first moment when the sequence HTHT appears.
 
     We note that $M_0 = 0$ and $M_{\tau}=\frac{1}{p}\frac{1}{1-p} + \frac{1}{p}\frac{1}{1-p}\frac{1}{p}\frac{1}{1-p}-\tau$.
 
     According to Doob's theorem $\E(M_{\tau})=\E(M_0)=0$.
 
-    So 
+    So
     \[
       \E(\tau) = \frac{1}{p}\frac{1}{1-p} + \frac{1}{p}\frac{1}{1-p}\frac{1}{p}\frac{1}{1-p}
-    \] 
-  \item 
+    \]
+  \item
     \[
-      dX_t = (2tW_t^2 + t^2) \, dt + (2t^2 W_t + t) \, dW_t 
+      dX_t = (2tW_t^2 + t^2) \, dt + (2t^2 W_t + t) \, dW_t
     \]
 
     $X_t$ is not a martingale because the term before $dt$ is not zero.
@@ -3417,22 +3417,22 @@ What is the non-arbitrage price $X_0$ of this agreement?
     \[
       \E(X_t) = 2017 + \E(t^2 W_t^2) = 2017 + t^3
     \]
-  \item 
+  \item
     \[
- X_0 = \exp(-rT) \tilde{\E}(X_T | \cF) = \ldots = 
+ X_0 = \exp(-rT) \tilde{\E}(X_T | \cF) = \ldots =
  \exp(-rT)(\ln^2 S_0 + \frac{3}{2}\ln S_0 (r-\sigma^2/2)T  + (r-\sigma^2/2)^2T^2/2 + \sigma^2 T/2 )
     \]
-  \item 
+  \item
     \[
-dZ_t = n(Y_t^{n+2} - Y_t^n + \frac{n-1}{2}Y_t^{n+2}) \, dt + n Y_t^{n+1} \, dW_t 
+dZ_t = n(Y_t^{n+2} - Y_t^n + \frac{n-1}{2}Y_t^{n+2}) \, dt + n Y_t^{n+1} \, dW_t
 \]
-There are two values of $n$, $n=0$ and $n=-1$. 
-The value $n=0$ is useless. 
+There are two values of $n$, $n=0$ and $n=-1$.
+The value $n=0$ is useless.
 Consider $n=-1$.
 \[
   dZ_t = Z_t \, dt - dW_t
 \]
- 
+
 Let's introduce $X_t = e^{-t} Z_t$:
 \[
   dX_t = \ldots = -\exp(-t) \, dW_t
@@ -3460,6 +3460,135 @@ So
 dZ_t = e^{bY_t}b \left(dW_t + \mu dt + \frac{1}{2}b \, dt \right)
 \]
 So $b=0$ and $b=-2\mu$ are ok.
+
+\end{enumerate}
+
+\section{2018-2019}
+
+\subsection{Stochastic calculus: home assignment}
+
+\begin{enumerate}
+\item I throw a fair die until first six appears. Let's denote the total number of throws by $X$ and the number of odd integers thrown by $Y$.
+
+Find $\E(Y|X)$, $\E(X|Y)$ and $\Var(Y|X)$.
+\item Let $X_t = \exp(-\alpha t) \left(1 + \int_0^t \exp(\alpha u)\, dW_u \right)$.
+\begin{enumerate}
+  \item Simplify the expression $X_t  + \alpha \int_0^t X_u \, du$.
+  \item Find $\E(X_t)$ and $\Var(X_t)$.
+\end{enumerate}
+\item Today the price of a share is $S_0=100$ roubles. Each day the price $S_t$ goes up  by one rouble with probability $p\in (0;1)$ or by two roubles with probability $1-p$.
+\begin{enumerate}
+  \item Find a number $a$ such that $M_t = a^{S_t}$ is a martingale.
+  \item Let $\tau$ be the first moment of time when the price will be greater or equal to 200 roubles. Find $\E(\tau)$.
+\end{enumerate}
+
+\item In the framework of Black and Scholes model find the price at time $t=0$ of an asset that pays you at time $T$ the amount
+\[
+X_T = \min\{S_T, S_T^2\}.
+\]
+
+\item Consider the stochastic differential equation
+\[
+dX_t = 2W_t \exp(-X_t)\, dW_t + 2t \exp(-2X_t)\, dt
+\]
+
+Find at least one solution of the form $X_t = h(f(W_t) + g(t))$.
+
+\end{enumerate}
+
+
+
+
+\subsection{Exam}
+
+\subsubsection*{Optimal Control}
+
+\begin{enumerate}
+  \item Search costs for a good $c$ are uniformly distributed on the segment $c\in [0;z]$. Every consumer forms her expectation about the reservation price on this good while solving the minimization problem
+\[
+\pi(R) = p(R) + \sigma(R) c \min_{R>0},
+\]
+where $R$ is the reservation price, $p(R)$ is the market price of the good, $\sigma(R)$ — the length of search for this good.
+\begin{enumerate}
+  \item (6 points) Assume the problem is solved, then $R$ is the function depending on $c$. Prove that $d\pi /dc = \sigma$.
+  \item (7 points) Let the monopolistic producer solve the problem of setting the optimal price
+  \[
+  \int_0^z p X(\pi, c) \, dc \to \max,
+  \]
+   where $\pi$ satisfies the original equation and reservation price is optimal. Form the Hamiltonian to derive the first-order conditions for the optimal control problem, where $\pi$ is the state variable, $\sigma$ the control variable and $X$ is the demand on good.
+   \item (7 points) Let $X=\alpha - \beta \pi^2 + \gamma c$, where $\alpha >0$, $\beta >0$ and $\gamma$ are fixed parameters. Use the Hamiltonian system derived earlier to show that $\gamma>0$.
+
+\end{enumerate}
+
+\item  (10 points)
+Find the steady-state solutions of the system of differential equations:
+\[
+\begin{cases}
+\dot x = \ln (2 + xy -x -y);\\
+\dot y = e^{2x+3y-5}-1
+\end{cases}.
+\]
+On the portrait plot the equilibrium points, sketch the paths after finding the eigenvalues and eigenvectors of the linearized system.
+
+\item (10 points)
+Solve the calculus of variations problem with the free-end value
+\[
+\int_0^{\pi/2}((y')^2 -2yy'+y^2 - 2y'\cos^2 x) \, dx \to \max/\min, \;\;y(0)=0.
+\]
+
+Check the sufficiency condition in order to classify the extremal.
+\end{enumerate}
+
+\subsubsection*{Stochastic Calculus}
+
+Standard Wiener process is denoted by $W_t$.
+
+\begin{enumerate}[resume]
+  \item {[10 points]} Consider a well-shuffled deck of 52 cards. You open the cards one by one until the second King appears.
+  \begin{enumerate}
+    \item What is the probability that the next card will be Queen of Diamonds?
+    \item What is the probability that the next card will be King of Diamonds?
+  \end{enumerate}
+
+  Hint: a good martingale may be very useful here :)
+
+  \item {[10 points]} Find $\E(W_{2019}^3 | W_{2018})$ and $\E(W_{2018}^3 | W_{2019})$.
+
+  %Consider the process $R_t = W_t^4 - 6tW_t^2$.
+  %\begin{enumerate}
+%    \item Find $dR_t$. Is $R_t$ a martingale?
+%    \item Find $f(t)$ such that $M_t = R_t + f(t)$ is a martingale.
+%  \end{enumerate}
+
+  \item {[10 points]} Suppose $X_t$ satisfies the stochastic differential equation
+  \[
+    dX_t = 2018 X_t \, dt + X_t^{2019} \, dW_t
+  \]
+
+  Determine constants $a$, $b$ and $c$ such that $Y_t = \exp(aX_t^b + ct)$ is a martingale.
+
+  \item {[10 points]} Consider the framework of the Black and Scholes model.
+The asset $X$ will pay you one share at fixed time $T$ if $S_T > 2S_{T/2}$,
+where $S_t$ is the price of a share.
+
+What is the non-arbitrage price $X_0$ of this asset?
+  \item {[20 points]} Consider the stochastic differential equation
+  \[
+  dY_t =(2Y_t/t + 3(t^4Y_t)^{1/3}) \, dt + 3(tY_t)^{2/3} \, dW_t, \;\; Y_0=0.
+  \]
+
+  \begin{enumerate}
+    \item {[15 points]} Solve the stochastic differential equation.
+    \item {[5 points]} Find $\E(Y_t)$ and $\Var(Y_t)$.
+  \end{enumerate}
+
+  You are free to use or not to use the following guiding steps:
+
+  \begin{enumerate}[resume]
+    \item {[5 points]} Suppose that $Y_t=g(W_t)h(t)$. Find $dY_t$.
+    \item {[5 points]} By looking at the term before $dW_t$ provide the equations for $g(W_t)$ and $h(t)$.
+    \item {[5 points]} Find $g(W_t)$ and $h(t)$ and check your solution.
+  \end{enumerate}
 
 \end{enumerate}
 

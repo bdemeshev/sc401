@@ -1,0 +1,185 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[top=1.5cm, left=2cm, right=2cm, bottom=1.5cm]{geometry} % размер текста на странице
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{verbatim} % для комментов
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+\usepackage{amssymb} % и символов
+\usepackage{bbm}
+
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+
+
+
+\usepackage{fontspec} % хз
+\usepackage{polyglossia} % для выбора языка в xelatex
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*} % списки уровня 2 будут буквами а) б) ...
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo[inline]{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет картина Последний день Помпеи}
+% команда \listoftodos — печатает все поставленные \todo'шки
+
+\usepackage{booktabs} % красивые таблицы
+% заповеди из документации:
+% 1. Не используйте вертикальные линии
+% 2. Не используйте двойные линии
+% 3. Единицы измерения помещайте в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+% \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Mathematics, exam}
+\chead{}
+\rhead{2018-12-27}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+
+
+
+%% эконометрические сокращения
+\def \hb{\hat{\beta}}
+\DeclareMathOperator{\sVar}{sVar}
+\DeclareMathOperator{\sCov}{sCov}
+\DeclareMathOperator{\sCorr}{sCorr}
+
+\def \1{\mathbbm{1}}
+
+\def \hs{\hat{s}}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \he{\hat{\varepsilon}}
+\def \v1{\vec{1}}
+\def \cN{\mathcal{N}}
+\def \e{\varepsilon}
+\def \z{z}
+
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\plim}{plim}
+
+%% лаг
+\renewcommand{\L}{\mathrm{L}}
+
+
+\begin{document}
+
+\section*{Stochastic Calculus}
+
+Standard Wiener process is denoted by $W_t$.
+
+\begin{enumerate}
+  \item {[10 points]} Consider a well-shuffled deck of 52 cards. You open the cards one by one until the second King appears.
+  \begin{enumerate}
+    \item What is the probability that the next card will be Queen of Diamonds?
+    \item What is the probability that the next card will be King of Diamonds?
+  \end{enumerate}
+
+  Hint: a good martingale may be very useful here :)
+
+  \item {[10 points]} Find $\E(W_{2019}^3 | W_{2018})$ and $\E(W_{2018}^3 | W_{2019})$.
+
+  %Consider the process $R_t = W_t^4 - 6tW_t^2$.
+  %\begin{enumerate}
+%    \item Find $dR_t$. Is $R_t$ a martingale?
+%    \item Find $f(t)$ such that $M_t = R_t + f(t)$ is a martingale.
+%  \end{enumerate}
+
+  \item {[10 points]} Suppose $X_t$ satisfies the stochastic differential equation
+  \[
+    dX_t = 2018 X_t \, dt + X_t^{2019} \, dW_t
+  \]
+
+  Determine constants $a$, $b$ and $c$ such that $Y_t = \exp(aX_t^b + ct)$ is a martingale.
+
+  \item {[10 points]} Consider the framework of the Black and Scholes model.
+The asset $X$ will pay you one share at fixed time $T$ if $S_T > 2S_{T/2}$,
+where $S_t$ is the price of a share.
+
+What is the non-arbitrage price $X_0$ of this asset?
+  \item {[20 points]} Consider the stochastic differential equation
+  \[
+  dY_t =(2Y_t/t + 3(t^4Y_t)^{1/3}) \, dt + 3(tY_t)^{2/3} \, dW_t, \;\; Y_0=0.
+  \]
+
+  \begin{enumerate}
+    \item {[15 points]} Solve the stochastic differential equation.
+    \item {[5 points]} Find $\E(Y_t)$ and $\Var(Y_t)$.
+  \end{enumerate}
+
+  You are free to use or not to use the following guiding steps:
+
+  \begin{enumerate}[resume]
+    \item {[5 points]} Suppose that $Y_t=g(W_t)h(t)$. Find $dY_t$.
+    \item {[5 points]} By looking at the term before $dW_t$ provide the equations for $g(W_t)$ and $h(t)$.
+    \item {[5 points]} Find $g(W_t)$ and $h(t)$ and check your solution.
+  \end{enumerate}
+
+\begin{comment}
+  % Надо подумать ещё!!!!
+  \item Solve the stochastic differential equation
+  \[
+  dX_t =(X_t^3 + X_t) \, dt + X_t \, dW_t
+  \]
+
+  You are free to use or not to use the following guiding steps:
+
+  \begin{enumerate}
+    \item Consider $Y_t = f(X_t)$ and find $dY_t$;
+    \item State equation on $f$ such that in $dY_t$ the term before $dt$ is non-random.
+    \item Find at least one
+    \item Solve the equation for $Y_t$ and then find $X_t$;
+  \end{enumerate}
+\end{comment}
+
+\end{enumerate}
+
+
+
+
+\end{document}
