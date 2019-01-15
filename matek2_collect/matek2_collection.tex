@@ -3544,10 +3544,10 @@ Check the sufficiency condition in order to classify the extremal.
 Standard Wiener process is denoted by $W_t$.
 
 \begin{enumerate}[resume]
-  \item {[10 points]} Consider a well-shuffled deck of 52 cards. You open the cards one by one until the second King appears.
+  \item {[10 points]} Consider a well-shuffled deck of 52 cards. You open the cards one by one until the second King appears. Calculate the unconditional probability that
   \begin{enumerate}
-    \item What is the probability that the next card will be Queen of Diamonds?
-    \item What is the probability that the next card will be King of Diamonds?
+    \item the next card will be Queen of Diamonds;
+    \item the next card will be King of Diamonds.
   \end{enumerate}
 
   Hint: a good martingale may be very useful here :)
@@ -3590,6 +3590,47 @@ What is the non-arbitrage price $X_0$ of this asset?
     \item {[5 points]} Find $g(W_t)$ and $h(t)$ and check your solution.
   \end{enumerate}
 
+\end{enumerate}
+
+\section{Solution, stochastic calculus part}
+
+\begin{enumerate}
+\item Non-martingale solution: let's bet not on the next card, but on the last one.
+At every moment of time we have the same information about
+the next and the last cards. But for last card the probability is always $1/52$.
+
+Martingale solution. Consider the martingale studied in the lectures:
+$M_n$ — indicator whether the Queen of Diamonds is still
+in the remaining part of the deck divided
+by the number of remaining cards.
+And stopping time, $\tau$ — moment of the second King plus one.
+Doob's theorem is satisfied as $\tau \leq 52$. So $\E(M_{\tau}) = \E(M_0)=1/52$.
+\item Use the decomposition $W_{2019}^3= (W_{2018} + (W_{2019} - W_{2019}))^3$.
+For the second question first use inversion.
+\[
+\E(W_{2019}^3|W_{2018}) = W_{2018}^3 + 3W_{2018}
+\]
+\[
+\E(W_{2018}^3|W_{2019}) = 2018^3 ((W_{2019}/2019)^3 + 3 W_{2019}/2019)
+\]
+
+\item Use Ito's lemma. Do not forget that $dX_t$ also contains $dt$ term.
+\[
+c + 0.5ab(ab X_t^{2b-2+4038} + (b-1)X_t^{b-2+4038} + 4036X_t^b) = 0
+\]
+
+Solutions are: $c=0$, $a=0$, any $b$; $c=0$, $b=0$, any $c$; $b=-4036$, $a=1$, $c=-0.5ab(b-1)$.
+\item
+\[
+e^{-rT}\E^*(S_T \cdot 1_{S_T > 2S_{T/2}})
+\]
+\item
+\[
+Y_t = W_t^3 t^2
+\]
+\[
+\E(Y_t)=0; \Var(Y_t) = t^4 \E(W_t^6) = 15 t^7
+\]
 \end{enumerate}
 
 
