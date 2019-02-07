@@ -6,6 +6,7 @@
 *.fdb_latexmk
 *.fls
 *.blg
+*-cache.yaml
 
 binst_2014/binst14.xls
 
