@@ -1,0 +1,149 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[top=1.5cm, left=2cm, right=2cm, bottom=1.5cm]{geometry} % размер текста на странице
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{verbatim} % для комментов
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+\usepackage{amssymb} % и символов
+\usepackage{bbm}
+
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+
+
+
+\usepackage{fontspec} % хз
+\usepackage{polyglossia} % для выбора языка в xelatex
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*} % списки уровня 2 будут буквами а) б) ...
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo[inline]{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет картина Последний день Помпеи}
+% команда \listoftodos — печатает все поставленные \todo'шки
+
+\usepackage{booktabs} % красивые таблицы
+% заповеди из документации:
+% 1. Не используйте вертикальные линии
+% 2. Не используйте двойные линии
+% 3. Единицы измерения помещайте в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+% \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Mathematics, exam}
+\chead{}
+\rhead{2019-02-2x}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+
+
+
+%% эконометрические сокращения
+\def \hb{\hat{\beta}}
+\DeclareMathOperator{\sVar}{sVar}
+\DeclareMathOperator{\sCov}{sCov}
+\DeclareMathOperator{\sCorr}{sCorr}
+
+\def \1{\mathbbm{1}}
+
+\def \hs{\hat{s}}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \he{\hat{\varepsilon}}
+\def \v1{\vec{1}}
+\def \cN{\mathcal{N}}
+\def \e{\varepsilon}
+\def \z{z}
+
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\plim}{plim}
+
+%% лаг
+\renewcommand{\L}{\mathrm{L}}
+
+
+\begin{document}
+
+\section*{Stochastic Calculus}
+
+
+\begin{enumerate}
+
+
+
+\item Two stochastic processes are defined by the system of SDE:
+\[
+\begin{cases}
+dX_t=(2+5t+X_t)dt+3dW_{t} \\
+dY_t=4X_t dt+8Y_t dW_{t}
+\end{cases}
+\]
+\begin{enumerate}
+  \item Calculate $d(X_t^2 Y_t)$.
+  \item Is $X_t^2 Y_t$ a martingale?
+\end{enumerate}
+
+\item Consider the following stochastic differential equation
+\[
+dX_t=-0.5e^{-2X_t}dt+e^{-X_t}dW_t,
+\]
+with deterministic initial value $X_0$.
+\begin{enumerate}
+\item Is $X_t$ a martingale?
+\item Using the substitution $Y_t=f(X_t)$ solve this differential equation.
+\end{enumerate}
+Hint: try to find a function $f$ such that the term before $dt$ cancels out.
+
+
+
+\end{enumerate}
+
+
+
+
+\end{document}

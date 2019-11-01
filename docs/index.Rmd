@@ -34,7 +34,9 @@ lang: ru-RU
 
 * [Домашнее задание - 2015](https://github.com/bdemeshev/sc401/raw/master/ranepa_st/2015/dz_ranh/sc_dz_ranh.pdf). 
 * [Конспект курса - 2016](http://bdemeshev.github.io/sc401/notes_ranepa_2016/). Для конспектирующих [типичные .Rmd-файлы](https://github.com/bdemeshev/sc401/tree/master/ranepa_st/2016/lecture_notes_book) 
-* Контрольная [работа-2016](https://github.com/bdemeshev/sc401/raw/master/ranepa_st/2016/kr_01/kr_01_sc_ranepa.pdf) :) 
+* Контрольная [работа 1, 2016](https://github.com/bdemeshev/sc401/raw/master/ranepa_st/2016/kr_01/kr_01_sc_ranepa.pdf) :) 
+* Контрольная [работа 1, 2017](https://github.com/bdemeshev/sc401/raw/master/ranepa_st/2017/kr_01/kr_01_sc_ranepa.pdf) :) 
+* Контрольная [работа 2, 2017](https://github.com/bdemeshev/sc401/raw/master/ranepa_st/2017/kr_02/kr_02_sc_ranepa_b.pdf) :) 
 
 
 ## Курс в банковском институте
