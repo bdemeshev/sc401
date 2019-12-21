@@ -1,0 +1,248 @@
+\documentclass[12pt]{article}
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsthm, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+\usepackage{amsfonts}
+
+\usepackage[top=2cm, left=1cm, right=1cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{hyperref} % гиперссылки
+
+\usepackage{multicol} % текст в несколько столбцов
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Stochastic calculus — ICEF}
+\chead{2019}
+\rhead{Home assignment}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos — печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguages{russian}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+% \setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\def \hb{\hat{\beta}}
+\def \hs{\hat{\sigma}}
+\def \htheta{\hat{\theta}}
+\def \s{\sigma}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \v1{\vec{1}}
+\def \e{\varepsilon}
+\def \he{\hat{\e}}
+\def \z{z}
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+\def \cN{\mathcal{N}}
+\def \P{\mathbb{P}}
+
+
+\begin{document}
+
+
+
+
+
+\section{Discrete time}
+
+\begin{enumerate}
+
+\item Some questions about $\sigma$-algebras. 
+\begin{enumerate}
+  \item You observe the result of 10 coin tosses. How many elements the $\sigma$-algebra of your information contains?
+  \item Prove that a finite $\sigma$-algebra can contain only $2^k$ elements.
+  \item Is union of two $\sigma$-algebras always a $\sigma$-algebra? Prove your statement.
+  \item Is intersection of two $\sigma$-algebras always a $\sigma$-algebra? Prove your statement.
+\end{enumerate}
+
+\item Prove the following statement or provide a counter-example.
+For any two $\sigma$-algebras $\mathcal{F}$ and $\mathcal{H}$ and a random variable $Y$
+\[
+  \E(\E(Y|\mathcal F)|\mathcal H) = \E(Y|\mathcal F \cap \mathcal H)
+\]
+
+\item I throw a fair die until the first six appears. 
+Let's denote the total number of throws by $X$ and the number of odd integers thrown by $Y$.
+
+\begin{enumerate}
+  \item Find $\P(Y=y|X)$, $\E(Y|X)$, $\Var(Y|X)$;
+  \item Find $\E(X|Y)$.
+\end{enumerate}
+
+\item I throw 100 coins. Let's denote by $X$ the number of coins that show «heads».
+I throw these $X$ coins once again, leaving other coins as they are. 
+Let's denote by $Y$ the number of coins that show «heads» now.
+
+Find $\P(Y=y|X)$, $\E(Y|X)$, $\Var(Y|X)$, $\E(Y)$, $\Var(Y)$.
+
+
+% \item Let $X\sim U[0;1]$, and $Y$ takes values 0 and 1 with equal probabilities. 
+% Random variables $X$ and $Y$ are independent and $Z=X^{Y}$.
+
+% Find $\E(Z|Y)$, $\Var(Z|Y)$, $\E(Z|X)$, $\Var(Z|X)$.
+
+\item Random variables $X$ and $Y$ have joint normal distribution with zero means and covariance matrix
+\[
+\begin{pmatrix}
+4 & -1 \\
+-1 & 9 \\
+\end{pmatrix}.
+\]
+
+\begin{enumerate}
+  \item Find $\E(Y|X)$, $\Var(Y|X)$, $\E(XY|X)$ and $\Var(XY|X)$.
+  \item Using standard normal cumulative distribution function find $\P(YX > 2019 | X)$.
+\end{enumerate}
+
+
+\item The random variables $Z_1$, $Z_2$, \ldots{}  are independent and identically distributed with 
+$\P(Z_n = 1) = p$ and $\P(Z_n = -1) = 1-p$. Consider the cumulative sum process, $S_n = Z_1 + \ldots + Z_n$ with $S_0=0$.
+
+\begin{enumerate}
+  \item For which value of $p$ the process $1.5^{S_n}$ will be a martingale.
+  \item Let $p=0.4$. 
+  If possible find the constants $\alpha$ and $\beta$ such that $Y_n = S_n^2 + \alpha S_n + \beta n$ is a martingale?
+\end{enumerate}
+
+\item Anna and Boris throw a coin infinite number of times.
+Anna wins if the sequence HTHH appears first, Boris wins if the sequence TTHH appears first. 
+The coin is biased with $0.4$ probability of head.
+
+\begin{enumerate}
+  \item What is the expected number of throws to obtain HTHH? 
+  \item What is the expected number of throws to obtain TTHH?
+  \item What is the probability that Anna will win?
+  \item What is the expected number of throws to obtain HTHH or TTHH?
+\end{enumerate}
+
+\item Have a look in the past exams collection. How many pages does it contain?
+
+
+\end{enumerate}
+
+
+
+\newpage
+\section{Continuous time stochastic processes}
+
+Due to late posting date this part is not mandatory. Be happy and study stochastic calculus :)
+
+\begin{enumerate}
+
+\item The processes $(X_t)$ and $(Y_t)$ are independent Wiener processes with respect to filtration $(\mathcal{F}_t)$.
+The process $Z_t = aX_t + b Y_t$ is also a Wiener process. 
+\begin{enumerate}
+  \item For which values of constants $a$ and $b$ is it possible?
+  \item Find covariance $\Corr(Z_t, X_t)$.
+  \item Find $\E(Z_3 | X_2)$ and $\Var(Z_3 | X_2)$.
+  \item Find $\E(Z_3 | \mathcal{F}_2)$ and $\Var(Z_3 | \mathcal{F}_2)$.
+\end{enumerate}
+
+
+\item The process $C_t = W_t^3 + aW_t^2 +b W_t + c + d\cdot t\cdot W_t$ is a martingale.
+\begin{enumerate}
+  \item For which values of constants $a$, $b$, $c$ and $d$ is it possible?
+  \item Find covariance $\Cov(C_t, \int W^2_u dW_u)$.
+\end{enumerate}
+
+\item In the framework of Black and Scholes model derive the current price of a European call option with 
+strike price $K$ and maturity date $T$. 
+
+The European call option pays you the sum
+\[
+X_T =   \begin{cases}
+S_T - K, \text{ if } S_T > K; \\
+0, \text{ otherwise.}
+\end{cases}
+\]
+
+\item Let $Y_t = W_t + 3t$. The moment $\tau$ is the first moment when Wiener process hits $10$. 
+\begin{enumerate}
+  \item Let $\alpha$ be a constant. Find the function $f(t)$ such that $M_t = f(t)\exp(\alpha Y_t)$ is a martingale.
+  \item Using Doob's theorem find $\E(\exp(-s \tau))$ for arbitrary constant $s$. 
+\end{enumerate}
+
+\item Let's consider the process $X_t = \int_0^t u^2 dW_u$. 
+Prove that this process can be represented as a time changed Wiener process. 
+That means that there is a deterministic time-scaling $t(s)$ 
+such that $Y_s = X_{t(s)}$ is a Wiener process with respect to some filtration. 
+
+\item Solve the stochatic differential equation
+\[
+dY_t = - Y_t dt + dW_t, \; Y_0 = 1
+\]
+
+If you are have no clues you may try a substitution $Z_t = f(t) Y_t$. 
+Do not forget that the final answer may contain integrals that can't be calculated explicitely. It's ok.
+
+\item Solve the stochatic differential equation
+\[
+dY_t = Y_t dt + (t^3 + 4Y_t) dW_t, \; Y_0 = 1
+\]
+
+If you are have no clues you may try to represent the process as $Y_t = A_t B_t$, 
+where $A_t$ is the solution of the equation $dA_t = A_t dt + 4A_t dW_t$. 
+
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+
+\usepackage[top=2cm, left=1.5cm, right=1.5cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Стохастический анализ}
+\chead{}
+\rhead{2019-11-08, праздник номер раз :)}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos --- печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+\usepackage{bbm}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+
+
+%% эконометрические сокращения
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\def \hb{\hat{\beta}}
+\def \hs{\hat{\sigma}}
+\def \htheta{\hat{\theta}}
+\def \s{\sigma}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \v1{\vec{1}}
+\def \e{\varepsilon}
+\def \he{\hat{\e}}
+\def \z{z}
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+\def \cN{\mathcal{N}}
+
+
+\renewcommand{\P}{\mathbb{P}}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item У Илона Маска есть множество $A$ всех периодических последовательностей натуральных чисел.
+Например, $(2, 3, 1, 2, 3, 1, 2, 3, 1, \ldots) \in A$,
+$(1, 2, 3, 4, 5, 6, 7, \ldots) \notin A$.
+
+\begin{enumerate}
+  \item Помогите Илону Маску определить,  равномощно ли множество $A$ множеству $\mathbb{N}$? 
+  Равномощно ли оно $\mathbb{R}$?
+ \item Помогите Илону Маску определить,  равномощно ли множество всех последовательностей натуральных чисел 
+ множеству $\mathbb{N}$? 
+ Равномощно ли оно $\mathbb{R}$?
+\end{enumerate}
+
+
+
+\item Грета Тунберг подбрасывает правильную монетку $n$ раз. 
+Обозначим $Y_i$ индикатор выпадения орла при $i$-ом броске. 
+
+Обозначим также $L = \min \{Y_1, Y_2, \ldots, Y_n\}$ и $R = \max \{Y_1, Y_2, \ldots, Y_n\}$.
+
+\begin{enumerate}
+  \item Найдите $\P(R=1|L)$, $\P(L=1|R)$;
+  \item Найдите $\E(R|L)$, $\E(L|R)$;
+  \item Найдите $\Var(R|L)$, $\Var(L|R)$.
+\end{enumerate}
+
+
+\item Эксперимент может окончится одним из четырёх исходов, $a$, $b$, $c$ или $d$.
+
+\begin{enumerate}
+  \item Выпишите минимальную сигма-алгебру $\mathcal{F}$, содержащую события $\{a,b,c\}$ и $\{b,c,d\}$.
+  \item Приведите пример случайной величины, измеримой относительно $\mathcal{F}$, и пример величины,
+  не измеримой относительно $\mathcal{F}$.
+  \item Сколько существуют случайных величин, принимающих значения из множестве $\{1, 2, 3, 4\}$, 
+  измеримых относительно $\mathcal{F}$?
+\end{enumerate}
+
+
+\item Известно, что величина $X$ распределена равномерно на отрезке $[0;1]$, 
+а величина $Y$ при фиксированном $X$ распределена равномерно на отрезке $[1; 1/X]$.
+
+\begin{enumerate}
+  \item Найдите $\E(Y|X)$, $\Var(Y|X)$;
+  \item Найдите $\E(Y)$, $\Var(Y)$;
+  \item Найдите $\E(X|Y)$, $\Var(X|Y)$;
+\end{enumerate}
+
+
+\item Рассмотрим независимые величины $Y_n$, принимающие значения $+1$ или $-1$, $\P(Y_n = 1) = p$.
+Определим $S_n=\sum_{i=1}^n Y_n$.
+
+\begin{enumerate}
+  \item При каком $p$ процесс $S_n+n/10$ будет мартингалом?
+  \item При каком $p$ процесс $0.7^{S_n}$ будет мартингалом?
+  \item Пусть $p=1/2$. При какой функции $h(n)$ процесс $S_n^2 + h(n)$ будет мартингалом?
+\end{enumerate}
+
+
+\item Приезжающих из армии или от двора встречают $n$ женщин. Они одновременно подбрасывают
+вверх $n$ чепчиков. Ловят чепчики наугад, каждая женщина ловит один чепчик. Женщины,
+поймавшие свой чепчик уходят. А женщины, поймавшие чужой чепчик, снова подбрасывают его
+вверх. Подбрасывание чепчиков продолжается до тех пор, пока каждая не поймает свой чепчик.
+Найдите:
+
+\begin{enumerate}
+  \item Cреднее количество женщин, поймавших свой чепчик при одном подбрасывании;
+  \item Cреднее количество подбрасываний.
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document}
