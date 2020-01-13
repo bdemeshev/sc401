@@ -1,0 +1,195 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[top=1.5cm, left=2cm, right=2cm, bottom=1.5cm]{geometry} % размер текста на странице
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{verbatim} % для комментов
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+\usepackage{amssymb} % и символов
+\usepackage{bbm}
+
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+
+
+
+\usepackage{fontspec} % хз
+\usepackage{polyglossia} % для выбора языка в xelatex
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*} % списки уровня 2 будут буквами а) б) ...
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo[inline]{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет картина Последний день Помпеи}
+% команда \listoftodos — печатает все поставленные \todo'шки
+
+\usepackage{booktabs} % красивые таблицы
+% заповеди из документации:
+% 1. Не используйте вертикальные линии
+% 2. Не используйте двойные линии
+% 3. Единицы измерения помещайте в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+% \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Mathematics, exam}
+\chead{}
+\rhead{2019-12-23}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+
+
+
+%% эконометрические сокращения
+\def \hb{\hat{\beta}}
+\DeclareMathOperator{\sVar}{sVar}
+\DeclareMathOperator{\sCov}{sCov}
+\DeclareMathOperator{\sCorr}{sCorr}
+
+\def \1{\mathbbm{1}}
+
+\def \hs{\hat{s}}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \he{\hat{\varepsilon}}
+\def \v1{\vec{1}}
+\def \cN{\mathcal{N}}
+\def \e{\varepsilon}
+\def \z{z}
+
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\plim}{plim}
+
+%% лаг
+\renewcommand{\L}{\mathrm{L}}
+
+
+\begin{document}
+\section*{Optimal Control}
+
+\begin{enumerate}
+  \item Consider a profit maximization problem when a perfectly competitive firm spends $u(t)$ on advertising:
+  \[
+  \int_0^{\infty} e^{-rt} (Px(t) - u(t)) \, dt \to \max,   
+  \]
+where $x(t)$ is the share of the market, $P$ — price of sales per unit time, $r > 0$ — the discount rate. 
+  Maximization is subject to $\dot x = u(1-x) - x/2$, $x_0\geq 0$ and $0 \leq u \leq 1$. 
+  \begin{enumerate}
+    \item {(5 points)} Using current value Hamiltonian state the system of first-order conditions.  
+    \item {(15 points)} Find the bounds on price $P_{\min} < P < P_{\max}$ 
+    for which the steady-state solution $(x_s, u_s)$ with $x_s < 1$ and $u_s<1$ exists and find it. 
+    Draw in $(x,u)$-plane the paths of most rapid approach to steady-state for $x_s \neq x_0$.
+  \end{enumerate}
+
+\item {(10 points)} Consider a problem in discrete time 
+\[
+  \sum_{t=0}^{\infty} \beta^t U(c_t) \to \max
+\] 
+with respect to  $c_t$
+subject to $k_{t+1} = \sqrt{k_t - c_t}$, 
+where $k_0$ is given and $0 < \beta < 1$. 
+Suppose there is a constant $\delta > 0$ such that $U(c) \leq \delta c$ for all $c\geq 0$. 
+\begin{enumerate}
+  \item Write down Bellman’s equation for this problem. 
+  \item Prove that under assumption that Bellman’s equation has 
+  a unique solution the value function of the problem satisfies the estimate $V(k) \leq \delta k + C$ 
+  for some $C>0$ and provide lower bound for $C$.  
+\end{enumerate}
+
+\item {(10 points)} Solve bounded control problem $\int_0^4 (u^2 + x) \, dt \to \min$ 
+subject to $dx/dt = u$, $x(0)=0$ and $|u| \leq 1$.
+
+
+\end{enumerate}
+
+\newpage
+\section*{Stochastic Calculus}
+
+Standard Wiener process is denoted by $W_t$.
+
+\begin{enumerate}
+  \item {[10 points]} Find a function $f(t)$ such that $M_t = \exp(W_t^2 / (1+2t)) / f(t)$ is a martingale.
+  \item {[10 points]} Find the following limit in mean squared
+  \[
+  \lim_{n\to \infty} \sum_{i=1}^n (W_{ti/n} - W_{t(i-1)/n})^3  
+  \]
+  
+  \item {[10 points]} In the framework of the Black and Scholes model find the price at $t=0$ of an asset 
+  that pays $X_T = S_T^2/S_{T/2}$ at time $T$. 
+  Here $S_t$ denotes the price of one share at time $t$.
+
+  \item {[10 points]} Solve the following stochastic differential equation.
+  \[
+  dX_t = \frac{X_t}{t-1} dt +  dW_t, \, X_0 = 0
+  \] 
+  
+  Hint: the solution has the form $X_t = a(t) \cdot \int_0^t b(u) dW_u$ for some deterministic functions $a(t)$ and $b(t)$.
+You only need to find $a(t)$ and $b(t)$ :)
+
+  \item {[20 points]} Let $\tau$ be the first moment of time 
+  when the Wiener process $W_t$ touches the line $y(t) = 10 - t$. 
+  
+The goal of this exercise is to find $\E(\tau)$ and $\Var(\tau)$. 
+
+You are free to use or not to use the following hints:
+
+  \begin{enumerate}
+    \item Check whether the process $R_t = \exp(\sigma W_t - \sigma^2 t/2)$ is a martingale. 
+    \item Apply the Doob's theorem and find the function $m(\lambda) = \E(\exp(-\lambda \tau))$. 
+    You don't need to check all the conditions of the Doob's theorem. 
+    \item Find $m'(0)$, find $m''(0)$.
+    \item Find $\E(\tau)$, $\Var(\tau)$ using $m'(0)$ and $m''(0)$. You can do the last point without any previous point. 
+  \end{enumerate}
+
+
+
+
+\end{enumerate}
+
+
+
+
+\end{document}

@@ -3694,9 +3694,9 @@ Standard Wiener process is denoted by $W_t$.
 
 \begin{enumerate}
   \item {[10 points]} Find a function $f(t)$ such that $M_t = \exp(W_t^2 / (1+2t)) / f(t)$ is a martingale.
-  \item {[10 points]} Find the following limit in mean squared
+  \item {[10 points]} Find the limit of $X_n$ in mean squared when $n$ tends to infinity:
   \[
-  \lim_{n\to \infty} \sum_{i=1}^n (W_{ti/n} - W_{t(i-1)/n})^3  
+  X_n =  \sum_{i=1}^n (W_{ti/n} - W_{t(i-1)/n})^3  
   \]
   
   \item {[10 points]} In the framework of the Black and Scholes model find the price at $t=0$ of an asset 
@@ -3729,6 +3729,18 @@ You are free to use or not to use the following hints:
 
 
 
+\end{enumerate}
+
+
+\subsection{Stochastic calculus, hints and solutions}
+
+\begin{enumerate}
+\item Using Ito's lemma take $dM_t$. And obtain expression of the form $dM_t = A_t dt + B_t dW_t$.
+If $M_t$ is a martingale then $A_t = 0$. I believe you can be attentive and obtain the equation $f'/f = 1/(1+2t)$. 
+\item We check that $\E(X_n) = 0$, $\Var(X_n) \to 0$, so the limit of $X_n$ in mean squared is zero.
+\item Just calculate $\E_*(exp(-rT)X_T)$.
+\item x
+\item $m'(\lambda) = \E(-\tau \exp(-\lambda \tau))$, so $m'(0)= \E(-\tau)$, by the same reasoning $m''(0)=\E(\tau^2)$.
 \end{enumerate}
 
 
