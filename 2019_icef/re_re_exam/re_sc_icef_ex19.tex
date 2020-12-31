@@ -1,0 +1,176 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[top=1.5cm, left=2cm, right=2cm, bottom=1.5cm]{geometry} % размер текста на странице
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{verbatim} % для комментов
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath} % куча стандартных математических плюшек
+\usepackage{amssymb} % и символов
+\usepackage{bbm}
+
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+
+
+
+
+\usepackage{fontspec} % хз
+\usepackage{polyglossia} % для выбора языка в xelatex
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*} % списки уровня 2 будут буквами а) б) ...
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo[inline]{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет картина Последний день Помпеи}
+% команда \listoftodos — печатает все поставленные \todo'шки
+
+\usepackage{booktabs} % красивые таблицы
+% заповеди из документации:
+% 1. Не используйте вертикальные линии
+% 2. Не используйте двойные линии
+% 3. Единицы измерения помещайте в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+% \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Mathematics, retake exam}
+\chead{}
+\rhead{2020-02-03}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+
+
+
+%% эконометрические сокращения
+\def \hb{\hat{\beta}}
+\DeclareMathOperator{\sVar}{sVar}
+\DeclareMathOperator{\sCov}{sCov}
+\DeclareMathOperator{\sCorr}{sCorr}
+
+\def \1{\mathbbm{1}}
+
+\def \hs{\hat{s}}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \he{\hat{\varepsilon}}
+\def \v1{\vec{1}}
+\def \cN{\mathcal{N}}
+\def \e{\varepsilon}
+\def \z{z}
+
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\plim}{plim}
+
+%% лаг
+\renewcommand{\L}{\mathrm{L}}
+
+
+\begin{document}
+
+\subsubsection*{Stochastic calculus part}
+
+Here $W_t$ always denotes the standard Wiener process.
+
+\vspace{10pt}
+
+\begin{enumerate}
+
+
+\item (10 points) Find $\E(W_6^2|W_4)$ and $\P(W_6>0|W_4)$.
+
+Hint: the answer may contain the normal cumulative distribution function.
+
+\item (10 points) I wait until Wiener process will hit the level $4$ or the level $-3$, that is up to the moment $\tau=min\{t|W_{t}=4 \cup W_{t}=-3\}$.
+
+Find $\P(W_{\tau}=4)$ and $\E(\tau)$.
+
+Hint: you may consider martingales $W_{t}$, $W_{t}^2-t$
+
+
+\item (10 points) The process $X_t$ is defined as
+\[
+X_{t}=\begin{cases}
+1, & t\in[0;1) \\
+-2, & t\in[1;2) \\
+W_{1.5},& t\in[2;\infty) \\
+\end{cases}
+\]
+
+\begin{enumerate}
+\item Explicitely find $Z_t = \int_{0}^{t}X_{u}dW_{u}$
+\item Find $\E(Z_t)$ and $\Var(Z_t)$
+\end{enumerate}
+
+
+\item (10 points) Find the price of the «Asset-or-nothing» call option at time $t=0$ in the framework of Black and Scholes model. The risk-free interest rate is equal to $r$. The volatility of the share is equal to $\sigma$. The current share price is $S_0$. The «Asset-or-nothing» call option pays you at fixed time $T$ the sum $S_T$ if $S_T$ is higher than the strike price $K$ or nothing otherwise.
+
+Hint: the correct answer will contain the normal cumulative distribution function $F()$.
+
+\item (20 points) Solve the stochastic differential equation
+\[
+dX_t = X_t dt + 2X_t dW_t + 3 dt + 4 dW_t, \quad X_0 = 1.
+\]
+
+You may use or not use the following guiding steps:
+
+\begin{enumerate}
+\item Using substitution $S_t = \ln Y_t$ solve a simplier equation
+\[
+dY_t = Y_t dt + 2Y_t dW_t
+\]
+\item Represent $X_t$ as $X_t = Y_t \cdot Z_t$ and write down the equation for $dZ_t$.
+\item Solve the equation for $Z_t$.
+\item Finalise the solution and find $X_t$.
+\end{enumerate}
+
+\end{enumerate}
+
+%\begin{center}
+%\includegraphics[width=12cm]{correlation.png}
+%\end{center}
+
+
+
+\end{document}

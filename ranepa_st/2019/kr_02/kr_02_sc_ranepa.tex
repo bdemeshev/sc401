@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[13pt]{article}
 
 
 \usepackage{amsmath, amssymb}
@@ -27,10 +27,10 @@
 \pagestyle{fancy}
 \lhead{Стохастический анализ}
 \chead{}
-\rhead{2018-01-18, праздник номер два :)}
+\rhead{2020-01-16, праздник номер два :)}
 \lfoot{}
 \cfoot{}
-\rfoot{\thepage/\pageref{LastPage}}
+\rfoot{} % {\thepage/\pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -95,46 +95,52 @@
 
 \begin{document}
 
-
-
-
-
 \begin{enumerate}
 
-\item Для процесса $Y_t = W_t^3\cos W_t + tW_t$ найдите $dY_t$ и выпишите ответ в полной форме записи.
+  \item Вспомним свойства броуновского движения :)
+  \begin{enumerate}
+    \item Найдите $\E(W_3 | W_1)$, $\Var(W_3 | W_1)$;
+    \item Найдите $\E(W_1 | W_3)$, $\E(W_1 | \mathcal{F}_3)$, $\Var(W_1 | W_3)$, $\Var(W_1 | \mathcal{F}_3)$;
+    \item Найдите $\E(W_3^3 | W_1)$, $\E(W_1^3 | W_3)$.
+  \end{enumerate}
+  
 
-\item Для процесса $Y_t = f(t) \exp(t+W_t)$ найдите $dY_t$ и подберите функцию $f(t)$ так, чтобы процесс $Y_t$ был мартингалом.
+  \item Рассмотрим процесс $C_t = W_t^3 + 7 W_t + 5 + d\cdot t\cdot W_t$.
+  \begin{enumerate}
+    \item Найдите $dC_t$.
+    \item При каких значениях $d$ процесс $C_t$ будет мартингалом?
+    \item Для полученного значения $d$ найдите $\Cov(C_t, \int W^2_u dW_u)$.
+  \end{enumerate}
 
+  \item Рассмотрим процесс $Y_t = \exp(\sigma W_t + bt)$. 
+  \begin{enumerate}
+    \item Найдите $dY_t$.
+    \item Как должны быть связаны $b$ и $\sigma$, чтобы $Y_t$ был мартингалом?
+    \item Найдите $\E(\exp(\sigma W_t))$.
+  \end{enumerate}
+  
 
-\item Найдите $\E(\int_0^t W_s \cos s dW_s)$ и $\Var(\int_0^t W_s \cos s dW_s)$
-
-\item Для броуновского движения $W_t$ определим величину $Y$ равную единице, если $W_2>0$, и нулю иначе. Найдите $\Cov(Y,W_3)$, $\Cov(Y, W_1)$.
-
-\item The process $X_t$ is given by
-\[
-  X_t = 2017 + t^2 W_t^2 + \int_0^t u \, dW_u
-\]
+  \item Рассмотрим процесс $Y_t = W_t + 2t$. Пусть $\tau$ — первый момент времени, когда $W_t$ окажется равным $5$. 
 \begin{enumerate}
-  \item Find $dX_t$;
-  \item Is $X_t$ a martingale?
-  \item Find $\E(X_t)$.
+  \item Пусть $\alpha$ — произвольная константа, найдите такую функцию $f(t)$, 
+  что процесс $M_t = f(t)\exp(\alpha Y_t)$ является мартингалом. 
+  \item Используя теорему Дуба найдите $\E(\exp(-s \tau))$ для произвольной константы $s$. 
 \end{enumerate}
 
-\item The process $Y_t$ is given by $Y_t=2W_t+5t$. The stopping time $\tau$ is given by $\tau=\min\{t|Y_t^2=100\}$. Find the distribution of the random variable $Y_\tau$ and the expected value $\E(\tau)$.
+Подсказка: для первого пункта найдите $dM_t$ и что-то там к чему-то там приравняйте :)
+
+\item Эта задача объясняет, для чего искать такую полезную штуку, как $\E(\exp(-s \tau))$.
+При этом ничего из предыдущей задачи не используется :) Итак, пусть $m(s) = \E(\exp(-s \tau))$.
+\begin{enumerate}
+  \item Найдите $m'(s)$, $m'(0)$, $m''(s)$, $m''(0)$.
+  \item Известно, что $m'(0)= -5$, а $m''(0)=100$, найдите $\E(\tau)$ и $\Var(\tau)$.
+\end{enumerate}
 
 
-Hint: you may find the martingales $a^{Y_t}$ and $Y_t-f(t)$ useful
-
-
-\item Consider the framework of the Black and Scholes model. You agreed with Warren Buffett that at fixed time $T$ he will pay you the strange sum
-\[
-X_T = \ln S_T \cdot \ln S_{T/2},
-\]
-where $S_t$ is the price of a share.
-
-What is the non-arbitrage price $X_0$ of this agreement?
-
-
+\item Рассмотрим модель Блэка-Шоулза с параметрами $S_0$, $\mu$, $\sigma$, $r$.
+  
+Найдите цену актива $X_0$, если известно, что в момент времени $T=2$ актив выплачивает 
+сумму равную $X_2 = S_1 + 6 \ln S_2$.
 
 
 \end{enumerate}
