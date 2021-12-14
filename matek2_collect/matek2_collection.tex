@@ -3820,16 +3820,13 @@ Short rules: online with proctoring, 120 minutes, A4 cheat sheet and calculator 
     with equal probabilities. 
 
     Let $\tau$ be the first moment of time when $|S_t| = 100$.
-    Let's denote by $Z$ the indicator that $S_\tau = 100$.
 
     \begin{enumerate}
         \item Find $f(\lambda)$ such that $M_t = f(\lambda)^t\exp(\lambda S_t)$ is a martingale.
-        \item Using Doob's optional stopping time theorem obtain
-        an equation for $\E(Zf(\lambda)^\tau)$ and $\E((1-Z)f(\lambda)^\tau)$.
-        \item Solve for these two expected values.
-        \item Find $\E(f(\lambda)^\tau)$.
-        \item Find $h(\alpha) = \E(-\alpha \tau)$ for arbitrary $\alpha$.
-        \item Find $h'(0)$, $h''(0)$ and hence $\E(\tau^2)$.
+        \item Are $S_{\tau}$ and $\tau$ independent?
+        \item Using Doob's optional stopping time theorem obtain $q(\lambda) = \E(f(\lambda)^{\tau})$.
+        \item By explicitely finding $G(f) = \E(f^{\tau})$ or otherwise find $G'(1)$.
+        \item Express $\E(\tau)$ in terms of $G'(1)$.
     \end{enumerate}
 
     Hint: you may not check technical conditions of Doob's optional stopping time theorem.
@@ -3854,24 +3851,12 @@ Short rules: online with proctoring, 120 minutes, A4 cheat sheet and calculator 
 $\E(\min\mid \max)$ = 3 points
 $\E(\max\mid \min)$ = 3 points 
 
-\item 6a: 8 points:
-martingale equation = 1 point, 
-simplify this equation of obtain equation for $f(\lambda)$ and $\E\exp(\lambda Z_t)$ = 3 points,
-correct expected value of $\E\exp(\lambda Z_t)$ = 3 points,
-solution for $f(\lambda)$ = 1 point (provided the equation is correct)
-
-6b: 5 points 
-2 points for unique equation 
-3 points for the second equation
-
-6c: 2 points (provided equations are correct)
-
-6d: 1 point
-
-6e: 1 point 
-
-6f: 3 points 
-
+\item \begin{enumerate}
+  \item $f(\lambda) = 2/(\exp(\lambda) + \exp(-\lambda))$.
+  \item Yes. Possible argument: if you multiply $S_t$ by $(-1)$ the distribution of $\tau$ will be unaffected, 
+  but $S_{\tau}$ will be multiplied by $(-1)$. 
+  \item $G'(1) = \E(\tau f^{\tau-1}) = \E(\tau)$.
+\end{enumerate}
 \end{enumerate}
 
 
