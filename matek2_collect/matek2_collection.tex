@@ -1,3 +1,4 @@
+% arara: xelatex
 \documentclass[12pt, a4paper]{article}
 
 \input{title_bor}
@@ -3858,6 +3859,111 @@ $\E(\max\mid \min)$ = 3 points
   \item $G'(1) = \E(\tau f^{\tau-1}) = \E(\tau)$.
 \end{enumerate}
 \end{enumerate}
+
+\section{2021 Fall}
+
+\subsection{Exam, 2021-12-21}
+
+
+\begin{enumerate}
+
+  \item (10 points) Ded Moroz would like to receive one share at time $T$ if $S_T > S_{T/2}$ and nothing otherwise.
+  
+  Assume the framework of Black and Scholes model, $S_t$ is the share price, $r$ is the risk free rate,
+  $\sigma$ is the volatility. 
+
+  How much Ded Moroz should pay now at $t=0$?
+  
+  \item (10 points) Let $X_0 = 0.2021$. Next values of $X_t$ and $Y_t$ are defined recursively. 
+  The filtration is given by $\mathcal{F}_t =\sigma(X_0, \ldots, X_t)$.
+  
+  The random variable $Y_t$ given $\mathcal{F}_{t-1}$ has Bernoulli distribution with $\P(Y_t = 1 \mid \mathcal{F}_{t-1}) = X_{t-1}$.
+  And $X_t = (Y_t + X_{t-1}) / 2$. 
+
+  \begin{enumerate}
+      \item Check whether $X_t$ is a martingale. 
+      \item The sequence $(X_t)$ converges almost surely (you don't need to prove this). 
+      What is the distribution of the limit?
+  \end{enumerate}
+
+  \item (10 points) Consider two integrals: $I_t = \int_0^t W_u^2 dW_u$ and $J_t = \int_0^t W_u^2 du$.
+  
+  \begin{enumerate}
+      \item Find $\E(I_t)$ and $\E(J_t)$.
+      \item Find $\Var(I_t)$ and $\Var(J_t)$. 
+  \end{enumerate}
+  
+  \item (10 points) You pick up cards one by one from a well shuffled deck of 52 cards. 
+  Let $X_i$ be an indicator variable, equal to one if the card number $i$ is a Queen, 
+  and zero otherwise. 
+
+  Let $Y_i = \E(X_{52} \mid X_1, X_2, \ldots, X_i)$.
+
+  Find the covariance $\Cov(Y_{50}, Y_{51})$.
+
+  \item (10 points) Imagine the share price satisfies the equation 
+  \[
+  dS_t = S_t dt + \sqrt{S_t} dW_t, \quad S_0 = 1. 
+  \]
+
+  Find all transformations $Y_t = h(S_t)$ such that $Y_t$ is a martingale. 
+
+  \item (20 points) Consider two stopping times: $U = \min \{ t \mid W_t = 2 \}$ and $D = \min \{t \mid W_t = -1\}$. 
+  
+  The ultimate goal of this problem is to find $M(s) = \E(e^{-s U} \mid U < D)$
+  and explain how to obtain $\E(U \mid U<D)$ and $\Var(U \mid U<D)$. 
+
+  You may use or not use the following guiding steps. 
+  \begin{enumerate}
+      \item (3 points) Is $W_t$ a martingale? Using optional stopping time theorem find $\P(U < D)$.
+      \item (3 points) Is $\exp(a W_t - a^2 t/2)$ a martingale? State the equation that follows from optional stopping time theorem. 
+      \item (3 points) From the equation obtained previously get a system of two equations by considering two values of $a$: 
+      $a=\sqrt{2s}$ and $a=-\sqrt{2s}$.
+      \item (5 points) Find $\E(e^{-sU} \cdot I(U < D))$ where $I$ is indicator of the corresponding event. 
+      \item (3 points) Find the function $M(s) = \E(e^{-s U} \mid U < D)$.
+      \item (3 points) Explain how to find $\E(U \mid U < D)$ and $\Var(U \mid U < D)$ using conditional moment generating function. 
+      (You don't need to do actual calculations).
+  \end{enumerate}
+
+  You may not check technical conditions of Doob's optional stopping time theorem.
+  
+\end{enumerate}
+
+
+\subsection{Marking scheme, 2021-12-21}
+
+\begin{enumerate}
+  \item One dollar and not one share has been considered: -3 points. 
+  The random variable $S_T$ present in final answer: -5 points. 
+  Variables $S_T$ and indicator assumed independent: -3 points. 
+
+  \item 2a = 5 points, 2b = 5 points.
+
+  \item $\E(I_t)$ = 2 points, $\E(J_t)$ = 3 points,  $\Var(I_t)$ = 2 points, $\Var(J_t)$ = 3 points.
+  
+  \item 
+  \begin{itemize}
+    \item Possible values of $Y_{51}$: 2 points;
+  \item Possible values of $Y_{50}$: 2 points; 
+  \item Table of probabilities: 3 points; 
+  \item $\E(Y_{51})$: 1 point; 
+  \item $\E(Y_{51})$: 1 point; 
+  \item Covariance: 1 point.
+  \end{itemize}
+  
+  
+  \item 
+  \begin{itemize}
+    \item correct differential equation for $h$: 6 points;
+    \item solution of differential equation: 4 points;
+    \item common error, $1/2$ instead of $2$: -2 points. 
+  \end{itemize}
+  
+  \item Points assigned in the text. 
+  
+\end{enumerate}
+
+
 
 
 \end{document}
