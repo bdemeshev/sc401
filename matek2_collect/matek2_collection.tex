@@ -3921,7 +3921,7 @@ $\E(\max\mid \min)$ = 3 points
       $a=\sqrt{2s}$ and $a=-\sqrt{2s}$.
       \item (5 points) Find $\E(e^{-sU} \cdot I(U < D))$ where $I$ is indicator of the corresponding event. 
       \item (3 points) Find the function $M(s) = \E(e^{-s U} \mid U < D)$.
-      \item (3 points) Explain how to find $\E(U \mid U < D)$ and $\Var(U \mid U < D)$ using conditional moment generating function. 
+      \item (3 points) Explain how to find $\E(U \mid U < D)$ and $\Var(U \mid U < D)$ using $M(s)$. 
       (You don't need to do actual calculations).
   \end{enumerate}
 
@@ -3963,7 +3963,150 @@ $\E(\max\mid \min)$ = 3 points
   
 \end{enumerate}
 
+\section{2022 Fall}
 
+\subsection{Exam, 2022-12-29}
+
+Rules: 120 minutes, A4 cheat sheet and calculator are ok, $W_t$ denotes a Wiener process,
+10 points for each problem.
+
+\begin{enumerate}
+
+  %    \item Consider $X_t = \int_0^t W_u^3 dW_u + \int_0^t (W_u^3 + 3W_u u ) du - W_t^3 \cdot t$.
+  
+  %\begin{enumerate}
+  %    \item Find $dX_t$ and the corresponding full form. 
+  %    \item Is $X_t$ a martingale?
+  % \end{enumerate}
+  
+  \item Consider $X_t = \exp(-2W_t - 2t)$.
+  \begin{enumerate}
+      \item Find $dX_t$. Write the corresponding full form. Is $X_t$ a martingale?
+      \item Find $\E(X_t)$ and $\Var(X_t)$.
+      \item Find $\int_0^t X_u dW_u$.
+  \end{enumerate}
+  
+  
+  \item Let $(W_t)$ be a Wiener process.
+  \begin{enumerate}
+      \item Find $\E(W_5 W_4 \mid W_4)$, $\Var(W_5 W_4 \mid W_4)$.
+      \item Find $\E(W_5 W_4 W_3 \mid W_4)$, $\Var(W_5 W_4 W_3 \mid W_4)$.
+  \end{enumerate}
+  
+  \item Winnie-the-Pooh starts at zero of the real line. 
+  Every minute he moves left by one with probability $0.2$, right by one with probability $0.2$ 
+  or does not move and eats a honey-pot with probability $0.6$. 
+  
+  
+  Let $X_t$ be the coordinate of Winnie at time $t$. Rabbit's hole has x-coordinate $6$ and Owl lives at $(-4)$,
+  let $\tau$ be the first moment when Winnie visits Owl or Rabbit, $\tau = \min\{t \mid X_t = 6 \text{ or } X_t = -4\}$.
+  
+  \begin{enumerate}
+      \item Is $X_t$ a martingale?
+      \item Find a constant $a$ such that $Y_t = X_t^2 - at$ is a martingale. 
+      \item Find $\P(X_{\tau} = 6)$ and $\E(\tau)$.
+  \end{enumerate}
+  
+  Hint: you don't need to check technical conditions of Doob's optional stopping theorem in point (c). 
+  
+  \item Consider the Vasicek interest rate model 
+  \[
+  dR_t = (0.05 - R_t) dt + dW_t, \quad R_0 = 0.07.    
+  \]
+  \begin{enumerate}
+      \item Write the same models in full form with integrals. 
+      \item Let $b_t = \E(R_t)$. Find $b_t$ and sketch it. 
+  \end{enumerate}
+  
+  Hint: to find $b_t$ take expected value of both sides of the full form and solve the ordinary differential equation. 
+  
+      \item Consider two-period binomial model with initial share price $S_0 = 600$, 
+      Up and down multipliers are $u=1.2$, $d=0.8$, risk-free interest rate is $r = 0.05$ per period. 
+      
+      Consider an option that pays you $X_2 = 100$ at $T=2$ if $S_2 > S_1$ and nothing otherwise. 
+      
+      \begin{enumerate}
+          \item Find the risk neutral probabilities. 
+          \item Find the current price $X_0$ of the asset. 
+          \item How much shares should I have at $t=1$ in the «down» state of the world to replicate the option?
+      \end{enumerate}
+      
+      
+      \item  Consider Black and Scholes model in continuous time with risk-free interest rate $r$, 
+      volatility $\sigma$, initial share price $S_0$ and exponential growth rate of expected share price $\mu$. 
+  
+      \begin{enumerate}
+          \item Let's denote by $\P$ the real probability and by $\P^*$ the risk-neutral probability. 
+          Find $\P(S_2 > S_1)$ and $\P^*(S_2 > S_1)$.
+          \item An option pays you the sum $X_2 = \sqrt{S_1}$ at $T=2$. 
+          Find the non-arbitrage price $X_0$ of the option. 
+      \end{enumerate}
+  
+      Hint: the answers may contain the standard normal cumulative distribution function $F()$.
+  
+      
+  
+      
+  \end{enumerate}
+
+\subsection{Marking scheme, 2022-12-29}
+
+\begin{enumerate}
+  \item Process $X_t$ is a martingale as
+  \[
+    dX_t = -2 \exp(-2W_t - 2t) dW_t.
+  \]
+  Full form:
+  \[
+  X_t = 1 + \int_0^t (-2)\exp(-2W_u - 2u) dW_u,  
+  \]
+  Hence, $\E(X_t) = 1$, $\Var(X_t) = \exp(4t) - 1$.
+  \[
+    \int_0^t \exp(-2W_u - 2u) dW_u = \frac{1}{2} - \frac{1}{2} \exp(-2W_t - 2t).
+  \]
+
+  Marking: 3 points for $dX_t$, 1 point for martingale, 1 point for full form, 1 point for $\E(X_t)$, 2 points for variance and 2 points for integral.
+
+  \item 2 points for each expected value, 3 points for each variance:
+  $\E(W_5 W_4 \mid W_4) = W_4^2$, $\Var(W_5 W_4 \mid W_4) = W_4^2$.
+
+  $\E(W_5 W_4 W_3 \mid W_4) = \frac{3}{4}W_4^3$, $\Var(W_5 W_4 W_3 \mid W_4) = \frac{21}{16}W_4^4 + \frac{3}{4}W_4^2$.
+  
+  \item Process $X_t$ is a martingale (2 points); $\alpha = 0.4$ (3 points), $\P(X_{\tau} = 6)=0.4$ (2 points), 
+  $\E(\tau)=60$ (3 points).
+  \item 2 points for full form
+  \[
+    R_t = 0.07 + \int_0^t (0.05 - R_u) du + W_t.
+  \]
+  Integral equation for $b_t$ (or otherwise):
+  \[
+  b_t = 0.07 + \int_0^t (0.05 - b_u) du  
+  \]
+  Differential equation:
+  \[
+  b'_t = 0.05 - b_t  
+  \]
+  And $b_t = 0.05 + 0.02 \exp(-t)$.
+
+  6 points for $b_t$ and 2 points for a sketch.
+  \item 2 points for probabilities $p_u^* = 5/8$, $p_d^* = 3/8$;
+  4 points for  
+  \[
+  X_0 = 100 \cdot \frac{5}{8} \cdot \frac{1}{(1+r)^2} \approx 56.7 
+  \]
+  4 points for 
+  \[
+  \alpha =   \frac{X_2^{du} - X_2^{dd}}{S_2^{du} - S_2^{dd}} = \frac{100}{192} \approx 0.52
+  \]
+  \item 2 points for each probability, 6 points for $X_0$;
+  \[
+  \P(S_2 > S_1) = F\left(\frac{\mu}{\sigma} - \frac{\sigma}{2} \right), \quad   \P^*(S_2 > S_1) = F\left(\frac{r}{\sigma} - \frac{\sigma}{2} \right);
+  \]
+  \[
+  X_0 = \sqrt{S_0} \exp(-3r/2 - \sigma^2/8);  
+  \]
+
+\end{enumerate}
 
 
 \end{document}
