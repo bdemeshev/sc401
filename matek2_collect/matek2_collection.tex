@@ -4060,7 +4060,11 @@ Rules: 120 minutes, A4 cheat sheet and calculator are ok, $W_t$ denotes a Wiener
   \[
   X_t = 1 + \int_0^t (-2)\exp(-2W_u - 2u) dW_u,  
   \]
-  Hence, $\E(X_t) = 1$, $\Var(X_t) = \exp(4t) - 1$.
+  Hence, $\E(X_t) = 1$.
+  Use Ito's isometry for variance:
+  \[
+    \Var(X_t) = \int_0^t \E ((-2)^2 \exp(-4W_u-4u)) du = \int_0^t 4\exp(4u) du = \exp(4t) - 1.
+  \]
   \[
     \int_0^t \exp(-2W_u - 2u) dW_u = \frac{1}{2} - \frac{1}{2} \exp(-2W_t - 2t).
   \]
@@ -4070,15 +4074,22 @@ Rules: 120 minutes, A4 cheat sheet and calculator are ok, $W_t$ denotes a Wiener
   \item 2 points for each expected value, 3 points for each variance:
   $\E(W_5 W_4 \mid W_4) = W_4^2$, $\Var(W_5 W_4 \mid W_4) = W_4^2$.
 
+For point (b) remark that $W_5 = W_4 + X$ and $W_3 = \frac{3}{4}W_4 + Y$,
+where $X$, $Y$ and $W_4$ are independent normal with $\Var(X) = 1$, $\Var(Y) = 3 - \frac{9}{4} = \frac{3}{4}$.
+
   $\E(W_5 W_4 W_3 \mid W_4) = \frac{3}{4}W_4^3$, $\Var(W_5 W_4 W_3 \mid W_4) = \frac{21}{16}W_4^4 + \frac{3}{4}W_4^2$.
   
-  \item Process $X_t$ is a martingale (2 points); $\alpha = 0.4$ (3 points), $\P(X_{\tau} = 6)=0.4$ (2 points), 
-  $\E(\tau)=60$ (3 points).
+  \item Process $X_t$ is a martingale (2 points); for $\alpha = 0.4$ (3 points) $Y_t =X_t^2 - 0.4t$ is a martingale.
+  
+  Using Doob's theorem and two martingales we get two equations, $\E(X_{\tau}) = X_0 = 0$,
+  $\E(X_{\tau}^2) = 0.4 \E(\tau)$.
+
+  Hence, $\P(X_{\tau} = 6)=0.4$ (2 points) and $\E(\tau)=60$ (3 points).
   \item 2 points for full form
   \[
     R_t = 0.07 + \int_0^t (0.05 - R_u) du + W_t.
   \]
-  Integral equation for $b_t$ (or otherwise):
+  Integral equation for $b_t$:
   \[
   b_t = 0.07 + \int_0^t (0.05 - b_u) du  
   \]
@@ -4086,9 +4097,11 @@ Rules: 120 minutes, A4 cheat sheet and calculator are ok, $W_t$ denotes a Wiener
   \[
   b'_t = 0.05 - b_t  
   \]
-  And $b_t = 0.05 + 0.02 \exp(-t)$.
+  And $b_t = 0.05 + 0.02 \exp(-t)$. 
+  
+  To find $b_t$ one may also solve the SDE and take the expectation.
 
-  6 points for $b_t$ and 2 points for a sketch.
+  Marking: 6 points for $b_t$ and 2 points for a sketch.
   \item 2 points for probabilities $p_u^* = 5/8$, $p_d^* = 3/8$;
   4 points for  
   \[
