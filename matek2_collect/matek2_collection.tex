@@ -3,17 +3,27 @@
 
 \input{title_bor}
 
+\newcommand{\RR}{\mathbb{R}}
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cN}{\mathcal{N}}
 \renewcommand{\FF}{\cF}
 \renewcommand{\ee}{\varepsilon}
 
+% TODO: should move to physics package, obsolete ds, dx, dt
+% TODO: clean-up of old notes:
+% TODO: replace | by mid
+% TODO: clean ugly imported from word part
+% TODO: clean up title_bor part
+% TODO: separate exam collection
 \newcommand{\ds}{\displaystyle}
 \newcommand{\dx}{\mathrm{d}x}
+\newcommand{\dt}{dt}
 \newcommand{\dy}{\mathrm{d}y}
 \newcommand{\dz}{\mathrm{d}z}
 \newcommand{\du}{\mathrm{d}u}
 \newcommand{\dv}{\mathrm{d}v}
+
+
 
 
 \title{ICEF master program. Maths for economists. \\Exam collection.}
@@ -157,13 +167,13 @@ f_{Y|X}(x,y)=\frac{1}{x} e^{-\frac{1}{x}y}
 
 So,
 \[
-\E(Y|X) = \int _{-\infty}^{+\infty}  y { f_{Y|X}(X,y)} dy=  \int _{0}^{+\infty} y  \frac{1}{X} e^{-\frac{1}{X}y} dy =  \left( {\frac{1}{X} }\right) ^{-1} = X
+\E(Y|X) = \int _{-\infty}^{+\infty}  y { f_{Y|X}(X,y)} dy=  \int _0^{+\infty} y  \frac{1}{X} e^{-\frac{1}{X}y} dy =  \left( {\frac{1}{X} }\right) ^{-1} = X
 \]
 
 
 Expected value:
 \[
-\E(Y) =\E(\E(Y|X)) =\E(X) =  \int _{-\infty}^{+\infty}x f_X(x) \, dx=  \int _{0}^{+\infty} x \lambda e^{-\lambda x} \, dx =\lambda^{-1}
+\E(Y) =\E(\E(Y|X)) =\E(X) =  \int _{-\infty}^{+\infty}x f_X(x) \, dx=  \int _0^{+\infty} x \lambda e^{-\lambda x} \, dx =\lambda^{-1}
 \]
 
 Variance:
@@ -228,8 +238,8 @@ Answer:
 
 \[
 \begin{array}{l}
-X_t=x_0+x_0\int_{0}^{t} a e^{(a+0.5)u} \cos W_u du - x_0\int_{0}^{t} e^{(a+0.5)t}\sin W_u \,dWu\\
-Y_t=x_0\int_{0}^{t} a e^{(a+0.5)u} \sin W_u du +x_0\int_{0}^{t} e^{(a+0.5)t}\cos W_u \, dWu
+X_t=x_0+x_0\int_0^{t} a e^{(a+0.5)u} \cos W_u du - x_0\int_0^{t} e^{(a+0.5)t}\sin W_u \,dWu\\
+Y_t=x_0\int_0^{t} a e^{(a+0.5)u} \sin W_u du +x_0\int_0^{t} e^{(a+0.5)t}\cos W_u \, dWu
 \end{array}
 \]
 
@@ -244,7 +254,7 @@ dD_t=2X_t \, dX_t+2Y_t \, dY_t=2X_t((f_t'(t)-0.5f(t))\cos W_t \, dt -f(t)\sin W_
 \end{multline*}
 
 \[
-D_t=D_0+\int_{0}^{t} 2a x_0 e^{(2a+1)u }du= x_0^2+\frac{2ax_0}{2a+1}(e^{(2a+1)t}-1)
+D_t=D_0+\int_0^{t} 2a x_0 e^{(2a+1)u }du= x_0^2+\frac{2ax_0}{2a+1}(e^{(2a+1)t}-1)
 \]
 
 \end{enumerate}
@@ -348,39 +358,39 @@ Answer:
 
 \item This is the autoconversion from the ugly word:
 
-\[X_{0} = E_{\tilde{p}}\left( exp\left( - rT \right)X_{T}\left| \cF_{0} \right.\  \right)\]
+\[X_0 = E_{\tilde{p}}\left( exp\left( - rT \right)X_{T}\left| \cF_0 \right.\  \right)\]
 
 \[\begin{matrix}
 X_{T} = Min\left\{ M,\ lnS_{T} \right\} \\
 S_{T} = S_{0}\exp\left( \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \right)\ ;\ {\tilde{W}}_{T}\sim N\left( 0,T \right) \\
 \begin{matrix}
-\ln S_{T} = lnS_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \\
-X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \cF_{0} \right.\  \right) = M*\tilde{p}\left( \ln S_{T} > M \right) + \int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} \\
+\ln S_{T} = lnS_0 + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} \\
+X_0 = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \cF_0 \right.\  \right) = M*\tilde{p}\left( \ln S_{T} > M \right) + \int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} \\
 \begin{matrix}
-1)\ \tilde{p}\left( \ln S_{T} > M \right) = \tilde{p}\left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} > M \right) = \left\lbrack Z = \frac{{\tilde{W}}_{T}}{\sqrt{T}}\sim N(0,1) \right\rbrack = \\
- = \tilde{p}\left( Z < \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) = \Phi\left( \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) \\
+1)\ \tilde{p}\left( \ln S_{T} > M \right) = \tilde{p}\left( \ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma{\tilde{W}}_{T} > M \right) = \left\lbrack Z = \frac{{\tilde{W}}_{T}}{\sqrt{T}}\sim N(0,1) \right\rbrack = \\
+ = \tilde{p}\left( Z < \frac{\ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) = \Phi\left( \frac{\ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) \\
 \end{matrix} \\
 \end{matrix} \\
 \end{matrix}\]
 
 \[\begin{matrix}
 \Phi - cummulative\ standard\ normal\ distribution \\
-2)\ M = lnS_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}m\ \ ;\ \ m = \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \\
+2)\ M = lnS_0 + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}m\ \ ;\ \ m = \frac{M - lnS_0 - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \\
 \begin{matrix}
-\int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} = \int_{- \infty}^{m}{\left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}Z \right)\frac{1}{\sqrt{2\pi}}\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}} =} \\
+\int_{- \infty}^{M}{\ln S_{T}*\tilde{p}\left( \ln S_{T} \right)\text{dln}S_{T}} = \int_{- \infty}^{m}{\left( \ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T + \sigma\sqrt{T}Z \right)\frac{1}{\sqrt{2\pi}}\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}} =} \\
 \begin{matrix}
 \begin{matrix}
- = \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) + \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\int_{- \infty}^{m}{Z\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}}} = \\
+ = \left( \ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_0 - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) + \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\int_{- \infty}^{m}{Z\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}}} = \\
 \left\lbrack \int_{}^{}{Z\exp{\left( - \frac{Z^{2}}{2} \right)\text{dZ}} =}\begin{bmatrix}
 Let\ s = - \frac{Z^{2}}{2}\  \\
 ds = - ZdZ \\
 dZ = - \frac{\text{ds}}{Z} \\
 \end{bmatrix} = \int_{}^{}{\left( - e^{s} \right)\text{ds}} = - e^{s} = - \exp\left( - \frac{Z^{2}}{2} \right) \right\rbrack \\
- = \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) \\
+ = \left( \ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_0 - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) \\
 \end{matrix} \\
 \begin{matrix}
-3)\ X_{0} = M\Phi\left( \frac{\ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) + \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \\
- - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = M + \left( \ln S_{0} + \left( r - \frac{\sigma^{2}}{2} \right)T - M \right)\Phi\left( \frac{M - lnS_{0} - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = \\
+3)\ X_0 = M\Phi\left( \frac{\ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T - M}{\sigma\sqrt{T}} \right) + \left( \ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T \right)\Phi\left( \frac{M - lnS_0 - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \\
+ - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = M + \left( \ln S_0 + \left( r - \frac{\sigma^{2}}{2} \right)T - M \right)\Phi\left( \frac{M - lnS_0 - \left( r - \frac{\sigma^{2}}{2} \right)T}{\sigma\sqrt{T}} \right) - \frac{\sigma\sqrt{T}}{\sqrt{2\pi}}\exp\left( - \frac{m^{2}}{2} \right) = \\
 \end{matrix} \\
 \end{matrix} \\
 \end{matrix} \\
@@ -398,7 +408,7 @@ We need to find a price of the classic European option in dollars, while
 stock prices are in euros. K-strike price. Xt-option price at time t.
 
 \[\begin{matrix}
-X_{0} = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \cF_{0} \right.\  \right) = exp\left( - r_{\$}T \right)\int_{0}^{\infty}{X_{T}\tilde{p}\left( X_{T} \right)}dX_{T} \\
+X_0 = E_{\tilde{p}}\left( exp\left( - r_{\$}T \right)X_{T}\left| \cF_0 \right.\  \right) = exp\left( - r_{\$}T \right)\int_0^{\infty}{X_{T}\tilde{p}\left( X_{T} \right)}dX_{T} \\
 \begin{matrix}
 \begin{matrix}
 X_{T} = U_{T}S_{T} - K\ if\ U_{T}S_{T} > K,\ 0\ otherwise \\
@@ -422,7 +432,7 @@ X_{T} = U_{T}S_{T} - K\ if\ U_{T}S_{T} > K,\ 0\ otherwise \\
 \end{matrix} \\
 \begin{matrix}
 \begin{matrix}
-4)\ X_{0} = exp\left( - r_{\$}T \right)\int_{a}^{\infty}{\left( {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) - K \right)\tilde{p}\left( Z \right)}\text{dZ} \\
+4)\ X_0 = exp\left( - r_{\$}T \right)\int_{a}^{\infty}{\left( {U_{0}S}_{0}\exp\left( \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T + Z\sqrt{\left( \sigma^{2} + b^{2} \right)T} \right) - K \right)\tilde{p}\left( Z \right)}\text{dZ} \\
 where\ a = - \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{\sigma^{2}}{2} - \frac{b^{2}}{2} \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \\
 \end{matrix} \\
 \begin{matrix}
@@ -457,7 +467,7 @@ where\ a = - \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_
  = U_{0}S_{0}\exp\left( \left( r_{\$} + r_{} \right)T \right)*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) \\
 \begin{matrix}
 \begin{matrix}
-X_{0} = U_{0}S_{0}\frac{\exp\left( \left( r_{\$} + r_{} \right)T \right)}{exp\left( r_{\$}T \right)}*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) - \\
+X_0 = U_{0}S_{0}\frac{\exp\left( \left( r_{\$} + r_{} \right)T \right)}{exp\left( r_{\$}T \right)}*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) - \\
  - \frac{K}{\exp\left( r_{\$}T \right)}*\Phi\left( \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} - \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \right) = \left\lbrack r_{\$} = r_{\$} + r_{} \right\rbrack = \\
 \begin{matrix}
  = U_{0}S_{0}\Phi\left( N_{1} \right) - \exp{\left( {- r}_{\$}T \right)K}\Phi\left( N_{1} - \sqrt{\left( \sigma^{2} + b^{2} \right)T} \right),\ where\ N_{1} = \frac{\ln\left( \frac{{U_{0}S}_{0}}{K} \right) + \left( r_{\$} + r_{} + \frac{1}{2}\left( \sigma^{2} + b^{2} \right) \right)T}{\sqrt{\left( \sigma^{2} + b^{2} \right)T}} \\
@@ -561,21 +571,21 @@ And \href{http://en.wikipedia.org/wiki/Coup_de_gr%C3%A2ce}{\textit{coup de grâc
 
 \item $\E(Y_t)=\E(W^3_t-tW^4_t) = \E(W^3_t)-\E(tW^4_t) = \E(W^3_t)-t \E(W^4_t)= 0 - 3t^3 = - 3t^3 $, as
 
-$\E(W^{3}_{t})= \frac{3(3-1)}{2} \int_{0}^{t} \E (W^{3-2}_{s}) ds = 0 $
+$\E(W^{3}_{t})= \frac{3(3-1)}{2} \int_0^{t} \E (W^{3-2}_{s}) ds = 0 $
 
-$\E(W^{4}_{t})= \frac{4(4-1)}{2} \int_{0}^{t} \E (W^{4-2}_{s}) ds = 6 \int_{0}^{t} s ds =3 t^2 $
+$\E(W^{4}_{t})= \frac{4(4-1)}{2} \int_0^{t} \E (W^{4-2}_{s}) ds = 6 \int_0^{t} s ds =3 t^2 $
 
 $\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2$
 
 $\E(Y^2_t)=\E(W^3_t-tW^4_t)^2=\E(W^6_t-2tW^7_t+t^2 W^8_t)= \E(W^6_t)-2t\E(W^7_t)+t^2 \E(W^8_t) = 15t^3 + 105t^6$,
 
-as $\E(W^{5}_{t})= \frac{5(5-1)}{2} \int_{0}^{t} \E (W^{5-2}_{s}) ds = 0 $
+as $\E(W^{5}_{t})= \frac{5(5-1)}{2} \int_0^{t} \E (W^{5-2}_{s}) ds = 0 $
 
-$\E(W^{6}_{t})= \frac{6(6-1)}{2} \int_{0}^{t} \E (W^{6-2}_{s}) ds = 15 \int_{0}^{t} 3s^2 ds= 15t^3 $
+$\E(W^{6}_{t})= \frac{6(6-1)}{2} \int_0^{t} \E (W^{6-2}_{s}) ds = 15 \int_0^{t} 3s^2 ds= 15t^3 $
 
-$\E(W^{7}_{t})= \frac{7(7-1)}{2} \int_{0}^{t} \E (W^{7-2}_{s}) ds = 0 $
+$\E(W^{7}_{t})= \frac{7(7-1)}{2} \int_0^{t} \E (W^{7-2}_{s}) ds = 0 $
 
-$\E(W^{8}_{t})= \frac{8(7-1)}{2} \int_{0}^{t} \E (W^{8-2}_{s}) ds = 105t^4 $
+$\E(W^{8}_{t})= \frac{8(7-1)}{2} \int_0^{t} \E (W^{8-2}_{s}) ds = 105t^4 $
 
 $\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2 = 15t^3 + 105t^6 - (-3t^3)^2= 15t^3 + 96 t^6$
 
@@ -596,12 +606,12 @@ dY_t=\frac{1}{\tau}X_t e^{\frac{t}{\tau}}dt+ e^{\frac{t}{\tau}}dX_t=
 \end{multline*}
 
 \[
-Y_t=Y_0+\int_{0}^{t} \frac{X_{\infty}}{\tau} e^{\frac{u}{\tau}}du+\int_{0}^{t} \sigma e^{\frac{u}{\tau}}dW_u=
-X_0+X_{\infty}(e^{\frac{t}{\tau}}-1)+\int_{0}^{t} \sigma e^{\frac{u}{\tau}}dW_u
+Y_t=Y_0+\int_0^{t} \frac{X_{\infty}}{\tau} e^{\frac{u}{\tau}}du+\int_0^{t} \sigma e^{\frac{u}{\tau}}dW_u=
+X_0+X_{\infty}(e^{\frac{t}{\tau}}-1)+\int_0^{t} \sigma e^{\frac{u}{\tau}}dW_u
 \]
 
 \[
-X_t=e^{-\frac{t}{\tau}}Y_t= e^{-\frac{t}{\tau}} (X_0+X_{\infty}(e^{\frac{t}{\tau}}-1)+\int_{0}^{t} \sigma e^{\frac{u}{\tau}}dW_u) =X_0 e^{-\frac{t}{\tau}} +X_{\infty}(1- e^{-\frac{t}{\tau}})+\int_{0}^{t} \sigma e^{\frac{u-t}{\tau}}dW_u
+X_t=e^{-\frac{t}{\tau}}Y_t= e^{-\frac{t}{\tau}} (X_0+X_{\infty}(e^{\frac{t}{\tau}}-1)+\int_0^{t} \sigma e^{\frac{u}{\tau}}dW_u) =X_0 e^{-\frac{t}{\tau}} +X_{\infty}(1- e^{-\frac{t}{\tau}})+\int_0^{t} \sigma e^{\frac{u-t}{\tau}}dW_u
 \]
 
 
@@ -609,7 +619,7 @@ X_t=e^{-\frac{t}{\tau}}Y_t= e^{-\frac{t}{\tau}} (X_0+X_{\infty}(e^{\frac{t}{\tau
 \E(X_t)= X_0 e^{-\frac{t}{\tau}} +X_{\infty}(1- e^{-\frac{t}{\tau}})
 \]
 \[
-\Var(X_t)= \Var( \int_{0}^{t} \sigma e^{\frac{u-t}{\tau}}dW_u )=\int_{0}^{t} \E (\sigma e^{\frac{u-t}{\tau}})^2du = \int_{0}^{t}\sigma^2 e^{\frac{2u-2t}{\tau}}du=\frac{\tau \sigma^2}{2} (1- e^{\frac{-2t}{\tau}})
+\Var(X_t)= \Var( \int_0^{t} \sigma e^{\frac{u-t}{\tau}}dW_u )=\int_0^{t} \E (\sigma e^{\frac{u-t}{\tau}})^2du = \int_0^{t}\sigma^2 e^{\frac{2u-2t}{\tau}}du=\frac{\tau \sigma^2}{2} (1- e^{\frac{-2t}{\tau}})
 \]
 
 \end{enumerate}
@@ -871,7 +881,7 @@ f(x,y)=
       \end{cases}
 \]
 First, we need to find constant c.\\
-$ 1=\int_{0}^{1} \int_{0}^{1} (ce^{x-y})dxdy=\int_{0}^{1}(-ce^{x-y})\bigg|_0^1dx=\int_{0}^{1}(-ce^{x-1}+ce^x)dx=-ce^{x-1}++ce^x\bigg|_0^1=-c+ce+\frac{c}{e}-c=1$\\
+$ 1=\int_0^{1} \int_0^{1} (ce^{x-y})dxdy=\int_0^{1}(-ce^{x-y})\bigg|_0^1dx=\int_0^{1}(-ce^{x-1}+ce^x)dx=-ce^{x-1}++ce^x\bigg|_0^1=-c+ce+\frac{c}{e}-c=1$\\
 From this simple equation we get $c=\frac{e}{(e-1)^2}$\\
 So the problem now looks like:
 \[
@@ -881,29 +891,29 @@ f(x,y)=
    0, else
 \end{cases}
 \]\\
-$E(X|Y)=\int_{0}^{1}xf(x|y)dx$, where $f(x|y)=\frac{f(x,y)}{f(y)}$\\
-$f(y)=\int_{0}^{1}f(x,y)dx=\frac{e}{(e-1)^2}(e^{1-y}-e^{-y})$\\
+$E(X|Y)=\int_0^{1}xf(x|y)dx$, where $f(x|y)=\frac{f(x,y)}{f(y)}$\\
+$f(y)=\int_0^{1}f(x,y)dx=\frac{e}{(e-1)^2}(e^{1-y}-e^{-y})$\\
 $f(x|y)=\frac{e^x}{e-1}$\\
-$E(X|Y)=\int_{0}^{1}\frac{xe^x}{e-1}dx=\frac{1}{e-1}\int_{0}^{1}xde^x=\frac{1}{e-1}(xe^x-e^x)\bigg|_0^1=\frac{1}{e-1}$\\
+$E(X|Y)=\int_0^{1}\frac{xe^x}{e-1}dx=\frac{1}{e-1}\int_0^{1}xde^x=\frac{1}{e-1}(xe^x-e^x)\bigg|_0^1=\frac{1}{e-1}$\\
 So the final answer will be $E(X|Y)=\frac{1}{e-1}$
 
 \item $\E(Y_t)=\E(W^3_t-tW^4_t) = \E(W^3_t)-\E(tW^4_t) = \E(W^3_t)-t \E(W^4_t)= 0 - 3t^3 = - 3t^3 $, as
 
-$\E(W^{3}_{t})= \frac{3(3-1)}{2} \int_{0}^{t} \E (W^{3-2}_{s}) ds = 0 $
+$\E(W^{3}_{t})= \frac{3(3-1)}{2} \int_0^{t} \E (W^{3-2}_{s}) ds = 0 $
 
-$\E(W^{4}_{t})= \frac{4(4-1)}{2} \int_{0}^{t} \E (W^{4-2}_{s}) ds = 6 \int_{0}^{t} s ds =3 t^2 $
+$\E(W^{4}_{t})= \frac{4(4-1)}{2} \int_0^{t} \E (W^{4-2}_{s}) ds = 6 \int_0^{t} s ds =3 t^2 $
 
 $\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2$
 
 $\E(Y^2_t)=\E(W^3_t-tW^4_t)^2=\E(W^6_t-2tW^7_t+t^2 W^8_t)= \E(W^6_t)-2t\E(W^7_t)+t^2 \E(W^8_t) = 15t^3 + 105t^6$,
 
-as $\E(W^{5}_{t})= \frac{5(5-1)}{2} \int_{0}^{t} \E (W^{5-2}_{s}) ds = 0 $
+as $\E(W^{5}_{t})= \frac{5(5-1)}{2} \int_0^{t} \E (W^{5-2}_{s}) ds = 0 $
 
-$\E(W^{6}_{t})= \frac{6(6-1)}{2} \int_{0}^{t} \E (W^{6-2}_{s}) ds = 15 \int_{0}^{t} 3s^2 ds= 15t^3 $
+$\E(W^{6}_{t})= \frac{6(6-1)}{2} \int_0^{t} \E (W^{6-2}_{s}) ds = 15 \int_0^{t} 3s^2 ds= 15t^3 $
 
-$\E(W^{7}_{t})= \frac{7(7-1)}{2} \int_{0}^{t} \E (W^{7-2}_{s}) ds = 0 $
+$\E(W^{7}_{t})= \frac{7(7-1)}{2} \int_0^{t} \E (W^{7-2}_{s}) ds = 0 $
 
-$\E(W^{8}_{t})= \frac{8(7-1)}{2} \int_{0}^{t} \E (W^{8-2}_{s}) ds = 105t^4 $
+$\E(W^{8}_{t})= \frac{8(7-1)}{2} \int_0^{t} \E (W^{8-2}_{s}) ds = 105t^4 $
 
 $\Var(Y_t) =\E(Y^2_t)-(\E(Y))^2 = 15t^3 + 105t^6 - (-3t^3)^2= 15t^3 + 96 t^6$
 
@@ -1053,12 +1063,12 @@ Var(W^{2}_t)=E(W^{4}_t)-E(W^{2}_t)^{2}=E(W^{4}_t)-t^2
 
 In order to compute $E(W^{4}_t)$ we use the following formula:
 \[
-E(W^{k}_t)=\frac{k(k-1)}{2}\int_{0}^{t}E(W^{k-2}_s)ds
+E(W^{k}_t)=\frac{k(k-1)}{2}\int_0^{t}E(W^{k-2}_s)ds
 \]
 
 So,
 \[
-E(W^{4}_t)=6\int_{0}^{t}E(W^{2}_s)ds=6\int_{0}^{t}sds=3t^2 \Rightarrow \Var(W^{2}_t)=3t^2-t^2=2t^2
+E(W^{4}_t)=6\int_0^{t}E(W^{2}_s)ds=6\int_0^{t}sds=3t^2 \Rightarrow \Var(W^{2}_t)=3t^2-t^2=2t^2
 \]
 
 However we know that $W_s=x$. Using the properties of Wiener process we may assume that the timer is started again from $0$. So we define $W'_{t'}=W_{t'+s}-x$.
@@ -1291,10 +1301,10 @@ And
 \item $\E(X_t)=\E(Y_t)=0$, for variance and covariance we use isometry property
 
 \[
-\Var(X_{t})=\Var\left(\int_{0}^{t}s^{3}W_{s}\,dW_{s}\right)=\int_{0}^{t}\E(s^{3}W_{s})^{2}\,ds=\int_{0}^{t}s^{7}\,ds=\frac{t^{8}}{8}
+\Var(X_{t})=\Var\left(\int_0^{t}s^{3}W_{s}\,dW_{s}\right)=\int_0^{t}\E(s^{3}W_{s})^{2}\,ds=\int_0^{t}s^{7}\,ds=\frac{t^{8}}{8}
 \]
 
-\[ \Cov(X_{t},Y_{t})=\Cov\left(\int_{0}^{t}s^{3}W_{s}dW_{s}, \int_{0}^{t}W_{s}dW_{s}\right)=\int_{0}^{t}\E(s^3W_{s}^{2})ds=\int_{0}^{t}s^{4}ds=\frac{t^{5}}{5}
+\[ \Cov(X_{t},Y_{t})=\Cov\left(\int_0^{t}s^{3}W_{s}dW_{s}, \int_0^{t}W_{s}dW_{s}\right)=\int_0^{t}\E(s^3W_{s}^{2})ds=\int_0^{t}s^{4}ds=\frac{t^{5}}{5}
 \]
 
 \item Calculate  $dY_t$. We observe that $dY_t=(4W_t^3 - 12t W_t) \, dW_t$, so $Y_t$ is a martingale and $\E(Y_7 \mid Y_2)=Y_2$.
@@ -1316,7 +1326,7 @@ Plugging in we get:
 
 The full form for $Y_{t}$:
 \[
-Y_{t}=Y_{0}+\int_{0}^{t}dW_s+\int_{0}^{t}\frac{ds}{2}=Y_{0}+W_{t}+\frac{t}{2}=\ln{X_{t}}
+Y_{t}=Y_{0}+\int_0^{t}dW_s+\int_0^{t}\frac{ds}{2}=Y_{0}+W_{t}+\frac{t}{2}=\ln{X_{t}}
 \]
 
 Now we are ready to write the solution:
@@ -1385,7 +1395,7 @@ p_{(\xi, \eta)}(s,t) = p_{(X,Y)}\left(\frac{\ds s+t}{\ds 2}, \frac{\ds s-t}{\ds 
 is a density of a vector $(\xi, \eta)$.\par
 Further,
 \[
-p_{\eta}(t) = \int\limits_{\RR}p_{(\xi, \eta)}(s,t)\mathrm{d}s = \frac{\ds \lambda e^{-\lambda|t|}}{\ds 2}
+p_{\eta}(t) = \int_{\RR}p_{(\xi, \eta)}(s,t)\mathrm{d}s = \frac{\ds \lambda e^{-\lambda|t|}}{\ds 2}
 \]
 Then the conditional density is
 \[
@@ -1393,8 +1403,8 @@ p_{(\xi | \eta)}(s|t) = \frac{\ds p_{(\xi, \eta)}(s,t)}{\ds p_{\eta}(t)} = \lamb
 \]
 And finally, denoting $z = s - |t|$, we get
 \begin{multline}
-\E(\xi|\eta) = \left.\int\limits_{\RR}s\cdot p_{(\xi|\eta)}(s|t)\mathrm{d}s\right|_{t = \eta} = \left.\int\limits_{\RR}(z + |t|)\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta}  = \\
-= \left.\int\limits_{\RR}z\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} + \left.|t|\int\limits_{\RR}\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} =  \left.\left(\frac{\ds 1}{\ds \lambda} + |t|\right)\right|_{t = \eta} = \frac{\ds 1}{\ds \lambda} + |\eta|
+\E(\xi|\eta) = \left.\int_{\RR}s\cdot p_{(\xi|\eta)}(s|t)\mathrm{d}s\right|_{t = \eta} = \left.\int_{\RR}(z + |t|)\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta}  = \\
+= \left.\int_{\RR}z\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} + \left.|t|\int_{\RR}\cdot\lambda e^{-\lambda z}\cdot I_{\{z\geqslant 0\}}\dz\right|_{t = \eta} =  \left.\left(\frac{\ds 1}{\ds \lambda} + |t|\right)\right|_{t = \eta} = \frac{\ds 1}{\ds \lambda} + |\eta|
 \end{multline}
 (the first integral is just the expectation of exponential distribution with parameter $\lambda$,\par and the second is $|t|$ times the integral of the density, which equals 1)\[\]\par
 \textbf{Answer:} $\E(X+Y| X-Y) = \frac{\ds 1}{\ds \lambda} + |X-Y|$
@@ -1407,7 +1417,7 @@ And finally, denoting $z = s - |t|$, we get
 
 
 \textbf{Problem 2 — part 1 of 2.}\par
-At first, $S_{n} = S_{0}+\sum\limits_{i = 1}^{n}\ee_{i}$, where $\{\ee_{i}\}$ is the sequence of independent random variables with\par
+At first, $S_{n} = S_{0}+\sum_{i = 1}^{n}\ee_{i}$, where $\{\ee_{i}\}$ is the sequence of independent random variables with\par
  $P(\ee_{i} = -1) = P(\ee_{i} = 1) = \frac{\ds 1}{\ds 2}$. Also denote $\FF_{n} = \sigma(\ee_{1},\ldots,\ee_{n})$.\par
 Observe that $\tau$ is really a stopping time, because at each moment of time we precisely know, are we in one of the points $\{2000, 2014\}$ or not.\par
 
@@ -1422,7 +1432,7 @@ where $q<1$.
 
 Then
 \[
-E(\tau) = \sum\limits_{n = 1}^{+\infty}P(\tau \geqslant n) \leqslant 14\sum\limits_{n = 0}^{+\infty}P(\tau \geqslant 14n+1)\leqslant 14\sum\limits_{n = 0}^{\infty}q^{n} = 14\cdot 2^{14} < \infty
+E(\tau) = \sum_{n = 1}^{+\infty}P(\tau \geqslant n) \leqslant 14\sum_{n = 0}^{+\infty}P(\tau \geqslant 14n+1)\leqslant 14\sum_{n = 0}^{\infty}q^{n} = 14\cdot 2^{14} < \infty
 \]
 as required.
 
@@ -1434,7 +1444,7 @@ E(S_{t+1}|\FF_{t}) = E(S_{t} + \ee_{t+1}|\FF_{t}) = S_{t} + E(\ee_{t+1}|\FF_{t})
 
 Further, $S_{\min\{t, \tau\}}$ is bounded in $t$: it always lies between $2000$ and $2014$. The Doob's theorem conditions are satisfied, which means that
 \[
-E(S_{\tau}) = S_{0} = 2013
+E(S_{\tau}) = S_0 = 2013
 \]
 But $E(S_{\tau}) = 2000\cdot P(S_{\tau} = 2000) + 2014\cdot P(S_{\tau} = 2014)$, which after the substitution $E(S_{\tau}) = 2013$ gives us
 
@@ -1467,41 +1477,44 @@ Then, the overall expectation $E\left(|X_{\min\{t+1, \tau\}} - X_{\min\{t, \tau\
 
 
 Then again, the conditions of the Doob's theorem are satisfied, i.e.
-$$
-E(X_{\tau}) = X_{0} = 2013^{3}
-$$\par
+\[
+\E(X_{\tau}) = X_0 = 2013^{3}
+\]
 
-But also $E(X_{\tau}) = E(S_{\tau}^{3}) - 3 E(\tau S_{\tau})$, i.e.
-$$
-E(\tau S_{\tau}) = \frac{\ds 1}{\ds 3}\left(E(S_{\tau}^{3}) - 2013^{3}\right) = \frac{\ds 1}{\ds 3}\left(\frac{\ds 1}{\ds 14}2000^{3} + \frac{\ds 13}{\ds 14}2014^{3} -2013^{3}\right) = 13\times 2009 = 26117
-$$\[\]\par
+But also $\E(X_{\tau}) = \E(S_{\tau}^{3}) - 3 \E(\tau S_{\tau})$, i.e.
+\[
+\E(\tau S_{\tau}) = \frac{\ds 1}{\ds 3}\left(\E(S_{\tau}^{3}) - 2013^{3}\right) = \frac{\ds 1}{\ds 3}\left(\frac{\ds 1}{\ds 14}2000^{3} + \frac{\ds 13}{\ds 14}2014^{3} -2013^{3}\right) = 13\times 2009 = 26117
+\]
 
 \textbf{Answer:} $E(\tau S_{\tau}) = 26117$.
-\[\]\par
-\[\]\par
 
 \textbf{Problem 3.}\par
-\textit{Case 1.} Let $s \geqslant t$.\par
+\textit{Case 1.} Let $s \geqslant t$.
+
 Then
-$$
-E\left(\left.W_{s}^{2}\right| W_{t}\right) = E\left(\left.W_{t}^{2} + 2 W_{t}(W_{s} - W_{t}) + (W_{s} - W_{t})^{2} \right| W_{t}\right) =$$ $$= W_{t}^{2} + 2W_{t}E(W_{s} - W_{t}) + E\left((W_{s} - W_{t})^{2}\right) = W_{t}^{2} + (s-t)
-$$\par
+\begin{align*}
+  \E\left(\left.W_{s}^{2}\right| W_{t}\right) = \E\left(\left.W_{t}^{2} + 2 W_{t}(W_{s} - W_{t}) + (W_{s} - W_{t})^{2} \right| W_{t}\right) =\\  
+  = W_{t}^{2} + 2W_{t}E(W_{s} - W_{t}) + E\left((W_{s} - W_{t})^{2}\right) = W_{t}^{2} + (s-t)
+\end{align*}
+
 Further,
-$$
-E(W_{s} | W_{t}) = W_{t} + E(W_{s} - W_{t}| W_{t}) = W_{t}
-$$
-\par
-Then we have $Var(W_{s}|W_{t}) = E(W_{s}^{2}| W_{t}) - E(W_{s}|W_{t})^{2} = (s-t)$\[\]\par
+\[
+\E(W_{s} \mid W_{t}) = W_{t} + \E(W_{s} - W_{t} \mid W_{t}) = W_{t}
+\]
+
+Then we have $\Var(W_{s} \mid W_{t}) = \E(W_{s}^{2}| W_{t}) - \E(W_{s} \mid W_{t})^{2} = (s-t)$.
+
+
 \textit{Case 2.} Let $s < t$.\par
 By the inverse property, $V_{t} = tW_{\frac{1}{t}}$ is also a standard Wiener process.\par
 From the case 1 we have
-$$
-\frac{\ds 1}{\ds s} - \frac{\ds 1}{\ds t} = Var\left(\left.V_{\frac{1}{s}}\right| V_{\frac{1}{t}}\right) = Var\left(\left.\frac{\ds 1}{\ds s}W_{s}\right| \frac{\ds 1}{\ds t}W_{t}\right) = \frac{\ds 1}{\ds s^{2}} Var\left(W_{s}\left|\frac{\ds 1}{\ds t}\right.W_{t}\right) = \frac{\ds 1}{\ds s^{2}}Var(W_{s}| W_{t})
-$$\par
+\[
+\frac{\ds 1}{\ds s} - \frac{\ds 1}{\ds t} = \Var\left(\left.V_{\frac{1}{s}}\right| V_{\frac{1}{t}}\right) = Var\left(\left.\frac{\ds 1}{\ds s}W_{s}\right| \frac{\ds 1}{\ds t}W_{t}\right) = \frac{\ds 1}{\ds s^{2}} Var\left(W_{s}\left|\frac{\ds 1}{\ds t}\right.W_{t}\right) = \frac{\ds 1}{\ds s^{2}}Var(W_{s}| W_{t})
+\]
 the last equation is because obviously $\sigma(W_{t}) = \sigma\left(\frac{\ds 1}{\ds t}W_{t}\right)$.\par
-Then $Var(W_{s}| W_{t}) = s - \frac{\ds s^{2}}{\ds t}$.\[\]\par
+Then $\Var(W_{s} \mid W_{t}) = s - \frac{\ds s^{2}}{\ds t}$.\[\]\par
 Summing up these two cases, we get the\[\]\par
-\textbf{Answer:} $Var(W_{s}| W_{t}) = \max\left\{s-t, s - \frac{\ds s^{2}}{\ds t}\right\}$
+\textbf{Answer:} $\Var(W_{s}| W_{t}) = \max\left\{s-t, s - \frac{\ds s^{2}}{\ds t}\right\}$
 
 
 
@@ -1515,24 +1528,24 @@ Summing up these two cases, we get the\[\]\par
 
 \textbf{Problem 4.}\par
 Let $g(t,W_{t}) = X_{t} = e^{\alpha t}f(W_{t})$, then $g_{t} = \alpha g$, $g_{W_{t}} = e^{\alpha t}f'(W_{t})$ and $g_{W_{t}W_{t}} = e^{\alpha t}f''(W_{t})$.\par
-By the It$\hat{\mbox{o}}$'s lemma we have
-$$
-\mathrm{d}X_{t} = \alpha X_{t}\dt + e^{\alpha t}f'(W_{t})\mathrm{d}W_{t} + \frac{\ds 1}{\ds 2}e^{\alpha t}f''(W_{t})\dt =$$ $$= e^{\alpha t}\left(\alpha f(W_{t}) + \frac{\ds 1}{\ds 2}f''(W_{t})\right)\dt + e^{\alpha t}f'(W_{t})\mathrm{d}W_{t}
-$$\par
+By the Ito's lemma we have
+\begin{align*}
+\mathrm{d}X_{t} = \alpha X_{t}\dt + e^{\alpha t}f'(W_{t})\mathrm{d}W_{t} + \frac{\ds 1}{\ds 2}e^{\alpha t}f''(W_{t})\dt =\\
+= e^{\alpha t}\left(\alpha f(W_{t}) + \frac{\ds 1}{\ds 2}f''(W_{t})\right)\dt + e^{\alpha t}f'(W_{t})\mathrm{d}W_{t}
+\end{align*}
 Therefore
-$$
-X_{t} = f(0) + \int\limits_{0}^{t}e^{\alpha u}\left(\alpha f(W_{u}) + \frac{\ds 1}{\ds 2}f''(W_{u})\right)\du + \int\limits_{0}^{t}e^{\alpha u}f'(W_{u})\mathrm{d}W_{u}
-$$
+\[
+X_{t} = f(0) + \int_0^{t}e^{\alpha u}\left(\alpha f(W_{u}) + \frac{\ds 1}{\ds 2}f''(W_{u})\right)\du + \int_0^{t}e^{\alpha u}f'(W_{u})\mathrm{d}W_{u}
+\]
 \par
 The last term in the right-hand side is a martingale, so $X_{t}$ is a martingale if and only if the coefficient near $\dt$ equals zero for all $t$, i.e.
-$$
-\alpha f(W_{t}) + \frac{\ds 1}{\ds 2}f''(W_{t}) = 0 \qquad \mbox{a.s.}
-$$\par
+\[
+\alpha f(W_{t}) + \frac{\ds 1}{\ds 2}f''(W_{t}) = 0 \qquad \text{a.s.}
+\]
 which (together with continuity of $f''$) implies
-$$
+\[
 \alpha f(x) + \frac{\ds 1}{\ds 2}f''(x) = 0\qquad \forall x
-$$
-\par
+\]
 We know how to solve the linear differential equations, so I will not go into details and I'll just write the answer.\[\]\par
 \textbf{Answer:} If $\alpha < 0$, then $f(x) = C_{1}e^{t\sqrt{-2\alpha}} + C_{2}e^{-t\sqrt{-2\alpha}}$, where $C_{1}, C_{2}$ are any real constants;\par
 if $\alpha = 0$, then $f(x) = C_{1}x + C_{2}$;\par
@@ -1541,50 +1554,49 @@ if $\alpha > 0$, then $f(x) = C_{1}\cos(t\sqrt{2\alpha}) + C_{2}\sin(t\sqrt{2\al
 
 
 
-
-
-
 \textbf{Problem 5 — part 1 of 2.}\par
 Assume for simplicity that $X_{t} = f(t)g(W_{t})$, where $f$ and $g$ are kinda nice functions (defined on $[0, +\infty)$ and continuously differentiable the required number of times on this interval; right-differentiable at zero, of course).\par
 By the It$\hat{\mbox{o}}$'s lemma we have
-$$
+\[
 \mathrm{d}X_{t} = \left(f'(t)g(W_{t}) + \frac{\ds 1}{\ds 2}f(t)g''(W_{t})\right)\dt + f(t)g'(W_{t})\mathrm{d}W_{t}
-$$\par
+\]
 Substituting this into the condition of the problem and separating the parts with $\dt$ and $\mathrm{d}W_{t}$ we get
-$$
+\[
 \left\{
 \begin{aligned}
 f'(t)g(W_{t})+\frac{\ds 1}{\ds 2}f(t)g''(W_{t})  &= \frac{\ds f(t)}{\ds t}g(W_{t}) + t\qquad\qquad\qquad &(1)\\
  f(t)g'(W_{t}) = 2\sqrt{tf(t)g(W_{t})} & \qquad\qquad\qquad &(2)
 \end{aligned}
 \right.
-$$\par
+\]
 Both equations are satisfied for every $t > 0$ almost surely.\[\]\par
 \textit{Step 1.} Let's prove that $f(t) \neq 0$ if $t > 0$. Indeed, if $f(t_{0}) = 0$, (1) gives us
-$$
+\[
 f'(t_{0}) g(W_{t_{0}}) = t_{0}\qquad \mbox{a.s.}
-$$\par
+\]
 so
-$$
+\[
 g(W_{t_{0}}) = \frac{\ds t_{0}}{\ds f'(t_{0})}\qquad \mbox{a.s.}
-$$\par
+\]
 But $g$ is continuous, so this gives us
-$$
+\[
 g(x) \equiv C = Const
-$$ \par
+\]
 But then (2) gives
-$$
-X_{t} \equiv 0 \qquad \mbox{a.s.}
-$$\par
+\[
+X_{t} \equiv 0 \qquad \text{a.s.}
+\]
 which does not satisfy the condition of the problem.\par
 Therefore, $f(t) \neq 0$, when $t \neq 0$.\[\]\par
 Now (2) can be transformed into
-$$
+\[
 \frac{\ds f(t)}{\ds 4t}g'(W_{t})^{2} = g(W_{t})\qquad\qquad\qquad (3)
-$$\par
+\]
 \textit{Step 2.} $g'(x)$ cannot be zero in any interval.\par
-Suppose that $g'(x) = 0$ for all $x \in (a,b)$. From (3) we have $g(x) = 0$ almost everywhere at $(a,b)$ (because $P(W_{t} \in (a,b)) \neq 0$ for $t > 0$), and also $g'(x) = 0$ at $(a,b)$. But substituting these values to (1) provides us contradiction.\[\]\par
-Let $A = \{x \in \RR | g'(x) \neq 0\}$. Since $g'$ is continuous and is not identical zero (from the step 2), the set $A$ has a positive Lebesgue measure; therefore $P(W_{t} \in A) \neq 0$ for all $t > 0$.
+Suppose that $g'(x) = 0$ for all $x \in (a,b)$. From (3) we have $g(x) = 0$ almost everywhere at $(a,b)$ (because $P(W_{t} \in (a,b)) \neq 0$ for $t > 0$), and also $g'(x) = 0$ at $(a,b)$. 
+But substituting these values to (1) provides us contradiction.\[\]\par
+Let $A = \{x \in \RR | g'(x) \neq 0\}$. 
+Since $g'$ is continuous and is not identical zero (from the step 2), the set $A$ has a positive Lebesgue measure; therefore $P(W_{t} \in A) \neq 0$ for all $t > 0$.
 
 
 
@@ -1594,92 +1606,90 @@ Let $A = \{x \in \RR | g'(x) \neq 0\}$. Since $g'$ is continuous and is not iden
 
 \textbf{Problem 5 — pat 2 of 2.}\par
 
-Now fix some $t_{0} > 0$. From (3) we have that almost everywhere in the event $\{W_{t_{0}} \in A\}$ the equality
-$$
+Now fix some $t_0 > 0$. From (3) we have that almost everywhere in the event $\{W_{t_{0}} \in A\}$ the equality
+\[
 \frac{\ds g(W_{t_{0}})}{\ds g'(W_{t_{0}})^{2}} = \frac{\ds f(t_{0})}{\ds 4 t_{0}}
-$$\par
+\]
 holds. Then for almost all $x \in A$ we have $\frac{\ds g(x)}{\ds g'(x)^{2}} = \frac{\ds f(t_{0})}{\ds 4 t_{0}}$. Now fix any other $t_{1} > 0$.\par
 We have that almost everywhere in $A$ the equality $\frac{\ds g(x)}{\ds g'(x)^{2}} = \frac{\ds f(t_{1})}{\ds 4 t_{1}}$ holds. Since $A$ has a positive measure, we have
-$$
+\[
 \frac{\ds f(t_{0})}{\ds 4t_{0}} = \frac{\ds f(t_{1})}{\ds 4t_{1}}
-$$\par
+\]
 i.e. $f(t) = Ct$ for all $t > 0$ and some $C = Const$. From the continuity \fbox{$f(t) = Ct$ for all $t \geqslant 0$}\[\]\par
 Substitute this to (1):
-$$
+\[
 Cg(W_{t}) + \frac{\ds 1}{\ds 2}Ctg''(W_{t}) = Cg(W_{t}) + t
-$$
+\]
 
-$$
+\[
 g''(W_{t}) = \frac{\ds 2}{\ds C}\qquad\qquad\qquad (4)
-$$\par
+\]
 (4) holds almost everywhere, but since $g''$ is continuous, we have \fbox{$g''(x) \equiv \frac{\ds 2}{\ds C}$}\par
 Then $g'(x) =  \frac{\ds 2x}{\ds C} + D$ and $g(x) = \frac{\ds x^{2}}{\ds C} + Dx + E$ for some constants $D,E$.\par
 From (3) we have
-$$
+\[
 g(x) = \frac{\ds f(t)}{\ds 4t}g'(x)^{2} = \frac{\ds C}{\ds 4}g'(x)^{2}
-$$\par
+\]
 Substitute the values of $g'(x)$ and $g(x)$:
-$$
+\[
 \frac{\ds x^{2}}{\ds C} + Dx + E = \frac{\ds C}{\ds 4}\left(\frac{\ds 2x}{\ds C} + D\right)^{2}
-$$
+\]
 
-$$
+\[
 \frac{\ds x^{2}}{\ds C} + Dx + E = \frac{\ds x^{2}}{\ds C} + Dx + \frac{\ds CD^{2}}{\ds 4}
-$$\par
+\]
 which gives us $E =  \frac{\ds CD^{2}}{\ds 4}$ and $g(x) = (Ax + B)^{2}$, where $A^{2} = \frac{\ds 1}{\ds C}$ and $2AB = D$.\par
 \[\]\par
 \textbf{Answer:} $X_{t} = t(W_{t} + C)^{2}$ for some constant $C$.\par
 (in our notation this constant equals $\frac{\ds B}{\ds A}$)\par
 \textbf{REMARK.} Precisely speaking, this is not a correct answer, because $\sqrt{tX_{t}}$ is always positive , so (2) does not always hold, because the left side of (2), which is $2t(W_{t} + C)$, can be negative with nonzero probability. In other words, we solved similar, but different equation
-$$
+\[
 \mathrm{d}X_{t} = \left(\frac{\ds X_{t}}{\ds t} + t\right)\dt\ \pm\ 2\sqrt{t X_{t}}\mathrm{d}W_{t}
-$$\par
+\]
 and the original problem has no solutions of the type $f(t)g(W_{t})$.
 
 
 
-
-
-
-
-
-
 \textbf{Problem 6 — part 1 of 4.}\par
-The risky asset $S_{t}$ satisfies the stochastic differential equation $$\mathrm{d}S_{t} = \mu S_{t}\dt + \sigma S_{t}\mathrm{d}W_{t}$$\par which implies
-$$
-S_{t} = S_{0}\exp \left(t\left(\mu - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma W_{t}\right)
-$$\par
-The risk-free asset satisfies the equation
-$$
-\mathrm{d}B_{t} = rB_{t}\dt
-$$\par
+The risky asset $S_{t}$ satisfies the stochastic differential equation 
+\[
+  \mathrm{d}S_{t} = \mu S_{t}\dt + \sigma S_{t}\mathrm{d}W_{t}
+\]
 which implies
-$$
+\[
+S_{t} = S_{0}\exp \left(t\left(\mu - \frac{\ds \sigma^{2}}{\ds 2}\right) + \sigma W_{t}\right)
+\]
+The risk-free asset satisfies the equation
+\[
+\mathrm{d}B_{t} = rB_{t}\dt
+\]
+which implies
+\[
 B_{t} = B_{0}e^{rt}
-$$\par
+\]
 Let $X_{t}$ be our self-financing portfolio at time $t$, which contains $\Delta_{t}$ shares of the risky asset.\par
 The total amount of money in the risky asset is $\Delta_{t}$, in the risk-free asset — $(X_{t} - \Delta_{t}S_{t})$.\par
 Therefore
-$$
+\[
 \mathrm{d}X_{t} = \Delta_{t}\mathrm{d}S_{t} + r(X_{t} - \Delta_{t}S_{t})\dt
-$$\[\]\par
+\]
 Let $\tilde{W}_{t} = \frac{\ds \mu - r}{\ds \sigma}t + W_{t}$, and $\tilde{P}$ is the probability measure, w.r.t. which $\tilde{W}_{t}$ is a standard Wiener process (the existence of such measure is the statement of Girsanov's theorem).\par
 In class we explicitly derived that
-$$
-e^{-rt}X_{t} = X_{0} + \int\limits_{0}^{t}\Delta_{u}e^{-ru}\sigma S_{u}\mathrm{d}\tilde{W}_{u}
-$$\par
+\[
+e^{-rt}X_{t} = X_0 + \int_0^{t}\Delta_{u}e^{-ru}\sigma S_{u}\mathrm{d}\tilde{W}_{u}
+\]
 The last term is a $\tilde{P}$-martingale, which means that
-$$
-E_{\tilde{P}}\left(\left.e^{-rT}X_{T}\right|\FF_{0}\right) = X_{0} \qquad\qquad\qquad (1)
-$$\par
-Now remember that
-$$
+\[
+\E_{\tilde{P}}\left(\left.e^{-rT}X_{T}\right|\FF_{0}\right) = X_0 \qquad\qquad\qquad (1)
+\]
+Now recall that
+\[
 X_{T} = S_{T}I_{\{S_{T-1} > 1\}}
-$$\par
+\]
 so we need to calculate
-$$
-E_{\tilde{P}}(S_{T}I_{\{S_{T-1} > 1\}}) = \iint\limits_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv
-$$\par
+\[
+\E_{\tilde{P}}(S_{T}I_{\{S_{T-1} > 1\}}) = \iint_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv
+\]
 where $\tilde{p}_{(S_{T}, S_{T-1})}$ is a two-dimensional density of a corresponding vector w.r.t. measure $\tilde{P}$.
 
 
@@ -1690,7 +1700,7 @@ where $\tilde{p}_{(S_{T}, S_{T-1})}$ is a two-dimensional density of a correspon
 \textbf{Problem 6 — part 2 of 4.}\par
 But
 \[
-\iint\limits_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv = \int\limits_{1}^{+\infty}\left(\int\limits_{0}^{+\infty}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v) \du\right)\dv = \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv
+\iint_{u > 0, v > 1}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v)\du\dv = \int_1^{+\infty}\left(\int_0^{+\infty}u\cdot \tilde{p}_{(S_{T}, S_{T-1})}(u,v) \du\right)\dv = \int_1^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv
 \]
 Further,
 \[
@@ -1726,7 +1736,7 @@ Then
 
 Further, if $\xi \sim \mathcal{N}(0,1)$, then
 \[
-E(e^{\sigma\xi}) = \frac{\ds 1}{\ds \sqrt{2\pi}}\int\limits_{\RR}e^{-\frac{x^{2}}{2} + \sigma x}\dx = e^{\frac{\sigma^{2}}{2}}\cdot\frac{\ds 1}{\ds \sqrt{2\pi}}\int\limits_{\RR}e^{-\frac{(x-\sigma)^{2}}{2}}\dx = e^{\frac{\sigma^{2}}{2}}
+E(e^{\sigma\xi}) = \frac{\ds 1}{\ds \sqrt{2\pi}}\int_{\RR}e^{-\frac{x^{2}}{2} + \sigma x}\dx = e^{\frac{\sigma^{2}}{2}}\cdot\frac{\ds 1}{\ds \sqrt{2\pi}}\int_{\RR}e^{-\frac{(x-\sigma)^{2}}{2}}\dx = e^{\frac{\sigma^{2}}{2}}
 \]
 
 which gives us
@@ -1741,17 +1751,17 @@ which, I think, is a very nice formula (especially if we compare it with (2)).
 
 Taking (2) and (4), we have
 \begin{multline}
- \int\limits_{1}^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv =\\
- = e^{r}\int\limits_{1}^{+\infty}\frac{\ds 1}{\ds \sigma}\cdot \frac{\ds 1}{\ds \sqrt{2\pi (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(\ln(v) - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\dv = \\
- = e^{r}\int\limits_{0}^{+\infty}e^{s}\cdot \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(s - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\mathrm{d}s
+ \int_1^{+\infty}\tilde{p}_{S_{T-1}}(v)\cdot E_{\tilde{P}}\left(S_{T} | S_{T-1} = v\right)\dv =\\
+ = e^{r}\int_1^{+\infty}\frac{\ds 1}{\ds \sigma}\cdot \frac{\ds 1}{\ds \sqrt{2\pi (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(\ln(v) - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\dv = \\
+ = e^{r}\int_0^{+\infty}e^{s}\cdot \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds 1}{\ds 2\sigma^{2}(T-1)}\left(s - \left(\ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)\right)\right)^{2}\right)\mathrm{d}s
 \end{multline}
 
 We substituted $s = \ln(v)$. Of course, $\dv = e^{s}\mathrm{d}s$.\par
 Denote also $B = \ln(S_{0}) + (T-1)\left(r - \frac{\ds \sigma^{2}}{\ds 2}\right)$.\par
 Then our integral equals
 \begin{multline}
-e^{r}\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds s^{2} - 2Bs - 2\sigma^{2}(T-1)s + B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = \\
-= \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\int\limits_{0}^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds \left(s - B - \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = \\
+e^{r}\int_0^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds s^{2} - 2Bs - 2\sigma^{2}(T-1)s + B^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = \\
+= \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\int_0^{+\infty} \frac{\ds 1}{\ds \sqrt{2\pi\sigma^{2} (T-1)}}\exp\left(-\frac{\ds \left(s - B - \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right)\mathrm{d}s = \\
 = \exp\left(r - \frac{\ds B^{2}}{\ds 2\sigma^{2}(T-1)} + \frac{\ds \left(B + \sigma^{2}(T-1)\right)^{2}}{\ds 2\sigma^{2}(T-1)}\right) \cdot \tilde{P}\left(\eta > -\left(B + \sigma^{2}(T-1)\right)\right)
 \end{multline}
 where $\eta \sim \mathcal{N}(0, \sigma^{2}(T-1))$. The integral magically turns into the probability, because under the integral there is a well-known density.
@@ -1764,24 +1774,24 @@ Therefore our integral finally equals
 \exp\left(r + B + \frac{\ds \sigma^{2}(T-1)}{\ds 2}\right)\Phi\left(\frac{\ds B + \sigma^{2}(T-1)}{\ds \sigma\sqrt{T-1}}\right) = e^{\ln(S_{0}) + rT}\cdot\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
 \end{multline}
 
-where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int\limits_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$.
+where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$.
 
 
 \textbf{Problem 6 — part 4 of 4.}\par
 And now I'll finish this huge problem.\par
 We had
 \begin{multline}
-X_{0} = e^{-rT}E_{\tilde{P}}\left(S_{T}I_{\{S_{T-1}> 1\}}\right) = e^{-rT}\cdot e^{\ln(S_{0}) + rT}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right) = \\
+X_0 = e^{-rT}E_{\tilde{P}}\left(S_{T}I_{\{S_{T-1}> 1\}}\right) = e^{-rT}\cdot e^{\ln(S_{0}) + rT}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right) = \\
 =
 S_{0}\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
 \end{multline}
 This is our answer.
 
 \textbf{Answer:} The price of our asset equals
-$$
+\[
 S_{0}\cdot\Phi\left(\frac{\ds \ln(S_{0}) + (T-1)\left(r + \frac{\ds \sigma^{2}}{\ds 2}\right)}{\ds \sigma\sqrt{T-1}}\right)
-$$\par
-where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int\limits_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$
+\]
+where $\Phi(x)$ is a distribution function of  a standard normal random value, $\Phi(x) = \int_{-\infty}^{x}\frac{\ds 1}{\ds \sqrt{2\pi}}\exp\left(-\frac{\ds t^{2}}{\ds 2}\right)\dt$
 
 
 \subsection{Exam, 17.01.2014}
@@ -2084,7 +2094,7 @@ You can launch a torpedo each minute at any integer on the number line. If the t
 \item
 \item The set $A$ and $B$ have the same power.
 \item
-\item The $\sigma$-algebra contains $8=2^3$ events: all combinations of $A$, $B$ and $\R/(A\cup B)$.
+\item The $\sigma$-algebra contains $8=2^3$ events: all combinations of $A$, $B$ and $\RR/(A\cup B)$.
 \item $\sigma(Y)=\{ \emptyset, \Omega, \{Y=1\}, \{Y=2\} \}$, $\sigma(X)$ is not countable.
 \end{enumerate}
 
@@ -2720,7 +2730,7 @@ dX_t = 8W^2_t X_t \, dt + 4W_t X_t\, dW_t, \text{ where } X_0 = 1
 \item	Find extremals that provide the highest or lowest values of the following integral
 
 \[
-J(y)=\int _{1}^{e} \left[ \frac{1}{2} x(y')^{2} +\frac{2yy'}{x} -\frac{y^{2} }{x^{2} } \right] \, dx
+J(y)=\int _1^{e} \left[ \frac{1}{2} x(y')^{2} +\frac{2yy'}{x} -\frac{y^{2} }{x^{2} } \right] \, dx
 \]
 
 with the boundary values $y(1)=1$, $y(e)=2$.
@@ -2731,7 +2741,7 @@ with the boundary values $y(1)=1$, $y(e)=2$.
 \item (10 points) Let $\tilde{y}(x)$ be the extremal you have found. Let  $h(x)\in C^{1} $ and $h(1)=h(e)=0$ ($h(x)$ is not identically zero). Prove that $J(\tilde{y}+h)-J(\tilde{y})>0$.
 \end{enumerate}
 
-\item Consider Ramsey's model. Maximize the integral $I=\int _{0}^{\infty }[u(c)-B]dt $ subject to $\dot{k}=f(k)-c-\delta k$, $k(0)=k_{0}$. Function $u(c)$ monotonically increases and tends to $B$ at the infinity, moreover $I$ converges.
+\item Consider Ramsey's model. Maximize the integral $I=\int _0^{\infty }[u(c)-B]dt $ subject to $\dot{k}=f(k)-c-\delta k$, $k(0)=k_{0}$. Function $u(c)$ monotonically increases and tends to $B$ at the infinity, moreover $I$ converges.
 
 \begin{enumerate}
 \item (5 points) Derive Ramsey's Law $\frac{d}{dt} u'(c)=u'(c)[\delta -f'(k)]$.
@@ -2749,7 +2759,7 @@ Production function $f(k)=\alpha k$ and $\alpha >\delta $. Find the optimal solu
 
 
 
-\item (10 points) Solve the problem on the bounded optimal control $\int _{0}^{T}(1-\beta -u)xdt \to \max$, subject to $\dot{x}=\alpha xu$, $x(0)=x_{0}$, $0\le u\le 1$. In this problem $\alpha>0$ and $0<\beta <1$.
+\item (10 points) Solve the problem on the bounded optimal control $\int _0^{T}(1-\beta -u)xdt \to \max$, subject to $\dot{x}=\alpha xu$, $x(0)=x_{0}$, $0\le u\le 1$. In this problem $\alpha>0$ and $0<\beta <1$.
 
 \end{enumerate}
 
@@ -2870,15 +2880,15 @@ Thus, $Q_t$ is a Brownian motion.
 
 \item
 \[
-Y_t=\int\limits_0^t(W_u+u)^2dW_u
+Y_t=\int_0^t(W_u+u)^2dW_u
 \]
 $Y_t$ is a martingale because it is a stochastic integral, so $\E(Y_t)=\E(Y_0)=0$.
 \[
 \E(W_u^4)=3u^2, \E(W_u^2)=u, \E(W_u^3)=\E(W_u)=0
 \]
 \begin{multline}
-\Var(Y_t)=\int\limits_0^t \E(W_u+u)^4du=\int\limits_0^t\E(W_u^4+4W_u^3u+6W_u^2u^2+4W_uu^3+u^4)du= \\
-=\int\limits_0^t(3u^2+6u^3+u^4)du=\left.u^3+\frac{3u^4}{2}+\frac{u^5}{5}\right|^t_0=t^3+\frac{3t^4}{2}+\frac{t^5}{5}
+\Var(Y_t)=\int_0^t \E(W_u+u)^4du=\int_0^t\E(W_u^4+4W_u^3u+6W_u^2u^2+4W_uu^3+u^4)du= \\
+=\int_0^t(3u^2+6u^3+u^4)du=\left.u^3+\frac{3u^4}{2}+\frac{u^5}{5}\right|^t_0=t^3+\frac{3t^4}{2}+\frac{t^5}{5}
 \end{multline}
 
 
@@ -2939,14 +2949,14 @@ X_t=Y_tZ_t
 dX_t=-\frac{X_t}{1-t}dt+dW_t=Z_tdY_t+Y_tdZ_t=-\frac{Z_tY_t}{1-t}dt+Y_tdZ_t=-\frac{X_t}{1-t}dt+(1-t)dZ_t
 \]
 \[
-dW_t=(1-t)dZ_t\Rightarrow dZ_t=\frac{dW_t}{1-t}\Rightarrow Z_t=Z_0+\int\limits_0^t \frac{dW_u}{1-u}
+dW_t=(1-t)dZ_t\Rightarrow dZ_t=\frac{dW_t}{1-t}\Rightarrow Z_t=Z_0+\int_0^t \frac{dW_u}{1-u}
 \]
 \item
 \[
-X_t=Y_tZ_t=(1-t)\left(Z_0+\int\limits_0^t \frac{dW_u}{1-u}\right), X_0=0=Z_0
+X_t=Y_tZ_t=(1-t)\left(Z_0+\int_0^t \frac{dW_u}{1-u}\right), X_0=0=Z_0
 \]
 \[
-X_t=(1-t)\int\limits_0^t \frac{dW_u}{1-u}
+X_t=(1-t)\int_0^t \frac{dW_u}{1-u}
 \]
 \end{enumerate}
 
@@ -3053,13 +3063,13 @@ You may use or not use the following hints:
 
 \item (10 points) Solve the bounded control problem:
 \[
-\int\limits_0^T {{{(u - x)}^2}dt \to \min }
+\int_0^T {{{(u - x)}^2}dt \to \min }
 \]
 subject to $\dot x = \frac{1}{2}(u - x)$, $x(0) = 1$, $\left| u \right| \leqslant 1$, $T > 0$.
 
 \item (10 points) Find the extremals for the calculus of variations problem:
 \[
-\int\limits_0^1 \frac{1}{2}{{\dot x}^2} + x\dot x + x \, dt
+\int_0^1 \frac{1}{2}{{\dot x}^2} + x\dot x + x \, dt
 \]
 when both endpoint values $x(0)$ and $x(1)$ can be chosen freely.
 
@@ -3184,7 +3194,7 @@ Solution by Evgeny Zalyubovsky
 \begin{enumerate}
 	\item
 \begin{multline*}
-	\E(W_5 \cdot Y) = \E(W_5\ |\ W_3 \le 2) = \E(W_5 - W_3\ |\ W_3 \le 2) + \E(W_3\ |\ W_3 \le 2) = 0 + \int_{-\infty}^{2} x\dfrac{e^{-x^2/6}}{\sqrt{6\pi}} dx =\\= \frac{1}{2\sqrt{6\pi}} \left(\int_{+\infty}^{0} e^{-z/6}\,dz + \int_{0}^{4} e^{-z/6}\,dz\right) = -\frac{\sqrt{6}}{2\sqrt{\pi}} \left(1 + e^{-4/6} - 1\right) = -\sqrt{\frac{3}{2\pi}} e^{-2/3}
+	\E(W_5 \cdot Y) = \E(W_5\ |\ W_3 \le 2) = \E(W_5 - W_3\ |\ W_3 \le 2) + \E(W_3\ |\ W_3 \le 2) = 0 + \int_{-\infty}^{2} x\dfrac{e^{-x^2/6}}{\sqrt{6\pi}} dx =\\= \frac{1}{2\sqrt{6\pi}} \left(\int_{+\infty}^{0} e^{-z/6}\,dz + \int_0^{4} e^{-z/6}\,dz\right) = -\frac{\sqrt{6}}{2\sqrt{\pi}} \left(1 + e^{-4/6} - 1\right) = -\sqrt{\frac{3}{2\pi}} e^{-2/3}
 \end{multline*}
 \begin{multline*}
 	\Var(W_5 \cdot Y) = \E(W_5^2 \cdot Y) - (\E(W_5 \cdot Y))^2 = \E((W_5 - W_3)^2\ |\ W_3 \le 2) +\\
@@ -3192,7 +3202,7 @@ Solution by Evgeny Zalyubovsky
 	3\E((W_5 - W_3)^2) +\\
 	+ 2\E(W_3 \cdot (W_5 - W_3)\ |\ W_3 \le 2) + \int_{-\infty}^{2} x^2 \frac{e^{-x^2/6}}{\sqrt{6\pi}} dx - \frac{3e^{-4/3}}{2\pi} =\\
 	= 3 \left(\Var(W_5 - W_3) + \left(\E(W_5 - W_3)\right)^2\right) + 2 \E(W_3\ |\ W_3 \le 2) \E(W_5 - W_3) +\\
-	+ \frac{1}{\sqrt{6\pi}} \left(-\int_{0}^{+\infty} x^2 e^{-x^2/6}\,dx + \int_{0}^{2} x^2 e^{-x^2/6}\,dz\right) - \frac{3e^{-4/3}}{2\pi} = 3 \cdot (2 + 0) + 0 - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx -{}\\
+	+ \frac{1}{\sqrt{6\pi}} \left(-\int_0^{+\infty} x^2 e^{-x^2/6}\,dx + \int_0^{2} x^2 e^{-x^2/6}\,dz\right) - \frac{3e^{-4/3}}{2\pi} = 3 \cdot (2 + 0) + 0 - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx -{}\\
 	- \frac{3e^{-4/3}}{2\pi} = 6 - \frac{3e^{-4/3}}{2\pi} - \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} x^2 e^{-x^2/6}\,dx,
 % \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3x \left(-\frac{x}{3} e^{-x^2/6}\right) dx = 6 - \frac{3e^{-4/3}}{2\pi} + \left(\frac{3xe^{-x^2/6}}{\sqrt{6\pi}}\right)\bigg|_{2}^{+\infty} -\\- \frac{1}{\sqrt{6\pi}} \int_{2}^{+\infty} 3e^{-x^2/6}\,dx =
 \end{multline*}
@@ -3221,7 +3231,7 @@ $\E(W_5 \cdot Y) = -\sqrt{\frac{3}{2\pi}} e^{-2/3}$; $\Var(W_5 \cdot Y) = 3 - \f
 Obviously, as $A_n$ is always finite, so are $f(n)$ and $\E(M_n)$. Moreover, $A_n$ is always adapted to $\cF_n$ while $f(n)$ is a constant, so $M_n$ is also always adapted to $\cF_n$. Therefore, condition \eqref{eq:2amart} is both necessary and sufficient for $M_n$ to be a martingale. Before using that to obtain $f(n)$, let's derive a formula for $\E(A_{n+k}\ |\ \cF_n)$:
 \begin{multline*}
 	\E(A_{n+1}\ |\ \cF_n) = A_n + \frac{A_n}{A_n + B_n} = A_n + \frac{A_n}{A_0 + B_0 + n} = A_n + \frac{A_n}{2 + n} = \frac{n+3}{n+2} A_n \Rightarrow\\\Rightarrow \E(A_{n+k}\ |\ \cF_n) = \E(\E(A_{n+k}\ |\ \cF_{n+k-1})\ \big|\ \cF_n) = \E(\frac{(n+k-1)+3}{(n+k-1)+2} A_{n+k-1}\ \bigg|\ \cF_n) =\\
-	= \frac{(n+k-1)+3}{(n+k-1)+2} \cdot \E(A_{n+k-1}\ |\ \cF_n) = \ldots = \E(A_{n}\ |\ \cF_n) \cdot \prod\limits_{i=0}^{k-1} \frac{n+i+3}{n+i+2} = \frac{n+k+2}{n+2} A_n.
+	= \frac{(n+k-1)+3}{(n+k-1)+2} \cdot \E(A_{n+k-1}\ |\ \cF_n) = \ldots = \E(A_{n}\ |\ \cF_n) \cdot \prod_{i=0}^{k-1} \frac{n+i+3}{n+i+2} = \frac{n+k+2}{n+2} A_n.
 \end{multline*}
 \begin{multline*}
 	\eqref{eq:2amart} \Rightarrow \E(M_{n+k}\ |\ \cF_n) = \E(f(n+k) \cdot A_{n+k}\ |\ \cF_n) = f(n+k) \frac{n+k+2}{n+2} A_n = M_n = f(n) A_n \Rightarrow\\\Rightarrow f(n+k) \frac{n+k+2}{n+2} = f(n) \Rightarrow f(n) = \dfrac{1}{n+2}
@@ -3253,17 +3263,17 @@ That term will be constant iff $(a-\gamma) X_t \equiv 0 \Leftrightarrow \gamma =
 
 \begin{align*}
 dY_t &= c \exp(at) \,dW_t + b \exp(at) \,dt \Rightarrow\\
-\Rightarrow Y_t &= X_0 + c \int_{0}^{t} \exp(au) \,dW_u + b \int_{0}^{t} \exp(au) \,du \Rightarrow\\
-\Rightarrow X_t &= \exp(-at) \left(X_0 + c \int_{0}^{t} \exp(au) \,dW_u + b \int_{0}^{t} \exp(au) \,du\right)
+\Rightarrow Y_t &= X_0 + c \int_0^{t} \exp(au) \,dW_u + b \int_0^{t} \exp(au) \,du \Rightarrow\\
+\Rightarrow X_t &= \exp(-at) \left(X_0 + c \int_0^{t} \exp(au) \,dW_u + b \int_0^{t} \exp(au) \,du\right)
 \end{align*}
 
 
 \begin{align*}
-	\E(X_t) &= \exp(-at) \left(X_0 + b \int_{0}^{t} \exp(au) \,du\right) + c \exp(-at) \E(\int_{0}^{t} \exp(au) \,dW_u) =\\
+	\E(X_t) &= \exp(-at) \left(X_0 + b \int_0^{t} \exp(au) \,du\right) + c \exp(-at) \E(\int_0^{t} \exp(au) \,dW_u) =\\
 &= X_0 \exp(-at) + \frac{b}{a}\\
 	\Var(X_t) &= \E(X_t^2) - \left(\E(X_t)\right)^2 =\\
-		 &= \E(\left(\int_{0}^{t} \exp(au) \,dW_u\right)^2) =\\
-   &= \int_{0}^{t} \E(\exp(2au)) \,du =\\
+		 &= \E(\left(\int_0^{t} \exp(au) \,dW_u\right)^2) =\\
+   &= \int_0^{t} \E(\exp(2au)) \,du =\\
 &= \frac{\exp(2at)}{2a}
 \end{align*}
 
@@ -4123,3 +4133,202 @@ where $X$, $Y$ and $W_4$ are independent normal with $\Var(X) = 1$, $\Var(Y) = 3
 
 
 \end{document}
+
+
+
+\section{2023 Fall}
+
+\subsection{Exam, 2023-12-27}
+
+Rules: 120 minutes, A4 cheat sheet and calculator are ok, $(W_t)$ denotes a Wiener process.
+
+\begin{enumerate}
+
+\item {[10 points]} Winnie-the-Pooh starts at zero of the real line. 
+Every minute he moves left by one with probability $0.2$, right by one with probability $0.8$.
+Let $X_t$ be the coordinate of Winnie at time $t$.
+
+The stopping time $\tau$ is the first moment when Winnie visits $(-4)$ or $6$, 
+$\tau = \min\{t \mid X_t = 6 \text{ or } X_t = -4\}$.
+
+\begin{enumerate}
+    \item {[5]} Find all martingales of the form $M_t = \exp(b X_t)$ where $b$ is a constant.
+    \item {[5]} Using Doob's theorem or otherwise find $\P(X_{\tau} = 6)$.
+\end{enumerate}
+
+Hint: You may not check all the conditions of the Doob's theorem.
+
+\item {[10 points]} Consider the process $dX_t = W_t dW_t + W_t dt$ with $X_0 = 2024$.
+\begin{enumerate}
+    \item {[3]} Find $\E(X_t)$. Is $(X_t)$ a martingale?
+    \item {[3]} Find $dY_t$ for $Y_t = X_t W_t$.
+    \item {[4]} Find $\E(Y_t)$.
+\end{enumerate}
+
+    
+\item {[10 points]} Solve the stochastic differential equation 
+\[
+dX_t = (2X_t + 1)dt + 2\sqrt{X_t}dW_t, \quad X_0 = 1.    
+\]
+You are free to use or to completely ignore the following hints:
+\begin{enumerate}
+    \item {[3]} Simplify the equation using substitution $Y_t = \sqrt{X_t}$.
+    \item {[7]} Solve the simplified equation using substitution $Z_t = h(t) Y_t$ with reasonable choice of $h$.
+\end{enumerate}
+
+\item {[10 points]}  Consider the process $Y_t = \int_0^t \sign (\cos u) dW_u$.
+
+
+\begin{enumerate}
+    \item {[5]} Find the covariance $\Cov(Y_{2024\pi}, W_{2024\pi})$.    
+    \item {[5]} Is $(Y_t)$ a Wiener process?
+\end{enumerate}
+
+
+Hint: $\sign c = 1$ if $c>0$, $\sign c = -1$ if $c < 0$ and $0$ otherwise. 
+
+    
+\item {[10 points]} You have two correlated Wiener processes, $(A_t)$ and $(B_t)$, with $\Corr(A_t - A_s, B_t - B_s) = \rho$ for all $t > s$.
+
+Split the time interval $[0;t]$ into $n$ small segments of equal length. 
+Let $\Delta^A_i$ be the increment of the Wiener process $(A_t)$ on the $i$-th small segment, i.e. $\Delta^A_i = A(it/n) - A((i-1)t/n)$.
+Let $\Delta^B_i$ be the increment of the Wiener process $(B_t)$ on the $i$-th small segment.
+
+Consider the sum of cross-products, $S_n = \sum_{i=1}^n \Delta^A_i \Delta^B_i$.
+\begin{enumerate}
+    \item {[3]} Find $\E(S_n)$.
+    \item {[5]} Find $\lim_{n\to\infty} \Var(S_n)$.
+    \item {[2]} Find the mean square limit of $(S_n)$. 
+    \item {[1]} How would you write the limit in (c) using short hand notation with $dA_t$ and $dB_t$?
+\end{enumerate}
+
+
+
+\item {[10 points]} Consider Black and Scholes model in continuous time with risk-free interest rate $r$, 
+volatility $\sigma$, initial share price $S_0$ and exponential growth rate of expected share price $\mu$. 
+
+An option $A$ pays you $1$ dollar at fixed time moment $T$ if $S_T / S_{T/2} > S_{T/2} / S_0$ and $0$ otherwise. 
+
+Find the non-arbitrage price $X_0$ of the option $A$. 
+
+Hint: the answer may contain the standard normal cumulative distribution function $F()$.
+
+\end{enumerate}
+  
+
+
+\subsection{Marking scheme, 2023-12-27}
+
+
+\item {[10 points]} 
+\begin{enumerate}
+    \item {[5]} Let's denote $X_t- X_{t-1}$ by $Z_t$.
+    The process $(X_t)$ should be a martingale,
+    \[
+    \E(\exp(bX_t + bZ_{t+1}) \mid \cF_t) = \exp(bX_t).
+    \]
+    We obtain an equation {[+2 points]}
+    \[
+    \E(\exp (bZ_{t+1})) = 1.  
+    \]
+    That is $0.8 \exp(b) + 0.2 \exp(-b) = 1$ {[+2 points]} and $b = -2\ln 2$ or $b=0$.
+    \item {[5]} 
+    From Doob's theorem we have $\E(M_{\tau}) = 1$. 
+    The equation for $p = \P(X_{\tau} = 6)$ is
+    \[
+    p  \exp(-12\ln 2) + (1-p)\exp(-8\ln 2) = 1.
+    \]
+\end{enumerate}
+
+Hint: You may not check all the conditions of the Doob's theorem.
+
+\item {[10 points]} 
+    \item {[3]} 
+    \[
+      \E(X_t) = 2024 + \E\left( \int_0^t W_u dW_u   \right) + \int_0^t \E(W_u) du  = 2024. 
+    \]
+    However $(X_t)$ is not a martingale as it has non-zero $dt$ term.
+    \item {[3]} 
+    \[
+    d(X_t W_t) = W_t dX_t + X_t dW_t + 0.5 \cdot 2 dW_t dX_t = W_t^2 dW_t + W_t^2 dt + X_t dW_t + W_t dt  
+    \]
+    \item {[4]} 
+    \[
+      \E(X_t W_t) = 0 + \int_0^t \E(W_u^2 + W_u) du = t^2/2.  
+    \]
+  
+\end{enumerate}
+
+    
+\item {[10 points]} 
+\begin{enumerate}
+    \item {[3]} Using Ito's lemma we obtain
+    \[
+      dY_t = 0.5 X_t^{-0.5} dX_t - 0.125 X_t^{-1.5} (dX_t)^2 = X_t^{0.5}dt + dW_t  
+      \]
+      Hence, the equation for $Y_t$ is $dY_t = Y_t dt + dW_t$.
+      
+    \item {[7]} Using Ito's lemma once again we obtain
+    \[
+    dZ_t = h'(t)Y_t dt + h(t) dY_t = (h'(t) Y_t + h(t) Y_t )dt + h(t) dW_t.
+    \]
+    If we choose $h'(t) = - h(t)$ then the $dt$ term will be zero. 
+    Let's do so, $h(t) = \exp(-t)$. 
+
+    For $Z_t = \exp(-t) Y_t$ we have $dZ_t = \exp(-t) dW_t$.
+    \[
+    Z_t = Z_0 + \int_0^t \exp(-u) dW_u  
+    \]
+    From $X_0 = 1$ we get $Z_0= 1$.
+    Finally,
+    \[
+    X_t = Y_t^2 = \exp(2t) Z_t^2 = \exp(2t) \left(1 + \int_0^t \exp(-u) dW_u    \right)^2.
+    \]
+
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+    \item {[5]} One way to find $\Cov(Y_{2024\pi}, W_{2024\pi})$
+    is to use Ito's isometry, 
+    \[
+    \Cov(\int_0^t A_u dW_u, \int_0^t 1 dW_u) = \int_0^t \E(\sign (\cos u)) du   
+    \]
+    The value $2024\pi$ contains $1012$ full $2\pi$ periods. Hence the integral is zero. 
+  
+    \item {[5]} Yes, $(Y_t)$ is a Wiener process. 
+    
+\end{enumerate}
+
+
+    
+\item {[10 points]}
+\begin{enumerate}
+    \item {[3]} 
+    \[
+    \E(S_n) = n \E( \Delta^A_i \Delta^B_i) = n\Cov(\Delta^A_i, \Delta^B_i) = n \rho (t-0)/n = \rho t
+    \]
+    \item {[5]} 
+    \[
+      \lim_{n\to\infty} \Var(S_n) = 0.
+      \]
+    \item {[2]} The random sequence $(S_n)$ tends to $\rho t$ in mean square and in probability. 
+    \item {[1]} $dA_t dB_t = \rho dt$.
+\end{enumerate}
+
+
+
+\item {[10 points]} 
+Recall that $S_t = S_0 \exp((r - \sigma^2/2)t + \sigma W_t^*)$.
+The event 
+\[
+B = \left\{  S_T / S_{T/2} > S_{T/2} / S_0  \right\}
+\]
+may be written as $B = \{ W_T^* > 2 W_{T/2}^* \}$ {[5 points]}.
+
+Hence,
+\[
+X_0 = \exp(-rT)\P^*(W_T^* > 2 W_{T/2}^*) = \exp(-rT) / 2.  
+\]
+
+\end{enumerate}
